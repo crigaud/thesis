@@ -1,0 +1,370 @@
+\documentclass[11pt,twoside,openright]{book}
+%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{rotating}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{fix2col}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{chngpage}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{pifont}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{xspace}
+\usepackage{mdwtab}
+\usepackage{float}
+%\usepackage{mathptmx}        % selects Times Roman as basic font
+\usepackage{helvet}          % selects Helvetica as sans-serif font
+\usepackage{courier}         % selects Courier as typewriter font
+\usepackage{type1cm}         % activate if the above 3 fonts are not available on your system
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+%\usepackage[hidelinks, breaklinks]{hyperref}
+%\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+%\usetikzlibrary{fit,arrows,matrix,calc,positioning,shapes,backgrounds}
+%\usepackage{algpseudocode}
+%%%%%%%%%%%%%%%%%%%%%%%%% INCLUDES %%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{abbreviations}
+\DeclareGraphicsExtensions{.pdf,.png}
+\graphicspath{{./figs/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% TITLE, AUTHOR, DIRECTORS %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Segmentation and indexation of graphical objects: application to detection and recognition of complex object from comic books}
+\title{Understanding of comic images from pixel to semantics}
+\author{Christophe Rigaud}
+\date{???, 2014}
+ 
+\newcommand{\UAB}{Universitat Autònoma de Barcelona}
+\newcommand{\CVC}{Centre de Visió per Computador}
+\newcommand{\DCC}{Dept. Ciències de la Computació}
+\newcommand{\DCCCVC}{\DCC{} \& \CVC{}}
+\newcommand{\CVPRU}{Computer Vision and Pattern Recognition Unit}
+\newcommand{\ISI}{Indian Statistical Institute}
+\newcommand{\CVPRUISI}{\CVPRU{} \& \ISI{}}
+
+\newcommand{\printer}{Ediciones Gráficas Rey, S.L.}
+\newcommand{\dedication}{To my parents...}
+\newcommand{\sentence}{\textit{An idea that is not dangerous is}\\ \textit{unworthy of being called as an idea at all}\\Oscar Wilde (1854 - 1900)\\ \vspace{1cm}\textit{Highly organized research is}\\ \textit{guaranteed to produce nothing new}\\Frank Herbert (1920 - 1986)}
+
+\newcommand{\ISBN}{}
+%%%%%%%%%%%%%%%%%%%%%%%%% DEFINICIONS DEL ESTIL CVC %%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\paperheight   }{240mm}
+\setlength{\paperwidth    }{170mm}
+\setlength{\hoffset       }{  0pt}
+\setlength{\voffset       }{  0pt}
+\setlength{\textwidth     }{130mm}
+\setlength{\textheight    }{195mm}
+\setlength{\headsep       }{  9mm}
+\setlength{\topmargin     }{-37pt}
+\setlength{\oddsidemargin }{  0cm}
+\setlength{\evensidemargin}{  0pt}
+\addtolength{\evensidemargin}{-2in}
+\addtolength{\evensidemargin}{+4cm}
+%\addtolength{\evensidemargin}{0mm}   % retocar para que las dos caras casen
+
+\newlength{\reducedwidth}
+\setlength{\reducedwidth}{\textwidth}
+\addtolength{\reducedwidth}{-\parindent}
+\addtolength{\reducedwidth}{-\parindent}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+%\makeatletter
+%\def\chapter{\clearpage\thispagestyle{plain}\global\@topnum
+%   \z@\@afterindentfalse
+%   \secdef\@chapter\@schapter
+%}
+%\makeatother
+%\title{My Picture Chapters}
+%\begin{document}
+%\maketitle
+
+\newcommand{\blankpage}{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+}
+
+\newcommand{\chapterwithpic}[4][]{
+  \blankpage
+  \clearpage\thispagestyle{empty}
+  \begin{figure}[t!]
+    \begin{center}
+      \includegraphics[width=0.75\figwidth]{#3}\\
+      #4
+    \end{center}    
+    %\caption[#4]{#4}
+  \end{figure}  
+  \chapter[#1]{#2}
+}
+
+\makeatletter
+\long\def\@makecaption#1#2{%
+   \vskip 10\p@
+   \small
+   \setbox\@tempboxa\hbox{\textbf{#1:} #2}%
+   \ifdim \wd\@tempboxa >\reducedwidth
+    \hfil\parbox{\reducedwidth}{\textbf{#1:} #2}\hfil
+     \else
+       \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+   \fi}
+
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \Huge \bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+
+\newcommand{\makefirstpages}{
+  \thispagestyle{empty}
+  \vspace*{0.5cm}
+  \begin{center}\includegraphics[width=6cm]{LogoUAB}\end{center}
+  \vspace*{3cm}
+  \parbox{\textwidth}{\addtolength{\lineskip}{5pt} \centering \textbf{\LARGE \@title}  }
+  \vfill
+  \begin{flushright}
+  \parbox{7.5cm}{A dissertation submitted by \textbf{\@author} at \UAB{} to fulfil the degree of \textbf{Doctor of Philosophy}.\par
+%  \vspace{2mm}
+%  \parbox{7.5cm}{Director: \textbf{Dr. Josep Lladós Canet}.\\Departament: Ciències de la Computació, Escola d'Enginyeria, UAB.\\PhD Program: Informàtica.}\par
+    \vspace*{2mm}
+    \hfill Bellaterra, \@date
+  }
+  \end{flushright}
+  \clearpage
+  \small
+  \thispagestyle{empty}
+  \noindent
+  \begin{tabular}{>{\scriptsize}p{2cm}|>{\scriptsize}l}
+  
+   Director  & \textbf{Dr. Josep Lladós Canet}\\
+             & \DCCCVC\\
+             & \UAB\\
+
+  \multicolumn{2}{c}{}\\
+  
+Co-Director  & \textbf{Prof. Dr. Umapada Pal}\\
+             & \CVPRU\\
+             & \ISI\\
+
+  \multicolumn{2}{c}{}\\
+             
+Thesis       & \textbf{Prof. Dr. Jean-Marc Ogier}\\
+committee    & Laboratoire Informatique, Image et Interaction\\
+             & Université de La Rochelle\\
+             & \\
+                          
+             & \textbf{Dr. Ernest Valveny}\\
+             & \DCCCVC\\
+		     & \UAB\\
+             & \\     
+                     
+             & \textbf{Dr. Pierre Héroux}\\
+			 & Laboratoire LITIS\\
+             & Université de Rouen\\
+             & \\
+
+             & \textbf{Dr. Francesc Serratosa}\\
+             & Enginyeria Informàtica i Matemàtiques\\
+		     & Universitat Rovira i Virgili\\
+             & \\
+
+             & \textbf{Dr. Maria Vanrell}\\
+             & \DCCCVC\\
+		     & \UAB\\
+
+  \multicolumn{2}{c}{}\\
+    
+European     & \textbf{Prof. Dr. Luc Brun}\\
+evaluators   & École Nationale Supérieur d'Ingénieurs de Caen\\
+             & Université de Caen Basse-Normandie\\
+             & \\
+                      
+		     & \textbf{Prof. Dr. Jean-Yves Ramel}\\
+			 & Polytech'Tours - LI Tours\\
+    	         & Université de François - Rabelais, Tours\\
+             
+  \end{tabular}
+  \vfill
+  \noindent\begin{minipage}{\textwidth}
+  \setlength{\parskip}{10pt}
+  \noindent \rule{90mm}{0.4mm} 
+  \includegraphics[trim=40mm 60mm 60mm 100mm,width=3.5cm]{LogoCVC}
+  \par
+  \scriptsize{This document was typeset by the author using \LaTeXe.\par}
+  \scriptsize{The research described in this book was carried out at the \CVC, \UAB.\par}
+  \scriptsize{Copyright $\copyright$ \number\year ~by \@author. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, or any information storage and retrieval system, without permission in writing from the author.\par}
+  \scriptsize{ISBN: XXX \ISBN\par}
+  \scriptsize{Printed by \printer}
+  \end{minipage}
+  \clearpage\thispagestyle{empty}
+  \vspace*{6cm}
+  \begin{flushright} \dedication \end{flushright}
+  \clearpage\thispagestyle{empty}
+    \vspace*{6cm}
+  \begin{flushright} \sentence \end{flushright}
+  \clearpage\thispagestyle{empty}
+  \setcounter{page}{0}
+}
+\makeatother
+
+\makeatletter
+\newcounter{algorithmbis}
+\setcounter{algorithmbis}{0}
+\renewcommand{\thealgorithmbis}{\thesection.\arabic{algorithmbis}}
+\def\algorithmbis{\@ifnextchar[{\@algorithmbisa}{\@algorithmbisb}}
+\def\@algorithmbisa[#1]{%
+  \refstepcounter{algorithmbis}
+  \trivlist
+  \leftmargin\z@
+  \itemindent\z@
+  \labelsep\z@
+  \item[\parbox{\textwidth}{%
+    \hrule
+    \hrule
+    \noindent\strut\textbf{Algorithm \thealgorithmbis} #1
+    \hrule
+  }]\hfil\vskip0em%
+}
+\def\@algorithmbisb{\@algorithmbisa[]}
+\def\endalgorithmbis{\hfil\vskip-1em\hrule\endtrivlist}
+\makeatother
+
+\newenvironment{abstract}{\begin{center}\begin{minipage}{\reducedwidth}
+\hrulefill\vspace{3pt}\\\small}{\par\hrulefill\\\end{minipage}\end{center}}
+
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%% DEFINICIONS PROPIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\newcommand\degrees[1]{#1\ensuremath{^\circ}}
+\graphicspath{{figures/}}
+\renewcommand{\baselinestretch}{1.0}
+
+\renewenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\renewcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% INICI DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\newcommand{\mb}[1]{\mbox{$\underline{#1}$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% PORTADA, DEDICATORIA %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\makefirstpages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% INDEX, TOC, LOC, LOT, AGRAMENTS, ABSTRACT %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./chapters/0.1-agraiments/agraiments}
+\input{./chapters/0.2-abstract/abstract_english}
+\input{./chapters/0.2-abstract/abstract_castellano}
+\input{./chapters/0.2-abstract/abstract_catala}
+
+\tableofcontents
+\listoftables
+\listoffigures
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPITOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\mainmatter
+
+\setlength{\parskip}{0.2cm}
+\input{./chapters/1-intro/intro}
+% \input{./chapters/2-gm/gm}
+\input{./chapters/3-state-of-the-art/state-of-the-art}
+
+\input{./chapters/9-gt/gt}
+\input{./chapters/4-pe/pe}
+\input{./chapters/5-te/te}
+\input{./chapters/6-be/be}
+\input{./chapters/7-ce/ce}
+
+%\input{./chapters/4-lp/lp}
+\input{./chapters/8-hp/hp}
+%\input{./chapters/7-hgr/hgr}
+%\input{./chapters/8-experiments/experiments}
+\input{./chapters/10-conclusions/conclusions}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIXS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% \appendix
+% \input{./chapters/Appendix/Datasets}
+%\input{./chapters/Appendix/PerformanceE}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%% PUBLICACIONS, GLOSARI, CONTRAPORTADA %%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%\glossary
+%\input{./chapters/Appendix/Notation}
+\input{./chapters/MyPublications/publications}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------------------------------------------------
+\backmatter
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{plain}
+%\bibliography{./chapters/Bibliography/egbib}
+\bibliography{bibliography}
+%-------------------------------------------------------------------------------------------------------------------
+%%\setlength{\parskip}{0.0cm}
+%%\include{./chapters/finalack/finalack}
+%.............................
+
+\backmatter
+
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

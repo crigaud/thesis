@@ -1,0 +1,37 @@
+\chapter{Conclusions} % 10 pages
+\chaptermark{Conclusions}
+\label{chap:conclusions}
+Throughout the dissertation several methods for subgraph matching applied to symbol spotting have been presented. This chapter summarizes each main chapter by revisiting their contributions, strengths and weaknesses. Finally, a brief overview of the future research possibilities in the area of subgraph matching and symbol spotting is discussed.
+% -----------------------------------------------------------
+\section{Summary and contributions}
+%Objectives from the introduction section are revisited here
+
+
+
+In this thesis work we have presented four different methods for symbol spotting on graphical documents represented as graphs. \ch{chap:intro} has introduced the main idea of structural pattern recognition, graphs as a tool of structural pattern recognition and the problem of symbol spotting.
+
+\ch{chap:gm} has introduced some useful definitions, concepts of graph matching and a brief state-of-the-art methods are discussed. These were necessary since all our symbol spotting methods are based on graph representation and use graph based methodologies to solve the problem.
+
+In \ch{chap:sota-ss}, an overview of the state-of-the-art methods have been presented. Here we have divided the main methods of symbol spotting into five different categories. Literature review in each of these categories have been presented along with the advantages, disadvantages in different scenarios.
+
+We have introduced the first approach to symbol spotting by hashing serialized graphs in \ch{chap:hssg}. The major contribution in this work is to serialize the planar graphs and form one dimensional graph paths. Graph paths are used to index a given database. The main motivation of this work came from the idea of graph indexing, which is a popular approach for applications dealing with large number of graphs. We model the structure of a path by off-the-shelf shape descriptor and we have used locality sensitive hashing for indexing those individual paths.
+
+\ch{chap:pg} has presented a subgraph matching technique based on product graph and it has been used for spotting symbols on graphical documents. The main contribution was the introduction of higher order contextual similarities which are obtained by propagating the pairwise similarities. The next contribution of this work was to formulate subgraph graph matching as a node, edge selection problem of the product graph. For that we constructed a constrained optimization problem whose objective function was created from the higher order contextual similarities.
+
+In the \ch{chap:ncrag}, we have introduced near convex region adjacency graph. The main contribution was the introduction of near convex regions and forming a graph representation based on that. There are certain drawbacks of region adjacency graph (RAG), for example, the information that are not bounded in regions can not be represented by RAG. This contribution solves the limitation.
+
+\ch{chap:hgr} has presented a hierarchical graph representation of line drawing graphical documents. Certain line drawings often suffer from structural errors or distortions. Hierarchical graph representation is a way to solve those structural errors in hierarchical simplification.
+
+Finally in \ch{chap:experiments}, we have provided an experimental evaluation of all the proposed methods and some state-of-the-art methods and advantages and disadvantages have been pointed out.
+
+In general, in this thesis we have proposed several inexact subgraph matching algorithms which intend to solve the problem of inexact subgraph matching in a better approximated way. Different graph representations have been used and the purpose of them was to tolerate the structural noise and distortions and bring stability in the representation. Also a hierarchical graph representation is proposed to simplify/correct the structural errors in step-by-step manner. Detailed experimentations were performed to evaluate each of the methods and for comparison with some state-of-the-art algorithms and for that some model of datasets also have been proposed.
+% -----------------------------------------------------------------------------------------------------------------
+\section{Future perspectives}
+There are ideas that have come out from different contributions of this thesis but could not be evaluated due to the time constraints. The future perspective of this thesis can be listed as follows:
+\begin{itemize}
+\item Since indexation of the serialized substructures was successful as shown in this thesis (\ch{chap:hssg}), a very good continuation of this work can be done by factorizing the graphs into two dimensional structures and making hash/indexation structure of them. Here also we can use some kind of graph embedding to transfer those factorized subgraphs into a vector space and do the same procedure as the \ch{chap:hssg}.
+\item In \ch{chap:pg}, we have proposed higher order contextual similarities by propagating the pairwise similarities through random walk. This is an idea that crept in from random walk graph kernel. There are other kernel methods such as graphlet kernel, shortest path kernel etc. that measure the graph similarities by counting different common substructures such as graphlet, short path etc. It would be interesting to bring these ideas for the purpose of having contextual similarities and then apply the optimization technique as used in \ch{chap:pg}.
+\item \ch{chap:hgr} described a hierarchical graph representation which corrects the structural errors appeared in the base graph. In this particular work we consider a graph representation where we consider the critical points as the nodes and the lines joining them as the edges. As a consequence, the hierarchical graph representation resulted in become huge with lot of nodes/edges, these make problem while matching these hierarchical structures. The hierarchical graph representation is a very good idea for correcting the errors/distortions. It would be interesting to consider a different graph representation which considers more higher order entities as nodes/edges and then take into account the hierarchical graph representation of that. This could make the matching module faster and easier.
+\item In this thesis we have proposed different graph representations aimed to tolerate structural noise and distortions etc. At the same time there are different graph matching methods have been proposed. It would be interesting to evaluate each of the graph representations for each of the graph matching techniques. This needs the adaptation of the data structures to our matching methodologies, which demands some work.
+\item As it has been seen in the experimental evaluation chapter (\ch{chap:experiments}) that some of the methods work very well on some specific class of pattern graph. This phenomenon evokes the idea of combining different methods to produce a unified system that can provide the best results depending on the majority voting. This of course needs some more research and also some engineering work which would need some more time.
+\end{itemize}

@@ -1,0 +1,293 @@
+\chapter{Dataset and ground truth} %15 pages
+\chaptermark{Dataset and ground truth}
+\label{chap:dt}
+\graphicspath{{./chapters/9-gt/figs/}}
+% Abstract-----------------------------------------------------
+This chapter\cite{Guerin2013} deals with a subgraph matching problem in Region Adjacency Graph (RAG) applied to symbol spotting in graphical documents. RAG is a very important, efficient and natural way of representing graphical information with a graph but this is limited to cases where the information is well defined with perfectly delineated white regions. What if the information we are interested in is not confined within well defined regions? This chapter addresses this particular problem and solves it by defining near convex grouping of oriented line segments which results in near convex regions. Pure convexity imposes hard constraints and can not handle all the cases efficiently. Hence to solve this problem we have defined a new type of convexity of regions, which allows convex regions to have concavity to some extend. We call this kind of regions as Near Convex Regions (NCRs). These NCRs are then used to create the Near Convex Region Adjacency Graph (NCRAG). This region based representation provides higher order interpretation of visual objects than the other techniques presented in \ch{chap:hssg} or \ch{chap:pg}. With this NCRAG representation we have formulated the problem of symbol spotting in graphical documents as a subgraph matching problem. For subgraph matching we have used the Approximate Edit Distance Algorithm (AEDA) on the neighbourhood string, which starts working after finding a key node in the input or target graph and iteratively identifies similar nodes of the pattern graph in the neighbourhood of the key node. The experiments are performed on artificial, real and distorted datasets and obtained results are quite satisfactory.
+% -------------------------------------------------------------
+\section{Introduction}
+\label{sec:ncrag:intro}
+Many of the symbol spotting methods have proposed some sort of subgraph matching as the solution, where pattern graphs represent the query symbols and the target graphs represent the graphical documents. Often this kind of methods use the Region Adjacency Graph (RAG) as the way of representing graphical information \cite{LladosPAMI2001,LeBodic2012,Barducci2012}, where a region is roughly defined as a white connected component. This is well justified since RAG allows to capture region wise contextual information. RAG has also been widely used for classification \cite{Harchaoui2007} and object detection and recognition \cite{Suk1984,Jacobs1989} in other fields of computer vision. The main advantage of RAG is that it is natural and robust, and allows one to capture region wise contextual information, which encode higher order representation. But it is not always representative when the region boundaries are not clearly defined or they have some discontinuities (as in the symbol \textit{door1} and \textit{door2} respectively in \fig{fig:ncrag:door1} and \fig{fig:ncrag:door2} and in the synthetically distorted example of symbol \textit{table1} in \fig{fig:ncrag:table1-distorted}). So to solve these problems, in this chapter we define Near Convex Region Adjacency Graph (NCRAG) where the regions must not be clearly and continuously bounded, but can be nearly convex. This is done by near convex grouping of the oriented line segments and defining the convexity of the regions. Then we use this NCRAG representation to solve the problem of subgraph matching and apply it for symbol spotting in graphical documents. The first step of the method is to create two NCRAGs, one from a graphical document and the other from a symbol and then in the second step apply the Approximate Edit Distance Algorithm (AEDA) for subgraph matching.
+\begin{figure}[!h]
+\centering
+\subfloat[]{\label{fig:ncrag:door1}\includegraphics[width=0.2\textwidth]{door1}}
+\hspace{0.1cm}  
+\subfloat[]{\label{fig:ncrag:door2}\includegraphics[width=0.34\textwidth]{door2}}
+\hspace{0.1cm}
+\subfloat[]{\label{fig:ncrag:bed-labeled}\includegraphics[width=0.16\textwidth]{bed-labeled}}
+\hspace{0.1cm}
+\subfloat[]{\label{fig:ncrag:table1-distorted}\includegraphics[width=0.16\textwidth]{table1-distorted.png}}
+\caption{Limitations of RAG and convex region based representation: (a) the symbol \textit{door1} contains open region, (b) the symbol \textit{door2} also contains open regions, (c) the symbol \textit{bed} contains a region (region 1) which is not convex, (d) the symbol \textit{table1} contains discontinuous boundaries.}
+\label{fig:ncrag:rag-limit}
+\end{figure}
+
+Convexity of objects is a very important property and it has been shown that most of the objects, even though they are not fully convex, can be decomposed into multiple convex parts \cite{Jacobs1996}. Also it is important to note that often the object of interest is almost convex. So the property of convexity has already been studied in the field of computer vision and pattern recognition for object detection and recognition \cite{Lowe1987} and recently it has also been studied in document analysis for symbol spotting \cite{Nayef2011,LeBodic2012,Barducci2012}. But, as it has been mentioned before, the object of interest might not always be perfectly convex but include some concavity in some parts (as the region $1$ of the symbol \textit{bed} in \fig{fig:ncrag:bed-labeled}). Of course, such regions can be split into multiple strictly convex parts as it is studied in \cite{Jacobs1989,Jacobs1996} but it is inefficient dealing with a large number of smaller purely convex parts rather than few near convex parts. Also small concavity provides discrimination in the representation of objects, so it is an important property to be considered for description. Convexity or near convex decomposition has also been studied in \cite{Ren2011} very recently. Hence representing the graphical documents with NCRAG seems worthwhile and useful.
+
+The main contributions of the work in this chapter are: (1) Formulation of NCRs using the near convex grouping of a set of oriented line segments which not necessarily have to be closed and the use of these NCRs to construct the NCRAGs. This NCRAG is able to handle concavity within the convex regions and at the same time it is as expressive as RAG. In the  (2) Application of the Approximate Edit Distance Algorithm (AEDA) \cite{Neuhaus2004} to solve the problem of subgraph matching for faster symbol spotting in graphical documents. The method does not need any learning or offline step and can be computed in reasonable time as shown in Table~\ref{table:ncrag:results}.
+
+The rest of the chapter is organized into four sections. In \sect{sec:ncrag:method} we explain the detailed methodology. \sect{sec:ncrag:results} shows the experimental results. In \sect{sec:ncrag:disc} we provide a detailed discussion about limitations of this kind of representation. At last in \sect{sec:ncrag:concl} we conclude the chapter and discuss future directions of work.
+\section{Methodology}
+\label{sec:ncrag:method}
+The first step of the method is to create two NCRAGs, one from the target graphical document and the other from the query symbol. Formally we define an NCRAG as a graph $G(V,E,\alpha,\beta)$, where $V$ is the set of nodes and $E\subseteq V\times V$ is the set of edges of the graph $G$ and are defined as follows:
+\begin{equation*}
+V=\left\{v_i:v_i\mbox{ is a convex region (nearly) in the document}\right\}
+\end{equation*}
+\begin{equation*}
+E=\left\{(v_i,v_j):v_i,v_j \in V\mbox{ and }v_i,v_j\mbox{ are adjacent regions}\right\}
+\end{equation*}
+$\alpha:V\rightarrow\mathbb{R}^n$ is the node labelling function, in this case, the Hu moments invariants concatenated with the Euler number and solidity of each of the regions. Therefore, the node label has the dimension nine and all values are normalized between 0 and 1. $\beta:E\rightarrow\mathbb{R}$ is the edge labelling function, in this case, the ratio of the length of the common boundary to the length of the larger boundary between the two regions connecting the edge. Given two NCRAGs, the symbol spotting problem can be formulated as a subgraph matching problem, where the task is to find an instance of the smaller query symbol graph in the larger document graph. Let us denote the NCRAG of the query symbol as the pattern graph $G_1$ and that of the document as the input or target graph $G_2$. As the second step, for matching the subgraph we have used the efficient AEDA proposed by Neuhaus and Bunke in \cite{Neuhaus2004}. These two steps are explained in the subsequent subsections.
+\begin{figure}[!h]
+\centering
+\subfloat[]{\includegraphics[width=0.4\textwidth]{floorplan-cropped.png}}
+\hspace{0.2cm}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{ncrag-door1.png}}
+\hspace{0.2cm}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{ncrag-armchair.png}}
+\caption{NCRAG representing (a) a part of a floorplan, (b) a symbol with open region (\textit{door1}), (c) a symbol with all closed regions (\textit{armchair}).}
+\label{fig:ncrag:rag-fp-symb}
+\end{figure}
+\section{Structure and indexation}
+\label{ssec:ncrag:ncrag}
+This step starts working on the vectorized images which contain the approximated line segments. Here each line segment is considered as two oriented line segments where an oriented line segment is defined as a line segment where one endpoint is considered as its first endpoint~\cite{Jacobs1996}. If $l_i$ is an oriented line segment, then we consider $l_{i,1}$ as it's first endpoint and $l_{i,2}$ is its second. Let us consider their coordinates as $(x_{i1},y_{i1})$ and $(x_{i2},y_{i2})$ respectively. Just to clarify, if $l_i$ and $l_j$ are two consecutive oriented line segments coinciding end-to-end then the coordinate $(x_{i2},y_{i2})$ and $(x_{j1},y_{j})$ denote the coordinates of the same point. Now let $S_n = \left\{l_1,l_2,\ldots,l_n\right\}$ be a sequence of oriented line segments and $L_i$ be the length of the segment $l_i$ and $\gamma_i$ be the gap between $l_{i,2}$ and $l_{i+1,1}$. Then according to the original algorithm~\cite{Jacobs1996} we have:
+\begin{equation}
+L_{i,n}=\sum^n_{i=1}L_i,\hspace{1cm}\gamma_{i,n}=\sum^n_{i=1}\gamma_i
+\label{eqn:ncrag:length-gap}
+\end{equation}
+The saliency measurement of the convex group $S_n$ can be defined as:
+\begin{equation}
+Saliency(S_n)=\frac{L_{i,n}}{L_{i,n}+\gamma_{i,n}}
+\label{eqn:ncrag:saliency}
+\end{equation}
+The saliency parameter helps to incorporate the erroneous gaps that might be generated during binarization or vectorization as we have shown in one of our experiments in Section \ref{sec:ncrag:results}. Before adding any oriented line segment to a sequence, the saliency measurement of the sequence is checked. In case the saliency of the sequence is less than $t_{sal}$ the current line segment is added to the sequence.
+
+The convexity of the group $S_n$ is defined as:
+\begin{equation}
+Convexity(S_n)=\frac{area(S_n)}{area(CHS_n)}
+\label{eqn:ncrag:convexity}
+\end{equation}
+where $CHS_n$ is the convex hull of $S_n$. Since any group $S_n$ is not guaranteed to be closed, its area is computed as:
+\begin{equation}
+\footnotesize{
+area(S_n)=\frac{\sum_{i=1}^n(x_{i1}y_{i2}-x_{i2}y_{i1}) + (x_{i2}y_{((i+1)\%n)2}-x_{((i+1)\%n)1}y_{i2})}{2}.
+}
+\label{eqn:ncrag:area}
+\end{equation}
+Like the saliency measurement, before adding any oriented line segment to a sequence $S_n$, its convexity together with $S_n$ is checked and if it is less than $t_{conv}$, it is added to the sequence.
+
+To make the idea clear it is to be mentioned that for efficient computation, for each oriented line segment $l_i$, the original algorithm pre-computes the list of all other oriented line segments $List(l_i)$ with which it is mutually convex and sorts them according to the distance. Secondly, it also pre-computes the angle that is turned when going from one oriented line segment to another. Since we take into account the convexity of a sequence $S_n$ we only sort the list according to the distance and check the saliency and convexity of the current sequence together with the line segment to be added before adding it to $S_n$. These NCRs are then used to create NCRAG. \fig{fig:ncrag:rag-fp-symb} shows some results of the NCRAG construction. Construction of the NCRAG can be done in time complexity of $\mathcal{O}(m^2logm+m^2)$, where $m$ is the number of oriented line segments.
+% and $n$ is total number of resulting sequence or group of oriented line segments. Here $n$ also depends on $t_{sal}$ and $t_{conv}$.
+
+The near convex grouping algorithm proposed in this chapter is different from the convex grouping algorithm proposed by Jacobs~\cite{Jacobs1989} in the following ways:
+\begin{itemize}
+\item The original algorithm proposed by Jacobs pre-computes the list of all mutually convex oriented line segments $List(l_i)$. To do that it only considers segments that rotate towards the same direction. Whereas, in this algorithm we take into account all the nearer segments that satisfy the distance criterion and do not take into account the angle of rotation while going from one line segment to the next one.
+\item In the original algorithm before including a line segment to a group, only the saliency measurement is checked. This is since all the pre-listed line segments considered are mutually convex. On the contrary, in the present algorithm, we check both the saliency and convexity measurement of the group prior to include a particular line segment to that group. This is since we consider all the line segments that only satisfy the distance criterion.
+\end{itemize}
+
+% \subsection{Approximate Edit Distance Algorithm (AEDA)}
+% \label{ssec:ncrag:aeda}
+The AEDA starts by finding a similar node in $G_2(V_2,E_2,\alpha_2,\beta_2)$ to a node in $G_1(V_1,\allowbreak E_1,\allowbreak \alpha_1,\allowbreak \beta_1)$. These nodes are called the \emph{key nodes} \cite{Neuhaus2004}. The similarity of the nodes is inversely proportional to the Euclidean distance of the node labels, and the edge labels of the graph are not taken into account here. Then the algorithm looks at the neighbourhood nodes considering the key nodes as the centre nodes. The neighbourhood nodes are then arranged in clockwise order to create a string. Here the connectivity information between the neighbourhood nodes is taken into account. If any two nodes are connected the corresponding edge label is concatenated with the incident node label and form the attributed string. After having constructed the attributed string, cyclic string edit distance is applied to get the node-to-node correspondences. Then each of the nodes in each correspondence is considered as a key node and the previous steps are repeated. This algorithm continues working until it gets new correspondences. In the cyclic string the edge label (if any edge exist) is augmented with the originating node. Let $\lbrace u_1,\ldots,u_m\rbrace$ and $\lbrace v_1,\ldots,v_n\rbrace$ be two attributed strings and let $\alpha_1(u_i)$, $\sigma_1(u_i)$ be two node labels associated to the node $u_i$ and let $\alpha_2(v_i)$, $\sigma_2(v_i)$ be the same for the node $v_i$. Here $\sigma_1$, $\sigma_2$ are the augmented edge labels assigned to the originating node of the edge. Then the cost matrix $C$ for computing the cyclic edit distance can be computed as:
+\begin{align*}
+C(i,j)=\lambda\left|\alpha_1(u_i)-\alpha_2(v_j)\right|+(1-\lambda)\left|\sigma_1(u_i)-\sigma_2(v_j)\right|,\mbox{ where }0\le\lambda\le 1&\\
+\text{ and }1\le i\le m, 1\le j\le n&.
+\label{eqn:ncrag:tot_dist}
+\end{align*}
+For the original algorithm the readers are referred to \cite{Neuhaus2004}.
+
+For each node in $G_1$ we consider $n$ key nodes in $G_2$ and perform the AEDA. Therefore for a single pattern graph $G_1$, we perform $n \times m$ iterations of the AEDA in $G_2$, where $m$ is the number of nodes in $G_1$. In this case, $n$ should be greater than the actual number of instances of the query symbol in a graphical document to get all the relevant instances. Here it is to be mentioned that greater values of $n$ might produce more false positives but the system produces a ranked list of the relevant retrievals. So it does not hamper the performance, since the true positives suppose to appear at the beginning of the ranked list of retrieved symbols. The edge label is only used when we perform the cyclic string matching on the strings obtained from the neighbourhood subgraphs by considering the nodes in clockwise order. At the end, we obtain a distance measure between a retrieved subgraph and the pattern graph by calculating the distance of the node labels. Later we use this distance to rank the retrieved subgraphs.
+\begin{figure}[!h]
+\centering  
+\subfloat[]{\label{fig:ncrag:sesyd-armchair}\includegraphics[scale=0.2]{armchair.png}}
+\hspace{1mm}
+\subfloat[]{\label{fig:ncrag:sesyd-bed}\includegraphics[scale=0.15]{bed.png}}
+\hspace{1mm}
+\subfloat[]{\label{fig:ncrag:sesyd-door1}\includegraphics[scale=0.2]{door1.png}}
+\hspace{1mm}
+\subfloat[]{\label{fig:ncrag:sesyd-door2}\includegraphics[scale=0.2]{door2.png}}
+\hspace{1mm}
+\subfloat[]{\label{fig:ncrag:sesyd-table2}\includegraphics[scale=0.12]{table2.png}}
+\hspace{1mm}
+\subfloat[]{\label{fig:sesyd-symb4}\includegraphics[scale=0.2]{television.png}}
+\caption{Model symbols: (a)-(e) SESYD, (f) FPLAN-POLY: (a) \textit{armchair}, (b) \textit{bed}, (c) \textit{door1}, (d) \textit{door2}, (e) \textit{table2}, (f) \textit{television}.}
+\label{fig:ncrag:symbim}
+\end{figure}
+
+\begin{figure}[!h]
+\centering  
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/1.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/2.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/3.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/4.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/5.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/6.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/7.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/8.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/9.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{armchair-ncrag/10.png}}	
+\caption{First ten retrievals of \textit{armchair}.}
+\label{fig:ncrag:ret-armchair}
+\end{figure}
+
+\begin{figure}[!h]
+\centering  
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/1.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/2.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/3.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/4.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/5.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/6.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/7.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/8.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/9.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.11]{bed-ncrag/10.png}}   	
+\caption{First ten retrievals of \textit{bed}.}
+\label{fig:ncrag:ret-bed}
+\end{figure}
+
+\begin{figure}[!h]
+\centering  
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/1.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/2.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/3.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/4.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/5.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/6.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/7.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/8.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/9.png}}
+\hspace{0.05cm}
+\subfloat{\includegraphics[scale=0.08]{door1-ncrag/10.png}}
+\caption{First ten retrievals of \textit{door1}.}
+\label{fig:ncrag:ret-door1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering  
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/1.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/2.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/3.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/4.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/5.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/6.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/7.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/8.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.1]{television-ncrag/9.png}}
+\hspace{0.1cm}
+\subfloat{\includegraphics[scale=0.09]{television-ncrag/10.png}}	
+\caption{First ten retrievals of \textit{television}.}
+\label{fig:ncrag:ret-television}
+\end{figure}
+
+\section{Error evaluation}
+\label{sec:ncrag:results}
+Experiments are carried out to show (1) the robustness of the algorithm for constructing NCRAG and (2) the efficiency of the AEDA for subgraph matching in NCRAG. We have considered two different datasets: (1) SESYD (floorplans) and (2) FPLAN-POLY for experiments. For the details on these datasets one can have a look to~\app{app:datasets}. To get the line segments, the vectorization algorithm of Qgar\footnote{\url{www.qgar.com}} is applied. Interested readers are referred to \app{app:perf-eval} to get an idea about the performance evaluation protocol followed in this chapter. To have an idea about the computation time we calculate the per document retrieval time (\textbf{T}) required for each of the symbols with each document. For each of the datasets the mean of the above mentioned metrics is shown (Table~\ref{table:ncrag:results}) to judge the overall performance of the algorithm. Throughout our experiments we have chosen $t_{sal} = 0.95$, $t_{conv} = 0.8$ and $\lambda = 0.6$; we run a set experiments varying these parameters, then the best values for these parameters are chosen to give the best performance.
+\begin{figure}[!h]
+\centering  
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0001_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0002_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0003_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0004_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0005_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0006_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0007_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0008_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0009_t.png}}
+\hspace{0.5mm}
+\subfloat{\includegraphics[width=0.085\textwidth]{table2-discont-ncrag/0010_t.png}}
+\caption{First 10 retrievals of \textit{table2} on the database of floorplans having discontinuous line noise.}
+\label{fig:ncrag:ret-table2-discont}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{prec-rec-curve-dataset-wise-crop.pdf}
+\caption{Precision recall curve for different dataset.}
+\label{fig:ncrag:prec-rec-curve}
+\end{figure}
+
+% \subsection{Experiments on SESYD (floorplans)}
+% \label{ssec:ncrag:expt-sesyd}
+In this experiment we have only considered the subset called floorplans16-01. Each of the NCRAGs of each of the floorplans approximately contains 150 NCRs, whereas each of the query symbols contains 3-6 NCRs. The quantitative results are shown in the first row of Table~\ref{table:ncrag:results}. The high recall values for this dataset show that the algorithm works pretty well for most of the symbols. There are some cases of failure or partial detection, the reason of which will be discussed in \sect{sec:ncrag:disc}. Qualitative results are shown in Figs.~\ref{fig:ncrag:ret-armchair} to \ref{fig:ncrag:ret-door1}, which, respectively, include symbols with closed, near convex and open regions.
+
+% \subsection{Experiments on FPLAN-POLY}
+% \label{ssec:ncrag:expt-fplan-pol}
+Here we have used all the floorplans and 10 randomly chosen model symbols from this dataset. In this dataset each floorplan image contains approximately 110 NCRs, whereas a query symbol contains 4-8 NCRs. The recall value obtained in this dataset is also very good which is shown in Table~\ref{table:ncrag:results}. Qualitative results of querying \textit{television} are shown in Fig.~\ref{fig:ncrag:ret-television} (note the disappearance of some boundaries). The results obtained in this dataset is slightly better than SESYD. The reason is mentioned in the discussions part (\sect{sec:ncrag:disc}). The parameter $t_{sal}$ has less influence on SESYD and FPLAN-POLY dataset, since the line segments are end-to-end coinciding.
+
+% \subsection{Experiments on SESYD-DN}
+% \label{ssec:ncrag:sesyd-discont}
+This experiment is performed to prove the robustness of the algorithm constructing the NCRAG. To do that we have taken SESYD-DN dataset, the details of which are also described in \sect{sec:datasets:sesyd-dn}. After vectorizing the images from the dataset, we apply the algorithm to spot the symbol on it. The quantitative and qualitative results are respectively shown in the Table~\ref{table:ncrag:results} ($3^{rd}$ row) and Fig.~\ref{fig:ncrag:ret-table2-discont} (note the white gaps on the black edges). Here the parameter $t_{sal}$ poses an important role and to be tuned according to the existing gap in edges. The method fails when the drawn white lines remove substantial portion of a symbol. The precision recall curve (Fig.~\ref{fig:ncrag:prec-rec-curve}) shows the performance of the method for these three datasets, from that it is clear that the method performs worse in case of the discontinuous edges than the other two.
+\begin{table}[h!]
+\caption{Dataset wise mean results with NCRAG representation.}
+\centering
+\begin{tabular}{lccccc}
+\toprule
+\hline
+\textbf{Symbol} & \textbf{P} & \textbf{R} & \textbf{F} & \textbf{AveP} & \textbf{T (secs)}\\
+\hline
+SESYD (floorplans16-01) & 62.33 & 95.67 & 74.76 & 70.66 & 0.57\\
+FPLAN-POLY 	& 64.56 & 96.32 & 76.21 & 73.68 & 0.65\\
+SESYD (discont.)	& 56.33 & 91.75 & 70.81 & 64.65 & 0.59\\
+\hline
+\end{tabular}
+\label{table:ncrag:results}
+\end{table}
+
+\section{Discussions}
+\label{sec:ncrag:disc}
+Although NCRAG is capable of capturing contextual information well in terms of regions, there are some serious limitations of NCRAG or, more generally, of the RAG based representation. One problem is shown in Fig.~\ref{fig:ncrag:limitations}, where there are two symbols called \textit{sink3} and \textit{sink4} and the difference between them when they appear in a model symbol (Fig.~\ref{fig:ncrag:limitations}(a),(c)) and in a target document (Fig.~\ref{fig:ncrag:limitations}(b),(d)). This is due to the difference in stroke width in images. Particularly, in the example of \textit{sink3} when it appears in the document it looses the thin peripheral portion in the left of the region and also small circular part detaches the upper right corner part of the square. These create some difference in the regions but apparently they appear the same with our high level vision. The dissimilarity in regions also changes the NCRAG representation. As a result it partially finds some nodes of a graph and results in partial detection or complete loss. Hence it lowers the similarity score and precision. Since in FPLAN-POLY the query symbol is generated by cropping the floorplan image, there is no discrepancy like that. This explains the slight better results in FPLAN-POLY.
+\begin{figure}[!h]
+\centering  
+\subfloat[]{\includegraphics[width=0.22\textwidth]{sink3.png}}
+\hspace{1mm}
+\subfloat[]{\includegraphics[width=0.22\textwidth]{file_00_sink3_cropped.png}}
+\hspace{1mm}
+\subfloat[]{\includegraphics[width=0.22\textwidth]{sink4.png}}
+\hspace{1mm}
+\subfloat[]{\includegraphics[width=0.22\textwidth]{file_02_sink4_cropped.png}}
+\caption{Limitations of region based representation: (a) model symbol of \textit{sink3}, (b) \textit{sink3} as it appears in the document, (c) model symbol of \textit{sink4}, (d) \textit{sink4} as it appears in the document.}
+\label{fig:ncrag:limitations}
+\end{figure}
+
+% \section{Conclusions}
+% \label{sec:ncrag:concl}

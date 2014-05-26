@@ -1,0 +1,43 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pseudo 2-D Hidden Markov Model (Figure credit: M\"{u}ller and Rigoll~\cite {Muller2000})}}{4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of string growing in terms of the neighbourhood string similarity (Figure credit: Llad\'{o}s~{\em et al.}\cite {LladosPAMI2001}).}}{6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Definition of an $\mathcal {F}$-signature (Figure credit: Tabbone~{\em et al.}\cite {Tabbone2003}).}}{8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A dendogram showing the hierarchical decomposition of graphical object (Figure credit: Zuwala and Tabbone~\cite {Zuwala2006}).}}{9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Limitations of RAG and convex region based representation: (a) the symbol \textit {door1} contains open region, (b) the symbol \textit {door2} also contains open regions, (c) the symbol \textit {bed} contains a region (region 1) which is not convex, (d) the symbol \textit {table1} contains discontinuous boundaries.}}{12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{12}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{12}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{12}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces NCRAG representing (a) a part of a floorplan, (b) a symbol with open region (\textit {door1}), (c) a symbol with all closed regions (\textit {armchair}).}}{14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Model symbols: (a)-(e) SESYD, (f) FPLAN-POLY: (a) \textit {armchair}, (b) \textit {bed}, (c) \textit {door1}, (d) \textit {door2}, (e) \textit {table2}, (f) \textit {television}.}}{16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{16}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{16}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{16}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{16}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces First ten retrievals of \textit {armchair}.}}{16}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces First ten retrievals of \textit {bed}.}}{16}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces First ten retrievals of \textit {door1}.}}{17}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces First ten retrievals of \textit {television}.}}{17}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces First 10 retrievals of \textit {table2} on the database of floorplans having discontinuous line noise.}}{17}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Precision recall curve for different dataset.}}{18}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Limitations of region based representation: (a) model symbol of \textit {sink3}, (b) \textit {sink3} as it appears in the document, (c) model symbol of \textit {sink4}, (d) \textit {sink4} as it appears in the document.}}{19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{19}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{19}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{19}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces An illustration showing the details of dual graph representation. Here $a$, $b$, $c$ and $d$ are dual nodes and we consider $l=1$. For that reason $(b,a)$ and $(b,c)$ are dual edges (shown in magenta and discontinuous line) since the corresponding edges (shown in green and continuous line) in the original graph are reachable with a shortest walk of length $1$. There is no dual edge $(b,d)$ since the shortest walk between the corresponding edges of $b$ and $d$ is $2$. Consider the details near the junctions and corners.}}{37}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces \emph {Precision Recall curve}.}}{39}
+\addvspace {10\p@ }

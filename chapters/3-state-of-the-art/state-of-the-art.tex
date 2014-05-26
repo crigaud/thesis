@@ -1,105 +1,37 @@
 \chapter{State-of-the-art} % about 20-30 pages
 \chaptermark{State-of-the-art of comic books analysis}
-\label{chap:sota-ss}
+\label{chap:sota}
 \graphicspath{{./chapters/3-state-of-the-art/figs/}}
 
-This thesis work has considered symbol spotting problem as an application of subgraph matching. Symbol spotting has experienced a lot of interests among the graphics recognition community. Here the main task starts by querying a given graphic symbol or model object, usually cropped from a bigger document. The main aim is to search the model object in a target document or set of target documents. In this dissertation we will alternatively name the model object to be queried as \emph{model symbol} or \emph{query symbol} or \emph{pattern} and the corresponding graph representing them as \emph{query graph} or \emph{model graph} or \emph{pattern graph}. And the document or the set of documents where the user intends to find the model symbol as \emph{input document} or \emph{target document} and the corresponding graph as \emph{target graph} or \emph{input graph}. Most of the time the user is interested in getting a ranked list of retrieved zones supposed to contain the queried symbol depending on the similarity or dissimilarity measure. This Chapter contains a review of the state-of-the-art of symbol spotting methods. The major existing research can be classified into five broad families as in~\cite{RusinolThesis2009}, which are listed in Table~\ref{table:sota-ss:relworks}. We review those families as follows:
+% This thesis work has considered symbol spotting problem as an application of subgraph matching. Symbol spotting has experienced a lot of interests among the graphics recognition community. Here the main task starts by querying a given graphic symbol or model object, usually cropped from a bigger document. The main aim is to search the model object in a target document or set of target documents. In this dissertation we will alternatively name the model object to be queried as \emph{model symbol} or \emph{query symbol} or \emph{pattern} and the corresponding graph representing them as \emph{query graph} or \emph{model graph} or \emph{pattern graph}. And the document or the set of documents where the user intends to find the model symbol as \emph{input document} or \emph{target document} and the corresponding graph as \emph{target graph} or \emph{input graph}. Most of the time the user is interested in getting a ranked list of retrieved zones supposed to contain the queried symbol depending on the similarity or dissimilarity measure. This Chapter contains a review of the state-of-the-art of symbol spotting methods. The major existing research can be classified into five broad families as in~\cite{RusinolThesis2009}, which are listed in Table~\ref{table:sota-ss:relworks}. We review those families as follows:
 
 \section{Layout analysis and panel extraction}
-\label{sec:sota-ss:hmm}
-HMMs are powerful tools to represent dynamic models which vary in terms of time or space. Their major advantage in space series classification results from their ability to align a pattern along their states using a probability density function for each state. This estimates the probability of a certain part of the pattern belonging to the state. HMMs have been successfully applied for off-line handwriting recognition \cite{El-Yacoubi1999,Espana-Boquera2011}, where the characters represent pattern changes in space whilst moving from left to right. Also, HMMs have been applied to the problems of image classification and shape recognition \cite{He1991}. M\"{u}ller and Rigoll \cite{Muller2000} proposed pseudo 2-D HMMs to model the two-dimensional arrangements of symbolic objects. This is one of the first few approaches we can find for symbol spotting, where the document is first partitioned by a fixed sized grid. Then each small cell acts as an input to a trained 2-dimensional HMM to identify the locations where the symbols from the model database is likely to be found (see \fig{fig:sota-ss:p2dhmm}). Previously, HMMs were also applied to word spotting, and this work is an adaptation of HMMs for 2D shapes. The method does not need pre-segmentation, and also it could be used in noisy or occluded conditions, but since it depends on the training of a HMM, it loses one of the main assumptions of symbol spotting methodologies.
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{p2dhmm}
-\end{center}
-\caption{Pseudo 2-D Hidden Markov Model (Figure credit: M\"{u}ller and Rigoll~\cite{Muller2000})}
-\label{fig:sota-ss:p2dhmm}
-\end{figure}
+\label{sec:sota:layout_panel}
 
-\begin{table*}[t!]
-\begin{center}
-\caption{Different families of symbol spotting research with their advantages and disadvantages.}
-\begin{tabular}{m{1.0in}m{0.6in}m{1.4in}m{1.4in}}
-\toprule
-\hline
-\textbf{Family} & \textbf{Method} & \textbf{Advantages} & \textbf{Disadvantages}\\
-\hline
-HMM & \cite{Muller2000} & segmentation-free; Robust in noise & Needs training\\ \cr \hline
-Graph based & \cite{Messmer1996,LladosPAMI2001,Barbu2005a,Qureshi2007,Locteau2007,Rusinol2009a,Luqman2010,Nayef2010,LeBodic2012,Dutta2013} & Simultaneous symbol segmentation and recognition & Computationally expensive\\ \cr \hline
-Raster features & \cite{Tabbone2003,Nguyen2009} & Robust symbol representation; Computationally fast & Ad-hoc selection of regions; Inefficient for binary images\\ \cr \hline
-Symbol signatures & \cite{Dosch2004,Zhang2007} & Simple symbol description; Computationally fast & Prone to noise\\ \cr \hline
-Hierarchial symbol representation & \cite{Zuwala2006} & Linear matching is avoided by using an indexing technique & Dendogram structure is strongly dependent on the merging criterion.\\ \cr \hline
-\end{tabular}
-\label{table:sota-ss:relworks}
-\end{center}
-\end{table*}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{lladospami}
-\end{center}
-\caption{Example of string growing in terms of the neighbourhood string similarity (Figure credit: Llad\'{o}s~\etal\cite{LladosPAMI2001}).}
-\label{fig:sota-ss:lladospami}
-\end{figure}
 
 \section{Balloon segmentation}
-\label{sec:sota-ss:graph}
-The methods based on graphs rely on the structural representation of graphical objects and propose some kind of (sub)graph matching techniques to spot symbols in the documents. Graph matching can be solved with a structural matching approach in the graph domain or solved by a statistical classifier in the embedded vector space of the graphs. In both cases these techniques include an error model which allows inexact graph matching to tolerate structural noise in documents. Because of the structural nature of graphical documents, graph based representation has proven to be a robust paradigm. For that reason graph matching based symbol spotting techniques has drawn a huge attention of the researchers. There are an adequate number of methods based on graphs \cite{Messmer1996,LladosPAMI2001,Barbu2005a,Qureshi2007,Locteau2007,Rusinol2009a,Nayef2010,Luqman2010,LeBodic2012}. In general the structural properties of the graphical entities are encoded in terms of attributed graphs and then a subgraph matching algorithm is proposed to localize or recognize the symbol in the document in a single step. The (sub)graph matching algorithms conceive some noise models to incorporate image distortion, which is defined as inexact (sub)graph matching. Since (sub)graph matching is an NP-hard problem \cite{Mehlhorn1984}, these algorithms often suffer from a huge computational burden. Among the methods available, Messmer and Bunke in \cite{Messmer1996} represented graphic symbols and line drawings by Attributed Relational Graphs (ARG). Then the recognition process of the drawings was undertaken in terms of error-tolerant subgraph isomorphisms from the query symbol graph to the drawing graph. Llad\'{o}s~\etal~in \cite{LladosPAMI2001} proposed Region Adjacency Graphs (RAG) to recognize symbols in hand drawn diagrams. They represented the regions in the diagrams by polylines where a set of edit operations is defined to measure the similarity between the cyclic attributed strings corresponding to the polylines (see \fig{fig:sota-ss:lladospami}).
+\label{sec:sota:balloon_segmentation}
 
-In \cite{Barbu2005a}, Barbu~\etal~presented a method based on frequent subgraph discovery with some rules among the discovered subgraphs. Their main application is the indexing of different graphical documents based on the occurrence of symbols. Qureshi~\etal \cite{Qureshi2007} proposed a two-stage method for symbol recognition in graphical documents. In the first stage the method only creates an attributed graph from the line drawing images and in the second stage the graph is used to spot interesting parts of the image that potentially correspond to symbols. Then in the recognition phase each of the cropped portions from the images are passed to an error tolerant graph matching algorithm to find the queried symbols. Here the procedure of finding the probable regions restricts the method only to work for some specific symbols, which violates the assumption of symbol spotting. Locteau~\etal \cite{Locteau2007} present a symbol spotting methodology based on a visibility graph. There they apply a clique detection method, which corresponds to a perceptual grouping of primitives to detect regions of particular interest.
-
-In \cite{Rusinol2009a} Rusi{\~n}ol~\etal~ proposed a symbol spotting method based on the decomposition of line drawings into primitives of closed regions. An efficient indexing methodology was used to organize the attributed strings of primitives. Nayef and Breuel \cite{Nayef2010} proposed a branch and bound algorithm for spotting symbols in documents, where they used geometric primitives as features. Recently Luqman~\etal \cite{Luqman2010} also proposed a method based on fuzzy graph embedding for symbol spotting, a priori they also used one pre-segmentation technique as in \cite{Qureshi2007} to get the probable regions of interest which may contain the graphic symbols. Subsequently, these ROIs are then converted to fuzzy structural signatures to find out the regions that contain a symbol similar to the queried one. Recently, Le Bodic~\etal \cite{LeBodic2012} proposed substitution-tolerant subgraph isomorphism to solve symbol spotting in technical drawings. They represent the graphical documents with RAG and model the subgraph isomorphism as an optimization problem. The whole procedure is performed for each pair of query and document. The subgraph matching is done based on integer linear programming based optimization technique. Moreover, since the method works with RAG, it does not work well for the symbols having open regions or regions with discontinuous boundary.
-
-\begin{sidewaystable*}
-\begin{center}
-\caption{Comparison of the key existing works of symbol spotting.}
-\begin{tabular}{m{1.5in}m{1.0in}m{1.0in}m{1.0in}m{1.2in}m{1.0in}}
-\toprule
-\hline
-\textbf{Method} & \textbf{Segmentation free} & \textbf{Robust in noise} & \textbf{Training free} & 				   \textbf{Time efficient} & \textbf{Large database}\\ \cr \hline
-M\"{u}ller and Rigoll~\cite{Muller2000}\hfill & \cmark & \cmark & \xmark & \cmark & -\\ 
-Messmer and Bunke~\cite{Messmer1996}\hfill & \cmark & - & - & \xmark & \xmark\\
-Llad\'{o}s~\etal\cite{LladosPAMI2001}\hfill & \cmark & - & \cmark & \xmark & \xmark\\
-Barbu~\etal\cite{Barbu2005a}\hfill & \cmark & - & \cmark & \xmark & \xmark\\
-Qureshi~\etal\cite{Qureshi2007}\hfill & \xmark & - & \cmark & \xmark & \xmark\\
-Locteau~\etal\cite{Locteau2007}\hfill & \cmark & \xmark & \cmark & \cmark & \xmark\\
-Rusi{\~n}ol~\etal\cite{Rusinol2009a}\hfill & \cmark & - & \cmark & \xmark & \cmark\\
-Rusi{\~n}ol~\etal\cite{Rusinol2010}\hfill & \cmark & - & \cmark & \cmark & \cmark\\
-Tabbone~\etal\cite{Tabbone2003}\hfill & \xmark & \xmark & \cmark & \cmark & -\\
-LeBodic~\etal\cite{LeBodic2012}\hfill & \cmark & \xmark & \cmark & \xmark & \xmark
-\end{tabular}
-\label{table:sota-ss:relworkscomp}
-\end{center}
-\end{sidewaystable*}
 
 \section{Text extraction and recognition}
-\label{sec:sota-ss:raster}
-Some of the methods work with low-level pixel features for spotting symbols. To reduce the computational burden they extract the feature descriptors on some regions of the documents. These regions may come from a sliding window or spatial interest point detectors. These kinds of pixel features robustly represent the region of interest. Apart from those methods mentioned, other methods find some probable regions for symbols by examining the loop structures \cite{Qureshi2007} or just use a text/graphic separation to estimate the occurrence of the symbols \cite{Tabbone2003} (see \fig{fig:sota-ss:tabbone}). After ad-hoc segmentation, global pixel-based statistical descriptors \cite{Tabbone2003,Nguyen2009} are computed at each of the locations in sequential order and compared with the model symbols. A distance metric is also used to decide the retrieval ranks and to check whether the retrievals are relevant or not. The one-to-one feature matching is a clear limitation of this kind of methods and also the ad-hoc segmentation step only allows it to work for a limited set of symbols.
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{tabbone}
-\end{center}
-\caption{Definition of an $\mathcal{F}$-signature (Figure credit: Tabbone~\etal\cite{Tabbone2003}).}
-\label{fig:sota-ss:tabbone}
-\end{figure}
+\label{sec:sota:text}
+
 
 \section{Comic character detection}
-\label{sec:sota-ss:symb-sign}
-Like the previous category, this group of methods \cite{Dosch2004,Rusinol2006,Zhang2007} also works with ad-hoc segmentation, but instead of pixel features they compute the vectorial signatures, which better represent the structural properties of the symbolic objects. Here vectorial signatures are the combination of simple features viz. number of graph nodes, relative lengths of graph edges etc. These methods are built on the assumptions that the symbols always fall into a region of interest and compute the vectorial signatures inside those regions. Since symbol signatures are highly affected by image noise, these methods do not work well in real-world applications.
+\label{sec:sota:comic_character}
+
+\section{Holistic understanding} % (fold)
+\label{sec:sota:holistic_understanding}
+
+% section holistic_understanding (end)
 
 \section{Existing applications}
-\label{sec:sota-ss:hier-symb-repr}
-Some of the methods work with the hierarchical definition of symbols, in which they hierarchically decompose the symbols and organize the symbols' parts in a network or dendogram structure~\cite{Zuwala2006} (see \fig{fig:sota-ss:zuwala}). Mainly, the symbols are split at the junction points and each of the subparts are described by a proprietary shape descriptor. These subparts are again merged by a measure of density, building the dendogram structure. Then the network structures are traversed in order to find the regions of interests of the polylines where the query symbol is likely to appear.
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.6\textwidth]{zuwala}
-\end{center}
-\caption{A dendogram showing the hierarchical decomposition of graphical object (Figure credit: Zuwala and Tabbone~\cite{Zuwala2006}).}
-\label{fig:sota-ss:zuwala}
-\end{figure}
+\label{sec:sota:applications}
+
 
 \section{Conclusion}
-\label{sec:sota-ss:concl}
-To conclude the literature review, some of the challenges of symbol spotting can be highlighted from the above state-of-the-art reviews. First, symbol spotting is concerned with various graphical documents viz. electronic documents, architectural floorplans etc., which in reality suffer from \emph{noise} that may come from various sources such as low-level image processing, intervention of text, etc. So efficiently handling structural noise is crucial for symbol spotting in documents. Second, an example application of symbol spotting is to find any symbolic object from a large amount of documents. Hence, the method should be efficient enough to handle a \emph{large database}. Third, symbol spotting is usually invoked by querying a cropped symbol from some document, which acts as a query to the system. So it implies infinite possibilities of the query symbols, and indirectly \emph{restricts the possibility of training} in the system. Finally, since symbol spotting is related to real-time applications, the method should have a \emph{low computational complexity}. We chose these five important aspects (segmentation, robustness in noise, training free, computational expenses, robustness with a large database) of symbol spotting to specify the advantages and disadvantages of the key research, which is listed in Table~\ref{table:sota-ss:relworkscomp}.
+\label{sec:sota:conclusion}
 
-In the next chapter, we are going to propose the first symbol spotting algorithm. The method is based on the factorization of graph into serialized subgraphs (graph paths) and then organizing those graph paths into hash table. The hash based technique helps to reduce search space considerably and perform the subgraph matching (symbol spotting) faster.
+% To conclude the literature review, some of the challenges of symbol spotting can be highlighted from the above state-of-the-art reviews. First, symbol spotting is concerned with various graphical documents viz. electronic documents, architectural floorplans etc., which in reality suffer from \emph{noise} that may come from various sources such as low-level image processing, intervention of text, etc. So efficiently handling structural noise is crucial for symbol spotting in documents. Second, an example application of symbol spotting is to find any symbolic object from a large amount of documents. Hence, the method should be efficient enough to handle a \emph{large database}. Third, symbol spotting is usually invoked by querying a cropped symbol from some document, which acts as a query to the system. So it implies infinite possibilities of the query symbols, and indirectly \emph{restricts the possibility of training} in the system. Finally, since symbol spotting is related to real-time applications, the method should have a \emph{low computational complexity}. We chose these five important aspects (segmentation, robustness in noise, training free, computational expenses, robustness with a large database) of symbol spotting to specify the advantages and disadvantages of the key research, which is listed in Table~\ref{table:sota-ss:relworkscomp}.
+
+% In the next chapter, we are going to propose the first symbol spotting algorithm. The method is based on the factorization of graph into serialized subgraphs (graph paths) and then organizing those graph paths into hash table. The hash based technique helps to reduce search space considerably and perform the subgraph matching (symbol spotting) faster.

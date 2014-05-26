@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.7.6)  15 MAY 2014 17:36
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.7.6)  26 MAY 2014 18:33
 entering extended mode
  %&-line parsing enabled.
 **main.tex
@@ -1140,9 +1140,9 @@ LaTeX Info: Redefining \selectfont on input line 125.
 Package caption Info: subref 1.2 or 1.3 detected on input line 302.
 LaTeX Info: Redefining \subref on input line 302.
 
-<LogoUAB.pdf, id=1, 343.52339pt x 222.5916pt>
-File: LogoUAB.pdf Graphic file (type pdf)
- <use LogoUAB.pdf>
+<img/LogoUAB.pdf, id=1, 343.52339pt x 222.5916pt>
+File: img/LogoUAB.pdf Graphic file (type pdf)
+ <use img/LogoUAB.pdf>
 Underfull \hbox (badness 10000) in paragraph at lines 309--309
 \OT1/cmr/bx/n/10.95 Rigaud \OT1/cmr/m/n/10.95 at Uni-ver-si-tat Aut^^Ronoma de
  []
@@ -1152,20 +1152,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 309--309
 
 
 
-{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./LogoUAB.pdf>]
-<LogoCVC.pdf, id=14, 597.50829pt x 422.52354pt>
-File: LogoCVC.pdf Graphic file (type pdf)
- <use LogoCVC.pdf> [2
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/LogoUAB.pdf>]
 
- <./LogoCVC.pdf>] [3
+pdfTeX warning: pdflatex (file ./img/LogoL3i.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<img/LogoL3i.pdf, id=14, 123.38045pt x 76.8992pt>
+File: img/LogoL3i.pdf Graphic file (type pdf)
+ <use img/LogoL3i.pdf>
+<img/LogoCVC.pdf, id=15, 597.50829pt x 422.52354pt>
+File: img/LogoCVC.pdf Graphic file (type pdf)
+ <use img/LogoCVC.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] [4
+ [2
 
-] (./chapters/0.1-agraiments/agraiments.tex [0
+]
+[3 <./img/LogoL3i.pdf
+
+pdfTeX warning: pdflatex (file ./img/LogoL3i.pdf): PDF inclusion: Page Group de
+tected which pdfTeX can't handle. Ignoring it.
+> <./img/LogoCVC.pdf>] [4
+
+] [5
+
+] (./chapters/0.1-agraiments/agraiments.tex
+[0
 
 
-] [1])
-(./chapters/0.2-abstract/abstract_english.tex [2
+] [1]) (./chapters/0.2-abstract/abstract_english.tex [2
 
 
 ] [3])
@@ -1192,750 +1206,96 @@ File: LogoCVC.pdf Graphic file (type pdf)
 
 ] [12
 
-] (./main.lof
-
-LaTeX Warning: Citation `Muller2000' on page xiii undefined on input line 4.
-
-
-LaTeX Warning: Citation `LladosPAMI2001' on page xiii undefined on input line 5
-.
-
-
-LaTeX Warning: Citation `Tabbone2003' on page xiii undefined on input line 6.
-
-
-LaTeX Warning: Citation `Zuwala2006' on page xiii undefined on input line 7.
-
-)
+] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [13] [14] (./chapters/1-intro/intro.tex
+ [13] [14
+
+]
+(./chapters/1-intro/intro.tex
 Chapter 1.
 ) (./chapters/3-state-of-the-art/state-of-the-art.tex [1
-
 
 ] [2
 
 ]
 Chapter 2.
-
-LaTeX Warning: Citation `RusinolThesis2009' on page 3 undefined on input line 6
-.
-
-
-LaTeX Warning: Citation `El-Yacoubi1999' on page 3 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Espana-Boquera2011' on page 3 undefined on input line 
-10.
-
-
-LaTeX Warning: Citation `He1991' on page 3 undefined on input line 10.
-
-
-<./chapters/3-state-of-the-art/figs/p2dhmm.png, id=103, 626.34pt x 432.61626pt>
-File: ./chapters/3-state-of-the-art/figs/p2dhmm.png Graphic file (type png)
-<use ./chapters/3-state-of-the-art/figs/p2dhmm.png> [3]
-Underfull \hbox (badness 10000) in paragraph at lines 27--27
-[]\OT1/cmr/m/n/10.95 segmentation-free;
- []
-
-
-LaTeX Warning: Citation `Messmer1996' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Barbu2005a' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Qureshi2007' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Locteau2007' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Rusinol2009a' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Luqman2010' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Nayef2010' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `LeBodic2012' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `Dutta2013' on page 4 undefined on input line 28.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\OT1/cmr/m/n/10.95 seg-men-ta-tion and
- []
-
-
-LaTeX Warning: Citation `Nguyen2009' on page 4 undefined on input line 29.
-
-
-Underfull \hbox (badness 1796) in paragraph at lines 29--29
-[]\OT1/cmr/m/n/10.95 Ad-hoc se-lec-tion of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
-\OT1/cmr/m/n/10.95 re-gions; In-ef-fi-cient
- []
-
-
-Underfull \hbox (badness 2035) in paragraph at lines 30--30
-[]\OT1/cmr/m/n/10.95 Symbol sig-na-
- []
-
-
-LaTeX Warning: Citation `Dosch2004' on page 4 undefined on input line 30.
-
-
-LaTeX Warning: Citation `Zhang2007' on page 4 undefined on input line 30.
-
-
-Underfull \hbox (badness 4739) in paragraph at lines 30--30
-[]\OT1/cmr/m/n/10.95 Simple sym-bol de-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]\OT1/cmr/m/n/10.95 Hierarchial
- []
-
-
-Underfull \hbox (badness 5050) in paragraph at lines 31--31
-\OT1/cmr/m/n/10.95 sym-bol rep-re-
- []
-
-
-Underfull \hbox (badness 3386) in paragraph at lines 31--31
-[]\OT1/cmr/m/n/10.95 Linear match-ing is
- []
-
-
-<./chapters/3-state-of-the-art/figs/lladospami.png, id=107, 1008.76875pt x 352.
-31625pt>
-File: ./chapters/3-state-of-the-art/figs/lladospami.png Graphic file (type png)
-
- <use ./chapters/3-state-of-the-art/figs/lladospami.png>
-
-LaTeX Warning: Citation `Mehlhorn1984' on page 4 undefined on input line 47.
-
-[4 <./chapters/3-state-of-the-art/figs/p2dhmm.png (PNG copy)>] [5]
-Overfull \hbox (2.41003pt too wide) in paragraph at lines 59--59
-[]\OT1/cmr/bx/n/10.95 Segmentation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]\OT1/cmr/bx/n/10.95 Robust in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]\OT1/cmr/bx/n/10.95 Large
- []
-
-
-LaTeX Warning: Citation `Rusinol2010' on page 6 undefined on input line 67.
-
-
-Overfull \hbox (1.37999pt too wide) in paragraph at lines 56--72
- [] 
- []
-
-Adding sideways figure on 
-BOX wd: 554.82874pt, ht: 109.27821pt, dp: 103.80324pt: so shift by .5 of 213.08
-145pt
-right hand page
-<./chapters/3-state-of-the-art/figs/tabbone.png, id=114, 815.045pt x 263.98625p
-t>
-File: ./chapters/3-state-of-the-art/figs/tabbone.png Graphic file (type png)
- <use ./chapters/3-state-of-the-art/figs/tabbone.png> [6 <./chapters/3-state-of
--the-art/figs/lladospami.png (PNG copy)>] [7]
-
-LaTeX Warning: Citation `Rusinol2006' on page 8 undefined on input line 88.
-
-
-<./chapters/3-state-of-the-art/figs/zuwala.png, id=123, 567.11874pt x 536.0025p
-t>
-File: ./chapters/3-state-of-the-art/figs/zuwala.png Graphic file (type png)
- <use ./chapters/3-state-of-the-art/figs/zuwala.png> [8 <./chapters/3-state-of-
-the-art/figs/tabbone.png>]) (./chapters/9-gt/gt.tex
-Underfull \vbox (badness 2478) has occurred while \output is active []
-
- [9 <./chapters/3-state-of-the-art/figs/zuwala.png>] [10]
-Chapter 3.
-
-LaTeX Warning: Reference `chap:hssg' on page 11 undefined on input line 6.
-
-
-LaTeX Warning: Reference `chap:pg' on page 11 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Barducci2012' on page 11 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Harchaoui2007' on page 11 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Suk1984' on page 11 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Jacobs1989' on page 11 undefined on input line 10.
-
-<./chapters/9-gt/figs/door1.png, id=135, 222.8325pt x 221.82875pt>
-File: ./chapters/9-gt/figs/door1.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1.png>
-<./chapters/9-gt/figs/door2.png, id=136, 437.635pt x 220.825pt>
-File: ./chapters/9-gt/figs/door2.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door2.png>
-<./chapters/9-gt/figs/bed-labeled.png, id=137, 204.765pt x 319.1925pt>
-File: ./chapters/9-gt/figs/bed-labeled.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-labeled.png>
-<./chapters/9-gt/figs/table1-distorted.png, id=138, 597.73312pt x 597.73312pt>
-File: ./chapters/9-gt/figs/table1-distorted.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/table1-distorted.png> [11
+) (./chapters/9-gt/gt.tex [3] [4
 
 ]
-
-LaTeX Warning: Citation `Jacobs1996' on page 12 undefined on input line 24.
-
-
-LaTeX Warning: Citation `Lowe1987' on page 12 undefined on input line 24.
-
-
-LaTeX Warning: Citation `Nayef2011' on page 12 undefined on input line 24.
-
-
-LaTeX Warning: Citation `Ren2011' on page 12 undefined on input line 24.
-
-[12 <./chapters/9-gt/figs/door1.png (PNG copy)> <./chapters/9-gt/figs/door2.png
- (PNG copy)> <./chapters/9-gt/figs/bed-labeled.png> <./chapters/9-gt/figs/table
-1-distorted.png>]
-
-LaTeX Warning: Citation `Neuhaus2004' on page 13 undefined on input line 26.
-
-
-LaTeX Warning: Reference `sec:ncrag:concl' on page 13 undefined on input line 2
-8.
-
-
-<./chapters/9-gt/figs/floorplan-cropped.png, id=148, 701.44412pt x 406.41248pt>
-File: ./chapters/9-gt/figs/floorplan-cropped.png Graphic file (type png)
-<use ./chapters/9-gt/figs/floorplan-cropped.png>
-<./chapters/9-gt/figs/ncrag-door1.png, id=149, 222.8325pt x 221.82875pt>
-File: ./chapters/9-gt/figs/ncrag-door1.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/ncrag-door1.png>
-<./chapters/9-gt/figs/ncrag-armchair.png, id=150, 193.85365pt x 194.70389pt>
-File: ./chapters/9-gt/figs/ncrag-armchair.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/ncrag-armchair.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13]
-
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 70
-.
-
-LaTeX Font Info:    Calculating math sizes for size <> on input line 74.
-[14 <./chapters/9-gt/figs/floorplan-cropped.png (PNG copy)> <./chapters/9-gt/fi
-gs/ncrag-door1.png (PNG copy)> <./chapters/9-gt/figs/ncrag-armchair.png (PNG co
-py)>] [15]
-<./chapters/9-gt/figs/armchair.png, id=168, 227.85126pt x 227.85126pt>
-File: ./chapters/9-gt/figs/armchair.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair.png>
-<./chapters/9-gt/figs/bed.png, id=169, 204.765pt x 319.1925pt>
-File: ./chapters/9-gt/figs/bed.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed.png>
-File: ./chapters/9-gt/figs/door1.png Graphic file (type png)
- <use ./chapters/9-gt/figs/door1.png>
-File: ./chapters/9-gt/figs/door2.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door2.png>
-<./chapters/9-gt/figs/table2.png, id=170, 377.41pt x 334.24875pt>
-File: ./chapters/9-gt/figs/table2.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/table2.png>
-<./chapters/9-gt/figs/television.png, id=171, 242.9075pt x 171.64125pt>
-File: ./chapters/9-gt/figs/television.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television.png>
-<./chapters/9-gt/figs/armchair-ncrag/1.png, id=172, 272.01625pt x 280.04625pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/1.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/1.png>
-<./chapters/9-gt/figs/armchair-ncrag/2.png, id=173, 311.1625pt x 248.93pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/2.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/2.png>
-<./chapters/9-gt/figs/armchair-ncrag/3.png, id=174, 237.88875pt x 238.8925pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/3.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/3.png>
-<./chapters/9-gt/figs/armchair-ncrag/4.png, id=175, 237.88875pt x 238.8925pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/4.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/4.png>
-<./chapters/9-gt/figs/armchair-ncrag/5.png, id=176, 237.88875pt x 238.8925pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/5.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/5.png>
-<./chapters/9-gt/figs/armchair-ncrag/6.png, id=177, 237.88875pt x 238.8925pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/6.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/6.png>
-<./chapters/9-gt/figs/armchair-ncrag/7.png, id=178, 237.88875pt x 238.8925pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/7.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/7.png>
-<./chapters/9-gt/figs/armchair-ncrag/8.png, id=179, 273.02pt x 280.04625pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/8.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/8.png>
-<./chapters/9-gt/figs/armchair-ncrag/9.png, id=180, 290.08376pt x 301.125pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/9.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/9.png>
-<./chapters/9-gt/figs/armchair-ncrag/10.png, id=181, 290.08376pt x 301.125pt>
-File: ./chapters/9-gt/figs/armchair-ncrag/10.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/armchair-ncrag/10.png>
-<./chapters/9-gt/figs/bed-ncrag/1.png, id=182, 190.7125pt x 229.85875pt>
-File: ./chapters/9-gt/figs/bed-ncrag/1.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/1.png>
-<./chapters/9-gt/figs/bed-ncrag/2.png, id=183, 263.98625pt x 256.96pt>
-File: ./chapters/9-gt/figs/bed-ncrag/2.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/2.png>
-<./chapters/9-gt/figs/bed-ncrag/3.png, id=184, 212.795pt x 333.245pt>
-File: ./chapters/9-gt/figs/bed-ncrag/3.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/3.png>
-<./chapters/9-gt/figs/bed-ncrag/4.png, id=185, 212.795pt x 333.245pt>
-File: ./chapters/9-gt/figs/bed-ncrag/4.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/4.png>
-<./chapters/9-gt/figs/bed-ncrag/5.png, id=186, 212.795pt x 333.245pt>
-File: ./chapters/9-gt/figs/bed-ncrag/5.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/5.png>
-<./chapters/9-gt/figs/bed-ncrag/6.png, id=187, 212.795pt x 333.245pt>
-File: ./chapters/9-gt/figs/bed-ncrag/6.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/6.png>
-<./chapters/9-gt/figs/bed-ncrag/7.png, id=188, 212.795pt x 333.245pt>
-File: ./chapters/9-gt/figs/bed-ncrag/7.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/7.png>
-<./chapters/9-gt/figs/bed-ncrag/8.png, id=189, 212.795pt x 332.24126pt>
-File: ./chapters/9-gt/figs/bed-ncrag/8.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/8.png>
-<./chapters/9-gt/figs/bed-ncrag/9.png, id=190, 212.795pt x 332.24126pt>
-File: ./chapters/9-gt/figs/bed-ncrag/9.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/9.png>
-<./chapters/9-gt/figs/bed-ncrag/10.png, id=191, 212.795pt x 333.245pt>
-File: ./chapters/9-gt/figs/bed-ncrag/10.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/bed-ncrag/10.png>
-<./chapters/9-gt/figs/door1-ncrag/1.png, id=192, 322.20375pt x 320.19624pt>
-File: ./chapters/9-gt/figs/door1-ncrag/1.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/1.png>
-<./chapters/9-gt/figs/door1-ncrag/2.png, id=193, 332.24126pt x 330.23375pt>
-File: ./chapters/9-gt/figs/door1-ncrag/2.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/2.png>
-<./chapters/9-gt/figs/door1-ncrag/3.png, id=194, 322.20375pt x 320.19624pt>
-File: ./chapters/9-gt/figs/door1-ncrag/3.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/3.png>
-<./chapters/9-gt/figs/door1-ncrag/4.png, id=195, 321.2pt x 322.20375pt>
-File: ./chapters/9-gt/figs/door1-ncrag/4.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/4.png>
-<./chapters/9-gt/figs/door1-ncrag/5.png, id=196, 322.20375pt x 320.19624pt>
-File: ./chapters/9-gt/figs/door1-ncrag/5.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/5.png>
-<./chapters/9-gt/figs/door1-ncrag/6.png, id=197, 332.24126pt x 330.23375pt>
-File: ./chapters/9-gt/figs/door1-ncrag/6.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/6.png>
-<./chapters/9-gt/figs/door1-ncrag/7.png, id=198, 322.20375pt x 320.19624pt>
-File: ./chapters/9-gt/figs/door1-ncrag/7.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/7.png>
-<./chapters/9-gt/figs/door1-ncrag/8.png, id=199, 321.2pt x 322.20375pt>
-File: ./chapters/9-gt/figs/door1-ncrag/8.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/8.png>
-<./chapters/9-gt/figs/door1-ncrag/9.png, id=200, 322.20375pt x 320.19624pt>
-File: ./chapters/9-gt/figs/door1-ncrag/9.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/9.png>
-<./chapters/9-gt/figs/door1-ncrag/10.png, id=201, 332.24126pt x 330.23375pt>
-File: ./chapters/9-gt/figs/door1-ncrag/10.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/door1-ncrag/10.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./chapters/9-gt/figs/television-ncrag/1.png, id=202, 289.08pt x 197.73875pt>
-File: ./chapters/9-gt/figs/television-ncrag/1.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/1.png>
-<./chapters/9-gt/figs/television-ncrag/2.png, id=203, 315.1775pt x 191.71625pt>
-File: ./chapters/9-gt/figs/television-ncrag/2.png Graphic file (type png)
-<use ./chapters/9-gt/figs/television-ncrag/2.png>
-<./chapters/9-gt/figs/television-ncrag/3.png, id=204, 323.2075pt x 190.7125pt>
-File: ./chapters/9-gt/figs/television-ncrag/3.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/3.png>
-<./chapters/9-gt/figs/television-ncrag/4.png, id=205, 217.81375pt x 93.34875pt>
-File: ./chapters/9-gt/figs/television-ncrag/4.png Graphic file (type png)
-<use ./chapters/9-gt/figs/television-ncrag/4.png>
-<./chapters/9-gt/figs/television-ncrag/5.png, id=206, 179.67125pt x 92.345pt>
-File: ./chapters/9-gt/figs/television-ncrag/5.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/5.png>
-<./chapters/9-gt/figs/television-ncrag/6.png, id=207, 172.645pt x 105.39375pt>
-File: ./chapters/9-gt/figs/television-ncrag/6.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/6.png>
-<./chapters/9-gt/figs/television-ncrag/7.png, id=208, 172.645pt x 106.3975pt>
-File: ./chapters/9-gt/figs/television-ncrag/7.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/7.png>
-<./chapters/9-gt/figs/television-ncrag/8.png, id=209, 245.91875pt x 100.375pt>
-File: ./chapters/9-gt/figs/television-ncrag/8.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/8.png>
-<./chapters/9-gt/figs/television-ncrag/9.png, id=210, 172.645pt x 106.3975pt>
-File: ./chapters/9-gt/figs/television-ncrag/9.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/9.png>
-<./chapters/9-gt/figs/television-ncrag/10.png, id=211, 172.645pt x 106.3975pt>
-File: ./chapters/9-gt/figs/television-ncrag/10.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/television-ncrag/10.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `app:datasets' on page 16 undefined on input line 216.
-
-
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 216.
-
-(/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: Reference `app:perf-eval' on page 16 undefined on input line 216
-.
-
-
-<./chapters/9-gt/figs/table2-discont-ncrag/0001_t.png, id=212, 425.59pt x 339.2
-675pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0001_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0001_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0002_t.png, id=213, 339.2675pt x 424
-.58624pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0002_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0002_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0003_t.png, id=214, 382.42876pt x 42
-4.58624pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0003_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0003_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0004_t.png, id=215, 425.59pt x 371.3
-875pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0004_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0004_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0005_t.png, id=216, 366.36874pt x 42
-4.58624pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0005_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0005_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0006_t.png, id=217, 332.24126pt x 42
-4.58624pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0006_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0006_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0007_t.png, id=218, 366.36874pt x 42
-4.58624pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0007_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0007_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0008_t.png, id=219, 340.27126pt x 42
-1.575pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0008_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0008_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0009_t.png, id=220, 425.59pt x 350.3
-0875pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0009_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0009_t.png>
-<./chapters/9-gt/figs/table2-discont-ncrag/0010_t.png, id=221, 420.57124pt x 31
-7.185pt>
-File: ./chapters/9-gt/figs/table2-discont-ncrag/0010_t.png Graphic file (type p
-ng)
- <use ./chapters/9-gt/figs/table2-discont-ncrag/0010_t.png>
-Underfull \vbox (badness 3049) has occurred while \output is active []
-
- [16 <./chapters/9-gt/figs/armchair.png (PNG copy)> <./chapters/9-gt/figs/bed.p
-ng (PNG copy)> <./chapters/9-gt/figs/table2.png (PNG copy)> <./chapters/9-gt/fi
-gs/television.png (PNG copy)> <./chapters/9-gt/figs/armchair-ncrag/1.png (PNG c
-opy)> <./chapters/9-gt/figs/armchair-ncrag/2.png (PNG copy)> <./chapters/9-gt/f
-igs/armchair-ncrag/3.png (PNG copy)> <./chapters/9-gt/figs/armchair-ncrag/4.png
- (PNG copy)> <./chapters/9-gt/figs/armchair-ncrag/5.png (PNG copy)> <./chapters
-/9-gt/figs/armchair-ncrag/6.png (PNG copy)> <./chapters/9-gt/figs/armchair-ncra
-g/7.png (PNG copy)> <./chapters/9-gt/figs/armchair-ncrag/8.png (PNG copy)> <./c
-hapters/9-gt/figs/armchair-ncrag/9.png (PNG copy)> <./chapters/9-gt/figs/armcha
-ir-ncrag/10.png (PNG copy)> <./chapters/9-gt/figs/bed-ncrag/1.png (PNG copy)> <
-./chapters/9-gt/figs/bed-ncrag/2.png (PNG copy)> <./chapters/9-gt/figs/bed-ncra
-g/3.png (PNG copy)> <./chapters/9-gt/figs/bed-ncrag/4.png (PNG copy)> <./chapte
-rs/9-gt/figs/bed-ncrag/5.png (PNG copy)> <./chapters/9-gt/figs/bed-ncrag/6.png 
-(PNG copy)> <./chapters/9-gt/figs/bed-ncrag/7.png (PNG copy)> <./chapters/9-gt/
-figs/bed-ncrag/8.png (PNG copy)> <./chapters/9-gt/figs/bed-ncrag/9.png (PNG cop
-y)> <./chapters/9-gt/figs/bed-ncrag/10.png (PNG copy)>]
-<./chapters/9-gt/figs/prec-rec-curve-dataset-wise-crop.pdf, id=225, 401.5pt x 3
-33.245pt>
-File: ./chapters/9-gt/figs/prec-rec-curve-dataset-wise-crop.pdf Graphic file (t
-ype pdf)
- <use ./chapters/9-gt/figs/prec-rec-curve-dataset-wise-crop.pdf>
-[17 <./chapters/9-gt/figs/door1-ncrag/1.png (PNG copy)> <./chapters/9-gt/figs/d
-oor1-ncrag/2.png (PNG copy)> <./chapters/9-gt/figs/door1-ncrag/3.png (PNG copy)
-> <./chapters/9-gt/figs/door1-ncrag/4.png (PNG copy)> <./chapters/9-gt/figs/doo
-r1-ncrag/5.png (PNG copy)> <./chapters/9-gt/figs/door1-ncrag/6.png (PNG copy)> 
-<./chapters/9-gt/figs/door1-ncrag/7.png (PNG copy)> <./chapters/9-gt/figs/door1
--ncrag/8.png (PNG copy)> <./chapters/9-gt/figs/door1-ncrag/9.png (PNG copy)> <.
-/chapters/9-gt/figs/door1-ncrag/10.png (PNG copy)> <./chapters/9-gt/figs/televi
-sion-ncrag/1.png (PNG copy)> <./chapters/9-gt/figs/television-ncrag/2.png (PNG 
-copy)> <./chapters/9-gt/figs/television-ncrag/3.png (PNG copy)> <./chapters/9-g
-t/figs/television-ncrag/4.png (PNG copy)> <./chapters/9-gt/figs/television-ncra
-g/5.png (PNG copy)> <./chapters/9-gt/figs/television-ncrag/6.png (PNG copy)> <.
-/chapters/9-gt/figs/television-ncrag/7.png (PNG copy)> <./chapters/9-gt/figs/te
-levision-ncrag/8.png (PNG copy)> <./chapters/9-gt/figs/television-ncrag/9.png (
-PNG copy)> <./chapters/9-gt/figs/television-ncrag/10.png (PNG copy)> <./chapter
-s/9-gt/figs/table2-discont-ncrag/0001_t.png (PNG copy)> <./chapters/9-gt/figs/t
-able2-discont-ncrag/0002_t.png (PNG copy)> <./chapters/9-gt/figs/table2-discont
--ncrag/0003_t.png (PNG copy)> <./chapters/9-gt/figs/table2-discont-ncrag/0004_t
-.png (PNG copy)> <./chapters/9-gt/figs/table2-discont-ncrag/0005_t.png (PNG cop
-y)> <./chapters/9-gt/figs/table2-discont-ncrag/0006_t.png (PNG copy)> <./chapte
-rs/9-gt/figs/table2-discont-ncrag/0007_t.png (PNG copy)> <./chapters/9-gt/figs/
-table2-discont-ncrag/0008_t.png (PNG copy)> <./chapters/9-gt/figs/table2-discon
-t-ncrag/0009_t.png (PNG copy)> <./chapters/9-gt/figs/table2-discont-ncrag/0010_
-t.png (PNG copy)>]
-
-LaTeX Warning: Reference `sec:datasets:sesyd-dn' on page 18 undefined on input 
-line 259.
-
-[18 <./chapters/9-gt/figs/prec-rec-curve-dataset-wise-crop.pdf>]
-<./chapters/9-gt/figs/sink3.png, id=240, 261.97874pt x 129.48375pt>
-File: ./chapters/9-gt/figs/sink3.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/sink3.png>
-<./chapters/9-gt/figs/file_00_sink3_cropped.png, id=241, 283.0575pt x 139.52126
-pt>
-File: ./chapters/9-gt/figs/file_00_sink3_cropped.png Graphic file (type png)
- <use ./chapters/9-gt/figs/file_00_sink3_cropped.png>
-<./chapters/9-gt/figs/sink4.png, id=242, 178.6675pt x 182.6825pt>
-File: ./chapters/9-gt/figs/sink4.png Graphic file (type png)
-
-<use ./chapters/9-gt/figs/sink4.png>
-<./chapters/9-gt/figs/file_02_sink4_cropped.png, id=243, 212.795pt x 228.855pt>
-File: ./chapters/9-gt/figs/file_02_sink4_cropped.png Graphic file (type png)
-<use ./chapters/9-gt/figs/file_02_sink4_cropped.png>) (./chapters/4-pe/pe.tex
-[19 <./chapters/9-gt/figs/sink3.png (PNG copy)> <./chapters/9-gt/figs/file_00_s
-ink3_cropped.png (PNG copy)> <./chapters/9-gt/figs/sink4.png (PNG copy)> <./cha
-pters/9-gt/figs/file_02_sink4_cropped.png (PNG copy)>] [20
+Chapter 3.
+) (./chapters/4-pe/pe.tex [5] [6
 
 ]
 Chapter 4.
-) (./chapters/5-te/te.tex [21] [22
+) (./chapters/5-be/be.tex [7] [8
 
 ]
 Chapter 5.
-) (./chapters/6-be/be.tex [23] [24
+) (./chapters/6-te/te.tex [9] [10
 
 ]
 Chapter 6.
-) (./chapters/7-ce/ce.tex [25] [26
+) (./chapters/7-ce/ce.tex [11] [12
 
 ]
 Chapter 7.
-) (./chapters/8-hp/hp.tex [27] [28
+) (./chapters/8-hp/hp.tex [13] [14
 
 ]
 Chapter 8.
-[29]
 
-LaTeX Warning: Citation `Szummer2002' on page 30 undefined on input line 18.
+LaTeX Warning: Citation `Gartner2003a' on page 15 undefined on input line 36.
 
-
-LaTeX Warning: Citation `Coifman2006' on page 30 undefined on input line 18.
-
-
-LaTeX Warning: Citation `Yang2012' on page 30 undefined on input line 18.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30]
-
-LaTeX Warning: Citation `Gartner2003a' on page 31 undefined on input line 39.
-
-[31]
-
-LaTeX Warning: Citation `Aziz2013' on page 32 undefined on input line 75.
-
-
-LaTeX Warning: Citation `Stark1996' on page 32 undefined on input line 79.
-
-[32] [33] [34]
-
-LaTeX Warning: Reference `sec:datasets:ilpiso' on page 35 undefined on input li
-ne 209.
-
-
-Overfull \hbox (25.46205pt too wide) in paragraph at lines 214--224
-[][]
- []
-
-[35]
-
-LaTeX Warning: Reference `sec:datasets:sesyd' on page 36 undefined on input lin
-e 232.
-
-
-LaTeX Warning: Reference `ssec:gm:vect-errors' on page 36 undefined on input li
-ne 234.
-
-
-LaTeX Warning: Reference `fig:gm:vect-err2' on page 36 undefined on input line 
-237.
-
-<./chapters/8-hp/figs/details-dual-graph.pdf, id=301, 790.955pt x 788.9475pt>
-File: ./chapters/8-hp/figs/details-dual-graph.pdf Graphic file (type pdf)
-
-<use ./chapters/8-hp/figs/details-dual-graph.pdf>
-
-LaTeX Warning: Citation `Hu1962' on page 36 undefined on input line 247.
-
-[36]
-
-LaTeX Warning: Reference `sfig:pg:door1-graph' on page 37 undefined on input li
-ne 258.
-
-
-LaTeX Warning: Citation `Fischer2013' on page 37 undefined on input line 260.
-
-[37 <./chapters/8-hp/figs/details-dual-graph.pdf
-
-pdfTeX warning: pdflatex (file ./chapters/8-hp/figs/details-dual-graph.pdf): PD
-F inclusion: Page Group detected which pdfTeX can't handle. Ignoring it.
->]
-
-LaTeX Warning: Reference `fig:pg:matching-bed' on page 38 undefined on input li
-ne 268.
-
-
-LaTeX Warning: Reference `fig:pg:matching-window2' on page 38 undefined on inpu
-t line 268.
-
-
-LaTeX Warning: Reference `app:perf-eval' on page 38 undefined on input line 272
-.
-
-<./chapters/8-hp/figs/pr_curve.pdf, id=326, 494.84875pt x 396.48125pt>
-File: ./chapters/8-hp/figs/pr_curve.pdf Graphic file (type pdf)
-
-<use ./chapters/8-hp/figs/pr_curve.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig:pg:res-bed' on page 38 undefined on input line 29
-9.
-
-
-LaTeX Warning: Reference `fig:pg:res-window2' on page 38 undefined on input lin
-e 299.
-
-[38] [39 <./chapters/8-hp/figs/pr_curve.pdf>]
-
-LaTeX Warning: Citation `Wang2013' on page 40 undefined on input line 311.
-
-
-LaTeX Warning: Reference `chap:ncrag' on page 40 undefined on input line 313.
-
-) (./chapters/10-conclusions/conclusions.tex [40]
-Chapter 9.
-
-LaTeX Warning: Reference `chap:gm' on page 41 undefined on input line 13.
-
-
-LaTeX Warning: Reference `chap:hssg' on page 41 undefined on input line 17.
-
-
-LaTeX Warning: Reference `chap:pg' on page 41 undefined on input line 19.
-
-[41
+) (./chapters/10-conclusions/conclusions.tex [15] [16
 
 ]
+Chapter 9.
 
-LaTeX Warning: Reference `chap:ncrag' on page 42 undefined on input line 21.
-
-
-LaTeX Warning: Reference `chap:hgr' on page 42 undefined on input line 23.
+LaTeX Warning: Reference `chap:gm' on page 17 undefined on input line 13.
 
 
-LaTeX Warning: Reference `chap:experiments' on page 42 undefined on input line 
+LaTeX Warning: Reference `chap:sota-ss' on page 17 undefined on input line 15.
+
+
+LaTeX Warning: Reference `chap:hssg' on page 17 undefined on input line 17.
+
+
+LaTeX Warning: Reference `chap:pg' on page 17 undefined on input line 19.
+
+[17]
+
+LaTeX Warning: Reference `chap:ncrag' on page 18 undefined on input line 21.
+
+
+LaTeX Warning: Reference `chap:hgr' on page 18 undefined on input line 23.
+
+
+LaTeX Warning: Reference `chap:experiments' on page 18 undefined on input line 
 25.
 
 
-LaTeX Warning: Reference `chap:hssg' on page 42 undefined on input line 32.
+LaTeX Warning: Reference `chap:hssg' on page 18 undefined on input line 32.
 
 
-LaTeX Warning: Reference `chap:hssg' on page 42 undefined on input line 32.
+LaTeX Warning: Reference `chap:hssg' on page 18 undefined on input line 32.
 
 
-LaTeX Warning: Reference `chap:pg' on page 42 undefined on input line 33.
+LaTeX Warning: Reference `chap:pg' on page 18 undefined on input line 33.
 
 
-LaTeX Warning: Reference `chap:pg' on page 42 undefined on input line 33.
+LaTeX Warning: Reference `chap:pg' on page 18 undefined on input line 33.
 
-[42]
+[18]
 
-LaTeX Warning: Reference `chap:hgr' on page 43 undefined on input line 34.
+LaTeX Warning: Reference `chap:hgr' on page 19 undefined on input line 34.
 
 
-LaTeX Warning: Reference `chap:experiments' on page 43 undefined on input line 
+LaTeX Warning: Reference `chap:experiments' on page 19 undefined on input line 
 36.
 
-) (./chapters/MyPublications/publications.tex [43] [44
+) (./chapters/MyPublications/publications.tex [19] [20
 
 ]
 Overfull \hbox (0.54546pt too wide) in paragraph at lines 14--16
@@ -1946,16 +1306,16 @@ Overfull \hbox (0.54546pt too wide) in paragraph at lines 14--16
 
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
- [45]
+ [21]
 Overfull \hbox (6.76656pt too wide) in paragraph at lines 40--42
 \OT1/cmr/m/n/10 Pro-ceed-ings of the 10th IAPR Work-shop on Graph-ics Recog-ni-
 tion (GREC,'2013),
  []
 
-) [46] (./main.bbl) [47
+) [22] (./main.bbl) [23
 
 
-] [48
+] [24
 
 ] (./main.aux)
 
@@ -1966,35 +1326,28 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10599 strings out of 256216
- 164684 string characters out of 1917073
- 233100 words of memory out of 1500000
- 13426 multiletter control sequences out of 10000+200000
- 31865 words of font info for 115 fonts, out of 1200000 for 2000
+ 10073 strings out of 256216
+ 147892 string characters out of 1917073
+ 227746 words of memory out of 1500000
+ 12964 multiletter control sequences out of 10000+200000
+ 20675 words of font info for 74 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 45i,15n,69p,2143b,441s stack positions out of 5000i,500n,6000p,200000b,15000s
-{/usr/share/texmf/fonts/enc/dvips/base/8r.enc} </home/crigau02/.texlive2007/t
-exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/crigau02/.texlive20
-07/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk></usr/share/texmf/fonts
-/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pf
-b></usr/share/texmf/fonts/type1/bluesky/cm/cmbx8.pfb></usr/share/texmf/fonts/ty
-pe1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb><
-/usr/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1
-/bluesky/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/
-share/texmf/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/blue
-sky/cm/cmmi9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share
-/texmf/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/texmf/fonts/type1/bluesky/cm
-/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/f
-onts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pf
-b></usr/share/texmf/fonts/type1/bluesky/cm/cmsl10.pfb></usr/share/texmf/fonts/t
-ype1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb><
-/usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1
-/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr
-/share/texmf/fonts/type1/bluesky/ams/msbm10.pfb></usr/share/texmf/fonts/type1/u
-rw/courier/ucrr8a.pfb></usr/share/texmf/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (67 pages, 1008138 bytes).
+ 45i,9n,42p,1435b,245s stack positions out of 5000i,500n,6000p,200000b,15000s
+ </home/crigau02/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.
+600pk> </home/crigau02/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0
+800.600pk></usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf
+/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmb
+x8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fo
+nts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi5.
+pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/
+type1/bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb><
+/usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/
+bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmsl10.pfb></usr/share/texmf/fonts/type1/bluesk
+y/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb>
+Output written on main.pdf (44 pages, 402500 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
+ 244 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 371 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,30 +1,27 @@
-\chapter{Comic image understanding} % 20 pages (see Clement's work)
-\chaptermark{Comics understanding}
+\chapter{System for document understanding} % 20 pages (see Clement's work)
+\chaptermark{System for document understanding}
 \label{chap:hp}
 \graphicspath{{./chapters/8-hp/figs/}}
 
 % Abstract------------------------------------------------------------------
-In literature, there are methods that formulate (sub)graph matching as an optimization problem (OP) where the objective function is constructed from the pairwise (dis)similarities of the node, edge attributes. These methods usually emphasise on time efficient approximation of the OP. In this work we use walk based propagation of pairwise similarities on the tensor product graph (TPG) of two operand graphs to obtain higher order contextual information. We do it by counting the total number of weighted walks initiated from a certain node in TPG. We call them contextual similarities (CS) of the pair of nodes that constitute a node of TPG. After that we formulate the maximal common subgraph matching problem as a node and edge selection problem in TPG. To do that we use those CS to construct an objective function and optimize it with a linear programming (LP) formulation. With experiment we prove that the higher order CS add discriminations and allow one to efficiently approximate the optimization problem with LP. Since TPG takes into account higher order information, it is not surprise that we obtain more reliable similarities and better discrimination between the nodes/edges. Moreover, in this chapter, we propose a dual edge graph representation for line drawing images which solve the problem of distortion, noise. Also the way of attributing the dual graph gives a spatial relationship among the graph paths. We apply our subgraph matching method for spotting symbols in line drawings represented by our dual graph representation.
+In literature, there are methods that formulate...
 
-\section{Holistic understanding}
-\label{sec:pg:intro}
+\section{Introduction}
+\label{sec:hp:intro}
 
 
 %------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Methodology}
-\label{sec:pg:method}
-A very nice property of the adjacency matrix $A$ of any graph $G$ is that the $(i,j)$th entry of $A^n$ denotes the number of walks of length $n$ from the node $i$ to the node $j$. One can bring the same analogy to an edge weighted graphs where each edge is associated with weights in $[0,1]$ and can be considered as the plausibilities of moving from one node to another. Then following the same idea the $(i,j)$th entry of $W^n$ denotes the plausibility of having a walk of length $n$ from the node $i$ to the node $j$. To avoid the dependency on $n$ one can consider all the walks upto the length infinity and add them up. Let $SW$ be the sum of all such powers of $W$ upto infinity. In that case the value of $SW(i,j)$ signifies the combined plausibility of reaching the node $j$ from the node $i$. Let $SW_c$ be the row wise summation of $SW$, then $SW_c$ is a column vector and $SW_c(i)$ indicates the likelihood of starting a walk from the node $i$ or in other words it signifies the plausibility of visiting the node $i$, which we refer as CS. Here a higher entry reveals that the corresponding node is better connected with the rest of the graph in terms of the weights on the edges.
+\label{sec:hp:method}
 
-The same procedure can be simulated on a TPG of two operand graphs and can be used to capture higher order contextual information between pair of objects represented as nodes. The process can be started by assigning the pairwise similarities between nodes and edges as the weights on the corresponding edges of TPG, let $W_X$ be such a weight matrix. Then simultaneous walking can be performed from node to node taking the weights on the edges as the plausibilities to move from one node to the next one. Let $SW_X$ be the sum of all such powers of $W_X$ upto infinity and let $SW_{X_c}$ be the row wise summation of $SW_X$. Similar to the previous explanation, here $SW_{X_c}(i)$ indicates the likelihood of starting a walk from the node $i$ and here a higher entry reveals that the node is better connected with the rest of the TPG in terms of the weights on the edges. As the weights on the edges of TPG come from the similarities of nodes and edges of the operand graphs, here a better connected node of TPG supposed to constitute a promising pair of matched nodes. Since the walking is performed through the edges of TPG, the accumulated weights take into account contextual information. This procedure of accumulating weights by considering connections between objects is proved to be more discriminative for objects where contextual informations are important such as graph. This is also the inner idea of \emph{graph diffusion}, which is well known to capture higher order context similarities and intrinsic relations when done with pair of objects~\cite{Szummer2002,Coifman2006,Yang2012}. In this work we model the procedure of walking in two different ways, which we describe below.
 
 \subsection{Framework}
-\label{ssec:pg:rw}
-The easiest way to get the contextual similarities between pair of objects through graph is by propagating the pairwise similarity information with random walks on TPG. Below we use $\mI$ to denote the identity matrix and $\mone$ to denote a column vector whose all elements are set to $1$. When it is clear from context we will not mention the dimensions of these vectors and matrices. Let $W_X$ be the weight matrix of $G_X$, then the process of obtaining contextual similarities with random walks can be defined as:
+\label{sub:hp:rw}
+
 
 \subsection{Application to comics} % (fold)
-\label{sub:application_to_comics}
+\label{sub:hp:application_to_comics}
 
-% subsection application_to_comics (end)
 
 \begin{equation}
 SW_X=\lim_{n\rightarrow \infty}\sum_{k=0}^n \lambda^k W_{X_k}
@@ -38,276 +35,11 @@ W_{X_k} = W_X^k
 
 Here $\lambda$ is a weighting factor to discount the longer walks, as they often contain redundant or repeated information. In this chapter we always choose $\lambda=\frac{1}{a}$, where $a=\min(\Delta^+(W_X),\Delta^-(W_X))$. Here $\Delta^+(W_X)$, $\Delta^-(W_X)$ are respectively the maximum outward and inward degree of $W_X$~\cite{Gartner2003a}.
 
-The above summation converges for sufficiently small value of $\lambda$. In that case, to get rid of the iterative matrix multiplication procedures, one can consider the infinite sum as follows:
-
-\begin{equation}
-SW_X=\lim_{n\rightarrow \infty}\sum_{k=0}^n \lambda^k W_{X_k}=(\mI-\lambda W_X)^{-1}
-\end{equation}
-
-Then a vector containing the contextual similarities for all the nodes can be obtained by a matrix-vector multiplication as follows:
-
-\begin{equation}
-W^{CS}_X = (\mI-\lambda W_X)^{-1}\mone
-\label{eqn:pg:rw2}
-\end{equation}
-
-\eq{eqn:pg:rw2} can be efficiently computed by solving $(\mI-\lambda W_X)x=\mone$ by conjugate gradient methods which allows to avoid the expensive matrix inversion. An entry $W^{CS}_X(\omega_1,\omega_2)$ indicates the plausibility of having a random walk to any node from the node $(\omega_1,\omega_2)$ of TPG. Here since the weights on the edges of TPG are derived from the pairwise similarities of node, edge attributes, a higher value in $W^{CS}_X(\omega_1,\omega_2)$ reveals a better candidate for pairwise matching. Here it is to be noted that $W_{CS}^X$ is a column vector, the comma separated double subscript is used just to ease the understanding.
-
-For the sake of understandability, let us illustrate the method using a simple example. Let us take a very simple weight matrix $W$ as follows:
-\[W = 
-\begin{bmatrix}
-0		&w_{12}	&w_{13}\\
-w_{21}	&0		&w_{23}\\
-w_{31}	&w_{32}	&0\\
-\end{bmatrix}
-\]
-where $w_{ij}$ denotes the similarity between the nodes $i$ and $j$.
-Now the summation upto iteration $2$ is:
-\[W_1+W_2=
-\begin{bmatrix}
-w_{12}w_{21}+w_{13}w_{31}	&w_{12}+w_{13}w_{32}			&w_{13}+w_{12}w_{23}\\
-w_{21}+w_{23}w_{31}		 	&w_{21}w_{12}+w_{23}w_{32}	&w_{23}+w_{21}w_{13}\\
-w_{31}+w_{32}w_{21}			&w_{32}+w_{31}w_{12}			&w_{31}w_{13}+w_{32}w_{23}\\
-\end{bmatrix}
-\]
-Here it is clear that the exponentiation plus the summation procedure takes into account information from the context to determine the strength of a particular edge. For example, to determine the strength of the edge $(1,2)$, it considers the weights on the edges $(1,3)$ and $(3,2)$. An actual occurrence of a pattern graph in the target graph creates higher similarities in the neighbourhood, this also effects the connected nodes. This formulation enhances the pairwise similarities with more information from context. On the other hand, in this formulation the effect of occurrence of an outlier gets minimized. Now the $i$th entry of the row wise summation of $W_1+W_2$ gives the plausibility of initiating a walk of length two from the node $i$. As explained before, here a higher entry reveals how well a node is connected with rest of the TPG in terms of similarities. In other words, it gives a similarity measures of the pair of nodes in the operand graphs.
-
-The main problem of the random walk based procedure is that it backtracks an edge in case of a undirected graph and reduce the discriminations. To solve this limitation, \emph{backtrackless walks}, a variation of random walks have been recently proposed~\cite{Aziz2013}. In the next section we describe how to adapt this to our approach.
-
-% \subsection{Backtrackless walks}
-% \label{sssec:pg:btlw}
-A similar formulation as random walks can also be done with backtrackless walks~\cite{Aziz2013}. The backtrackless walks are also random walks but do not backtrack an edge and for that a variation of exponentiation is available~\cite{Stark1996}. Let $W_X$ be the weight matrix of $G_X$, then the process of obtaining contextual similarities with backtrackless walks can be defined as:
-
-\begin{equation}
-SW_X=\lim_{n\rightarrow \infty}\sum_{k=1}^n \lambda^k W_{X_k}
-\label{eqn:pg:btlw1}
-\end{equation}
-
-where
-\begin{equation}
-W_{X_k} =
-\begin{cases}
-	W_X					& \text{if } k = 1 \\
-	W_X^2-(Q_X+I)			& \text{if } k = 2 \\
-   	W_{X_{k-1}}W_X-W_{X_{k-2}}Q_X   	& \text{if } k\geq 3
-\end{cases}
-\label{eqn:pg:btlw2}
-\end{equation}
-
-Here $Q_X$ is a diagonal matrix where the $i$th or $(i,i)$th element is equal to the $i$th or $(i,i)$th element of $W_X^2$ minus one. Here also $\lambda$ serves the same purpose. The above summation in \eq{eqn:pg:btlw1} converges for sufficiently small value of $\lambda$. In that case, to get rid of the iterative matrix multiplication procedures, one can consider the infinite sum as follows (for derivation see appendix):
-
-\begin{equation}
-SW_X=\lim_{n\rightarrow \infty}\sum_{k=1}^n \lambda^k W_{X_k}=(1-\lambda^2)(\mI - \lambda W_X+\lambda^{2} Q_X)^{-1}
-\label{eqn:pg:btlw3}
-\end{equation}
-
-Then the weight vector for each node can be obtained by a matrix-vector multiplication as follows:
-
-\begin{equation}
-W^{CS}_X = (1-\lambda^2)(\mI - \lambda W_X+\lambda^{2} Q_X)^{-1}\mone
-\label{eqn:pg:btlw4}
-\end{equation}
-
-Similar to \eq{eqn:pg:rw2}, \eq{eqn:pg:btlw4} can also be computed by solving $(\mI - \lambda W_X+\lambda^{2} Q_X)x=\mone$ and then multiplying the solution by $(1-\lambda^2)$.
-
-Here also the phenomena regarding context can be explained with the same example as follows:
-\[W = 
-\begin{bmatrix}
-0		&w_{12}	&w_{13}\\
-w_{21}	&0		&w_{23}\\
-w_{31}	&w_{32}	&0\\
-\end{bmatrix}
-\]
-where $w_{ij}$ denotes the similarity between the nodes $i$ and $j$. Then $Q_X$ can be written as follows:
-\[Q_X =
-\begin{bmatrix}
-w_{12}w_{21}+w_{13}w_{31}-1	&0								&0\\
-0							&w_{12}w_{21}+w_{23}w_{32}-1		&0\\
-0							&0								&w_{13}w_{31}+w_{23}w_{32}-1\\
-\end{bmatrix}
-\]
-Now the summation of the series upto the iteration $2$ of $W$ is:
-\[W_1+W_2=
-\begin{bmatrix}
-0							&w_{12}+w_{13}w_{32}			&w_{13}+w_{12}w_{23}\\
-w_{21}+w_{23}w_{31}		 	&0							&w_{23}+w_{21}w_{13}\\
-w_{31}+w_{32}w_{21}			&w_{32}+w_{31}w_{12}			&0\\
-\end{bmatrix}
-\]
-Here also it is clear that the exponentiation plus the summation procedure also takes into account contextual information to determine the strength of a particular edge and in each iteration it eliminates the tottering effect (by eliminating the loops) with the special algebraic formulation in \eq{eqn:pg:btlw2}. An actual occurrence of a pattern graph in the target graph creates higher pairwise similarities in the neighbourhood, this also effects the connected nodes. This formulation enhances the pairwise similarities with more information from context/connection. On the other hand, in this formulation an occurrence of an outlier gets minimized. Now the $i$th entry of the row wise summation of $W_1+W_2$ gives the plausibility of having a walk of length two from the node $i$. As before, here a higher entry reveals how well a node is connected with rest of the TPG in terms of similarities. It gives a similarity measures of the pair of nodes in the operand graphs.
-
-We use the contextual similarities obtained in the steps explained above to formulate maximal common subgraph matching algorithm as a constrained optimization problem.
-
-% \subsection{Subgraph matching as a constrained optimization problem}
-% \label{ssec:pg:optm-prob}
-We formulate a maximal common subgraph matching as a node, edge selection problem in TPG. To do that we use the CS obtained in the previous step to construct a maximization problem and solve it with a LP formulation. Construction of the objective function is done as follows:
-
-Let
-\[
-S_V(u_1,u_2) = W^{CS}_X(u_1,u_2),\text{  }(u_1,u_2)\in V_X
-\]
-and
-\[
-S_E((u_1,u_2),(v_1,v_2)) = \frac{W^{CS}_X(u_1,u_2)}{\Delta^+(u_1,u_2)}+\frac{W^{CS}_X(v_1,v_2)}{\Delta^+(v_1,v_2)},\text{  }(u_1,u_2)\in V_X
-\]
-
-Here $\Delta^+(u_1,u_2)$ denotes the maximum outward degree of the node $(u_1,u_2)\in V_X$, $S_V$ contains the higher order affinities of all the nodes $(u_1,u_2)\in V_X$ and $S_E$ contains that for all the edges $((u_1,u_2),(v_1,v_2))\in E_X$. Here it is to be clarified that both of $S_V$ and $S_E$ are row vectors, the comma separated double subscripts are just to ease the understanding. Now clearly the dimension $S_V$ is $|V_X|$ and that of $S_E$ is $|E_X|$. We formulate the maximal common subgraph (MCS) matching problem as a node, edge selection problem in the product graph. This can be formulated as a constrained optimization problem which maximize a function of higher order similarities of the nodes and edges. Then the objective function is defined as:
-
-\begin{equation}
-f(x,y) = S_Vx'+S_Ey'
-\label{eqn:pg:optm}
-\end{equation}
-
-where $x$ and $y$ are row vectors containing variables denoting the probabilities of matching (selecting) the nodes and edges in the product graph respectively. For example, $x_{u_1,u_2}$ denote the probability of matching the node $u_1\in V_1$ with the node $u_2\in V_2$. Similarly, $y_{u_1u_2,v_1v_2}$ denote the probability of matching the edge $(u_1,v_1)\in E_1$ with the edge $(u_2,v_2)\in E_2$. $x$ and $y$ contain probabilities as the optimization problem in \eq{eqn:pg:optm} is solved with linear or continuous programming with the domain $[0,1]$.
-
-Now let us introduce a set of constraints on the variables to satisfy the maximal common subgraph matching problem between the operand graphs $G_1$ and $G_2$ in TPG $G_X$.
-
-\begin{itemize}
-\item \textbf{Pattern node constraint} Each node $u_1\in V_1$ can be matched with at most $L$ number of nodes $u_2\in V_2$ \ie there can be at most $L$ number of nodes $(u_1,u_2)\in V_X$ for each $u_1\in V_1$.
-\[
-\sum_{u_2\in V_2}x_{u_1,u_2} <= L,\text{  }\forall u_1\in V_1
-\]
-Here $L$ is the number of instances of the pattern graph to be searched in the target graph.
-\item \textbf{Pattern edge constraint} Each edge $(u_1,v_1)\in E_1$ can be matched with at most $L$ number of edges $(u_2,v_2)\in E_2$ \ie there can be at most $L$ number of edges $((u_1,u_2),(v_1,v_2))\in E_X$ for each $(u_1,v_1)\in E_1$.
-\[
-\sum_{(u_2,v_2)\in E_2}y_{u_1u_2,v_1v_2} <= L,\text{  }\forall (u_1,v_1)\in E_1
-\]
-Here $L$ is the number of instances of the pattern graph to be searched in the target graph.
-\item \textbf{Target node constraint} Each node $u_2\in V_2$ can be matched with at most one node in $u_1\in V_1$ \ie there can be at most one node $(u_1,u_2)\in V_X$ for each $u_2\in V_2$.
-\[
-\sum_{u_1\in V_1}x_{u_1,u_2} <= 1,\text{  }\forall u_2\in V_2
-\]
-\item \textbf{Target edge constraint} Each edge $(u_2,v_2)\in E_2$ can be matched with at most one edge $(u_1,v_1)\in E_1$ \ie there can be at most one edge $((u_1,u_2),(v_1,v_2))\in E_X$ for each $(u_2,v_2)\in E_2$.
-\[
-\sum_{(u_1,v_1)\in E_1}y_{u_1u_2,v_1v_2} <= 1,\text{  }\forall (u_2,v_2)\in E_2
-\]
-\item \textbf{Outward degree constraint} The outward degree of a node $(u_1,u_2)\in V_X$ is bounded above by the minimum of the outward degree of the node $u_1\in V_1$ and $u_2\in V_2$ \ie the number of outgoing edges from the node $(u_1,u_2)\in V_X$ is less than or equal to the minimum of the number of outward degree of the nodes $u_1\in V_1$ and $u_2\in V_2$.
-\[
-\sum_{(v_1,v_2)\in V_X}y_{u_1u_2,v_1v_2} <= x_{u_1,u_2}.\min{(\Delta^+(u_1),\Delta^+(u_2))},\text{  }\forall(u_1,u_2)\in V_X
-\]
-\item \textbf{Inward degree constraint} The inward degree of a node $(v_1,v_2)\in V_X$ is bounded above by the minimum of the inward degree of the node $v_1\in V_1$ and $v_2\in V_2$ \ie the number of incoming edges to the node $(v_1,v_2)\in V_X$ is less than or equal to the minimum of number of inward degree of the nodes $v_1\in V_1$ and $v_2\in V_2$.
-\[
-\sum_{(u_1,u_2)\in V_X}y_{u_1u_2,v_1v_2} <= x_{v_1,v_2}.\min{(\Delta^-(v_1),\Delta^-(v_2))},\text{  }\forall(v_1,v_2)\in V_X
-\]
-\item \textbf{Domain constraint} Finally, we restrict all the variables to be in between $[0,1]$.
-\[
-x_{u_1,u_2}\in [0,1],\text{  }\forall (u_1,u_2)\in V_X
-\]
-\[
-y_{u_1u_2,v_1v_2}\in [0,1],\text{  }\forall ((u_1,u_2),(v_1,v_2))\in E_X
-\]
-\end{itemize}
-
-For having a node-node and edge-edge correspondence between the pattern and target graph, we consider all the non-zero values of the variables in $x$ and $y$ and consider it as matchings.
-%------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-% \section{Experimental framework}
-% \label{sec:pg:expt}
-We have performed two different experiments. The first one is designed to show the functionality of our proposed subgraph matching algorithm in an exact subgraph matching scenario. The second experiment is more focused on an application of inexact or error tolerant subgraph matching perspective. Here we convert the symbol spotting problem in graphical documents as a subgraph matching problem and apply the proposed product graph based subgraph matching algorithm for spotting symbols.
-
-% \subsection{Exact subgraph matching}
-% \label{ssec:pg:expt-sm}
-For this experiment we have considered the two synthetic subset of the ILPIso dataset (see \sect{sec:datasets:ilpiso} for details), these two subsets contain graphs that are connected \ie they do not have any isolated nodes. We run our subgraph matching algorithm with all the pattern-target pairs with $L=1$.
-
-\begin{table}
-\scriptsize
-\caption{Execution time of the exact graph matching experiment.}
-\begin{tabular}{c|cccccccccccc}
-\toprule
-tvn & \multicolumn{3}{c}{50} & \multicolumn{3}{c}{100} & \multicolumn{3}{c}{250} & \multicolumn{3}{c}{500}\\\hline
-pvn &  rw  & btlw &  pw  &  rw  & btlw &  pw  &   rw  & btlw  &   pw  &   rw   &  btlw  &  pw  \\
-10  & 0.03 & 0.04 & 0.03 & 0.12 & 0.13 & 0.11 &  0.52 &  0.49 &  0.46 &   1.73 &   1.77 &  2.17\\
-20  & 0.13 & 0.012& 0.14 & 0.43 & 0.41 & 0.46 &  1.83 &  1.80 &  2.10 &  13.24 &  13.21 & 15.34\\
-50  & 0.77 & 0.75 & 0.78 & 2.99 & 2.91 & 3.20 & 21.72 & 21.67 & 33.23 & 292.60 & 291.98 &475.24\\
-\hline
-\end{tabular}
-\label{table:pg:time-comp}
-\end{table}
-
-We use the Euclidean distance to compute the node and edge distance while computing the product graph and given the distance $d$ between two nodes (or edges), the similarity between them is computed as $s=e^{-d}$. For each pair we perform the subgraph matching in three different node, edge similarity settings: (1) higher order similarities with random walks, (2) higher order similarities with backtrackless walks and (3) pairwise similarities. As expected our proposed subgraph matching algorithm solved all the pair of instances with all the three different settings. Table~\ref{table:pg:time-comp} contains a comparison of average time (average over ten consecutive runs) taken to solve each pair of instances with the edge probability of $0.1$ for three different settings.
-
-In this experiment it is observed that with the increase in the number of nodes of the operand graphs the required time to solve a problem increases which is well expected. And also it is observed that for bigger operand graphs considering higher order contextual similarities gives benefits in terms of time. We explain this phenomena as an advantage of contextual similarities which adds more discrimination to the node and edge labels.
-
-% \subsection{Symbol spotting as an inexact subgraph matching problem}
-% \label{ssec:pg:expt-ss}
-For this experiment we have considered the two subsets (\emph{floorplans16-05} and \emph{floorplans16-06}) of SESYD (floorplans) dataset (see~\sect{sec:datasets:sesyd} for details).
-
-Efficient graph representation of graphical documents is a popular but difficult problem in the graphics recognition field. The steps converting a document to a graph involve several low level image processing such as binarization, skeletonization, polygonization etc., which introduce structural noise such as spurious nodes, edges (see \sect{ssec:gm:vect-errors}).
-
-% \subsubsection{Dual graph representation}
-To resolve above mentioned problem we consider a variation of \emph{dual graph} representation. Originally dual graph of a plane graph $G_F$ is a graph that has vertex corresponding to each face of $G_F$ and an edge joining two neighbouring faces sharing a common edge in $G_F$. We bring the same analogy to our problem. Initially we have edge graphs $G_E$ where each critical point (obtained by the vectorization algorithm) is represented as node and the line joining each pair of nodes as edge (as shown in \fig{fig:gm:vect-err2}). In our dual graph representation we assign a node to each edge of $G_E$. Any pair of dual nodes (nodes of dual graph) are joined by a dual edge (edge of dual graph) if the corresponding edges in the edge graph are reachable from each other with a shortest walk of length $l$. Lets call this graph representation as \emph{dual edge graph} representation.
-
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{details-dual-graph}
-\caption{An illustration showing the details of dual graph representation. Here $a$, $b$, $c$ and $d$ are dual nodes and we consider $l=1$. For that reason $(b,a)$ and $(b,c)$ are dual edges (shown in magenta and discontinuous line) since the corresponding edges (shown in green and continuous line) in the original graph are reachable with a shortest walk of length $1$. There is no dual edge $(b,d)$ since the shortest walk between the corresponding edges of $b$ and $d$ is $2$. Consider the details near the junctions and corners.}
-\end{center}
-\label{fig:pg:details-dual-graph}
-\end{figure}
-
-Let $G_1=(V_1,E_1,\alpha_1,\beta_1)$ and $G_2=(V_2,E_2,\alpha_2,\beta_2)$ be respectively the attributed dual edge graphs for the pattern and the target. Here $\alpha_1:V_1(u)\rightarrow \mathbb{R}^{m\times 7}$ is a node labelling function and is defined as the set of seven Hu moments invariants~\cite{Hu1962} of the acyclic graph paths joining the extremities of an edge in the edge graph ($m$ is total number of paths). $\alpha_2$ is also defined in same way in $V_2$. $\beta_1:E_1(u_1,v_1)\rightarrow \mathbb{R}^3$ is an edge labelling function and is constructed of three components: 
-
-\begin{itemize}
-\item normalized angle (angle divided by $180^\circ$) between two edges (of the edge graph) joined by the dual edge.
-\item the ratio of the two edges (of the edge graph) joined by the dual edge.
-\item the ratio of the distance between the mid points of the two edges (of the edge graph) and the total length of the edges joined by the dual edge.
-\end{itemize}
-
-Similarly, $\beta_2$ is defined in $E_2$.
-
-
-The above representation fails when the extremities of a certain edge (of the edge graph) are not connected with other graph paths. In that case the corresponding dual node loses local discrimination as shown in \fig{sfig:pg:door1-graph}. We resolve this difficulty by connecting those nodes in the edge graph by a relation inspired by the \emph{transitive closure} of a graph. In general, \emph{transitive closure} of a graph $G=(V,E)$ is also a graph $G^\star=(V,E^\star)$ such that $E^\star$ contains an edge $(u,v)$ if and only if $G$ contains a path (of at least one edge) from $u$ to $v$. In our case, we only join those $u$, $w$ so that $w=\argmax_v dsp(u,v)$. Here $dsp(u,v)$ denotes the minimum number of nodes to be traversed to reach $v$ from $u$.
-
-Given the dual edge graph representation of the floorplan (target) and the symbol (pattern) we compute the product graph between them. For computing the distance between the dual nodes we use a modified version of Hausdorff distance as follows~\cite{Fischer2013}:
-
-\[
-d(A,B)=\sum_{a\in A} \min_{b\in B} dm(a,b) + \sum_{b\in B} \min_{a\in A} dm(a,b)
-\]
-
-Here $dm(a,b)$ denotes the distance of $a\in A$ from $b\in B$ and $d(A,B)$ denotes the distance between the sets $A$ and $B$. Since the node label in our dual edge graph representation is a set of Hu moments, we use this particular distance computation. For having the distance between the edges we use the Euclidean distance. Given the distance $d$ between two nodes (or edges) we obtain the similarity between them as $e^{-d}$. Given the contextual similarities we perform the optimization based maximal subgraph matching to obtain the correspondences in target graph. Here also all the experiments were done with $L=1$.
-
-Initially we show the node-node matching for different pattern graphs from \fig{fig:pg:matching-bed} to \ref{fig:pg:matching-window2} in pattern graph wise manner. In the above figures the left sub figures show the correspondences obtained by the context similarities due to random walks, the ones in the middle show that for backtrackless walks and those in the right show the same for pairwise similarities. Here it is clear that the context similarities really enhance the truly matched nodes, as in the case of random, backtrackless walks the most of the obtained correspondences focus to the actual instance. After obtaining the correspondences, we perform a simple clustering to group the neighbouring dual nodes to obtain a bounding box for comparing with the ground truths.
-
-
-\subsubsection{Results}
-The performance evaluation that has been followed in this experimentation is explained in~\app{app:perf-eval}. To get an idea about the time complexity we have also shown the meantime (\textbf{T}) of matching all the instances of a pattern graph in a target graph.
-
-The results obtained are listed in Table~\ref{table:pg:res-method}. From the results it is clear that the method really performs well with contextual similarities than the pairwise similarities and there is not much difference between the higher order similarities learned from random walk based and backtrackless walks. As the first experiment it is also observed here that the average time taken by the method is significantly lower than the pairwise similarities. We explain this phenomena as a benefit of using higher order similarities, which add more discrimination to the nodes and edges. Our method works quite well except for \emph{sink3}, \emph{sofa1}, \emph{table1}, \emph{window1}. The failures occur when the pattern graph has more than one component (for example \emph{sink3}) and when there are many instances of the same symbol (\emph{table1}, \emph{sofa1} and \emph{window1}).
-
-\begin{table}
-\centering
-\caption{Overall results with three different settings.}
-\begin{tabular}{cccccc}
-\toprule
-~&\textbf{P}&\textbf{R}&\textbf{F}&\textbf{AP}&\textbf{T}\\
-\hline
-random & 69.90 & 84.95 & 78.78 & 81.10 & 33.43\\
-backtrackless & 70.56 & 86.29 & 80.10 & 82.98 & 33.37\\
-pairwise & 61.60 & 72.81 & 64.94 & 60.21 & 53.60\\
-\hline
-\end{tabular}
-\label{table:pg:res-method}
-\end{table}
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=0.7\textwidth]{pr_curve}
-\caption{\emph{Precision Recall curve}.}
-\label{fig:pg:pr-curve}
-\end{center}
-\end{figure}
-
-Some of the qualitative results are shown in~\ref{fig:pg:res-bed} to \ref{fig:pg:res-window2} in symbol wise manner. In each of the figures the left one is obtained by using the context similarities due to random walks, the middle one is obtained due to backtrackless walks and right one is obtained with pairwise similarities. In the figures, the bounding boxes with green border indicate the true positives and the ones with red border signify false positive. Each of the retrieved bounding boxes are also accompanied with a similarity value. The similarity value for each of the bounding boxes is the summation of all the similarity of matched nodes. This similarity value is used to rank the retrievals. Rest of the qualitative results are available in~\url{http://www.cvc.uab.es/~adutta/ProductGraph}.
-
 \section{Experimental results} % (fold)
-\label{sec:experimental_results}
+\label{sec:hp:experimental_results}
 
 % section experimental_results (end)
 
 %------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusions}
-\label{sec:pg:concl}
-In this work we have proposed a product graph based subgraph matching approach. We have used the walk based similarity propagation through edges to have higher order similarities between the nodes and edges. With experiments we have proved that the higher order similarities are more robust than the pairwise similarities. Since higher order similarities add more discrimination to nodes and edges the optimization performs faster than the pairwise one. In this chapter we have also formulated a maximal common subgraph matching problem as an optimization problem and solved it with a linear programming relaxation.
-
-Since the optimization is solved using a LP, mostly in inexact cases (eg. symbol spotting experiment) we do not get a one-one mapping between the nodes-nodes and edges-edges. Instead we have performed a simple grouping to cluster the nodes and rank them depending on the total similarity. In future it will be interesting to add a density maximization based module that would discard the outliers and automatically clusters the inlier~\cite{Wang2013}.
-
-In the next chapter we are going to propose a subgraph matching algorithm based on region based representation. Region adjacency graph (RAG) is a very popular region based graph representation paradigm but in graphics recognition community it suffers from certain limitations. \ch{chap:ncrag} addresses those problems and solves it by proposing near convex region adjacency graph (NCRAG). Being a region based representation, it achieves higher order rendition.
+\label{sec:hp:conclusion}

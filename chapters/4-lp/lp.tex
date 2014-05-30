@@ -4,55 +4,16 @@
 \graphicspath{{./chapters/4-lp/figs/}}
 
 %Abstract-------------------------------------------------------------------------------------------------------------
-In this chapter we propose a symbol spotting technique in graphical documents. Graphs are used to represent the documents and an error tolerant (sub)graph matching technique is used to detect the symbols in them. We propose a graph serialization to reduce the usual computational complexity of graph matching. Serialization of graphs is performed by computing acyclic graph paths between each pair of connected nodes. Graph paths are one dimensional structures of graphs, handling which is less expensive in terms of computation. At the same time they enable robust localization even in the presence of noise and distortion. Indexing in large graph databases involves a computational burden as well. We utilize a graph factorization approach to tackle this problem. Factorization is intended to create a unified indexed structure over the database of graphical documents. Once graph paths are extracted, the entire database of graphical documents is indexed in hash tables by locality sensitive hashing (LSH) of shape descriptors of the paths. The hashing data structure aims to execute an approximate $k$-NN search in a sub-linear time. We have performed detailed experiments with various datasets of line drawings and the results demonstrate the effectiveness and efficiency of our technique.
+%In this chapter we propose a symbol spotting technique in graphical documents. Graphs are used to represent the documents and an error tolerant (sub)graph matching technique is used to detect the symbols in them. We propose a graph serialization to reduce the usual computational complexity of graph matching. Serialization of graphs is performed by computing acyclic graph paths between each pair of connected nodes. Graph paths are one dimensional structures of graphs, handling which is less expensive in terms of computation. At the same time they enable robust localization even in the presence of noise and distortion. Indexing in large graph databases involves a computational burden as well. We utilize a graph factorization approach to tackle this problem. Factorization is intended to create a unified indexed structure over the database of graphical documents. Once graph paths are extracted, the entire database of graphical documents is indexed in hash tables by locality sensitive hashing (LSH) of shape descriptors of the paths. The hashing data structure aims to execute an approximate $k$-NN search in a sub-linear time. We have performed detailed experiments with various datasets of line drawings and the results demonstrate the effectiveness and efficiency of our technique.
 %----------------------------------------------------------------------------------------------------------------------
 \section{Introduction}
 \label{sec:hssg:intro}
-In this chapter we propose a symbol spotting technique based on a graph representation of graphical documents, especially various kinds of line drawings. When graphs are attributed by geometric information, this also supports various affine transformations viz. translation, rotation, scaling etc. On the other hand, subgraph isomorphism is proved to be a NP-hard problem~\cite{Mehlhorn1984}, so handling a large collection of graphical documents using graphs is difficult. To avoid computational burden, we propose a method based on the \emph{factorization of graphs}. Informally, \emph{graph factorization} can be defined as the method to extract graph sub-structures from larger graphs. This is helpful to find common subgraph structures from larger collections of graphs to define indexing keys in terms of such common subgraphs (see \sect{sec:gm:gi} for details on graph indexing). This indexing structure is supposed to reduce the search space by clustering similar subgraphs. In our case, factorization is performed by splitting the graphs into a set of all acyclic paths between each pair of connected nodes. The paths carry the geometrical information of a structure which are considered as attributes. The decomposition of a graph into graph paths can be seen as a \emph{serialization} process where the complex two-dimensional graph structure is converted to a one-dimensional string to reduce computational complexity, usually present in subgraph matching algorithms. In this work we follow both factorization and serialization to create an inexpensive and unified structure. Graph factorization creates a unified representation of the whole database and at the same time it allows for robust detection with a certain tolerance to noise and distortions. These noise and distortions can appear in the documents for being a real world entity (see \fig{fig:hssg:sampleim}) or can propagate from low level image processing such as binarization, vectorization etc (see \sect{sec:gm:vect}). Graph based representation also eases the segmentation-free recognition which is important for our purpose.
 
-\begin{figure}
-\centering
-\subfloat[]{\label{fig:hssg:pfplan1}\includegraphics[width=0.24\textwidth]{p01c04}}
-\hspace{0.05cm}
-\subfloat[]{\label{fig:hssg:pfplan2}\includegraphics[width=0.24\textwidth]{p01c10}}
-\hspace{0.05cm}
-\subfloat[]{\label{fig:hssg:pfplan3}\includegraphics[width=0.24\textwidth]{p02c03}}
-\hspace{0.05cm}
-\subfloat[]{\label{fig:hssg:pfplan4}\includegraphics[width=0.24\textwidth]{p03c01}}\\	
-\subfloat[]{\label{fig:hssg:cs1}\includegraphics[width=0.14\textwidth,height=0.12\textwidth]{p01c04cs}}
-\hspace{0.25cm}
-\subfloat[]{\label{fig:hssg:es1}\includegraphics[width=0.10\textwidth,height=0.12\textwidth]{Symbol06}}
-\hspace{0.25cm}
-\subfloat[]{\label{fig:hssg:cs2}\includegraphics[width=0.14\textwidth,height=0.12\textwidth]{p01c10cs}}
-\hspace{0.25cm}
-\subfloat[]{\label{fig:hssg:es2}\includegraphics[width=0.17\textwidth,height=0.12\textwidth]{Symbol02}}
-\hspace{0.25cm}
-\subfloat[]{\label{fig:hssg:cs3}\includegraphics[width=0.14\textwidth,height=0.12\textwidth]{p02c03cs}}	
-\hspace{0.25cm}
-\subfloat[]{\label{fig:hssg:es3}\includegraphics[width=0.10\textwidth,height=0.12\textwidth]{Symbol05}}
-\hspace{0.25cm}
-\subfloat[]{\label{fig:hssg:cs4}\includegraphics[width=0.04\textwidth,height=0.12\textwidth]{p03c01cs}}
-\caption{(a)-(d) Examples of floorplans from a real floorplan (FPLAN-POLY) database, (e),(g),(i),(k) Zoomed portions of the selected parts respectively shown in Figures \ref{fig:hssg:pfplan1}-\ref{fig:hssg:pfplan4} show the difficulty of recognition due to noise and superimposition of textual and graphical information, (f),(h),(j) Actual instances of the symbols shown in (e),(g),(i) respectively.}
-\label{fig:hssg:sampleim}
-\end{figure}
 
-In this chapter, the shape descriptors of paths are compiled into hash tables by the Locality Sensitive Hashing (LSH) algorithm~\cite{Indyk1998,Gionis1999}. The hashing data structure aims to organize similar paths in the same neighbourhood into hash tables. The spotting of the query symbol is then undertaken by a spatial voting scheme, which is formulated in terms of the selected paths from the database.
 
-However, the graph paths are indexed independently, ignoring any spatial relationship between them. Actually keeping the spatial relationship is not important for the method since we consider all the acyclic paths between each pair of connected nodes. Actually this fact better helps to incorporate the structural noise keeping the spatial relationship among paths. This way the spatial relationship is maintained as the smaller paths are always subpaths of some longer paths and longer paths contain more global structural information.
-
-Since the method represents a database of graphical documents in terms of unified representation of factorized substructures, it can handle a larger database of documents which is important for real world applications. Moreover, the factorized substructures allow the method to handle structural noise up to a certain limit of tolerance. The proposed method does not work with any kind of pre-segmentation and training, which makes it capable of handling any possible combination of query symbols.
-
-The rest of the chapter is outlined as follows: We present our proposed methodology in \sect{sec:hssg:meth}, followed by a series of experiments in \sect{sec:hssg:expt}. \sect{sec:hssg:concl} concludes the chapter with discussions on future works.
 \section{Panel extraction}
 \label{sec:hssg:meth}
-Our graph representation considers the critical points detected by the vectorization method as the nodes and the lines joining them as the edges (\sect{sec:gm:vect}). To avoid the computational burden we propose a method based on the factorization of graphs. The factorization is performed by splitting the graphs into a set of all acyclic paths between each pair of connected nodes; the paths carry the geometrical information of a structure as attributes. The factorization helps to create an unified representation of the whole database and at the same time it allows robust detection with certain tolerance to noise and distortion. This also eases the segmentation free recognition which is important for our purpose. We have already mentioned that factorization of graphs is used in kernel based methods and it's principle motive was to cope with distortions. But the kernel based method can not utilize the power of indexation which is important for our case as we concentrate in spotting symbols in bigger datasets efficiently. So indexing the serialized subgraphical structures is a crucial part for our application. Our method takes the advantage of the error tolerance as proposed by the kernel based methods and at the same time the advantage of the indexation strategy to make the searching efficient. The shape descriptors of paths are compiled in hash tables by the Locality Sensitive Hashing (LSH) algorithm~\cite{Indyk1998,Gionis1999}. The hashing data structure aims to organize similar paths in the same neighbourhood in hash tables and LSH is also proved to perform an approximate $k$-NN search in sub-linear time. The spotting of the query symbol is then performed by a spatial voting scheme, which is formulated in terms of the selected paths from the database. This path selection is performed by the approximate search mechanism during the hash table lookup procedure for the paths that compose the query symbol. The method is dependent on the overall structure of the paths. This technique is able to handle the existence of spurious nodes. And since we consider all the acyclic paths between each pair of connected nodes, the detection or recognition of a symbol is totally dependent on the overall structure of the majority of paths. This way the method is able to handle the problem of spurious nodes and edges. So the introduction of spurious edges and nodes only increases the computational time in the offline part without hampering the performance.
-\begin{figure*}[t]
-\centering\fbox{
-\includegraphics[width=0.95\textwidth]{new-arch-ss}
-}
-\caption{Symbol spotting framework for our method.}
-\label{fig:hssg:spotframework}
-\end{figure*}
+
 
 \section{Balloon segmentation}
 \label{ssec:hssg:frwrk}
@@ -65,196 +26,19 @@ Our graph representation considers the critical points detected by the vectoriza
 % \subsection{Open balloons}
 % \label{ssec:lp:balloon_open}
 
-Our entire framework can be broadly divided into two parts viz. offline and online (see \fig{fig:hssg:spotframework}). The algorithms are respectively shown in Algorithm~\ref{algo:hssg:hashtables} and Algorithm~\ref{algo:hssg:spotting}. The offline part (Algorithm~\ref{algo:hssg:hashtables}) includes the computation of all the acyclic graph paths in the database, description of those paths with some proprietary descriptors and hashing of those descriptors using the LSH algorithm (see \fig{fig:hssg:pathlshim}). Each time a new document is included in the database, the offline steps for this document are repeated to update the hash table. To reduce the running time of the offline part the paths and description information of the previously added documents are stored. On the other hand, the online part (Algorithm \ref{algo:hssg:spotting}) includes the querying of the graphic symbol by an end user, the computation of all the acyclic paths for that symbol and description of them by the same method. Then a hash table lookup for each of the paths in the symbol and a voting procedure, which is based on the similarity measure of the paths, are also performed on the fly to undertake the spotting in the documents. The framework is designed to produce a ranked list of retrievals in which the true positive should appear first. The ranking is performed based on the total vote values (see \sect{ssec:hssg:vot}) obtained by each retrieval.
-
-\begin{figure}[h!]
-\centering \fbox{
-\includegraphics[width=0.95\textwidth]{pathlsh}}
-\caption{Hashing of paths provokes collisions in hash tables.}
-\label{fig:hssg:pathlshim}
-\end{figure}
-
-Let us now describe the key steps of our framework in the following subsections.
-
-\begin{algorithmbis}[Hash table creation]
-\label{algo:hssg:hashtables}
-\begin{algorithmic}
-\REQUIRE A set $\mathcal{D}=\left\{D_1,\ldots,D_n\right\}$.
-\ENSURE A set $\mathcal{T}$ of hash tables.
-\STATE //Let $f_{all}$ be the set of all path descriptors.
-\STATE //Initialize $f_{all}$
-\STATE $f_{all}\Leftarrow\oslash$
-\FOR{all $D_i$ of $\mathcal{D}$}
-	\STATE $P_i\Leftarrow$ acyclic paths ($D_i$)
-	\FOR{all $p$ of $P_i$}
-		\STATE $f\Leftarrow$ descriptors of ($p$) // Zernike moments or Hu moment invariants
-		\STATE $f_{all}\Leftarrow$ $f_{all} \cup f$
-	\ENDFOR
-\ENDFOR
-\STATE //Create the set of hash tables
-\STATE $\mathcal{T}\Leftarrow$ LSH($f_{all}$)
-\end{algorithmic}
-\end{algorithmbis}
 
 \section{Text extraction}
 \label{ssec:hssg:pthdesc}
-Let $\mathcal{D}=\left\{D_1,D_2,...,D_n\right\}$ be the set of all documents in a database, and $G_i(V_i,E_i,\alpha_i)$ be the node attributed graph for the document $D_i$. Here $\alpha_i:V_i\rightarrow L_v$ is a function, in this case $L_v=\mathbb{N}^2$, where the labels for each of the nodes is its position in terms of a two-dimensional coordinate system.
-\begin{definition}[Graph path]
-Given an attributed graph $G_i(V_i,E_i,\alpha_i)$, a \emph{graph path} $p_k$ between two connected nodes $v_r$ and $v_s$ in $G_i$ is defined as the ordered sequence of vertices $(v_r,...,v_s)$ starting from $v_r$ to $v_s$.
-\end{definition}
-\begin{definition}[Graph path embedding]
-An \emph{embedding} function $f$ of a graph path is defined as a function $f:P\rightarrow\mathbb{R}^n$, defined in the space of a graph path $P$ and maps a path to an $n$-dimensional feature space (see \sect{sec:gm:ge} for graph embedding).
-\end{definition}
-Let $P_i=\left\{p_1,p_2,...,p_{n_i}\right\}$ be the set of all graph paths in the document $D_i$, where $n_i$ is the total number of paths in the document $D_i$. Therefore $P=\cup_{i} P_i$ is the set of all paths from all the documents in $\mathcal{D}$. From the definition of a graph path, a path $p_k$ can be represented as an ordered sequence of nodes \ie~$p_k=[(x_1,y_1),(x_2,y_2),...]=p_k(x,y)$. So formally speaking, given a path $p_k(x,y)$ and a shape descriptor $f:P\rightarrow\mathbb{R}^n$ defined over the space of all graph paths, applying $f$ to each of the graph paths in $P$ will generate a feature vector of dimension $n$. Below is the brief description of the shape descriptors used in this work. We define the embedding function $f$ by means of Zernike moments and Hu moment invariants (see \sect{sec:gm:ge}).
-% \subsubsection{Embedding function based on Zernike moments}
-\label{sssec:hssg:zernike}
-Zernike moments are robust shape descriptors which were first introduced in~\cite{Teague1980} using a set of complex polynomials. They are expressed as $A_{mn}$ as follows:
 
-\begin{equation}
-A_{mn}=\frac{m+1}{\pi}\int\limits_{x}\int\limits_{y} p_k(x,y)[V_{mn}(x,y)]^*dx dy, \mbox{ where } x^2+y^2\leq1
-\label{eqn:hssg:zernike1}
-\end{equation}
 
-where $m = 0,1,2,...,\infty$ and defines the order, $p_k(x,y)$ is the path being described and $*$ denotes the complex conjugate. Here $n$ is an integer (that can be positive or negative) depicting the angular dependence, or rotation, subject to the conditions $m-\left|n\right|=even$, $\left|n\right|\leq m$ and $A^*_{mn} = A_{m,-n}$ is true. The Zernike polynomials $V_{mn}(x,y)$ can be expressed in polar coordinates as follows:
-
-\begin{equation}
-V_{mn}(x,y)=V_{mn}(r,\theta)=\sum_{s=0}^{\frac{m-\left|n\right|}{2}}(-1)^s\frac{(m-s)!}{s!(\frac{m+\left|n\right|}{2}-s)!(\frac{m-\left|n\right|}{2}-s)!}r^{m-2s}exp(in\theta)
-\label{eqn:hssg:zernike2}
-\end{equation}
-
-The final descriptor function $f_{Zernike}(p_k)$ for $p_k$ is then constructed by concatenating several Zernike coefficients of the polynomials. Zernike moments have been widely utilized in pattern or object recognition, image reconstruction, content-based image retrieval etc. but its direct computation takes a large amount of time. Realizing this disadvantage, several algorithms~\cite{Hosny2008} have been proposed to speed up the accurate computation process. For line drawings, Lambert~\etal~\cite{Lambert1995, Lambert1996} also formulated Zernike moments as computationally efficient line moments. But in our case the computation is performed based on the interpolated points of the vectorized data using fast accurate calculations.
-% \subsubsection{Embedding function based on Hu moment invariants}
-\label{sssec:hssg:hu}
-The set of seven Hu invariants of moments proposed in~\cite{Hu1962} involving moments up to order three, are widely used as shape descriptors. In general the central $(r+s)$th order moment for a function $p_k(x,y)$ is calculated as follows:
-
-\begin{equation}
-\mu_{rs}=\sum\limits_{x}\sum\limits_{y} (x-\bar{x})^r (y-\bar{y})^s
-\label{eqn:hssg:hu1}
-\end{equation}
-
-The function $f_{Hu}(p_k)$ describing $p_k$ is then constructed by concatenating the seven Hu invariants of the above central moments. The use of centroid $c=(\bar{x},\bar{y})$ allow the descriptor to be translation invariant. A normalization by the object area is used to achieve invariance to scale. The geometric moments can also be computed on the contour of the objects by only considering the pixels of the boundary of the object. As in the case of Zernike moments, these moments can also be calculated in terms of line moments~\cite {Lambert1995, Lambert1996} for the objects represented by vectorized contours, which are obviously efficient in terms of computation.
-% \subsection{Locality Sensitive Hashing (LSH)}
-\label{ssec:hssg:lsh}
-In order to avoid one-to-one path matching~\cite{Dutta2011a}, we use the LSH algorithm which performs an approximate $k$-NN search that efficiently results in a set of candidates that mostly lie in the neighbourhood of the query point (path). LSH is used to perform contraction of the search space and quick indexation of the data. LSH was introduced by Indyk and Motwani~\cite{Indyk1998} and later modified by Gionis~\etal~\cite{Gionis1999}. It has been proved to perform an approximate $k$-NN search in sub-linear time and used for many real-time computer vision applications.
-
-Let $f(p_k) = (f_1, ..., f_d)\in\mathbb{R}^d$ be the descriptors of a graph path $p_k$ in the $d$-dimensional space. This point in the $d$-dimensional space is transformed in a binary vector space by the following function:
-
-\begin{equation}
-b(f(p_k))=(Unary_C(f_1), ..., Unary_C(f_d))
-\label{eqn:hssg:unr}
-\end{equation}
-
-Here if $C$ is the highest coordinate value in the path descriptor space then $Unary_C(f_p)$ is a $\left|C\right|$ bit representation function where $\left|f_p\right|$ bits of 1's are followed by $\left|C-f_p\right|$ bits of 0's. Thus, the distance between two path vectors $f(p_1)$, $f(p_2)$ can be computed by the Hamming distance between their respective binary representations $b(f(p_1))$, $b(f(p_2))$. Actually, \eq{eqn:hssg:unr} allows the embedding of the descriptors $f$s into the Hamming cube $H^{d'}$ of dimension $d' = Cd$. The value of $C$ is determined while constructing the hash tables in the offline stage, which is fixed for a particular database. During the online stage the values of the vectors coming from the query symbol are mapped in between $0$ and $C$. The construction of the function in \eq{eqn:hssg:unr} assumes the positive integer coordinates of $f$, but clearly any coordinates can be made positive by proper translation in $\mathbb{R}^d$. Also the coordinates can be converted to an integer by multiplying them with a suitably large number and rounding to the nearest integers.
-
-Now let $h:\left\{0,1\right\}^{d'}\rightarrow\left\{0,1\right\}$ be a function which projects a point $b\in \left\{0,1\right\}^{d'}$ to any of its $d'$ coordinate axes, and $\mathcal{F}$ be a set of such hash functions $h(b)$, which can be formally defined as:
-
-% \begin{align*}
-% \mathcal{F} = \left\{h(b)|h(b)=b_i,i=1, ..., d' \right\}
-% \end{align*}
-
-where $b_i$ is the $i$th coordinate of $b$. The final hash functions $\mathcal{H}$s can be created by randomly selecting at most $K$ such bitwise hash functions $h(h)$ and concatenating them sequentially. This actually results in bucket indices in the hash tables. The LSH algorithm then creates a set $\mathcal{T}$ of $L$ hash tables, each of which is constructed based on different $\mathcal{H}$s. $L$ and $K$ are considered as the parameters to construct the hashing data structures. Then given a descriptor $f_q$ of a query path (point), the algorithm iterates over all the hash tables in $\mathcal{T}$ retrieving the data points that are hashed into the same bucket. The final list of retrievals is the union of all such matched buckets from different hash tables.
-
-The entire procedure can be better understood with the following example: let $f(p_1)=(1,6,5)$, $f(p_2)=(3,5,2)$ and $f_(p_3)=(2,4,3)$ be three different descriptors in a three-dimensional ($d=3$) space with $C=6$. Their binary representation after applying the function in \eq{eqn:hssg:unr} is:
-
-% \begin{align*}
-%  b(f(p_1))&=100000\:111111\:111110 \\
-%  b(f(p_2))&=111000\:111110\:110000 \\
-%  b(f(p_3))&=110000\:111100\:111000 
-% \end{align*}
-
-% Now let us create an LSH data structure with $L=3$ and $K=5$. So, we can randomly create 3 hash functions with at most 5 bits in each of them as follows:
-
-% \begin{align*}
-% \mathcal{H}_1&=\left\{h_5,h_{10},h_{16}\right\} \\
-% \mathcal{H}_2&=\left\{h_1,h_9,h_{14},h_{15},h_{17}\right\} \\
-% \mathcal{H}_3&=\left\{h_4,h_8,h_{13},h_{18}\right\} 
-% \end{align*}
-
-This defines which components of the binary vector will be considered to create the hash bucket index. For example, applying $G_2$ to a binary vector results in a binary index concatenating the first, ninth, fourteenth, fifteenth and seventeenth bit values respectively. After applying the above functions to our data we obtain the following bucket indices:
-
-\begin{eqnarray*}
-\mathcal{H}_1(f(p_1))=011,\;\mathcal{H}_2(f(p_1))=11111,\;\mathcal{H}_3(f(p_1))=0110 \\
-\mathcal{H}_1(f(p_2))=010,\;\mathcal{H}_2(f(p_2))=11100,\;\mathcal{H}_3(f(p_2))=0110 \\
-\mathcal{H}_1(f(p_3))=010,\;\mathcal{H}_2(f(p_3))=11110,\;\mathcal{H}_3(f(p_3))=0110 
-\end{eqnarray*}
-
-Then for a query $f_{p_q}=(3,4,5)$ we have
-
-% \begin{align*}
-% b(f(p_q))&=111000\:111100\:111110 \\
-% \mathcal{H}_1(f(p_q))&=011,\;\mathcal{H}_2(f(p_q))=11111,\;\mathcal{H}_3(f(p_q))=0110 
-% \end{align*}
-
-Thus, we obtain $f(p_1)$ as the nearest descriptor to the query since it collides in each of the hash tables.
-
-Similarly, for each of the graph path descriptors in the query symbol, we get a set of paths that belong to the database. Consequently, we get the similarity distances of the paths in the vectorial space. This similarity distance is useful during the voting procedure to spot the symbol and is used to calculate the vote values.
 
 \section{Character spotting and identification}
 \label{ssec:hssg:vot}
-A voting space is defined over each of 
 
-% \subsection{Discussions}
-% \label{ssec:hssg:disc}
-We use our algorithm as a distance measuring function between a pair of isolated architectural symbols, let us say, $S_1$ and $S_2$. In this case we do not perform any hashing, instead we simply factorize the symbols into graph paths and describe them with some shape descriptors as explained in \sect{ssec:hssg:pthdesc}. Then we use these descriptors to match a path of, say, symbol $S_1$, to the most identical path of $S_2$. So the total distance between the symbols $S_1$ and $S_2$ is the sum of such distances, which can be regarded as a modified version of Hausdorff distance~\cite{Fischer2013}:
-
-\begin{equation*}
-\sum_{p_i \in S_1} \min_{p_j \in S_2} dist(p_i,p_j)+\sum_{p_j \in S_2} \min_{p_i \in S_1} dist(p_i,p_j)
-\label{eqn:hssg:tot_dist}
-\end{equation*}
-
-We use this total distance to select the nearest neighbours of the query symbol. It is expected that for a pair of identical symbols, the algorithm will give a lower distance than for a non-identical symbol. This experiment is undertaken to compare our method with various symbol recognition methods available in the literature. When using the GREC2005 dataset for our experiments, we only considered the set with 150 model symbols (see \sect{sec:datasets:grec} for details on the GREC2005 dataset). The results are summarized in Table \ref{tab:hssg:res-comp-symb-rec}. We have achieved a 100\% recognition rate for clear symbols (rotated and scaled) which shows that our method can efficiently handle the variation in scale and rotation. Our method outperforms the GREC participants (results obtained from~\cite{Dosch2006}) for degradation models 1, 2, 3 and 5. The recognition rate decreases drastically for models 4 and 6, this is because the models of degradation lose connectivity among the foreground pixels. So after the vectorization, the constructed graph can not represent the complete symbol, which explains the poorer results.
-
-\begin{table}[h!]
-\centering
-\caption{Results of symbol recognition experiments}
-\begin{tabular}{cc}
-\toprule
-\hline
-\textbf{Database} & \textbf{Recognition rate}\\
-\hline 
-Clear symbols (rotated \& scaled) & 100.00 \\
-Rotated \& degraded (model-1) & 96.73 \\
-Rotated \& degraded (model-2) & 98.67 \\
-Rotated \& degraded (model-3) & 97.54 \\
-Rotated \& degraded (model-4) & 31.76 \\
-Rotated \& degraded (model-5) & 95.00 \\
-Rotated \& degraded (model-6) & 28.00 \\
-\hline
-\end{tabular}
-\label{tab:hssg:res-comp-symb-rec}
-\end{table}
-
-In general the symbol spotting results of the system on the SESYD (floorplans) database are worse than the FPLAN-POLY (see Table \ref{tab:hssg:res-comp-db}). This is due to the existence of more similar symbols in the collection, which often create confusion amongst the query samples. But the average time for retrieving the symbols per document is much lower than the FPLAN-POLY database. This is because of the hashing technique that allows collision of the same structural elements and inserts them into the same buckets. So even though the search space increases, due to hashing of the graph paths, it remains nearly constant for each of the model symbols, which ultimately reduces the per document retrieval time.
-
-\begin{table}[h!]
-\centering
-\caption{Comparative results on two databases FPLAN-POLY \& SESYD (floorplans)}
-\begin{tabular}{ccccc}
-\toprule
-\hline
-\textbf{Database} & \textbf{P} & \textbf{R} & \textbf{AveP} & \textbf{T}\\
-\hline 
-FPLAN-POLY & 77.87 & 93.43 & 79.52 & 0.18 \\
-SESYD (floorplans) & 50.32 & 83.06 & 60.87 & 0.07 \\
-\hline
-\end{tabular}
-\label{tab:hssg:res-comp-db}
-\end{table}
-
-Our system also produces some erroneous results (see Figures \ref{fig:hssg:rankedlists1} (002, 005, 006, 013, 015) and Figures \ref{fig:hssg:rankedlists8} (001, 002, 003, 004, 014, 019)) due to the appearance of similar substructures in nearby locations. For example the symbol in Figures \ref{fig:hssg:fplan-poly-symb16} contains some rectangular box like subparts. The paths from these derived substructures of the symbol resemble some commonly occurring substructures (walls, mounting boxes etc.) in a floorplan. This creates a lot of false votes, which explains the retrieval of the false instances in Figure \ref{fig:hssg:rankedlists1}. Similarly, the subparts of the symbol in Figure \ref{fig:hssg:fplan-poly-symb21} resemble the subparts of some architectural symbols. This explains the occurrence of the false retrievals in Figure \ref{fig:hssg:rankedlists8}.
-
-\begin{figure*}[h!]
-\centering  
-{
-\subfloat{\includegraphics[width=\textwidth]{Symbol21-row1}}\\
-\subfloat{\includegraphics[width=\textwidth]{Symbol21-row2}}
-}
-\caption{Qualitative results of the method: first 20 retrieved regions obtained by querying the symbol \ref{fig:hssg:fplan-poly-symb21} in the FPLAN-POLY dataset.}
-\label{fig:hssg:rankedlists8}
-\end{figure*}
 
 \section{Conclusions}
 \label{sec:hssg:concl}
-In this chapter we have proposed a graph based approach for symbol spotting in graphical documents. We represent the documents with graphs where the critical points detected in the vectorized graphical documents are considered as the nodes and the lines joining them are considered as the edges. The document database is represented by the unification of the serialized substructures of graphs. Here the graph substructures are the acyclic graph paths between each pair of connected nodes. The factorized substructures are the one-dimensional (sub)graphs which give efficiency in terms of computation and since they provide a unified representation over the database, the computation is substantially reduced. Moreover, the paths give adaptation to some structural errors in documents with a certain degree of tolerance. We organize the graph paths in hash tables using the LSH technique, this helps to retrieve symbols in real time. We have tested the method on different datasets of various kinds of document images and the results are quite encouraging.
 
-In the next chapter we are going to propose a subgraph matching algorithm based on tensor product graph (TPG) (see \sect{sec:gm:pg} for details). Continuous optimization is a very popular approach in (sub)graph matching but it mostly works with pairwise measurements. But often pairwise quantifications are not reliable, to remove this problem in \ch{chap:pg} we propose walk based propagation of pairwise similarities to obtain contextual information incorporated in the higher order similarity measures. Then we formulate the subgraph matching problem as a node, edge selection problem in TPG. Also in \ch{chap:pg}, a \emph{dual edge graph} representation is proposed which achieves spatial relationship between the graph paths which was absent in this chapter.
+%In this chapter we have proposed a graph based approach for symbol spotting in graphical documents. We represent the documents with graphs where the critical points detected in the vectorized graphical documents are considered as the nodes and the lines joining them are considered as the edges. The document database is represented by the unification of the serialized substructures of graphs. Here the graph substructures are the acyclic graph paths between each pair of connected nodes. The factorized substructures are the one-dimensional (sub)graphs which give efficiency in terms of computation and since they provide a unified representation over the database, the computation is substantially reduced. Moreover, the paths give adaptation to some structural errors in documents with a certain degree of tolerance. We organize the graph paths in hash tables using the LSH technique, this helps to retrieve symbols in real time. We have tested the method on different datasets of various kinds of document images and the results are quite encouraging.
+
+%In the next chapter we are going to propose a subgraph matching algorithm based on tensor product graph (TPG) (see \sect{sec:gm:pg} for details). Continuous optimization is a very popular approach in (sub)graph matching but it mostly works with pairwise measurements. But often pairwise quantifications are not reliable, to remove this problem in \ch{chap:pg} we propose walk based propagation of pairwise similarities to obtain contextual information incorporated in the higher order similarity measures. Then we formulate the subgraph matching problem as a node, edge selection problem in TPG. Also in \ch{chap:pg}, a \emph{dual edge graph} representation is proposed which achieves spatial relationship between the graph paths which was absent in this chapter.

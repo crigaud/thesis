@@ -2,86 +2,47 @@ This is BibTeX, Version 0.99c (Web2C 7.5.6)
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "Muller2000"
-Warning--I didn't find a database entry for "LladosPAMI2001"
-Warning--I didn't find a database entry for "Tabbone2003"
-Warning--I didn't find a database entry for "Zuwala2006"
-Warning--I didn't find a database entry for "RusinolThesis2009"
-Warning--I didn't find a database entry for "El-Yacoubi1999"
-Warning--I didn't find a database entry for "Espana-Boquera2011"
-Warning--I didn't find a database entry for "He1991"
-Warning--I didn't find a database entry for "Messmer1996"
-Warning--I didn't find a database entry for "Barbu2005a"
-Warning--I didn't find a database entry for "Qureshi2007"
-Warning--I didn't find a database entry for "Locteau2007"
-Warning--I didn't find a database entry for "Rusinol2009a"
-Warning--I didn't find a database entry for "Luqman2010"
-Warning--I didn't find a database entry for "Nayef2010"
-Warning--I didn't find a database entry for "LeBodic2012"
-Warning--I didn't find a database entry for "Dutta2013"
-Warning--I didn't find a database entry for "Nguyen2009"
-Warning--I didn't find a database entry for "Dosch2004"
-Warning--I didn't find a database entry for "Zhang2007"
-Warning--I didn't find a database entry for "Mehlhorn1984"
-Warning--I didn't find a database entry for "Rusinol2010"
-Warning--I didn't find a database entry for "Rusinol2006"
-Warning--I didn't find a database entry for "Szummer2002"
-Warning--I didn't find a database entry for "Coifman2006"
-Warning--I didn't find a database entry for "Yang2012"
 Warning--I didn't find a database entry for "Gartner2003a"
-Warning--I didn't find a database entry for "Aziz2013"
-Warning--I didn't find a database entry for "Stark1996"
-Warning--I didn't find a database entry for "Hu1962"
-Warning--I didn't find a database entry for "Fischer2013"
-Warning--I didn't find a database entry for "Wang2013"
-Warning--I didn't find a database entry for "Barducci2012"
-Warning--I didn't find a database entry for "Harchaoui2007"
-Warning--I didn't find a database entry for "Suk1984"
-Warning--I didn't find a database entry for "Jacobs1989"
-Warning--I didn't find a database entry for "Jacobs1996"
-Warning--I didn't find a database entry for "Lowe1987"
-Warning--I didn't find a database entry for "Nayef2011"
-Warning--I didn't find a database entry for "Ren2011"
-Warning--I didn't find a database entry for "Neuhaus2004"
-You've used 2 entries,
+Warning--there's a number but no series in duc1997art
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            592 strings with 5167 characters,
-and the built_in function-call counts, 572 in all, are:
-= -- 49
-> -- 30
-< -- 0
-+ -- 12
-- -- 10
-* -- 33
-:= -- 106
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 10
+            632 strings with 7473 characters,
+and the built_in function-call counts, 6682 in all, are:
+= -- 665
+> -- 260
+< -- 9
++ -- 106
+- -- 84
+* -- 384
+:= -- 1050
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 99
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 26
-empty$ -- 49
-format.name$ -- 10
-if$ -- 117
+cite$ -- 21
+duplicate$ -- 290
+empty$ -- 569
+format.name$ -- 84
+if$ -- 1486
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 3
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 19
+int.to.str$ -- 20
+missing$ -- 18
+newline$ -- 98
+num.names$ -- 40
+pop$ -- 139
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 82
 quote$ -- 0
-skip$ -- 11
+skip$ -- 239
 stack$ -- 0
-substring$ -- 10
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 382
+swap$ -- 93
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
-warning$ -- 0
-while$ -- 4
-width$ -- 3
-write$ -- 23
-(There were 41 warnings)
+type$ -- 74
+warning$ -- 1
+while$ -- 62
+width$ -- 22
+write$ -- 215
+(There were 2 warnings)

@@ -51,6 +51,14 @@
 \usepackage{tikz}
 \usepackage{verbatim}
 
+\usepackage{hyperref}                 % Active hyperlink
+\usepackage[hyperpageref]{backref}    % Add 'backlink' page number at the end of each item in the bibliography BibTeX
+\hypersetup{
+    %Since 2011-02-05 (hyperref version 6.82a), you can use the hidelinks option to achieve the same result
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
 %\usetikzlibrary{fit,arrows,matrix,calc,positioning,shapes,backgrounds}
 %\usepackage{algpseudocode}
 %%%%%%%%%%%%%%%%%%%%%%%%% INCLUDES %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,7 +73,9 @@
 \date{???, 2014}
  
 \newcommand{\UAB}{Universitat Autònoma de Barcelona}
+\newcommand{\ULR}{Université de La Rochelle}
 \newcommand{\CVC}{Centre de Visió per Computador}
+\newcommand{\LIII}{Laboratoire Informatique, Image et Interaction}
 \newcommand{\DCC}{Dept. Ciències de la Computació}
 \newcommand{\DCCCVC}{\DCC{} \& \CVC{}}
 \newcommand{\CVPRU}{Computer Vision and Pattern Recognition Unit}
@@ -108,6 +118,8 @@
 %\title{My Picture Chapters}
 %\begin{document}
 %\maketitle
+
+
 
 \newcommand{\blankpage}{
 \newpage
@@ -158,7 +170,7 @@
 \newcommand{\makefirstpages}{
   \thispagestyle{empty}
   \vspace*{0.5cm}
-  \begin{center}\includegraphics[width=6cm]{img/LogoUAB}\end{center}
+  \begin{center}\includegraphics[width=6cm]{images/LogoUAB}\end{center}
   \vspace*{3cm}
   \parbox{\textwidth}{\addtolength{\lineskip}{5pt} \centering \textbf{\LARGE \@title}  }
   \vfill
@@ -176,60 +188,66 @@
   \noindent
   \begin{tabular}{>{\scriptsize}p{2cm}|>{\scriptsize}l}
   
-   Director  & \textbf{Dr. Josep Lladós Canet}\\
-             & \DCCCVC\\
-             & \UAB\\
+   Director  & \textbf{Prof. Dr. Jean-Christophe Burie}\\
+             & \LIII\\
+             & \ULR\\
 
   \multicolumn{2}{c}{}\\
   
-Co-Director  & \textbf{Prof. Dr. Umapada Pal}\\
-             & \CVPRU\\
-             & \ISI\\
+Co-Directors & \textbf{Dr. Dimosthenis Karatzas}\\
+             & \CVC\\
+             & \UAB\\
+             & \\
+
+             & \textbf{Prof. Dr. Jean-Marc Ogier}\\
+             & \LIII\\
+             & \ULR\\
 
   \multicolumn{2}{c}{}\\
              
-Thesis       & \textbf{Prof. Dr. Jean-Marc Ogier}\\
-committee    & Laboratoire Informatique, Image et Interaction\\
-             & Université de La Rochelle\\
+Thesis       & \textbf{?}\\
+committee    & ?\\
+             & ?\\
              & \\
                           
-             & \textbf{Dr. Ernest Valveny}\\
-             & \DCCCVC\\
-		     & \UAB\\
+             & \textbf{?}\\
+             & ?\\
+		         & ?\\
              & \\     
                      
-             & \textbf{Dr. Pierre Héroux}\\
-			 & Laboratoire LITIS\\
-             & Université de Rouen\\
+             & \textbf{?}\\
+			       & ?\\
+             & ?\\
              & \\
 
-             & \textbf{Dr. Francesc Serratosa}\\
-             & Enginyeria Informàtica i Matemàtiques\\
-		     & Universitat Rovira i Virgili\\
+             & \textbf{?}\\
+             & ?\\
+		         & ?\\
              & \\
 
-             & \textbf{Dr. Maria Vanrell}\\
-             & \DCCCVC\\
-		     & \UAB\\
+             & \textbf{?}\\
+             & ?\\
+		         & ?\\
 
   \multicolumn{2}{c}{}\\
     
-European     & \textbf{Prof. Dr. Luc Brun}\\
-evaluators   & École Nationale Supérieur d'Ingénieurs de Caen\\
-             & Université de Caen Basse-Normandie\\
+European     & \textbf{?}\\
+evaluators   & ?\\
+             & ?\\
              & \\
                       
-		     & \textbf{Prof. Dr. Jean-Yves Ramel}\\
-			 & Polytech'Tours - LI Tours\\
-    	         & Université de François - Rabelais, Tours\\
+		         & \textbf{?}\\
+			       & ?\\
+    	       & ?\\
              
   \end{tabular}
   \vfill
   \noindent\begin{minipage}{\textwidth}
   \setlength{\parskip}{10pt}
   \noindent \rule{60mm}{0.4mm} 
-  \includegraphics[trim=-5mm 5mm 0mm 0mm,width=2.8cm]{img/LogoL3i}
-  \includegraphics[trim=40mm 60mm 60mm 100mm,width=3.5cm]{img/LogoCVC}  \par
+  \includegraphics[trim=-5mm 5mm 0mm 0mm,width=2.8cm]{images/LogoL3i}
+  \includegraphics[trim=40mm 60mm 60mm 100mm,width=3.5cm]{images/LogoCVC}  \par
+  \vspace*{0.5cm}
   \scriptsize{This document was typeset by the author using \LaTeXe.\par}
   \scriptsize{The research described in this book was carried out at the Laboratoire Informatique, Image et Interaction, Universtité de La Rochelle and at the \CVC, \UAB.\par}
   \scriptsize{Copyright $\copyright$ \number\year ~by \@author. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, or any information storage and retrieval system, without permission in writing from the author.\par}

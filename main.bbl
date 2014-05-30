@@ -1,4 +1,50 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Japan2013}
+Japan Book~Publishers Association.
+\newblock An introduction to publishing in japan 2012-2013, 2012.
+
+\bibitem{Back2001}
+M.~Back, R.~Gold, A.~Balsamo, M.~Chow, M.~Gorbet, S.~Harrison, D.~MacDonald,
+  and S.~Minnerman.
+\newblock Designing innovative reading experiences for a museum exhibition.
+\newblock {\em Computer}, 34(1):80--87, Jan 2001.
+
+\bibitem{borodo2014multimodality}
+Micha{\l} Borodo.
+\newblock Multimodality, translation and comics.
+\newblock {\em Perspectives}, pages 1--20, 2014.
+
+\bibitem{Brandon2014}
+DC~Brandon.
+\newblock Graphic novels and comics for the visually impaired explored in
+  award-winning paper, 2014.
+
+\bibitem{Clavelli09}
+Antonio Clavelli and Dimosthenis Karatzas.
+\newblock Text segmentation in colour posters from the spanish civil war era.
+\newblock In {\em Proceedings of the 2009 10th International Conference on
+  Document Analysis and Recognition}, ICDAR '09, pages 181--185, Washington,
+  DC, USA, 2009. IEEE Computer Society.
+
+\bibitem{Delaye2014Multi}
+Adrien Delaye and Cheng-Lin Liu.
+\newblock Multi-class segmentation of free-form online documents with tree
+  conditional random fields.
+\newblock {\em International Journal on Document Analysis and Recognition
+  (IJDAR)}, pages 1--17, 2014.
+
+\bibitem{duc1997art}
+B.~Duc.
+\newblock {\em L'art de la B.D.: Du sc{\'e}nario {\`a} la r{\'e}alisation
+  graphique, tout sur la cr{\'e}ation des bandes dessin{\'e}es}.
+\newblock Number v. 1. Editions Gl{\'e}nat, 1997.
+
+\bibitem{Epshtein10}
+B.~Epshtein, E.~Ofek, and Y.~Wexler.
+\newblock Detecting text in natural scenes with stroke width transform.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2010 IEEE
+  Conference on}, pages 2963 --2970, june 2010.
 
 \bibitem{Guerin2013}
 Cl{\'e}ment Gu{\'e}rin, Christophe Rigaud, Antoine Mercier, and al.
@@ -6,9 +52,67 @@ Cl{\'e}ment Gu{\'e}rin, Christophe Rigaud, Antoine Mercier, and al.
 \newblock In {\em Proceedings of International Conference on Document Analysis
   and Recognition (ICDAR)}, Washington DC, 2013.
 
+\bibitem{IBISWorld2013}
+IBISWorld.
+\newblock Comic book publishing in the us: Market research report, 2013.
+
+\bibitem{Raulet2013Comics}
+Raulet J{\'e}r{\'e}my and Boyer Vincent.
+\newblock Comics reading: An automatic script generation.
+\newblock In {\em Proceedings of the 21st International Conference in Central
+  Europe on Computer Graphics, Visualization and Computer Vision (WSCG)}, pages
+  88--96, 2013.
+
 \bibitem{McCloud94}
 S.~McCloud.
 \newblock {\em Understanding comics}.
 \newblock William Morrow Paperbacks, 1994.
+
+\bibitem{Neumann12}
+L.~Neumann and J.~Matas.
+\newblock Real-time scene text localization and recognition.
+\newblock {\em Computer Vision and Pattern Recognition}, pages 1485--1490,
+  2012.
+
+\bibitem{Oliveira10}
+Daniel~M. Oliveira and Rafael~D. Lins.
+\newblock Generalizing tableau to any color of teaching boards.
+\newblock In {\em Proceedings of the 2010 20th International Conference on
+  Pattern Recognition}, ICPR '10, pages 2411--2414, Washington, DC, USA, 2010.
+  IEEE Computer Society.
+
+\bibitem{Ponsard09}
+Christophe Ponsard.
+\newblock Enhancing the accessibility for all of digital comic books.
+\newblock {\em e-Minds}, 1(5), 2009.
+
+\bibitem{Ratier2013}
+Gilles Ratier.
+\newblock 2013 : l'ann{\'e}e de la d{\'e}c{\'e}l{\'e}ration, 2013.
+
+\bibitem{Singh2004}
+Siddharth Singh, Adrian~David Cheok, Guo~Loong Ng, and Farzam Farbiz.
+\newblock 3d augmented reality comic book and notes for children using mobile
+  phones.
+\newblock In {\em Proceedings of the 2004 Conference on Interaction Design and
+  Children: Building a Community}, IDC '04, pages 149--150, New York, NY, USA,
+  2004. ACM.
+
+\bibitem{Stewart2000}
+Alan Stewart.
+\newblock A brief history of the american comic book industry, 2000.
+
+\bibitem{Thomas2010Invisible}
+Evan Thomas.
+\newblock {\em Invisible Art, Invisible Planes, Invisible People}.
+\newblock Multicultural Comics: From Zap to Blue Beetle. University of Texas
+  Press, 2010.
+
+\bibitem{Weinman09}
+J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
+\newblock Scene text recognition using similarity and a lexicon with sparse
+  belief propagation.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 31(10):1733 --1746, 2009.
 
 \end{thebibliography}

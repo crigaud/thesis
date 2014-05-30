@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.7.6)  30 MAY 2014 14:34
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.7.6)  30 MAY 2014 17:44
 entering extended mode
  %&-line parsing enabled.
 **main.tex
@@ -1100,11 +1100,7 @@ Package hyperref Info: Option `colorlinks' set `false' on input line 60.
 )
 \reducedwidth=\skip72
 \c@algorithmbis=\count175
- (./main.aux
-
-LaTeX Warning: Label `chap:intro' multiply defined.
-
-)
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 320.
@@ -1383,55 +1379,55 @@ Overfull \hbox (0.37823pt too wide) in paragraph at lines 29--30
  []
 
 
-Overfull \hbox (65.48924pt too wide) in paragraph at lines 43--44
+Overfull \hbox (65.48924pt too wide) in paragraph at lines 44--45
 [][]$\OT1/pcr/m/n/10 http : / / fr . wikipedia . org / wiki / Bande _ dessinee 
 # Aspects _ .C3 . A9conomiques$[] 
  []
 
 
-Overfull \hbox (25.23943pt too wide) in paragraph at lines 44--45
+Overfull \hbox (25.23943pt too wide) in paragraph at lines 45--46
 []\OT1/cmr/m/n/10 La lec-ture des ban-des dessin^^Sees en france []$\OT1/pcr/m/
 n/10 http : / / www . culturecommunication .
  []
 
 
-Overfull \hbox (0.98924pt too wide) in paragraph at lines 44--45
+Overfull \hbox (0.98924pt too wide) in paragraph at lines 45--46
 \OT1/pcr/m/n/10 gouv . fr / Politiques-[]ministerielles / Etudes-[]et-[]statist
 iques /
  []
 
 
-Overfull \hbox (56.48924pt too wide) in paragraph at lines 44--45
+Overfull \hbox (56.48924pt too wide) in paragraph at lines 45--46
 \OT1/pcr/m/n/10 Les-[]publications / Collections-[]de-[]synthese / Culture-[]et
 udes-[]2007-[]2014 /
  []
 
 
-Overfull \hbox (131.54483pt too wide) in paragraph at lines 44--45
+Overfull \hbox (131.54483pt too wide) in paragraph at lines 45--46
 \OT1/pcr/m/n/10 La-[]lecture-[]de-[]bandes-[]dessinees-[]CE-[]2012-[]2$[] \OT1/
 cmr/m/n/10 and []$\OT1/pcr/m/n/10 2012 _ Evans _ Lalecturedebandesdessin \
  []
 
 
-Overfull \hbox (5.48924pt too wide) in paragraph at lines 44--45
+Overfull \hbox (5.48924pt too wide) in paragraph at lines 45--46
 \OT1/pcr/m/n/10 unhbox \ voidb @ x \ bgroup \ let \ unhbox \ voidb @ x \ setbox
  \ @tempboxa \
  []
 
 
-Overfull \hbox (5.48924pt too wide) in paragraph at lines 44--45
+Overfull \hbox (5.48924pt too wide) in paragraph at lines 45--46
 \OT1/pcr/m/n/10 hbox{e \ global \ mathchardef \ accent @ spacefactor \ spacefac
 tor} \
  []
 
 
-Overfull \hbox (18.48924pt too wide) in paragraph at lines 44--45
+Overfull \hbox (18.48924pt too wide) in paragraph at lines 45--46
 \OT1/pcr/m/n/10 accent19e \ egroup \ spacefactor \ accent @ spacefactores _ CE-
 []2012-[]2 .
  []
 
 
-Overfull \hbox (14.04483pt too wide) in paragraph at lines 45--46
+Overfull \hbox (14.04483pt too wide) in paragraph at lines 46--47
 []$\OT1/pcr/m/n/10 http : / / www . comichron . com/$[] \OT1/cmr/m/n/10 and []$
 \OT1/pcr/m/n/10 http : / / comicsbeat . com / category /
  []
@@ -1439,8 +1435,10 @@ Overfull \hbox (14.04483pt too wide) in paragraph at lines 45--46
 [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3])
-(./chapters/3-state-of-the-art/state-of-the-art.tex [4]
+ [3]
+[4]) (./chapters/3-state-of-the-art/state-of-the-art.tex [5] [6
+
+]
 Chapter 2.
 
 Overfull \hbox (39.16887pt too wide) in paragraph at lines 16--17
@@ -1466,9 +1464,7 @@ Overfull \hbox (282.48924pt too wide) in paragraph at lines 33--35
 ]formonlinedocumentswithtreeconditionalrandomfields$[] 
  []
 
-[5
-
-]
+[7]
 Overfull \hbox (71.48924pt too wide) in paragraph at lines 41--42
 \OT1/pcr/m/n/10 Object _ detection2013 _ Landry _ ColorBasedComicStripCharacter
 Recognition .
@@ -1498,15 +1494,15 @@ Overfull \hbox (102.93393pt too wide) in paragraph at lines 59--60
 ASketch-[]basedInterfacetoScriptComicsReading .
  []
 
-) (./chapters/9-gt/gt.tex [6]
+) (./chapters/9-gt/gt.tex [8]
 Chapter 3.
-) (./chapters/4-pe/pe.tex [7
+) (./chapters/4-pe/pe.tex [9
 
-] [8
+] [10
 
 ]
 Chapter 4.
-) (./chapters/5-be/be.tex [9] [10
+) (./chapters/5-be/be.tex [11] [12
 
 ]
 Chapter 5.
@@ -1547,78 +1543,80 @@ _ ge _ summary _
  []
 
 
-Overfull \hbox (29.48924pt too wide) in paragraph at lines 24--25
-\OT1/pcr/m/n/10 Bureau / PhD / research / balloon _ classification / output / p
-ublication /
+Overfull \hbox (9.48848pt too wide) in paragraph at lines 25--26
+[]\OT1/cmr/m/n/10 Open bal-loon pub-lished in IC-DAR 2013 []$\OT1/pcr/m/n/10 20
+13 _ Rigaud _ An _ active _ contour _
  []
 
-) (./chapters/6-te/te.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12]
+Overfull \hbox (11.48924pt too wide) in paragraph at lines 26--27
+\OT1/pcr/m/n/10 crigau02 / Bureau / PhD / research / balloon _ classification /
+ output /
+ []
+
+) (./chapters/6-te/te.tex [13] [14]
 Chapter 6.
-) (./chapters/7-ce/ce.tex [13
+) (./chapters/7-ce/ce.tex [15
 
-] [14
+] [16
 
 ]
 Chapter 7.
-) (./chapters/8-hp/hp.tex [15] [16
+) (./chapters/8-hp/hp.tex [17] [18
 
 ]
 Chapter 8.
 
-LaTeX Warning: Citation `Gartner2003a' on page 17 undefined on input line 36.
+LaTeX Warning: Citation `Gartner2003a' on page 19 undefined on input line 36.
 
-) (./chapters/10-conclusions/conclusions.tex [17] [18
+) (./chapters/10-conclusions/conclusions.tex [19] [20
 
 ]
 Chapter 9.
 
-LaTeX Warning: Reference `chap:gm' on page 19 undefined on input line 13.
+LaTeX Warning: Reference `chap:gm' on page 21 undefined on input line 13.
 
 
-LaTeX Warning: Reference `chap:sota-ss' on page 19 undefined on input line 15.
+LaTeX Warning: Reference `chap:sota-ss' on page 21 undefined on input line 15.
 
 
-LaTeX Warning: Reference `chap:hssg' on page 19 undefined on input line 17.
+LaTeX Warning: Reference `chap:hssg' on page 21 undefined on input line 17.
 
 
-LaTeX Warning: Reference `chap:pg' on page 19 undefined on input line 19.
+LaTeX Warning: Reference `chap:pg' on page 21 undefined on input line 19.
 
-[19]
+[21]
 
-LaTeX Warning: Reference `chap:ncrag' on page 20 undefined on input line 21.
-
-
-LaTeX Warning: Reference `chap:hgr' on page 20 undefined on input line 23.
+LaTeX Warning: Reference `chap:ncrag' on page 22 undefined on input line 21.
 
 
-LaTeX Warning: Reference `chap:experiments' on page 20 undefined on input line 
+LaTeX Warning: Reference `chap:hgr' on page 22 undefined on input line 23.
+
+
+LaTeX Warning: Reference `chap:experiments' on page 22 undefined on input line 
 25.
 
 
-LaTeX Warning: Reference `chap:hssg' on page 20 undefined on input line 32.
+LaTeX Warning: Reference `chap:hssg' on page 22 undefined on input line 32.
 
 
-LaTeX Warning: Reference `chap:hssg' on page 20 undefined on input line 32.
+LaTeX Warning: Reference `chap:hssg' on page 22 undefined on input line 32.
 
 
-LaTeX Warning: Reference `chap:pg' on page 20 undefined on input line 33.
+LaTeX Warning: Reference `chap:pg' on page 22 undefined on input line 33.
 
 
-LaTeX Warning: Reference `chap:pg' on page 20 undefined on input line 33.
+LaTeX Warning: Reference `chap:pg' on page 22 undefined on input line 33.
 
-[20]
+[22]
 
-LaTeX Warning: Reference `chap:hgr' on page 21 undefined on input line 34.
+LaTeX Warning: Reference `chap:hgr' on page 23 undefined on input line 34.
 
 
-LaTeX Warning: Reference `chap:experiments' on page 21 undefined on input line 
+LaTeX Warning: Reference `chap:experiments' on page 23 undefined on input line 
 36.
 
-) (./chapters/MyPublications/publications.tex [21] [22
+) (./chapters/MyPublications/publications.tex [23] [24
 
 ]
 Overfull \hbox (0.54546pt too wide) in paragraph at lines 14--16
@@ -1629,33 +1627,30 @@ Overfull \hbox (0.54546pt too wide) in paragraph at lines 14--16
 
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
- [23]
+ [25]
 Overfull \hbox (6.76656pt too wide) in paragraph at lines 40--42
 \OT1/cmr/m/n/10 Pro-ceed-ings of the 10th IAPR Work-shop on Graph-ics Recog-ni-
 tion (GREC,'2013),
  []
 
-) [24] (./main.bbl (./main.brf)
+) [26] (./main.bbl (./main.brf)
 \tf@brf=\write8
 \openout8 = `main.brf'.
 
- [25
+ [27
 
 
-]) [26] (./main.aux)
+]) [28] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 12180 strings out of 256216
- 178372 string characters out of 1917073
- 263457 words of memory out of 1500000
- 14903 multiletter control sequences out of 10000+200000
- 21190 words of font info for 76 fonts, out of 1200000 for 2000
+ 12199 strings out of 256216
+ 178526 string characters out of 1917073
+ 263459 words of memory out of 1500000
+ 14914 multiletter control sequences out of 10000+200000
+ 24178 words of font info for 87 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  45i,9n,42p,1435b,446s stack positions out of 5000i,500n,6000p,200000b,15000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc} </home/crigau02/.texlive2007/t
@@ -1669,12 +1664,12 @@ pe1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb><
 share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/blue
 sky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/t
 exmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
-msl10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/
-fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/urw/courier/ucr
-r8a.pfb>
-Output written on main.pdf (46 pages, 503224 bytes).
+mr9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsl10.pfb></usr/share/texmf/f
+onts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10
+.pfb></usr/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on main.pdf (48 pages, 513914 bytes).
 PDF statistics:
- 738 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 131072)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 134 named destinations out of 1000 (max. 131072)
  512 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -28,6 +28,7 @@ Setting/positioning the scenario, place comics in the addressed context, origin 
 	\item Writing for Animation, Comics, and Games, chapter 5 and 6 in \url{~/Biblio_LINK/Bandes_dessinées}
 	\item De la page à l'écran \url{2010_Boudissa_La_Bande_dessinee_entre_page_et_ecran.pdf}
 	\item Check \url{/home/crigau02/Bureau/PhD/News/BD}
+	\item Define comics vocabulary (see Clement's thesis and master student report) for panel, balloon, text, character
 	
 \end{itemize}
 
@@ -43,7 +44,9 @@ The needs? numbers? impact on the society?
 	\item \url{http://fr.wikipedia.org/wiki/Bande_dessinee#Aspects_.C3.A9conomiques}
 	\item La lecture des bandes dessinées en france \url{http://www.culturecommunication.gouv.fr/Politiques-ministerielles/Etudes-et-statistiques/Les-publications/Collections-de-synthese/Culture-etudes-2007-2014/La-lecture-de-bandes-dessinees-CE-2012-2} and \url{2012_Evans_La lecture de bandes dessinées_CE-2012-2.pdf}
 	\item The Comics Chronicles (US market) is a free resource for academic research: \url{http://www.comichron.com/} and \url{http://comicsbeat.com/category/sales-charts/}
-	\item Intro journal paper 2014
+	\item See motivations in \url{PhD/Publications/Doctoral_school_L3i_first_year_phd_report}
+	\item IGS-CP (http://www.igs-cp.fr), a content extraction companies working for digital comics promoting (e.g. espritBD, alterComics), ITEsoft
+
 \end{itemize}
 
 Comics or ``bande dessin{\'e}e'' represents an important part of the cultural heritage of many countries, especially in the US~\cite{Stewart2000,IBISWorld2013}, western Europe (particularly France and Belgium)~\cite{Ratier2013}, and Japan~\cite{Japan2013}.
@@ -83,6 +86,52 @@ This is one of the reason why the analysis of comics is a recent (in the documen
 
 % Objective of this work, contributions --------------------------------------------------------------------------------------------------------
 \section{Objectives and contributions}
+Comics contain many heterogeneous elements that are hard to process in once.
+Our objective is to process them separately, from simple to complex, in order to progressively build a complete comics understanding system.
+% We decomposed the work into several steps.=
+First, we construct a public dataset of comic images and the corresponding ground truth in order to evaluate our work and to give to the community the opportunity to work on identical data in order to make comparable and reproducible research.
+Second, we focus on extraction panels, texts, balloons in order to facilitate the extraction of more complex elements by focussing on a region of interest instead of the whole image.
+Third, we combine the extraction processes to reconstruct the context and the relations between the elements.
+The dataset and this last work is done in collaboration with the work of Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on the same project.
+
+To meet the above objectives, we have made the following contributions in this
+thesis.
+
+\begin{itemize}
+	\item[1)] Dataset and ground truth: The eBDtheque dataset is the first publicly available\footnote{Dataset website:~\url{http://ebdtheque.univ-lr.fr}} dataset and ground truth of comic images.
+	Such dataset is important for the community to make comparable, reproductive and growing research.
+	The dataset consist in a mixture comic images coming from different albums with the goal of being as representative as possible of the comics diversity.
+	The database consists of a hundred pages of various comic book albums including Franco-Belgian ``bande dessinée'', American comics and Japanese mangas. 
+	The ground truth contains the spacial position of panels, balloons and text lines, comic characters and their associated semantic annotations, that appear in the images.
+	Also, bibliographic information are given such for each image.
+	This work is presented in Chapter~\ref{chap:gt}.
+	
+	\item [2)] Panel extraction: Comics are mixed content documents that require different techniques to extract different element.
+	The first particularity of comics is the sequence of panels that we extract using connected component classification and filtering in Chapter~\ref{chap:pe}.
+	
+	\item [3)] Balloon detection: Balloons or bubbles are key elements in comics,
+	they link graphical and textual elements and are part of the comics style. They can have various shapes (e.g. oval, rectangular) and contours (e.g. smooth, wavy, spiky, absent).
+	In this work we propose a closed balloon extractor based on the analysis of the connected component content, a active contour model to extract open balloons from text line position.
+	Both methods are described in Chapter~\ref{chap:be} along with balloon contour classification (smooth, wavy, zigzag) and a tail detector.
+
+
+	\item [4)] Text localization:
+	
+	we proposed a adaptive binarisation process based on the Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and text line grouping.
+	Finally, a OCR system filter out non text region.
+
+	
+	\item [5)] Comic character detection:
+	Two contributions, first using CBIR approach, second search in the hypothetical region of interest.
+	First a query by example approach that ask the user to select a part of the object he is looking for in one comics image and the system retrieves it automatically everywhere in all the pages of the comics album, assuming that they have been digitized under the same conditions.
+	Second,...
+
+
+
+	\item [6)] Comics understanding:
+
+
+\end{itemize}
 
 
 % Outline --------------------------------------------------------------------------------------------------------------------------------------

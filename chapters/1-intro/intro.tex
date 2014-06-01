@@ -92,7 +92,7 @@ Our objective is to process them separately, from simple to complex, in order to
 First, we construct a public dataset of comic images and the corresponding ground truth in order to evaluate our work and to give to the community the opportunity to work on identical data in order to make comparable and reproducible research.
 Second, we focus on extraction panels, texts, balloons in order to facilitate the extraction of more complex elements by focussing on a region of interest instead of the whole image.
 Third, we combine the extraction processes to reconstruct the context and the relations between the elements.
-The dataset and this last work is done in collaboration with the work of Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on the same project.
+The dataset and this last work are the result of a collaboration with Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on the same project.
 
 To meet the above objectives, we have made the following contributions in this
 thesis.
@@ -111,24 +111,26 @@ thesis.
 	
 	\item [3)] Balloon detection: Balloons or bubbles are key elements in comics,
 	they link graphical and textual elements and are part of the comics style. They can have various shapes (e.g. oval, rectangular) and contours (e.g. smooth, wavy, spiky, absent).
-	In this work we propose a closed balloon extractor based on the analysis of the connected component content, a active contour model to extract open balloons from text line position.
+	In this work we propose a closed balloon extractor based on the analysis of the blob content, a active contour model to extract open balloons from text line position.
 	Both methods are described in Chapter~\ref{chap:be} along with balloon contour classification (smooth, wavy, zigzag) and a tail detector.
 
+	\item [4)] Text localization: Text is of different nature in comics, there are sound effects (onomatopoeias), graphic text (illustration), speech text (dialogues) and narrative text (captions). 
+	Speech text represents the majority of the text present in comics~\cite{??}, we propose a adaptive binarisation process from a Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and then a text line grouping algorithm.
+	Finally, an OCR system filters out non text region.
+	This work is explained in Chapter~\ref{chap:te}
 
-	\item [4)] Text localization:
 	
-	we proposed a adaptive binarisation process based on the Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and text line grouping.
-	Finally, a OCR system filter out non text region.
+	\item [5)] Comic character detection: Unsupervised comic character extraction is a difficult task as soon as we aim to process heterogeneous comic styles using the same algorithm.
+	In this context, learning-based approaches are not reliable unless if we have enough data to train on all comic styles. 
+	We first propose a query by example approach that asks the user to select a part of the object he is looking for in one comics image and the system spots other occurrences everywhere in all the pages of the comics album, assuming that they have been digitized under the same conditions.
+	Second, we go one step further by refining the comic character location according to the contextual elements (e.g. panel contents, speech balloon position, tail direction) given a region of interest.
+	% To do so, we replace the user query by an expert system using knowledge about the comics domain.
+	These works are presented in Chapter~\ref{chap:ce}.
 
-	
-	\item [5)] Comic character detection:
-	Two contributions, first using CBIR approach, second search in the hypothetical region of interest.
-	First a query by example approach that ask the user to select a part of the object he is looking for in one comics image and the system retrieves it automatically everywhere in all the pages of the comics album, assuming that they have been digitized under the same conditions.
-	Second,...
-
-
-
-	\item [6)] Comics understanding:
+	\item [6)] Comics understanding: Making a computer understand the complete story of a comics is a really challenging task, especially because it is even hard for human sometimes.
+	Putting comics domain knowledge in an ontology-based framework enable to interact between image processing and semantic information in order to progressively understand the content of a document.
+	This work is introduced in Chapter~\ref{chap:hp}.
+	% We apply this framework to comics understanding in order to extract panels, balloons, texts, comic characters and their semantic relations in an unsupervised way.
 
 
 \end{itemize}
@@ -136,3 +138,34 @@ thesis.
 
 % Outline --------------------------------------------------------------------------------------------------------------------------------------
 \section{Outlines}
+
+The rest of the thesis is organized as follows:
+\begin{itemize}
+% \item \ch{chap:gm} presents some definitions, concepts of graph theory, particularly the ones that are necessary for our work to be described later. After that we present a review of the state-of-the-art methods for graph and subgraph matching.
+\item \ch{chap:sota} presents a detailed review of the state-of-the-art methods for the analysis of comic images. This chapter details several image processing methods in the four first subsections and then we review the holistic understanding systems that have been applied to document analysis so far and the more advanced application on the market.
+% and gives an overview, pros and cons and examples of different categories of methods.
+
+\item \ch{chap:gt} presents the dataset and ground truth of comic images that we provided to the community. The idea of this dataset consists in a mixture images coming from different albums with the goal of being as representative as possible of the comics diversity.
+It also describe the indexation structure in a Scalable Vector Graphics (SVG) format.
+
+\item \ch{chap:pe} introduces a fast panel extraction method by classifying the connected components into three classes for panel, text and noise.
+This method can also be used for text/graphic separation.   %presents a subgraph matching method based on tensor product graph and a symbol spotting methodology is proposed using that. To cope with the structural errors a new dual graph based representation is proposed which is proved to be effective in graphical documents.
+
+\item \ch{chap:be} introduces both closed and non closed balloon localisation and segmentation methods together with contour classification and tail detection and description. %introduces near convex region adjacency graph (NCRAG) which solves the limitations of the basic region adjacency graph (RAG) in graphical documents.
+
+\item \ch{chap:te} addresses the difficulty of text localization and recognition in comics.
+It propose speech text localisation method using connected components alignment and neighbourhood similarity to form text lines.
+Text recognition is also addressed and preliminary results are detailed. %the structural errors encountered in the graphical documents. To solve the problem it proposes a hierarchical graph representation which can correct the errors/distortions in hierarchical steps.
+
+\item \ch{chap:ce} presents two methods for comic character detection.
+The first method overcomes the difficulties of such non rigid object detection thanks to the proposed descriptor invariant to scale, object deformation, translation and rotation transformations.
+The second method takes profit of the contextual information to define the region of interest of comic characters.%presents a unified experimental evaluation of all the proposed methods and comparisons with some state-of-the-art methods. This is done in a symbol spotting experimental framework.
+
+\item \ch{chap:hp} presents a system that combines low and high level processing to build a scalable system of comics image understanding reaching the level of semantic interaction between elements.
+This work is a collaboration with Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on data mining applied to comic documents.
+
+\item \ch{chap:conclusions} concludes the thesis and defines the future direction of comics document analysis.
+
+% \item \app{app:datasets} %provides a brief description on the datasets that we have used in this thesis work and \app{app:perf-eval} describes a performance evaluation protocol for symbol spotting systems that we follow for the experimental evaluation.
+\end{itemize}
+

@@ -50,7 +50,7 @@
 \usepackage{longtable}
 \usepackage{tikz}
 \usepackage{verbatim}
-
+\usepackage{pdfpages}
 \usepackage{hyperref}                 % Active hyperlink
 \usepackage[hyperpageref]{backref}    % Add 'backlink' page number at the end of each item in the bibliography BibTeX
 \hypersetup{
@@ -184,9 +184,7 @@
   \end{flushright}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%% NEW PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-  % \includepdf{PremiereDeCouverture.pdf}
+  \includepdf{template_ULR/frontpage.pdf}
   % \newpage
 
   %%%%%%%%%%%%%%%%%%%%%%%%%% NEW PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -397,5 +395,8 @@ evaluators   & ?\\
 %.............................
 
 \backmatter
+
+\includepdf{template_ULR/backpage.pdf}
+
 
 \end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

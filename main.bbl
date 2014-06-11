@@ -1,5 +1,33 @@
 \begin{thebibliography}{10}
 
+\bibitem{anagnostopoulos2008license}
+C-N~E. Anagnostopoulos, Ioannis~E Anagnostopoulos, Ioannis~D Psoroulas,
+  Vassilis Loumos, and Eleftherios Kayafas.
+\newblock License plate recognition from still images and video sequences: A
+  survey.
+\newblock {\em Intelligent Transportation Systems, IEEE Transactions on},
+  9(3):377--391, 2008.
+
+\bibitem{Arai2010Automatic}
+Kohei Arai and Herman Tolle.
+\newblock Automatic e-comic content adaptation.
+\newblock {\em International Journal of Ubiquitous Computing (IJUC)},
+  1(1):1--11, 2010.
+
+\bibitem{Arai10}
+Kohei Arai and Herman Tolle.
+\newblock Method for automatic e-comic scene frame extraction for reading comic
+  on mobile devices.
+\newblock In {\em Seventh International Conference on Information Technology:
+  New Generations}, ITNG '10, pages 370--375, Washington, DC, USA, 2010. IEEE
+  Computer Society.
+
+\bibitem{Arai11}
+Kohei Arai and Herman Tolle.
+\newblock Method for real time text extraction of digital manga comic.
+\newblock {\em International Journal of Image Processing (IJIP)},
+  4(6):669--676, 2011.
+
 \bibitem{Japan2013}
 Japan Book~Publishers Association.
 \newblock An introduction to publishing in japan 2012-2013, 2012.
@@ -20,12 +48,26 @@ DC~Brandon.
 \newblock Graphic novels and comics for the visually impaired explored in
   award-winning paper, 2014.
 
+\bibitem{Chan2007Automatic}
+ChungHo Chan, Howard Leung, and Taku Komura.
+\newblock Automatic panel extraction of color comic images.
+\newblock In HoraceH.-S. Ip, OscarC. Au, Howard Leung, Ming-Ting Sun, Wei-Ying
+  Ma, and Shi-Min Hu, editors, {\em Advances in Multimedia Information
+  Processing - PCM 2007}, volume 4810 of {\em Lecture Notes in Computer
+  Science}, pages 775--784. Springer Berlin Heidelberg, 2007.
+
 \bibitem{Clavelli09}
 Antonio Clavelli and Dimosthenis Karatzas.
 \newblock Text segmentation in colour posters from the spanish civil war era.
 \newblock In {\em Proceedings of the 2009 10th International Conference on
   Document Analysis and Recognition}, ICDAR '09, pages 181--185, Washington,
   DC, USA, 2009. IEEE Computer Society.
+
+\bibitem{Cohn_2013}
+Neil Cohn.
+\newblock Navigating comics: an empirical and theoretical approach to
+  strategies of reading comic page layouts.
+\newblock {\em Frontiers in psychology}, 4(April):186, 2013.
 
 \bibitem{Delaye2014Multi}
 Adrien Delaye and Cheng-Lin Liu.
@@ -38,7 +80,13 @@ Adrien Delaye and Cheng-Lin Liu.
 B.~Duc.
 \newblock {\em L'art de la B.D.: Du sc{\'e}nario {\`a} la r{\'e}alisation
   graphique, tout sur la cr{\'e}ation des bandes dessin{\'e}es}.
-\newblock Number v. 1. Editions Gl{\'e}nat, 1997.
+\newblock Editions Gl{\'e}nat, 1997.
+
+\bibitem{Duda72}
+Richard~O. Duda and Peter~E. Hart.
+\newblock Use of the hough transformation to detect lines and curves in
+  pictures.
+\newblock {\em Commun. ACM}, 15:11--15, January 1972.
 
 \bibitem{Epshtein10}
 B.~Epshtein, E.~Ofek, and Y.~Wexler.
@@ -46,15 +94,49 @@ B.~Epshtein, E.~Ofek, and Y.~Wexler.
 \newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2010 IEEE
   Conference on}, pages 2963 --2970, june 2010.
 
+\bibitem{Guerin2012Ontologies}
+Cl{\'e}ment Gu{\'e}rin.
+\newblock {Ontologies and spatial relations applied to comic books reading.}
+\newblock In {\em {PhD Symposium of Knowledge Engineering and Knowledge
+  Management (EKAW)}}, Galway, Ireland, 2012.
+
 \bibitem{Guerin2013}
 Cl{\'e}ment Gu{\'e}rin, Christophe Rigaud, Antoine Mercier, and al.
 \newblock ebdtheque: a representative database of comics.
 \newblock In {\em Proceedings of International Conference on Document Analysis
   and Recognition (ICDAR)}, Washington DC, 2013.
 
+\bibitem{Han07}
+Eunjung Han, Kirak Kim, HwangKyu Yang, and Keechul Jung.
+\newblock Frame segmentation used mlp-based x-y recursive for mobile cartoon
+  content.
+\newblock In {\em Proceedings of the 12th international conference on
+  Human-computer interaction: intelligent multimodal interaction environments},
+  HCI'07, pages 872--881, Berlin, Heidelberg, 2007. Springer-Verlag.
+
+\bibitem{Khoi11}
+Anh Khoi~Ngo Ho, Jean-Christophe Burie, and Jean-Marc Ogier.
+\newblock Comics page structure analysis based on automatic panel extraction.
+\newblock In {\em GREC 2011, Nineth IAPR International Workshop on Graphics
+  Recognition}, Seoul, Korea, September, 15-16 2011.
+
+\bibitem{Ho2012}
+Anh Khoi~Ngo Ho, Jean-Christophe Burie, and Jean-Marc Ogier.
+\newblock {Panel and Speech Balloon Extraction from Comic Books}.
+\newblock In {\em 2012 10th IAPR International Workshop on Document Analysis
+  Systems}, pages 424--428. Ieee, March 2012.
+
 \bibitem{IBISWorld2013}
 IBISWorld.
 \newblock Comic book publishing in the us: Market research report, 2013.
+
+\bibitem{In11}
+Yusuke In, Takashi Oie, Masakazu Higuchi, Shuji Kawasaki, Atushi Koike, and
+  Hitomi Murakami.
+\newblock Fast frame decomposition and sorting by contour tracing for mobile
+  phone comic images.
+\newblock {\em Internatinal journal of systems applications, engineering and
+  development}, 5(2):216--223, 2011.
 
 \bibitem{Raulet2013Comics}
 Raulet J{\'e}r{\'e}my and Boyer Vincent.
@@ -63,10 +145,41 @@ Raulet J{\'e}r{\'e}my and Boyer Vincent.
   Europe on Computer Graphics, Visualization and Computer Vision (WSCG)}, pages
   88--96, 2013.
 
+\bibitem{li2012automatic}
+Luyuan Li, Yongtao Wang, Zhi Tang, and Liangcai Gao.
+\newblock Automatic comic page segmentation based on polygon detection.
+\newblock {\em Multimedia Tools and Applications}, 11042:1--27, 2012.
+
+\bibitem{Luyuan2014Automatic}
+Luyuan Li, Yongtao Wang, Zhi Tang, and Liangcai Gao.
+\newblock Automatic comic page segmentation based on polygon detection.
+\newblock {\em Multimedia Tools Appl.}, 69(1):171--197, 2014.
+
+\bibitem{Li2013Comic}
+Luyuan Li, Yongtao Wang, Zhi Tang, and Dong Liu.
+\newblock Comic image understanding based on polygon detection.
+\newblock {\em Proc. SPIE}, 8658:86580B--86580B--11, 2013.
+
+\bibitem{Li2013Unsupervised}
+Luyuan Li, Yongtao Wang, Zhi Tang, Xiaoqing Lu, and Liangcai Gao.
+\newblock Unsupervised speech text localization in comic images.
+\newblock In {\em 12th International Conference on Document Analysis and
+  Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
+
+\bibitem{Marx2006Writing}
+Christy Marx.
+\newblock {\em Writing for Animation, Comics, and Games}.
+\newblock Focal Press, 2006.
+
 \bibitem{McCloud94}
 S.~McCloud.
 \newblock {\em Understanding comics}.
 \newblock William Morrow Paperbacks, 1994.
+
+\bibitem{millidge2009comic}
+G.S. Millidge.
+\newblock {\em Comic Book Design}.
+\newblock Watson-Guptill Publications, 2009.
 
 \bibitem{Neumann12}
 L.~Neumann and J.~Matas.
@@ -86,6 +199,12 @@ Christophe Ponsard.
 \newblock Enhancing the accessibility for all of digital comic books.
 \newblock {\em e-Minds}, 1(5), 2009.
 
+\bibitem{ponsard2012ocr}
+Christophe Ponsard, Ravi Ramdoyal, and Daniel Dziamski.
+\newblock An ocr-enabled digital comic books viewer.
+\newblock In {\em Computers Helping People with Special Needs}, pages 471--478.
+  Springer, 2012.
+
 \bibitem{Ratier2013}
 Gilles Ratier.
 \newblock 2013 : l'ann{\'e}e de la d{\'e}c{\'e}l{\'e}ration, 2013.
@@ -102,11 +221,44 @@ Siddharth Singh, Adrian~David Cheok, Guo~Loong Ng, and Farzam Farbiz.
 Alan Stewart.
 \newblock A brief history of the american comic book industry, 2000.
 
+\bibitem{stommel2012segmentation}
+Martin Stommel, Lena~I Merhej, and Marion~G M{\"u}ller.
+\newblock Segmentation-free detection of comic panels.
+\newblock In {\em Computer Vision and Graphics}, pages 633--640. Springer,
+  2012.
+
+\bibitem{Su11}
+Chung-Yuan Su, Ray-I Chang, and Jen-Chang Liu.
+\newblock Recognizing text elements for svg comic compression and its novel
+  applications.
+\newblock In {\em Proceedings of the 11th International Conference on Document
+  Analysis and Recognition (ICDAR)}, ICDAR '11, pages 1329--1333, Washington,
+  DC, USA, 2011. IEEE Computer Society.
+
+\bibitem{Sundaresan2012Text}
+M.~Sundaresan and S.~Ranjini.
+\newblock Text extraction from digital english comic image using two blobs
+  extraction method.
+\newblock In {\em Pattern Recognition, Informatics and Medical Engineering
+  (PRIME), 2012 International Conference on}, pages 449--452, March 2012.
+
+\bibitem{Tan07}
+Takamasa Tanaka, Kenji Shoji, Fubito Toyama, and Juichi Miyamichi.
+\newblock Layout analysis of tree-structured scene frames in comic images.
+\newblock In {\em IJCAI'07}, pages 2885--2890, 2007.
+
 \bibitem{Thomas2010Invisible}
 Evan Thomas.
 \newblock {\em Invisible Art, Invisible Planes, Invisible People}.
 \newblock Multicultural Comics: From Zap to Blue Beetle. University of Texas
   Press, 2010.
+
+\bibitem{Tsai2013Adaptive}
+Chia-Jung Tsai, Chih-Yuan Yao, Pei-ying Chiang, Yu-Chi Lai, Ming-Te Chi,
+  Hung-Kuo Chu, Yu-Shiang Wong, and Yu-Shuen Wang.
+\newblock Adaptive manga re-layout on mobile device.
+\newblock In {\em ACM SIGGRAPH 2013 Posters}, SIGGRAPH '13, pages 57:1--57:1,
+  New York, NY, USA, 2013. ACM.
 
 \bibitem{Weinman09}
 J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
@@ -114,5 +266,10 @@ J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
   belief propagation.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 31(10):1733 --1746, 2009.
+
+\bibitem{Yam04}
+Masashi Yamada, Rahmat Budiarto, Mamoru Endo, and Shinya Miyazaki.
+\newblock Comic image decomposition for reading comics on cellular phones.
+\newblock {\em IEICE Transactions}, 87-D(6):1370--1376, 2004.
 
 \end{thebibliography}

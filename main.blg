@@ -2,47 +2,51 @@ This is BibTeX, Version 0.99c (Web2C 7.5.6)
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
+Repeated entry---line 174 of file bibliography.bib
+ : @article{Delaye2014Multi
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "??"
 Warning--I didn't find a database entry for "Gartner2003a"
-Warning--there's a number but no series in duc1997art
-You've used 20 entries,
+You've used 45 entries,
             2118 wiz_defined-function locations,
-            632 strings with 7473 characters,
-and the built_in function-call counts, 6682 in all, are:
-= -- 665
-> -- 260
-< -- 9
-+ -- 106
-- -- 84
-* -- 384
-:= -- 1050
-add.period$ -- 60
-call.type$ -- 20
-change.case$ -- 99
+            800 strings with 12484 characters,
+and the built_in function-call counts, 17202 in all, are:
+= -- 1721
+> -- 751
+< -- 20
++ -- 298
+- -- 250
+* -- 1128
+:= -- 2690
+add.period$ -- 142
+call.type$ -- 45
+change.case$ -- 252
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 290
-empty$ -- 569
-format.name$ -- 84
-if$ -- 1486
+cite$ -- 45
+duplicate$ -- 717
+empty$ -- 1388
+format.name$ -- 250
+if$ -- 3787
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 18
-newline$ -- 98
-num.names$ -- 40
-pop$ -- 139
+int.to.str$ -- 45
+missing$ -- 45
+newline$ -- 223
+num.names$ -- 92
+pop$ -- 311
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 212
 quote$ -- 0
-skip$ -- 239
+skip$ -- 558
 stack$ -- 0
-substring$ -- 382
-swap$ -- 93
-text.length$ -- 9
+substring$ -- 1103
+swap$ -- 230
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
-warning$ -- 1
-while$ -- 62
-width$ -- 22
-write$ -- 215
-(There were 2 warnings)
+type$ -- 170
+warning$ -- 0
+while$ -- 157
+width$ -- 47
+write$ -- 504
+(There was 1 error message)

@@ -13,49 +13,49 @@
 \contentsline {section}{\numberline {2.2}Balloon segmentation and tail detection}{8}{section.2.2}
 \contentsline {section}{\numberline {2.3}Text extraction and recognition}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}Comic character detection}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}Holistic understanding}{9}{section.2.5}
-\contentsline {section}{\numberline {2.6}Existing applications}{9}{section.2.6}
-\contentsline {section}{\numberline {2.7}Conclusion}{10}{section.2.7}
-\contentsline {chapter}{\numberline {3}Dataset and ground truth}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Structure and indexation}{11}{section.3.2}
-\contentsline {section}{\numberline {3.3}Ground truth quality assessment}{11}{section.3.3}
-\contentsline {section}{\numberline {3.4}Discussions}{11}{section.3.4}
-\contentsline {chapter}{\numberline {4}Panel extraction}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Methodology (contribution)}{13}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experimental results}{13}{section.4.3}
-\contentsline {section}{\numberline {4.4}Conclusions}{13}{section.4.4}
-\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}Methodology}{15}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Localization}{15}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Segmentation \& classification}{15}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Tail detection and description}{16}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Experimental results}{16}{section.5.3}
-\contentsline {section}{\numberline {5.4}Conclusions}{16}{section.5.4}
-\contentsline {chapter}{\numberline {6}Text localization and recognition}{17}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction}{17}{section.6.1}
-\contentsline {section}{\numberline {6.2}Methodology}{17}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Text localization}{17}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Text recognition}{17}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Experimental results}{17}{section.6.3}
-\contentsline {section}{\numberline {6.4}Conclusions}{17}{section.6.4}
-\contentsline {chapter}{\numberline {7}Comic character spotting and clustering}{19}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introduction}{19}{section.7.1}
-\contentsline {section}{\numberline {7.2}Methodology}{19}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Detection and spotting}{19}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Clustering}{19}{subsection.7.2.2}
-\contentsline {section}{\numberline {7.3}Experimental results}{19}{section.7.3}
-\contentsline {section}{\numberline {7.4}Conclusions}{19}{section.7.4}
-\contentsline {chapter}{\numberline {8}System for document understanding}{21}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{21}{section.8.1}
-\contentsline {section}{\numberline {8.2}Methodology}{21}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Framework}{21}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Application to comics}{21}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Experimental results}{21}{section.8.3}
-\contentsline {section}{\numberline {8.4}Conclusions}{21}{section.8.4}
-\contentsline {chapter}{\numberline {9}Conclusions}{23}{chapter.9}
-\contentsline {section}{\numberline {9.1}Summary and contributions}{23}{section.9.1}
-\contentsline {section}{\numberline {9.2}Future perspectives}{23}{section.9.2}
-\contentsline {chapter}{Bibliography}{27}{section*.11}
+\contentsline {section}{\numberline {2.5}Holistic understanding}{10}{section.2.5}
+\contentsline {section}{\numberline {2.6}Existing applications}{11}{section.2.6}
+\contentsline {section}{\numberline {2.7}Conclusion}{11}{section.2.7}
+\contentsline {chapter}{\numberline {3}Dataset and ground truth}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Structure and indexation}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Ground truth quality assessment}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}Discussions}{13}{section.3.4}
+\contentsline {chapter}{\numberline {4}Panel extraction}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Methodology (contribution)}{15}{section.4.2}
+\contentsline {section}{\numberline {4.3}Experimental results}{15}{section.4.3}
+\contentsline {section}{\numberline {4.4}Conclusions}{15}{section.4.4}
+\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}Methodology}{17}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Localization}{17}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Segmentation \& classification}{17}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Tail detection and description}{18}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Experimental results}{18}{section.5.3}
+\contentsline {section}{\numberline {5.4}Conclusions}{18}{section.5.4}
+\contentsline {chapter}{\numberline {6}Text localization and recognition}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Methodology}{19}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Text localization}{19}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Text recognition}{19}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Experimental results}{19}{section.6.3}
+\contentsline {section}{\numberline {6.4}Conclusions}{19}{section.6.4}
+\contentsline {chapter}{\numberline {7}Comic character spotting and clustering}{21}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{21}{section.7.1}
+\contentsline {section}{\numberline {7.2}Methodology}{21}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Detection and spotting}{21}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Clustering}{21}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Experimental results}{21}{section.7.3}
+\contentsline {section}{\numberline {7.4}Conclusions}{21}{section.7.4}
+\contentsline {chapter}{\numberline {8}System for document understanding}{23}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{23}{section.8.1}
+\contentsline {section}{\numberline {8.2}Methodology}{23}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Framework}{23}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Application to comics}{23}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Experimental results}{23}{section.8.3}
+\contentsline {section}{\numberline {8.4}Conclusions}{23}{section.8.4}
+\contentsline {chapter}{\numberline {9}Conclusions}{25}{chapter.9}
+\contentsline {section}{\numberline {9.1}Summary and contributions}{25}{section.9.1}
+\contentsline {section}{\numberline {9.2}Future perspectives}{25}{section.9.2}
+\contentsline {chapter}{Bibliography}{29}{section*.13}

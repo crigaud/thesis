@@ -1,52 +1,46 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
-Repeated entry---line 174 of file bibliography.bib
- : @article{Delaye2014Multi
- :                         ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "??"
-Warning--I didn't find a database entry for "Gartner2003a"
-You've used 45 entries,
+You've used 74 entries,
             2118 wiz_defined-function locations,
-            800 strings with 12484 characters,
-and the built_in function-call counts, 17202 in all, are:
-= -- 1721
-> -- 751
-< -- 20
-+ -- 298
-- -- 250
-* -- 1128
-:= -- 2690
-add.period$ -- 142
-call.type$ -- 45
-change.case$ -- 252
+            991 strings with 19118 characters,
+and the built_in function-call counts, 28314 in all, are:
+= -- 2788
+> -- 1333
+< -- 33
++ -- 524
+- -- 444
+* -- 1950
+:= -- 4512
+add.period$ -- 238
+call.type$ -- 74
+change.case$ -- 427
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 717
-empty$ -- 1388
-format.name$ -- 250
-if$ -- 3787
+cite$ -- 74
+duplicate$ -- 1144
+empty$ -- 2240
+format.name$ -- 444
+if$ -- 6160
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 45
-newline$ -- 223
-num.names$ -- 92
-pop$ -- 311
+int.to.str$ -- 74
+missing$ -- 75
+newline$ -- 370
+num.names$ -- 158
+pop$ -- 499
 preamble$ -- 1
-purify$ -- 212
+purify$ -- 361
 quote$ -- 0
-skip$ -- 558
+skip$ -- 846
 stack$ -- 0
-substring$ -- 1103
-swap$ -- 230
-text.length$ -- 20
+substring$ -- 1724
+swap$ -- 339
+text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 170
+type$ -- 282
 warning$ -- 0
-while$ -- 157
-width$ -- 47
-write$ -- 504
-(There was 1 error message)
+while$ -- 250
+width$ -- 76
+write$ -- 841

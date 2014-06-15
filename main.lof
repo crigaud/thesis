@@ -1,7 +1,8 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Flow diagram of comic balloon detection using comic blob extraction method proposed by Arai~\cite {Arai11}.}}{8}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Flow diagram of comic balloon detection using comic blob extraction method proposed by Arai~\cite {Arai11}.\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Examples of comics character postures. This example shows deformation, pose, rotation, translation and occlusion variations. Image credits: Prunelle, la fille du cyclope, Vicky Portail-Kernel and C\'{e}dric Kernel, Ankama, 2010. \relax }}{10}{figure.caption.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

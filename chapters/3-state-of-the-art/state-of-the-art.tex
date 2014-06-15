@@ -180,17 +180,34 @@ In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual
 \section{Existing applications}
 \label{sec:sota:applications}
 
-\begin{itemize}
-	\item \url{http://vomic.shueisha.co.jp/}
-	\item Comic Chat is a working program, allowing groups of people to communicate over the Internet see \url{2006_Kurlander_Comic_Chat.pdf}
-	\item \url{2010_Tobita_Comic Engine: Interactive System for Creating and Browsing Comic books with Attention Cuing.pdf}
-	\item Online interactive creation of comics \url{2009_Lopes_Calligraphic Shortcuts for Comics Creation.pdf}
-	\item \url{2010_Tobita_Comic Engine: Interactive System for Creating and Browsing Comic books with Attention Cuing}
-	\item Software for scripting comics, to define the interactions, time, zoom and region for a kind of video export \url{2012_Raulet_A Sketch-based Interface to Script Comics Reading.pdf}
-	\item Movie to comics: ... the first three factors determine balloon size, and the last factor determines balloon shape ... Emotion can be further exhibited by shape of balloon [1] \url{/PhD/Biblio_LINK/Speech_balloon_analysis/2013_Chu_Optimized Speech Balloon Placement for Automatic_comics_generation.pdf}
-	\item OCR Manga Reader \url{https://play.google.com/store/apps/details?id=com.cb4960.ocrmr&hl=en}
-	\item Capture2Text \url{http://capture2text.sourceforge.net/}
-\end{itemize}
+% \begin{itemize}
+	% \item Voice + comic: people tell the comic story and sell them \url{http://vomic.shueisha.co.jp/}
+	% \item Comic Chat is a working program, allowing groups of people to communicate over the Internet see \url{2006_Kurlander_Comic_Chat.pdf}
+	% \item \url{2010_Tobita_Comic Engine: Interactive System for Creating and Browsing Comic books with Attention Cuing.pdf}
+	% \item Comic life: turning your photos into a comic \url{http://plasq.com/}
+	% \item Online interactive creation of comics \url{2009_Lopes_Calligraphic Shortcuts for Comics Creation.pdf}
+
+	% \item Software for scripting comics, to define the interactions, time, zoom and region for a kind of video export \url{2012_Raulet_A Sketch-based Interface to Script Comics Reading.pdf}
+
+	% \item Movie to comics: ... the first three factors determine balloon size, and the last factor determines balloon shape ... Emotion can be further exhibited by shape of balloon [1] \url{/PhD/Biblio_LINK/Speech_balloon_analysis/2013_Chu_Optimized Speech Balloon Placement for Automatic_comics_generation.pdf}
+% 	\item OCR Manga Reader \url{https://play.google.com/store/apps/details?id=com.cb4960.ocrmr&hl=en}
+% 	\item Capture2Text \url{http://capture2text.sourceforge.net/}
+% \end{itemize}
+
+
+Comic books are a graphic art form combining text and images to tell a story.
+Comics are now used in a wide variety of styles, not only on paper (e.g., magazines, newspapers, TV show) but also as electronic content (smartphone apps, e-books, websites).
+Comics are one of the most popular and familiar forms of graphic content.
+People read comics easily and learn many things, so even children can learn about cultures and trends, among other things, through comics even unconsciously.
+
+From this background, we can divide comic-based computer systems into two categories.
+One type would be using comics to represent complex information such as online communication in a form of comics~\cite{Kurlander1996} and generating video or story log summaries~\cite{Uchihashi1999Video,Alves2008So,Shamir2006Generating} (computer graphics domain).
+Also, it is possible to listen at manga~\cite{Vomic} which have been recorded by people reading the story or used app for automatic translation~\cite{OCRMangaReader,Capture2Text} (requires user text selection).
+These systems are useful to add value to the content while making it more funny and interesting.
+The other category concerns the comic design by enabling novices to create comics  interactively using a computer for augmenting an individual user's memory~\cite{SumiSNM2002Comic}, turning photo albums into a comic~\cite{ComicLife3}, making comic-like video~\cite{Raulet2011Sketch}, making collaborative comics~\cite{Ricardo2009Calligraphic} and exchanging rich message~\cite{Salovaara2007Appropriation}.
+
+
+
 
 \section{Conclusion}
 \label{sec:sota:conclusion}
@@ -206,6 +223,6 @@ In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual
 	% \item 2013 SIGRAPP poster \url{2013_Tsai_Adaptive Manga Re-Layout On Mobile Device.pdf}
 \end{itemize}
 
-% To conclude the literature review, some of the challenges of symbol spotting can be highlighted from the above state-of-the-art reviews. First, symbol spotting is concerned with various graphical documents viz. electronic documents, architectural floorplans etc., which in reality suffer from \emph{noise} that may come from various sources such as low-level image processing, intervention of text, etc. So efficiently handling structural noise is crucial for symbol spotting in documents. Second, an example application of symbol spotting is to find any symbolic object from a large amount of documents. Hence, the method should be efficient enough to handle a \emph{large database}. Third, symbol spotting is usually invoked by querying a cropped symbol from some document, which acts as a query to the system. So it implies infinite possibilities of the query symbols, and indirectly \emph{restricts the possibility of training} in the system. Finally, since symbol spotting is related to real-time applications, the method should have a \emph{low computational complexity}. We chose these five important aspects (segmentation, robustness in noise, training free, computational expenses, robustness with a large database) of symbol spotting to specify the advantages and disadvantages of the key research, which is listed in Table~\ref{table:sota-ss:relworkscomp}.
+To conclude the literature review, some of the challenges of symbol spotting can be highlighted from the above state-of-the-art reviews. First, symbol spotting is concerned with various graphical documents viz. electronic documents, architectural floorplans etc., which in reality suffer from \emph{noise} that may come from various sources such as low-level image processing, intervention of text, etc. So efficiently handling structural noise is crucial for symbol spotting in documents. Second, an example application of symbol spotting is to find any symbolic object from a large amount of documents. Hence, the method should be efficient enough to handle a \emph{large database}. Third, symbol spotting is usually invoked by querying a cropped symbol from some document, which acts as a query to the system. So it implies infinite possibilities of the query symbols, and indirectly \emph{restricts the possibility of training} in the system. Finally, since symbol spotting is related to real-time applications, the method should have a \emph{low computational complexity}. We chose these five important aspects (segmentation, robustness in noise, training free, computational expenses, robustness with a large database) of symbol spotting to specify the advantages and disadvantages of the key research, which is listed in Table~ ?.
 
-% In the next chapter, we are going to propose the first symbol spotting algorithm. The method is based on the factorization of graph into serialized subgraphs (graph paths) and then organizing those graph paths into hash table. The hash based technique helps to reduce search space considerably and perform the subgraph matching (symbol spotting) faster.
+In the next chapter, we are going to propose the first symbol spotting algorithm. The method is based on the factorization of graph into serialized subgraphs (graph paths) and then organizing those graph paths into hash table. The hash based technique helps to reduce search space considerably and perform the subgraph matching (symbol spotting) faster.

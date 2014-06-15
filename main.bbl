@@ -6,6 +6,16 @@ Hafiz~Aziz AHMAD, Shinichi KOYAMA, and Haruo HIBINO.
   intentions to imitate its visuals.
 \newblock {\em Bulletin of JSSD}, 59(3), 2012.
 
+\bibitem{Alves2008So}
+Tiago Alves, Ana Sim\~{o}es, Rui Figueiredo, Marco Vala, Ana Paiva, and Ruth
+  Aylett.
+\newblock So tell me what happened: Turning agent-based interactive drama into
+  comics.
+\newblock In {\em Proceedings of the 7th International Joint Conference on
+  Autonomous Agents and Multiagent Systems - Volume 3}, AAMAS '08, pages
+  1269--1272, Richland, SC, 2008. International Foundation for Autonomous
+  Agents and Multiagent Systems.
+
 \bibitem{anagnostopoulos2008license}
 C-N~E. Anagnostopoulos, Ioannis~E Anagnostopoulos, Ioannis~D Psoroulas,
   Vassilis Loumos, and Eleftherios Kayafas.
@@ -137,6 +147,10 @@ S.~Fidler, Jian Yao, and R.~Urtasun.
 \newblock {\em 2013 IEEE Conference on Computer Vision and Pattern
   Recognition}, 0:702--709, 2012.
 
+\bibitem{OCRMangaReader}
+Google.
+\newblock Ocr manga reader, 2014.
+
 \bibitem{Guerin2012Ontologies}
 Cl{\'e}ment Gu{\'e}rin.
 \newblock {Ontologies and spatial relations applied to comic books reading.}
@@ -221,6 +235,12 @@ Fahad~Shahbaz Khan, Muhammad~Anwer Rao, Joost van~de Weijer, Andrew~D.
 \newblock In {\em Twenty-Fifth IEEE Conference on Computer Vision and Pattern
   Recognition (CVPR 2012)}, 2012.
 
+\bibitem{Kurlander1996}
+David Kurlander, Tim Skelly, and David Salesin.
+\newblock Comic chat.
+\newblock {\em Proceedings of the 23rd annual conference on Computer graphics
+  and interactive techniques - SIGGRAPH ’96}, 96:225--236, 1996.
+
 \bibitem{Lamiroy2014Handbook}
 Bart Lamiroy and Jean-Marc Ogier.
 \newblock Analysis and interpretation of graphical documents.
@@ -254,6 +274,14 @@ Luyuan Li, Yongtao Wang, Zhi Tang, Xiaoqing Lu, and Liangcai Gao.
 \newblock Unsupervised speech text localization in comic images.
 \newblock In {\em 12th International Conference on Document Analysis and
   Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
+
+\bibitem{Ricardo2009Calligraphic}
+Ricardo Lopes, Tiago Cardoso, Nelson Silva, and ManuelJ. Fonseca.
+\newblock Calligraphic shortcuts for comics creation.
+\newblock In Andreas Butz, Brian Fisher, Marc Christie, Antonio Krüger,
+  Patrick Olivier, and Roberto Therón, editors, {\em Smart Graphics}, volume
+  5531 of {\em Lecture Notes in Computer Science}, pages 223--232. Springer
+  Berlin Heidelberg, 2009.
 
 \bibitem{Mao2003Document}
 Song Mao, Azriel Rosenfeld, and Tapas Kanungo.
@@ -320,6 +348,10 @@ Daniel~M. Oliveira and Rafael~D. Lins.
   Pattern Recognition}, ICPR '10, pages 2411--2414, Washington, DC, USA, 2010.
   IEEE Computer Society.
 
+\bibitem{ComicLife3}
+Plasq.
+\newblock Comic life 3, 2014.
+
 \bibitem{Ponsard09}
 Christophe Ponsard.
 \newblock Enhancing the accessibility for all of digital comic books.
@@ -335,6 +367,19 @@ Christophe Ponsard, Ravi Ramdoyal, and Daniel Dziamski.
 Gilles Ratier.
 \newblock 2013 : l'ann{\'e}e de la d{\'e}c{\'e}l{\'e}ration, 2013.
 
+\bibitem{Raulet2011Sketch}
+J.~Raulet and V.~Boyer.
+\newblock A sketch-based interface to script comics reading.
+\newblock In {\em SIGGRAPH Asia 2011 Sketches}, SA '11, pages 3:1--3:2, New
+  York, NY, USA, 2011. ACM.
+
+\bibitem{Salovaara2007Appropriation}
+Antti Salovaara.
+\newblock Appropriation of a mms-based comic creator: From system
+  functionalities to resources for action.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '07, pages 1117--1126, New York, NY, USA, 2007. ACM.
+
 \bibitem{Sarwar2013Ontology}
 Sohail Sarwar, Zia~Ul Qayyum, and Saqib Majeed.
 \newblock Ontology based image retrieval framework using qualitative semantic
@@ -348,6 +393,15 @@ Eugenio~Di Sciascio, Francesco~M. Donini, and Marina Mongiello.
 \newblock Structured knowledge representation for image retrieval.
 \newblock {\em CoRR}, abs/1109.1498, 2011.
 
+\bibitem{Shamir2006Generating}
+Ariel Shamir, Michael Rubinstein, and Tomer Levinboim.
+\newblock Generating comics from 3d interactive computer graphics.
+\newblock {\em IEEE Comput. Graph. Appl.}, 26(3):53--61, May 2006.
+
+\bibitem{Vomic}
+Shueisha.
+\newblock Vomic, 2014.
+
 \bibitem{Singh2004}
 Siddharth Singh, Adrian~David Cheok, Guo~Loong Ng, and Farzam Farbiz.
 \newblock 3d augmented reality comic book and notes for children using mobile
@@ -355,6 +409,10 @@ Siddharth Singh, Adrian~David Cheok, Guo~Loong Ng, and Farzam Farbiz.
 \newblock In {\em Proceedings of the 2004 Conference on Interaction Design and
   Children: Building a Community}, IDC '04, pages 149--150, New York, NY, USA,
   2004. ACM.
+
+\bibitem{Capture2Text}
+Sourceforge.
+\newblock Capture2text, 2014.
 
 \bibitem{Stewart2000}
 Alan Stewart.
@@ -373,6 +431,11 @@ Chung-Yuan Su, Ray-I Chang, and Jen-Chang Liu.
 \newblock In {\em Proceedings of the 11th International Conference on Document
   Analysis and Recognition (ICDAR)}, ICDAR '11, pages 1329--1333, Washington,
   DC, USA, 2011. IEEE Computer Society.
+
+\bibitem{SumiSNM2002Comic}
+Yasuyuki Sumi, Ryuuki Sakamoto, Keiko Nakao, and Kenji Mase.
+\newblock Comicdiary: Representing individual experiences in a comics style.
+\newblock In {\em Ubicomp}, pages 16--32, 2002.
 
 \bibitem{Sun2010}
 Weihan Sun and Koichi Kise.
@@ -440,6 +503,13 @@ Chia-Jung Tsai, Chih-Yuan Yao, Pei-ying Chiang, Yu-Chi Lai, Ming-Te Chi,
 \newblock Adaptive manga re-layout on mobile device.
 \newblock In {\em ACM SIGGRAPH 2013 Posters}, SIGGRAPH '13, pages 57:1--57:1,
   New York, NY, USA, 2013. ACM.
+
+\bibitem{Uchihashi1999Video}
+Shingo Uchihashi, Jonathan Foote, Andreas Girgensohn, and John Boreczky.
+\newblock Video manga: Generating semantically meaningful video summaries.
+\newblock In {\em Proceedings of the Seventh ACM International Conference on
+  Multimedia (Part 1)}, MULTIMEDIA '99, pages 383--392, New York, NY, USA,
+  1999. ACM.
 
 \bibitem{Viola2004robust}
 Paul Viola and Michael~J Jones.

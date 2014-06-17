@@ -8,8 +8,8 @@
 Comics images are mixed content documents that are processed differently depending on the purpose.
 The involved techniques can vary a lot between panel, balloon, text and comic character extractions.
 The contents of different nature are related to each other to produce a story.
-Treating each of the content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher semantic level.
-We review specific comics image content processing, holistic understanding of images and the existing applications in this section.
+Treating each of the content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher level of semantic.
+We review specific comics image content processing, holistic understanding and the existing state-of-the-art applications related to comics.%in this section.
 
 \section{Panel extraction and layout analysis}
 \label{sec:sota:layout_panel}
@@ -17,22 +17,22 @@ We review specific comics image content processing, holistic understanding of im
 
 Panel extraction and ordering has been mainly studied for panel to panel reading.
 The need is increasing since the first generation of mobile devices with small screens in colour or B\&W.
-People want to continue reading their favourite comics or manga on the way without caring kilos of books.
+In fact, people want to continue reading their favourite comics or manga on the way, without caring kilos of books.
 Printed comics require tedious work to be manually scanned and split into screen size parts small enough to avoid zooming and scrolling.
 
 Several techniques have been proposed to automatically extract panels as~\cite{In11}, assuming that panels are small enough elements to be comfortably read on mobile devices.
 They are based on white line cutting algorithm~\cite{Duda72,li2012automatic,Chan2007Automatic}, recursive X-Y cut~\cite{Han07} or gradient~\cite{Tan07}.
-Those methods do not consider empty area~\cite{In11} and border free panel.
+Those methods do not consider empty area~\cite{In11} and border free panels.
 These issues have been corrected by connected component approaches~\cite{Arai10} 
 %,Rigaud2012LNCS} 
 but they are sensible to region that sometimes connect several panels and increase the detection error rate.
-Another approach based on morphological mathematics and growing region~\cite{Khoi11} can remove such connecting elements but also create new holes in the panel border.
-After the region segmentation step, heuristic filtering is often applied~\cite{Arai11,Khoi11} to classify panel region according to the size ratio with the page which depends on the page format.
-More recently, new method have shown interesting results for manga and European comics with different background colours.
-They are based on watershed~\cite{ponsard2012ocr}, line segmentation using Canny operator and polygon detection~\cite{Luyuan2014Automatic}, and region of interest detection~\cite{stommel2012segmentation} such as corners~\cite{Tsai2013Adaptive} and line segments.
+Another approach based on morphological mathematics and growing region~\cite{Khoi11} can remove such connecting elements but also remove information on the panel border.
+After the region segmentation step, heuristic filtering is often applied~\cite{Arai11,Khoi11} to classify panel region according to the size ratio according to the page size, which depends on the page format.
+More recently, new methods have shown interesting results for manga and European comics with different background colours.
+They are based on watershed~\cite{ponsard2012ocr}, line segmentation using Canny operator and polygon detection~\cite{Luyuan2014Automatic}, region of interest detection~\cite{stommel2012segmentation} such as corners~\cite{Tsai2013Adaptive} and line segments.
 Panel retargeting have been addressed for manga by Matsui~\cite{Matsui2011}.
 
-Page layout analysis have been recently studied to calculate the reading order of the panels.
+Page layout analysis have been studied to calculate the reading order of the panels.
 The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, nevertheless few studies~\cite{Guerin2012Ontologies,Ponsard09,Arai2010Automatic} demonstrated the possibility of calculating such Z-path (left-to-right and down) or right-to-left (e.g. Arabic, Japanese) and down~\cite{Li2013Comic,Tsai2013Adaptive} according to the position of the panels. 
 
 \section{Balloon segmentation and tail detection}
@@ -43,12 +43,12 @@ Balloons have developed into a more-or-less oval shape, with a pointer or tail t
 There are many specialized forms of balloons, either traditional or invented~\cite{Marx2006Writing}.
 %Balloons or bubbles are key elements in comics, they link graphical and textual elements and are part of the comics style. 
 Few work about balloon detection have been done until now and mainly closed speech balloon have been studied.
-Arai~\cite{Arai11} proposed a blob detection method based on connected component detection with four filtering rules for manga.
-The rules are based on blob minimum size, white pixel occurrence, inclusion of vertical straight lines detection and width to length ratio (see figure~\ref{fig:Arai_balloon_extraction_process}).
-Another connected component approach proposed by Ho~\cite{Ho2012} uses HSV color space to make a first selection of clear blobs and then consider as balloons the blobs with a ratio between the text area and the blob bounding box higher than sixty percent.
+Arai~\cite{Arai11} proposed a blob detection method based on connected component detection with four filtering rules applied to manga analysis.
+The rules are based on blob minimum size, white pixel occurrence, inclusion of vertical straight lines and width to length ratio (see figure~\ref{fig:Arai_balloon_extraction_process}).
+Another connected component approach proposed by Ho~\cite{Ho2012} uses HSV color space to make a first selection of bright blobs and then consider as balloons the blobs with a ratio between the text area and the blob bounding box higher than sixty percent.
 
 From our knowledge, the analysis of open balloons, balloon contour and tails have not been studied before, we propose a first approaches in~\ch{chap:be}.
-Those extra information about the balloons are important for a broad understanding of the dialogues and emotions~\cite{millidge2009comic}.
+Those extra information about the balloons are also important for a broad understanding of the dialogues and emotions~\cite{millidge2009comic}.
 
 % chapter chap_be (end) ~\ref{sub:be:segmentation}.
 
@@ -79,24 +79,26 @@ Those extra information about the balloons are important for a broad understandi
 
 
 Text extraction and recognition have attracted of lot a attention in document analysis such as newspaper, administrative documents, cheques, maps, floor plans and engineering drawings. 
-Nevertheless, the most similar application to comics is car plate recognition~\cite{anagnostopoulos2008license} because the text is in a salient and contrasted area with a complex background around it.
-% Nevertheless, plates are typewritten with a fixed length.
+Techniques from real scene text recognition can sometimes be transposed to comics images, especially the ones applied to car plate recognition~\cite{anagnostopoulos2008license} because the text is in a salient and contrasted area with a complex background around it such as speech balloon in comics.
 
+% Nevertheless, plates are typewritten with a fixed length.
 %From our knowledge, only text localization has been studied, no text segmentation or text recognition yet. This is probably due to the lack of dataset and ground truth to evaluate the algorithms.
-Few work concerns text in comics images, bottom-up approaches use connected component which often relies on the segmentation step~\cite{ponsard2012ocr}.
+Few works concern text extraction in comics speech balloons, bottom-up approaches use connected component which often relies on the segmentation step~\cite{ponsard2012ocr}.
 Su~\cite{Su11} uses Sliding Concentric Windows as text/graphic separation and then apply mathematical morphology and an SVM classifier to classify text from non-text components. 
 %Morphological operations are performed with a fixed mask size, the method is orientation and resolution dependent.
-
 % In~\cite{Rigaud2013VISAPP}, we proposed a adaptive binarisation process based on the Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and text line grouping, see~\ch{chap:te}.
 % Previously, we proposed a k-mean classification of the 
 Li~\cite{Li2013Unsupervised} proposed an unsupervised speech text localization for comics that trains a Bayesian classifier on aligned connected component and then detect the rest of the text using the classifier for text/non text separation.
  
-
 % Rigaud~\cite{Rigaud12} %~\cite{Rigaud12}
 % make use of ``the median value of the border page pixels'' to binarize the image, extract CC and then classify them into ``noise'', ``text'' or ``frame'' (based on CC heights). This method assumes that the page always contains text and that the text background colour is similar to the paper background. 
 
-Top-down approaches starting from balloons (white blobs) detection followed by mathematical morphology operations have been proposed by Arai~\cite{Arai11} and Yamada~\cite{Yam04} and Sundaresan~\cite{Sundaresan2012Text}.
+Top-down approaches starting from balloons (white blobs) detection followed by mathematical morphology operations have been proposed by Arai~\cite{Arai11}, Yamada~\cite{Yam04} and Sundaresan~\cite{Sundaresan2012Text}.
+From our knowledge, there are no work concerning graphic sounds (onomatopoeia) and illustrative text extraction.
 
+Text recognition applied to comics is really a challenging because it includes most of the difficulties from text recognition in document analysis domain if we consider all the type of text that composed the comics.
+From typewritten to handwritten and free-form text in uniform to complex background including image noise, text deformation and overlapping.
+Nevertheless, Ponsard~\cite{ponsard2012ocr} solved a sub part of the problem by focusing on speech text of a single font and language for which an OCR system is trained for.
 
 
 \section{Comic character detection}
@@ -113,7 +115,7 @@ Top-down approaches starting from balloons (white blobs) detection followed by m
 
 Human detection in computer vision field has been largely studied during the past decades, mainly based on grayscale image and gradients. Color information is rarely relevant for human detection because of clothing and skin color difference. In videos, moving regions are often used as region of interest.
 
-Although, comics are often a reproduction of human life situations, they are a domain where we can not directly apply human detection based methods.
+Although, comics are often a reproduction of human life situations, it is a domain where we can not directly apply human detection based methods.
 The main difference is that comic characters (e.g. protagonist, hero) are hand drawn and therefore more variant in terms of deformation, shape and appearance than real life humans (see fig.~\ref{fig:tarzan}).
 % Comics are composed by a sequence of static snapshots telling a story like a video at a very low frame rate, where we want to detect similar objects. 
 In colored comics, the color information gives the identity of characters and plays a main role for character spotting with speech balloon positions. 
@@ -131,19 +133,21 @@ This is a big difference compared to natural images and human detection, since c
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Recent studies have been published for partial Manga copy detection~\cite{Sun2010}, mainly based on shape information because of the absence of color information.
-This work has been extended to Manga copyright infringement protection~\cite{Sun2013IJDAR} using a face detector~\cite{Viola2004robust} as seeds and concentric HOG~\cite{Dalal05} descriptor.
+Recent studies have been published for partial manga copy detection~\cite{Sun2010}, mainly based on shape information because of the absence of color information.
+This work has been extended to Manga copyright infringement protection~\cite{Sun2013IJDAR} using a faces~\cite{Viola2004robust} as region of interest and concentric HOG~\cite{Dalal05} as region descriptor.
 This work shows good results for manga part retrieval which is a subset of the whole comics world.
 % In our work we focus on a complementary subset, corresponding to colored comics analysis.
 
 Colored comics may be compared to cartoon images sequence, for which a first work based on HOG, SVM and color attributes has been published in 2012~\cite{Khan12}.
 Preliminary work about cartoon and comics faces recognition have been carried out by Kohei~\cite{Kohei2012} and Cheung~\cite{cheung2008face}.
-Recently, graph theory has been used to find redundant color structure in order to automatically localize the most frequent color group apparition and label them as main characters~\cite{HoGREC2013}.
-The thesis of TA~\cite{TAPhD2010} (section 1.1 and 1.2) gives a good overview about hand drawing recognition and mentions that ``story board scene understanding still remains an open problem, few results are available in the literature about stroke images''.
-Another work uses HOG descriptor with redundant information classification to also find the most frequent elements~\cite{SunICDAR2013}.
-Both graph and descriptor based methods need an image preprocessing step to remove unwanted redundant elements such as text and speech balloons.
+More recently, graph theory has been used to find redundant color structure in order to automatically localize the most frequent color group apparition and label them as main characters~\cite{HoGREC2013}.
+The thesis of TA~\cite{TAPhD2010} (section 1.1 and 1.2) gives a good overview about stroke-based image analysis similar to comics, it defines the issues of poor information, occlusion, deformation, inter-class and intra-class variations, scale, spatial and/or temporal relations and structured data.
+TA~\cite{TAPhD2010} also mentions that ``story board scene understanding still remains an open problem, few results are available in the literature about stroke images''.
 
-Interesting approaches tries to automatize comic generation~\cite{Tobita2010Comic,WangHYYC12} using image cartoonification and script analysis.
+Another work uses HOG descriptor with redundant information classification to also find the most frequent elements~\cite{SunICDAR2013}.
+Both graph and descriptor based methods need an image preprocessing step to remove irrelevant redundant elements such as text and speech balloons.
+
+Other interesting approaches tries to automatize comic generation~\cite{Tobita2010Comic,WangHYYC12} using image cartoonification and script analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
 
@@ -162,14 +166,14 @@ One of the original goals of image or graphical document analysis was to fully u
 This requires solving several sub-tasks simultaneously, for instance region detection, labeling of meaningful regions and semantic understanding using layout analysis.
 In the past, researchers have developed classifiers for tackling each of these sub-tasks independently~\cite{Mao2003Document}.
 However, these sub-tasks can help each other.
-For instance, in a comics page, if we know the panel positions, then we make a better guess at the location of the comics characters (they are usually in the panels).
-It is not easy to combine different related sub-tasks together.
-Previous work concern real scene image analysis~\cite{Blaschke2014Geographic}, retrieval~\cite{Sciascio2011Structured} and understanding~\cite{Li2012Toward,Fidler2012Describing}, medical image annotation using description logic and inference engine~\cite{Hu2003Ontology}, object-based image retrieval~\cite{Mezaris03anontology,Sarwar2013Ontology} (between keyword-based and query-by-example) and image interpretation~\cite{Hudelot2008Fuzzy,Ogier2000Semantic} that mentions the importance of using topological information, distances, directional relative position and much complex relations such as ``between'' and ``surround'' and ``among''.
-Also, Geographic Object-Based Image Analysis (GEOBIA)~\cite{Blaschke2014Geographic} makes extensive use of ontologies to interpret the maps.
+For instance, in a comics page, if we know the panel positions, then we can make a better guess at the location of the comics characters (they are usually inside the panels).
+However, it is not easy to combine different related sub-tasks together.
+Previous works concern real scene image analysis~\cite{Blaschke2014Geographic}, retrieval~\cite{Sciascio2011Structured} and understanding~\cite{Li2012Toward,Fidler2012Describing}, medical image annotation using description logic and inference engine~\cite{Hu2003Ontology}, object-based image retrieval~\cite{Mezaris03anontology,Sarwar2013Ontology} (between keyword-based and query-by-example) and image interpretation~\cite{Hudelot2008Fuzzy,Ogier2000Semantic} that mentions the importance of using topological information, distances, directional relative position and much complex relations such as ``between'' and ``surround'' and ``among''.
+Also, Geographic Object-Based Image Analysis (GEOBIA)~\cite{Blaschke2014Geographic} makes extensive use of ontologies to interpret maps.
 
 %{\bf ADD} background about document understanding and drawing retrieval (OK: cadastral map).
 
-Recently, images from comic books have been also considered.
+Recently, comics book images have been also considered.
 An ontology of comics has been proposed from a philosophical approach~\cite{Aaron2011}, a semantic annotation tool~\cite{Hermann2012Guided} makes use of previous knowledge and consistency information to suggest new knowledge to the user in a interactive way.
 Spatial inferences have been used to infer the comic books reading order, for panel in the page and balloon in the panel~\cite{Guerin2012Ontologies}. 
 In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual information of simple object to build more complex ones.
@@ -202,9 +206,9 @@ People read comics easily and learn many things, so even children can learn abou
 
 From this background, we can divide comic-based computer systems into two categories.
 One type would be using comics to represent complex information such as online communication in a form of comics~\cite{Kurlander1996} and generating video or story log summaries~\cite{Uchihashi1999Video,Alves2008So,Shamir2006Generating} (computer graphics domain).
-Also, it is possible to listen at manga~\cite{Vomic} which have been recorded by people reading the story or used app for automatic translation~\cite{OCRMangaReader,Capture2Text} (requires user text selection).
+Also, it is possible to listen to manga~\cite{Vomic} which have been recorded by people reading the story or to use mobile app for automatic translation~\cite{OCRMangaReader,Capture2Text} (requires user text selection).
 These systems are useful to add value to the content while making it more funny and interesting.
-The other category concerns the comic design by enabling novices to create comics  interactively using a computer for augmenting an individual user's memory~\cite{SumiSNM2002Comic}, turning photo albums into a comic~\cite{ComicLife3}, making comic-like video~\cite{Raulet2011Sketch}, making collaborative comics~\cite{Ricardo2009Calligraphic} and exchanging rich message~\cite{Salovaara2007Appropriation}.
+The other category concerns the comic design by enabling novices to create comics  interactively using a computer for augmenting an individual user's memory~\cite{SumiSNM2002Comic}, turning photo albums into a comic~\cite{ComicLife3,Chu2013Optimized}, making comic-like video~\cite{Raulet2011Sketch}, making collaborative comics~\cite{Ricardo2009Calligraphic} and exchanging rich message~\cite{Salovaara2007Appropriation}.
 
 
 
@@ -213,16 +217,27 @@ The other category concerns the comic design by enabling novices to create comic
 \label{sec:sota:conclusion}
 
 
-\begin{itemize}
+% \begin{itemize}
 	% \item Copy/paste from previous publications
-	\item Demonstrate that I understand the topic
-	\item Conclusion and critics
-	\item From our knowledge, there is no framework for document understanding in the literature that infers new knowledge iteratively and without user interaction (unsupervised).
+	% \item Demonstrate that I understand the topic
+	% \item Conclusion and critics
 
 	% \item Navigating comics: an empirical and theoretical approach to strategies of reading comic page layouts \url{2013_Cohn_navigating_comics.pdf}
 	% \item 2013 SIGRAPP poster \url{2013_Tsai_Adaptive Manga Re-Layout On Mobile Device.pdf}
-\end{itemize}
+% \end{itemize}
 
-To conclude the literature review, some of the challenges of symbol spotting can be highlighted from the above state-of-the-art reviews. First, symbol spotting is concerned with various graphical documents viz. electronic documents, architectural floorplans etc., which in reality suffer from \emph{noise} that may come from various sources such as low-level image processing, intervention of text, etc. So efficiently handling structural noise is crucial for symbol spotting in documents. Second, an example application of symbol spotting is to find any symbolic object from a large amount of documents. Hence, the method should be efficient enough to handle a \emph{large database}. Third, symbol spotting is usually invoked by querying a cropped symbol from some document, which acts as a query to the system. So it implies infinite possibilities of the query symbols, and indirectly \emph{restricts the possibility of training} in the system. Finally, since symbol spotting is related to real-time applications, the method should have a \emph{low computational complexity}. We chose these five important aspects (segmentation, robustness in noise, training free, computational expenses, robustness with a large database) of symbol spotting to specify the advantages and disadvantages of the key research, which is listed in Table~ ?.
+To conclude the literature review, some of the challenges of comics image analysis can be highlighted from the above state-of-the-art reviews.
+First, comics image suffer from noise as any other document image processing.
+It comes from hardware processes (e.g. drawing techniques, printing, digitization) and software (e.g. image compression).
+So efficiently handling noise is crucial for image analysis and understanding.
+Knowing the design process of the comics creation helps for image denoising.
+Second, according to the results of the reviewed methods, we can order them by level of difficulty, from the simplest to the hardest: panel, balloon, text, comic character and holistic understanding of an image or album (add comparison table about genericity, processing time, complexity???).
 
-In the next chapter, we are going to propose the first symbol spotting algorithm. The method is based on the factorization of graph into serialized subgraphs (graph paths) and then organizing those graph paths into hash table. The hash based technique helps to reduce search space considerably and perform the subgraph matching (symbol spotting) faster.
+Third, most of the work in the literature use different copyrighted images that they are not allowed to share publicly and do not share their code neither.
+This is a key issue for researchers which can not share, reproduce and compare results on identical data in a collaborative way.
+This is one of the reason that retains comics analysis to progress as fast as other field of research of document analysis.
+
+
+In the next chapter, we are going to present the first comics image dataset and ground truth publicly available for researchers. It is a selection of hundred pages from more than twenty different albums from America, Japan and Europe.
+% The construction of the dataset and ground truth and a quality assessment test are detailed.
+% The hash based technique helps to reduce search space considerably and perform the subgraph matching (symbol spotting) faster.

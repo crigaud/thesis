@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  15 JUN 2014 14:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  17 JUN 2014 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1735,14 +1735,17 @@ File: figs/Arai_balloon_extraction_process.pdf Graphic file (type pdf)
 Package pdftex.def Info: figs/Arai_balloon_extraction_process.pdf used on input
  line 66.
 (pdftex.def)             Requested size: 150.56305pt x 141.82462pt.
- [8 <./figs/Arai_balloon_extraction_process.pdf>] <figs/prunelle.png, id=715, 4
-30.60875pt x 134.5025pt>
+ [8 <./figs/Arai_balloon_extraction_process.pdf>] [9] <figs/prunelle.png, id=72
+8, 430.60875pt x 134.5025pt>
 File: figs/prunelle.png Graphic file (type png)
 
 <use figs/prunelle.png>
-Package pdftex.def Info: figs/prunelle.png used on input line 127.
+Package pdftex.def Info: figs/prunelle.png used on input line 129.
 (pdftex.def)             Requested size: 220.8258pt x 68.97708pt.
- [9] [10 <./figs/prunelle.png>] [11])
+ [10 <./figs/prunelle.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11])
 (./chapters/9-gt/gt.tex [12]
 Chapter 3.
 ) (./chapters/4-pe/pe.tex [13
@@ -1821,11 +1824,11 @@ Chapter 7.
 
 ]
 Chapter 8.
-) (./chapters/10-conclusions/conclusions.tex [23] [24
-
-]
+) (./chapters/10-conclusions/conclusions.tex [23] [24]
 Chapter 9.
-) (./chapters/MyPublications/publications.tex [25] [26
+) (./chapters/MyPublications/publications.tex [25
+
+] [26
 
 ] [27]
 Overfull \hbox (6.10098pt too wide) in paragraph at lines 49--51
@@ -1848,13 +1851,11 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
  [29
 
 
-] [30] [31] [32]
+] [30] [31] [32] [33]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 390.
- [33] [34]) [35] [36
-
-]
-<template_ULR/backpage.pdf, id=1050, 598.1477pt x 845.90027pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 397.
+ [34]) [35] [36]
+<template_ULR/backpage.pdf, id=1054, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf>
@@ -1865,7 +1866,7 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf used on input line 399.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 
-<template_ULR/backpage.pdf, id=1053, page=1, 598.1477pt x 845.90027pt>
+<template_ULR/backpage.pdf, id=1057, page=1, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
@@ -1896,7 +1897,9 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
 9.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
- [37 <./template_ULR/backpage.pdf>]
+ [37
+
+ <./template_ULR/backpage.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
 
@@ -1906,17 +1909,17 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FA68EE4C1DF80979BB7354EE607C198A;3848.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 22E6A9446BC2415A341A453613922864;4243.
+(rerunfilecheck)             Checksum: 83F30AE7009ADCA26641400C637722FA;4365.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 402.
  ) 
 Here is how much of TeX's memory you used:
- 23001 strings out of 493308
- 403718 string characters out of 6137822
- 488941 words of memory out of 5000000
- 25698 multiletter control sequences out of 15000+600000
+ 23006 strings out of 493308
+ 403817 string characters out of 6137822
+ 488980 words of memory out of 5000000
+ 25702 multiletter control sequences out of 15000+600000
  24178 words of font info for 87 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 55i,18n,54p,1420b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,54p,1394b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
@@ -1941,10 +1944,10 @@ e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 rw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (58 pages, 827627 bytes).
+Output written on main.pdf (58 pages, 828655 bytes).
 PDF statistics:
- 1182 PDF objects out of 1200 (max. 8388607)
- 1047 compressed objects within 11 object streams
- 211 named destinations out of 1000 (max. 500000)
+ 1186 PDF objects out of 1200 (max. 8388607)
+ 1051 compressed objects within 11 object streams
+ 212 named destinations out of 1000 (max. 500000)
  564 words of extra memory for PDF output out of 10000 (max. 10000000)
 

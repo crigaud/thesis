@@ -135,16 +135,21 @@ unconventional.
 This leaves room for interpretation on the form which increase annotation variations by different people and decrease the uniformity of the ground truth.
 This precision level is used in several, widely used datasets~\cite{pascal-voc-2012, yao2007introduction}.
 %{\color{blue}This groundtruthing level is also used for well known dataset widely used~\cite{pascal-voc-2012, yao2007introduction}.}
-Hereafter we define each element to annotate and the protocol to follow.
+Hereafter we detail the two levels of annotation (visual and semantic) that form the ground truth and how they are indexed in a file.
+The combination of visual and semantic annotation provides the advantage of making this ground truth relevant for document analysis and semantic evaluation which are both part of the comics understanding process.
+
+% each element to annotate and the protocol to follow.
 % follows specific guidelines according to the rules below:
 
 \subsection{Visual annotation} % (fold)
 \label{sub:visual_annotation}
+The first annotation consist in defining the spacial region where elements are located in the image.
+We describe hare how the visual annotation have been performed for the panels, balloons, texts and comic characters.
 
 % subsection visual_annotation (end)
 \paragraph{Panels} % (fold)
 \label{par:panels}
-are defined as an image area, generally rectangular, representing a single scene in the story. 
+The frame or panels are defined as an image area, generally rectangular, representing a single scene in the story. 
 There is always at least one panel per page, the entire page region can be used as panel if necessary.
 When a panel has a black border, the bounding box is placed as close as possible to its frame.
 Sometimes, images have not been scanned perfectly horizontally, it is then impossible to have an horizontal bounding box sticking exactly to the border.
@@ -170,15 +175,15 @@ In all cases, the other elements (balloon, text, drawings) extending from the fr
 
 \paragraph{Balloons} % (fold)
 \label{par:balloons}
-We define a balloon (phylactery) as the region of an image including one or several lines of text, graphically defined by an identifiable physical boundary or suggested by the presence of an arrow pointing to the speaker (the tail).
+We define a balloon (phylactery or bubble) as the region of an image including one or several lines of text, graphically defined by an identifiable physical boundary or suggested by the presence of an arrow pointing to the speaker (the tail).
 Although rare, empty balloons (not containing lines of text) are also annotated if they are clearly identifiable by their shape or
 the tail representation.
 Pixel level annotation follows the contour of the balloon (see figure~\ref{fig:gt:segBalloons}c), while bounding box annotation does not consider the contour of phylactery and truncates the tail.
 Sometimes it crosses the entire panel and generates an unrepresentative position of the desired balloon (see figure~\ref{fig:gt:segBalloons}a).
 When the balloon is not closed (e.g. open contour) the annotated contour has to stick as close as possible to the contained text (see figure~\ref{fig:gt:segBalloons}b).
-Note, the first version of the ground truth have been defined at bounding box level ignoring the tail and the second version at pixel level following the contour variations and the tail region.
+Note, the first version of the ground truth (2013) have been defined at bounding box level ignoring the tail and the second version (2014) at pixel level following the contour variations and the tail region.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
 \begin{figure}[h!]
 \begin{center}
 \begin{tabular}{ccc}
@@ -192,6 +197,7 @@ c) \includegraphics[width=80px]{segBalloon3.png}
 \label{fig:gt:segBalloons}
 \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
 
 % paragraph balloons (end)
 
@@ -206,7 +212,7 @@ These isolated symbols convey information and are segmented as text line as well
 Similarly, we have chosen to include in this category the illustrative text, such as a road sign or storefront (see figure~\ref{fig:gt:segLines}c).
 Although at the boundary between text and graphic, these elements are still invariably read by the reader and their annotation is potentially interesting for multiple purposes, including story and scene analysis.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
 \begin{figure}[h!]
 \begin{center}
 \begin{tabular}{ccc}
@@ -220,11 +226,29 @@ c) \includegraphics[width=80px]{segLine3.png}
 \label{fig:segLines}
 \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+
 % paragraph text_lines (end)
 
 \paragraph{Comic characters} % (fold)
 \label{par:comic_characters}
+The comic characters position have been included in the second version of the ground truth only (2014).
+The concept of ``character'' may have different interpretations when used for comics and must be specified.
+Characters in a comic have not necessarily a human-like, or even living beings appearance.
+Even so, it would be appropriate to annotate every human being appearing in a box while some are nothing but a part of the scenery.
+Therefore, we have chosen to limit the annotation to the comic characters that emits at least one speech balloon in the album (minimal impact in the story).
+Their bounding box has been defined to maximize the region occupied by the comic character inside the box region.
+Therefore, some parts of the character such as arms or legs, are clipped sometimes (see figure~\ref{fig:gt:segCharater}).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{segCharacter.png}
+\caption[Comic character position annotation]{Example of comic character annotation: sniper's arms are not included in the bounding box in order to maximize the region occupied by the sniper in its bounding box. The two snipers and the two characters in the car are annotated because they emit a speech balloon in a different panel.}
+\label{fig:gt:segCharacter}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % paragraph comic_characters (end)
 
@@ -232,29 +256,61 @@ c) \includegraphics[width=80px]{segLine3.png}
 % section ground_truth_construction (end)
 
 \subsection{Semantic annotation} % (fold)
-\label{sub:semantic_annotation}
-Once segmented, each object is annotated with a set of predefined metadata as follows. 
+\label{sub:gt:semantic_annotation}
+This second level of annotation complete each spacial region with additional information about its semantic.
+Also, the image itself is annotated with extra information about its origin (e.g. album, collection, author, publisher).
+%Once segmented, each object is annotated with a set of predefined metadata as follows. 
 
-\subsubsection{Panels} 
-Each panel is annotated with a \texttt{{rank}} metadata which stand for its  position in the reading sequence. 
-The first panel to be read on a given page has its rank property set to 1, while the last one's is set to \textit{n}, with \textit{n} the number of panels in the page.
+\paragraph{Images}
+The image, often assimilated as pages, has been annotated with bibliographical information, so that anyone using this ground truth is free to get is own paper copy of the comic books for extra uses.
+The first annotation is the page number (\texttt{{pageNumber}}) then the comic book title, from which the page has been picked up, and its release date (\texttt{{albumTitle, releaseDate}}), the series it belongs to (\texttt{{collectionTitle}}), the authors and editor names (\texttt{{writerName, drawerName, editorName}}) and, finally, the website and/or ISBN (\texttt{{website, ISBN}}).
+The album title is not mandatory for webcomics.
+Structural information about the page content has been added as well, such as resolution (\texttt{{resolution}}), reading direction (\texttt{{readingDirection}}), main language of the text (\texttt{{language}}) and single or double page information (\texttt{{doublePage}}).
+% These annotation are stored in a tag named \texttt{{Pages}}.
 
-\subsubsection{Balloons}
-Balloons are also annotated with a \texttt{{rank}} property. 
-However, as balloons are not explicitly bounded to any panel, their rank is set according to the page as a whole. 
-For a page containing {\it m} balloons, the first balloon's rank will be 1 and the last will be {\it m}.
-Moreover, two additional metadata are given. 
-First, the \texttt{{shape}} is indicated, picking a value from the enumeration \{\texttt{cloud, oval, peak, rectangle, suggested}\} as pictured in Fig. \ref{fig:balloons_shape}.
-Finally, the pointing direction of a  balloon's tail is given through the \texttt{{queueDirection}} property. 
-The possible values are the eight cardinal directions plus a ninth additional value for the lack of a tail: \{\texttt{N, NE, E, SE, S, SW, W, NW, none}\}.
+\paragraph{Panels} 
+The panes are annotated with a \texttt{{rank}} metadata which stand for its position in the reading sequence. 
+The first panel to be read on a given page has its rank property set to 1, while the last one is set to \textit{n}, where \textit{n} is the number of panels in the page.
 
-\subsubsection{Text lines}
-Each text line is associated with its transcription in capital letters.
+\paragraph{Balloons}
+Balloons are also annotated with a \texttt{{rank}} property that defines their reading order relatively to the image because balloons are not always included in panels.
+%, their rank is set according to the page as a whole. 
+For a page containing $m$ balloons, the first balloon's rank will be 1 and the last will be $m$.
+%Moreover, two additional metadata are given. 
+A second information concerns the \texttt{{shape}} of the balloon.
+This feature conveys an information about how the contained text is spoken (tone).
+The type of \texttt{{shape}} is given from the following list \{\texttt{smooth, wavy, spiky, suggested}\} as pictured in figure~\ref{fig:gt:balloonShape}.
+Finally, the tail tip position (extremity) and its pointing direction have been added into the second version of the ground truth.
+There are given through the \texttt{{tailTip}} and \texttt{{tailDirection}} properties.
+The possible values of the direction are reduced to the eight cardinal directions plus a ninth additional value for the lack of tail: \{\texttt{N, NE, E, SE, S, SW, W, NW, none}\}.
+In the second version of the ground truth (2014), we added the identifier of the comic character which is emitting the balloon \texttt{{idCharacter}}. 
 
-\subsubsection{Pages}\label{sec:pages}
-Each page has been annotated with bibliographical information, so that anyone using this database can find the appropriate comic books. 
-Among the first ones comes the page number (\texttt{{pageNumber}}) the comic book title, from which the page has been picked up, and its release date (\texttt{{albumTitle, releaseDate}}), the series it belongs to (\texttt{{collectionTitle}}), the authors and editor names (\texttt{{writerName, drawerName, editorName}}) and, finally, the website and/or ISBN (\texttt{{website, ISBN}}). The album title is not mandatory for webcomics.
-Structural information about the page content has been added as well, such as resolution (\texttt{{resolution}}), reading direction (\texttt{{readingDirection}}), main language of the written text (\texttt{{language}}) and single or double page image (\texttt{{doublePage}}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{balloonShape.png}
+\caption[Balloon shapes]{Les différents types de contour de bulle, de gauche à droite et de haut en bas : nuage, hérissé, suggéré, rectangle, ovale.}
+\label{fig:gt:balloonShape}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Text lines}
+The text lines are associated with their transcription and the identifier of the corresponding balloon is added in \texttt{{idBalloon}} if the text line is included in a balloon.
+
+\paragraph{Comic characters} % (fold)
+\label{par:comic_characters}
+The comic character are identified by \texttt{{idCharacter}} in order to be easily referred.
+
+% paragraph comic_characters (end)
+
+% \paragraph{Speaking character and speech balloon} % (fold)
+% \label{par:speaking_character_and_speech_balloon}
+% In the second version of the ground truth, we added a new type of relation which is between regions.
+%  balloons and comic characters regions that are related in the story (balloon spoken by a character).
+% The information is stored in a structure called \texttt{{LinkSBSC}} that consist a pair of identifier \texttt{{idBalloon}} and \texttt{{idCharacter}}.
+% paragraph speaking_character_and_speech_balloon (end)
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}
@@ -266,32 +322,113 @@ Structural information about the page content has been added as well, such as re
 % \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The combination of visual and semantic annotation provides the advantage to make this ground truth relevant for document analysis and semantic evaluation which are both part of the comics understanding process.
 % subsection semantic_annotation (end)
 
 \subsection{File structure} % (fold)
 \label{sub:file_structure}
-As we wanted to keep the database file system simple and easy to share, semantic and visual annotations on a given page are gathered in a single SVG (Scalable Vector Graphics) file. 
-Besides being royalty-free and actively maintained by a W3C working group, the SVG format fulfils two essential needs for this database.
+As we wanted to keep the ground truth file system simple and easy to share, visual and semantic annotations about a given page are gathered in a single full-text file following the specifications of Scalable Vector Graphics (SVG). 
+Besides being an open-standard developed by the World Wide Web Consortium (W3C) since 1999, the SVG format fulfils two essential needs for this database.
 
-First, in association with a recent Internet browser or your favorite image viewer, it provides a simple, fast and elegant way to display the visual segmentation of any desired object over a comic book page. 
-Different kind of objects (e.g. panels, balloons) can be displayed in different ways according to CSS (Cascading Style Sheets) properties defined for each of them, see Fig. \ref{fig:css}. 
+First, using a recent Internet browser or your favourite image viewer, it provides a simple, fast and elegant way to display the visual annotation of any desired object over a comic book page using layers.
+No need to install software such as Matlab, Adobe Illustrator or equivalent open source to visualize the ground truth information.
+
+It is XML-based vector image format that allows to display an animate the annotated region, stored as polygon object in the SVG file, as desired using the Cascading Style Sheets (CSS) properties, see figure~\ref{fig:gt:svgImage}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{ccc}
+a) \includegraphics[width=100px]{svgPanel.png} 
+& 
+b) \includegraphics[width=100px]{svgBalloon.png}
+&
+c) \includegraphics[width=100px]{svgTextlines.png}
+\end{tabular}
+\caption[Annotation rendering in a browser]{Example of rendering for each class of element. For example, red for panels (a), cyan for balloons (b) and green for text (c). The opacity is set to 50\% to allow seeing the corresponding image by transparency.} 
+\label{fig:gt:svgImage}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Each layer can be displayed or not in order to enhance the clearness of the annotations when browsing the database.
 Secondly, SVG being a XLM-based language, it makes the integration of semantic annotation very easy via the use of the predefined \texttt{metadata} element.
 
 One ground truth file contains the complete description of one comics image. 
 There is no hierarchical link between pages from a same comic book. 
-Following the basic XML and encoding information, a SVG file starts with a root \texttt{<svg>} element containing the title of the document, \texttt{<title>}, and four \texttt{<svg>} children with different class attributes.
+Following the basic XML encoding information, a SVG file starts with a root \texttt{<svg>} element containing the title of the document, \texttt{<title>}, and five \texttt{<svg>} children with different class attributes.
+These contain annotations collected on five types of elements which are the page, panels, balloons, text lines and comic characters.
+The type of element in a tag is specified by its \texttt{class} attribute.
+The first tag, \texttt{class = ``Page''} contains description on the image and has two daughters.
+The first one, \texttt{image} has several attributes which specifies a link to the image file in the dataset \texttt{xlink: href} and two specifying the \texttt{width} and \texttt{height} of the image.
+The second, \texttt{metadata}, contains bibliographic information about the album and page properties described in \ref{sub:gt:semantic_annotation}.
 %A SVG file begins with information about the XML version and encoding system and then a root \texttt{<svg>} element containing the title of the document \texttt{<title>} and four others \texttt{<svg>} elements with different class attributes. % that describe the page, the panels, the text lines and the text areas the entire set of annotations for the attached page.
-The annotations are the same for all the \texttt{<svg>} nodes, each of them describing one kind of element (e.g. panel, balloon) according to its {\tt class} attribute. 
-The first \texttt{<svg>} element, \texttt{<svg class=``Page''>}, has two children.
-The first one is \texttt{<image>} and contains a link to the corresponding image file and the size it has to be displayed.
-The next child is a \texttt{<metadata>} element containing the bibliographical information described in \ref{sec:pages}.
-The three following \texttt{<svg>} siblings, \texttt{<svg class=``Panel''>}, \texttt{<svg class=``Balloon''>} and \texttt{<svg class=``Line''>} respectively contain the annotations on panels, balloons and text lines. 
-They all contain SVG \texttt{<polygon>} elements with a list of five points in a \texttt{point} attribute that define the position of the bounding box's corners. %four corners position coordinates of a bounding box. 
-Note that the fifth point equal the first one to ``close'' the polygon according to the SVG format. 
-Those points are used by the viewer to draw polygons over the page. 
-Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on the corresponding polygon, according to the attributes list described in \ref{sec:semanticAnnotation}.
+%The annotations are the same for all the \texttt{<svg>} nodes, each of them describing one kind of element (e.g. panel, balloon) according to its {\tt class} attribute. 
+%The first \texttt{<svg>} element, \texttt{<svg class=``Page''>}, has two children.
+%The first one is \texttt{<image>} and contains a link to the corresponding image file and the size it has to be displayed.
+%The next child is a \texttt{<metadata>} element containing the bibliographical information described in \ref{sub:gt:semantic_annotation}.
+The four following \texttt{<svg>} siblings, \texttt{<svg class=``Panel''>}, \texttt{<svg class=``Balloon''>}, \texttt{<svg class=``Line''>} and \texttt{<svg class=``Character''>} respectively contain the annotations about panels, balloons, text lines and comic characters. 
+They all contain SVG \texttt{<polygon>} elements with a list of five or more points in a \texttt{point} attribute that define the position of the bounding box corners or the pixel-level contour. %four corners position coordinates of a bounding box. 
+Note that the last point is always equal the first one to ``close'' the polygon according to the SVG specifications. 
+Those points are used by the viewer to draw polygons with the corresponding CSS style. 
+Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on the corresponding polygon, according to the attributes list described in \ref{sub:gt:semantic_annotation}.
+
+An example of ground truth file is given figure~\ref{list:svg}.% présente un exemple du contenu de l'un de ces fichiers.
+
+\begin{lstlisting}[language=XML, frame=single, caption=Example of SVG file of the eBDtheque ground truth, captionpos=b, label=list:svg]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg>
+  <title>CYB_BUBBLEGOM_T01_005</title>
+  <svg class="Page">
+    <image 
+    	x="0" 
+    	y="0" 
+    	width="750" 
+    	height="1060" 
+    	href="CYB_BUBBLEGOM_T01_005.jpg"
+    />
+    <metadata 
+    	collectionTitle="collection"
+    	editorName="editeur" 
+    	doublePage="false"
+    	website="http://website.com"
+    	albumTitle="titre"
+    	drawerName="dessinateur"
+    	language="french"
+    	resolution="300"
+    	ISBN="979-10-90655-01-0"
+    	readingDirection="leftToRight" 
+    	writerName="scenariste"
+    	releaseDate="2009"
+    	pageNumber="5"
+    />
+  </svg>
+  <svg class="Panel">
+    <polygon points="53,95 268,95 268,292 53,292 53,95">
+      <metadata rank="1"/>
+    </polygon>
+    ...
+  </svg>
+  <svg class="Balloon">
+    <polygon points="61,103 143,103 143,172 61,172 61,103">
+      <metadata idBalloon="B01" idCharacter="C01" shape="smooth"
+      tailDirection="SE" rank="1"/>
+    </polygon>
+    ...
+  </svg>
+  <svg class="Line">
+    <polygon points="373,121 432,121 432,132 373,132 373,121">
+      <metadata idBalloon="B01">LIKE TOU.</metadata>
+    </polygon>
+    ...
+  </svg>
+  <svg class="Character">
+    <polygon points="84,153 261,153 261,298 84,298 84,153"/>
+    	<metadata idCharacter="C01"/>
+    ...
+  </svg>
+</svg>
+\end{lstlisting}
 
 %{\bf Add SVG code figure here?} Arnaud suggested it too but, we don't have room and it will be ugly...
 
@@ -324,6 +461,36 @@ Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on 
 \section{Ground truth quality assessment}
 \label{sec:gt:ground_truth_quality_assessment}
 
+TODO
+
+When so many different persons are involved in the creation of a graphical ground truth, it is very difficult, if not impossible, to have a perfectly homogeneous segmentation.
+Therefore, in addition to the package of pages he was in charge of, each participant has been asked to annotate the panels of a final page. 
+This page was the same for everybody and was chosen for its graphical components heterogeneity. 
+It contains ten panels from which, four are full-fenced, five half-fenced and one is completely frameless, see Fig. \ref{fig:test_page}. 
+This heterogeneity is somehow representative of the whole corpus.
+
+We defined an acceptable error for the position of a corner given by several persons.
+Image being of different definitions, using a percentage of the page size makes more sense than using a specific number of pixels.
+%A percentage of the page width and height is more relevant.
+%Let set an acceptable error of 0.5\% of the page for the position on each corner. 
+We set this percentage $p$ at 0.5\% of the page height and width in $x$ and $y$. 
+Given the test image's definition of 750x1060 pixels, this makes a delta of +/- 5 pixels in $y$ axis and +/- 4 pixels in $x$ axis. 
+
+We asked to each one of the twenty involved persons to draw the four points bounding box of the panels ignoring text area.
+A mean position from the twenty different values has been calculated for each of them.
+Then, the distance of each point to its mean value is computed. 
+Fig. \ref{fig:stddev_corners} shows the amount of corners for a distance, centered on zero.
+Given the threshold $p=0.5$, 87.5\% of pointed corners can be considered as being homogeneous over the group of labeling people. 
+%{\bf what is p?} p is the threshold
+The overall mean standard deviation on this page reaches 0,15\%
+ (1.13 pixels) for the width, and 0.12\% (1.28 pixels) for the height.
+The two bumps, at -40 and 15, are related to the missegmentation of 13 of the 80 panels. 
+Indeed, instructions have been misunderstood by some people who included text area outside of the panels or missed some panel's part.
+Fig. \ref{fig:test_page} shows the difference between areas labeled as a panel by at least one person and areas labeled as a panel by every participant.
+However, mistakes of this kind have been manually corrected by a post-production pass.
+
+Even though the error criterion has only been estimated on panels, it is reasonable to extend it to balloons and text lines as well.
+Indeed, the segmentation protocol being quite similar for all features (bounding box as close as possible to the object), the observed standard deviation of panel corner positions has no reason to be different from balloons and text lines.
 
 % \section{Discussions}
 % \label{sec:gt:siscussions}

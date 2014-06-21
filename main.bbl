@@ -147,6 +147,12 @@ B.~Epshtein, E.~Ofek, and Y.~Wexler.
 \newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2010 IEEE
   Conference on}, pages 2963 --2970, june 2010.
 
+\bibitem{pascal-voc-2012}
+M.~Everingham, L.~Van~Gool, C.~K.~I. Williams, J.~Winn, and A.~Zisserman.
+\newblock The pascal visual object classes (voc) challenge.
+\newblock {\em International Journal of Computer Vision}, 88(2):303--338, June
+  2010.
+
 \bibitem{Fidler2012Describing}
 S.~Fidler, Jian Yao, and R.~Urtasun.
 \newblock Describing the scene as a whole: Joint object detection, scene
@@ -157,6 +163,11 @@ S.~Fidler, Jian Yao, and R.~Urtasun.
 \bibitem{OCRMangaReader}
 Google.
 \newblock Ocr manga reader, 2014.
+
+\bibitem{griffinHolubPerona}
+G.~Griffin, A.~Holub, and P.~Perona.
+\newblock Caltech-256 object category dataset.
+\newblock Technical Report 7694, California Institute of Technology, 2007.
 
 \bibitem{Guerin2012Ontologies}
 Cl{\'e}ment Gu{\'e}rin.
@@ -248,6 +259,14 @@ David Kurlander, Tim Skelly, and David Salesin.
 \newblock {\em Proceedings of the 23rd annual conference on Computer graphics
   and interactive techniques - SIGGRAPH ’96}, 96:225--236, 1996.
 
+\bibitem{lamiroy:inria-00537035}
+Bart Lamiroy, Daniel Lopresti, Hank Korth, and Jeff Heflin.
+\newblock {How Carefully Designed Open Resource Sharing Can Help and Expand
+  Document Analysis Research}.
+\newblock In Christian Viard-Gaudin Gady~Agam, editor, {\em {Document
+  Recognition and Retrieval XVIII - DRR 2011}}, volume 7874, San Francisco,
+  United States, January 2011. SPIE, SPIE.
+
 \bibitem{Lamiroy2014Handbook}
 Bart Lamiroy and Jean-Marc Ogier.
 \newblock Analysis and interpretation of graphical documents.
@@ -309,6 +328,11 @@ Yusuke Matsui, Toshihiko Yamasaki, and Kiyoharu Aizawa.
   York, New York, USA, 2011. ACM Press.
 
 \bibitem{McCloud94}
+S.~McCloud.
+\newblock {\em Understanding comics}.
+\newblock William Morrow Paperbacks, 1994.
+
+\bibitem{mccloud1994understanding}
 S.~McCloud.
 \newblock {\em Understanding comics}.
 \newblock William Morrow Paperbacks, 1994.
@@ -416,6 +440,12 @@ Siddharth Singh, Adrian~David Cheok, Guo~Loong Ng, and Farzam Farbiz.
 \newblock In {\em Proceedings of the 2004 Conference on Interaction Design and
   Children: Building a Community}, IDC '04, pages 149--150, New York, NY, USA,
   2004. ACM.
+
+\bibitem{smeaton2006evaluation}
+A.F. Smeaton, P.~Over, and W.~Kraaij.
+\newblock Evaluation campaigns and trecvid.
+\newblock In {\em Proceedings of the 8th ACM international workshop on
+  Multimedia information retrieval}, pages 321--330. ACM, 2006.
 
 \bibitem{Capture2Text}
 Sourceforge.

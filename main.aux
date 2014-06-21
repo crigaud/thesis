@@ -217,6 +217,10 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.7}Conclusion}{12}{section.2.7}}
 \newlabel{sec:sota:conclusion}{{2.7}{12}{Conclusion}{section.2.7}{}}
 \citation{Guerin2013}
+\citation{pascal-voc-2012,smeaton2006evaluation,griffinHolubPerona}
+\citation{lamiroy:inria-00537035}
+\citation{Guerin2013}
+\citation{mccloud1994understanding}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Dataset and ground truth}{13}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -224,97 +228,144 @@
 \@writefile{brf}{\backcite{Guerin2013}{{13}{3}{chapter.3}}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{13}{section.3.1}}
 \newlabel{sec:gt:intro}{{3.1}{13}{Introduction}{section.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Structure and indexation}{13}{section.3.2}}
-\newlabel{sec:gt:structure_indexation}{{3.2}{13}{Structure and indexation}{section.3.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Ground truth quality assessment}{13}{section.3.3}}
-\newlabel{sec:gt:ground_truth_quality_assessment}{{3.3}{13}{Ground truth quality assessment}{section.3.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Discussions}{13}{section.3.4}}
-\newlabel{sec:gt:siscussions}{{3.4}{13}{Discussions}{section.3.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Panel extraction}{15}{chapter.4}}
+\@writefile{brf}{\backcite{pascal-voc-2012, smeaton2006evaluation, griffinHolubPerona}{{13}{3.1}{section.3.1}}}
+\@writefile{brf}{\backcite{lamiroy:inria-00537035}{{13}{3.1}{section.3.1}}}
+\@writefile{brf}{\backcite{Guerin2013}{{13}{3.1}{section.3.1}}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Dataset description}{14}{section.3.2}}
+\newlabel{sec:dataset_description}{{3.2}{14}{Dataset description}{section.3.2}{}}
+\@writefile{brf}{\backcite{mccloud1994understanding}{{14}{3.2}{section.3.2}}}
+\newlabel{par:albums}{{3.2}{14}{Albums}{section*.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Albums}{14}{section*.10}}
+\newlabel{par:pages}{{3.2}{14}{Pages}{section*.11}{}}
+\@writefile{toc}{\contentsline {paragraph}{Pages}{14}{section*.11}}
+\newlabel{par:panels}{{3.2}{14}{Panels}{section*.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Panels}{14}{section*.12}}
+\citation{pascal-voc-2012,yao2007introduction}
+\newlabel{par:balloons}{{3.2}{15}{Balloons}{section*.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{Balloons}{15}{section*.13}}
+\newlabel{par:text}{{3.2}{15}{Text}{section*.14}{}}
+\@writefile{toc}{\contentsline {paragraph}{Text}{15}{section*.14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of the number of elements per text lines. \relax }}{15}{figure.caption.15}}
+\newlabel{fig:gt:textline_lenth_distribution}{{3.1}{15}{Distribution of the number of elements per text lines. \relax }{figure.caption.15}{}}
+\newlabel{par:comic_characters}{{3.2}{15}{Comic characters}{section*.16}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comic characters}{15}{section*.16}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Ground truth construction}{15}{section.3.3}}
+\newlabel{sec:ground_truth_construction}{{3.3}{15}{Ground truth construction}{section.3.3}{}}
+\@writefile{brf}{\backcite{pascal-voc-2012, yao2007introduction}{{16}{3.3}{section.3.3}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Visual annotation}{16}{subsection.3.3.1}}
+\newlabel{sub:visual_annotation}{{3.3.1}{16}{Visual annotation}{subsection.3.3.1}{}}
+\newlabel{par:panels}{{3.3.1}{16}{Panels}{section*.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{Panels}{16}{section*.17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Panel annotation}}{16}{figure.caption.18}}
+\newlabel{fig:gt:segPanel}{{3.2}{16}{Panel annotation}{figure.caption.18}{}}
+\newlabel{par:balloons}{{3.3.1}{16}{Balloons}{section*.19}{}}
+\@writefile{toc}{\contentsline {paragraph}{Balloons}{16}{section*.19}}
+\newlabel{par:text_lines}{{3.3.1}{16}{Text lines}{section*.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Speech balloon contour annotation}}{17}{figure.caption.20}}
+\newlabel{fig:gt:segBalloons}{{3.3}{17}{Speech balloon contour annotation}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{Text lines}{17}{section*.21}}
+\newlabel{par:comic_characters}{{3.3.1}{17}{Comic characters}{section*.23}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comic characters}{17}{section*.23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Semantic annotation}{17}{subsection.3.3.2}}
+\newlabel{sub:semantic_annotation}{{3.3.2}{17}{Semantic annotation}{subsection.3.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Panels}{17}{section*.24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Text line location annotation}}{18}{figure.caption.22}}
+\newlabel{fig:segLines}{{3.4}{18}{Text line location annotation}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Balloons}{18}{section*.25}}
+\@writefile{toc}{\contentsline {subsubsection}{Text lines}{18}{section*.26}}
+\@writefile{toc}{\contentsline {subsubsection}{Pages}{18}{section*.27}}
+\newlabel{sec:pages}{{3.3.2}{18}{Pages}{section*.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}File structure}{19}{subsection.3.3.3}}
+\newlabel{sub:file_structure}{{3.3.3}{19}{File structure}{subsection.3.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Ground truth quality assessment}{20}{section.3.4}}
+\newlabel{sec:gt:ground_truth_quality_assessment}{{3.4}{20}{Ground truth quality assessment}{section.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Conclusions}{20}{section.3.5}}
+\newlabel{sec:ncrag:concl}{{3.5}{20}{Conclusions}{section.3.5}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Panel extraction}{21}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:pe}{{4}{15}{Panel extraction}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction}{15}{section.4.1}}
-\newlabel{sec:pe:introduction}{{4.1}{15}{Introduction}{section.4.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Methodology (contribution)}{15}{section.4.2}}
-\newlabel{sec:pe:methodology}{{4.2}{15}{Methodology (contribution)}{section.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Experimental results}{15}{section.4.3}}
-\newlabel{sec:pe:experimental_results}{{4.3}{15}{Experimental results}{section.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusions}{15}{section.4.4}}
-\newlabel{sec:pe:conclusion}{{4.4}{15}{Conclusions}{section.4.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{17}{chapter.5}}
+\newlabel{chap:pe}{{4}{21}{Panel extraction}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction}{21}{section.4.1}}
+\newlabel{sec:pe:introduction}{{4.1}{21}{Introduction}{section.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Methodology (contribution)}{21}{section.4.2}}
+\newlabel{sec:pe:methodology}{{4.2}{21}{Methodology (contribution)}{section.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Experimental results}{21}{section.4.3}}
+\newlabel{sec:pe:experimental_results}{{4.3}{21}{Experimental results}{section.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusions}{21}{section.4.4}}
+\newlabel{sec:pe:conclusion}{{4.4}{21}{Conclusions}{section.4.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{23}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:be}{{5}{17}{Balloon segmentation and classification}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{17}{section.5.1}}
-\newlabel{sec:be:introduction}{{5.1}{17}{Introduction}{section.5.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Methodology}{17}{section.5.2}}
-\newlabel{sec:be:methodology}{{5.2}{17}{Methodology}{section.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Localization}{17}{subsection.5.2.1}}
-\newlabel{sub:be:localization}{{5.2.1}{17}{Localization}{subsection.5.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Segmentation \& classification}{17}{subsection.5.2.2}}
-\newlabel{sub:be:segmentation}{{5.2.2}{17}{Segmentation \& classification}{subsection.5.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Tail detection and description}{18}{subsection.5.2.3}}
-\newlabel{sub:be:tail_detection_and_description}{{5.2.3}{18}{Tail detection and description}{subsection.5.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experimental results}{18}{section.5.3}}
-\newlabel{sec:be:experimental_results}{{5.3}{18}{Experimental results}{section.5.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Conclusions}{18}{section.5.4}}
-\newlabel{sec:be:conclusion}{{5.4}{18}{Conclusions}{section.5.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Text localization and recognition}{19}{chapter.6}}
+\newlabel{chap:be}{{5}{23}{Balloon segmentation and classification}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{23}{section.5.1}}
+\newlabel{sec:be:introduction}{{5.1}{23}{Introduction}{section.5.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Methodology}{23}{section.5.2}}
+\newlabel{sec:be:methodology}{{5.2}{23}{Methodology}{section.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Localization}{23}{subsection.5.2.1}}
+\newlabel{sub:be:localization}{{5.2.1}{23}{Localization}{subsection.5.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Segmentation \& classification}{23}{subsection.5.2.2}}
+\newlabel{sub:be:segmentation}{{5.2.2}{23}{Segmentation \& classification}{subsection.5.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Tail detection and description}{24}{subsection.5.2.3}}
+\newlabel{sub:be:tail_detection_and_description}{{5.2.3}{24}{Tail detection and description}{subsection.5.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experimental results}{24}{section.5.3}}
+\newlabel{sec:be:experimental_results}{{5.3}{24}{Experimental results}{section.5.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Conclusions}{24}{section.5.4}}
+\newlabel{sec:be:conclusion}{{5.4}{24}{Conclusions}{section.5.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Text localization and recognition}{25}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:te}{{6}{19}{Text localization and recognition}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{19}{section.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Methodology}{19}{section.6.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Text localization}{19}{subsection.6.2.1}}
-\newlabel{sub:te:text_localization}{{6.2.1}{19}{Text localization}{subsection.6.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Text recognition}{19}{subsection.6.2.2}}
-\newlabel{sub:te:text_recognition}{{6.2.2}{19}{Text recognition}{subsection.6.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Experimental results}{19}{section.6.3}}
-\newlabel{sub:te:experimental_resutls}{{6.3}{19}{Experimental results}{section.6.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Conclusions}{19}{section.6.4}}
-\newlabel{sub:te:conclusion}{{6.4}{19}{Conclusions}{section.6.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Comic character spotting and clustering}{21}{chapter.7}}
+\newlabel{chap:te}{{6}{25}{Text localization and recognition}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{25}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Methodology}{25}{section.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Text localization}{25}{subsection.6.2.1}}
+\newlabel{sub:te:text_localization}{{6.2.1}{25}{Text localization}{subsection.6.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Text recognition}{25}{subsection.6.2.2}}
+\newlabel{sub:te:text_recognition}{{6.2.2}{25}{Text recognition}{subsection.6.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Experimental results}{25}{section.6.3}}
+\newlabel{sub:te:experimental_resutls}{{6.3}{25}{Experimental results}{section.6.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Conclusions}{25}{section.6.4}}
+\newlabel{sub:te:conclusion}{{6.4}{25}{Conclusions}{section.6.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Comic character spotting and clustering}{27}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:ce}{{7}{21}{Comic character spotting and clustering}{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Introduction}{21}{section.7.1}}
-\newlabel{sec:ce:introduction}{{7.1}{21}{Introduction}{section.7.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Methodology}{21}{section.7.2}}
-\newlabel{sec:ce:methodology}{{7.2}{21}{Methodology}{section.7.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Detection and spotting}{21}{subsection.7.2.1}}
-\newlabel{sub:ce:detection_and_spotting}{{7.2.1}{21}{Detection and spotting}{subsection.7.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Clustering}{21}{subsection.7.2.2}}
-\newlabel{sub:ce:clustering}{{7.2.2}{21}{Clustering}{subsection.7.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Experimental results}{21}{section.7.3}}
-\newlabel{sec:ce:experiments}{{7.3}{21}{Experimental results}{section.7.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}Conclusions}{21}{section.7.4}}
-\newlabel{sec:ce:conclusion}{{7.4}{21}{Conclusions}{section.7.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}System for document understanding}{23}{chapter.8}}
+\newlabel{chap:ce}{{7}{27}{Comic character spotting and clustering}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Introduction}{27}{section.7.1}}
+\newlabel{sec:ce:introduction}{{7.1}{27}{Introduction}{section.7.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Methodology}{27}{section.7.2}}
+\newlabel{sec:ce:methodology}{{7.2}{27}{Methodology}{section.7.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Detection and spotting}{27}{subsection.7.2.1}}
+\newlabel{sub:ce:detection_and_spotting}{{7.2.1}{27}{Detection and spotting}{subsection.7.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Clustering}{27}{subsection.7.2.2}}
+\newlabel{sub:ce:clustering}{{7.2.2}{27}{Clustering}{subsection.7.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Experimental results}{27}{section.7.3}}
+\newlabel{sec:ce:experiments}{{7.3}{27}{Experimental results}{section.7.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Conclusions}{27}{section.7.4}}
+\newlabel{sec:ce:conclusion}{{7.4}{27}{Conclusions}{section.7.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}System for document understanding}{29}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:hp}{{8}{23}{System for document understanding}{chapter.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Introduction}{23}{section.8.1}}
-\newlabel{sec:hp:intro}{{8.1}{23}{Introduction}{section.8.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Methodology}{23}{section.8.2}}
-\newlabel{sec:hp:method}{{8.2}{23}{Methodology}{section.8.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Framework}{23}{subsection.8.2.1}}
-\newlabel{sub:hp:rw}{{8.2.1}{23}{Framework}{subsection.8.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Application to comics}{23}{subsection.8.2.2}}
-\newlabel{sub:hp:application_to_comics}{{8.2.2}{23}{Application to comics}{subsection.8.2.2}{}}
-\newlabel{eqn:pg:rw1}{{8.1}{23}{Application to comics}{equation.8.2.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}Experimental results}{24}{section.8.3}}
-\newlabel{sec:hp:experimental_results}{{8.3}{24}{Experimental results}{section.8.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.4}Conclusions}{24}{section.8.4}}
-\newlabel{sec:hp:conclusion}{{8.4}{24}{Conclusions}{section.8.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusions}{25}{chapter.9}}
+\newlabel{chap:hp}{{8}{29}{System for document understanding}{chapter.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Introduction}{29}{section.8.1}}
+\newlabel{sec:hp:intro}{{8.1}{29}{Introduction}{section.8.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Methodology}{29}{section.8.2}}
+\newlabel{sec:hp:method}{{8.2}{29}{Methodology}{section.8.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Framework}{29}{subsection.8.2.1}}
+\newlabel{sub:hp:rw}{{8.2.1}{29}{Framework}{subsection.8.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Application to comics}{29}{subsection.8.2.2}}
+\newlabel{sub:hp:application_to_comics}{{8.2.2}{29}{Application to comics}{subsection.8.2.2}{}}
+\newlabel{eqn:pg:rw1}{{8.1}{29}{Application to comics}{equation.8.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Experimental results}{30}{section.8.3}}
+\newlabel{sec:hp:experimental_results}{{8.3}{30}{Experimental results}{section.8.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.4}Conclusions}{30}{section.8.4}}
+\newlabel{sec:hp:conclusion}{{8.4}{30}{Conclusions}{section.8.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusions}{31}{chapter.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conclusions}{{9}{25}{Conclusions}{chapter.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Summary and contributions}{25}{section.9.1}}
-\newlabel{conclusions:summary}{{9.1}{25}{Summary and contributions}{section.9.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Future perspectives}{25}{section.9.2}}
-\newlabel{conclusions:perspectives}{{9.2}{25}{Future perspectives}{section.9.2}{}}
+\newlabel{chap:conclusions}{{9}{31}{Conclusions}{chapter.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Summary and contributions}{31}{section.9.1}}
+\newlabel{conclusions:summary}{{9.1}{31}{Summary and contributions}{section.9.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Future perspectives}{31}{section.9.2}}
+\newlabel{conclusions:perspectives}{{9.2}{31}{Future perspectives}{section.9.2}{}}
 \bibstyle{plain}
 \bibdata{bibliography}
 \bibcite{ahmadimpactsOfManga}{1}
@@ -326,7 +377,7 @@
 \bibcite{Japan2013}{7}
 \bibcite{Back2001}{8}
 \bibcite{Blaschke2014Geographic}{9}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{29}{section*.13}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{35}{section*.31}}
 \bibcite{borodo2014multimodality}{10}
 \bibcite{Brandon2014}{11}
 \bibcite{Chan2007Automatic}{12}
@@ -340,68 +391,73 @@
 \bibcite{duc1997art}{20}
 \bibcite{Duda72}{21}
 \bibcite{Epshtein10}{22}
-\bibcite{Fidler2012Describing}{23}
-\bibcite{OCRMangaReader}{24}
-\bibcite{Guerin2012Ontologies}{25}
-\bibcite{Guerin2013}{26}
-\bibcite{Han07}{27}
-\bibcite{Hermann2012Guided}{28}
-\bibcite{Khoi11}{29}
-\bibcite{Ho2012}{30}
-\bibcite{HoGREC2013}{31}
-\bibcite{Hu2003Ontology}{32}
-\bibcite{Hudelot2008Fuzzy}{33}
-\bibcite{IBISWorld2013}{34}
-\bibcite{In11}{35}
-\bibcite{Raulet2013Comics}{36}
-\bibcite{Khan12}{37}
-\bibcite{Kurlander1996}{38}
-\bibcite{Lamiroy2014Handbook}{39}
-\bibcite{Li2012Toward}{40}
-\bibcite{li2012automatic}{41}
-\bibcite{Luyuan2014Automatic}{42}
-\bibcite{Li2013Comic}{43}
-\bibcite{Li2013Unsupervised}{44}
-\bibcite{Ricardo2009Calligraphic}{45}
-\bibcite{Mao2003Document}{46}
-\bibcite{Marx2006Writing}{47}
-\bibcite{Matsui2011}{48}
-\bibcite{McCloud94}{49}
-\bibcite{medley2010discerningPictures}{50}
-\bibcite{Aaron2011}{51}
-\bibcite{Mezaris03anontology}{52}
-\bibcite{millidge2009comic}{53}
-\bibcite{Neumann12}{54}
-\bibcite{Ogier2000Semantic}{55}
-\bibcite{Oliveira10}{56}
-\bibcite{ComicLife3}{57}
-\bibcite{Ponsard09}{58}
-\bibcite{ponsard2012ocr}{59}
-\bibcite{Ratier2013}{60}
-\bibcite{Raulet2011Sketch}{61}
-\bibcite{Salovaara2007Appropriation}{62}
-\bibcite{Sarwar2013Ontology}{63}
-\bibcite{Sciascio2011Structured}{64}
-\bibcite{Shamir2006Generating}{65}
-\bibcite{Vomic}{66}
-\bibcite{Singh2004}{67}
-\bibcite{Capture2Text}{68}
-\bibcite{Stewart2000}{69}
-\bibcite{stommel2012segmentation}{70}
-\bibcite{Su11}{71}
-\bibcite{SumiSNM2002Comic}{72}
-\bibcite{Sun2010}{73}
-\bibcite{Sun2013IJDAR}{74}
-\bibcite{SunICDAR2013}{75}
-\bibcite{Sundaresan2012Text}{76}
-\bibcite{TAPhD2010}{77}
-\bibcite{Kohei2012}{78}
-\bibcite{Tan07}{79}
-\bibcite{Thomas2010Invisible}{80}
-\bibcite{Tobita2010Comic}{81}
-\bibcite{Tsai2013Adaptive}{82}
-\bibcite{Uchihashi1999Video}{83}
-\bibcite{Viola2004robust}{84}
-\bibcite{WangHYYC12}{85}
-\bibcite{Weinman09}{86}
-\bibcite{Yam04}{87}
+\bibcite{pascal-voc-2012}{23}
+\bibcite{Fidler2012Describing}{24}
+\bibcite{OCRMangaReader}{25}
+\bibcite{griffinHolubPerona}{26}
+\bibcite{Guerin2012Ontologies}{27}
+\bibcite{Guerin2013}{28}
+\bibcite{Han07}{29}
+\bibcite{Hermann2012Guided}{30}
+\bibcite{Khoi11}{31}
+\bibcite{Ho2012}{32}
+\bibcite{HoGREC2013}{33}
+\bibcite{Hu2003Ontology}{34}
+\bibcite{Hudelot2008Fuzzy}{35}
+\bibcite{IBISWorld2013}{36}
+\bibcite{In11}{37}
+\bibcite{Raulet2013Comics}{38}
+\bibcite{Khan12}{39}
+\bibcite{Kurlander1996}{40}
+\bibcite{lamiroy:inria-00537035}{41}
+\bibcite{Lamiroy2014Handbook}{42}
+\bibcite{Li2012Toward}{43}
+\bibcite{li2012automatic}{44}
+\bibcite{Luyuan2014Automatic}{45}
+\bibcite{Li2013Comic}{46}
+\bibcite{Li2013Unsupervised}{47}
+\bibcite{Ricardo2009Calligraphic}{48}
+\bibcite{Mao2003Document}{49}
+\bibcite{Marx2006Writing}{50}
+\bibcite{Matsui2011}{51}
+\bibcite{McCloud94}{52}
+\bibcite{mccloud1994understanding}{53}
+\bibcite{medley2010discerningPictures}{54}
+\bibcite{Aaron2011}{55}
+\bibcite{Mezaris03anontology}{56}
+\bibcite{millidge2009comic}{57}
+\bibcite{Neumann12}{58}
+\bibcite{Ogier2000Semantic}{59}
+\bibcite{Oliveira10}{60}
+\bibcite{ComicLife3}{61}
+\bibcite{Ponsard09}{62}
+\bibcite{ponsard2012ocr}{63}
+\bibcite{Ratier2013}{64}
+\bibcite{Raulet2011Sketch}{65}
+\bibcite{Salovaara2007Appropriation}{66}
+\bibcite{Sarwar2013Ontology}{67}
+\bibcite{Sciascio2011Structured}{68}
+\bibcite{Shamir2006Generating}{69}
+\bibcite{Vomic}{70}
+\bibcite{Singh2004}{71}
+\bibcite{smeaton2006evaluation}{72}
+\bibcite{Capture2Text}{73}
+\bibcite{Stewart2000}{74}
+\bibcite{stommel2012segmentation}{75}
+\bibcite{Su11}{76}
+\bibcite{SumiSNM2002Comic}{77}
+\bibcite{Sun2010}{78}
+\bibcite{Sun2013IJDAR}{79}
+\bibcite{SunICDAR2013}{80}
+\bibcite{Sundaresan2012Text}{81}
+\bibcite{TAPhD2010}{82}
+\bibcite{Kohei2012}{83}
+\bibcite{Tan07}{84}
+\bibcite{Thomas2010Invisible}{85}
+\bibcite{Tobita2010Comic}{86}
+\bibcite{Tsai2013Adaptive}{87}
+\bibcite{Uchihashi1999Video}{88}
+\bibcite{Viola2004robust}{89}
+\bibcite{WangHYYC12}{90}
+\bibcite{Weinman09}{91}
+\bibcite{Yam04}{92}

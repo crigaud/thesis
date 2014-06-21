@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  17 JUN 2014 12:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  21 JUN 2014 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,7 +1292,17 @@ Package hyperref Info: Option `colorlinks' set `false' on input line 60.
 )
 \reducedwidth=\skip75
 \c@algorithmbis=\count186
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `par:panels' multiply defined.
+
+
+LaTeX Warning: Label `par:balloons' multiply defined.
+
+
+LaTeX Warning: Label `par:comic_characters' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 331.
@@ -1310,8 +1320,7 @@ LaTeX Font Info:    ... okay on input line 331.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 331.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 331.
 
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 331.
@@ -1406,7 +1415,7 @@ LaTeX Info: Redefining \nameref on input line 331.
 \openout4 = `main.out'.
 
 
-<images/LogoUAB.pdf, id=248, 343.52339pt x 222.5916pt>
+<images/LogoUAB.pdf, id=264, 343.52339pt x 222.5916pt>
 File: images/LogoUAB.pdf Graphic file (type pdf)
 
 <use images/LogoUAB.pdf>
@@ -1418,7 +1427,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 338--338
 e
  []
 
-<template_ULR/frontpage.pdf, id=250, 598.1477pt x 845.90027pt>
+<template_ULR/frontpage.pdf, id=266, 598.1477pt x 845.90027pt>
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf>
@@ -1434,7 +1443,7 @@ Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 338.
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/LogoUAB.pdf>] <template_ULR/frontpage.pdf, id=266, page=1, 598.1477pt x 845.9
+s/LogoUAB.pdf>] <template_ULR/frontpage.pdf, id=282, page=1, 598.1477pt x 845.9
 0027pt>
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
@@ -1467,13 +1476,13 @@ Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
 38.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
  [2 <./template_ULR/frontpage.pdf>]
-<images/LogoL3i.pdf, id=288, 123.38045pt x 76.8992pt>
+<images/LogoL3i.pdf, id=304, 123.38045pt x 76.8992pt>
 File: images/LogoL3i.pdf Graphic file (type pdf)
  <use images/LogoL3i.pdf>
 Package pdftex.def Info: images/LogoL3i.pdf used on input line 338.
 (pdftex.def)             Requested size: 79.6678pt x 36.28523pt.
 
-<images/LogoCVC.pdf, id=289, 597.50829pt x 422.52354pt>
+<images/LogoCVC.pdf, id=305, 597.50829pt x 422.52354pt>
 File: images/LogoCVC.pdf Graphic file (type pdf)
 
 <use images/LogoCVC.pdf>
@@ -1728,15 +1737,15 @@ Chapter 2.
 [7
 
 ]
-<figs/Arai_balloon_extraction_process.pdf, id=648, 187.23952pt x 176.36891pt>
+<figs/Arai_balloon_extraction_process.pdf, id=676, 187.23952pt x 176.36891pt>
 File: figs/Arai_balloon_extraction_process.pdf Graphic file (type pdf)
 
 <use figs/Arai_balloon_extraction_process.pdf>
 Package pdftex.def Info: figs/Arai_balloon_extraction_process.pdf used on input
  line 66.
 (pdftex.def)             Requested size: 150.56305pt x 141.82462pt.
- [8 <./figs/Arai_balloon_extraction_process.pdf>] [9] <figs/prunelle.png, id=72
-8, 430.60875pt x 134.5025pt>
+ [8 <./figs/Arai_balloon_extraction_process.pdf>] [9] <figs/prunelle.png, id=75
+6, 430.60875pt x 134.5025pt>
 File: figs/prunelle.png Graphic file (type png)
 
 <use figs/prunelle.png>
@@ -1748,11 +1757,121 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [11])
 (./chapters/9-gt/gt.tex [12]
 Chapter 3.
-) (./chapters/4-pe/pe.tex [13
+[13
 
-] [14
+] [14]
+<./chapters/9-gt/figs/number_of_letter_per_textline.pdf, id=882, 845.1575pt x 5
+97.23125pt>
+File: ./chapters/9-gt/figs/number_of_letter_per_textline.pdf Graphic file (type
+ pdf)
+ <use ./chapters/9-gt/figs/number_of_letter_per_textline.pdf>
+Package pdftex.def Info: ./chapters/9-gt/figs/number_of_letter_per_textline.pdf
+ used on input line 110.
+(pdftex.def)             Requested size: 240.42352pt x 133.35222pt.
 
-]
+
+LaTeX Warning: Citation `yao2007introduction' on page 15 undefined on input lin
+e 136.
+
+[15 <./chapters/9-gt/figs/number_of_letter_per_textline.pdf>]
+<./chapters/9-gt/figs/segPanel.png, id=905, 1178.90437pt x 334.24875pt>
+File: ./chapters/9-gt/figs/segPanel.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segPanel.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segPanel.png used on input line 1
+57.
+(pdftex.def)             Requested size: 295.90977pt x 83.89859pt.
+
+<./chapters/9-gt/figs/segBalloon1.png, id=909, 353.06906pt x 575.14874pt>
+File: ./chapters/9-gt/figs/segBalloon1.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segBalloon1.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segBalloon1.png used on input lin
+e 184.
+(pdftex.def)             Requested size: 100.37537pt x 163.50662pt.
+
+<./chapters/9-gt/figs/segBalloon2.png, id=910, 313.9228pt x 463.7325pt>
+File: ./chapters/9-gt/figs/segBalloon2.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segBalloon2.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segBalloon2.png used on input lin
+e 186.
+(pdftex.def)             Requested size: 100.37537pt x 148.27005pt.
+
+<./chapters/9-gt/figs/segBalloon3.png, id=911, 359.09157pt x 443.40656pt>
+File: ./chapters/9-gt/figs/segBalloon3.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segBalloon3.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segBalloon3.png used on input lin
+e 188.
+(pdftex.def)             Requested size: 100.37537pt x 123.94324pt.
+
+Overfull \hbox (7.39032pt too wide) in paragraph at lines 183--190
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:gt:segLines' on page 16 undefined on input line 1
+99.
+
+
+LaTeX Warning: Reference `fig:gt:segLines' on page 16 undefined on input line 2
+04.
+
+
+LaTeX Warning: Reference `fig:gt:segLines' on page 16 undefined on input line 2
+05.
+
+[16 <./chapters/9-gt/figs/segPanel.png>]
+<./chapters/9-gt/figs/segLine1.png, id=919, 349.305pt x 318.43968pt>
+File: ./chapters/9-gt/figs/segLine1.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segLine1.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segLine1.png used on input line 2
+12.
+(pdftex.def)             Requested size: 80.3003pt x 73.20557pt.
+
+<./chapters/9-gt/figs/segLine2.png, id=920, 462.97969pt x 429.10312pt>
+File: ./chapters/9-gt/figs/segLine2.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segLine2.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segLine2.png used on input line 2
+14.
+(pdftex.def)             Requested size: 80.3003pt x 74.41977pt.
+
+<./chapters/9-gt/figs/segLine3.png, id=921, 309.40594pt x 507.39563pt>
+File: ./chapters/9-gt/figs/segLine3.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segLine3.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segLine3.png used on input line 2
+16.
+(pdftex.def)             Requested size: 80.3003pt x 131.68748pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17 <./chapters/9-gt/figs/segBalloon1.png> <./chapters/9-gt/figs/segBalloon2.pn
+g> <./chapters/9-gt/figs/segBalloon3.png>]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 245.
+
+
+LaTeX Warning: Reference `fig:balloons_shape' on page 18 undefined on input lin
+e 245.
+
+[18 <./chapters/9-gt/figs/segLine1.png> <./chapters/9-gt/figs/segLine2.png> <./
+chapters/9-gt/figs/segLine3.png>]
+
+LaTeX Warning: Reference `fig:css' on page 19 undefined on input line 276.
+
+
+LaTeX Warning: Reference `sec:semanticAnnotation' on page 19 undefined on input
+ line 292.
+
+) (./chapters/4-pe/pe.tex [19] [20]
 Chapter 4.
 
 Overfull \hbox (17.48924pt too wide) in paragraph at lines 16--17
@@ -1760,7 +1879,9 @@ Overfull \hbox (17.48924pt too wide) in paragraph at lines 16--17
 text _ extraction _
  []
 
-) (./chapters/5-be/be.tex [15] [16
+) (./chapters/5-be/be.tex [21
+
+] [22
 
 ]
 Chapter 5.
@@ -1812,25 +1933,25 @@ Overfull \hbox (11.48924pt too wide) in paragraph at lines 26--27
  output /
  []
 
-) (./chapters/6-te/te.tex [17] [18]
+) (./chapters/6-te/te.tex [23] [24]
 Chapter 6.
-) (./chapters/7-ce/ce.tex [19
-
-] [20
-
-]
-Chapter 7.
-) (./chapters/8-hp/hp.tex [21] [22
-
-]
-Chapter 8.
-) (./chapters/10-conclusions/conclusions.tex [23] [24]
-Chapter 9.
-) (./chapters/MyPublications/publications.tex [25
+) (./chapters/7-ce/ce.tex [25
 
 ] [26
 
-] [27]
+]
+Chapter 7.
+) (./chapters/8-hp/hp.tex [27] [28
+
+]
+Chapter 8.
+) (./chapters/10-conclusions/conclusions.tex [29] [30]
+Chapter 9.
+) (./chapters/MyPublications/publications.tex [31
+
+] [32
+
+] [33]
 Overfull \hbox (6.10098pt too wide) in paragraph at lines 49--51
 []\OT1/cmr/m/n/10 Christophe Rigaud, Di-mos-the-nis Karatzas, Joost Van de Wei-
 jer, Jean-Christophe
@@ -1842,20 +1963,17 @@ Overfull \hbox (6.10098pt too wide) in paragraph at lines 58--60
 jer, Jean-Christophe
  []
 
-) [28] (./main.bbl (./main.brf)
+) [34] (./main.bbl (./main.brf)
 \tf@brf=\write8
 \openout8 = `main.brf'.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
- [29
+ [35
 
 
-] [30] [31] [32] [33]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 397.
- [34]) [35] [36]
-<template_ULR/backpage.pdf, id=1054, 598.1477pt x 845.90027pt>
+] [36] [37] [38] [39] [40] [41]) [42]
+<template_ULR/backpage.pdf, id=1173, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf>
@@ -1866,7 +1984,7 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf used on input line 399.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 
-<template_ULR/backpage.pdf, id=1057, page=1, 598.1477pt x 845.90027pt>
+<template_ULR/backpage.pdf, id=1176, page=1, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
@@ -1897,7 +2015,7 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
 9.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
- [37
+ [43
 
  <./template_ULR/backpage.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
@@ -1907,19 +2025,26 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 402.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FA68EE4C1DF80979BB7354EE607C198A;3848.
+(rerunfilecheck)             Checksum: FEB1120B1208CD2DC9C09EDBF9D35591;4127.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 83F30AE7009ADCA26641400C637722FA;4365.
+(rerunfilecheck)             Checksum: 7BEC9585CE6A4C9BCAB0FF73E2625577;4700.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 402.
  ) 
 Here is how much of TeX's memory you used:
- 23006 strings out of 493308
- 403817 string characters out of 6137822
- 488980 words of memory out of 5000000
- 25702 multiletter control sequences out of 15000+600000
+ 23128 strings out of 493308
+ 406699 string characters out of 6137822
+ 490001 words of memory out of 5000000
+ 25780 multiletter control sequences out of 15000+600000
  24178 words of font info for 87 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 55i,18n,54p,1394b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,54p,1394b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
@@ -1944,10 +2069,10 @@ e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 rw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (58 pages, 828655 bytes).
+Output written on main.pdf (64 pages, 2080696 bytes).
 PDF statistics:
- 1186 PDF objects out of 1200 (max. 8388607)
- 1051 compressed objects within 11 object streams
- 212 named destinations out of 1000 (max. 500000)
- 564 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1314 PDF objects out of 1440 (max. 8388607)
+ 1159 compressed objects within 12 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 642 words of extra memory for PDF output out of 10000 (max. 10000000)
 

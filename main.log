@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  21 JUN 2014 19:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  22 JUN 2014 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1308,27 +1308,27 @@ LaTeX Warning: Label `par:comic_characters' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 331.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 331.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 332.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 332.
 
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 331.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 331.
-LaTeX Font Info:    ... okay on input line 331.
+LaTeX Font Info:    ... okay on input line 332.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 332.
+LaTeX Font Info:    ... okay on input line 332.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1399,7 +1399,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring OFF on input line 331.
+Package hyperref Info: Link coloring OFF on input line 332.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1409,36 +1409,36 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count194
 )
-LaTeX Info: Redefining \ref on input line 331.
-LaTeX Info: Redefining \pageref on input line 331.
-LaTeX Info: Redefining \nameref on input line 331.
+LaTeX Info: Redefining \ref on input line 332.
+LaTeX Info: Redefining \pageref on input line 332.
+LaTeX Info: Redefining \nameref on input line 332.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 
-<images/LogoUAB.pdf, id=264, 343.52339pt x 222.5916pt>
+<images/LogoUAB.pdf, id=268, 343.52339pt x 222.5916pt>
 File: images/LogoUAB.pdf Graphic file (type pdf)
 
 <use images/LogoUAB.pdf>
-Package pdftex.def Info: images/LogoUAB.pdf used on input line 338.
+Package pdftex.def Info: images/LogoUAB.pdf used on input line 339.
 (pdftex.def)             Requested size: 170.71652pt x 110.61961pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--338
+Underfull \hbox (badness 10000) in paragraph at lines 339--339
 \OT1/cmr/bx/n/10.95 Rigaud[] \OT1/cmr/m/n/10.95 at Uni-ver-si-tat Aut^^Ronoma d
 e
  []
 
-<template_ULR/frontpage.pdf, id=266, 598.1477pt x 845.90027pt>
+<template_ULR/frontpage.pdf, id=270, 598.1477pt x 845.90027pt>
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf>
-Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 338.
+Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 339.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
  <use template_ULR/frontpage.pdf>
-Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 338.
+Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 339.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
  [1
 
@@ -1446,50 +1446,50 @@ Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 338.
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/LogoUAB.pdf>] <template_ULR/frontpage.pdf, id=282, page=1, 598.1477pt x 845.9
+s/LogoUAB.pdf>] <template_ULR/frontpage.pdf, id=286, page=1, 598.1477pt x 845.9
 0027pt>
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf, page 1>
 Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
-38.
+39.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf, page 1>
 Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
-38.
+39.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf, page 1>
 Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
-38.
+39.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf, page 1>
 Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
-38.
+39.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf, page 1>
 Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
-38.
+39.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
  [2 <./template_ULR/frontpage.pdf>]
-<images/LogoL3i.pdf, id=304, 123.38045pt x 76.8992pt>
+<images/LogoL3i.pdf, id=308, 123.38045pt x 76.8992pt>
 File: images/LogoL3i.pdf Graphic file (type pdf)
  <use images/LogoL3i.pdf>
-Package pdftex.def Info: images/LogoL3i.pdf used on input line 338.
+Package pdftex.def Info: images/LogoL3i.pdf used on input line 339.
 (pdftex.def)             Requested size: 79.6678pt x 36.28523pt.
 
-<images/LogoCVC.pdf, id=305, 597.50829pt x 422.52354pt>
+<images/LogoCVC.pdf, id=309, 597.50829pt x 422.52354pt>
 File: images/LogoCVC.pdf Graphic file (type pdf)
 
 <use images/LogoCVC.pdf>
-Package pdftex.def Info: images/LogoCVC.pdf used on input line 338.
+Package pdftex.def Info: images/LogoCVC.pdf used on input line 339.
 (pdftex.def)             Requested size: 99.58464pt x -10.41086pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1505,11 +1505,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (./chapters/0.1-agraiments/agraiments.tex [0
 
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
- been already used, duplicate ignored
+]
+Overfull \hbox (23.90651pt too wide) in paragraph at lines 7--8
+[]\OT1/cmr/m/n/10 eBDtheque dataset ma-te-rial con-trib-u-tors (see ac-knowl-ed
+ge-ment sec-tion of eBDtheque
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10 \clearpage
+l.12 \clearpage
                \thispagestyle{empty} [1])
 (./chapters/0.2-abstract/abstract_english.texpdfTeX warning (ext4): destination
  with the same identifier (name{page.ii}) has been already used, duplicate igno
@@ -1740,15 +1746,15 @@ Chapter 2.
 [7
 
 ]
-<figs/Arai_balloon_extraction_process.pdf, id=682, 187.23952pt x 176.36891pt>
+<figs/Arai_balloon_extraction_process.pdf, id=691, 187.23952pt x 176.36891pt>
 File: figs/Arai_balloon_extraction_process.pdf Graphic file (type pdf)
 
 <use figs/Arai_balloon_extraction_process.pdf>
 Package pdftex.def Info: figs/Arai_balloon_extraction_process.pdf used on input
  line 66.
 (pdftex.def)             Requested size: 150.56305pt x 141.82462pt.
- [8 <./figs/Arai_balloon_extraction_process.pdf>] [9] <figs/prunelle.png, id=76
-2, 430.60875pt x 134.5025pt>
+ [8 <./figs/Arai_balloon_extraction_process.pdf>] [9] <figs/prunelle.png, id=77
+1, 430.60875pt x 134.5025pt>
 File: figs/prunelle.png Graphic file (type png)
 
 <use figs/prunelle.png>
@@ -1763,153 +1769,144 @@ Chapter 3.
 [13
 
 ] [14]
-<./chapters/9-gt/figs/number_of_letter_per_textline.pdf, id=888, 845.1575pt x 5
+<./chapters/9-gt/figs/number_of_letter_per_textline.pdf, id=895, 845.1575pt x 5
 97.23125pt>
 File: ./chapters/9-gt/figs/number_of_letter_per_textline.pdf Graphic file (type
  pdf)
  <use ./chapters/9-gt/figs/number_of_letter_per_textline.pdf>
 Package pdftex.def Info: ./chapters/9-gt/figs/number_of_letter_per_textline.pdf
- used on input line 110.
+ used on input line 113.
 (pdftex.def)             Requested size: 240.42352pt x 133.35222pt.
 
-
-LaTeX Warning: Citation `yao2007introduction' on page 15 undefined on input lin
-e 136.
-
-[15 <./chapters/9-gt/figs/number_of_letter_per_textline.pdf>]
-<./chapters/9-gt/figs/segPanel.png, id=911, 1178.90437pt x 334.24875pt>
+[15 <./chapters/9-gt/figs/number_of_letter_per_textline.pdf>] [16]
+<./chapters/9-gt/figs/segPanel.png, id=926, 1178.90437pt x 334.24875pt>
 File: ./chapters/9-gt/figs/segPanel.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segPanel.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segPanel.png used on input line 1
-62.
+82.
 (pdftex.def)             Requested size: 295.90977pt x 83.89859pt.
- [16 <./chapters/9-gt/figs/segPanel.png>] <./chapters/9-gt/figs/segBalloon1.png
-, id=922, 353.06906pt x 575.14874pt>
+
+<./chapters/9-gt/figs/segBalloon1.png, id=930, 353.06906pt x 575.14874pt>
 File: ./chapters/9-gt/figs/segBalloon1.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segBalloon1.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segBalloon1.png used on input lin
-e 190.
+e 210.
 (pdftex.def)             Requested size: 80.3003pt x 130.80705pt.
 
-<./chapters/9-gt/figs/segBalloon2.png, id=923, 313.9228pt x 463.7325pt>
+<./chapters/9-gt/figs/segBalloon2.png, id=931, 313.9228pt x 463.7325pt>
 File: ./chapters/9-gt/figs/segBalloon2.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segBalloon2.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segBalloon2.png used on input lin
-e 192.
+e 212.
 (pdftex.def)             Requested size: 80.3003pt x 118.61462pt.
 
-<./chapters/9-gt/figs/segBalloon3.png, id=924, 359.09157pt x 443.40656pt>
+<./chapters/9-gt/figs/segBalloon3.png, id=932, 359.09157pt x 443.40656pt>
 File: ./chapters/9-gt/figs/segBalloon3.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segBalloon3.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segBalloon3.png used on input lin
-e 194.
+e 214.
 (pdftex.def)             Requested size: 80.3003pt x 99.15324pt.
 
 
-LaTeX Warning: Reference `fig:gt:segLines' on page 17 undefined on input line 2
-06.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: Reference `fig:gt:segLines' on page 17 undefined on input line 2
-11.
+26.
 
 
 LaTeX Warning: Reference `fig:gt:segLines' on page 17 undefined on input line 2
-12.
+31.
 
-<./chapters/9-gt/figs/segLine1.png, id=925, 349.305pt x 318.43968pt>
+
+LaTeX Warning: Reference `fig:gt:segLines' on page 17 undefined on input line 2
+32.
+
+[17 <./chapters/9-gt/figs/segPanel.png>]
+<./chapters/9-gt/figs/segLine1.png, id=941, 349.305pt x 318.43968pt>
 File: ./chapters/9-gt/figs/segLine1.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segLine1.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segLine1.png used on input line 2
-19.
+39.
 (pdftex.def)             Requested size: 80.3003pt x 73.20557pt.
 
-<./chapters/9-gt/figs/segLine2.png, id=926, 462.97969pt x 429.10312pt>
+<./chapters/9-gt/figs/segLine2.png, id=942, 462.97969pt x 429.10312pt>
 File: ./chapters/9-gt/figs/segLine2.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segLine2.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segLine2.png used on input line 2
-21.
+41.
 (pdftex.def)             Requested size: 80.3003pt x 74.41977pt.
 
-<./chapters/9-gt/figs/segLine3.png, id=927, 309.40594pt x 507.39563pt>
+<./chapters/9-gt/figs/segLine3.png, id=943, 309.40594pt x 507.39563pt>
 File: ./chapters/9-gt/figs/segLine3.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segLine3.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segLine3.png used on input line 2
-23.
+43.
 (pdftex.def)             Requested size: 80.3003pt x 131.68748pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `fig:gt:segCharater' on page 18 undefined on input lin
+e 261.
 
-
-LaTeX Warning: Reference `fig:gt:segCharater' on page 17 undefined on input lin
-e 241.
-
-[17 <./chapters/9-gt/figs/segBalloon1.png> <./chapters/9-gt/figs/segBalloon2.pn
-g> <./chapters/9-gt/figs/segBalloon3.png>]
-<./chapters/9-gt/figs/segCharacter.png, id=935, 752.0597pt x 414.79968pt>
+[18 <./chapters/9-gt/figs/segBalloon1.png> <./chapters/9-gt/figs/segBalloon2.pn
+g> <./chapters/9-gt/figs/segBalloon3.png> <./chapters/9-gt/figs/segLine1.png> <
+./chapters/9-gt/figs/segLine2.png> <./chapters/9-gt/figs/segLine3.png>]
+<./chapters/9-gt/figs/segCharacter.png, id=949, 752.0597pt x 414.79968pt>
 File: ./chapters/9-gt/figs/segCharacter.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/segCharacter.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/segCharacter.png used on input li
-ne 246.
+ne 266.
 (pdftex.def)             Requested size: 277.41435pt x 153.01143pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18 <./chapters/9-gt/figs/segLine1.png> <./chapters/9-gt/figs/segLine2.png> <.
-/chapters/9-gt/figs/segLine3.png> <./chapters/9-gt/figs/segCharacter.png>]
+ [19 <./chapters/9-gt/figs/segCharacter.png>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 282.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 302.
 
-<./chapters/9-gt/figs/balloonShape.png, id=941, 480.3546pt x 166.221pt>
+<./chapters/9-gt/figs/balloonShape.png, id=956, 480.3546pt x 166.221pt>
 File: ./chapters/9-gt/figs/balloonShape.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/balloonShape.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/balloonShape.png used on input li
-ne 291.
+ne 311.
 (pdftex.def)             Requested size: 240.42352pt x 83.1965pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[19] <./chapters/9-gt/figs/svgPanel.png, id=955, 310.91156pt x 461.47406pt>
+ [20 <./chapters/9-gt/figs/balloonShape.png>]
+<./chapters/9-gt/figs/svgPanel.png, id=981, 310.91156pt x 461.47406pt>
 File: ./chapters/9-gt/figs/svgPanel.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/svgPanel.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/svgPanel.png used on input line 3
-42.
+66.
 (pdftex.def)             Requested size: 100.37537pt x 148.98442pt.
 
-<./chapters/9-gt/figs/svgBalloon.png, id=956, 310.91156pt x 461.47406pt>
+<./chapters/9-gt/figs/svgBalloon.png, id=982, 310.91156pt x 461.47406pt>
 File: ./chapters/9-gt/figs/svgBalloon.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/svgBalloon.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/svgBalloon.png used on input line
- 344.
+ 368.
 (pdftex.def)             Requested size: 100.37537pt x 148.98442pt.
 
-<./chapters/9-gt/figs/svgTextlines.png, id=957, 310.91156pt x 461.47406pt>
+<./chapters/9-gt/figs/svgTextlines.png, id=983, 310.91156pt x 461.47406pt>
 File: ./chapters/9-gt/figs/svgTextlines.png Graphic file (type png)
 
 <use ./chapters/9-gt/figs/svgTextlines.png>
 Package pdftex.def Info: ./chapters/9-gt/figs/svgTextlines.png used on input li
-ne 346.
+ne 370.
 (pdftex.def)             Requested size: 100.37537pt x 148.98442pt.
 
-Overfull \hbox (7.39032pt too wide) in paragraph at lines 341--348
+Overfull \hbox (7.39032pt too wide) in paragraph at lines 365--372
  [] 
  []
 
-[20 <./chapters/9-gt/figs/balloonShape.png> <./chapters/9-gt/figs/svgPanel.png>
- <./chapters/9-gt/figs/svgBalloon.png> <./chapters/9-gt/figs/svgTextlines.png>]
+[21 <./chapters/9-gt/figs/svgPanel.png> <./chapters/9-gt/figs/svgBalloon.png> <
+./chapters/9-gt/figs/svgTextlines.png>]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
@@ -1917,36 +1914,40 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 379.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
-Overfull \hbox (14.11809pt too wide) in paragraph at lines 414--415
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (2.11797pt too wide) in paragraph at lines 420--421
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 403.
+ [22]
+Overfull \hbox (2.11797pt too wide) in paragraph at lines 449--450
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
+[23] <./chapters/9-gt/figs/stdVT.png, id=1070, 737.154pt x 481.3182pt>
+File: ./chapters/9-gt/figs/stdVT.png Graphic file (type png)
 
-LaTeX Warning: Reference `fig:test_page' on page 22 undefined on input line 469
-.
+<use ./chapters/9-gt/figs/stdVT.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/stdVT.png used on input line 518.
 
-[22]
+(pdftex.def)             Requested size: 258.91893pt x 169.05878pt.
 
-LaTeX Warning: Reference `fig:stddev_corners' on page 23 undefined on input lin
-e 482.
+<./chapters/9-gt/figs/segDifference.png, id=1072, 752.8125pt x 1063.975pt>
+File: ./chapters/9-gt/figs/segDifference.png Graphic file (type png)
+
+<use ./chapters/9-gt/figs/segDifference.png>
+Package pdftex.def Info: ./chapters/9-gt/figs/segDifference.png used on input l
+ine 537.
+(pdftex.def)             Requested size: 258.91893pt x 365.95157pt.
 
 
-LaTeX Warning: Reference `fig:test_page' on page 23 undefined on input line 489
-.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./chapters/4-pe/pe.tex [23] [24
 
-]
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [24 <./chapters/9-gt/figs/stdVT.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25 <./chapters/9-gt/figs/segDifference.png (PNG copy)>]) (./chapters/4-pe/pe.
+tex
+[26]
 Chapter 4.
 
 Overfull \hbox (17.48924pt too wide) in paragraph at lines 16--17
@@ -1954,7 +1955,9 @@ Overfull \hbox (17.48924pt too wide) in paragraph at lines 16--17
 text _ extraction _
  []
 
-) (./chapters/5-be/be.tex [25] [26
+) (./chapters/5-be/be.tex [27
+
+] [28
 
 ]
 Chapter 5.
@@ -2006,25 +2009,25 @@ Overfull \hbox (11.48924pt too wide) in paragraph at lines 26--27
  output /
  []
 
-) (./chapters/6-te/te.tex [27] [28]
+) (./chapters/6-te/te.tex [29] [30]
 Chapter 6.
-) (./chapters/7-ce/ce.tex [29
+) (./chapters/7-ce/ce.tex [31
 
-] [30
+] [32
 
 ]
 Chapter 7.
-) (./chapters/8-hp/hp.tex [31] [32
+) (./chapters/8-hp/hp.tex [33] [34
 
 ]
 Chapter 8.
-) (./chapters/10-conclusions/conclusions.tex [33] [34]
+) (./chapters/10-conclusions/conclusions.tex [35] [36]
 Chapter 9.
-) (./chapters/MyPublications/publications.tex [35
+) (./chapters/MyPublications/publications.tex [37
 
-] [36
+] [38
 
-] [37]
+] [39]
 Overfull \hbox (6.10098pt too wide) in paragraph at lines 49--51
 []\OT1/cmr/m/n/10 Christophe Rigaud, Di-mos-the-nis Karatzas, Joost Van de Wei-
 jer, Jean-Christophe
@@ -2036,88 +2039,93 @@ Overfull \hbox (6.10098pt too wide) in paragraph at lines 58--60
 jer, Jean-Christophe
  []
 
-) [38] (./main.bbl (./main.brf)
+) [40] (./main.bbl (./main.brf)
 \tf@brf=\write8
 \openout8 = `main.brf'.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
- [39
+ [41
 
 
-] [40] [41] [42] [43] [44] [45]) [46]
-<template_ULR/backpage.pdf, id=1262, 598.1477pt x 845.90027pt>
+] [42] [43] [44] [45] [46] [47]) [48]
+<template_ULR/backpage.pdf, id=1322, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf>
-Package pdftex.def Info: template_ULR/backpage.pdf used on input line 399.
+Package pdftex.def Info: template_ULR/backpage.pdf used on input line 400.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 File: template_ULR/backpage.pdf Graphic file (type pdf)
  <use template_ULR/backpage.pdf>
-Package pdftex.def Info: template_ULR/backpage.pdf used on input line 399.
+Package pdftex.def Info: template_ULR/backpage.pdf used on input line 400.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 
-<template_ULR/backpage.pdf, id=1265, page=1, 598.1477pt x 845.90027pt>
+<template_ULR/backpage.pdf, id=1325, page=1, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
-Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
-9.
+Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 40
+0.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
-Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
-9.
+Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 40
+0.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
-Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
-9.
+Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 40
+0.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
-Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
-9.
+Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 40
+0.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
-Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 39
-9.
+Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 40
+0.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
- [47
+ [49
 
  <./template_ULR/backpage.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 403.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 403.
 
 (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 402.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 403.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 403.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DEA414B08FB50A2B482B60506765E4D2;4127.
-Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 7BEC9585CE6A4C9BCAB0FF73E2625577;4700.
+(rerunfilecheck)             Checksum: 4180DB1C1CB9BBB08812D181B3012B91;4192.
 
+
+Package rerunfilecheck Warning: File `main.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `main.brf':
+(rerunfilecheck)             Before: D2F5CBB310E5A36B4923661A6706A27F;5023
+(rerunfilecheck)             After:  90763F3DB502CE05BE1EA58384108C11;4980.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 402.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 403.
  ) 
 Here is how much of TeX's memory you used:
- 23612 strings out of 493308
- 412482 string characters out of 6137822
- 515914 words of memory out of 5000000
- 26192 multiletter control sequences out of 15000+600000
+ 23669 strings out of 493308
+ 413529 string characters out of 6137822
+ 514889 words of memory out of 5000000
+ 26225 multiletter control sequences out of 15000+600000
  24178 words of font info for 87 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 55i,18n,54p,1394b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,54p,1394b,1924s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
@@ -2142,10 +2150,10 @@ e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 rw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (68 pages, 4045491 bytes).
+Output written on main.pdf (70 pages, 4518177 bytes).
 PDF statistics:
- 1415 PDF objects out of 1440 (max. 8388607)
- 1249 compressed objects within 13 object streams
- 308 named destinations out of 1000 (max. 500000)
- 667 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1480 PDF objects out of 1728 (max. 8388607)
+ 1307 compressed objects within 14 object streams
+ 330 named destinations out of 1000 (max. 500000)
+ 685 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -3,7 +3,9 @@
 \label{chap:gt}
 \graphicspath{{./chapters/9-gt/figs/}}
 % Abstract-----------------------------------------------------
-This chapter\cite{Guerin2013} deals with ...
+In this chapter we propose and detail the construction of the first publicly available comics image dataset and ground truth.
+The comics images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that had the objective to foster innovation in this domain trough academic research.
+The ground truth is defined in accordance to existing formalism in order to fulfil the needs of a large amount of researchers related to comics material.It integrates low and high level information such as the spatial position of the elements in the image, their semantic links and also bibliographic information.
 
 % -------------------------------------------------------------
 \section{Introduction}
@@ -25,7 +27,8 @@ Being in need of comic books material and an associated ground truth to evaluate
 Therefore, we decided to gather the first publicly available comic books dataset in association with several comic books authors and publishers and to build up the corresponding ground truth according to document analysis and understanding concerns.% which are image segmentation and semantic analysis.
 
 It took almost one year to define which type of comics to use, meet and convince comics authors and publishers, get copyright authorizations for the scientific community, develop a specific annotation tool and finally to hire people to do the ground truth.
-Once everything was done, a selection of hundred comic pages were annotated in one day by twenty volunteers affiliated to the L3i lab.
+
+A selection of hundred comic pages were annotated in one day by twenty volunteers affiliated to the L3i lab.
 In order to provide a common basis for evaluating research work, the ground truth have been published in 2013~\cite{Guerin2013} and made available to the scientific community via the project website~\footnote{http://ebdtheque.univ-lr.fr}.
 It has been enhanced in 2014 by adding semantic information to the already annotated elements.
 
@@ -122,6 +125,22 @@ or protagonist are specific to each album.
 They all have eye, harm and leg but at least 50\% are not humanoid, depending on the interpretation.
 % paragraph comic_characters (end)
 
+\subsection{Term of use} % (fold)
+\label{sub:term_of_use}
+We obtain the minimum rights for sharing and publishing image material from the right holders but we had to make sure the user accept it before using the data.
+In collaboration with the intellectual property department of the University of La Rochelle, we established the following:
+
+\textit{In order to use this database, you must firstly agree to the terms.
+You may not use the database if you don't accept the terms.
+The use of this database is limited to scientific and non-commercial purpose only, in the computer science domain.
+For instance, you are allowed to split the images, through the use of segmentation algorithms.
+You can also use pieces of this database to illustrate your research in publications and presentations.
+Any other use case must be validated by our service.
+If you do agree to be bound by all of these Terms of Use, please fill and email the request form and then use the login and password provided to download the selected version below.}
+
+The concerned request form requires the identity, affiliation, address and intended use of the person who wishes to use data.
+
+% subsection term_of_use (end)
 
 \section{Ground truth construction} % (fold)
 \label{sec:ground_truth_construction}
@@ -135,6 +154,7 @@ unconventional.
 This leaves room for interpretation on the form which increase annotation variations by different people and decrease the uniformity of the ground truth.
 This precision level is used in several, widely used datasets~\cite{pascal-voc-2012, yao2007introduction}.
 %{\color{blue}This groundtruthing level is also used for well known dataset widely used~\cite{pascal-voc-2012, yao2007introduction}.}
+
 Hereafter we detail the two levels of annotation (visual and semantic) that form the ground truth and how they are indexed in a file.
 The combination of visual and semantic annotation provides the advantage of making this ground truth relevant for document analysis and semantic evaluation which are both part of the comics understanding process.
 
@@ -326,6 +346,10 @@ The comic character are identified by \texttt{{idCharacter}} in order to be easi
 
 \subsection{File structure} % (fold)
 \label{sub:file_structure}
+
+The ground truth file structure have been thought according to comics related formalism such as Comics Markup Language (ComicsML)~\cite{McIntosh2011}, Comic Book Markup Language (CBML)~\cite{Walsh2012a}, Periodical Comics\footnote{\url{http://www.w3.org/wiki/WebSchemas/PeriodicalsComics}}, A Comics Ontology~\cite{Rissen2012}, Advanced Comic Book Format (ACBF)\footnote{\url{https://launchpad.net/acbf}} and the Grand Comics Database (GCD)\footnote{\url{http://www.comics.org}}.
+See the Ph.D. thesis of Gu{\'e}rin~\cite{phdthesisGuerin14} for an extended review.
+
 As we wanted to keep the ground truth file system simple and easy to share, visual and semantic annotations about a given page are gathered in a single full-text file following the specifications of Scalable Vector Graphics (SVG). 
 Besides being an open-standard developed by the World Wide Web Consortium (W3C) since 1999, the SVG format fulfils two essential needs for this database.
 
@@ -388,17 +412,17 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
     	href="CYB_BUBBLEGOM_T01_005.jpg"
     />
     <metadata 
-    	collectionTitle="collection"
-    	editorName="editeur" 
+    	collectionTitle="Bubblegom_Gom"
+    	editorName="Studio_Cyborga" 
     	doublePage="false"
-    	website="http://website.com"
-    	albumTitle="titre"
-    	drawerName="dessinateur"
+    	website="http://bubblegom.over-blog.com"
+    	albumTitle="La_Legende_des_Yaouanks"
+    	drawerName="Cyborg_07"
     	language="french"
     	resolution="300"
     	ISBN="979-10-90655-01-0"
     	readingDirection="leftToRight" 
-    	writerName="scenariste"
+    	writerName="Cyborg_07"
     	releaseDate="2009"
     	pageNumber="5"
     />
@@ -411,14 +435,21 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
   </svg>
   <svg class="Balloon">
     <polygon points="61,103 143,103 143,172 61,172 61,103">
-      <metadata idBalloon="B01" idCharacter="C01" shape="smooth"
-      tailDirection="SE" rank="1"/>
+      <metadata
+      	idBalloon="B01" 
+      	idCharacter="C01" 
+      	shape="smooth"
+      	tailDirection="SE" 
+      	rank="1"
+      />
     </polygon>
     ...
   </svg>
   <svg class="Line">
     <polygon points="373,121 432,121 432,132 373,132 373,121">
-      <metadata idBalloon="B01">LIKE TOU.</metadata>
+      <metadata idBalloon="B01">
+      	LIKE YOU.
+      </metadata>
     </polygon>
     ...
   </svg>
@@ -461,41 +492,72 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
 \section{Ground truth quality assessment}
 \label{sec:gt:ground_truth_quality_assessment}
 
-TODO
-
-When so many different persons are involved in the creation of a graphical ground truth, it is very difficult, if not impossible, to have a perfectly homogeneous segmentation.
-Therefore, in addition to the package of pages he was in charge of, each participant has been asked to annotate the panels of a final page. 
-This page was the same for everybody and was chosen for its graphical components heterogeneity. 
-It contains ten panels from which, four are full-fenced, five half-fenced and one is completely frameless, see Fig. \ref{fig:test_page}. 
-This heterogeneity is somehow representative of the whole corpus.
-
+When several persons are involved in the creation of a graphical ground truth, it is very difficult to obtain a perfectly homogeneous segmentation.
+Indeed, it could vary from one person to another because each person has a different sensitivity at reading comics and at integrating instructions.
+Therefore, in addition to the package of pages he was in charge of, each participant has been asked to annotate the panels of a extra page. 
+This extra page was the same for everybody and was chosen for its graphical components heterogeneity. 
+It contained ten panels from which, four were full-framed, five half-framed and one was frame less.
+%, see Fig. \ref{fig:test_page}. 
+% This heterogeneity is somehow representative of the whole corpus.
 We defined an acceptable error for the position of a corner given by several persons.
-Image being of different definitions, using a percentage of the page size makes more sense than using a specific number of pixels.
+The images of dataset being of different definitions, using a percentage of the page size makes more sense than using a specific number of pixels.
 %A percentage of the page width and height is more relevant.
 %Let set an acceptable error of 0.5\% of the page for the position on each corner. 
 We set this percentage $p$ at 0.5\% of the page height and width in $x$ and $y$. 
-Given the test image's definition of 750x1060 pixels, this makes a delta of +/- 5 pixels in $y$ axis and +/- 4 pixels in $x$ axis. 
+Given the definition of the test image of 750x1060 pixels, this makes a delta of +/- 5 pixels in $y$ axis and +/- 4 pixels in $x$ axis. 
 
 We asked to each one of the twenty involved persons to draw the four points bounding box of the panels ignoring text area.
 A mean position from the twenty different values has been calculated for each of them.
 Then, the distance of each point to its mean value is computed. 
-Fig. \ref{fig:stddev_corners} shows the amount of corners for a distance, centered on zero.
-Given the threshold $p=0.5$, 87.5\% of pointed corners can be considered as being homogeneous over the group of labeling people. 
+Figure~\ref{fig:gt:graphiqueStdVT} shows the amount of corners for a distance, centred on zero.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{stdVT.png}
+\caption[Distance to the mean position]{Number of corners for a given standard deviation value. This has been calculated on $y$ axis and $x$ axis and produces similar plot.}
+\label{fig:gt:graphiqueStdVT}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+
+Given the threshold $p=0.5$, 87.5\% of pointed corners can be considered as being homogeneous over the group of labelling people. 
 %{\bf what is p?} p is the threshold
 The overall mean standard deviation on this page reaches 0,15\%
  (1.13 pixels) for the width, and 0.12\% (1.28 pixels) for the height.
 The two bumps, at -40 and 15, are related to the missegmentation of 13 of the 80 panels. 
-Indeed, instructions have been misunderstood by some people who included text area outside of the panels or missed some panel's part.
-Fig. \ref{fig:test_page} shows the difference between areas labeled as a panel by at least one person and areas labeled as a panel by every participant.
-However, mistakes of this kind have been manually corrected by a post-production pass.
+Indeed, instructions have been misunderstood by some people who included text area outside of the panels or missed some panel's parts.
+Figure~\ref{fig:gt:diffVT} shows the difference between areas labelled as a panel by at least one person and areas labelled as a panel by every participant.
+However, such mistakes have been manually corrected before publishing the ground truth.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{segDifference.png}
+\caption[Error measurement image]{Error measurement page. Red hatched areas are the difference between areas labelled as panels by at least one person, and areas labelled by everybody. Image credit:~\cite{Bubble09}.}
+\label{fig:gt:diffVT}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Even though the error criterion has only been estimated on panels, it is reasonable to extend it to balloons and text lines as well.
-Indeed, the segmentation protocol being quite similar for all features (bounding box as close as possible to the object), the observed standard deviation of panel corner positions has no reason to be different from balloons and text lines.
+Indeed, the segmentation protocol being quite similar for all features (bounding box as close as possible to the drawing), the observed standard deviation of panel corner positions has no reason to be different from balloons and text lines.
+The pixel-level balloon and the comic characters visual annotation have been carried out by a single person, the homogeneity is only subject to the regularity of the person over time and is, therefore, difficult to assess quantitatively.
 
 % \section{Discussions}
 % \label{sec:gt:siscussions}
 
 
 \section{Conclusions}
-\label{sec:ncrag:concl}
-Published in ICDAR'13
+\label{sec:gt:concl}
+We presented the eBDtheque, a representative database of comics, which is composed by comics images, visual (spatial) and semantic annotations.
+The one hundred image corpus has been introduced as well as its ground truth construction and quality assessment protocols.
+
+The material have been published in 2013~\cite{Guerin2013} and made available to the scientific community via the project website~\footnote{http://ebdtheque.univ-lr.fr}.
+
+\modif{At the time this thesis is written, five requests from India, China and Japan have been received to use this dataset and ground truth.}
+
+% In order to provide a common basis for evaluating research work, the ground truth have been published
+% It has been enhanced in 2014 by adding semantic information to the already annotated elements.
+

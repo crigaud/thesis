@@ -21,60 +21,61 @@
 \contentsline {section}{\numberline {3.2}Dataset description}{14}{section.3.2}
 \contentsline {paragraph}{Albums}{14}{section*.10}
 \contentsline {paragraph}{Pages}{14}{section*.11}
-\contentsline {paragraph}{Panels}{14}{section*.12}
+\contentsline {paragraph}{Panels}{15}{section*.12}
 \contentsline {paragraph}{Balloons}{15}{section*.13}
 \contentsline {paragraph}{Text}{15}{section*.14}
 \contentsline {paragraph}{Comic characters}{15}{section*.16}
-\contentsline {section}{\numberline {3.3}Ground truth construction}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.1}Term of use}{16}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Ground truth construction}{16}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Visual annotation}{16}{subsection.3.3.1}
-\contentsline {paragraph}{Panels}{16}{section*.17}
-\contentsline {paragraph}{Balloons}{16}{section*.19}
+\contentsline {paragraph}{Panels}{17}{section*.17}
+\contentsline {paragraph}{Balloons}{17}{section*.19}
 \contentsline {paragraph}{Text lines}{17}{section*.21}
-\contentsline {paragraph}{Comic characters}{17}{section*.23}
+\contentsline {paragraph}{Comic characters}{18}{section*.23}
 \contentsline {subsection}{\numberline {3.3.2}Semantic annotation}{19}{subsection.3.3.2}
 \contentsline {paragraph}{Images}{19}{section*.25}
-\contentsline {paragraph}{Panels}{19}{section*.26}
-\contentsline {paragraph}{Balloons}{19}{section*.27}
-\contentsline {paragraph}{Text lines}{19}{section*.29}
-\contentsline {paragraph}{Comic characters}{19}{section*.30}
+\contentsline {paragraph}{Panels}{20}{section*.26}
+\contentsline {paragraph}{Balloons}{20}{section*.27}
+\contentsline {paragraph}{Text lines}{20}{section*.29}
+\contentsline {paragraph}{Comic characters}{20}{section*.30}
 \contentsline {subsection}{\numberline {3.3.3}File structure}{20}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Ground truth quality assessment}{22}{section.3.4}
-\contentsline {section}{\numberline {3.5}Conclusions}{23}{section.3.5}
-\contentsline {chapter}{\numberline {4}Panel extraction}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}Methodology (contribution)}{25}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experimental results}{25}{section.4.3}
-\contentsline {section}{\numberline {4.4}Conclusions}{25}{section.4.4}
-\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{27}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{27}{section.5.1}
-\contentsline {section}{\numberline {5.2}Methodology}{27}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Localization}{27}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Segmentation \& classification}{27}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Tail detection and description}{28}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Experimental results}{28}{section.5.3}
-\contentsline {section}{\numberline {5.4}Conclusions}{28}{section.5.4}
-\contentsline {chapter}{\numberline {6}Text localization and recognition}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}Methodology}{29}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Text localization}{29}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Text recognition}{29}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Experimental results}{29}{section.6.3}
-\contentsline {section}{\numberline {6.4}Conclusions}{29}{section.6.4}
-\contentsline {chapter}{\numberline {7}Comic character spotting and clustering}{31}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introduction}{31}{section.7.1}
-\contentsline {section}{\numberline {7.2}Methodology}{31}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Detection and spotting}{31}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Clustering}{31}{subsection.7.2.2}
-\contentsline {section}{\numberline {7.3}Experimental results}{31}{section.7.3}
-\contentsline {section}{\numberline {7.4}Conclusions}{31}{section.7.4}
-\contentsline {chapter}{\numberline {8}System for document understanding}{33}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{33}{section.8.1}
-\contentsline {section}{\numberline {8.2}Methodology}{33}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Framework}{33}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Application to comics}{33}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}Experimental results}{34}{section.8.3}
-\contentsline {section}{\numberline {8.4}Conclusions}{34}{section.8.4}
-\contentsline {chapter}{\numberline {9}Conclusions}{35}{chapter.9}
-\contentsline {section}{\numberline {9.1}Summary and contributions}{35}{section.9.1}
-\contentsline {section}{\numberline {9.2}Future perspectives}{35}{section.9.2}
-\contentsline {chapter}{Bibliography}{39}{section*.35}
+\contentsline {section}{\numberline {3.4}Ground truth quality assessment}{23}{section.3.4}
+\contentsline {section}{\numberline {3.5}Conclusions}{26}{section.3.5}
+\contentsline {chapter}{\numberline {4}Panel extraction}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Methodology (contribution)}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Experimental results}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Conclusions}{27}{section.4.4}
+\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Methodology}{29}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Localization}{29}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Segmentation \& classification}{29}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Tail detection and description}{30}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Experimental results}{30}{section.5.3}
+\contentsline {section}{\numberline {5.4}Conclusions}{30}{section.5.4}
+\contentsline {chapter}{\numberline {6}Text localization and recognition}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}Methodology}{31}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Text localization}{31}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Text recognition}{31}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Experimental results}{31}{section.6.3}
+\contentsline {section}{\numberline {6.4}Conclusions}{31}{section.6.4}
+\contentsline {chapter}{\numberline {7}Comic character spotting and clustering}{33}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{33}{section.7.1}
+\contentsline {section}{\numberline {7.2}Methodology}{33}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Detection and spotting}{33}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Clustering}{33}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Experimental results}{33}{section.7.3}
+\contentsline {section}{\numberline {7.4}Conclusions}{33}{section.7.4}
+\contentsline {chapter}{\numberline {8}System for document understanding}{35}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{35}{section.8.1}
+\contentsline {section}{\numberline {8.2}Methodology}{35}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Framework}{35}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Application to comics}{35}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}Experimental results}{36}{section.8.3}
+\contentsline {section}{\numberline {8.4}Conclusions}{36}{section.8.4}
+\contentsline {chapter}{\numberline {9}Conclusions}{37}{chapter.9}
+\contentsline {section}{\numberline {9.1}Summary and contributions}{37}{section.9.1}
+\contentsline {section}{\numberline {9.2}Future perspectives}{37}{section.9.2}
+\contentsline {chapter}{Bibliography}{41}{section*.37}

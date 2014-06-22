@@ -114,6 +114,11 @@ Neil Cohn.
   strategies of reading comic page layouts.
 \newblock {\em Frontiers in psychology}, 4(April):186, 2013.
 
+\bibitem{Bubble09}
+Cyb.
+\newblock {\em Bubbleg\^{o}m G\^{o}m}.
+\newblock Studio Cyborga, Goven, France, 2009.
+
 \bibitem{Dalal05}
 Navneet Dalal and Bill Triggs.
 \newblock Histograms of oriented gradients for human detection.
@@ -174,6 +179,14 @@ Cl{\'e}ment Gu{\'e}rin.
 \newblock {Ontologies and spatial relations applied to comic books reading.}
 \newblock In {\em {PhD Symposium of Knowledge Engineering and Knowledge
   Management (EKAW)}}, Galway, Ireland, 2012.
+
+\bibitem{phdthesisGuerin14}
+Cl{\'e}ment Gu{\'e}rin.
+\newblock {\em Repr{\'e}sentation des donn{\'e}es complexes pour une plateforme
+  de recherche d'information interactive}.
+\newblock PhD thesis, Universit{\'e} de La Rochelle, Technoforum - 23, avenue
+  Albert Einstein BP 33060 - 17031 La Rochelle - France, 2014.
+\newblock Part of the same project: eBDtheque.
 
 \bibitem{Guerin2013}
 Cl{\'e}ment Gu{\'e}rin, Christophe Rigaud, Antoine Mercier, and al.
@@ -337,6 +350,10 @@ S.~McCloud.
 \newblock {\em Understanding comics}.
 \newblock William Morrow Paperbacks, 1994.
 
+\bibitem{McIntosh2011}
+Jason McIntosh.
+\newblock {ComicsML}, 2011.
+
 \bibitem{medley2010discerningPictures}
 Stuart Medley.
 \newblock Discerning pictures: How we look at and understand images in comics.
@@ -403,6 +420,10 @@ J.~Raulet and V.~Boyer.
 \newblock A sketch-based interface to script comics reading.
 \newblock In {\em SIGGRAPH Asia 2011 Sketches}, SA '11, pages 3:1--3:2, New
   York, NY, USA, 2011. ACM.
+
+\bibitem{Rissen2012}
+Paul Rissen.
+\newblock {A Comics Ontology}, 2012.
 
 \bibitem{Salovaara2007Appropriation}
 Antti Salovaara.
@@ -553,6 +574,11 @@ Paul Viola and Michael~J Jones.
 \newblock Robust real-time face detection.
 \newblock {\em International journal of computer vision}, 57(2):137--154, 2004.
 
+\bibitem{Walsh2012a}
+John~A Walsh.
+\newblock {Comic Book Markup Language : An Introduction and Rationale}.
+\newblock {\em Digital Humanities Quarterly (DHQ)}, 6(1):1--50, 2012.
+
 \bibitem{WangHYYC12}
 Meng Wang, Richang Hong, Xiao-Tong Yuan, Shuicheng Yan, and Tat-Seng Chua.
 \newblock Movie2comics: Towards a lively video content presentation.
@@ -569,5 +595,12 @@ J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
 Masashi Yamada, Rahmat Budiarto, Mamoru Endo, and Shinya Miyazaki.
 \newblock Comic image decomposition for reading comics on cellular phones.
 \newblock {\em IEICE Transactions}, 87-D(6):1370--1376, 2004.
+
+\bibitem{yao2007introduction}
+B.~Yao, X.~Yang, and S.C. Zhu.
+\newblock Introduction to a large-scale general purpose ground truth database:
+  methodology, annotation tool and benchmarks.
+\newblock In {\em Energy Minimization Methods in Computer Vision and Pattern
+  Recognition}, pages 169--183. Springer, 2007.
 
 \end{thebibliography}

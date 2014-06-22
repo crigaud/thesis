@@ -5,12 +5,14 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Examples of comics character postures. This example shows deformation, pose, rotation, translation and occlusion variations. Image credits: Prunelle, la fille du cyclope, Vicky Portail-Kernel and C\'{e}dric Kernel, Ankama, 2010. \relax }}{10}{figure.caption.9}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Distribution of the number of elements per text lines. \relax }}{15}{figure.caption.15}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Panel annotation}}{16}{figure.caption.18}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Speech balloon contour annotation}}{17}{figure.caption.20}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Panel annotation}}{17}{figure.caption.18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Speech balloon contour annotation}}{18}{figure.caption.20}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Text line location annotation}}{18}{figure.caption.22}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Comic character position annotation}}{18}{figure.caption.24}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Comic character position annotation}}{19}{figure.caption.24}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Balloon shapes}}{20}{figure.caption.28}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Annotation rendering in a browser}}{20}{figure.caption.31}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Annotation rendering in a browser}}{21}{figure.caption.31}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Distance to the mean position}}{24}{figure.caption.32}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Error measurement image}}{25}{figure.caption.33}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

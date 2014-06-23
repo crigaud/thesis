@@ -1,4 +1,7 @@
 \backcite {Arai11}{{xiii}{(document)}{Doc-Start}}
+\backcite {Bubble09}{{xiii}{(document)}{Doc-Start}}
+\backcite {Guerin2013}{{xiii}{(document)}{Doc-Start}}
+\backcite {Guerin2013}{{xiii}{(document)}{Doc-Start}}
 \backcite {McCloud94}{{1}{1.1}{section.1.1}}
 \backcite {duc1997art}{{2}{1.1}{section.1.1}}
 \backcite {Stewart2000,IBISWorld2013}{{3}{1.2}{section.1.2}}
@@ -88,4 +91,15 @@
 \backcite {Rissen2012}{{21}{3.3.3}{subsection.3.3.3}}
 \backcite {phdthesisGuerin14}{{21}{3.3.3}{subsection.3.3.3}}
 \backcite {Bubble09}{{25}{3.9}{figure.caption.33}}
-\backcite {Guerin2013}{{26}{3.5}{section.3.5}}
+\backcite {Guerin2013}{{25}{3.5}{section.3.5}}
+\backcite {Szeliski2010Computer}{{27}{4.1}{section.4.1}}
+\backcite {Pratt91}{{28}{4.2.1}{section*.35}}
+\backcite {Bubble09}{{29}{4.1}{figure.caption.36}}
+\backcite {Guerin2013}{{31}{4.3}{section.4.3}}
+\backcite {Guerin2013}{{31}{4.3}{section.4.3}}
+\backcite {Arai11}{{31}{4.3}{table.caption.41}}
+\backcite {Guerin2013}{{32}{4.3}{figure.caption.43}}
+\backcite {Guerin2013}{{32}{4.4}{figure.caption.44}}
+\backcite {Arai11}{{33}{4.3}{table.caption.42}}
+\backcite {Rigaud2012LNCS}{{33}{4.4}{section.4.4}}
+\backcite {Khoi11}{{33}{4.4}{section.4.4}}

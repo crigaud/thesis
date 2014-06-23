@@ -59,6 +59,28 @@
     pdfborder={0 0 0},
 }
 
+% XML script listing
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  breaklines=true,
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{blue},
+  keywordstyle=\color{red},
+  morekeywords={confidence, class, points, id, label, x, y, width, height, href, collectionTitle, editorName, doublePage, website, albumTitle, drawerName, language, resolution, ISBN, readingDirection, writerName, releaseDate, pageNumber, rank}% list your attributes here
+}
+
+
 %\usetikzlibrary{fit,arrows,matrix,calc,positioning,shapes,backgrounds}
 %\usepackage{algpseudocode}
 %%%%%%%%%%%%%%%%%%%%%%%%% INCLUDES %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,7 +106,7 @@
 
 \newcommand{\printer}{Ediciones Gráficas Rey, S.L.}
 \newcommand{\dedication}{To my parents...}
-\newcommand{\sentence}{\textit{An idea that is not dangerous is}\\ \textit{unworthy of being called as an idea at all}\\Oscar Wilde (1854 - 1900)\\ \vspace{1cm}\textit{Live as if you were to die tomorrow.}\\ \textit{Learn as if you were to live forever}\\Mahatma Gandhi (1869 - 1948)}
+\newcommand{\sentence}{\textit{Nothing in life is to be feared,}\\ \textit{it is only to be understood.}\\Maria Skłodowska-Curie (1867 - 1934)\\ \vspace{1cm}\textit{Live as if you were to die tomorrow.}\\ \textit{Learn as if you were to live forever}\\Mahatma Gandhi (1869 - 1948)}
 
 \newcommand{\ISBN}{}
 %%%%%%%%%%%%%%%%%%%%%%%%% DEFINICIONS DEL ESTIL CVC %%%%%%%%%%%%%%%%%%%%%%%%%%

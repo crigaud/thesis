@@ -14,6 +14,14 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Distance to the mean position}}{24}{figure.caption.32}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Error measurement image}}{25}{figure.caption.33}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Panel extraction process. Image credits:~\cite {Bubble09}.\relax }}{29}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Binary image}}}{29}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Connected-component bounding boxes}}}{29}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Panels from k-means classification}}}{29}{subfigure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Panels after topological filtering}}}{29}{subfigure.1.4}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Descendent histogram of the bounding boxes of figure~\ref {fig:pe:cc_bounding_box}. Vertical black lines represent an example of three classes separation.\relax }}{30}{figure.caption.38}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Panel extraction score details for each image of proposed topological approach on the eBDtheque dataset~\cite {Guerin2013} \relax }}{32}{figure.caption.43}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Panel extraction score details of the proposed k-means based method for each image of the eBDtheque dataset~\cite {Guerin2013} \relax }}{32}{figure.caption.44}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

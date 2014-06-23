@@ -3,6 +3,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Validation of the parameter $blockSizeFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }}{31}{table.caption.40}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Validation of the parameter $minAreaFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }}{31}{table.caption.41}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Panel extraction results.\relax }}{33}{table.caption.42}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

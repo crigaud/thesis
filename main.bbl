@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{ahmadimpactsOfManga}
 Hafiz~Aziz AHMAD, Shinichi KOYAMA, and Haruo HIBINO.
@@ -186,7 +186,6 @@ Cl{\'e}ment Gu{\'e}rin.
   de recherche d'information interactive}.
 \newblock PhD thesis, Universit{\'e} de La Rochelle, Technoforum - 23, avenue
   Albert Einstein BP 33060 - 17031 La Rochelle - France, 2014.
-\newblock Part of the same project: eBDtheque.
 
 \bibitem{Guerin2013}
 Cl{\'e}ment Gu{\'e}rin, Christophe Rigaud, Antoine Mercier, and al.
@@ -411,6 +410,11 @@ Christophe Ponsard, Ravi Ramdoyal, and Daniel Dziamski.
 \newblock In {\em Computers Helping People with Special Needs}, pages 471--478.
   Springer, 2012.
 
+\bibitem{Pratt91}
+Pratt and William K.
+\newblock {\em Digital image processing (2nd ed.)}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1991.
+
 \bibitem{Ratier2013}
 Gilles Ratier.
 \newblock 2013 : l'ann{\'e}e de la d{\'e}c{\'e}l{\'e}ration, 2013.
@@ -420,6 +424,13 @@ J.~Raulet and V.~Boyer.
 \newblock A sketch-based interface to script comics reading.
 \newblock In {\em SIGGRAPH Asia 2011 Sketches}, SA '11, pages 3:1--3:2, New
   York, NY, USA, 2011. ACM.
+
+\bibitem{Rigaud2012LNCS}
+Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.
+\newblock Robust frame and text extraction from comic books.
+\newblock In Young-Bin Kwon and Jean-Marc Ogier, editors, {\em Graphics
+  Recognition. New Trends and Challenges}, volume 7423 of {\em Lecture Notes in
+  Computer Science}, pages 129--138. Springer Berlin Heidelberg, 2013.
 
 \bibitem{Rissen2012}
 Paul Rissen.
@@ -522,6 +533,12 @@ M.~Sundaresan and S.~Ranjini.
   extraction method.
 \newblock In {\em Pattern Recognition, Informatics and Medical Engineering
   (PRIME), 2012 International Conference on}, pages 449--452, March 2012.
+
+\bibitem{Szeliski2010Computer}
+Richard Szeliski.
+\newblock {\em Computer Vision: Algorithms and Applications}, chapter~8, pages
+  201--213.
+\newblock Springer-Verlag New York, Inc., New York, NY, USA, 1 edition, 2010.
 
 \bibitem{TAPhD2010}
 Anh-Phuong TA.

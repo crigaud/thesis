@@ -158,6 +158,12 @@ M.~Everingham, L.~Van~Gool, C.~K.~I. Williams, J.~Winn, and A.~Zisserman.
 \newblock {\em International Journal of Computer Vision}, 88(2):303--338, June
   2010.
 
+\bibitem{everingham2010pascal}
+Mark Everingham, Luc Van~Gool, Christopher~KI Williams, John Winn, and Andrew
+  Zisserman.
+\newblock The pascal visual object classes (voc) challenge.
+\newblock {\em International journal of computer vision}, 88(2):303--338, 2010.
+
 \bibitem{Fidler2012Describing}
 S.~Fidler, Jian Yao, and R.~Urtasun.
 \newblock Describing the scene as a whole: Joint object detection, scene
@@ -424,6 +430,12 @@ J.~Raulet and V.~Boyer.
 \newblock A sketch-based interface to script comics reading.
 \newblock In {\em SIGGRAPH Asia 2011 Sketches}, SA '11, pages 3:1--3:2, New
   York, NY, USA, 2011. ACM.
+
+\bibitem{rigaud2012extraction}
+Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.
+\newblock Extraction robuste des cases et du texte de bandes dessin{\'e}es.
+\newblock In {\em Proceedings of Colloque International Francophone sur l'Ecrit
+  et le Document (CIFED)}, pages 349--360, 2012.
 
 \bibitem{Rigaud2012LNCS}
 Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.

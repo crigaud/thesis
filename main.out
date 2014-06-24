@@ -27,9 +27,9 @@
 \BOOKMARK [1][-]{section.3.5}{Conclusions}{chapter.3}% 27
 \BOOKMARK [0][-]{chapter.4}{Panel extraction}{}% 28
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.2}{Methodology \(contribution\)}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.2.1}{K-mean clustering}{section.4.2}% 31
-\BOOKMARK [2][-]{subsection.4.2.2}{Outermost contour analysis}{section.4.2}% 32
+\BOOKMARK [1][-]{section.4.2}{Methodology}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Method 1: k-means clustering}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Method 2: topological analysis}{section.4.2}% 32
 \BOOKMARK [1][-]{section.4.3}{Experimental results}{chapter.4}% 33
 \BOOKMARK [1][-]{section.4.4}{Conclusions}{chapter.4}% 34
 \BOOKMARK [0][-]{chapter.5}{Balloon segmentation and classification}{}% 35
@@ -64,4 +64,4 @@
 \BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 64
 \BOOKMARK [1][-]{section.9.1}{Summary and contributions}{chapter.9}% 65
 \BOOKMARK [1][-]{section.9.2}{Future perspectives}{chapter.9}% 66
-\BOOKMARK [0][-]{section*.48}{Bibliography}{}% 67
+\BOOKMARK [0][-]{section*.51}{Bibliography}{}% 67

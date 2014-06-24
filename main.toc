@@ -43,15 +43,18 @@
 \contentsline {section}{\numberline {3.5}Conclusions}{25}{section.3.5}
 \contentsline {chapter}{\numberline {4}Panel extraction}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Methodology (contribution)}{27}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}K-mean clustering}{28}{subsection.4.2.1}
-\contentsline {paragraph}{Principle}{28}{section*.34}
+\contentsline {section}{\numberline {4.2}Methodology}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Method 1: k-means clustering}{27}{subsection.4.2.1}
+\contentsline {paragraph}{Principle}{27}{section*.34}
 \contentsline {paragraph}{Pre processing}{28}{section*.35}
 \contentsline {paragraph}{Clustering}{28}{section*.37}
 \contentsline {paragraph}{Topological filtering}{30}{section*.39}
-\contentsline {subsection}{\numberline {4.2.2}Outermost contour analysis}{30}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Method 2: topological analysis}{30}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Experimental results}{31}{section.4.3}
-\contentsline {section}{\numberline {4.4}Conclusions}{33}{section.4.4}
+\contentsline {paragraph}{Metrics}{31}{section*.40}
+\contentsline {paragraph}{Parameter validation}{32}{section*.41}
+\contentsline {paragraph}{Results analysis}{32}{section*.44}
+\contentsline {section}{\numberline {4.4}Conclusions}{34}{section.4.4}
 \contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{35}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{35}{section.5.1}
 \contentsline {section}{\numberline {5.2}Methodology}{35}{section.5.2}
@@ -84,4 +87,4 @@
 \contentsline {chapter}{\numberline {9}Conclusions}{43}{chapter.9}
 \contentsline {section}{\numberline {9.1}Summary and contributions}{43}{section.9.1}
 \contentsline {section}{\numberline {9.2}Future perspectives}{43}{section.9.2}
-\contentsline {chapter}{Bibliography}{47}{section*.48}
+\contentsline {chapter}{Bibliography}{47}{section*.51}

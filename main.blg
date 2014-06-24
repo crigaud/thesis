@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "suzuki1985topological"
-You've used 101 entries,
+You've used 103 entries,
             2118 wiz_defined-function locations,
-            1154 strings with 23731 characters,
-and the built_in function-call counts, 38027 in all, are:
-= -- 3760
-> -- 1754
-< -- 49
-+ -- 690
-- -- 581
-* -- 2567
-:= -- 6041
-add.period$ -- 323
-call.type$ -- 101
-change.case$ -- 568
+            1160 strings with 24053 characters,
+and the built_in function-call counts, 38958 in all, are:
+= -- 3849
+> -- 1805
+< -- 50
++ -- 711
+- -- 599
+* -- 2638
+:= -- 6186
+add.period$ -- 329
+call.type$ -- 103
+change.case$ -- 583
 chr.to.int$ -- 0
-cite$ -- 101
-duplicate$ -- 1553
-empty$ -- 3037
-format.name$ -- 581
-if$ -- 8302
+cite$ -- 103
+duplicate$ -- 1587
+empty$ -- 3105
+format.name$ -- 599
+if$ -- 8501
 int.to.chr$ -- 0
-int.to.str$ -- 101
-missing$ -- 98
-newline$ -- 499
-num.names$ -- 218
-pop$ -- 690
+int.to.str$ -- 103
+missing$ -- 100
+newline$ -- 509
+num.names$ -- 222
+pop$ -- 706
 preamble$ -- 1
-purify$ -- 479
+purify$ -- 492
 quote$ -- 0
-skip$ -- 1162
+skip$ -- 1189
 stack$ -- 0
-substring$ -- 2274
-swap$ -- 472
-text.length$ -- 49
+substring$ -- 2338
+swap$ -- 484
+text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 382
+type$ -- 390
 warning$ -- 0
-while$ -- 344
-width$ -- 104
-write$ -- 1146
-(There was 1 warning)
+while$ -- 352
+width$ -- 106
+write$ -- 1168

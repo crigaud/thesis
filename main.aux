@@ -26,12 +26,8 @@
 \@writefile{toc}{\contentsline {chapter}{Resum}{vii}{chapter*.4}}
 \citation{Arai11}
 \citation{Bubble09}
-\citation{Guerin2013}
-\citation{Guerin2013}
 \@writefile{brf}{\backcite{Arai11}{{xiii}{(document)}{Doc-Start}}}
 \@writefile{brf}{\backcite{Bubble09}{{xiii}{(document)}{Doc-Start}}}
-\@writefile{brf}{\backcite{Guerin2013}{{xiii}{(document)}{Doc-Start}}}
-\@writefile{brf}{\backcite{Guerin2013}{{xiii}{(document)}{Doc-Start}}}
 \citation{McCloud94}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -321,19 +317,20 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction}{27}{section.4.1}}
 \newlabel{sec:pe:introduction}{{4.1}{27}{Introduction}{section.4.1}{}}
 \@writefile{brf}{\backcite{Szeliski2010Computer}{{27}{4.1}{section.4.1}}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Methodology (contribution)}{27}{section.4.2}}
-\newlabel{sec:pe:methodology}{{4.2}{27}{Methodology (contribution)}{section.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Methodology}{27}{section.4.2}}
+\newlabel{sec:pe:methodology}{{4.2}{27}{Methodology}{section.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Method 1: k-means clustering}{27}{subsection.4.2.1}}
+\newlabel{sub:k_mean_clustering}{{4.2.1}{27}{Method 1: k-means clustering}{subsection.4.2.1}{}}
+\newlabel{par:principle}{{4.2.1}{27}{Principle}{section*.34}{}}
+\@writefile{toc}{\contentsline {paragraph}{Principle}{27}{section*.34}}
 \citation{Pratt91}
 \citation{Bubble09}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}K-mean clustering}{28}{subsection.4.2.1}}
-\newlabel{sub:k_mean_clustering}{{4.2.1}{28}{K-mean clustering}{subsection.4.2.1}{}}
-\newlabel{par:principle}{{4.2.1}{28}{Principle}{section*.34}{}}
-\@writefile{toc}{\contentsline {paragraph}{Principle}{28}{section*.34}}
 \newlabel{par:process}{{4.2.1}{28}{Pre processing}{section*.35}{}}
 \@writefile{toc}{\contentsline {paragraph}{Pre processing}{28}{section*.35}}
 \@writefile{brf}{\backcite{Pratt91}{{28}{4.2.1}{section*.35}}}
 \newlabel{par:clustering}{{4.2.1}{28}{Clustering}{section*.37}{}}
 \@writefile{toc}{\contentsline {paragraph}{Clustering}{28}{section*.37}}
+\newlabel{eq:pe:k-means}{{4.1}{28}{Clustering}{equation.4.2.1}{}}
 \newlabel{fig:pe:binary_img}{{4.1a}{29}{Subfigure 4 4.1a}{subfigure.4.1.1}{}}
 \newlabel{sub@fig:pe:binary_img}{{(a)}{a}{Subfigure 4 4.1a\relax }{subfigure.4.1.1}{}}
 \newlabel{fig:pe:cc_bounding_box}{{4.1b}{29}{Subfigure 4 4.1b}{subfigure.4.1.2}{}}
@@ -348,46 +345,50 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Connected-component bounding boxes}}}{29}{subfigure.1.2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Panels from k-means classification}}}{29}{subfigure.1.3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Panels after topological filtering}}}{29}{subfigure.1.4}}
-\citation{Guerin2013}
-\citation{Guerin2013}
-\newlabel{eq:pe:k-means}{{4.1}{30}{Clustering}{equation.4.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Descendent histogram of the bounding boxes of figure~\ref  {fig:pe:cc_bounding_box}. Vertical black lines represent an example of three classes separation.\relax }}{30}{figure.caption.38}}
-\newlabel{fig:pe:histo_roi}{{4.2}{30}{Descendent histogram of the bounding boxes of figure~\ref {fig:pe:cc_bounding_box}. Vertical black lines represent an example of three classes separation.\relax }{figure.caption.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Descendent histogram of the bounding boxes in figure~\ref  {fig:pe:cc_bounding_box}. Vertical black lines represent an example of three cluster limits labelled as ``panel'', ``text'' ``noise'' .\relax }}{30}{figure.caption.38}}
+\newlabel{fig:pe:histo_roi}{{4.2}{30}{Descendent histogram of the bounding boxes in figure~\ref {fig:pe:cc_bounding_box}. Vertical black lines represent an example of three cluster limits labelled as ``panel'', ``text'' ``noise'' .\relax }{figure.caption.38}{}}
 \newlabel{par:topological_filtering}{{4.2.1}{30}{Topological filtering}{section*.39}{}}
 \@writefile{toc}{\contentsline {paragraph}{Topological filtering}{30}{section*.39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Outermost contour analysis}{30}{subsection.4.2.2}}
-\newlabel{sub:outermost_contour_filtering}{{4.2.2}{30}{Outermost contour analysis}{subsection.4.2.2}{}}
-\newlabel{eq:panel_blockSize}{{4.2}{30}{Outermost contour analysis}{equation.4.2.2}{}}
-\citation{Arai11}
-\citation{Arai11}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Method 2: topological analysis}{30}{subsection.4.2.2}}
+\newlabel{sub:outermost_contour_filtering}{{4.2.2}{30}{Method 2: topological analysis}{subsection.4.2.2}{}}
 \citation{Guerin2013}
-\citation{Guerin2013}
-\citation{Guerin2013}
-\citation{Guerin2013}
+\citation{everingham2010pascal}
+\newlabel{eq:panel_blockSize}{{4.2}{31}{Method 2: topological analysis}{equation.4.2.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Experimental results}{31}{section.4.3}}
 \newlabel{sec:pe:experimental_results}{{4.3}{31}{Experimental results}{section.4.3}{}}
 \@writefile{brf}{\backcite{Guerin2013}{{31}{4.3}{section.4.3}}}
-\@writefile{brf}{\backcite{Guerin2013}{{31}{4.3}{section.4.3}}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Validation of the parameter $blockSizeFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }}{31}{table.caption.40}}
-\newlabel{tab:blockSizeFactor_validation}{{4.1}{31}{Validation of the parameter $blockSizeFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }{table.caption.40}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Validation of the parameter $minAreaFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }}{31}{table.caption.41}}
-\newlabel{tab:minAreaFactor_validation}{{4.2}{31}{Validation of the parameter $minAreaFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }{table.caption.41}{}}
-\@writefile{brf}{\backcite{Arai11}{{31}{4.3}{table.caption.41}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Panel extraction score details for each image of proposed topological approach on the eBDtheque dataset~\cite  {Guerin2013} \relax }}{32}{figure.caption.43}}
-\@writefile{brf}{\backcite{Guerin2013}{{32}{4.3}{figure.caption.43}}}
-\newlabel{fig:pe:panel_extraction_ijdar}{{4.3}{32}{Panel extraction score details for each image of proposed topological approach on the eBDtheque dataset~\cite {Guerin2013} \relax }{figure.caption.43}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Panel extraction score details of the proposed k-means based method for each image of the eBDtheque dataset~\cite  {Guerin2013} \relax }}{32}{figure.caption.44}}
-\@writefile{brf}{\backcite{Guerin2013}{{32}{4.4}{figure.caption.44}}}
-\newlabel{}{{4.4}{32}{Panel extraction score details of the proposed k-means based method for each image of the eBDtheque dataset~\cite {Guerin2013} \relax }{figure.caption.44}{}}
-\citation{Rigaud2012LNCS}
-\citation{Khoi11}
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Panel extraction results.\relax }}{33}{table.caption.42}}
-\@writefile{brf}{\backcite{Arai11}{{33}{4.3}{table.caption.42}}}
-\newlabel{tab:panel}{{4.3}{33}{Panel extraction results.\relax }{table.caption.42}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusions}{33}{section.4.4}}
-\newlabel{sec:pe:conclusion}{{4.4}{33}{Conclusions}{section.4.4}{}}
-\@writefile{brf}{\backcite{Rigaud2012LNCS}{{33}{4.4}{section.4.4}}}
-\@writefile{brf}{\backcite{Khoi11}{{33}{4.4}{section.4.4}}}
+\newlabel{par:metrics}{{4.3}{31}{Metrics}{section*.40}{}}
+\@writefile{toc}{\contentsline {paragraph}{Metrics}{31}{section*.40}}
+\@writefile{brf}{\backcite{everingham2010pascal}{{31}{4.3}{section*.40}}}
+\newlabel{eq:overlap_ratio}{{4.3}{31}{Metrics}{equation.4.3.3}{}}
+\newlabel{eq:recall}{{4.4}{31}{Metrics}{equation.4.3.4}{}}
+\newlabel{eq:precision}{{4.5}{31}{Metrics}{equation.4.3.5}{}}
+\citation{Guerin2013}
+\citation{Guerin2013}
+\citation{Arai11}
+\citation{Arai11}
+\newlabel{par:parameter_validation}{{4.3}{32}{Parameter validation}{section*.41}{}}
+\@writefile{toc}{\contentsline {paragraph}{Parameter validation}{32}{section*.41}}
+\@writefile{brf}{\backcite{Guerin2013}{{32}{4.3}{section*.41}}}
+\@writefile{brf}{\backcite{Guerin2013}{{32}{4.3}{section*.41}}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Validation of the parameter $blockSizeFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }}{32}{table.caption.42}}
+\newlabel{tab:blockSizeFactor_validation}{{4.1}{32}{Validation of the parameter $blockSizeFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }{table.caption.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Validation of the parameter $minAreaFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }}{32}{table.caption.43}}
+\newlabel{tab:minAreaFactor_validation}{{4.2}{32}{Validation of the parameter $minAreaFactor$ on the f-measure $F$ and the average processing time $t$ per panel.\relax }{table.caption.43}{}}
+\newlabel{par:results_analysis}{{4.3}{32}{Results analysis}{section*.44}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results analysis}{32}{section*.44}}
+\@writefile{brf}{\backcite{Arai11}{{32}{4.3}{section*.44}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Panel extraction score details for each image of the dataset using method 1. \relax }}{33}{figure.caption.46}}
+\newlabel{}{{4.3}{33}{Panel extraction score details for each image of the dataset using method 1. \relax }{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Panel extraction score details for each image of the dataset using method 2. \relax }}{33}{figure.caption.47}}
+\newlabel{fig:pe:panel_extraction_ijdar}{{4.4}{33}{Panel extraction score details for each image of the dataset using method 2. \relax }{figure.caption.47}{}}
+\citation{rigaud2012extraction,Rigaud2012LNCS}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Panel extraction results.\relax }}{34}{table.caption.45}}
+\@writefile{brf}{\backcite{Arai11}{{34}{4.3}{table.caption.45}}}
+\newlabel{tab:panel}{{4.3}{34}{Panel extraction results.\relax }{table.caption.45}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusions}{34}{section.4.4}}
+\newlabel{sec:pe:conclusion}{{4.4}{34}{Conclusions}{section.4.4}{}}
+\@writefile{brf}{\backcite{rigaud2012extraction,Rigaud2012LNCS}{{34}{4.4}{section.4.4}}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Balloon segmentation and classification}{35}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -472,7 +473,7 @@
 \bibcite{Japan2013}{7}
 \bibcite{Back2001}{8}
 \bibcite{Blaschke2014Geographic}{9}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{47}{section*.48}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{47}{section*.51}}
 \bibcite{borodo2014multimodality}{10}
 \bibcite{Brandon2014}{11}
 \bibcite{Chan2007Automatic}{12}
@@ -488,80 +489,82 @@
 \bibcite{Duda72}{22}
 \bibcite{Epshtein10}{23}
 \bibcite{pascal-voc-2012}{24}
-\bibcite{Fidler2012Describing}{25}
-\bibcite{OCRMangaReader}{26}
-\bibcite{griffinHolubPerona}{27}
-\bibcite{Guerin2012Ontologies}{28}
-\bibcite{phdthesisGuerin14}{29}
-\bibcite{Guerin2013}{30}
-\bibcite{Han07}{31}
-\bibcite{Hermann2012Guided}{32}
-\bibcite{Khoi11}{33}
-\bibcite{Ho2012}{34}
-\bibcite{HoGREC2013}{35}
-\bibcite{Hu2003Ontology}{36}
-\bibcite{Hudelot2008Fuzzy}{37}
-\bibcite{IBISWorld2013}{38}
-\bibcite{In11}{39}
-\bibcite{Raulet2013Comics}{40}
-\bibcite{Khan12}{41}
-\bibcite{Kurlander1996}{42}
-\bibcite{lamiroy:inria-00537035}{43}
-\bibcite{Lamiroy2014Handbook}{44}
-\bibcite{Li2012Toward}{45}
-\bibcite{li2012automatic}{46}
-\bibcite{Luyuan2014Automatic}{47}
-\bibcite{Li2013Comic}{48}
-\bibcite{Li2013Unsupervised}{49}
-\bibcite{Ricardo2009Calligraphic}{50}
-\bibcite{Mao2003Document}{51}
-\bibcite{Marx2006Writing}{52}
-\bibcite{Matsui2011}{53}
-\bibcite{McCloud94}{54}
-\bibcite{mccloud1994understanding}{55}
-\bibcite{McIntosh2011}{56}
-\bibcite{medley2010discerningPictures}{57}
-\bibcite{Aaron2011}{58}
-\bibcite{Mezaris03anontology}{59}
-\bibcite{millidge2009comic}{60}
-\bibcite{Neumann12}{61}
-\bibcite{Ogier2000Semantic}{62}
-\bibcite{Oliveira10}{63}
-\bibcite{ComicLife3}{64}
-\bibcite{Ponsard09}{65}
-\bibcite{ponsard2012ocr}{66}
-\bibcite{Pratt91}{67}
-\bibcite{Ratier2013}{68}
-\bibcite{Raulet2011Sketch}{69}
-\bibcite{Rigaud2012LNCS}{70}
-\bibcite{Rissen2012}{71}
-\bibcite{Salovaara2007Appropriation}{72}
-\bibcite{Sarwar2013Ontology}{73}
-\bibcite{Sciascio2011Structured}{74}
-\bibcite{Shamir2006Generating}{75}
-\bibcite{Vomic}{76}
-\bibcite{Singh2004}{77}
-\bibcite{smeaton2006evaluation}{78}
-\bibcite{Capture2Text}{79}
-\bibcite{Stewart2000}{80}
-\bibcite{stommel2012segmentation}{81}
-\bibcite{Su11}{82}
-\bibcite{SumiSNM2002Comic}{83}
-\bibcite{Sun2010}{84}
-\bibcite{Sun2013IJDAR}{85}
-\bibcite{SunICDAR2013}{86}
-\bibcite{Sundaresan2012Text}{87}
-\bibcite{Szeliski2010Computer}{88}
-\bibcite{TAPhD2010}{89}
-\bibcite{Kohei2012}{90}
-\bibcite{Tan07}{91}
-\bibcite{Thomas2010Invisible}{92}
-\bibcite{Tobita2010Comic}{93}
-\bibcite{Tsai2013Adaptive}{94}
-\bibcite{Uchihashi1999Video}{95}
-\bibcite{Viola2004robust}{96}
-\bibcite{Walsh2012a}{97}
-\bibcite{WangHYYC12}{98}
-\bibcite{Weinman09}{99}
-\bibcite{Yam04}{100}
-\bibcite{yao2007introduction}{101}
+\bibcite{everingham2010pascal}{25}
+\bibcite{Fidler2012Describing}{26}
+\bibcite{OCRMangaReader}{27}
+\bibcite{griffinHolubPerona}{28}
+\bibcite{Guerin2012Ontologies}{29}
+\bibcite{phdthesisGuerin14}{30}
+\bibcite{Guerin2013}{31}
+\bibcite{Han07}{32}
+\bibcite{Hermann2012Guided}{33}
+\bibcite{Khoi11}{34}
+\bibcite{Ho2012}{35}
+\bibcite{HoGREC2013}{36}
+\bibcite{Hu2003Ontology}{37}
+\bibcite{Hudelot2008Fuzzy}{38}
+\bibcite{IBISWorld2013}{39}
+\bibcite{In11}{40}
+\bibcite{Raulet2013Comics}{41}
+\bibcite{Khan12}{42}
+\bibcite{Kurlander1996}{43}
+\bibcite{lamiroy:inria-00537035}{44}
+\bibcite{Lamiroy2014Handbook}{45}
+\bibcite{Li2012Toward}{46}
+\bibcite{li2012automatic}{47}
+\bibcite{Luyuan2014Automatic}{48}
+\bibcite{Li2013Comic}{49}
+\bibcite{Li2013Unsupervised}{50}
+\bibcite{Ricardo2009Calligraphic}{51}
+\bibcite{Mao2003Document}{52}
+\bibcite{Marx2006Writing}{53}
+\bibcite{Matsui2011}{54}
+\bibcite{McCloud94}{55}
+\bibcite{mccloud1994understanding}{56}
+\bibcite{McIntosh2011}{57}
+\bibcite{medley2010discerningPictures}{58}
+\bibcite{Aaron2011}{59}
+\bibcite{Mezaris03anontology}{60}
+\bibcite{millidge2009comic}{61}
+\bibcite{Neumann12}{62}
+\bibcite{Ogier2000Semantic}{63}
+\bibcite{Oliveira10}{64}
+\bibcite{ComicLife3}{65}
+\bibcite{Ponsard09}{66}
+\bibcite{ponsard2012ocr}{67}
+\bibcite{Pratt91}{68}
+\bibcite{Ratier2013}{69}
+\bibcite{Raulet2011Sketch}{70}
+\bibcite{rigaud2012extraction}{71}
+\bibcite{Rigaud2012LNCS}{72}
+\bibcite{Rissen2012}{73}
+\bibcite{Salovaara2007Appropriation}{74}
+\bibcite{Sarwar2013Ontology}{75}
+\bibcite{Sciascio2011Structured}{76}
+\bibcite{Shamir2006Generating}{77}
+\bibcite{Vomic}{78}
+\bibcite{Singh2004}{79}
+\bibcite{smeaton2006evaluation}{80}
+\bibcite{Capture2Text}{81}
+\bibcite{Stewart2000}{82}
+\bibcite{stommel2012segmentation}{83}
+\bibcite{Su11}{84}
+\bibcite{SumiSNM2002Comic}{85}
+\bibcite{Sun2010}{86}
+\bibcite{Sun2013IJDAR}{87}
+\bibcite{SunICDAR2013}{88}
+\bibcite{Sundaresan2012Text}{89}
+\bibcite{Szeliski2010Computer}{90}
+\bibcite{TAPhD2010}{91}
+\bibcite{Kohei2012}{92}
+\bibcite{Tan07}{93}
+\bibcite{Thomas2010Invisible}{94}
+\bibcite{Tobita2010Comic}{95}
+\bibcite{Tsai2013Adaptive}{96}
+\bibcite{Uchihashi1999Video}{97}
+\bibcite{Viola2004robust}{98}
+\bibcite{Walsh2012a}{99}
+\bibcite{WangHYYC12}{100}
+\bibcite{Weinman09}{101}
+\bibcite{Yam04}{102}
+\bibcite{yao2007introduction}{103}

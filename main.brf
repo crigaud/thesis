@@ -1,7 +1,5 @@
 \backcite {Arai11}{{xiii}{(document)}{Doc-Start}}
 \backcite {Bubble09}{{xiii}{(document)}{Doc-Start}}
-\backcite {Guerin2013}{{xiii}{(document)}{Doc-Start}}
-\backcite {Guerin2013}{{xiii}{(document)}{Doc-Start}}
 \backcite {McCloud94}{{1}{1.1}{section.1.1}}
 \backcite {duc1997art}{{2}{1.1}{section.1.1}}
 \backcite {Stewart2000,IBISWorld2013}{{3}{1.2}{section.1.2}}
@@ -96,10 +94,9 @@
 \backcite {Pratt91}{{28}{4.2.1}{section*.35}}
 \backcite {Bubble09}{{29}{4.1}{figure.caption.36}}
 \backcite {Guerin2013}{{31}{4.3}{section.4.3}}
-\backcite {Guerin2013}{{31}{4.3}{section.4.3}}
-\backcite {Arai11}{{31}{4.3}{table.caption.41}}
-\backcite {Guerin2013}{{32}{4.3}{figure.caption.43}}
-\backcite {Guerin2013}{{32}{4.4}{figure.caption.44}}
-\backcite {Arai11}{{33}{4.3}{table.caption.42}}
-\backcite {Rigaud2012LNCS}{{33}{4.4}{section.4.4}}
-\backcite {Khoi11}{{33}{4.4}{section.4.4}}
+\backcite {everingham2010pascal}{{31}{4.3}{section*.40}}
+\backcite {Guerin2013}{{32}{4.3}{section*.41}}
+\backcite {Guerin2013}{{32}{4.3}{section*.41}}
+\backcite {Arai11}{{32}{4.3}{section*.44}}
+\backcite {Arai11}{{34}{4.3}{table.caption.45}}
+\backcite {rigaud2012extraction,Rigaud2012LNCS}{{34}{4.4}{section.4.4}}

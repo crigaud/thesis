@@ -1,0 +1,100 @@
+\chapter{Experimentations}
+\chaptermark{Experimentations}
+\label{chap:experimentations}
+\graphicspath{{./chapters/6-experiments/figs/}}
+
+\section{Introduction} % (fold)
+\label{sec:ex:introduction}
+
+% section introduction (end)
+
+\section{Dataset and ground truth construction} % (fold)
+\label{sec:dataset_and_ground_truth_construction}
+
+% section dataset_and_ground_truth_construction (end)
+
+\section{Metrics} % (fold)
+\label{sec:ex:metrics}
+\subsection{Object localisation} % (fold)
+\label{sub:object_localisation}
+
+
+% paragraph metrics (end)
+We evaluate the different extractions in terms of object bounding boxes such as the PASCAL VOC challenge~\cite{everingham2010pascal}.
+The detections are assigned to ground truth objects and judged to be true or false positives by measuring bounding box overlap.
+To be considered a correct detection, the overlap ratio $a_0$ between the predicted bounding box $B_p$ and the ground truth bounding box $B_{gt}$ (see formula~\ref{eq:overlap_ratio}) must exceed 0.5.
+The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or false positive $FP$ else.
+
+\begin{equation}
+\label{eq:overlap_ratio}
+  a_0 = \frac{area(B_p \cap B_{gt})}{area(B_p \cup B_{gt})}
+\end{equation}
+
+Detections output by a method are assigned to ground truth objects satisfying the overlap criterion ranked by the confidence output (decreasing).
+Multiple detections of the same object in an image are considered false detections (e.g. 5 detections of a single object counted as 1 correct detection and 4 false detections).
+
+The number $TP$ and $FP$ was used to compute the recall $R$ and the precision $P$ of each the methods using formula~\ref{eq:recall} and~\ref{eq:precision}.
+We also compute the F-measure $F$ for each result.
+
+\begin{equation}
+\label{eq:recall}
+  R = \frac{TP}{TP + FN}
+\end{equation}
+where $FN$ is the number of false negative (missed elements).
+
+\begin{equation}
+\label{eq:precision}
+  P = \frac{TP}{TP + FP}
+\end{equation}
+where $FP$ is the number of false positives (prediction errors).
+
+% subsection object_localisation (end)
+\subsection{Tail detection} % (fold)
+\label{sub:ex:tail_detection}
+
+% subsection tail_detection (end)
+\subsection{Semantic links and text recognition} % (fold)
+\label{sub:ex:semantic_links_and_text_recognition}
+
+% subsection semantic_links_and_text_recognition (end)
+
+% section metrics (end)
+
+% \section{Parameter validation}
+
+\section{Evaluation} % (fold)
+\label{sec:ex:evaluation}
+\subsection{Sequential information extraction evaluation} % (fold) %IJDAR
+\label{sub:ex:sequential_information_extraction_evaluation}
+We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
+
+% subsection sequential_information_extraction_evaluation (end)
+\subsection{Independent information extraction evaluation} % (fold) %IJDAR
+\label{sub:ex:independent_information_extraction_evaluation}
+
+% subsection independent_information_extraction_evaluation (end)
+\subsection{Knowledge-driven analysis evaluation} % (fold) %IJDAR
+\label{sub:ex:knowledge_driven_analysis_evaluation}
+
+% subsection knowledge_driven_analysis_evaluation (end)
+\subsection{Global evaluation} % (fold)
+\label{sub:ex:global_evaluation}
+
+%big table to compare the 3 level of contribution of this thesis
+
+      %                 | sequential|Independent|Knowledge-driven |
+      %Panel            | R | P | F | R | P | F |  R  |  P  |  F  |
+      %Text             |
+      %Balloon          |
+      %Tail                   ? 
+      %Comic character
+      %Semantic link STSB                 X             
+      %Semantic link SBSC                 X
+
+% subsection global_evaluation (end)
+% section evaluation (end)
+
+
+% Conclusion --------------------------------------------------------------------------------------------------------------------------------------
+\section{Conclusions}
+\label{sub:ex:conclusion}

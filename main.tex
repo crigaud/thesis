@@ -1,4 +1,4 @@
-\documentclass[11pt,twoside,openright]{book}
+\documentclass[draft,11pt,twoside,openright]{book}
 %%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -41,16 +41,16 @@
 \usepackage[bottom]{footmisc}% places footnotes at page bottom
 %\usepackage[hidelinks, breaklinks]{hyperref}
 %\usepackage{epsfig}
-\usepackage{graphicx}
-\usepackage{rotating}
-\usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{multirow}
 \usepackage{array}
-\usepackage{longtable}
 \usepackage{tikz}
-\usepackage{verbatim}
 \usepackage{pdfpages}
+% \usepackage{algorithm}
+%\usepackage{algorithmic}
+% \usepackage{algorithmicx}
+% \usepackage{algpseudocode}
+% \algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
 \usepackage{hyperref}                 % Active hyperlink
 \usepackage[hyperpageref]{backref}    % Add 'backlink' page number at the end of each item in the bibliography BibTeX
 \hypersetup{
@@ -90,7 +90,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%% TITLE, AUTHOR, DIRECTORS %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\title{Segmentation and indexation of graphical objects: application to detection and recognition of complex object from comic books}
-\title{Understanding of comic images from pixel to semantics}
+%\title{Understanding of comic images from pixel to semantics}
+\title{Segmentation and indexation of complex object in comic books}
 \author{\href{http://www.christophe-rigaud.com}{Christophe Rigaud}}
 \date{???, 2014}
  
@@ -364,36 +365,30 @@ evaluators   & ?\\
 %%%%%%%%%%%%%% INDEX, TOC, LOC, LOT, AGRAMENTS, ABSTRACT %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./chapters/0.1-agraiments/agraiments}
+\input{./chapters/0.2-abstract/abstract_french}
 \input{./chapters/0.2-abstract/abstract_english}
-\input{./chapters/0.2-abstract/abstract_castellano}
-\input{./chapters/0.2-abstract/abstract_catala}
+% \input{./chapters/0.2-abstract/abstract_castellano}
+% \input{./chapters/0.2-abstract/abstract_catala}
 
 \tableofcontents
 \listoftables
 \listoffigures
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPITOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \mainmatter
 
 \setlength{\parskip}{0.2cm}
 \input{./chapters/1-intro/intro}
-% \input{./chapters/2-gm/gm}
-\input{./chapters/3-state-of-the-art/state-of-the-art}
+\input{./chapters/2-sota/sota}
+\input{./chapters/3-sequential/sequential}
+\input{./chapters/4-independent/independent}
+\input{./chapters/5-knowledge/knowledge}
+\input{./chapters/6-experiments/experiments}
+\input{./chapters/7-conclusions/conclusions}
 
-\input{./chapters/9-gt/gt}
-\input{./chapters/4-pe/pe}
-\input{./chapters/5-be/be}
-\input{./chapters/6-te/te}
-\input{./chapters/7-ce/ce}
-
-%\input{./chapters/4-lp/lp}
-\input{./chapters/8-hp/hp}
-%\input{./chapters/7-hgr/hgr}
-%\input{./chapters/8-experiments/experiments}
-\input{./chapters/10-conclusions/conclusions}
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIXS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % \appendix
 % \input{./chapters/Appendix/Datasets}

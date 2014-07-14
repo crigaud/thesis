@@ -400,51 +400,56 @@ evaluators   & ?\\
 \section{From balloon to tail}%IJDAR
 \section{From tail to comic character}%IJDAR+CIFED'14
 % ROI prediction + low level processing to stick to the image
+% \section{Experiments}
 \section{Conclusion}
 
 \chapter{Independent information extraction}
-\section{Introduction}
-\section{Panel}%IJDAR
-\section{Text + OCR}%VISAPP'13 (minus letter2line -> already presented in 3.3) + OCR = IJDAR
-\section{Balloon (closed)}%IJDAR
-\section{Comic character (spotting)}%DAS
-% very difficult to guess where they are so we ask the user
-\section{Conclusion}
+  \section{Introduction}
+  \section{Panel}%IJDAR
+  \section{Text localisation and recognition}%VISAPP'13 (minus letter2line -> already presented in 3.3) + OCR = IJDAR
+  \section{Balloon (closed) segmentation and classification}%IJDAR
+  \section{Comic character spotting (and clustering)}%DAS
+  % very difficult to guess where they are so we ask the user
+  % \section{Experiments}
+  \section{Conclusion}
 
 \chapter{Knowledge-driven analysis}
-\section{Introduction}
-% more detail in the thesis of Clement
-\section{Expert system}%IJDAR
-\section{Knowledge representation}%IJDAR
-\section{Framework (process loop)}%IJDAR
-\section{Model}%IJDAR
-\section{Conclusion}
+  \section{Introduction}
+  % more detail in the thesis of Clement
+  \section{Expert system}%IJDAR
+  \section{Knowledge representation}%IJDAR
+  \section{Framework (process loop)}%IJDAR
+  \section{Model}%IJDAR
+  % \section{Experiments}
+  \section{Conclusion}
 
 \chapter{Experimentations}
-\section{Introduction}
-\section{Dataset and ground truth construction}%IJDAR
-\section{Metrics}%IJDAR
-\subsection{Object localisation}
-\subsection{Tail detection}
-\subsection{Semantic links and text recognition}
-% \section{Parameter validation}
-\section{Evaluation}
-\subsection{Independent analysis evaluation}%IJDAR
-\subsection{Global comparison}%big table to compare the 3 level of contribution of this thesis
+  \section{Introduction}
+  \section{Dataset and ground truth construction}%IJDAR
+  \section{Metrics}%IJDAR
+    \subsection{Object localisation}
+    \subsection{Tail detection}
+    \subsection{Semantic links and text recognition}
+  % \section{Parameter validation}
+  \section{Evaluation}
+    \subsection{Sequential information extraction evaluation}%IJDAR
+    \subsection{Independent information extraction evaluation}%IJDAR
+    \subsection{Knowledge-driven analysis evaluation}%IJDAR
+    \subsection{Global evaluation}%big table to compare the 3 level of contribution of this thesis
 
-%                 | sequential|Independent|Knowledge-driven |
-%Panel            | R | P | F | R | P | F |  R  |  P  |  F  |
-%Text             |
-%Balloon          |
-%Tail                   ? 
-%Comic character
-%Semantic link STSB                 X             
-%Semantic link SBSC                 X
+      %                 | sequential|Independent|Knowledge-driven |
+      %Panel            | R | P | F | R | P | F |  R  |  P  |  F  |
+      %Text             |
+      %Balloon          |
+      %Tail                   ? 
+      %Comic character
+      %Semantic link STSB                 X             
+      %Semantic link SBSC                 X
 
 \chapter{Conclusions}
-%Knowledge successfully modelled if chap 3 = chap 5 + semantic
-\section{Summary and contributions}
-\section{Future perspectives}
+  %Knowledge successfully modelled if chap 3 = chap 5 + semantic
+  \section{Summary and contributions}
+  \section{Future perspectives}
 
 
 \setlength{\parskip}{0.2cm}

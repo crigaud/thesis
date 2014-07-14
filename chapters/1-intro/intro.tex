@@ -1,143 +1,292 @@
 \chapter{Introduction}% maximum 20 pages
 \chaptermark{Introduction}
 \label{chap:intro}
-\graphicspath{{./chapters/1-introduction/figs/}}
+\graphicspath{{./chapters/1-intro/figs/}}
+
 % Overview of pattern recognition
-\section{The evolution of the ``bandes dessinée''}
-Setting/positioning the scenario, place comics in the addressed context, origin of comics/BD until new usages in 2014 created by new technologies.
-\cite[p.~215]{McCloud94}
+% This thesis work contain state of the art technique details for comic book image analysis.
+In this chapter we give the context of comic art, its different origins and the evolution since is creation to our digital word.
+% We also define the vocabulary related to comics.
 
-\begin{itemize}
-	\item The origin of BD, comics, Manga, other
+\section{Presentation} % (fold)
+\label{sec:presentation}
+The difficulty of defining precisely the comics is due to its intersection of several artistic mediums: graphic art, art film and the literature.
+More precisely it is drawing, film, writing, all combined together to form a new art with an extremely varied set of expressions~\cite{duc1997art}.
+Wikipedia\footnote{\url{http://en.wikipedia.org/wiki/Comics}} defines comics as a visual medium used to express ideas via images, often combined with text or visual information.
+Comics frequently takes the form of juxtaposed sequences of panels of images.
+Often textual devices such as speech balloons, captions, and sound effects (``onomatopoeia'') indicate dialogue, narration, or other information.
+Elements such as size and arrangement of panels and balloons control narrative pacing.
+Scott McCloud define it as a ``juxtaposed pictorial and other images in deliberate sequence, intended to convey information and/or to produce an aesthetic response in the viewer''~\cite{mccloud1994understanding}.
 
-	\item see Clement's intro
-	\item collectif PANIC book
-	\item Évolution de la bande dessinée en France depuis quinze ans \url{http://ejournals.library.ualberta.ca/index.php/af/article/download/21313/16112}
-	\item \url{http://fr.wikipedia.org/wiki/Bande_dessinee_en_ligne}
+There were early attempts to formalize the study of comics. 
+Coulton Waugh attempted the first comprehensive history of American comics with \emph{The Comics} in 1947~\cite{Coulton1947Comics}.
+Will Eisner's \emph{Comics and Sequential Art} in 1985~\cite{Eisner1985Comics} and Scott McCloud's \emph{Understanding comics: The Invisible Art} in 1993~\cite{mccloud1994understanding}.
 
-	\item \url{http://en.wikipedia.org/wiki/Comics}
-	\item European Comic Art \url{http://journals.berghahnbooks.com/eca/}
-	\item Webcomics \url{http://www.phdcomics.com} and \url{http://xkcd.com}
-	\item Le manga: Une synthèse de référence qui éclaire en image (Eyrolles, 2013) \url{http://books.google.fr/books?id=3MqgAgAAQBAJ&printsec=frontcover#v=onepage&q&f=false}
-	\item \url{http://en.wikipedia.org/wiki/Manga}
-	\item Etat présent BANDE DESSINEE STUDIES LAURENCE GROVE UNIVERSITY OF GLASGOW \url{http://fs.oxfordjournals.org/content/68/1/78.full.pdf+html}
-	\item Définition de la bande dessinée interactive \url{Bande_dessinee_interactive_Tony_Rageul-part1.pdf}
-	\item 1.1.5 La bande dessinée et le numérique (intro thèse Clément)
 
-	\item IDPF (ePub3 \url{http://www.figoblog.org/node/2014} and \url{http://idpf.org/idpf-comics-manga-workshop-paris} and \url{http://idpf.org/digital-book-2014}
-	\item Public domain \url{http://digitalcomicmuseum.com/}
-	\item Thesis of Julien Falgas and Cohn
-	\item Terminology of comics \url{~/Biblio_LINK/Bandes_dessinées/Writing for Animation, Comics, and Games, chapter 6}
-	\item Evolution of the story book \url{~/Biblio_LINK/Bandes_dessinées2007_Writing for Animation, Comics, and Games_CHAPTER5_History_Evolution of the comic book}
-	\item De la page à l'écran \url{2010_Boudissa_La_Bande_dessinee_entre_page_et_ecran.pdf}
-	\item Link between time and space \url{Bandes_dessinees/2012_THESIS_Cortsen_Comics as Assemblage_How Spatio-Temporality in Comics is Constructed.pdf}
-	\item Check \url{/home/crigau02/Bureau/PhD/News/BD}
-	\item Define comics vocabulary (see Clement's thesis and master student report) for panel, balloon, text, character
-	
-\end{itemize}
+	% \subsection{History of comics} % (fold)
+	% \label{sub:history_of_comics}
+	% The history of comics must be described considering the three main centres of artistic creation.
+	% Europe where it is born, the United States to whom we owe its popularity and Asia that now represents the largest production of comics with Japan and Korea.
 
-S'il est difficile de définir avec précision la bande dessinée, c'est qu'elle se situe précisément au carrefour de plusieurs moyens d'expression artistique: l'art graphique, l'art cinématographique et la littérature. Elle est tout à la fois dessin, cinéma, écriture, se conjuguant entre eux pour former un art nouveau, doté d'un ensemble de moyens d'expressions extrêmement complet et varié [...]~\cite{duc1997art}
+	% Rodolphe Töpffer, a Francophone Swiss artist, was a key figure in the early part of the 19th century (1830).
+	% He sequentially illustrated stories, with text compartmentalized below images and his art were reprinted throughout Europe and the United States.
 
-Generic part: mixed content document or semi-structured documents
+	% From the fifties, Japan starts a massive production of Japanese comic book called ``manga'' under the influence of Osamu Tezuka (comic artist).
 
-% Motivation -------------------------------------------------------------------------------------------------------------------------------------------
-\section{Motivations}
-The needs? numbers? impact on the society?
 
-\begin{itemize}
-	\item \url{http://fr.wikipedia.org/wiki/Bande_dessinee#Aspects_.C3.A9conomiques}
-	\item La lecture des bandes dessinées en france \url{http://www.culturecommunication.gouv.fr/Politiques-ministerielles/Etudes-et-statistiques/Les-publications/Collections-de-synthese/Culture-etudes-2007-2014/La-lecture-de-bandes-dessinees-CE-2012-2} and \url{2012_Evans_La lecture de bandes dessinées_CE-2012-2.pdf}
-	\item Japanese manga market \url{http://www.animenewsnetwork.com/news/2013-12-01/top-selling-manga-in-japan-by-series/201413}
-	\item The Comics Chronicles (US market) is a free resource for academic research: \url{http://www.comichron.com/} and \url{http://comicsbeat.com/category/sales-charts/}
-	\item See motivations in \url{PhD/Publications/Doctoral_school_L3i_first_year_phd_report}
-	\item IGS-CP (http://www.igs-cp.fr), a content extraction companies working for digital comics promoting (e.g. espritBD, alterComics), ITEsoft
-	\item Present the solution: eBDtheque project from L3i and its founding supports (region, Europe)
-	\item Present the actors of eBDtheque project, especially Clement's work topic
+	% subsection history_of_comics (end)
 
-\end{itemize}
+	% \subsection{Definition} % (fold)
+	% \label{sub:definition}
 
-Comics or ``bande dessin{\'e}e'' represents an important part of the cultural heritage of many countries, especially in the US~\cite{Stewart2000,IBISWorld2013}, western Europe (particularly France and Belgium)~\cite{Ratier2013}, and Japan~\cite{Japan2013}.
-Unfortunately, they did not yet received the same level of attention as music, cinema or literature about their adaptation to the digital format.
-Indeed, while the latter entered to the common digital uses via the proliferation of music services and video on demand and quasi-systematic output of books in paper and electronic book formats, millions of works from the imagination of the comics authors still struggled to find an echo on the side of digitized world.
-Ancient works could be reused with information technology to explore digital libraries~\cite{Back2001}, assist translators~\cite{borodo2014multimodality}, augmented reading~\cite{Singh2004,Raulet2013Comics}, enhancing accessibility~\cite{Brandon2014,Ponsard09}, story analysis, advertising etc.
-Nevertheless, the process of conversion and adaptation is not as simple and straightforward as the one established for the digital publication of films and novels.
-The comics differ from the latter in that the media itself is intimately linked to the medium.
-Indeed, a film can be decomposed into a series images plus a soundtrack. Just watching these images in the right order and at the right frame rate allow to reconstruct the initial content, regardless of the medium. 
+	% subsection definition (end)
+
+\paragraph{The evolution of comic books}
+
+The storytelling form we know today as ``comic book'' goes back tens of thousands of years to the painting of animals, hunters, and shamans on caves walls for Christy Marx~\cite{Marx2007Writing}.
+Nowadays, the history of comics must be described considering the three main centres of artistic creation.
+Europe where it is born, the United States to whom we owe its popularity and Asia that now represents the largest production of comics with Japan and Korea.
+Rodolphe Töpffer, a Francophone Swiss artist, is considered as the inventor of comics in the early part of the 19th century (1799-1846).
+He sequentially illustrated stories, with text compartmentalized below images and his art were reprinted throughout Europe and the United States.
+Magazine-style comic books emerged as a mass medium in the US in the thirties.
+From the fifties, Japan starts a massive production of Japanese comic book called ``manga'' under the influence of Osamu Tezuka (comic artist)~\cite{Chrysoline2014}.
+
+% Comics use particular vocabulary:
+% \begin{itemize}
+% 	\item 
+% \end{itemize}}
+% \item Terminology of comics \url{~/Biblio_LINK/Bandes_dessinées/Writing for Animation, Comics, and Games, chapter 6}
+
+Grove mentions that current trends in French comic are at the harbinger of more general phenomena: globalization of critical traditions, acceptance of popular culture, blurring of borders between subject areas, a corresponding move away from a strict author-based canon, and high reliance on new technologies~\cite{Grove2014Bande}.
+
+Boudissa confronts the theoretical approaches developed around the paper medium to the changes brought by the story on the computer, focusing mainly on the management of a new space (screen and not a paper sheet) and the hypermedia aspect of the digital world~\cite{Boudissa2011Bande}.
+
+\paragraph{Market place} % (fold)
+% \label{ssub:market_place}
+
+In France, after a period of crisis suffered by the sector during the years 1980-1990, the editorial production has enjoyed unprecedented growth, the number of publication was constantly increasing as the diversify of genres (e.g. manga, graphic novels, comics)~\cite{Evans2012Lecture}.
+In 2012, the French market reached the figure of 5,327 books published which 72\% are new (the rest being divided between re-editions, book art and testing).
+The annual sales reached 320 million Euro.
+In 2013, we saw a first drop of 7.3\% that reflect the stabilization of the market and probably the emergence of the digital comics~\cite{Ratier2013Deceleration}.
+
+Japan is leading the sequential art market in terms of sales, about \$5.5 billion in 2009~\cite{Syed2012}, and exportation volumes.
+In Europe and the Middle East the market is worth \$250 million~\cite{Davidson2012}.
+In 2008, in the U.S. and Canada, the manga market was valued at \$175 million.
+Japanese culture is spread out all over the world through manga and anime.
+In 2014, the Japan Book Publishers Association published a handbook to take advantage of every opportunity to broaden and deepen overseas knowledge about the Japanese publishing world~\cite{JBPA2014}.
+
+The US market is between Europe and Japan with up to \$730 million market size according to the comics chronicles website Comichron~\cite{Miller2014}.
+
+% subsection market_place (end)
+\section{Motivations} % (fold)
+\label{ssub:motivations}
+
+Nowadays, comic books or ``bande dessin{\'e}e'' represents an important part of the cultural heritage of many countries as mentioned above.
+Unfortunately, they have not yet received the same level of attention as music, cinema or literature about their adaptation to the digital format.
+Using information technology with classic comics would facilitate the exploration of digital libraries~\cite{Back2001}, assist translators~\cite{borodo2014multimodality}, provide a tool for augmented reading~\cite{Singh2004,Raulet2013Comics}, speech playback for the visually impaired~\cite{Brandon2014,Ponsard09}, story analysis etc.
+Nevertheless, the process of conversion and adaptation is not as simple as for films and novels.
+The comic differs from the latter in that the media itself is intimately linked to the medium.
+Indeed, a film can be decomposed into a series images plus a soundtrack.
+Just watching these images in the right order and at the right frame rate allow to reconstruct the initial content, regardless of the medium. 
 In the same way a novel is ultimately a sequence of words.
 Reading these words in the correct order, on paper or on a screen does not change neither the content nor the artistic dimension of the work.
-% The ``bande dessinée'' is defined as a series of ``paintings and stills deliberately juxtaposed in sequences'' by the reference work in the field of McCloud~\cite{McCloud94}.
-The ``bande dessinée'' is defined as juxtaposed sequences of image by McCloud~\cite{McCloud94} and Thomas~\cite{Thomas2010Invisible}.
 
 However, it differs from the films on the form and the spatial positioning of the images.
 Where the latter pictures are all of equal size and each new image replaces the previous one, comic panels vary in size and spatial organisation in a limited space (paper sheet).
-These two features, added to the fact that the reader has the opportunity to see all the boxes of a
-same page, but not those of the next page, are tools at the service of the author to stage the story.
+These two features, added to the fact that the reader has the opportunity to see all the boxes of a same page, but not those of the next page, are tools at the service of the author to stage the story.
 Therefore, changing the medium, the reading surface format or the sequence order involves a modification of the staging that may in some cases be detrimental to the story.
+Moreover, space and time are closely related in comic art as demonstrated in the Cortsen's thesis that explores the complexity of spatio-temporality and also focus on how comics are structured in a network made up by individual elements and how they connect~\cite{Cortsen2012Comics}.
+
+The challenge of digital comics is how to take advantage of the added value provided by these new media such as personal computers, mobile devices and the Internet.
+Gilles Ratier, secretary of the ``Association des Critiques 		et journalistes de Bande Dessin\'{e}e'' (ACBD) stressed in the 2013 budget of the association that the meaning of digital cartoon remains unclear~\cite{Ratier2013}.
+It is commonly used to describe a wide range of heterogeneous content, from scanned comics to turbo-media works (i.e. interactive animated stories) through webcomics (mainly self-published on a website) and augmented reality to extend the art work through the use of the new technologies.
+
+Web platform propose free reading service of heritage art such as The Digital Comic Museum~\footnote{\url{http://digitalcomicmuseum.com/}}, the Cit\'{e} internationale de la bande dessin\'{e}e et de l'image~\footnote{\url{http://collections.citebd.org/}} in France and the Grand Comics Database\footnote{\url{http://www.comics.org/}}.
+In parallel, independent artist can self-publish their work on different platforms such as Webcomics.fr~\footnote{\url{http://www.webcomics.fr/}} and EspritBD\footnote{\url{https://www.comixology.com/}}.
+Well known publishers are also starting to provide digital comic book on different platform such as Koomic\footnote{\url{http://www.koomic.com/}} in Spain, Izneo\footnote{\url{http://www.izneo.com/}} and digiBiDi\footnote{\url{http://www.digibidi.com/}} in France, DC Comics\footnote{\url{http://www.dccomics.com/}} from Warner Bros and comiXology\footnote{\url{http://www.comixology.com/}} recently acquired by Amazon.com.
+
+Others focus on innovative application for mobile devices to enhance the reading experience by adding proposing their own reading app integrating their technology.
+For instance Marvel\footnote{\url{http://marvel.com/mobile/}} uses augmanted reality and AveComics\footnote{\url{http://www.avecomics.com/}} from the French company Aquafadas propose special transition and zooming effects.
+Other initiatives, such as Sequencity\footnote{\url{https://www.sequencity.com/}} a project from the start-up company Actialuna in Paris, focus specifically on the ergonomics of the reading by transposing the bookstore experience into tablets (e.g. allowing the
+rapid foliation and integrating communication systems with book sellers able to provide customized recommendations to
+the reader).
+The connectivity to the Internet makes also possible to enrich comic books with additional information from the web,
+allowing the reader get extra information about the events, the places or characters related to the story being read.
+
+These new uses generate technical needs related to several
+scientific issues when applied to large-scale processing. 
+The International Digital Publishing Forum (IDPF) is currently working on a free and open e-book standard called EPUB 3 in order to make sequential art also benefit from the last advances of publishing technologies.
+EPUB 3 is a next-generation portable document format based on HTML5 and other Web Standards.
+
+% First of all, t is necessary to be able to recognize the visual components of a comic strip, ie be able to say that a box is located in such a place, a character is so another, etc..
+% Commonly used techniques of document analysis never occur, regardless of their complexity, perfect results in all circumstances. We will see in Section 2.4.1
+% how technology knowledge representation can contribute to this part of the analysis process and help produce more accurate results.
+
+% Since 2008, several companies have embarked on the adventure of publishing or distributing digital comics offering different services and reading experiences.
+% Web platform propose free reading service of archived art such as The Digital Comic Museum~\footnote{\url{http://digitalcomicmuseum.com/}} and the Cit\'{e} internationale de la bande dessin\'{e}e et de l'image~\footnote{\url{http://collections.citebd.org/}} in France like Vomic for Izneo~\footnote{\url{http://www.izneo.com/}} 
+
+
+
+
+
+% While golden age comics are becoming part of the public domain~\footnote{\url{http://digitalcomicmuseum.com/}}, a new form of publication is raising.
+
+	% Webcomics \url{http://www.phdcomics.com} and \url{http://xkcd.com}
+
+	% L'éditeur DC Comics lance en 2007 un portail d'édition de webcomics
+
+	% IDPF (ePub3 \url{http://www.figoblog.org/node/2014} and \url{http://idpf.org/idpf-comics-manga-workshop-paris} and \url{http://idpf.org/digital-book-2014}
+
+
+	% subsection digital_world (end)
+
+
+% section presentation (end)
+
+% Setting/positioning the scenario, place comics in the addressed context, origin of comics/BD until new usages in 2014 created by new technologies.
+% \cite[p.~215]{mccloud1994understanding}
+
+% \begin{itemize}
+	% \item The origin of BD, comics, Manga, other
+
+	% \item see Clement's intro
+	% \item collectif PANIC book
+	% \item Évolution de la bande dessinée en France depuis quinze ans \url{http://ejournals.library.ualberta.ca/index.php/af/article/download/21313/16112}
+	% \item \url{http://fr.wikipedia.org/wiki/Bande_dessinee_en_ligne}
+
+	% \item \url{http://en.wikipedia.org/wiki/Comics}
+	% \item Webcomics \url{http://www.phdcomics.com} and \url{http://xkcd.com}
+
+	% \item Le manga: Une synthèse de référence qui éclaire en image (Eyrolles, 2013) \url{http://books.google.fr/books?id=3MqgAgAAQBAJ&printsec=frontcover#v=onepage&q&f=false}
+	% \item \url{http://en.wikipedia.org/wiki/Manga}
+
+	% \item Etat présent BANDE DESSINEE STUDIES LAURENCE GROVE UNIVERSITY OF GLASGOW \url{http://fs.oxfordjournals.org/content/68/1/78.full.pdf+html} + European Comic Art \url{http://journals.berghahnbooks.com/eca/}
+
+	% \item Définition de la bande dessinée interactive \url{Bande_dessinee_interactive_Tony_Rageul-part1.pdf}
+	% \item 1.1.5 La bande dessinée et le numérique (intro thèse Clément)
+	% \item IDPF (ePub3 \url{http://www.figoblog.org/node/2014} and \url{http://idpf.org/idpf-comics-manga-workshop-paris} and \url{http://idpf.org/digital-book-2014}
+	% \item Public domain \url{http://digitalcomicmuseum.com/}
+	% \item Thesis of Julien Falgas and Cohn
+	
+	% \item Terminology of comics \url{~/Biblio_LINK/Bandes_dessinées/Writing for Animation, Comics, and Games, chapter 6}
+	
+	% \item Evolution of the story book \url{~/Biblio_LINK/Bandes_dessinées2007_Writing for Animation, Comics, and Games_CHAPTER5_History_Evolution of the comic book}
+	% \item De la page à l'écran \url{2010_Boudissa_La_Bande_dessinee_entre_page_et_ecran.pdf}
+	% \item Link between time and space \url{Bandes_dessinees/2012_THESIS_Cortsen_Comics as Assemblage_How Spatio-Temporality in Comics is Constructed.pdf}
+	% \item Check \url{/home/crigau02/Bureau/PhD/News/BD}
+	% \item Define comics vocabulary (see Clement's thesis and master student report) for panel, balloon, text, character
+	
+% \end{itemize}
+
+
+% Motivation -------------------------------------------------------------------------------------------------------------------------------------------
+% \section{Motivations}
+% The needs? numbers? impact on the society?
+
+
+
+% \begin{itemize}
+	% \item \url{http://fr.wikipedia.org/wiki/Bande_dessinee#Aspects_.C3.A9conomiques}
+	% \item La lecture des bandes dessinées en france \url{http://www.culturecommunication.gouv.fr/Politiques-ministerielles/Etudes-et-statistiques/Les-publications/Collections-de-synthese/Culture-etudes-2007-2014/La-lecture-de-bandes-dessinees-CE-2012-2} and \url{2012_Evans_La lecture de bandes dessinées_CE-2012-2.pdf}
+	% \item Economie en France \url{http://www.liberation.fr/culture/2010/01/28/comment-la-bande-dessinee-est-devenue-un-poids-lourd-de-l-edition_606832}
+	% \item Ratier mentions that 2013 is a year decceleration in \cite{Ratier2013Deceleration}.
+
+	% \item Japanese manga market \url{http://www.animenewsnetwork.com/news/2013-12-01/top-selling-manga-in-japan-by-series/201413}
+	% \item Publishing in Japan \url{http://www.jbpa.or.jp/en/pdf/pdf01.pdf}	
+	
+	% \item The Comics Chronicles (US market) is a free resource for academic research: \url{http://www.comichron.com/} and \url{http://comicsbeat.com/category/sales-charts/}
+	
+	% \item See motivations in \url{PhD/Publications/Doctoral_school_L3i_first_year_phd_report}
+	
+	% \item IGS-CP (http://www.igs-cp.fr), a content extraction companies working for digital comics promoting (e.g. espritBD, alterComics), ITEsoft
+	% \item Present the solution: eBDtheque project from L3i and its founding supports (region, Europe)
+	% \item Present the actors of eBDtheque project, especially Clement's work topic
+	
+% \end{itemize}
 
 Several companies offer printed to digital format conversion services for comics, to facilitate reading on mobile devices.
 However, the conversion process is both tedious because done by hand, and simplistic as it is too often reduced to the successive display of panel interspersed with user selected transitions.
 The ideal would be to understand the process used by authors to draw the paper version of the comics and automatically change it in a form adapted to the medium in which the work is read (e.g. smartphone, web page, 3D book). 
-It starts with an analysis of  the digitalized paper page to extract the different components (e.g. panel, balloon, text, comic character) and their relations (e.g. read before, said by, addressed to).
-Once this initial work is done, it is necessary to reconstruct the story by placing the extracted elements in the initial order to keep the story coherent.
+It starts with an analysis of the digitalized comic book to extract the different components (e.g. panel, balloon, text, comic character) and their relations (e.g. read before, said by, addressed to).
+Once this initial work is done, it is necessary to reconstruct the story by placing the extracted elements in the initial order and retrieve links between elements in order to keep the story coherent.
+This is the role of knowledge representation research field that can help for semantic understanding (\ch{chap:knowledge}).
 
 
-
-Why is this scientifically relevant?
+% Why is this scientifically relevant?
 
 The analysis of comic images by computer is particularly challenging because they are semi-structured document with mixed content.
-Comic document are at the intersection between unstructured (e.g. teaching board~\cite{Oliveira10}, free-form document~\cite{Delaye2014Multi}) and complex background (e.g. advertising poster~\cite{Clavelli09}, real scene~\cite{Weinman09,Epshtein10,Neumann12}) images which are nowadays active fields of research for the community.
+Comic documents are at the intersection between unstructured (e.g. teaching board~\cite{Oliveira10}, free-form document~\cite{Delaye2014Multi}) and complex background (e.g. advertising poster~\cite{Clavelli09}, real scene~\cite{Weinman09,Epshtein10,Neumann12}) images which are nowadays active fields of research for the community.
 Being at the intersection of several fields of research increase the complexity of the problem.
-This is one of the reason why the analysis of comics is a recent (in the document analysis history) and not solved field of research.
+This is one of the reasons why the analysis of comics is a recent (in the document analysis history) and not solved field of research.
 
 
 
 % Objective of this work, contributions --------------------------------------------------------------------------------------------------------
 \section{Objectives and contributions}
-Comics contain many heterogeneous elements that are hard to process in once.
-Our objective is to process them separately, from simple to complex, in order to progressively build a complete comics understanding system.
+Comic books contain many heterogeneous elements that are difficult to process in once.
+%Our objective is to process them separately, from simple to complex, in order to progressively build a complete comics understanding system.
 % We decomposed the work into several steps.=
-First, we construct a public dataset of comic images and the corresponding ground truth in order to evaluate our work and to give to the community the opportunity to work on identical data in order to make comparable and reproducible research.
-Second, we focus on extraction panels, texts, balloons in order to facilitate the extraction of more complex elements by focussing on a region of interest instead of the whole image.
-Third, we combine the extraction processes to reconstruct the context and the relations between the elements.
-The dataset and this last work are the result of a collaboration with Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on the same project.
+% First, we construct a public dataset of comic images and the corresponding ground truth in order to evaluate our work and to give to the community the opportunity to work on identical data in order to make comparable and reproducible research.
+% Second, we focus on extraction panels, texts, balloons in order to facilitate the extraction of more complex elements by focussing on a region of interest instead of the whole image.
+% Third, we combine the extraction processes to reconstruct the context and the relations between the elements.
+% The dataset and this last work are the result of a collaboration with Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on the same project.
+Our objectives are to propose different approaches to retrieve all these elements in order to have a high level description of the comic book images.
+In this thesis we propose three approaches from sequential approach to an unsupervised method using domain knowledge. 
+The first approach profits from the relations between elements to guide the retrieval process.
+For instance, the panel are first extracted then balloon containing text that are inside the panel and finally comic character region of interest are composed from the speech balloon tail indication.
+This approach is quite intuitive but suffer from error propagation between the different the different extraction steps.
+The second approach consist in making the extraction independent from each other in order to avoid error propagation issue.
+The third proposition adds contextual information to the independent extractions.
+The context is retrieved by matching extracted element relations with a generic model of the domain knowledge.
+This last approach allow a semantic description of the images.
+For instance, text region that are detected inside balloon are inferred as being speech text and comic characters that are pointed by a tail as speaking characters.
+
+We construct the first publicly available dataset and ground truth of comic book images to evaluate our contributions and give to the community the opportunity to work on identical data in order to make comparable and reproducible research.
+The last approach detailed above and the dataset are the results of a collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining and applied to comic book images.
 
 To meet the above objectives, we have made the following contributions in this
 thesis.
 
 \begin{itemize}
-	\item[1)] Dataset and ground truth: The eBDtheque dataset is the first publicly available\footnote{Dataset website:~\url{http://ebdtheque.univ-lr.fr}} dataset and ground truth of comic images.
+	
+	\item [1)] Panel extraction: Comic book are mixed content documents that require different techniques to extract different element.
+	The first particularity of comics is the sequence of panels that we extract using connected component classification and topology analysis in sections~\ref{sec:se:panel_and_text} and~\ref{sec:in:panel_extraction} respectively.
+	
+	\item [2)] Balloon detection: Balloons or bubbles are key elements in comics,
+	they link graphical and textual elements and are part of the comics style. They can have various shapes (e.g. oval, rectangular) and contours (e.g. smooth, wavy, spiky, absent).
+	In this work we propose a method for closed balloon extraction and classification based on the analysis of the blob content (Section~\ref{sub:in:balloon_segmentation}) and contour analysis (Section~\ref{sub:in:balloon_classification}) respectively.
+	A different approach for open balloon have been developed, it is based on active contour model to extract open balloons from text line positions.
+	%Both methods are described in Chapter~\ref{chap:be} along with balloon contour classification (smooth, wavy, zigzag) and a tail detector.
+	Also, a tail detection and description have been proposed (Section~\ref{sec:se:from_balloon_to_tail}).
+
+	\item [3)] Text localization: Text can be of different nature in comics, there are sound effects (onomatopoeias), graphic text (illustration), speech text (dialogues) and narrative text (captions) according to [REF?]. 
+	Speech text represents the majority of the text present in comics [REF?], we propose a adaptive binarisation process from a Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and then a text line grouping algorithm.
+	Finally, an OCR system filters out non text region.
+	This work is explained in Section~\ref{sec:in:text_localisation_and_recognition}.
+
+	
+	\item [4)] Comic character detection: Unsupervised comic character extraction is a difficult task as soon as we aim to process heterogeneous comic styles using the same algorithm.
+	In this context, learning-based approaches can not handle such dimensionality induced by the difference of styles.
+	%are not reliable unless if we have enough data to train on all comic styles. 
+	We first propose to define the region of interest of the comic character locations according to the contextual elements (e.g. panel contents, speech balloon position, tail position and direction) in Section~\ref{sec:se:tail_to_character}.
+	Second, we go one step further by spotting all the comic character instances in the album given an example and assuming that it have been digitized under the same conditions (Section~\ref{sec:in:character_spotting}).
+	
+	% a query by example approach that asks the user to select a part of the object he is looking for in one comics image and the system spots other occurrences everywhere
+	 % in all the pages of the comics album, assuming that they have been digitized under the same conditions (Section~\ref{sec:in:character_spotting}).
+	
+
+	\item [5)] Comics understanding: Enabling a computer to understand a comic strip is a really challenging task, especially because it is even hard for human sometimes.
+	Putting comics domain knowledge in an ontology-based framework enable to interact between image processing and semantic information in order to progressively understand the content of a document.
+	This work is introduced in Chapter~\ref{chap:knowledge}.
+	% We apply this framework to comics understanding in order to extract panels, balloons, texts, comic characters and their semantic relations in an unsupervised way.
+
+	\item[6)] Dataset and ground truth: The eBDtheque dataset is the first publicly available\footnote{Dataset website:~\url{http://ebdtheque.univ-lr.fr}} dataset and ground truth of comic images.
 	Such dataset is important for the community to make comparable, reproductive and growing research.
 	The dataset consist in a mixture comic images coming from different albums with the goal of being as representative as possible of the comics diversity.
 	The database consists of a hundred pages of various comic book albums including Franco-Belgian ``bande dessinée'', American comics and Japanese mangas. 
 	The ground truth contains the spacial position of panels, balloons and text lines, comic characters and their associated semantic annotations, that appear in the images.
 	Also, bibliographic information are given such for each image.
-	This work is presented in Chapter~\ref{chap:gt}.
-	
-	\item [2)] Panel extraction: Comics are mixed content documents that require different techniques to extract different element.
-	The first particularity of comics is the sequence of panels that we extract using connected component classification and filtering in Chapter~\ref{chap:pe}.
-	
-	\item [3)] Balloon detection: Balloons or bubbles are key elements in comics,
-	they link graphical and textual elements and are part of the comics style. They can have various shapes (e.g. oval, rectangular) and contours (e.g. smooth, wavy, spiky, absent).
-	In this work we propose a closed balloon extractor based on the analysis of the blob content, a active contour model to extract open balloons from text line position.
-	Both methods are described in Chapter~\ref{chap:be} along with balloon contour classification (smooth, wavy, zigzag) and a tail detector.
-
-	\item [4)] Text localization: Text is of different nature in comics, there are sound effects (onomatopoeias), graphic text (illustration), speech text (dialogues) and narrative text (captions). 
-	Speech text represents the majority of the text present in comics [REF?], we propose a adaptive binarisation process from a Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and then a text line grouping algorithm.
-	Finally, an OCR system filters out non text region.
-	This work is explained in Chapter~\ref{chap:te}
-
-	
-	\item [5)] Comic character detection: Unsupervised comic character extraction is a difficult task as soon as we aim to process heterogeneous comic styles using the same algorithm.
-	In this context, learning-based approaches are not reliable unless if we have enough data to train on all comic styles. 
-	We first propose a query by example approach that asks the user to select a part of the object he is looking for in one comics image and the system spots other occurrences everywhere in all the pages of the comics album, assuming that they have been digitized under the same conditions.
-	Second, we go one step further by refining the comic character location according to the contextual elements (e.g. panel contents, speech balloon position, tail direction) given a region of interest.
-	% To do so, we replace the user query by an expert system using knowledge about the comics domain.
-	These works are presented in Chapter~\ref{chap:ce}.
-
-	\item [6)] Comics understanding: Making a computer understand the complete story of a comics is a really challenging task, especially because it is even hard for human sometimes.
-	Putting comics domain knowledge in an ontology-based framework enable to interact between image processing and semantic information in order to progressively understand the content of a document.
-	This work is introduced in Chapter~\ref{chap:hp}.
-	% We apply this framework to comics understanding in order to extract panels, balloons, texts, comic characters and their semantic relations in an unsupervised way.
+	This work is presented in Chapter~\ref{sec:dataset_and_ground_truth_construction}.
 
 
 \end{itemize}
@@ -152,26 +301,38 @@ The rest of the thesis is organized as follows:
 \item \ch{chap:sota} presents a detailed review of the state-of-the-art methods for the analysis of comic images. This chapter details several image processing methods in the four first subsections and then we review the holistic understanding systems that have been applied to document analysis so far and the more advanced application on the market.
 % and gives an overview, pros and cons and examples of different categories of methods.
 
-\item \ch{chap:gt} presents the dataset and ground truth of comic images that we provided to the community. The idea of this dataset consists in a mixture images coming from different albums with the goal of being as representative as possible of the comics diversity.
-It also describe the indexation structure in a Scalable Vector Graphics (SVG) format.
+\item \ch{chap:sequential} introduces a sequential comic book image analysis approach.
+The sequence starts by extracting panel and text using connected-component labelling and clustering.
+Then balloon are segmented from text locations followed by a tail position and direction detection on the balloon contour.
+The tail is used to define a region of interest for comic characters inside the panel region.
 
-\item \ch{chap:pe} introduces a fast panel extraction method by classifying the connected components into three classes for panel, text and noise.
-This method can also be used for text/graphic separation.   %presents a subgraph matching method based on tensor product graph and a symbol spotting methodology is proposed using that. To cope with the structural errors a new dual graph based representation is proposed which is proved to be effective in graphical documents.
+\item \ch{chap:independent} addresses independent information extraction assuming no interaction between the extractions unlike~\ch{chap:sequential}.
+Different approaches are presented for panel, balloon, text and comic character extractions.
+Balloon type classification and text recognition are also discussed here.
 
-\item \ch{chap:be} introduces both closed and non closed balloon localisation and segmentation methods together with contour classification and tail detection and description. %introduces near convex region adjacency graph (NCRAG) which solves the limitations of the basic region adjacency graph (RAG) in graphical documents.
+% \item \ch{chap:pe} introduces a fast panel extraction method by classifying the connected components into three classes for panel, text and noise.
+% This method can also be used for text/graphic separation.   %presents a subgraph matching method based on tensor product graph and a symbol spotting methodology is proposed using that. To cope with the structural errors a new dual graph based representation is proposed which is proved to be effective in graphical documents.
 
-\item \ch{chap:te} addresses the difficulty of text localization and recognition in comics.
-It propose speech text localisation method using connected components alignment and neighbourhood similarity to form text lines.
-Text recognition is also addressed and preliminary results are detailed. %the structural errors encountered in the graphical documents. To solve the problem it proposes a hierarchical graph representation which can correct the errors/distortions in hierarchical steps.
+% \item \ch{chap:be} introduces both closed and non closed balloon localisation and segmentation methods together with contour classification and tail detection and description. %introduces near convex region adjacency graph (NCRAG) which solves the limitations of the basic region adjacency graph (RAG) in graphical documents.
 
-\item \ch{chap:ce} presents two methods for comic character detection.
-The first method overcomes the difficulties of such non rigid object detection thanks to the proposed descriptor invariant to scale, object deformation, translation and rotation transformations.
-The second method takes profit of the contextual information to define the region of interest of comic characters.%presents a unified experimental evaluation of all the proposed methods and comparisons with some state-of-the-art methods. This is done in a symbol spotting experimental framework.
+% \item \ch{chap:te} addresses the difficulty of text localization and recognition in comics.
+% It propose speech text localisation method using connected components alignment and neighbourhood similarity to form text lines.
+% Text recognition is also addressed and preliminary results are detailed. %the structural errors encountered in the graphical documents. To solve the problem it proposes a hierarchical graph representation which can correct the errors/distortions in hierarchical steps.
 
-\item \ch{chap:hp} presents a system that combines low and high level processing to build a scalable system of comics image understanding reaching the level of semantic interaction between elements.
-This work is a collaboration with Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on data mining applied to comic documents.
+% \item \ch{chap:ce} presents two methods for comic character detection.
+% The first method overcomes the difficulties of such non rigid object detection thanks to the proposed descriptor invariant to scale, object deformation, translation and rotation transformations.
+% The second method takes profit of the contextual information to define the region of interest of comic characters.%presents a unified experimental evaluation of all the proposed methods and comparisons with some state-of-the-art methods. This is done in a symbol spotting experimental framework.
 
-\item \ch{chap:conclusions} concludes the thesis and defines the future direction of comics document analysis.
+\item \ch{chap:knowledge} presents a system that combines low and high level processing to build a scalable system of comics image understanding reaching the level of semantic description of the elements.
+% This work is a collaboration with Cl{\'e}ment Gu{\'e}rin, Ph.D. student working on data mining applied to comic documents.
+
+
+\item \ch{chap:experimentations} presents the dataset and ground truth construction, the metrics and an evaluation of the three proposed approaches.
+ % of comic images that we provided to the community. 
+This dataset consists in a mixture images coming from different albums with the goal of being as representative as possible of the comics diversity.
+It also describe its indexation structure in a Scalable Vector Graphics (SVG) format.
+
+\item \ch{chap:conclusions} concludes the thesis and defines the future direction of comic book document analysis.
 
 % \item \app{app:datasets} %provides a brief description on the datasets that we have used in this thesis work and \app{app:perf-eval} describes a performance evaluation protocol for symbol spotting systems that we follow for the experimental evaluation.
 \end{itemize}

@@ -44,15 +44,18 @@ Kohei Arai and Herman Tolle.
 \newblock {\em International Journal of Image Processing (IJIP)},
   4(6):669--676, 2011.
 
-\bibitem{Japan2013}
-Japan Book~Publishers Association.
-\newblock An introduction to publishing in japan 2012-2013, 2012.
-
 \bibitem{Back2001}
 M.~Back, R.~Gold, A.~Balsamo, M.~Chow, M.~Gorbet, S.~Harrison, D.~MacDonald,
   and S.~Minnerman.
 \newblock Designing innovative reading experiences for a museum exhibition.
 \newblock {\em Computer}, 34(1):80--87, Jan 2001.
+
+\bibitem{bader2009}
+Thomas Bader, René Räpple, and Jürgen Beyerer.
+\newblock Fast invariant contour-based classification of hand symbols for hci.
+\newblock In Xiaoyi Jiang and Nicolai Petkov, editors, {\em Computer Analysis
+  of Images and Patterns}, volume 5702 of {\em Lecture Notes in Computer
+  Science}, pages 689--696. Springer Berlin Heidelberg, 2009.
 
 \bibitem{Blaschke2014Geographic}
 Thomas Blaschke, Geoffrey~J. Hay, Maggi Kelly, Stefan Lang, Peter Hofmann,
@@ -72,6 +75,20 @@ DC~Brandon.
 \newblock Graphic novels and comics for the visually impaired explored in
   award-winning paper, 2014.
 
+\bibitem{OCRMangaReader}
+Christopher Brochtrup.
+\newblock Ocr manga reader for android, 2013.
+
+\bibitem{Capture2Text}
+Christopher Brochtrup.
+\newblock Capture2text, 2014.
+
+\bibitem{Chrysoline2014}
+Chrysoline Canivet-Fovez.
+\newblock {\em Le manga Une synthèse de référence qui éclaire en image
+  l'origine, l'histoire et l'influence de la bande dessinée japonaise}.
+\newblock Eyrolles, 2014.
+
 \bibitem{Chan2007Automatic}
 ChungHo Chan, Howard Leung, and Taku Komura.
 \newblock Automatic panel extraction of color comic images.
@@ -88,6 +105,23 @@ S.C.S. Cheung, City~University of~Hong Kong. Run Run Shaw~Library, and
 \newblock Outstanding academic papers by students. Run Run Shaw Library, City
   University of Hong Kong, 2008.
 
+\bibitem{salton1986introduction}
+G.~Chowdhury.
+\newblock {\em Introduction to Modern Information Retrieval, Third Edition}.
+\newblock Facet Publishing, 3rd edition, 2010.
+
+\bibitem{Evans2012Lecture}
+Evans Christophe and Gaudet Francoise.
+\newblock La lecture de bandes dessinées en france [ce-2012-2].
+\newblock Technical report, 2012.
+
+\bibitem{Marx2007Writing}
+Marx Christy.
+\newblock {\em Writing for Animation, Comics, and Games}, chapter~5, pages
+  79--132.
+\newblock Focal Press, Taylor and Francis Group, Waltham, Massachusetts,
+  Middlesex, US, 1 edition, 2007.
+
 \bibitem{Chu2013Optimized}
 Wei-Ta Chu and Chia-Hsiang Yu.
 \newblock Optimized speech balloon placement for automatic comics generation.
@@ -102,6 +136,11 @@ Antonio Clavelli and Dimosthenis Karatzas.
   Document Analysis and Recognition}, ICDAR '09, pages 181--185, Washington,
   DC, USA, 2009. IEEE Computer Society.
 
+\bibitem{Cohen1991}
+Laurent~D Cohen.
+\newblock {On active contour models and balloons}.
+\newblock {\em CVGIP: Image Understanding}, 53(2):211--218, March 1991.
+
 \bibitem{cohn2010limits}
 Neil Cohn.
 \newblock The limits of time and transitions: Challenges to theories of
@@ -113,6 +152,24 @@ Neil Cohn.
 \newblock Navigating comics: an empirical and theoretical approach to
   strategies of reading comic page layouts.
 \newblock {\em Frontiers in psychology}, 4(April):186, 2013.
+
+\bibitem{JBPA2014}
+International Committee.
+\newblock {\em Introduction to publishing in Japan}.
+\newblock Japan Book Publishers Association, Tokyo, Japan, 2014.
+
+\bibitem{Cortsen2012Comics}
+{Rikke Platz} Cortsen.
+\newblock {\em Comics as Assemblage: How spatio-temporality in comics is
+  constructed}.
+\newblock PhD thesis, University of Copenhagen, 2012.
+
+\bibitem{Cremers2002}
+Daniel Cremers, Florian Tischh\"auser, Joachim Weickert, and Christoph
+  Schn\"orr.
+\newblock Diffusion snakes: introducing statistical shape knowledge into the
+  mumford-shah functional.
+\newblock {\em International Journal of Computer Vision}, 50:295--313, 2002.
 
 \bibitem{Bubble09}
 Cyb.
@@ -127,6 +184,10 @@ Navneet Dalal and Bill Triggs.
   volume~2, pages 886--893, INRIA Rh\^one-Alpes, ZIRST-655, av. de l'Europe,
   Montbonnot-38334, June 2005.
 
+\bibitem{Davidson2012}
+Danica Davidson.
+\newblock Manga grows in the heart of europe, 2012.
+
 \bibitem{Delaye2014Multi}
 Adrien Delaye and Cheng-Lin Liu.
 \newblock Multi-class segmentation of free-form online documents with tree
@@ -140,11 +201,22 @@ B.~Duc.
   graphique, tout sur la cr{\'e}ation des bandes dessin{\'e}es}.
 \newblock Editions Gl{\'e}nat, 1997.
 
+\bibitem{Duc1982}
+Bernard Duc.
+\newblock {\em {L'art de la BD - Tome 1 - Du sc\'{e}nario \`{a} la
+  r\'{e}alisation}}.
+\newblock Gl\'{e}nat, 1982.
+
 \bibitem{Duda72}
 Richard~O. Duda and Peter~E. Hart.
 \newblock Use of the hough transformation to detect lines and curves in
   pictures.
 \newblock {\em Commun. ACM}, 15:11--15, January 1972.
+
+\bibitem{Eisner1985Comics}
+Will Eisner.
+\newblock {\em Comics and Sequential Art}.
+\newblock W. W. Norton and Company, 1985.
 
 \bibitem{Epshtein10}
 B.~Epshtein, E.~Ofek, and Y.~Wexler.
@@ -171,14 +243,28 @@ S.~Fidler, Jian Yao, and R.~Urtasun.
 \newblock {\em 2013 IEEE Conference on Computer Vision and Pattern
   Recognition}, 0:702--709, 2012.
 
-\bibitem{OCRMangaReader}
-Google.
-\newblock Ocr manga reader, 2014.
+\bibitem{Goggin2010Rise}
+Joyce Goggin.
+\newblock {\em The Rise and Reason of Comics and Graphic Literature: Critical
+  Essays on the Form}, volume~1, chapter~4, pages 56--74.
+\newblock McFarland, Book News, Inc., Portland, OR, 1 edition, 2010.
 
 \bibitem{griffinHolubPerona}
 G.~Griffin, A.~Holub, and P.~Perona.
 \newblock Caltech-256 object category dataset.
 \newblock Technical Report 7694, California Institute of Technology, 2007.
+
+\bibitem{grigoriu1994automatic}
+A~Grigoriu, JP~Vonwiller, and RW~King.
+\newblock An automatic intonation tone contour labelling and classification
+  algorithm.
+\newblock In {\em Acoustics, Speech, and Signal Processing, 1994. ICASSP-94.,
+  1994 IEEE International Conference on}, volume~2, pages II--181. IEEE, 1994.
+
+\bibitem{Grove2014Bande}
+Laurence Grove.
+\newblock Bande dessin\'{e}e studies.
+\newblock {\em French Studies}, 68(1):78--87, 2014.
 
 \bibitem{Guerin2012Ontologies}
 Cl{\'e}ment Gu{\'e}rin.
@@ -198,6 +284,11 @@ Cl{\'e}ment Gu{\'e}rin, Christophe Rigaud, Antoine Mercier, and al.
 \newblock ebdtheque: a representative database of comics.
 \newblock In {\em Proceedings of International Conference on Document Analysis
   and Recognition (ICDAR)}, Washington DC, 2013.
+
+\bibitem{Haarslev2012}
+Volker Haarslev, Kay Hidde, Ralf M\"{o}ller, and Michael Wessel.
+\newblock {The RacerPro knowledge representation and reasoning system}.
+\newblock {\em Semantic Web}, 3(3):267--277, 2012.
 
 \bibitem{Han07}
 Eunjung Han, Kirak Kim, HwangKyu Yang, and Keechul Jung.
@@ -245,10 +336,6 @@ Céline Hudelot, Jamal Atif, and Isabelle Bloch.
 \newblock From Knowledge Representation to Information Processing and
   Management Selected papers from the French Fuzzy Days (LFA 2006).
 
-\bibitem{IBISWorld2013}
-IBISWorld.
-\newblock Comic book publishing in the us: Market research report, 2013.
-
 \bibitem{In11}
 Yusuke In, Takashi Oie, Masakazu Higuchi, Shuji Kawasaki, Atushi Koike, and
   Hitomi Murakami.
@@ -264,6 +351,21 @@ Raulet J{\'e}r{\'e}my and Boyer Vincent.
   Europe on Computer Graphics, Visualization and Computer Vision (WSCG)}, pages
   88--96, 2013.
 
+\bibitem{Jung04}
+Keechul Jung, Kwang~In Kim, and Anil~K. Jain.
+\newblock Text information extraction in images and video: a survey.
+\newblock {\em Pattern Recognition}, 37(5):977 -- 997, 2004.
+
+\bibitem{Karatzas07}
+D.~Karatzas and A.~Antonacopoulos.
+\newblock Colour text segmentation in web images based on human perception.
+\newblock {\em Image and Vision Computing}, 25(5):564 -- 577, 2007.
+
+\bibitem{Kass1988}
+Michael Kass, Andrew Witkin, and Demetri Terzopoulos.
+\newblock {Snakes: Active contour models}.
+\newblock {\em International Journal of Computer Vision}, 1(4):321--331, 1988.
+
 \bibitem{Khan12}
 Fahad~Shahbaz Khan, Muhammad~Anwer Rao, Joost van~de Weijer, Andrew~D.
   Bagdanov, Maria Vanrell, and Antonio Lopez.
@@ -271,11 +373,30 @@ Fahad~Shahbaz Khan, Muhammad~Anwer Rao, Joost van~de Weijer, Andrew~D.
 \newblock In {\em Twenty-Fifth IEEE Conference on Computer Vision and Pattern
   Recognition (CVPR 2012)}, 2012.
 
+\bibitem{Wonjun09}
+Wonjun Kim and Changick Kim.
+\newblock A new approach for overlay text detection and extraction from complex
+  video scene.
+\newblock {\em Image Processing, IEEE Transactions on}, 18(2):401 --411, feb.
+  2009.
+
+\bibitem{kuhne2001motion}
+Gerald K{\"u}hne, Stephan Richter, and Markus Beier.
+\newblock Motion-based segmentation and contour-based classification of video
+  objects.
+\newblock In {\em Proceedings of the ninth ACM international conference on
+  Multimedia}, pages 41--50. ACM, 2001.
+
 \bibitem{Kurlander1996}
 David Kurlander, Tim Skelly, and David Salesin.
 \newblock Comic chat.
 \newblock {\em Proceedings of the 23rd annual conference on Computer graphics
   and interactive techniques - SIGGRAPH ’96}, 96:225--236, 1996.
+
+\bibitem{Laine2010}
+Jean-Marc Lain\'{e} and Sylvain Delzant.
+\newblock {\em {Le lettrage des bulles}}.
+\newblock Eyrolles, 2010.
 
 \bibitem{lamiroy:inria-00537035}
 Bart Lamiroy, Daniel Lopresti, Hank Korth, and Jeff Heflin.
@@ -290,6 +411,19 @@ Bart Lamiroy and Jean-Marc Ogier.
 \newblock Analysis and interpretation of graphical documents.
 \newblock In David Doermann and Karl Tombre, editors, {\em {Handbook of
   Document Image Processing and Recognition}}. Springer, 2014.
+
+\bibitem{Leroy1996}
+Bertrand Leroy, IsabelleL. Herlin, and LaurentD. Cohen.
+\newblock Multi-resolution algorithms for active contour models.
+\newblock In Marie-Odile Berger and Deriche et~al., editors, {\em ICAOS'96},
+  volume 219 of {\em Lecture Notes in Control and Information Sciences}, pages
+  58--65. Springer Berlin Heidelberg, 1996.
+
+\bibitem{leung2002trademark}
+Wing~Ho Leung and Tsuhan Chen.
+\newblock Trademark retrieval using contour-skeleton stroke classification.
+\newblock In {\em Multimedia and Expo, 2002. ICME'02. Proceedings. 2002 IEEE
+  International Conference on}, volume~2, pages 517--520. IEEE, 2002.
 
 \bibitem{Li2012Toward}
 Congcong Li, Adarsh Kowdle, Ashutosh Saxena, and Tsuhan Chen.
@@ -319,6 +453,13 @@ Luyuan Li, Yongtao Wang, Zhi Tang, Xiaoqing Lu, and Liangcai Gao.
 \newblock In {\em 12th International Conference on Document Analysis and
   Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
 
+\bibitem{liu1990partial}
+H-C Liu and Mandyam~D. Srinath.
+\newblock Partial shape classification using contour matching in distance
+  transformation.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 12(11):1072--1079, 1990.
+
 \bibitem{Ricardo2009Calligraphic}
 Ricardo Lopes, Tiago Cardoso, Nelson Silva, and ManuelJ. Fonseca.
 \newblock Calligraphic shortcuts for comics creation.
@@ -326,6 +467,11 @@ Ricardo Lopes, Tiago Cardoso, Nelson Silva, and ManuelJ. Fonseca.
   Patrick Olivier, and Roberto Therón, editors, {\em Smart Graphics}, volume
   5531 of {\em Lecture Notes in Computer Science}, pages 223--232. Springer
   Berlin Heidelberg, 2009.
+
+\bibitem{Lubbin12}
+Gérald Lubbin.
+\newblock {\em Les bulles du labo}.
+\newblock Doc en Stock, Paris, France, 2012.
 
 \bibitem{Mao2003Document}
 Song Mao, Azriel Rosenfeld, and Tapas Kanungo.
@@ -339,21 +485,26 @@ Christy Marx.
 \newblock {\em Writing for Animation, Comics, and Games}.
 \newblock Focal Press, 2006.
 
+\bibitem{Matas02}
+J.~Matas, O.~Chum, M.~Urban, and T.~Pajdla.
+\newblock Robust wide baseline stereo from.
+\newblock In {\em In British Machine Vision Conference}, pages 384--393, 2002.
+
 \bibitem{Matsui2011}
 Yusuke Matsui, Toshihiko Yamasaki, and Kiyoharu Aizawa.
 \newblock {Interactive Manga retargeting}.
 \newblock In {\em ACM SIGGRAPH 2011 Posters on - SIGGRAPH '11}, page~1, New
   York, New York, USA, 2011. ACM Press.
 
-\bibitem{McCloud94}
-S.~McCloud.
-\newblock {\em Understanding comics}.
-\newblock William Morrow Paperbacks, 1994.
-
 \bibitem{mccloud1994understanding}
-S.~McCloud.
-\newblock {\em Understanding comics}.
-\newblock William Morrow Paperbacks, 1994.
+Scott McCloud.
+\newblock {\em Understanding comics: The Invisible Art}.
+\newblock Kitchen Sink Press, 1993.
+
+\bibitem{McGuinness2004}
+Deborah~L. McGuinness and Frank {Van Harmelen}.
+\newblock {OWL Web Ontology Language Overview}.
+\newblock Technical report, W3C, 2004.
 
 \bibitem{McIntosh2011}
 Jason McIntosh.
@@ -363,6 +514,12 @@ Jason McIntosh.
 Stuart Medley.
 \newblock Discerning pictures: How we look at and understand images in comics.
 \newblock {\em Studies in Comics}, 1(1):53--70, 2010.
+
+\bibitem{Meng12}
+Quan Meng and Yonghong Song.
+\newblock Text detection in natural scenes with salient region.
+\newblock In {\em Document Analysis Systems (DAS), 2012 10th IAPR International
+  Workshop on}, pages 384 --388, march 2012.
 
 \bibitem{Aaron2011}
 Aaron Meskin and Roy~T. Cook.
@@ -376,10 +533,25 @@ Vasileios Mezaris, Ioannis Kompatsiaris, and Michael~G. Strintzis.
 \newblock In {\em In Proc. IEEE Int. Conf. on Image Processing (ICIP03}, pages
   511--514, 2003.
 
+\bibitem{Miller2014}
+John~Jackson Miller.
+\newblock Yearly rankings for comic book sales, 2014.
+
 \bibitem{millidge2009comic}
 G.S. Millidge.
 \newblock {\em Comic Book Design}.
 \newblock Watson-Guptill Publications, 2009.
+
+\bibitem{Mitchell1997}
+Thomas~M. Mitchell.
+\newblock {\em Machine Learning}.
+\newblock McGraw-Hill, Inc., New York, NY, USA, 1 edition, 1997.
+
+\bibitem{mukundan1998moment}
+Ramakrishnan Mukundan and KR~Ramakrishnan.
+\newblock {\em Moment functions in image analysis: theory and applications},
+  volume 100.
+\newblock World Scientific, 1998.
 
 \bibitem{Neumann12}
 L.~Neumann and J.~Matas.
@@ -401,6 +573,13 @@ Daniel~M. Oliveira and Rafael~D. Lins.
   Pattern Recognition}, ICPR '10, pages 2411--2414, Washington, DC, USA, 2010.
   IEEE Computer Society.
 
+\bibitem{otsu79}
+N.~Otsu.
+\newblock A threshold selection method from gray level histograms.
+\newblock {\em {IEEE} Trans. Systems, Man and Cybernetics}, 9:62--66, March
+  1979.
+\newblock minimize inter class variance.
+
 \bibitem{ComicLife3}
 Plasq.
 \newblock Comic life 3, 2014.
@@ -421,7 +600,7 @@ Pratt and William K.
 \newblock {\em Digital image processing (2nd ed.)}.
 \newblock John Wiley \& Sons, Inc., New York, NY, USA, 1991.
 
-\bibitem{Ratier2013}
+\bibitem{Ratier2013Deceleration}
 Gilles Ratier.
 \newblock 2013 : l'ann{\'e}e de la d{\'e}c{\'e}l{\'e}ration, 2013.
 
@@ -431,22 +610,24 @@ J.~Raulet and V.~Boyer.
 \newblock In {\em SIGGRAPH Asia 2011 Sketches}, SA '11, pages 3:1--3:2, New
   York, NY, USA, 2011. ACM.
 
-\bibitem{rigaud2012extraction}
-Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.
-\newblock Extraction robuste des cases et du texte de bandes dessin{\'e}es.
-\newblock In {\em Proceedings of Colloque International Francophone sur l'Ecrit
-  et le Document (CIFED)}, pages 349--360, 2012.
-
-\bibitem{Rigaud2012LNCS}
-Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.
-\newblock Robust frame and text extraction from comic books.
-\newblock In Young-Bin Kwon and Jean-Marc Ogier, editors, {\em Graphics
-  Recognition. New Trends and Challenges}, volume 7423 of {\em Lecture Notes in
-  Computer Science}, pages 129--138. Springer Berlin Heidelberg, 2013.
+\bibitem{richter2001contour}
+Stephan Richter, Gerald K{\"u}hne, and Oliver Schuster.
+\newblock Contour-based classification of video objects.
+\newblock In {\em Proceedings of SPIE}, volume 4315, page 608, 2001.
 
 \bibitem{Rissen2012}
 Paul Rissen.
 \newblock {A Comics Ontology}, 2012.
+
+\bibitem{Varnum2007Language}
+Gibbons Robin~Varnum, Christina~T.
+\newblock {\em The Language of Comics: Word and Image}.
+\newblock Studies in Popular Culture. University Press of Mississippi, 2007.
+
+\bibitem{Roudier11}
+Nicolas Roudier.
+\newblock {\em LES TERRES CREUSEES}, volume Acte sur BD.
+\newblock Actes Sud, 2011.
 
 \bibitem{Salovaara2007Appropriation}
 Antti Salovaara.
@@ -473,6 +654,12 @@ Ariel Shamir, Michael Rubinstein, and Tomer Levinboim.
 \newblock Generating comics from 3d interactive computer graphics.
 \newblock {\em IEEE Comput. Graph. Appl.}, 26(3):53--61, May 2006.
 
+\bibitem{Shivakumara09}
+P.~Shivakumara, T.Q. Phan, and Chew~Lim Tan.
+\newblock A robust wavelet transform based technique for video text detection.
+\newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
+  International Conference on}, pages 1285 --1289, july 2009.
+
 \bibitem{Vomic}
 Shueisha.
 \newblock Vomic, 2014.
@@ -485,19 +672,18 @@ Siddharth Singh, Adrian~David Cheok, Guo~Loong Ng, and Farzam Farbiz.
   Children: Building a Community}, IDC '04, pages 149--150, New York, NY, USA,
   2004. ACM.
 
+\bibitem{Sirin2007a}
+Evren Sirin, Bijan Parsia, Bernardo {Cuenca Grau}, Aditya Kalyanpur, and Yarden
+  Katz.
+\newblock {Pellet : A Practical OWL-DL Reasoner}.
+\newblock {\em Web Semantics: Science, Services and Agents on the World Wide
+  Web}, 5(2):51--53, 2007.
+
 \bibitem{smeaton2006evaluation}
 A.F. Smeaton, P.~Over, and W.~Kraaij.
 \newblock Evaluation campaigns and trecvid.
 \newblock In {\em Proceedings of the 8th ACM international workshop on
   Multimedia information retrieval}, pages 321--330. ACM, 2006.
-
-\bibitem{Capture2Text}
-Sourceforge.
-\newblock Capture2text, 2014.
-
-\bibitem{Stewart2000}
-Alan Stewart.
-\newblock A brief history of the american comic book industry, 2000.
 
 \bibitem{stommel2012segmentation}
 Martin Stommel, Lena~I Merhej, and Marion~G M{\"u}ller.
@@ -518,6 +704,12 @@ Yasuyuki Sumi, Ryuuki Sakamoto, Keiko Nakao, and Kenji Mase.
 \newblock Comicdiary: Representing individual experiences in a comics style.
 \newblock In {\em Ubicomp}, pages 16--32, 2002.
 
+\bibitem{sun2005classification}
+Kang~B Sun and Boaz~J Super.
+\newblock Classification of contour shapes using class segment sets.
+\newblock In {\em Computer Vision and Pattern Recognition, 2005. CVPR 2005.
+  IEEE Computer Society Conference on}, volume~2, pages 727--733. IEEE, 2005.
+
 \bibitem{Sun2010}
 Weihan Sun and Koichi Kise.
 \newblock Similar partial copy detection of line drawings using a cascade
@@ -525,6 +717,13 @@ Weihan Sun and Koichi Kise.
 \newblock In Hiroshi Sako, Katrin Franke, and Shuji Saitoh, editors, {\em
   ICWF}, volume 6540 of {\em Lecture Notes in Computer Science}, pages
   126--137. Springer, 2010.
+
+\bibitem{Sun2011}
+Weihan Sun and Koichi Kise.
+\newblock {Similar Manga Retrieval Using Visual Vocabulary Based on Regions of
+  Interest}.
+\newblock In {\em 2011 International Conference on Document Analysis and
+  Recognition}, pages 1075--1079. Ieee, 2011.
 
 \bibitem{Sun2013IJDAR}
 Weihan Sun and Koichi Kise.
@@ -546,11 +745,20 @@ M.~Sundaresan and S.~Ranjini.
 \newblock In {\em Pattern Recognition, Informatics and Medical Engineering
   (PRIME), 2012 International Conference on}, pages 449--452, March 2012.
 
+\bibitem{Syed2012}
+Saira Syed.
+\newblock Comic giants battle for readers, 2012.
+
 \bibitem{Szeliski2010Computer}
 Richard Szeliski.
 \newblock {\em Computer Vision: Algorithms and Applications}, chapter~8, pages
   201--213.
 \newblock Springer-Verlag New York, Inc., New York, NY, USA, 1 edition, 2010.
+
+\bibitem{Ratier2013}
+Richard Szeliski.
+\newblock {\em HORS-THÈME/OPEN TOPIC}, chapter~2, pages 80--89.
+\newblock University of Alberta, Edmonton, Canada, 6 edition, 2013.
 
 \bibitem{TAPhD2010}
 Anh-Phuong TA.
@@ -558,6 +766,14 @@ Anh-Phuong TA.
   detection and Human action recognition}.
 \newblock PhD thesis, INSA de Lyon, 20, rue Albert Einstein, 69621 Villeurbanne
   Cedex, France, 2010.
+
+\bibitem{Boudissa2011Bande}
+Anh-Phuong TA.
+\newblock {\em La bande dessin\'{e}e entre la page et l'\'{e}cran : \'{e}tude
+  critique des enjeux th\'{e}oriques li\'{e}s au renouvellement du langage
+  b\'{e}d\'{e}ique sous influence num\'{e}rique}.
+\newblock PhD thesis, University Paris 8 Vincennes Saint-Denis, Paris, France,
+  2011.
 
 \bibitem{Kohei2012}
 Kohei Takayama, Henry Johan, and Tomoyuki Nishita.
@@ -571,11 +787,18 @@ Takamasa Tanaka, Kenji Shoji, Fubito Toyama, and Juichi Miyamichi.
 \newblock Layout analysis of tree-structured scene frames in comic images.
 \newblock In {\em IJCAI'07}, pages 2885--2890, 2007.
 
-\bibitem{Thomas2010Invisible}
-Evan Thomas.
-\newblock {\em Invisible Art, Invisible Planes, Invisible People}.
-\newblock Multicultural Comics: From Zap to Blue Beetle. University of Texas
-  Press, 2010.
+\bibitem{Kasar07}
+{T}hotreingam {K}asar, {J}ayant {K}umar, and {A}.~{G}. {R}amakrishnan.
+\newblock {F}ont and {B}ackground {C}olor {I}ndependent {T}ext {B}inarization.
+\newblock In {\em {I}ntl. workshop on {C}amera {B}ased {D}ocument {A}nalysis
+  and {R}ecognition (workshop of {ICDAR})}, pages 3--9, 2007.
+
+\bibitem{tieng1997recognition}
+Quang~Minh Tieng and WW~Boles.
+\newblock Recognition of 2d object contours using the wavelet transform
+  zero-crossing representation.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  19(8):910--916, 1997.
 
 \bibitem{Tobita2010Comic}
 Hiroaki Tobita.
@@ -608,10 +831,22 @@ John~A Walsh.
 \newblock {Comic Book Markup Language : An Introduction and Rationale}.
 \newblock {\em Digital Humanities Quarterly (DHQ)}, 6(1):1--50, 2012.
 
+\bibitem{Wang10}
+Kai Wang and Serge Belongie.
+\newblock Word spotting in the wild.
+\newblock In Kostas Daniilidis, Petros Maragos, and Nikos Paragios, editors,
+  {\em Computer Vision – ECCV 2010}, volume 6311 of {\em Lecture Notes in
+  Computer Science}, pages 591--604. Springer Berlin / Heidelberg, 2010.
+
 \bibitem{WangHYYC12}
 Meng Wang, Richang Hong, Xiao-Tong Yuan, Shuicheng Yan, and Tat-Seng Chua.
 \newblock Movie2comics: Towards a lively video content presentation.
 \newblock {\em IEEE Transactions on Multimedia}, 14(3-2):858--870, 2012.
+
+\bibitem{Coulton1947Comics}
+Coulton Waugh.
+\newblock {\em The Comics}.
+\newblock Univ. Press of Mississippi, 1947.
 
 \bibitem{Weinman09}
 J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
@@ -619,6 +854,11 @@ J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
   belief propagation.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 31(10):1733 --1746, 2009.
+
+\bibitem{Xu1998}
+C~Xu and J~L Prince.
+\newblock Snakes, shapes, and gradient vector flow.
+\newblock {\em IEEE Transactions on Image Processing}, 7(3):359--369, 1998.
 
 \bibitem{Yam04}
 Masashi Yamada, Rahmat Budiarto, Mamoru Endo, and Shinya Miyazaki.

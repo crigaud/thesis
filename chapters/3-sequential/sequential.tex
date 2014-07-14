@@ -2,22 +2,27 @@
 \chaptermark{Sequential information extraction}
 \label{chap:sequential}
 \graphicspath{{./chapters/3-sequential/figs/}}
-% Abstract -------------------------------------------------------------------------------------------------------------------------------------------
-% This chapter introduce two methods for panel extraction.
 
-% TO COMPLETE
+% Abstract -------------------------------------------------------------------------------------------------------------------------------------------
+This chapter presents a sequential information extraction approach for comic book content retrieval.
+The sequence of extraction starts from elementary elements such as panel and text that initiate further processing.
+Once the text regions are discovered, we use them as seeds to search for balloon and then analysis the balloon contour to detection the tail.
+From the tail, comic character regions are computed according to previously extracted element positions.
 
 % -------------------------------------------------------------
 
 \section{Introduction} % (fold)
 \label{sec:introduction}
 
-In comics, the page structure depends on the author which is why many so many different structures and drawing types exist.
-It makes the identity of the comics, that has to be different to others to attract the curiosity of the reader.
-Despite the differences, the comics drawings have a common characteristic because of the design process (see section~\ref{??}).
+In comics art, the page structure depends on the author style which is why so many different structures and drawing types exist.
+It is unavoidable because it gives an unique graphical identity to the comics and contributes to attract the curiosity of the readers.
+Despite the differences of style, the comics drawings follow ``general use'' characteristic intrinsically to the design process (see section~\ref{??}).
 % Relations between elements and inking process are particularities that we we rely on when processing such images. surrounded by a black stroke.
-We propose to rely on this particularity of comic books to automatically extract image content using a connected-component labelling~\cite{Szeliski2010Computer} approach.
-% and clustering.
+For instance, the inking process requires to magnify the main strokes and then colourize.
+We propose to rely on this main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling~\cite{Szeliski2010Computer} approach.
+Then, the analysis of speech balloon contour allow to detect the tail precisely and its direction is used to compute the of region of interest of comic characters.
+In this section, all the processes here are related to each other, for instance, the text extraction output is the input of the balloon extraction process.
+
 
 % section introduction (end)
 
@@ -64,7 +69,7 @@ The process can be summarize as bellow:
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
 Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSL) representation of the RGB colour space.
 Here we use the lightness channel because the panel border is usually darker than other element in the image, including the background. 
-Then, a global binary segmentation (figure~\ref{fig:se:se:binary_img}) is applied with a threshold computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
+Then, a global binary segmentation (figure~\ref{fig:se:binary_img}) is applied with a threshold computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
 We assume that the border pixels of the page are representative of the page background (depending on the digitization process).
 If the median value is closer to ``black'' than ``white'' grey level, then, image inversion is applied and we redo the complete process in order to always get a white background at the end of this step.
 % This pre-processing is more robust than~\cite{Arai11} who assumes that the page is always white and uses a constant threshold.
@@ -74,7 +79,7 @@ The binary conversion step is very important for the rest of the method because 
 \paragraph{Connected-component extraction} % (fold)
  \label{par:connected_component_extraction}
  
-The connected-component algorithm is applied on the binary image and the bounding box of each of the black component is computed to facilitate subsequent processing, see figure \ref{fig:se:se:cc_bounding_box}.
+The connected-component algorithm is applied on the binary image and the bounding box of each of the black component is computed to facilitate subsequent processing, see figure \ref{fig:se:cc_bounding_box}.
 We do not consider white connected-component here because we expected panel border and text elements to be darker than other elements in the page (segmented as black region).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,13 +87,13 @@ We do not consider white connected-component here because we expected panel bord
 	  \centering
 		%\includegraphics[height=60mm]{figure/BUBBLEGOM_T01_P007_crop.jpg}
 		%\includegraphics[trim= 0mm 0mm 0mm 0mm]{figure/BUBBLEGOM_T01_P007.jpg}
-		\subfloat[Binary segmented image]{\label{fig:se:se:binary_img}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{binary.png}}	\hspace{2em}
-		\subfloat[Connected-component bounding boxes]{\label{fig:se:se:cc_bounding_box}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{roi.png}}
+		\subfloat[Binary segmented image]{\label{fig:se:binary_img}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{binary.png}}	\hspace{2em}
+		\subfloat[Connected-component bounding boxes]{\label{fig:se:cc_bounding_box}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{roi.png}}
 		\\
-		\subfloat[Panel cluster]{\label{fig:se:se:frame_unrecognized}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{frame_unrecognized.png}}	\hspace{2em}
-		\subfloat[Text cluster]{\label{fig:se:se:frame_cleaned}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{text.png}}
-		  \caption{Panel extraction process. Image credits:~\cite{Bubble09}.}
-		  % \label{fig:se:se:binary_to_bounding_box}
+		\subfloat[Panel cluster]{\label{fig:se:frame_unrecognized}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{frame_unrecognized.png}}	\hspace{2em}
+		\subfloat[Text cluster]{\label{fig:se:frame_cleaned}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.4\textwidth]{text.png}}
+		  \caption[Panel extraction process]{Panel extraction process. Image credits:~\cite{Bubble09}.}
+		  % \label{fig:se:binary_to_bounding_box}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,21 +104,21 @@ We do not consider white connected-component here because we expected panel bord
 
 \paragraph{Clustering} % (fold)
 \label{par:clustering}
-By looking at the figure~\ref{fig:se:se:cc_bounding_box}, we can clearly see that the bounding boxes of the panel are bigger than the others.
+By looking at the figure~\ref{fig:se:cc_bounding_box}, we can clearly see that the bounding boxes of the panel are bigger than the others.
 Also, they include more regions than others.
 Classifying those regions according to their size allows us to classify panel and text region at the same time while ignoring noise information.
 Knowing the number of cluster facilitate the clustering, here 
 % The classification of connected-component heights using k-means algorithm. 
 %We define the set of component bounding boxes $R = \{R_1, R_2, ... , R_n\}$.
 we define three cluster according to the domain knowledge of comics.
-Their corresponds to ``panel'' (the highest), ``text'' (the most numerous) and ``noise'' (few pixels height) as shown on figure~\ref{fig:se:se:histo_roi}.
+Their corresponds to ``panel'' (the highest), ``text'' (the most numerous) and ``noise'' (few pixels height) as shown on figure~\ref{fig:se:histo_roi}.
 One of the most popular clustering algorithm is k-means clustering method.
 It aims to partition $(x_1, x_2, ...,x_n)$ observations into $k$ clusters ($k <= n$) $S=\{S_1, S_2, ..., S_k\}$ in which each observation belongs to the cluster with the nearest mean.
-This optimisation problem is formulated as formula~\ref{eq:se:se:k-means}.
+This optimisation problem is formulated as formula~\ref{eq:se:k-means}.
 
 \begin{equation}
 	arg min \sum\limits_{i=1}^k \sum\limits_{n_j \in S_i} ||x_j - \mu_i||^2
-	\label{eq:se:se:k-means}
+	\label{eq:se:k-means}
 \end{equation}
 where $\mu_i$ is the mean of points in the cluster $S_i$.
 
@@ -124,8 +129,8 @@ This clustering is performed dynamically on each image which makes this method p
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth, 
 	  \centering
 		\includegraphics[trim= 5mm 0mm 10mm 0mm, clip,width=1.0\textwidth]{Histogram_en.png}
-		\caption{Descendent histogram of the bounding boxes in figure~\ref{fig:se:se:cc_bounding_box}. Vertical black lines represent an example of three cluster limits labelled as ``panel'', ``text'' ``noise'' .}
-		\label{fig:se:se:histo_roi}
+		\caption[Descendant histogram of the connected component bounding box heights]{Descendent histogram of the bounding boxes in figure~\ref{fig:se:cc_bounding_box}. Vertical black lines represent an example of three cluster limits labelled as ``panel'', ``text'' ``noise'' .}
+		\label{fig:se:histo_roi}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -139,19 +144,19 @@ First, a panel is rarely included in another so
 we take out components which are included in other regions of the panel cluster.  
 % After the classification step, the second characteristic of panel is used in order to keep only the components that are not overlapped by others.
 Given the set of component bounding boxes from the panel cluster $R = \{R_1, R_2, ... , R_n\}$, we filter out panel candidates that do not verify this relation $R_i\notin{R_j} \forall j, i \neq j$.
-See figure \ref{fig:se:se:frame_candidates} and~\ref{fig:se:se:frame_cleaned}.
+See figure \ref{fig:se:frame_candidates} and~\ref{fig:se:frame_cleaned}.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}	%trim=l b r t  width=0.5\textwidth, 
 	  \centering
-		\subfloat[Candidate panels]{\label{fig:se:se:frame_candidates}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.3\textwidth]{frame_unrecognized.png}}	\hspace{2em}
-		\subfloat[Pruned panels]{\label{fig:se:se:frame_cleaned}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.3\textwidth]{frame_cleaned.png}}
-		  \caption{Topological pruning of panels.}
+		\subfloat[Candidate panels]{\label{fig:se:frame_candidates}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.3\textwidth]{frame_unrecognized.png}}	\hspace{2em}
+		\subfloat[Pruned panels]{\label{fig:se:frame_cleaned}\includegraphics[trim= 1mm 0mm 0mm 0mm, clip, width=0.3\textwidth]{frame_cleaned.png}}
+		  \caption[Topological pruning of panel bounding box extraction]{Topological pruning of panel bounding box extraction.}
 		  %\label{fig:se:apl_1_0}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Concerning the text cluster, we clearly see in figure~\ref{fig:se:se:frame_cleaned} that the spatial organisation is a characteristics of text regions (regardless of the language).
+Concerning the text cluster, we clearly see in figure~\ref{fig:se:frame_cleaned} that the spatial organisation is a characteristics of text regions (regardless of the language).
 We group text candidates into text lines according to alignment and ignore text candidate that can not be part of any text line.
 
 The gap between text (e.g. letter or attached letters, word) and text lines can vary significantly.
@@ -161,7 +166,7 @@ We propose a method that handles the two first aforementioned artefacts consider
 We first search for the first letter (connected component) of each text line.
 A letter is considered first if it is positioned on the left, on the same horizontal line and if there is no intersection found with any other letters at a distance equal to the letter height.
 Then the other letters on the right are added by checking their relative horizontal and vertical positions.
-For this purpose, we defined two conditions that are auto-adaptive to each letter (see figure~\ref{fig:se:se:letter_position}):
+For this purpose, we defined two conditions that are auto-adaptive to each letter (see figure~\ref{fig:se:letter_position}):
 
 \begin{itemize}
     \item The horizontal inter-letter distance $d$ should be smaller than the maximal height of the letters ($d<Max(h1,h2)$);
@@ -173,8 +178,8 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 200px 280px 300px 220px, clip, width=0.75\textwidth]{letter_position.pdf}
-		\caption{Letter horizontal and vertical positions variables (on the left $letter_1$, on the right $letter_2$). The two rectangles represent the bounding boxes and $c1$ and $c2$ their centres.}
-		\label{fig:se:se:letter_position}
+		\caption[Text letter horizontal and vertical alignments]{Letter horizontal and vertical positions variables (on the left $letter_1$, on the right $letter_2$). The two rectangles represent the bounding boxes and $c1$ and $c2$ their centres.}
+		\label{fig:se:letter_position}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -190,7 +195,7 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 
 % section panel_and_text (end)
 
-\section{From text to balloon (open and closed)} % (fold)
+\section{From text to balloon} % (fold)
 \label{sec:from_text_to_balloon_}
 % In this section we detail a novel approach for closed and non-closed speech balloon localization in scanned comic book pages, an essential step towards a fully automatic comic book understanding. 
 For comics content understanding, speech balloons present a lot of interest since they offer the links between the textual content and the comic characters providing information about the localization of the characters and the tone of speech. 
@@ -202,19 +207,19 @@ From the initial position, the snake is pushed away from the text and attracted 
 The main advantage of the second method is its ability to detect implicit or partially drawn balloons as well as the closed ones.
 
 \subsection{Regular balloon extraction} % (fold)
-\label{sub:regular_balloon_extraction}
+\label{sub:se:regular_balloon_extraction}
 Regular balloon are defined as closed balloon with a completely drawn contour unlike implicit contour discussed in the next subsection~\ref{sub:implicit_balloon_extraction}.
 Closed balloon are easily extractable using blob detection method similarly to the panel and text extraction presented above.
 The main different lies in their dominant colour with is white and implies do extract white connected-components instead of black for panels and text.
-One particularity of text inside balloons is its vertical and/or horizontal alignment in the balloon, see figure~\ref{fig:se:se:text_in_balloon}.
+One particularity of text inside balloons is its vertical and/or horizontal alignment in the balloon, see figure~\ref{fig:se:text_in_balloon}.
 We propose to use this characteristic to compute a confidence value to each connected-component that include one or more text regions.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{text_in_balloon.png}
-		\caption{Example of text positions in speech balloons.}
-		\label{fig:se:se:text_in_balloon}
+		\caption[Text positions in speech balloons]{Example of text positions in speech balloons.}
+		\label{fig:se:text_in_balloon}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -223,14 +228,14 @@ We propose to use this characteristic to compute a confidence value to each conn
 \label{par:blob_extraction}
 
 A typical ``closed'' balloon is surrounded by a black stroke that defined a white region (blob) inside it, with holes created by the presence of text letters.
-We propose to make a binary segmentation of the comics image and then use connected-component labelling method to extract white blobs, see figure~\ref{fig:se:se:closed_balloon}.
+We propose to make a binary segmentation of the comics image and then use connected-component labelling method to extract white blobs, see figure~\ref{fig:se:closed_balloon}.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{closed_balloon_process.png}
-		\caption{Balloon extraction process. Original image, binary segmentation, contour detection (connected components) and result mask from left to right.}
-		\label{fig:se:se:closed_balloon}
+		\caption[Sequential balloon extraction process illustration]{Balloon extraction process. Original image, binary segmentation, contour detection (connected components) and result mask from left to right.}
+		\label{fig:se:closed_balloon}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -241,14 +246,14 @@ We propose to make a binary segmentation of the comics image and then use connec
 \label{par:text_line_grouping}
 
 As we are interested in localizing balloons from text, we post-process the results of the text line detection to group text lines into text area (paragraph), according to two rules.
-First, we require that the candidate text lines to group have similar heights (or width in case of vertical text) and second that the inter-line distance is smaller than the average text line height of the potential paragraph region, see figure~\ref{fig:se:se:line_to_paragraphs}.
+First, we require that the candidate text lines to group have similar heights (or width in case of vertical text) and second that the inter-line distance is smaller than the average text line height of the potential paragraph region, see figure~\ref{fig:se:line_to_paragraphs}.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{line_to_paragraphs.pdf}
-		\caption{Illustration of the text line to text paragraph conversion from left to right for vertical and horizontal text.}
-		\label{fig:se:se:line_to_paragraphs}
+		\caption[Text line to text paragraph conversion illustration]{Illustration of the text line to text paragraph conversion from left to right for vertical and horizontal text.}
+		\label{fig:se:line_to_paragraphs}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -258,14 +263,14 @@ First, we require that the candidate text lines to group have similar heights (o
 \label{par:balloon_extraction}
 
 For each extracted blob that includes a text paragraph (one or more text lines), we compute the difference of alignment $C_{balloon}$ on the horizontal $d_x$ and the vertical $d_y$ axis between the balloon barycentre $c_1$ and the text paragraph barycentre $c_2$.
-See figure~\ref{fig:se:se:align_diff}.
+See figure~\ref{fig:se:align_diff}.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 140px 0px 0px 0px, clip, width=0.5\textwidth]{text_balloon_alignment.pdf}
-		\caption{Vertical $d_y$ and horizontal $d_x$ alignment differences between balloon barycentre $c_1$ and text region barycentre $c_2$.}
-		\label{fig:se:se:align_diff}
+		\caption[Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre]{Vertical $d_y$ and horizontal $d_x$ alignment differences between balloon barycentre $c_1$ and text region barycentre $c_2$.}
+		\label{fig:se:align_diff}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -288,10 +293,10 @@ Balloon confidence value is used for balloon and non balloon classification in~\
 \subsection{Implicit balloon extraction} % (fold)
 \label{sub:implicit_balloon_extraction}
 
-Balloon contour is not always completely drawn, it may be implied by contrast difference or other surrounding elements (see fig.~\ref{fig:se:se:balloon_examples}c).
+Balloon contour is not always completely drawn, it may be implied by contrast difference or other surrounding elements (see fig.~\ref{fig:se:balloon_examples}c).
 In most of the cases, including when contours are implicit, the location of text is generally a good clue to guess where the balloon is.
 The problem of speech balloon outline detection can therefore be posed as the fitting of a closed contour around text areas, with the distinctiveness that the outline might not be explicitly defined in the image.
-For the examples given in figure~\ref{fig:se:se:balloon_examples}, this would be a smooth contour with relatively constant curvature (fig.~\ref{fig:se:se:balloon_examples}a), an irregular one with high local curvature (fig.~\ref{fig:se:se:balloon_examples}b), and an implicit one with missing parts (fig.~\ref{fig:se:se:balloon_examples}c).
+For the examples given in figure~\ref{fig:se:balloon_examples}, this would be a smooth contour with relatively constant curvature (fig.~\ref{fig:se:balloon_examples}a), an irregular one with high local curvature (fig.~\ref{fig:se:balloon_examples}b), and an implicit one with missing parts (fig.~\ref{fig:se:balloon_examples}c).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[!ht]%trim=l b r t  width=0.5\textwidth,
@@ -302,8 +307,8 @@ For the examples given in figure~\ref{fig:se:se:balloon_examples}, this would be
 	  \includegraphics[trim= 15px 7mm 5px 0mm, clip, width=0.145\textwidth]{open_balloon.png} \\ 
 	  \footnotesize a) Smooth	& \footnotesize b) Irregular & \footnotesize c) Implicit
 	  \end{tabular}
-	\caption{Example of speech balloons with different contour types. Image credits~\cite{Bubble09}.}
-	\label{fig:se:se:balloon_examples}
+	\caption[Speech balloon contour types]{Example of speech balloons with different contour types. Image credits~\cite{Bubble09}.}
+	\label{fig:se:balloon_examples}
 	\end{center}
 	\end{figure}	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -330,8 +335,8 @@ where $\alpha$ and $\beta$ are weighting parameters that respectively control th
 The external energy function $E_{ext}$ is computed from the image so that it takes on its smaller values at the features of interest, such as boundaries~\cite{Xu1998}.
 %It was initially designed to localize nearby edges accurately by using both internal and external energies (see eq.~\ref{eq:se:energy1}). 
 %The external energy function $E_{ext}$ aim to attract the snake to the feature of interest (e.g. line, edge, corner), it is the image force. 
-One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq:se:se:edge} which attracts the contour to edges with large image gradients. 
-\begin{equation}\label{eq:se:se:edge}
+One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq:se:edge} which attracts the contour to edges with large image gradients. 
+\begin{equation}\label{eq:se:edge}
   E_{ext} = -|\nabla \mathbf{I}(x,y)^2|
 \end{equation}
 
@@ -339,9 +344,9 @@ We adapt the active contour framework to the domain of comics to detect speech b
 For the discussion below, we assume that text has been already detected in the image, see section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text}.% and we use the method of \cite{Rigaud2013VISAPP} for text detection.
 
 The introduction of statistical shape knowledge has already been studied in the literature~\cite{Cremers2002} but can not be applied here because of the lack of knowledge about the contour shape to detect.
-Hence we introduce a new energy term, denoted $E_{text}$ (see equation~\ref{eq:se:se:energy2}) that conveys information about the relative placement of the balloon outline and the enclosed text.
+Hence we introduce a new energy term, denoted $E_{text}$ (see equation~\ref{eq:se:energy2}) that conveys information about the relative placement of the balloon outline and the enclosed text.
 
-\begin{equation}\label{eq:se:se:energy2}
+\begin{equation}\label{eq:se:energy2}
   E = E_{int} + E_{ext} + E_{text}\\
 \end{equation}
 
@@ -350,8 +355,8 @@ Hence we introduce a new energy term, denoted $E_{text}$ (see equation~\ref{eq:s
 %The external energy $E_{ext}$ encourage curve onto image structures (e.g. edges, line, corner).
 
 We consider edges as features of interest because we expect the speech balloon to be delimited by strong edges, at least partially.
-Here we perform edge detection using the well know Sobel operator (see figure~\ref{fig:se:se:distance_transform}).
-The original Kass~\cite{Kass1988} external energy (see equation~\ref{eq:se:se:edge}) is appropriate for natural scene images with smooth gradients but not for stroke-based images such as comics that comprise uniform coloured regions with strong edges.
+Here we perform edge detection using the well know Sobel operator (see figure~\ref{fig:se:distance_transform}).
+The original Kass~\cite{Kass1988} external energy (see equation~\ref{eq:se:edge}) is appropriate for natural scene images with smooth gradients but not for stroke-based images such as comics that comprise uniform coloured regions with strong edges.
 In our case, we require that edges attract the snake from relatively far away (distances where the original edge gradient has already dropped to zero).
 The method of Xu~\cite{Xu1998} would be appropriate here, although we have decided to use the equivalent distance transform of the edge image instead for computational efficiency reasons.
 We therefore define the external energy function as:
@@ -367,8 +372,8 @@ Since it is not desirable for edges corresponding to text to attract the snake, 
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\fbox{\includegraphics[trim = 0mm 0mm 7mm 0mm, clip, width=230px]{edge_dist_trans.png}}
-		\caption{Example of original image (top left) and its corresponding non-text edge detection (top right), $E_{ext}$ energy (bottom-left) and $E_{text}$ energy (bottom-right). In the bottom part, white corresponds to high energy.}
-		\label{fig:se:se:distance_transform}
+		\caption[Active contour energies for open balloon extraction]{Example of original image (top left) and its corresponding non-text edge detection (top right), $E_{ext}$ energy (bottom-left) and $E_{text}$ energy (bottom-right). In the bottom part, white corresponds to high energy.}
+		\label{fig:se:distance_transform}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -389,10 +394,10 @@ It becomes small when the distance between consecutive points is close to the av
 where $\bar{d}$ is the average distance between two consecutive points $i$ and $j$ of the snake and $\alpha$ is a weighting parameter.
 
 The energy $E_{curv}$ enforces smoothness and avoids oscillations of the snake by penalizing high contour curvatures (minimizing the second derivative).
-It becomes small when the angle between three points is close to zero, see equation~\ref{eq:se:se:curv}.
+It becomes small when the angle between three points is close to zero, see equation~\ref{eq:se:curv}.
 % Note, this energy itself makes the snake deflate and converge to a line or a point.
 
-\begin{equation}\label{eq:se:se:curv}
+\begin{equation}\label{eq:se:curv}
   %E_{curv} = \beta | p_{i-1} - 2 * p_i + p_{i+1} |^2
   E_{curv} = \beta \left( (x_{i-1} - 2x_{i} + x_{i+1})^2 + (y_{i-1} - 2y_{i} + y_{i+1})^2 \right)
 \end{equation}
@@ -415,7 +420,7 @@ We define the text energy term at a localization $i$ of the image as follows:
 \begin{equation}\label{eq:se:know}
 E_{text} = \begin{cases} \kappa \frac{N}{min_{j \in T} A(i,j)} & \mbox{if } A(i,j) > 0 \\ \kappa N & \mbox{else} \end{cases}
 \end{equation}
-where $j$ is a pixel in the text area $T$, $N$ is an experimentally defined constant expressing the expected distance in pixel between the text area and the corresponding balloon boundary and $\kappa$ is a weighting parameter that controls the contribution of $E_{text}$ with respect to the other energy terms in eq.~\ref{eq:se:se:energy2}. Note when $i$ is on the border of $T$, the distance $A(i,j)$ is equal zero and the energy becomes maximal as if it was inside $T$.
+where $j$ is a pixel in the text area $T$, $N$ is an experimentally defined constant expressing the expected distance in pixel between the text area and the corresponding balloon boundary and $\kappa$ is a weighting parameter that controls the contribution of $E_{text}$ with respect to the other energy terms in eq.~\ref{eq:se:energy2}. Note when $i$ is on the border of $T$, the distance $A(i,j)$ is equal zero and the energy becomes maximal as if it was inside $T$.
 
 
 \subsubsection{Proposed method}
@@ -424,7 +429,7 @@ where $j$ is a pixel in the text area $T$, $N$ is an experimentally defined cons
 In this section we detail how to localize speech balloons using active contours based on the definitions given above. 
 First we generate the static external energy map $E_{ext}$ for the whole image and then for each text area we compute the $E_{text}$ energy.
 The internal energy $E_{int}$ is calculated for each point of the snake before each iteration.
-We iteratively examine each point of the snake in a clockwise fashion and move it within a neighbourhood region of size $M$ in order to minimize equation~\ref{eq:se:se:energy2}.
+We iteratively examine each point of the snake in a clockwise fashion and move it within a neighbourhood region of size $M$ in order to minimize equation~\ref{eq:se:energy2}.
 This operation is repeated until no point moves in one turn (see algorithm~\ref{al:be:method}).
 We perform a first smooth-contour approximation of the balloon boundary (low resolution) and then we fit the contour better to the balloon shape (high resolution) using the same algorithm
 
@@ -467,8 +472,8 @@ TODO: remove high resolution step???
 
 The active contour is initialized on the outline of the text paragraph region.
 This corresponds to the convex hull of all the text lines that are included in the balloon.
-See figure~\ref{fig:se:se:paragraphs}b).
-Note that the convex hull of the text area also corresponds to the $E_{text}$ maximal value border, see figure~\ref{fig:se:se:distance_transform}.
+See figure~\ref{fig:se:paragraphs}b).
+Note that the convex hull of the text area also corresponds to the $E_{text}$ maximal value border, see figure~\ref{fig:se:distance_transform}.
 %At this point, the $E_{text}$ has to be the strongest in eq.~\ref{eq:se:energy2} in order to ``push'' away the snake from the text area and then facilitate its attraction by $E_{ext}$ (non text edges).
 %Another possible initialization strategy could be to use the smaller ellipse circumscribing the text area.% This has been experimented section~\ref{sec:experiments}.
 
@@ -477,7 +482,7 @@ Note that the convex hull of the text area also corresponds to the $E_{text}$ ma
 
 %\subsubsection{Number of points}
 The initial number of points impacts the way that the snake moves and the precision of the final detection.
-During the first low resolution localization step, we perform a spaced equipartition of the points (see figure~\ref{fig:se:se:paragraphs}c) to quickly localize the global shape avoiding unnecessary stops on image details.
+During the first low resolution localization step, we perform a spaced equipartition of the points (see figure~\ref{fig:se:paragraphs}c) to quickly localize the global shape avoiding unnecessary stops on image details.
 In the subsequent high resolution fitting stage, we add more intermediate points to fit the exact shape more precisely.
 % with an inter-points distance fixed to half line height
 
@@ -490,14 +495,14 @@ In the subsequent high resolution fitting stage, we add more intermediate points
 	  \includegraphics[trim= 48mm 0mm 0mm 0mm, clip, width=0.20\textwidth]{snake_init.png} \\ 
 	  \footnotesize a) Group of text lines	& \footnotesize b) Text area convex hull 	& \footnotesize c) Snake initialization 
 	  \end{tabular}
-	\caption{Active contour initialization based on text area convex hull.}
-		\label{fig:se:se:paragraphs}
+	\caption[Active contour initialization based on text region convex hull]{Active contour initialization based on text region convex hull.}
+		\label{fig:se:paragraphs}
 	\end{center}
 	\end{figure}	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%We initialize the active contour of $N$ points on the paragraph shape (group of lines) figure~\ref{fig:se:se:paragraphs} and then we make it grow until it hits edges.
+%We initialize the active contour of $N$ points on the paragraph shape (group of lines) figure~\ref{fig:se:paragraphs} and then we make it grow until it hits edges.
 %We define a paragraph as a group of text lines spoken by the same speaker and with no interruptions (e.g. time break, interaction, other person talk). These group of lines are written close to each other by convention . We labelize two consecutive lines as part of the same paragraph if there is no enough space for an other line similar in height between them.
 
 \subsubsection{Low resolution contour localization}
@@ -507,7 +512,7 @@ If the balloon has an explicit boundary then $E_{ext}$ will attract the snake to
 If there is no explicit contour close enough to attract the snake then the $E_{text}$ term will push the snake to the suggested position of the balloon contour.
 Also the internal energies are important at this stage to maintain a certain rigidity of the snake.
 %The and low external energy parameter $\gamma$, a large internal curvature energy parameter $\beta$ and a large knowledge energy parameter $\eta$ (see fig.~\ref{fig:se:multiscale01}). 
-At the end of this step, we obtain a preliminary localization of the speech balloons, see fig.~\ref{fig:se:se:mono_res_det}. 
+At the end of this step, we obtain a preliminary localization of the speech balloons, see fig.~\ref{fig:se:mono_res_det}. 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
@@ -515,8 +520,8 @@ At the end of this step, we obtain a preliminary localization of the speech ball
 		% \fbox{
 		\includegraphics[trim = 0mm 3mm 0mm 1mm, clip, width=220px]{mono_res_det.png}
 		% }
-		\caption{Example of low resolution contour detection (red line) for irregular closed (left) and smooth open (right) balloons.}
-		\label{fig:se:se:mono_res_det}
+		\caption[Examples of low resolution contour detection for balloon extraction]{Example of low resolution contour detection (red line) for irregular closed (left) and smooth open (right) balloons.}
+		\label{fig:se:mono_res_det}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -529,12 +534,12 @@ At the end of this step, we obtain a preliminary localization of the speech ball
 
 
 \subsubsection{High resolution contour shape fitting}
-Figure~\ref{fig:se:se:mono_res_det} shows that the global shape of the top balloon has been detected although it is still far from a perfect fit because, as we can see on bottom part of the balloon, the snake was not able to fit precisely balloon outline, for instance peaky and tail regions are not well segmented.
+Figure~\ref{fig:se:mono_res_det} shows that the global shape of the top balloon has been detected although it is still far from a perfect fit because, as we can see on bottom part of the balloon, the snake was not able to fit precisely balloon outline, for instance peaky and tail regions are not well segmented.
 To achieve a better fitting, we increase the resolution of the snake by adding new points between the current ones and by changing the weighting parameters of the energy function, and go through a second fitting process.
 At this stage, we relax the $E_{curv}$ energy to make the snake to thinner parts of the boundary and we set $E_{cont}$ strong enough to keep a regular inter-point distance all over the contour.
 Also, we reduce the $E_{text}$ energy weight because at this step, the snake is already far from text and this term is not informative any more.
 %to give more importance to the image energy than the prior knowledge. %is reduced because  external  avoid point  is closer to the final contour and do not need the $E_{know}$ energy start to minimize we reduced the inter-points distance, we also increase the external energy parameter $\gamma$ to make the snake more attractable by image edge, decrease the internal curvature energy parameter $\beta$ to allow more flexible contour fitting and decrease the knowledge energy parameter $\eta$ because the contour is now far from the text. 
-This new configuration allows the snake to fit more precisely to the balloon contour as shown in figure~\ref{fig:se:se:hd_contour} (to compare with figure~\ref{fig:se:se:mono_res_det}).
+This new configuration allows the snake to fit more precisely to the balloon contour as shown in figure~\ref{fig:se:hd_contour} (to compare with figure~\ref{fig:se:mono_res_det}).
 
 %{\bf TO ADD IF RESULTS CONFIRMS: we consider external energy map based from edge detection only (no distance transform any more)?}
 
@@ -542,8 +547,8 @@ This new configuration allows the snake to fit more precisely to the balloon con
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\fbox{\includegraphics[trim = 0mm 2mm 0mm 1mm, clip, width=180px]{multi_res_det.png}}
-		\caption{Example of high resolution contour detection (red line) for closed (left) and open (right) balloons.}
-		\label{fig:se:se:hd_contour}
+		\caption[Examples of high resolution contour detection for balloon extraction]{Examples of high resolution contour detection (red line) for closed (left) and open (right) balloons.}
+		\label{fig:se:hd_contour}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -552,7 +557,7 @@ This new configuration allows the snake to fit more precisely to the balloon con
 % section from_text_to_balloon_ (end)
 
 \section{From balloon to tail} % (fold)
-\label{sec:from_balloon_to_tail}
+\label{sec:se:from_balloon_to_tail}
 
 Speech balloons indicate dialogue with tails pointing at their respective speakers~\cite{Varnum2007Language}
 %Balloon tails tell the reader the relationships between a set of textual or graphic elements contained in the speech balloons and the comics characters [REF???].
@@ -565,7 +570,7 @@ Other types require a specific study from the speech balloon extraction that sho
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[trim= 0px 0px 0mm 0mm, clip, width=0.75\textwidth]{tail_types.png}
-    \caption{Examples of type of speech balloon tails. From left to right: stroke, comma, circle, zigzag, absent.}
+    \caption[Examples of type of speech balloon tails.]{Examples of type of speech balloon tails. From left to right: stroke, comma, circle, zigzag, absent.}
     \label{fig:se:tail_types}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -584,7 +589,7 @@ We define the top two farthest points $f_a$ and $f_b$ corresponding to the conve
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[width=0.9\textwidth]{tail_description.pdf}
-    \caption{Representation of the two biggest convexity defects that defines the tail origin $f_a$ and $f_b$ (left). On the right side, we represent the distances related to the vertex $v_7$ to illustrate the variables of equation~\ref{eq:se:optimisation}. In this case $ds_b=0$ because $v_7$ coincides with an end of segment $s_b$ (distance equal to zero).}
+    \caption[Representation of the two biggest convexity defects that defines the tail origin]{Representation of the two biggest convexity defects that defines the tail origin $f_a$ and $f_b$ (left). On the right side, we represent the distances related to the vertex $v_7$ to illustrate the variables of equation~\ref{eq:se:optimisation}. In this case $ds_b=0$ because $v_7$ coincides with an end of segment $s_b$ (distance equal to zero).}
     \label{fig:se:convexity_defects}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -645,7 +650,7 @@ We compute a $M$x$M$ square region centred on the tail tip position in the ballo
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[width=0.5\textwidth]{tail_direction.png}
-    \caption{Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip.}
+    \caption[Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip]{Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip.}
     \label{fig:se:orientation}
     \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -663,10 +668,10 @@ We define the tail direction from the closest point $fitLinePoint$ of the repres
 
 %--------------------------------------------------------------------------------------------------------------------------------------
 \section{From tail to comic character} % (fold)
-\label{sec:from_tail_to_comic_character}
+\label{sec:se:tail_to_character}
 
 
-%As detecting the characters, in their great diversity, from the drawings of a comic book's page is quite a piece of work, 
+%from_tail_to_comic_character detecting the characters, in their great diversity, from the drawings of a comic book's page is quite a piece of work, 
 % To detect comic characters from the tail detection, we narrow down the panel region according to position of the tail tip and to direction it is pointed to.
 % area where we are going to look for them in.
 % This can be done thanks to the panel, balloon and tail detection we extracted on the image during the previous steps.
@@ -730,7 +735,7 @@ The offset $O$ is quantized in heigh values according to the tail direction and 
    \centering
   %\includegraphics[width=150px]{fig/roi_area.pdf}
   \includegraphics[width=180px]{roi_hypothesis.pdf}
-  \caption{Illustration of a panel with four corners $P0, P1, P2, P3$ and the different ROI position and size that can be defined for each of the eight directions of the tail.
+  \caption[Illustration of the character region of interested computation for each of the eight directions of the tail]{Illustration of a panel with four corners $P0, P1, P2, P3$ and the different ROI position and size that can be defined for each of the eight directions of the tail.
   }
   \label{fig:se:roi_area}
  \end{figure}
@@ -745,14 +750,20 @@ The offset $O$ is quantized in heigh values according to the tail direction and 
 % Conclusion --------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:se:conclusion}
-In this section we have presented and evaluated two methods for panel extraction based on connected-components labelling.
-The experiments shows that both approaches are really efficient for comics using gutter where there is no drawing between panels.
-The first method have been published for national and international audience~\cite{rigaud2012extraction,Rigaud2012LNCS} and the second method is part of an international journal publication [pending acceptance???].
+In this section we have presented how to understand comics image content by following the relations between elements, defined by knowledge domain.
+This approach is quite natural, trying to reproduce the reader's reading behaviour: first to search for the panels and then speech balloons, read their content and make the link with the characters and other graphic in the panel.
+Despite the intuitiveness of this approach, the main drawback of this sequential approach is the dependency of the processes which propagates errors.
+The experiments section~\ref{sub:ex:sequential_information_extraction_evaluation} evaluates the processes that are proposed here.
+
+% In this section we have presented and evaluated two methods for panel extraction based on connected-components labelling.
+% The experiments shows that both approaches are really efficient for comics using gutter where there is no drawing between panels.
+% The first method have been published for national and international audience~\cite{rigaud2012extraction,Rigaud2012LNCS} and the second method is part of an international journal publication [pending acceptance???].
 
 % Then, the variance of each class is computed to check the homogeneity of the ROI. If the variance of the ``frame'' class is high, a specific algorithm~\cite{Khoi11} is applied in order to improve the previous steps (binarisation and/or classification). 
 
-Next chapter is going to present and evaluate closed speech balloon extraction and classification methods.
-Also, an open balloon detection method based on speech text position will be presented.
+Next chapter is going to present a non sequential approach able to extract comics image content using independent processing in order to avoid error propagation.
+
+% Also, an open balloon detection method based on speech text position will be presented.
 
 
 % \begin{itemize}

@@ -106,21 +106,21 @@
 \contentsline {paragraph}{Text lines}{76}{section*.106}
 \contentsline {paragraph}{Comic characters}{77}{section*.107}
 \contentsline {subsubsection}{File structure}{77}{section*.108}
-\contentsline {subsection}{\numberline {6.2.4}Ground truth quality assessment}{78}{subsection.6.2.4}
-\contentsline {section}{\numberline {6.3}Metrics}{80}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Object localisation}{80}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Tail detection}{81}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Semantic links and text recognition}{81}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Evaluation}{81}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Sequential information extraction evaluation}{81}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Independent information extraction evaluation}{82}{subsection.6.4.2}
-\contentsline {subsubsection}{Independent panel extraction evaluation}{82}{section*.112}
-\contentsline {subsubsection}{Independent balloon extraction evaluation}{82}{section*.113}
-\contentsline {subsubsection}{Independent text extraction evaluation}{82}{section*.114}
-\contentsline {subsection}{\numberline {6.4.3}Knowledge-driven analysis evaluation}{82}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Global evaluation}{82}{subsection.6.4.4}
-\contentsline {section}{\numberline {6.5}Conclusions}{82}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusions}{83}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary and contributions}{83}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future perspectives}{83}{section.7.2}
-\contentsline {chapter}{Bibliography}{89}{section*.119}
+\contentsline {subsection}{\numberline {6.2.4}Ground truth quality assessment}{79}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3}Metrics}{82}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Object localisation}{82}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Tail detection}{82}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Semantic links and text recognition}{82}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Evaluation}{82}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Sequential information extraction evaluation}{82}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Independent information extraction evaluation}{83}{subsection.6.4.2}
+\contentsline {subsubsection}{Independent panel extraction evaluation}{83}{section*.112}
+\contentsline {subsubsection}{Independent balloon extraction evaluation}{83}{section*.113}
+\contentsline {subsubsection}{Independent text extraction evaluation}{83}{section*.114}
+\contentsline {subsection}{\numberline {6.4.3}Knowledge-driven analysis evaluation}{83}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Global evaluation}{83}{subsection.6.4.4}
+\contentsline {section}{\numberline {6.5}Conclusions}{83}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusions}{85}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary and contributions}{85}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future perspectives}{85}{section.7.2}
+\contentsline {chapter}{Bibliography}{91}{section*.119}

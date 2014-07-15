@@ -560,46 +560,75 @@ The pixel-level balloon and the comic characters visual annotation have been car
 
 \section{Metrics} % (fold)
 \label{sec:ex:metrics}
+The contribution of this thesis are from different nature that needs to be evaluated separately using appropriate metrics.
+Object localisation developments are evaluated using the commonly used recall and precision metrics and other contribution are evaluated using accuracy.
+
 \subsection{Object localisation} % (fold)
-\label{sub:object_localisation}
+\label{sub:ex:object_localisation_metric}
 
 
 % paragraph metrics (end)
 We evaluate the different extractions in terms of object bounding boxes such as the PASCAL VOC challenge~\cite{everingham2010pascal}.
 The detections are assigned to ground truth objects and judged to be true or false positives by measuring bounding box overlap.
-To be considered a correct detection, the overlap ratio $a_0$ between the predicted bounding box $B_p$ and the ground truth bounding box $B_{gt}$ (see formula~\ref{eq:overlap_ratio}) must exceed 0.5.
-The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or false positive $FP$ else.
+To be considered a correct detection, the overlap ratio $a_0$ between the predicted bounding box $B_p$ and the ground truth bounding box $B_{gt}$ (see formula~\ref{eq:ex:overlap_ratio}) must exceed 0.5.
+The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or false positive $FP$ (prediction errors).
 
 \begin{equation}
-\label{eq:overlap_ratio}
+\label{eq:ex:overlap_ratio}
   a_0 = \frac{area(B_p \cap B_{gt})}{area(B_p \cup B_{gt})}
 \end{equation}
 
-Detections output by a method are assigned to ground truth objects satisfying the overlap criterion ranked by the confidence output (decreasing).
+Detections returned by a method are assigned to ground truth objects satisfying the overlap criterion ranked by the confidence output (decreasing).
 Multiple detections of the same object in an image are considered false detections (e.g. 5 detections of a single object counted as 1 correct detection and 4 false detections).
 
-The number $TP$ and $FP$ was used to compute the recall $R$ and the precision $P$ of each the methods using formula~\ref{eq:recall} and~\ref{eq:precision}.
+The number $TP$, $FP$ and false negative (missed elements) $FN$ was used to compute the recall $R$ and the precision $P$ of each the methods using formula~\ref{eq:recall} and~\ref{eq:precision}.
 We also compute the F-measure $F$ for each result.
 
 \begin{equation}
 \label{eq:recall}
   R = \frac{TP}{TP + FN}
 \end{equation}
-where $FN$ is the number of false negative (missed elements).
+% where $FN$ is the number of false negative (missed elements).
 
 \begin{equation}
 \label{eq:precision}
   P = \frac{TP}{TP + FP}
 \end{equation}
-where $FP$ is the number of false positives (prediction errors).
+% where $FP$ is the number of false positives (prediction errors).
 
 % subsection object_localisation (end)
 \subsection{Tail detection} % (fold)
 \label{sub:ex:tail_detection}
+We evaluated the proposed tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014''.
+% In the ground truth, some balloons do not have a tail but we did not remove them as the proposed method can also detect when there is no tail and return a correct answer.
+
+Tail tip and tail direction are not surfaces, therefore they can not be evaluated using recall and precision metrics presented Section~\ref{sub:ex:object_localisation_metric}.
+%+For this particular case, we redefine the recall and precision by measuring the Euclidean distance between the detected tip and its ground truth (recall) and the direction error (precision).
+We define two accuracy metrics $A_{tailTip}$, the accuracy of the predicted position of the tail tip and $A_{tailDir}$ the accuracy of the tail direction prediction.
+The Euclidean distance $d_0$ between the predicted position of the tip and its ground truth was measured relative to balloon size (Formula~\ref{eq:ex:accuracy_tailtip}).
+Note that we consider incorrect the predicted positions at a distance $d_0$ superior to the balloon size ($A_{tailTip} < 0$). 
+
+\begin{equation}
+\label{eq:ex:accuracy_tailtip}
+  A_{tailTip} = 1 - \frac{d_0}{0.5 * (B_{width} + B_{height})}
+\end{equation}
+where $B_{width}$ and $B_{height}$ correspond to the balloon width and height respectively.
+ % as follow $A_{tailTip} = 1 - d_0/ (B_{width} + B_{height})/2 )$.
+
+The direction accuracy $A_{tailDir}$ was measured according to the distance $d_1$ within the eight cardinal coordinate sequences defined in Section~\ref{tab:se:offset_panel_corner}: $A_{tailDir}=1-d_1/8$.
+For instance if the detected direction was $S$ (south) and the ground truth was $SE$ (south-east) then $d_1=1$.
+Note that our method can also detect when there is no tail on the balloon contour $C_{tail}=0.0\%$ (confidence equal to zero percent); in this case $A_{tailTip}=A_{tailDir}=100\%$ if there was effectively no tail to detect or $A_{tailTip}=A_{tailDir}=0\%$.
+For this experiment, the local window size $M$ of the tail direction process was set to 10\% of the mean balloon size (Equation~\ref{eq:se:mean_balloon_size}) in order to be invariant to the image definition.
 
 % subsection tail_detection (end)
+
 \subsection{Semantic links and text recognition} % (fold)
 \label{sub:ex:semantic_links_and_text_recognition}
+
+The semantic links between speech text and speech balloon are called $STSB$ and the ones between speech balloon and speaking character $SBSC$; they characterise a dialogue.
+They are considered true or false according to their existence or not in the ground truth.
+We evaluated the semantic relations $STSB$ and $SBSC$ according to the metadata in the ground truth of the eBDtheque dataset~\cite{Guerin2013} called \emph{isLineOf} and \emph{isSaidBy}, which represent 3427 and 880 relations respectively.
+We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percentage of correct prediction of semantic links.
 
 % subsection semantic_links_and_text_recognition (end)
 
@@ -609,16 +638,101 @@ where $FP$ is the number of false positives (prediction errors).
 
 \section{Evaluation} % (fold)
 \label{sec:ex:evaluation}
+
+In this chapter we evaluate the contributions of the thesis at different levels.
+We first evaluate the sequential, independent and knowledge-driven approaches separately and then we compare them in the global evaluation section.
+
 \subsection{Sequential information extraction evaluation} % (fold) %IJDAR
 \label{sub:ex:sequential_information_extraction_evaluation}
-We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
+
+
+\subsubsection{Sequential panel extraction evaluation} % (fold)
+\label{sub:ex:sequential_panel_extraction_evaluation}
+% We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
+
+% subsection sequential_panel_extraction_evaluation (end)
+
+
+\subsubsection{Sequential balloon and tail extraction evaluation} % (fold)
+\label{sub:ex:sequential_balloon_extraction_evaluation}
+
+
+
+\subsubsection{Sequential text extraction evaluation} % (fold)
+\label{sub:ex:sequential_text_extraction_evaluation}
+
 
 % subsection sequential_information_extraction_evaluation (end)
+
+\subsubsection{Sequential comic character extraction evaluation} % (fold)
+\label{ssub:sequential_comic_character_extraction_evaluation}
+
+% subsection sequential_comic_character_extraction_evaluation (end)
+
 \subsection{Independent information extraction evaluation} % (fold) %IJDAR
 \label{sub:ex:independent_information_extraction_evaluation}
+TODO
 
 \subsubsection{Independent panel extraction evaluation} % (fold)
 \label{sub:ex:independent_panel_extraction_evaluation}
+We evaluated our method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
+Assuming that a panel is a big region, we ignored the panel detection with a area lower than 4\% ($minAreaFactor$) of the page area according to a validation on the eBDtheque dataset.
+% table~\ref{tab:minAreaFactor_validation}.
+
+%Those heuristics have been chosen very large to filter out aberrant regions such as very small region and page border.
+
+Table~\ref{tab:panel} presents the average results we obtained compared to our previous method~\cite{Rigaud2012LNCS} and a method from the literature~\cite{Arai11}.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+%\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Panel extraction results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)     \\
+          \hline
+          Arai~\cite{Arai11}   & 58.03       & 75.30    & 65.55    \\
+          \hline
+          Rigaud~\cite{Rigaud2012LNCS}   & 78.02       & 73.17   & 75.52     \\
+          \hline
+          Proposed   & 81.24     & 86.55     & 83.81      \\
+          \hline
+          Proposed + validation   & 80.69     & 87.03     & 83.74      \\
+          \hline
+           % TOTAL   & 93.4    & 92.8          \\
+          % \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:panel}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%TODO: re evaluate Arai's result from his method (still waiting for is email 2014-07-01)
+
+The proposed panel extraction based on connected component analysis is simple to implement, and is a fast and efficient method for comics with disconnected panels (separated by a white gutter).
+The validation by the expert system was not significant here because the low level processing had already reached the limits of the model.
+Figure~\ref{ap:panel_extraction} shows the details for each image tested, which were mainly comics with gutters.
+% The proposed method is not appropriate for gutterless comics such as ``INOUE'' or strip without panel border such as ``MONTAIGNE'' or a extra frame around several panels (``SAINTOGAN\_PROSPER'').
+
+\begin{figure}
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Panel extraction score details for each image of the eBDtheque dataset.
+ }
+ \label{ap:panel_extraction}
+\end{figure}
+
+Our method is not appropriate for gutterless comics (e.b. some mangas) or strip without panel borders such as those with an extra frame around several panels.
+
+Another weakness is when panels are connected by other elements.
+This experiment was performed in 28 seconds for the whole dataset using one CPU at 2.5GHz (0.05s per panel on average).
+Note that some of the dataset images were digitized with a dark background surrounding the cover of the book.
+We automatically remove this by cropping the image where a panel with an area $>$ 90\% of the page area was detected.
 
 % subsection independent_panel_extraction_evaluation (end)
 
@@ -626,10 +740,232 @@ We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cit
 \subsubsection{Independent balloon extraction evaluation} % (fold)
 \label{sub:ex:independent_balloon_extraction_evaluation}
 
+We evaluated our method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level, which includes the tail.
+Note that our method does not require any previous processing, in contrast to~\cite{rigaud2013active} and it is able to detect closed balloons only.
+In the eBDtheque ground truth, only 84.5\% of the balloons are closed and 15.5\% are not.
+Thus we did not expect to reach 100\% recall and precision.
+
+
+The minimum number of children $minNbChildren$ of a balloon was set to 8, just before the first peak in the distribution of the number of letters per speech balloon in the eBDtheque dataset~\cite{Guerin2013} (Figure~\ref{fig:ex:min_number_children_validation}).
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[trim= 10px 0px 60px 0px, clip, width=0.38\textwidth]{number_of_letter_per_balloon.pdf}
+      \caption{Distribution of the number of letter per speech balloon.
+      }
+      \label{fig:ex:min_number_children_validation}
+    \end{figure}  
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons bellow the selected threshold that contain one or two letters, usually punctuation marks.
+%such as ``?'' or ``!''. 
+We voluntary omitted them here to avoid detecting a lot of non balloon regions.
+
+Balloons with a confidence value $C_{balloon}$ lower than 10\% were rejected according to the validation experiments on the eBDtheque dataset~\cite{Guerin2013}.
+ % table~\ref{tab:balloon_confidence_validation}.
+
+Table~\ref{tab:balloon} shows the average results for the one hundred images of the dataset.
+We also compare to a state of the art method from the literature~\cite{Arai11} and our previous work~\cite{rigaud2013active} based on the best results we had obtained for text localisation (Table~\ref{tab:text_results}).
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+%\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Balloon extraction results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)   \\
+          \hline
+          Arai~\cite{Arai11}   & 6.66       & 10.98   & 8.29     \\
+          \hline
+          %Rigaud~\cite{rigaud2013active} based on GT & 70       & 50     & ?   \\
+          Rigaud~\cite{rigaud2013active} & 46.13       & 17.44     & 25.31   \\
+          \hline
+          Proposed   & 57.90       & 73.84      & 64.91     \\
+          \hline
+          Proposed + validation  & 54.79       & 88.76      & 67.75     \\
+          \hline
+
+          % TOTAL   & 93.4    & 92.8          \\
+          % \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:balloon}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%TODO: update Arai's results with is results
+%TODO: I can't find the data for Rigaud~\cite{rigaud2013active}, re evaluation is needed
+
+Our method outperforms~\cite{Arai11} thanks to its genericity, since it can process all the image styles of the eBDtheque dataset.
+This was expected as~\cite{Arai11} was specifically developed for manga comics that have certain stylistic particularities.
+We also surpassed our previous method~\cite{rigaud2013active} because it needs text lines as input which were given in our proposed text extraction method (Section~\ref{sub:text_extraction}).
+Here we clearly see the limitations of dependency between the processing.
+The performance of our text extractor was 49.75\% (Table~\ref{tab:text_results}) which was used as input for balloon extraction so the balloon extraction~\cite{rigaud2013active} was inevitably affected.
+The validation of the expert system once again improve the precision but decreased the recall of the extraction while improving the overall f-measure by almost 3\%.
+The drop in recall was due to the balloons that were correctly extracted but which contained no detectable.
+%Nevertheless, the proposed method does not beat our previous method~\cite{rigaud2013active} that is also able to extract non closed balloons from text regions (from the ground truth here).
+Figure~\ref{fig:text_extraction_detail} confirms that our method works best when the balloons are closed, well segmented and with non cursive text inside.
+This experiment was performed in 22 minutes for the whole dataset using one CPU at 2.5GHz (2.2s per balloon on average).
+
 
 
 \subsubsection{Independent text extraction evaluation} % (fold)
 \label{sub:ex:independent_text_extraction_evaluation}
+We evaluated our method for text extraction on the 4667 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
+% according with $th_0=0.5$. % to equation~\ref{eq:recall}.
+
+%We also evaluated the transcription considering as correct the text line with an edit distance $<$ 3 compared to the ground truth.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+    \centering
+    \caption{Text localisation results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
+          % \hline
+          % Before validation   & ?   & ?           \\
+          \hline
+          Rigaud~\cite{Rigaud2013VISAPP}  & 61.00   & 19.66    & 29.75       \\
+          \hline
+          Proposed (\cite{Rigaud2013VISAPP}+OCR)  & 60.13   & 42.43   & 49.75        \\
+          \hline
+          Proposed + validation   & 44.54     & 65.05     & 52.88      \\
+          % \hline
+          %Proposed (\cite{Rigaud2013VISAPP}+OCR+$ST$ only)  & ?   & ?   & ?        \\
+          % \hline
+          % Proposed (OCR transcription)  & ?   & ?           \\
+          \hline
+        \end{tabular}
+    \label{tab:text_results}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
+Here we applied it to the whole dataset.
+We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
+The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
+The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
+% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
+As in~\cite{Rigaud2013VISAPP}, this method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
+
+We also evaluated text transcription using string edit distance~\cite{wagner1974string} between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth. % $T_{gr}$.
+The eBDtheque dataset is composed of English, Japanese and French texts.
+We evaluated the subset of English and French pages using the OCR with the corresponding training data\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}. % corresponding to the language defined in the ground truth of each image of the dataset.
+This was performed at the text line level taking as correct the text lines that were transcribed exactly as the ground truth transcription, considering all the letters as lower case and ignoring accents (for predicted and ground truth regions).
+% with a edit distance $<$ 10\% of their length using equation~\ref{eq:recall} and~\ref{eq:precision}.
+%For instance a recognised text line of ten elements will be considered as correct if less than three are split, deleted, transposed, replaced or inserted. 
+We obtained a score of 7.18\% accuracy which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
+We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy improved to 10.46\%.
+The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[trim= 100px 130px 120px 120px, clip, width=0.45\textwidth]{number_of_letter_per_textline.pdf}
+      \caption{Distribution of the number of letter per text lines.
+      }
+      \label{fig:textline_lenth_distribution}
+    \end{figure}  
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Note that in Figure~\ref{fig:textline_lenth_distribution}, there are more than a hundred text lines of only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
+
+\subsubsection{Independent comic character extraction evaluation} % (fold)
+\label{ssub:independent_comic_character_extraction_evaluation}
+We evaluated the detection of comic characters on the 1550 characters of the eBDtheque dataset, given the input information from the ground truth (panel, balloon, tail position and tail direction).
+In the eBDtheque ground truth, only 880 (56.8\%) of the character instances are speaking (and 43.3\% are not), thus we did not expect to reach 100\% recall and precision here because our method is able to detect only speaking characters.
+Similarly to the other extractions, the overlapping ratio between a predicted character region and a region from the ground truth should be above 50\% ($a_0>0.5$) for the predicted region to be considered as valid (true positive).
+An example of valid and rejected regions is shown on Figure~\ref{fig:characters_overlap_ratio}. %, at level of object using equation
+%  with $th_0=0.2$.
+%Here we set $th_0=0.2$ (not 0.5) in order to accept prediction of the comic character location even if they are only partial, see figure~\ref{fig:characters_overlap_ratio}.
+  %to equation~\ref{eq:recall}.
+%In the eBDtheque dataset~\cite{Guerin2013}, ??\% of the characters are in an image where there are no  
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[trim= 0mm 0mm 190mm 0mm, clip, width=0.35\textwidth]{characters_overlap_ratio.png}
+      \caption{Example of predicted region (hypothesis of ROI) considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$. Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$. Best viewed in colour.}
+      \label{fig:characters_overlap_ratio}
+    \end{figure}  
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The cumulative results are presented in Table~\ref{tab:eval_characters} which shows the performance of two steps of the process:
+\begin{itemize}
+  \item [a)] Hypothesis of ROI from Section~\ref{sub:hypo_roi} (A)
+  \item [b)] Character extraction from Section~\ref{sub:character_extraction} (B)
+  \item [c)] Character extraction validation from Section~\ref{sub:validation} (C)
+  % \item [c)] Character spotting (see section~\ref{sub:character_extraction})
+\end{itemize}
+%for the hypothesis of ROI of characters ($a$) corresponding to section~\ref{sub:hypo_roi}, the query pre processing ($b$) corresponding to section~\ref{pa:query_pre_processing} and the character spotting ($c$) of section~\ref{sub:character_extraction}.% and figure~\ref{fig:overlap_ratio_evolution}.
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+%\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Character localisation results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)  \\
+          % \hline
+          % Before validation   & ?   & ?           \\
+          \hline
+          %Proposed (ROI)   & 70   & 49           \\
+          A (hypothesis)   & 19.28   & 26.91    & 22.47      \\
+          \hline
+          %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
+          A + B (+ extraction) & 23.31 & 33.55 & 27.51 \\
+          % \hline
+          % %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
+          % $a + b + c$  & \modifc{?} & \modifc{?} & ? \\
+          \hline
+          A + B + C (+ validation)   & 21.57   & 40.52    & 28.16      \\
+          \hline
+          % TOTAL   & 93.4    & 92.8          \\
+          % \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:eval_characters}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+    %   \centering
+    %   \includegraphics[width=200px]{fig/overlap_ratio_evolution.pdf}
+    % \caption{Score evolution according to overlap ratio. Black lines represent the score for $a_0=0.5$ as given in table~\ref{tab:eval_characters}.}
+    % \label{fig:overlap_ratio_evolution}
+    % \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As shown on Figure~\ref{fig:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
+The numbers in Table~\ref{tab:eval_characters} are given for the whole dataset including the characters that are not speaking.
+If we focus on the subset of 880 speakers, the recall, precision and f-measure were 34.49\%, 32.02\% and 33.21\% respectively.
+
+% ssubsection independent_comic_character_extraction_evaluation (end)
 
 % subsection independent_information_extraction_evaluation (end)
 \subsection{Knowledge-driven analysis evaluation} % (fold) %IJDAR

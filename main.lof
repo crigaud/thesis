@@ -74,4 +74,8 @@
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Annotation rendering in a browser}}{78}{figure.caption.109}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Distance to the mean position}}{80}{figure.caption.110}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Error measurement image}}{81}{figure.caption.111}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset. \relax }}{85}{figure.caption.118}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Distribution of the number of letter per speech balloon. \relax }}{85}{figure.caption.120}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Distribution of the number of letter per text lines. \relax }}{87}{figure.caption.124}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Example of predicted region (hypothesis of ROI) considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$. Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$. Best viewed in colour.\relax }}{88}{figure.caption.126}
 \addvspace {10\p@ }

@@ -4,40 +4,47 @@
 \graphicspath{{./chapters/6-experiments/figs/}}
 
 
-\modif{TODO add total number of annotated elements for each category and report the diversity of style, format, publishing from the IJDAR paper}
+% \modif{TODO add total number of annotated elements for each category and report the diversity of style, format, publishing from the IJDAR paper}
 
 % Abstract-----------------------------------------------------
-In this chapter we propose and detail the construction of the first publicly available comics image dataset and ground truth.
-The comics images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that had the objective to foster innovation in this domain trough academic research.
-The ground truth is defined in accordance to existing formalism in order to fulfil the needs of a large amount of researchers related to comics material.It integrates low and high level information such as the spatial position of the elements in the image, their semantic links and also bibliographic information.
+With the analysis and processing of data comes the need of the output results evaluation.
+Traditionally, this evaluation is made by validating the results of an algorithm with a ground truth that represents what an ideal output should be\cite{pascal-voc-2012, smeaton2006evaluation, griffinHolubPerona}.
+Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm to the community \cite{lamiroy:inria-00537035}.
+This can be applied to any kind of results from image segmentation to classification or information retrieval.
+In this chapter we present the dataset and ground truth we provide to evaluate comic book image related works.
+We describe the metrics we use to evaluate our each contribution and finally compare our work to previous approaches from the literature.
 
-TODO
+% \section{Introduction} % (fold)
+% \label{sec:ex:introduction}
 
-\section{Introduction} % (fold)
-\label{sec:ex:introduction}
-
-TODO
+% TODO
 
 % section introduction (end)
 
 \section{Dataset and ground truth construction} % (fold)
 \label{sec:dataset_and_ground_truth_construction}
 
-
-With the analysis and processing of data comes the need of the output results evaluation.
-Traditionally, this evaluation is made by validating the results of an algorithm with a ground truth that represents what an ideal output should be\cite{pascal-voc-2012, smeaton2006evaluation, griffinHolubPerona}.
-Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm to the community \cite{lamiroy:inria-00537035}.
-This can be applied to any kind of results from image segmentation to classification or information retrieval.
 Being in need of comic books material and an associated ground truth to evaluate our work, we noticed that there is not such dataset publicly available for scientific purpose. 
 Therefore, we decided to gather the first publicly available comic books dataset in association with several comic books authors and publishers and to build up the corresponding ground truth according to document analysis and understanding concerns.% which are image segmentation and semantic analysis.
+The comic book images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that had the objective to foster innovation in this domain trough academic research (Figure~\ref{fig:ex:comics_diversity}).
 
-It took almost one year to define which type of comics to use, meet and convince comics authors and publishers, get copyright authorizations for the scientific community, develop a specific annotation tool and finally to hire people to do the ground truth.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[trim= 4px 0px 0px 0px, clip, width=230px]{comics_diversity.png}
+  \caption{Examples of comic panels that reflect the diversity of comic books of the dataset.}
+  \label{fig:ex:comics_diversity}
+ \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It took almost one year to define which type of comics are the most interesting for researchers, meet and convince comic book authors and publishers, get copyright authorizations for the scientific community, develop a specific annotation tool and finally to hire people to do the ground truth (manual task).
 
 A selection of hundred comic pages were annotated in one day by twenty volunteers affiliated to the L3i lab.
-In order to provide a common basis for evaluating research work, the ground truth have been published in 2013~\cite{Guerin2013} and made available to the scientific community via the project website~\footnote{http://ebdtheque.univ-lr.fr}.
-It has been enhanced in 2014 by adding semantic information to the already annotated elements.
+In order to provide a common basis for evaluating research work, the ground truth have been published in 2013~\cite{Guerin2013} and made available to the scientific community through a dedicated website\footnote{\url{http://ebdtheque.univ-lr.fr}}.
+It has been enriched in 2014 by adding semantic information to the already annotated elements.
 
-The content of the dataset, the ground truth construction protocol and its quality assessment are detailed in the next section.
+The content of the dataset and its terms of use, the ground truth construction protocol and its quality assessment are detailed in the four next sub sections.
 
 
 
@@ -60,14 +67,14 @@ The remaining 54 images were selected from webcomics, public domain comics\footn
 We encoded all the images of the eBDtheque dataset in Joint Photographic Experts Group (JPEG) format with a lossy compression to facilitate file exchange.
 %, the non compressed images are available on request.
 
-Hereafter we describe the characteristics of the selected albums and their content.
+Hereafter we describe the characteristics of the selected pages and their content.
 
 
 \paragraph{Albums} % (fold)
  \label{par:albums}
  published between 1905 and 2012.
  29 pages were published before 1953 and 71 after 2000.
- Quality paper, colour saturation and textures related to printing technique changes can vary a lot from one page to another.
+ Quality paper, colour saturation and textures related to printing technique changes can vary a lot from one image to another.
  The artworks are mainly from France (81\%), United States (13\%) and Japan (6\%).
  Their styles varies from classical Franco-Belgium ``bandes dessinées'' to Japanese manga through webcomic and American comics.
 
@@ -107,7 +114,7 @@ There is text without any surrounding balloons on 33 images of the corpus.
 \paragraph{Text} % (fold)
 \label{par:text}
  is either typewritten (61\% of the image) or handwritten, mainly upper-case.
-The text lines contains 12 elements in average (see figure~\ref{fig:gt:textline_lenth_distribution}) and there are more than hundred text lines that are composed by only one letter which are punctuation or single letter words such as ``I'' or ``A''.
+The text lines contains 12 elements in average (Figure~\ref{fig:ex:textline_lenth_distribution}) and there are more than hundred text lines that are composed by only one letter which are punctuation or single letter words such as ``I'' or ``A''.
 
 Most pages are from French artworks, where the text is written in French.
 Only 13 pages contain English text and 6 images are in Japanese.
@@ -119,7 +126,7 @@ Onomatopoeia appears in 18 pages.
       \includegraphics[trim= 100px 130px 120px 120px, clip, width=0.65\textwidth]{number_of_letter_per_textline.pdf}
       \caption{Distribution of the number of elements per text lines.
       }
-      \label{fig:gt:textline_lenth_distribution}
+      \label{fig:ex:textline_lenth_distribution}
     \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -150,6 +157,10 @@ The concerned request form requires the identity, affiliation, address and inten
 
 \subsection{Ground truth construction} % (fold)
 \label{sec:ground_truth_construction}
+
+The ground truth has been defined in accordance to existing formalism in order to fulfil the needs of a large amount of researchers related to comics material.
+It integrates low and high level information such as spatial position of the elements in the image, their semantic links and also bibliographic information.
+
 In order to cover a wide range of possible research matters, it has been decided to extract three different type of objects from the corpus: text lines, balloons and panels.
 We decided to do this first ground truth by drawing horizontal bounding boxes as close as possible from the feature and including all its pixels.
 % in order to proceed a maximum of pages in the allowed time. 
@@ -180,7 +191,7 @@ There is always at least one panel per page, the entire page region can be used 
 When a panel has a black border, the bounding box is placed as close as possible to its frame.
 Sometimes, images have not been scanned perfectly horizontally, it is then impossible to have an horizontal bounding box sticking exactly to the border.
 When the panel border is partially absent or suggested by the neighbourhood, the bounding box just defines the content of the panel.
-In all cases, the other elements (balloon, text, drawings) extending from the frame are truncated, see figure~\ref{fig:gt:segPanel}.
+In all cases, the other elements (balloon, text, drawings) extending from the frame are truncated (Figure~\ref{fig:gt:segPanel}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
@@ -204,9 +215,9 @@ In all cases, the other elements (balloon, text, drawings) extending from the fr
 We define a balloon (phylactery or bubble) as the region of an image including one or several lines of text, graphically defined by an identifiable physical boundary or suggested by the presence of an arrow pointing to the speaker (the tail).
 Although rare, empty balloons (not containing lines of text) are also annotated if they are clearly identifiable by their shape or
 the tail representation.
-Pixel level annotation follows the contour of the balloon (see figure~\ref{fig:gt:segBalloons}c), while bounding box annotation does not consider the contour of phylactery and truncates the tail.
-Sometimes it crosses the entire panel and generates an unrepresentative position of the desired balloon (see figure~\ref{fig:gt:segBalloons}a).
-When the balloon is not closed (e.g. open contour) the annotated contour has to stick as close as possible to the contained text (see figure~\ref{fig:gt:segBalloons}b).
+Pixel level annotation follows the contour of the balloon (Figure~\ref{fig:gt:segBalloons}c), while bounding box annotation does not consider the contour of phylactery and truncates the tail.
+Sometimes it crosses the entire panel and generates an unrepresentative position of the desired balloon (Figure~\ref{fig:gt:segBalloons}a).
+When the balloon is not closed (e.g. open contour) the annotated contour has to stick as close as possible to the contained text (Figure~\ref{fig:gt:segBalloons}b).
 Note, the first version of the ground truth (2013) have been defined at bounding box level ignoring the tail and the second version (2014) at pixel level following the contour variations and the tail region.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
@@ -229,13 +240,13 @@ c) \includegraphics[width=80px]{segBalloon3.png}
 
 \paragraph{Text lines} % (fold)
 \label{par:text_lines}
-The text lines are defined as a sequence of text characters aligned in the same direction (see figure~\ref{fig:gt:segLines}a).
+The text lines are defined as a sequence of text characters aligned in the same direction (Figure~\ref{fig:gt:segLines}a).
 This definition encompasses both speech texts and narrative text, often located inside balloon, onomatopoeia (graphic sound) that are written or drawn directly in the panel without particular container.
 %The text of the latter, although they are occasionally parallel to the edges of the box is still clipped by a horizontal bounding box for consistency across the ground truth.
 Comics are static graphics, the expression of emotions of a comic character is the joint action of drawing and text, sometimes in the form of a single punctuation symbol.
 For instance, an exclamation mark for surprise or a question mark for a misunderstanding.
-These isolated symbols convey information and are segmented as text line as well (see figure~\ref{fig:gt:segLines}b).
-Similarly, we have chosen to include in this category the illustrative text, such as a road sign or storefront (see figure~\ref{fig:gt:segLines}c).
+These isolated symbols convey information and are segmented as text line as well (Figure~\ref{fig:gt:segLines}b).
+Similarly, we have chosen to include in this category the illustrative text, such as a road sign or storefront (Figure~\ref{fig:gt:segLines}c).
 Although at the boundary between text and graphic, these elements are still invariably read by the reader and their annotation is potentially interesting for multiple purposes, including story and scene analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
@@ -264,7 +275,7 @@ Characters in a comic have not necessarily a human-like, or even living beings a
 Even so, it would be appropriate to annotate every human being appearing in a box while some are nothing but a part of the scenery.
 Therefore, we have chosen to limit the annotation to the comic characters that emits at least one speech balloon in the album (minimal impact in the story).
 Their bounding box has been defined to maximize the region occupied by the comic character inside the box region.
-Therefore, some parts of the character such as arms or legs, are clipped sometimes (see figure~\ref{fig:gt:segCharater}).
+Therefore, some parts of the character such as arms or legs, are clipped sometimes (Figure~\ref{fig:gt:segCharater}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
@@ -286,6 +297,8 @@ Therefore, some parts of the character such as arms or legs, are clipped sometim
 This second level of annotation complete each spacial region with additional information about its semantic.
 Also, the image itself is annotated with extra information about its origin (e.g. album, collection, author, publisher).
 %Once segmented, each object is annotated with a set of predefined metadata as follows. 
+
+TODO describe metadata attribute \emph{relatedTo}
 
 \paragraph{Images}
 The image, often assimilated as pages, has been annotated with bibliographical information, so that anyone using this ground truth is free to get is own paper copy of the comic books for extra uses.
@@ -353,7 +366,7 @@ The comic character are identified by \texttt{{idCharacter}} in order to be easi
 \subsubsection{File structure} % (fold)
 \label{sub:file_structure}
 
-The ground truth file structure have been thought according to comics related formalism such as Comics Markup Language (ComicsML)~\cite{McIntosh2011}, Comic Book Markup Language (CBML)~\cite{Walsh2012a}, Periodical Comics\footnote{\url{http://www.w3.org/wiki/WebSchemas/PeriodicalsComics}}, A Comics Ontology~\cite{Rissen2012}, Advanced Comic Book Format (ACBF)\footnote{\url{https://launchpad.net/acbf}} and the Grand Comics Database (GCD)\footnote{\url{http://www.comics.org}}.
+The ground truth file structure have been thought according to existing comics related formalism such as Comics Markup Language (ComicsML)~\cite{McIntosh2011}, Comic Book Markup Language (CBML)~\cite{Walsh2012a}, Periodical Comics\footnote{\url{http://www.w3.org/wiki/WebSchemas/PeriodicalsComics}}, A Comics Ontology~\cite{Rissen2012}, Advanced Comic Book Format (ACBF)\footnote{\url{https://launchpad.net/acbf}} and the Grand Comics Database (GCD)\footnote{\url{http://www.comics.org}}.
 See the Ph.D. thesis of Gu{\'e}rin~\cite{phdthesisGuerin14} for an extended review.
 
 As we wanted to keep the ground truth file system simple and easy to share, visual and semantic annotations about a given page are gathered in a single full-text file following the specifications of Scalable Vector Graphics (SVG). 
@@ -362,7 +375,7 @@ Besides being an open-standard developed by the World Wide Web Consortium (W3C) 
 First, using a recent Internet browser or your favourite image viewer, it provides a simple, fast and elegant way to display the visual annotation of any desired object over a comic book page using layers.
 No need to install software such as Matlab, Adobe Illustrator or equivalent open source to visualize the ground truth information.
 
-It is XML-based vector image format that allows to display an animate the annotated region, stored as polygon object in the SVG file, as desired using the Cascading Style Sheets (CSS) properties, see figure~\ref{fig:gt:svgImage}. 
+It is XML-based vector image format that allows to display an animate the annotated region, stored as polygon object in the SVG file, as desired using the Cascading Style Sheets (CSS) properties (Figure~\ref{fig:gt:svgImage}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -541,7 +554,7 @@ However, such mistakes have been manually corrected before publishing the ground
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{segDifference.png}
-\caption[Error measurement image]{Error measurement page. Red hatched areas are the difference between areas labelled as panels by at least one person, and areas labelled by everybody. Image credit:~\cite{Bubble09}.}
+\caption[Image used for ground truth quality assessment]{Image used for error measurement. Red hatched areas are the difference between areas labelled as panels by at least one person and areas labelled by everybody. Image credit:~\cite{Bubble09}.}
 \label{fig:gt:diffVT}
 \end{center}
 \end{figure}
@@ -615,23 +628,29 @@ Note that we consider incorrect the predicted positions at a distance $d_0$ supe
 where $B_{width}$ and $B_{height}$ correspond to the balloon width and height respectively.
  % as follow $A_{tailTip} = 1 - d_0/ (B_{width} + B_{height})/2 )$.
 
-The direction accuracy $A_{tailDir}$ was measured according to the distance $d_1$ within the eight cardinal coordinate sequences defined in Section~\ref{tab:se:offset_panel_corner}: $A_{tailDir}=1-d_1/8$.
+The direction accuracy $A_{tailDir}$ was measured according to the distance $d_1$ within the eight cardinal coordinate sequences defined in Section~\ref{tab:se:offset_panel_corner}: $A_{tailDir}=1-d_1/8$ \modif{DOUBLE CHECK}.
 For instance if the detected direction was $S$ (south) and the ground truth was $SE$ (south-east) then $d_1=1$.
 Note that our method can also detect when there is no tail on the balloon contour $C_{tail}=0.0\%$ (confidence equal to zero percent); in this case $A_{tailTip}=A_{tailDir}=100\%$ if there was effectively no tail to detect or $A_{tailTip}=A_{tailDir}=0\%$.
 For this experiment, the local window size $M$ of the tail direction process was set to 10\% of the mean balloon size (Equation~\ref{eq:se:mean_balloon_size}) in order to be invariant to the image definition.
 
 % subsection tail_detection (end)
 
-\subsection{Semantic links and text recognition} % (fold)
-\label{sub:ex:semantic_links_and_text_recognition}
+\subsection{Semantic links} % (fold)
+\label{sub:ex:semantic_links}
 
 The semantic links between speech text and speech balloon are called $STSB$ and the ones between speech balloon and speaking character $SBSC$; they characterise a dialogue.
 They are considered true or false according to their existence or not in the ground truth.
 We evaluated the semantic relations $STSB$ and $SBSC$ according to the metadata in the ground truth of the eBDtheque dataset~\cite{Guerin2013} called \emph{isLineOf} and \emph{isSaidBy}, which represent 3427 and 880 relations respectively.
-We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percentage of correct prediction of semantic links.
+We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percentage of correctly predicted semantic links.
 
 % subsection semantic_links_and_text_recognition (end)
 
+\subsection{Text recognition} % (fold)
+\label{sub:text_recognition}
+Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{??} using commercial OCR systems on the eBDtheque dataset.
+We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth.
+
+% subsection text_recognition (end)
 % section metrics (end)
 
 % \section{Parameter validation}
@@ -639,33 +658,310 @@ We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percent
 \section{Evaluation} % (fold)
 \label{sec:ex:evaluation}
 
-In this chapter we evaluate the contributions of the thesis at different levels.
+We evaluate the contributions of the thesis at different levels.
 We first evaluate the sequential, independent and knowledge-driven approaches separately and then we compare them in the global evaluation section.
 
 \subsection{Sequential information extraction evaluation} % (fold) %IJDAR
 \label{sub:ex:sequential_information_extraction_evaluation}
 
+TODO
 
 \subsubsection{Sequential panel extraction evaluation} % (fold)
 \label{sub:ex:sequential_panel_extraction_evaluation}
 % We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 
+We evaluated our sequential panel extraction approach on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level and using the recall and precision metrics introduced Section~\ref{sec:ex:metrics}.
+The method presented Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method Section~\ref{sec:se:panel_and_text}.
+Note that the method also extract text region at the same time (Section~\ref{sub:ex:sequential_text_extraction_evaluation}) which does not interfere with panel.
+
+Table~\ref{tab:panel} presents the average results we obtained compared to a method from the literature~\cite{Arai11}.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+%\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Panel extraction results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)     \\
+          \hline
+          Arai~\cite{Arai11}   & \modif{58.03}       & \modif{75.30}    & \modif{65.55}    \\
+          \hline
+          Proposed   & \modif{78.02}       & \modif{73.17}   & \modif{75.52}     \\
+          \hline
+          % Proposed   & 81.24     & 86.55     & 83.81      \\
+          % \hline
+          % Proposed + validation   & 80.69     & 87.03     & 83.74      \\
+          % \hline
+           % TOTAL   & 93.4    & 92.8          \\
+          % \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:panel}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%TODO: re evaluate Arai's result from his method (still waiting for is email 2014-07-01)
+
+The proposed panel extraction based on connected component clustering is simple to implement, and is a fast and efficient method for comics with disconnected panels (separated by a white gutter).
+% The validation by the expert system was not significant here because the low level processing had already reached the limits of the model.
+% Figure~\ref{ap:panel_extraction} shows the details for each image tested, which were mainly comics with gutters.
+% The proposed method is not appropriate for gutterless comics such as ``INOUE'' or strip without panel border such as ``MONTAIGNE'' or a extra frame around several panels (``SAINTOGAN\_PROSPER'').
+
+% \begin{figure}
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Panel extraction score details for each image of the eBDtheque dataset.
+%  }
+%  \label{ap:panel_extraction}
+% \end{figure}
+
+This method is not appropriate for gutterless comics (e.b. some mangas) or strip without panel borders such as those with an extra frame around several panels.
+
+Another weakness is when panels are connected by other elements, they may not be split as desired but will remain clustered as panel anyway.
+
+This experiment was performed in \modif{??} seconds for the whole dataset using one CPU at 2.5GHz (\modif{??}s per panel on average).
+Note that some of the dataset images were digitized with a dark background surrounding the cover of the book.
+We automatically remove this by cropping the image where a panel with an area $>$ 90\% of the page area was detected.
+
 % subsection sequential_panel_extraction_evaluation (end)
-
-
-\subsubsection{Sequential balloon and tail extraction evaluation} % (fold)
-\label{sub:ex:sequential_balloon_extraction_evaluation}
-
 
 
 \subsubsection{Sequential text extraction evaluation} % (fold)
 \label{sub:ex:sequential_text_extraction_evaluation}
 
+We evaluated our method for text extraction on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+    \centering
+    \caption{Text localisation results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
+          % \hline
+          % Before validation   & ?   & ?           \\
+          \hline
+          Other? Stroke-based? Lluis?  & \modif{??}   & \modif{??}    & \modif{??}       \\
+          \hline
+          Proposed  & \modif{61.00}   & \modif{19.66}    & \modif{29.75}       \\
+          \hline
+          % Proposed (\cite{Rigaud2013VISAPP}+OCR)  & 60.13   & 42.43   & 49.75        \\
+          % \hline
+          % Proposed + validation   & 44.54     & 65.05     & 52.88      \\
+          % \hline
+          %Proposed (\cite{Rigaud2013VISAPP}+OCR+$ST$ only)  & ?   & ?   & ?        \\
+          % \hline
+          % Proposed (OCR transcription)  & ?   & ?           \\
+          % \hline
+        \end{tabular}
+    \label{tab:text_results}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
+% Here we applied it to the whole dataset.
+% We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
+% The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
+% The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
+% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
+
+TODO RESULT ANALYSIS
+
+This method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
+Nevertheless, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
+
+
 
 % subsection sequential_information_extraction_evaluation (end)
 
+
+\subsubsection{Sequential balloon and tail extraction evaluation} % (fold)
+\label{sub:ex:sequential_balloon_extraction_evaluation}
+Section~\ref{sec:from_text_to_balloon}, we presented two approaches for regular and implicit balloon extraction from text line positions.
+We evaluate the two approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
+We also evaluate the tail detection for each balloon extraction approaches.
+
+In the eBDtheque ground truth, 84.5\% of the balloons are closed and 15.5\% are not (implicit).
+Thus we do not expect to reach 100\% recall and precision for the regular balloon extraction because it is not designed for implicit balloons.
+One the other hand, implicit the balloon extraction method is able to extract closed balloon as well.
+
+\paragraph{Regular balloons} % (fold)
+\label{par:regular_balloons}
+
+% paragraph regular_balloon (end)
+Regular balloon extraction method (Section~\ref{sec:se:from_text_to_balloon}) attributes a confidence value $C_{balloon}$ to each balloon candidate according to the alignment of the text paragraphs it contains.
+The recall and precision scores are given Figure~\ref{fig:ex:regular_balloon_extraction} according to the confidence value $C_{balloon}$.
+We consider as correctly detected the balloon with a confidence value higher than \modif{90\%}.
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{figure_here.png}
+    \caption[Regular balloon extraction results]{Regular balloon extraction results.}
+    \label{fig:ex:regular_balloon_extraction}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\paragraph{Implicit balloons} % (fold)
+\label{par:implicit_balloons}
+
+We evaluated our different contributions separately. First
+we measured balloon localization performance at bounding
+box level to highlight the benefits of both active contour theory
+and domain specific knowledge. Second, we performed pixel
+level evaluation on a smaller subset to show the ability of our
+method to fit balloon contour details.
+
+In order to provide a comparative analysis we attempted comparison to the methods of Arai~\cite{Arai11} and Ho~\cite{Ho2012}, which are based on connected component detection and filtering. Unfortunately, direct comparison to these methods is not possible as Arai's approach~\cite{Arai11} is based on two rules specifically designed for Japanese manga comics with vertical text and Ho~\cite{Ho2012} is based on growing region segmentation which is not appropriate for open balloon detection neither.
+We also compared to the original active contour implementation proposed by Kass et al.~\cite{Kass1988} but because the initialization is not close enough to the edges, the internal energies make the snake retracts on itself.
+
+Therefore, we compare our results using three different scenarios.
+First with the regular balloon extraction method presented just above (1).
+% that considers as balloon any white connected components that overlaps at more than $10\%$ with text regions.
+Second, the active contour with the distance transform based external energy described section~\ref{sec:external_energie} (2) and third, we add the domain knowledge energy $E_{text}$ (3) from Section~\ref{sec:text_energie}.
+Results are presented in table~\ref{tab:ex:bal_loc}.
+For each method, we present two variants, one making use of ground truth localization for the text areas as seeds for balloon localization, and another making use the results of the automatic text localization method presented Section~\ref{sec:se:panel_and_text}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
+  \normalsize
+\renewcommand{\arraystretch}{1.3}
+% \extrarowheight as needed to properly center the text within the cells
+  \centering
+  \caption{Balloon localization recall and precision.}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+
+    & \multicolumn{3}{|c|}{Ground truth}  & \multicolumn{3}{|c|}{Automatic}   \\
+  \hline
+  Method  &  $ R$ (\%)  & $P$ (\%)& $F_1$   &  $R$ (\%)  & $P$ (\%)   & $F_1$\\
+%   \hline
+%   Ho~\cite{Ho2012}  & ???     & ???   & & ???     & ???&    \\
+
+  %Arai~\cite{Arai11}     & 0.8       & 0.8     & ???       & ???   \\
+  \hline
+  (1)     & \modif{56.6}     & \modif{79.2}   & \modif{66.0}  & \modif{53.1}     & \modif{53.0} & \modif{53.1}    \\
+%   \hline
+%   (2) & ???     & ???   & & ???     & ???&    \\
+  %\hline
+  %Log dist. trans.       & ???       & ???   & & ???       & ???   \\  
+%   \hline
+%   (2)     & ??? & ??? & ???   & ??? & ??? & ??? \\
+  \hline
+  (2)   & \modif{89.0}  & \modif{90.7}   & \modif{89.8}  & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
+  \hline
+  (3)   & \modif{92.3}  & \modif{94.4}  & \modif{93.4}  & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
+  \hline
+% Multi {\bf DEL?}      & 92.3  & 94.4  & 93.4  & 83.4  & 55.5    & 66.6  \\
+  %\hline
+%       Proposed multi scale  & ??? &???  & ???   & ???       \\
+%   \hline
+  \end{tabular}
+      \label{tab:ex:bal_loc}
+\end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The baseline method (1) detects half of the balloons (about $56\%$ recall) in this dataset as it is not able to detect open balloons or balloons containing little text.
+However, it has two advantages in comparison with the proposed active contour based method.
+First, as the a connected component is considered as balloon, when correct, the precision at the pixel level is maximal. Second, it is faster to compute.
+The results using active contour with distance transform (2) shows a significant improvement, thanks to the active contour theory that detect much more balloons whether open or closed than connected component based methods. 
+%Making the edges attract the active contour from further is an essential step as we can see line (3). We gain up to {\bf X RECALL AND Y PRECISION}.
+%Mono-resolution and multi-resolution shows similar recall result because the high resolution affects only the shape details, not significantly changing the location of the detection. Next section explains how to evaluate the benefits of the high-resolution detection. %However there is a slight improvement for the precision measure due to higher precision in the shape detection. {\bf ADD RESULT FIGURE?}
+Doing just the low resolution localization step, or continuing to include the high resolution fitting step does not cause any difference for our method (3) under this evaluation scheme, as the evaluation is performed at the level of bounding boxes object overlapping. 
+
+\paragraph{Contour fitting}
+To evaluate the benefits of the second stage we propose, we repeated the evaluation using pixel level ground truth, on \modif{a small subset of three comic pages (24 balloons)}.
+The results are shown in table~\ref{tab:high_res}.
+Note that for this experiment we selected three pages where ground truth and automatic text detection give the same results.
+
+%\subsection{Balloon shape detection}
+%The bounding box level ground truth we used for balloon localization evaluation is not precise enough to know if all the detail of the balloon shape have been correctly detected or not. Here we evaluate the balloon detection from a pixel level ground truth (including the tail) on few pages\footnote{Page 1 refer to ``CYB\_BUBBLEGOM\_T01\_008'', page 2 to ``6673465787\_668ec4eff4\_o'' and page 3 to ``LAMISSEB\_ETPISTAF\_013''.{\bf should I add complete ref. in ref. section instead?}} from the same dataset as section~\ref{sec:dataset} and the evaluation measures of section~\ref{sec:eval}, in order to compare the performance between mono and multi-scale detection with more accuracy (see table~\ref{tab:high_res}). Note, for this experiment we selected only pages where ground truth and automatic text detection give same results.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Balloon shape detection recall and precision.}
+    \begin{tabular}{|c|c|c|c|c|}
+          \hline
+            & \multicolumn{2}{|c|}{Single-stage}  & \multicolumn{2}{|c|}{Two-stage}   \\
+          \hline
+            &  R (\%)  & P (\%)   &  R (\%)  & P (\%)   \\
+          \hline
+          Page 1  & 91.3      & 86.5    & 95.9      & 90.1    \\
+          \hline
+          Page 2  & 79.0      & 95.9    & 78.4      & 94.8    \\
+          \hline
+          Page 3  & 93.4    & 92.8    & 97.7    & 88.7      \\
+          \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:ex:high_res}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Table~\ref{tab:ex:high_res} shows higher score for the two-stage variant for the page 1 and 3.
+These two pages contain mainly closed balloons, we see here that the second stage improves the accuracy of the detection of closed balloons.
+In the case of implied balloon boundaries, as in page 2, the second stage is not resulting in any improvement as there is no extra local information that can assist in the fitting.
+In this case the results mainly depends  of the low resolution detection. Note, processing time was about 10 seconds for a 300DPI A4 image on a regular machine.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth,
+%     \centering
+%     \includegraphics[width=170px]{fig/mono_multi_detection.png}
+%     \caption{Examples of closed balloon detection. The pixel level ground truth in red, the mono-resolution detection in grey and the multi-resolution in green. {\bf ADD OPEN BALLOON EXAMPLE}}
+%     \label{fig:mono_multi_detection}
+%   \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Discussion}
+The presented implicit balloon extraction method highly depends on the active contour initialization success.
+In this study, we relied on text detection as we assume it is the most common feature that balloons include, while past experiments have shown that its accurate detection is feasible and stable.
+A side-effect of this choice is that balloon sometimes can not be detected because their contain non text information (e.g. drawings, punctuation).
+% the text line detector is not always used was not able to detect balloons that contain other contents (e.g. drawings, punctuation).
+%and its bounding box level may also include non-textual information (e.g. portion of the balloon contour) that alter our method. % see fig.~\ref{fig:case_of_failure}. Moreover, : text line bounding boxes removal may also remove some part of the drawing before the external energy edge detection
+We believe there is room for improvement of the different energy terms we used.
+For example, one could use the Gradient Vector Flow proposed by Xu~\cite{Xu1998} for the external energy, especially in the case of missing data balloon boundaries.
+%We could also initialize the snake with a more balloon-like shape as the minimal ellipse including the text area for example. This would also reduce computation time.
+On the other hand, the ground truth of implicit balloons is at best questionable as the exact localization of the balloon is quite subjective.
+An way to circumvent this problem could be to either define the boundary in a flexible way, or match the ground truth at the pixel level.
+% All the materials for reproducing and comparing the results presented in this paper are publicly available through \url{http://ebdtheque.univ-lr.fr/references}.
+
+
+
+% paragraph implicit_balloons (end)
+
+
+\paragraph{Tail detection} % (fold)
+\label{par:tail_detection}
+We evaluated the new tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' and both regular and implicit balloon extraction methods presented Section~\ref{sec:se:from_text_to_balloon}.
+
+TODO
+
+% paragraph tail_detection (end)
+
+
+
+
+
 \subsubsection{Sequential comic character extraction evaluation} % (fold)
 \label{ssub:sequential_comic_character_extraction_evaluation}
+
+TODO
 
 % subsection sequential_comic_character_extraction_evaluation (end)
 
@@ -862,6 +1158,9 @@ The drop in recall can be explained by the fact that the text extractor is also 
 % in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
 As in~\cite{Rigaud2013VISAPP}, this method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
 
+\paragraph{Text recognition evaluation} % (fold)
+\label{par:ex:text_recognition_evaluation}
+
 We also evaluated text transcription using string edit distance~\cite{wagner1974string} between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth. % $T_{gr}$.
 The eBDtheque dataset is composed of English, Japanese and French texts.
 We evaluated the subset of English and French pages using the OCR with the corresponding training data\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}. % corresponding to the language defined in the ground truth of each image of the dataset.
@@ -871,7 +1170,6 @@ This was performed at the text line level taking as correct the text lines that 
 We obtained a score of 7.18\% accuracy which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
 We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy improved to 10.46\%.
 The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
-
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
@@ -884,6 +1182,9 @@ The distribution of the text line lengths is given in Figure~\ref{fig:textline_l
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Note that in Figure~\ref{fig:textline_lenth_distribution}, there are more than a hundred text lines of only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
+
+% paragraph text_recognition_evaluation (end)
+
 
 \subsubsection{Independent comic character extraction evaluation} % (fold)
 \label{ssub:independent_comic_character_extraction_evaluation}

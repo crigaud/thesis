@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
-Warning--empty institution in Evans2012Lecture
-You've used 144 entries,
+You've used 148 entries,
             2118 wiz_defined-function locations,
-            1414 strings with 30478 characters,
-and the built_in function-call counts, 52944 in all, are:
-= -- 5252
-> -- 2331
-< -- 76
-+ -- 922
-- -- 764
-* -- 3543
-:= -- 8402
-add.period$ -- 460
-call.type$ -- 144
-change.case$ -- 778
+            1440 strings with 31430 characters,
+and the built_in function-call counts, 54620 in all, are:
+= -- 5412
+> -- 2431
+< -- 78
++ -- 962
+- -- 798
+* -- 3667
+:= -- 8678
+add.period$ -- 475
+call.type$ -- 148
+change.case$ -- 806
 chr.to.int$ -- 0
-cite$ -- 145
-duplicate$ -- 2200
-empty$ -- 4287
-format.name$ -- 764
-if$ -- 11564
+cite$ -- 148
+duplicate$ -- 2264
+empty$ -- 4413
+format.name$ -- 798
+if$ -- 11923
 int.to.chr$ -- 0
-int.to.str$ -- 144
-missing$ -- 150
-newline$ -- 715
-num.names$ -- 308
-pop$ -- 947
+int.to.str$ -- 148
+missing$ -- 154
+newline$ -- 735
+num.names$ -- 318
+pop$ -- 979
 preamble$ -- 1
-purify$ -- 654
+purify$ -- 678
 quote$ -- 0
-skip$ -- 1629
+skip$ -- 1668
 stack$ -- 0
-substring$ -- 3222
-swap$ -- 662
-text.length$ -- 76
+substring$ -- 3297
+swap$ -- 679
+text.length$ -- 78
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 528
-warning$ -- 1
-while$ -- 491
-width$ -- 147
-write$ -- 1637
-(There was 1 warning)
+type$ -- 544
+warning$ -- 0
+while$ -- 504
+width$ -- 151
+write$ -- 1685

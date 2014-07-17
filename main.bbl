@@ -113,7 +113,8 @@ G.~Chowdhury.
 \bibitem{Evans2012Lecture}
 Evans Christophe and Gaudet Francoise.
 \newblock La lecture de bandes dessinées en france [ce-2012-2].
-\newblock Technical report, 2012.
+\newblock Technical report, Minist\`{e}re de la Culture et de la Communication,
+  Paris, France, 2012.
 
 \bibitem{Marx2007Writing}
 Marx Christy.
@@ -473,6 +474,14 @@ Gérald Lubbin.
 \newblock {\em Les bulles du labo}.
 \newblock Doc en Stock, Paris, France, 2012.
 
+\bibitem{Boudissa2011Bande}
+Boudissa Magali.
+\newblock {\em La bande dessin\'{e}e entre la page et l'\'{e}cran : \'{e}tude
+  critique des enjeux th\'{e}oriques li\'{e}s au renouvellement du langage
+  b\'{e}d\'{e}ique sous influence num\'{e}rique}.
+\newblock PhD thesis, University Paris 8 Vincennes Saint-Denis, Paris, France,
+  2011.
+
 \bibitem{Mao2003Document}
 Song Mao, Azriel Rosenfeld, and Tapas Kanungo.
 \newblock Document structure analysis algorithms: a literature survey.
@@ -614,6 +623,27 @@ J.~Raulet and V.~Boyer.
 Stephan Richter, Gerald K{\"u}hne, and Oliver Schuster.
 \newblock Contour-based classification of video objects.
 \newblock In {\em Proceedings of SPIE}, volume 4315, page 608, 2001.
+
+\bibitem{rigaud2013active}
+Christophe Rigaud, Dimosthenis Karatzas, Joost Van~de Weijer, Jean-Christophe
+  Burie, and Jean-Marc Ogier.
+\newblock An active contour model for speech balloon detection in comics.
+\newblock In {\em Proceedings of the 12th International Conference on Document
+  Analysis and Recognition (ICDAR)}. IEEE, 2013.
+
+\bibitem{Rigaud2013VISAPP}
+Christophe Rigaud, Dimosthenis Karatzas, Joost Van~de Weijer, Jean-Christophe
+  Burie, and Jean-Marc Ogier.
+\newblock Automatic text localisation in scanned comic books.
+\newblock In {\em Proceedings of the 8th International Conference on Computer
+  Vision Theory and Applications (VISAPP)}. SCITEPRESS Digital Library, 2013.
+
+\bibitem{Rigaud2012LNCS}
+Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.
+\newblock Robust frame and text extraction from comic books.
+\newblock In Young-Bin Kwon and Jean-Marc Ogier, editors, {\em Graphics
+  Recognition. New Trends and Challenges}, volume 7423 of {\em Lecture Notes in
+  Computer Science}, pages 129--138. Springer Berlin Heidelberg, 2013.
 
 \bibitem{Rissen2012}
 Paul Rissen.
@@ -767,14 +797,6 @@ Anh-Phuong TA.
 \newblock PhD thesis, INSA de Lyon, 20, rue Albert Einstein, 69621 Villeurbanne
   Cedex, France, 2010.
 
-\bibitem{Boudissa2011Bande}
-Anh-Phuong TA.
-\newblock {\em La bande dessin\'{e}e entre la page et l'\'{e}cran : \'{e}tude
-  critique des enjeux th\'{e}oriques li\'{e}s au renouvellement du langage
-  b\'{e}d\'{e}ique sous influence num\'{e}rique}.
-\newblock PhD thesis, University Paris 8 Vincennes Saint-Denis, Paris, France,
-  2011.
-
 \bibitem{Kohei2012}
 Kohei Takayama, Henry Johan, and Tomoyuki Nishita.
 \newblock Face detection and face recognition of cartoon characters using
@@ -825,6 +847,11 @@ Shingo Uchihashi, Jonathan Foote, Andreas Girgensohn, and John Boreczky.
 Paul Viola and Michael~J Jones.
 \newblock Robust real-time face detection.
 \newblock {\em International journal of computer vision}, 57(2):137--154, 2004.
+
+\bibitem{wagner1974string}
+Robert~A Wagner and Michael~J Fischer.
+\newblock The string-to-string correction problem.
+\newblock {\em Journal of the ACM (JACM)}, 21(1):168--173, 1974.
 
 \bibitem{Walsh2012a}
 John~A Walsh.

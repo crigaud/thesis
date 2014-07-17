@@ -111,27 +111,33 @@
 \contentsline {subsection}{\numberline {6.2.2}Tail detection}{83}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Semantic links}{83}{subsection.6.2.3}
 \contentsline {subsection}{\numberline {6.2.4}Text recognition}{84}{subsection.6.2.4}
-\contentsline {section}{\numberline {6.3}Evaluation}{84}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Sequential information extraction evaluation}{84}{subsection.6.3.1}
-\contentsline {subsubsection}{Sequential panel extraction evaluation}{84}{section*.113}
-\contentsline {subsubsection}{Sequential text extraction evaluation}{85}{section*.115}
-\contentsline {subsubsection}{Sequential balloon and tail extraction evaluation}{85}{section*.117}
-\contentsline {paragraph}{Regular balloons}{85}{section*.118}
-\contentsline {paragraph}{Implicit balloons}{86}{section*.120}
-\contentsline {paragraph}{Contour fitting}{87}{section*.122}
-\contentsline {paragraph}{Discussion}{87}{section*.124}
-\contentsline {paragraph}{Tail detection}{88}{section*.125}
-\contentsline {subsubsection}{Sequential comic character extraction evaluation}{88}{section*.126}
-\contentsline {subsection}{\numberline {6.3.2}Independent information extraction evaluation}{88}{subsection.6.3.2}
-\contentsline {subsubsection}{Independent panel extraction evaluation}{88}{section*.127}
-\contentsline {subsubsection}{Independent balloon extraction evaluation}{89}{section*.130}
-\contentsline {subsubsection}{Independent text extraction evaluation}{90}{section*.133}
-\contentsline {paragraph}{Text recognition evaluation}{91}{section*.135}
-\contentsline {subsubsection}{Independent comic character extraction evaluation}{91}{section*.137}
-\contentsline {subsection}{\numberline {6.3.3}Knowledge-driven analysis evaluation}{93}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Global evaluation}{93}{subsection.6.3.4}
-\contentsline {section}{\numberline {6.4}Conclusions}{93}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions}{95}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary and contributions}{95}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future perspectives}{95}{section.7.2}
-\contentsline {chapter}{Bibliography}{101}{section*.144}
+\contentsline {section}{\numberline {6.3}Sequential information extraction evaluation}{84}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Panel extraction evaluation}{84}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Text extraction evaluation}{85}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Balloon and tail extraction evaluation}{85}{subsection.6.3.3}
+\contentsline {paragraph}{Regular balloons}{85}{section*.115}
+\contentsline {paragraph}{Implicit balloons}{86}{section*.117}
+\contentsline {paragraph}{Contour fitting}{87}{section*.119}
+\contentsline {paragraph}{Discussion}{87}{section*.121}
+\contentsline {paragraph}{Tail detection}{88}{section*.122}
+\contentsline {subsection}{\numberline {6.3.4}Comic character extraction evaluation}{88}{subsection.6.3.4}
+\contentsline {section}{\numberline {6.4}Independent information extraction evaluation}{89}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Panel extraction evaluation}{89}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Balloon extraction evaluation}{90}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Text extraction evaluation}{91}{subsection.6.4.3}
+\contentsline {paragraph}{Text recognition evaluation}{92}{section*.131}
+\contentsline {subsection}{\numberline {6.4.4}Comic character extraction evaluation}{93}{subsection.6.4.4}
+\contentsline {paragraph}{Performance evaluation}{93}{section*.134}
+\contentsline {paragraph}{Detection results}{94}{section*.136}
+\contentsline {paragraph}{Discussion}{96}{section*.138}
+\contentsline {section}{\numberline {6.5}Knowledge-driven analysis evaluation}{96}{section.6.5}
+\contentsline {paragraph}{Process details}{96}{section*.140}
+\contentsline {paragraph}{Low level processing}{97}{section*.141}
+\contentsline {paragraph}{Semantic links}{98}{section*.142}
+\contentsline {paragraph}{General evaluation}{98}{section*.143}
+\contentsline {section}{\numberline {6.6}Global evaluation}{98}{section.6.6}
+\contentsline {section}{\numberline {6.7}Conclusions}{98}{section.6.7}
+\contentsline {chapter}{\numberline {7}Conclusions}{99}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary and contributions}{99}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future perspectives}{99}{section.7.2}
+\contentsline {chapter}{Bibliography}{105}{section*.148}

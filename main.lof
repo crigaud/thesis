@@ -23,7 +23,7 @@
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{29}{figure.caption.34}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{30}{figure.caption.36}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{30}{figure.caption.38}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails.}}{31}{figure.caption.39}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{31}{figure.caption.39}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Representation of the two biggest convexity defects that defines the tail origin}}{31}{figure.caption.40}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip}}{33}{figure.caption.41}
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{34}{figure.caption.43}
@@ -53,7 +53,7 @@
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{53}{figure.caption.64}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{56}{figure.caption.65}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Process loop of the framework.\relax }}{56}{figure.caption.66}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Process loop of the knowledge-driven system}}{56}{figure.caption.66}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{58}{figure.caption.67}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Initial hypothesis about the content of a given image}}{59}{figure.caption.69}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Validation of the hypothesis using the properties of the knowledge base}}{60}{figure.caption.71}
@@ -65,8 +65,8 @@
 \contentsline {figure}{\numberline {5.11}{\ignorespaces A representation of the image model involved in the expert system}}{65}{figure.caption.81}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces A representation of the main aspects of the comics model involved in the expert system}}{65}{figure.caption.82}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Examples of comic panels that reflect the diversity of comic books of the dataset.\relax }}{70}{figure.caption.85}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of the number of elements per text lines. \relax }}{72}{figure.caption.91}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Examples of comic panels that reflect the diversity of comic books of the dataset}}{70}{figure.caption.85}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of the number of elements per text lines}}{72}{figure.caption.91}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Panel annotation}}{74}{figure.caption.95}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Speech balloon contour annotation}}{74}{figure.caption.97}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Text line location annotation}}{75}{figure.caption.99}
@@ -75,9 +75,12 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Annotation rendering in a browser}}{78}{figure.caption.110}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Distance to the mean position}}{81}{figure.caption.111}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Image used for ground truth quality assessment}}{82}{figure.caption.112}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Regular balloon extraction results}}{86}{figure.caption.119}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset. \relax }}{89}{figure.caption.129}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of the number of letter per speech balloon. \relax }}{90}{figure.caption.131}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Distribution of the number of letter per text lines. \relax }}{91}{figure.caption.136}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Example of predicted region (hypothesis of ROI) considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$. Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$. Best viewed in colour.\relax }}{92}{figure.caption.138}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Regular balloon extraction results}}{86}{figure.caption.116}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Example of comic character predicted regions}}{88}{figure.caption.124}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Independent panel extraction score details}}{90}{figure.caption.127}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Distribution of the number of letter per speech balloon}}{91}{figure.caption.128}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Distribution of the number of letter per text lines}}{92}{figure.caption.132}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting descriptor size validation}}{93}{figure.caption.133}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Character spotting result sample}}{95}{figure.caption.137}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Knowledge-driven extraction performance evolution}}{97}{figure.caption.139}
 \addvspace {10\p@ }

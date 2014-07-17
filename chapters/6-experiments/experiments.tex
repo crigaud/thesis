@@ -12,7 +12,12 @@ Traditionally, this evaluation is made by validating the results of an algorithm
 Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm to the community \cite{lamiroy:inria-00537035}.
 This can be applied to any kind of results from image segmentation to classification or information retrieval.
 In this chapter we present the dataset and ground truth we provide to evaluate comic book image related works.
-We describe the metrics we use to evaluate our each contribution and finally compare our work to previous approaches from the literature.
+We describe the metrics we use to evaluate our each contribution (sequential, independent and knowledge-driven) and finally compare them in the global evaluation section.
+% compare our work to previous approaches from the literature.
+
+% We evaluate the contributions of the thesis at different levels.
+% We first evaluate the sequential, independent and knowledge-driven approaches separately and then we compare them in the global evaluation section.
+
 
 % \section{Introduction} % (fold)
 % \label{sec:ex:introduction}
@@ -32,7 +37,7 @@ The comic book images were selected to cover the huge diversity of comic styles 
 \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[trim= 4px 0px 0px 0px, clip, width=230px]{comics_diversity.png}
-  \caption{Examples of comic panels that reflect the diversity of comic books of the dataset.}
+  \caption[Examples of comic panels that reflect the diversity of comic books of the dataset]{Examples of comic panels that reflect the diversity of comic books of the dataset.}
   \label{fig:ex:comics_diversity}
  \end{figure}
 
@@ -124,7 +129,7 @@ Onomatopoeia appears in 18 pages.
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[trim= 100px 130px 120px 120px, clip, width=0.65\textwidth]{number_of_letter_per_textline.pdf}
-      \caption{Distribution of the number of elements per text lines.
+      \caption[Distribution of the number of elements per text lines]{Distribution of the number of elements per text lines.
       }
       \label{fig:ex:textline_lenth_distribution}
     \end{figure}  
@@ -298,7 +303,7 @@ This second level of annotation complete each spacial region with additional inf
 Also, the image itself is annotated with extra information about its origin (e.g. album, collection, author, publisher).
 %Once segmented, each object is annotated with a set of predefined metadata as follows. 
 
-TODO describe metadata attribute \emph{relatedTo}
+TODO describe metadata attribute \emph{idBalloon} in Line elements and \emph{idCharacter} in Character element
 
 \paragraph{Images}
 The image, often assimilated as pages, has been annotated with bibliographical information, so that anyone using this ground truth is free to get is own paper copy of the comic books for extra uses.
@@ -655,18 +660,18 @@ We evaluated the text detection accuracy $A_{textReco}$ at a given string edit d
 
 % \section{Parameter validation}
 
-\section{Evaluation} % (fold)
-\label{sec:ex:evaluation}
+% \section{Evaluation} % (fold)
+% \label{sec:ex:evaluation}
 
-We evaluate the contributions of the thesis at different levels.
-We first evaluate the sequential, independent and knowledge-driven approaches separately and then we compare them in the global evaluation section.
+% We evaluate the contributions of the thesis at different levels.
+% We first evaluate the sequential, independent and knowledge-driven approaches separately and then we compare them in the global evaluation section.
 
-\subsection{Sequential information extraction evaluation} % (fold) %IJDAR
+\section{Sequential information extraction evaluation} % (fold) %IJDAR
 \label{sub:ex:sequential_information_extraction_evaluation}
 
 TODO
 
-\subsubsection{Sequential panel extraction evaluation} % (fold)
+\subsection{Panel extraction evaluation} % (fold)
 \label{sub:ex:sequential_panel_extraction_evaluation}
 % We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 
@@ -731,7 +736,7 @@ We automatically remove this by cropping the image where a panel with an area $>
 % subsection sequential_panel_extraction_evaluation (end)
 
 
-\subsubsection{Sequential text extraction evaluation} % (fold)
+\subsection{Text extraction evaluation} % (fold)
 \label{sub:ex:sequential_text_extraction_evaluation}
 
 We evaluated our method for text extraction on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
@@ -783,7 +788,7 @@ Nevertheless, even if the panel extraction is performed at the same time, it doe
 % subsection sequential_information_extraction_evaluation (end)
 
 
-\subsubsection{Sequential balloon and tail extraction evaluation} % (fold)
+\subsection{Balloon and tail extraction evaluation} % (fold)
 \label{sub:ex:sequential_balloon_extraction_evaluation}
 Section~\ref{sec:from_text_to_balloon}, we presented two approaches for regular and implicit balloon extraction from text line positions.
 We evaluate the two approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
@@ -942,15 +947,45 @@ An way to circumvent this problem could be to either define the boundary in a fl
 % All the materials for reproducing and comparing the results presented in this paper are publicly available through \url{http://ebdtheque.univ-lr.fr/references}.
 
 
-
 % paragraph implicit_balloons (end)
 
 
 \paragraph{Tail detection} % (fold)
 \label{par:tail_detection}
-We evaluated the new tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' and both regular and implicit balloon extraction methods presented Section~\ref{sec:se:from_text_to_balloon}.
+We evaluated the new tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' and both regular and implicit balloon extraction methods presented Section~\ref{sec:se:from_text_to_balloon} (Table~\ref{tab:ex:tail_evaluation}).
 
-TODO
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+%\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Tail extraction results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)     \\
+          \hline
+          GT   & \modif{??} & \modif{??}    & \modif{??}    \\
+          \hline
+          Regular balloon   & \modif{??}    & \modif{??}    & \modif{??}    \\
+          \hline
+          Explicit balloon  & \modif{??}    & \modif{??}    & \modif{??}    \\
+          \hline
+          % Proposed + validation   & \modif{??}       & \modif{??}    & \modif{??}    \\
+          % \hline
+           % TOTAL   & 93.4    & 92.8          \\
+          % \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:ex:tail_evaluation}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TODO RESULT ANALYSIS
 
 % paragraph tail_detection (end)
 
@@ -958,18 +993,95 @@ TODO
 
 
 
-\subsubsection{Sequential comic character extraction evaluation} % (fold)
+\subsection{Comic character extraction evaluation} % (fold)
 \label{ssub:sequential_comic_character_extraction_evaluation}
+We evaluated the detection of comic characters on the 1550 characters of the eBDtheque dataset, given the input information from the ground truth (panel, balloon, tail position and tail direction).
+In the eBDtheque ground truth, only 880 (56.8\%) of the character instances are speaking (and 43.3\% are not), thus we did not expect to reach 100\% recall and precision here because our method is able to detect only speaking characters.
+Similarly to the other extractions, the overlapping ratio between a predicted character region and a region from the ground truth should be above 50\% ($a_0>0.5$) for the predicted region to be considered as valid (true positive).
+An example of valid and rejected regions is shown on Figure~\ref{fig:ex:characters_overlap_ratio}. %, at level of object using equation
+%  with $th_0=0.2$.
+%Here we set $th_0=0.2$ (not 0.5) in order to accept prediction of the comic character location even if they are only partial, see figure~\ref{fig:ex:characters_overlap_ratio}.
+  %to equation~\ref{eq:recall}.
+%In the eBDtheque dataset~\cite{Guerin2013}, ??\% of the characters are in an image where there are no  
 
-TODO
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[trim= 0mm 0mm 190mm 0mm, clip, width=0.35\textwidth]{characters_overlap_ratio.png}
+      \caption[Example of comic character predicted regions]{Example of predicted region (hypothesis of ROI) considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$. Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$. Best viewed in colour.}
+      \label{fig:ex:characters_overlap_ratio}
+    \end{figure}  
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The cumulative results are presented in Table~\ref{tab:ex:eval_characters} which shows the performance of two steps of the process:
+\begin{itemize}
+  \item [a)] Hypothesis of ROI from Section~\ref{sub:hypo_roi} (A)
+  \item [b)] Character extraction from Section~\ref{sub:character_extraction} (B)
+  \item [c)] Character extraction validation from Section~\ref{sub:validation} (C)
+  % \item [c)] Character spotting (see section~\ref{sub:character_extraction})
+\end{itemize}
+%for the hypothesis of ROI of characters ($a$) corresponding to section~\ref{sub:hypo_roi}, the query pre processing ($b$) corresponding to section~\ref{pa:query_pre_processing} and the character spotting ($c$) of section~\ref{sub:character_extraction}.% and figure~\ref{fig:overlap_ratio_evolution}.
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+%\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Character localisation results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)  \\
+          % \hline
+          % Before validation   & ?   & ?           \\
+          \hline
+          %Proposed (ROI)   & 70   & 49           \\
+          A (hypothesis)   & 19.28   & 26.91    & 22.47      \\
+          \hline
+          %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
+          A + B (+ extraction) & 23.31 & 33.55 & 27.51 \\
+          % \hline
+          % %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
+          % $a + b + c$  & \modifc{?} & \modifc{?} & ? \\
+          \hline
+          \modif{A + B + C (+ validation)}   & 21.57   & 40.52    & 28.16      \\
+          \hline
+          % TOTAL   & 93.4    & 92.8          \\
+          % \hline
+        %       Proposed multi scale & ???  &???  & ???   & ???       \\
+        %   \hline
+        \end{tabular}
+    \label{tab:ex:eval_characters}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+    %   \centering
+    %   \includegraphics[width=200px]{fig/overlap_ratio_evolution.pdf}
+    % \caption{Score evolution according to overlap ratio. Black lines represent the score for $a_0=0.5$ as given in table~\ref{tab:ex:eval_characters}.}
+    % \label{fig:overlap_ratio_evolution}
+    % \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As shown on Figure~\ref{fig:ex:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
+The numbers in Table~\ref{tab:ex:eval_characters} are given for the whole dataset including the characters that are not speaking.
+If we focus on the subset of 880 speakers, the recall, precision and f-measure were 34.49\%, 32.02\% and 33.21\% respectively.
+
 
 % subsection sequential_comic_character_extraction_evaluation (end)
 
-\subsection{Independent information extraction evaluation} % (fold) %IJDAR
+\section{Independent information extraction evaluation} % (fold) %IJDAR
 \label{sub:ex:independent_information_extraction_evaluation}
+
 TODO
 
-\subsubsection{Independent panel extraction evaluation} % (fold)
+\subsection{Panel extraction evaluation} % (fold)
 \label{sub:ex:independent_panel_extraction_evaluation}
 We evaluated our method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 Assuming that a panel is a big region, we ignored the panel detection with a area lower than 4\% ($minAreaFactor$) of the page area according to a validation on the eBDtheque dataset.
@@ -1018,7 +1130,7 @@ Figure~\ref{ap:panel_extraction} shows the details for each image tested, which 
 
 \begin{figure}
  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset.
+ \caption[Independent panel extraction score details]{Panel extraction score details for each image of the eBDtheque dataset.
  }
  \label{ap:panel_extraction}
 \end{figure}
@@ -1033,7 +1145,7 @@ We automatically remove this by cropping the image where a panel with an area $>
 % subsection independent_panel_extraction_evaluation (end)
 
 
-\subsubsection{Independent balloon extraction evaluation} % (fold)
+\subsection{Balloon extraction evaluation} % (fold)
 \label{sub:ex:independent_balloon_extraction_evaluation}
 
 We evaluated our method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level, which includes the tail.
@@ -1049,7 +1161,7 @@ The minimum number of children $minNbChildren$ of a balloon was set to 8, just b
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[trim= 10px 0px 60px 0px, clip, width=0.38\textwidth]{number_of_letter_per_balloon.pdf}
-      \caption{Distribution of the number of letter per speech balloon.
+      \caption[Distribution of the number of letter per speech balloon]{Distribution of the number of letter per speech balloon.
       }
       \label{fig:ex:min_number_children_validation}
     \end{figure}  
@@ -1115,7 +1227,7 @@ This experiment was performed in 22 minutes for the whole dataset using one CPU 
 
 
 
-\subsubsection{Independent text extraction evaluation} % (fold)
+\subsection{Text extraction evaluation} % (fold)
 \label{sub:ex:independent_text_extraction_evaluation}
 We evaluated our method for text extraction on the 4667 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
 % according with $th_0=0.5$. % to equation~\ref{eq:recall}.
@@ -1175,7 +1287,7 @@ The distribution of the text line lengths is given in Figure~\ref{fig:textline_l
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[trim= 100px 130px 120px 120px, clip, width=0.45\textwidth]{number_of_letter_per_textline.pdf}
-      \caption{Distribution of the number of letter per text lines.
+      \caption[Distribution of the number of letter per text lines]{Distribution of the number of letter per text lines.
       }
       \label{fig:textline_lenth_distribution}
     \end{figure}  
@@ -1186,95 +1298,261 @@ Note that in Figure~\ref{fig:textline_lenth_distribution}, there are more than a
 % paragraph text_recognition_evaluation (end)
 
 
-\subsubsection{Independent comic character extraction evaluation} % (fold)
+\subsection{Comic character extraction evaluation} % (fold)
 \label{ssub:independent_comic_character_extraction_evaluation}
-We evaluated the detection of comic characters on the 1550 characters of the eBDtheque dataset, given the input information from the ground truth (panel, balloon, tail position and tail direction).
-In the eBDtheque ground truth, only 880 (56.8\%) of the character instances are speaking (and 43.3\% are not), thus we did not expect to reach 100\% recall and precision here because our method is able to detect only speaking characters.
-Similarly to the other extractions, the overlapping ratio between a predicted character region and a region from the ground truth should be above 50\% ($a_0>0.5$) for the predicted region to be considered as valid (true positive).
-An example of valid and rejected regions is shown on Figure~\ref{fig:characters_overlap_ratio}. %, at level of object using equation
-%  with $th_0=0.2$.
-%Here we set $th_0=0.2$ (not 0.5) in order to accept prediction of the comic character location even if they are only partial, see figure~\ref{fig:characters_overlap_ratio}.
-  %to equation~\ref{eq:recall}.
-%In the eBDtheque dataset~\cite{Guerin2013}, ??\% of the characters are in an image where there are no  
+
+We evaluated our method for character spotting on \modif{??} of 1550 comic character instances of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
+
+To perform this experiments, we asked the users to manually highlight the object position as described in section~\ref{sec:input_query}.
+The selection usually includes hair, head and top body colours because lower body parts are often hidden by the frame border or the posture. 
+From the user pixel selection, we computed the bounding box to show that the system does not need a precise object colour selection. 
+We reduced the number of colour to a \modif{standard web palette $P_c$ of 256 colours} because comics are colourful drawings similar to web pages and icons that contain a limited number of colour. 
+We fixed the descriptor size to $N=3$ according to the evaluation figure~\ref{fig:ex:descriptor_size_evaluation}.
+In the retrieval process, we set $T=N$ which means that the confidence of the candidate region equal 100\% (all the query colours must be present in the candidate region to be considered as a correct detection).
+We used three squared window sizes according to the query height: half of the query height, query height and twice the query height.
 
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
-      \centering
-      \includegraphics[trim= 0mm 0mm 190mm 0mm, clip, width=0.35\textwidth]{characters_overlap_ratio.png}
-      \caption{Example of predicted region (hypothesis of ROI) considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$. Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$. Best viewed in colour.}
-      \label{fig:characters_overlap_ratio}
-    \end{figure}  
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[trim= 5mm 0mm 30mm 0mm, clip, width=250px]{descriptor_size_evaluation.png}
+  \caption[Character spotting descriptor size validation]{Descriptor size validation. Measure of recall (blue square) and precision (red diamond) detection for different descriptor sizes from a testing set of 17 comics pages. The maximum recall is for $N=3$.}
+  \label{fig:ex:descriptor_size_evaluation}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The cumulative results are presented in Table~\ref{tab:eval_characters} which shows the performance of two steps of the process:
-\begin{itemize}
-  \item [a)] Hypothesis of ROI from Section~\ref{sub:hypo_roi} (A)
-  \item [b)] Character extraction from Section~\ref{sub:character_extraction} (B)
-  \item [c)] Character extraction validation from Section~\ref{sub:validation} (C)
-  % \item [c)] Character spotting (see section~\ref{sub:character_extraction})
-\end{itemize}
-%for the hypothesis of ROI of characters ($a$) corresponding to section~\ref{sub:hypo_roi}, the query pre processing ($b$) corresponding to section~\ref{pa:query_pre_processing} and the character spotting ($c$) of section~\ref{sub:character_extraction}.% and figure~\ref{fig:overlap_ratio_evolution}.
 
+\paragraph{Performance evaluation}
+The following results were obtained with the common evaluation measures of recall, precision at object level which means that we considered as correctly detected the objects that are overlapped by a detected region without considering the percentage of overlapping.
+Recall ($R$) is the number of correctly detected object divided by the number of objects to detect.
+Precision ($P$) is the number of correctly detected objects divided by the number of detected objects.
+%Each detected object $D$ was compared to the corresponding ground truth one $G$ with the nearest centroid, considering only one matching per ground truth balloon.
+We consider as candidate regions, regions that have $C=100\%$ confidence (contains at least all the descriptor colours).% Lower confidence detection need additional processing to be considerate as correct results.
+
+We evaluated our method on 34 comics pages from 10 different albums which represent 22 comic characters that appear 352 times in total. We obtained 90.3\% recall and 46.7\% precision in average. Results are detailed in table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to MIDAM GAMEOVER T05, TARZAN COCHON, CYB COSMOZONE, CYB MAGICIENLOOSE, CYB MOUETTEMAN, LAMISSEB LESNOEILS1, LUBBIN LESBULLESDULABO, MIDAM KIDPADDLE7, PIKE BOYLOVEGIRLS T41 and TRONDHEIM LES TROIS CHEMINS 005 respectively from the eBDtheque dataset~\cite{Guerin2013}. %Another album of two pages has also been evaluated, we had 83\% recall and 66\% precision score.
+
+
+\begin{table}[htbp]
+\caption{Character detection performance}
+\begin{tabular}{|c|l|l|r|r|r|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Album}} & \multicolumn{1}{c|}{\textbf{Nb pages}} & \multicolumn{1}{c|}{\textbf{Nb character}} & \multicolumn{1}{c|}{\textbf{Character ID}}  & \multicolumn{1}{c|}{\textbf{Recall}} & \multicolumn{1}{c|}{\textbf{Precision}} \\ \hline
+\multicolumn{1}{|r|}{1}  & \multicolumn{1}{r|}{10} & \multicolumn{1}{r|}{2} & 0  & 92.3\% & 16.8\% \\ \hline
+ &  &   & 1 & 91.8\% & 65.0\% \\ \hline
+\multicolumn{1}{|r|}{2}  & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{1} & 2  & 75.0\% & 26.5\% \\ \hline
+\multicolumn{1}{|r|}{3}  & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{4} & 3  & 100.0\% & 50.0\% \\ \hline
+ &  &   & 4  & 93.3\% & 60.9\% \\ \hline
+ &  &   & 5  & 100.0\% & 33.3\% \\ \hline
+ &  &   & 6  & 100.0\% & 100.0\% \\ \hline
+\multicolumn{1}{|r|}{4}  & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{1} & 7  & 85.7\% & 85.7\% \\ \hline
+\multicolumn{1}{|r|}{5}  & \multicolumn{1}{r|}{4} & \multicolumn{1}{r|}{2} & 8 & 100.0\% & 75.0\% \\ \hline
+ &   &  & 9 & 50.0\% & 27.8\% \\ \hline
+\multicolumn{1}{|r|}{6}  & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{2} & 10 & 71.8\% & 10.1\% \\ \hline
+ &   &  & 11  & 100.0\% & 29.9\% \\ \hline
+\multicolumn{1}{|r|}{7}  & \multicolumn{1}{r|}{2} & \multicolumn{1}{r|}{2} & 12 & 100.0\% & 13.8\% \\ \hline
+ &   &  & 13 & 100.0\%  & 54.5\% \\ \hline
+ &   &  & 14 & 100.0\%  & 55.6\% \\ \hline
+\multicolumn{1}{|r|}{8}  & \multicolumn{1}{r|}{2} & \multicolumn{1}{r|}{2} & 15 & 81.8\% & 75.0\% \\ \hline
+ &   &  & 16 & 100.0\%  & 12.7\% \\ \hline
+\multicolumn{1}{|r|}{9}  & \multicolumn{1}{r|}{2} & \multicolumn{1}{r|}{1} & 17 & 83.3\% & 58.8\% \\ \hline
+\multicolumn{1}{|r|}{10} & \multicolumn{1}{r|}{2} & \multicolumn{1}{r|}{4} & 18 & 81.3\% & 35.1\% \\ \hline
+ &   &  & 19 & 100.0\% & 48.4\% \\ \hline
+ &   &  & 20 & 92.9\% & 17.1\% \\ \hline
+ &   &  & 21 & 90.9\% & 24.4\% \\ \hline
+ %&  &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+ &  &  &  & &  \\ \hline %\multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|r|}{\textbf{10}} & \multicolumn{1}{r|}{\textbf{34}} & \multicolumn{1}{r|}{\textbf{22}} & \multicolumn{1}{r|}{\textbf{22}} & \textbf{90.3\%} & \textbf{46.7\%} \\ \hline
+\end{tabular}
+\label{tab:ex:character_spotting_detail_result}
+\end{table}
+
+
+\paragraph{Detection results}
+% \label{sec:eval}
+
+We evaluated present interesting detection results based on a three colours user defined query descriptor (see section~\ref{sec:proposed_method}). 
+The processing time was about 6 seconds per image for a A4 300DPI image on a regular machine. Most of the time consumption is for the mask creation and it is proportional to the number of mask to create.  Detection result examples are presented figure~\ref{fig:ex:character_spotting_results}.
+
+The detected region aims to localize the smallest regions containing all the colours of the query descriptor. This region is usually smaller than the ground truth region which is defined at character bounding box level. A post processing is needed to compute the character bounding box from the detected region by extending it to the colour region boundaries.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[width=0.5\textwidth]{result_exemples.png}
+  \caption[Character spotting result sample]{
+  Each line shows a character query region bounding box in white (left column), a correct detection (middle column) and a wrong detection (right column). Green rectangles represents the ground truth region and the red rectangle corresponds to the region detections. The corresponding character IDs in table~\ref{tab:ex:character_spotting_detail_result} are 12, 8, 0, 10, 16 and 2 from top to bottom. %and second columns show correct and wrong detection result for album 1. Third and fourth columns are correct and wrong detection results examples from album 2. Top first and top third columns are the user defined queries. %{\bf Update true and false positive examples and draw detection window (according to $S$ definition)
+  }
+  \label{fig:ex:character_spotting_results}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Correct detections show the variety of comics character position and deformation that we are able to detect with the presented framework. There are few missing detection and over detection are essentially due to other comics character detection and image pre processing (colour reduction).%character part missing, small size objects or low resolution images.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[ht]
-    \normalsize
-%\renewcommand{\arraystretch}{1.2}
-
-    \centering
-    \caption{Character localisation results.}
-    \begin{tabular}{|c|c|c|c|}
-          % \hline
-          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
-          \hline
-          &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)  \\
-          % \hline
-          % Before validation   & ?   & ?           \\
-          \hline
-          %Proposed (ROI)   & 70   & 49           \\
-          A (hypothesis)   & 19.28   & 26.91    & 22.47      \\
-          \hline
-          %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
-          A + B (+ extraction) & 23.31 & 33.55 & 27.51 \\
-          % \hline
-          % %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
-          % $a + b + c$  & \modifc{?} & \modifc{?} & ? \\
-          \hline
-          A + B + C (+ validation)   & 21.57   & 40.52    & 28.16      \\
-          \hline
-          % TOTAL   & 93.4    & 92.8          \\
-          % \hline
-        %       Proposed multi scale & ???  &???  & ???   & ???       \\
-        %   \hline
-        \end{tabular}
-    \label{tab:eval_characters}
-  \end{table}%
+%   \begin{table}[ht]
+%     \normalsize
+% \renewcommand{\arraystretch}{1.2}
+% 
+%     \centering
+%     \caption{Comics character detection results.}
+%     \begin{tabular}{|c|c|c|c|c|}
+%           \hline
+%             & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+%           \hline
+%           &  Detected   & Missed    &  Detected  & Missed   \\
+%           \hline
+%           Album 1, p. 1   & 7       & 2     & 95.9      & 90.1    \\
+%           \hline
+%           Album 1, p. 2   & 8       & 2     & 78.4      & 94.8    \\
+%           \hline
+%           Album 1, p. 3   & 5   & 1     & 97.7    & 88.7      \\
+%           \hline
+%           TOTAL   & 93.4    & 92.8    & 97.7    & 88.7      \\
+%           \hline
+%         %       Proposed multi scale & ???  &???  & ???   & ???       \\
+%         %   \hline
+%         \end{tabular}
+%     \label{tab:high_res}
+%   \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
-    %   \centering
-    %   \includegraphics[width=200px]{fig/overlap_ratio_evolution.pdf}
-    % \caption{Score evolution according to overlap ratio. Black lines represent the score for $a_0=0.5$ as given in table~\ref{tab:eval_characters}.}
-    % \label{fig:overlap_ratio_evolution}
-    % \end{figure}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As shown on Figure~\ref{fig:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
-The numbers in Table~\ref{tab:eval_characters} are given for the whole dataset including the characters that are not speaking.
-If we focus on the subset of 880 speakers, the recall, precision and f-measure were 34.49\%, 32.02\% and 33.21\% respectively.
+%balloon localization performance at bounding box level to highlight the benefits of both active contour theory and domain specific knowledge. Second, we performed pixel level evaluation on a smaller subset to show the ability of our method to fit balloon contour details.
+
+
+\paragraph{Discussion}
+The proposed framework gives promising results for contemporary comics, we also tried on historical such as FRED PHILEMON12 and MCCALL ROBINHOOD from the eBDtheque dataset but the printing process generates a lot of noise (thickness of ink). 
+A pre-processing smoothing~\cite{l0smoothing2011} is required in this case. The colour palette we used has 256 colours, we believe that we can improve the presented method by computing the palette from the user's query in order to ignore unwanted colours and speed up the process. 
+The sliding windows approach does not allow to segment comics character at a pixel level, a distance measure between the colour mask regions could solve this.
+ Also, once we retrieved all colour similar objects, we could learn a shape model and try to find more objects occurrences based on shape information in a second stage, this will be a future work.
+
 
 % ssubsection independent_comic_character_extraction_evaluation (end)
 
 % subsection independent_information_extraction_evaluation (end)
-\subsection{Knowledge-driven analysis evaluation} % (fold) %IJDAR
+\section{Knowledge-driven analysis evaluation} % (fold) %IJDAR
 \label{sub:ex:knowledge_driven_analysis_evaluation}
 
+
+%-------------------------------------------------------------------------
+% \subsection{Framework evaluation}
+We evaluated our framework during the two iterations of the process loop introduced in Chapter~\ref{chap:knowledge} and particularly at the beginning (Step 1: hypothesis) and at the end (Step 3: inference) of each iteration.
+Note that using this framework some processes ($C$, $STSB$, $SBCS$) were related to previous processes which propagated errors and reduced their performance compared to their separated evaluation in Section~\ref{sub:ex:independent_information_extraction_evaluation}.
+
+We evaluate our framework using the f-measure of panel $P$, balloon $B$, text $T$ and character $C$ extractions.
+Also, the accuracy of the two semantic links $STSB$ and $SBSC$ is measured.
+%  are all automatic here with their respective error rates. panel $P$, balloon $B$ and text $T$ extraction are similar to the 
+The change in the amount of information discovered throughout the process is presented in Figure~\ref{fig:ex:score_evolution}.% were we show the % are evaluated using .
+
+TODO ADD TABLE WITH NUMBERS CORREPONDING TO RADAR CHARTS
+
+
+% \begin{figure}[ht!]
+% \centering
+% \begin{subfigure}[b]{115px}
+% \includegraphics[width=115px]{fig/radar_a.png}
+% \caption{Hypothesis}
+% \label{fig:ex:score_evolution_a}
+% \end{subfigure}
+% \begin{subfigure}[b]{115px}
+% \includegraphics[width=115px]{fig/radar_b.png}
+% \caption{Validation \& inference}
+% \label{fig:ex:score_evolution_b}
+% \end{subfigure}
+% \begin{subfigure}[b]{115px}
+% \includegraphics[width=115px]{fig/radar_c.png}
+% \caption{Hypothesis}
+% \label{fig:ex:score_evolution_c}
+% \end{subfigure}
+% \begin{subfigure}[b]{115px}
+% \includegraphics[width=115px]{fig/radar_d.png}
+% \caption{Validation \& inference}
+% \label{fig:ex:score_evolution_d}
+% \end{subfigure}
+% \caption{Performance evolution for panels $P$, balloons $B$, text lines $T$, comic characters $C$ and the semantic links $STSB$ and $SBSC$ at the hypothesis and evaluation steps during the two loops of the proposed process.
+%   The dashed blue line represents the best score using the proposed model on the data extracted from the ground truth data (optimal condition).
+%   The solid red line is the performance of the framework using all the automatic extractions and semantic link inferences presented in this paper.}
+
+%   \label{fig:ex:score_evolution}
+% \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+  \centering
+ \includegraphics[width=230px]{radar_chart.png}
+ \caption[Knowledge-driven extraction performance evolution]{Change in performance for panels $P$, balloons $B$, text lines $T$, comic characters $C$ and the semantic links $STSB$ and $SBSC$ at the hypothesis and evaluation steps during the two loops of the process.
+ The dashed blue line represents the best score using our model on the data extracted from the ground truth data (optimal condition).
+ The solid red line is the performance of the framework using all the automatic extractions and semantic link inferences presented in this paper.}
+ \label{fig:ex:score_evolution}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%TODO: add tail results figure + legend + analysis
+\paragraph{Process details} % (fold)
+\label{par:process_details}
+
+% paragraph process_details (end)
+Figure~\ref{fig:ex:score_evolution} shows the change of the performance of our framework after the first and second iteration of analysis over the eBDtheque dataset~\cite{Guerin2013}.
+The performance of the first iteration was measured after the initial extraction of simple elements which were considered as hypotheses by the expert system (Figure~\ref{fig:ex:score_evolution}a.) and after validation by the expert system (Figure~\ref{fig:ex:score_evolution}b.).
+Between the first initialization and validation (first row of Figure~\ref{fig:ex:score_evolution}), the f-measure remained stable for $P$ and increased by 3\% for the balloon $B$ and text $T$.
+% which reflects the first contribution of the expert system over the low level processing.
+%In fact, the text extraction has a 49\% precision (see table~\ref{tab:text_results}) which is raised up to 72\% by using the rule-based contextual filtering but this has also a cost for the recall which is dropped by 23\%. 
+% into more specific elements such as speech balloon $SB$ and speech text $ST$ in order to provide additional information to the second iteration.
+At this point, no comic book characters were discovered because their rules in the ontology are related to elements that were not yet discovered.
+Nevertheless, the semantic links between speech text and balloon $STSB$ were inferred (47.6\%).
+The expert system applied the inference rules to automatically label the balloon with a tail that included text such as speech balloon $SB$ and speech text $ST$ respectively and created a semantic link $STSB$ between each of them.
+
+The newly inferred links were processed by the expert system along with previously validated regions during a second iteration in order to get more information by trying to apply more rules from the knowledge base.
+This time, the expert system could make use of rules related to characters because the speech balloons were now part of the knowledge base.
+Panels and speech balloons were used to create hypotheses for the location of characters and then the low level processing located them more precisely within these regions (Figure~\ref{fig:ex:score_evolution}c.).
+Finally, the expert system validated the newly discovered regions and inferred the semantic links between speech balloons and speaking characters $SBSC$ (Figure~\ref{fig:ex:score_evolution}d.).
+
+% \modifc{ADD Clement: results analysis to explain (and illustrate with examples?) why the results on data from the ground truth are not perfect.}
+
+% In figure~\ref{fig:ex:score_evolution}, the dashed blue line represents how fit the model to the dataset according to section~\ref{sub:knowledge_base} and therefore sets the maximum reachable score for each of the elements using the presented framework on this data.
+
+\paragraph{Low level processing} % (fold)
+\label{par:low_level_processing}
+
+% paragraph low_level_processing (end)
+The low level processing scores ($P$, $B$, $T$) always increased between the hypothesis and the validation steps, which confirms the benefits of combining different levels of analysis.
+The best extraction performance was obtained for the panels that were usually the easiest elements to extract from a page.
+% because they overlap most of the content.
+The lowest extraction performance was for the comic characters $C$.
+% First, the non-extraction of comic characters that do not speak, second the difficulty of locating precisely comics characters in all the different comics styles that compose the eBDtheque dataset 
+There are various reasons for this.
+First, the limitation of the extractor to process speaking characters; second, the variability of character styles in the eBDtheque dataset; third, the error propagation of previous processes (panel, text, balloon, tail and semantic link extractions) that are required to guess comic character locations.
+
+%, they represent more than half of them.
+
+\paragraph{Semantic links} % (fold)
+\label{par:global_semantic_links}
+
+%We evaluated the ability of our system to produce the semantic relations introduced in \ref{sub:knowledge_base}, namely \textit{STSB} and \textit{SBSC}, based on the correctly extracted balloons (see section~\ref{sub:balloon_evaluation}) and  text lines (see section~\ref{sub:text_localisation_recognition_evaluation}).
+The expert system was able to retrieve 47.6\% of the $STSB$ and 18\% of the $SBSC$ relations, which represents more than 25\% of what could possibly be detected using the proposed model.
+
+It should be stressed that these numbers represent the efficiency of the last process of the whole framework pipeline.
+Individual errors at each recognition and validation step of the pipeline are propagated to the final semantic association between elements ($SBSC$).
+Therefore a single improvement in the detection or the validation of any kind of element would have an impact at the semantic association level.
+
+
+\paragraph{General evaluation} % (fold)
+\label{par:global_evaluation}
+It is difficult to combine individual metrics of a different nature into a single global metric.
+As an indicative metric, we considered the hexagon area as being the amount of information that could be retrieved from the eBDtheque dataset~\cite{Guerin2013}.
+Our model is theoretically able to model 88.83\% of this information (dashed line), despite the diversity of the images in this dataset, and 54.89\% of this information can be retrieved automatically (solid line) using our framework.
+
+
+
+
 % subsection knowledge_driven_analysis_evaluation (end)
-\subsection{Global evaluation} % (fold)
+
+\section{Global evaluation} % (fold)
 \label{sub:ex:global_evaluation}
+
+TODO ???
 
 %big table to compare the 3 level of contribution of this thesis
 
@@ -1294,3 +1572,5 @@ If we focus on the subset of 880 speakers, the recall, precision and f-measure w
 % Conclusion --------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sub:ex:conclusion}
+
+TODO

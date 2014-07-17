@@ -64,13 +64,20 @@
 \BOOKMARK [2][-]{subsection.6.2.2}{Tail detection}{section.6.2}% 64
 \BOOKMARK [2][-]{subsection.6.2.3}{Semantic links}{section.6.2}% 65
 \BOOKMARK [2][-]{subsection.6.2.4}{Text recognition}{section.6.2}% 66
-\BOOKMARK [1][-]{section.6.3}{Evaluation}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.3.1}{Sequential information extraction evaluation}{section.6.3}% 68
-\BOOKMARK [2][-]{subsection.6.3.2}{Independent information extraction evaluation}{section.6.3}% 69
-\BOOKMARK [2][-]{subsection.6.3.3}{Knowledge-driven analysis evaluation}{section.6.3}% 70
-\BOOKMARK [2][-]{subsection.6.3.4}{Global evaluation}{section.6.3}% 71
-\BOOKMARK [1][-]{section.6.4}{Conclusions}{chapter.6}% 72
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 73
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 74
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 75
-\BOOKMARK [0][-]{section*.144}{Bibliography}{}% 76
+\BOOKMARK [1][-]{section.6.3}{Sequential information extraction evaluation}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.3.1}{Panel extraction evaluation}{section.6.3}% 68
+\BOOKMARK [2][-]{subsection.6.3.2}{Text extraction evaluation}{section.6.3}% 69
+\BOOKMARK [2][-]{subsection.6.3.3}{Balloon and tail extraction evaluation}{section.6.3}% 70
+\BOOKMARK [2][-]{subsection.6.3.4}{Comic character extraction evaluation}{section.6.3}% 71
+\BOOKMARK [1][-]{section.6.4}{Independent information extraction evaluation}{chapter.6}% 72
+\BOOKMARK [2][-]{subsection.6.4.1}{Panel extraction evaluation}{section.6.4}% 73
+\BOOKMARK [2][-]{subsection.6.4.2}{Balloon extraction evaluation}{section.6.4}% 74
+\BOOKMARK [2][-]{subsection.6.4.3}{Text extraction evaluation}{section.6.4}% 75
+\BOOKMARK [2][-]{subsection.6.4.4}{Comic character extraction evaluation}{section.6.4}% 76
+\BOOKMARK [1][-]{section.6.5}{Knowledge-driven analysis evaluation}{chapter.6}% 77
+\BOOKMARK [1][-]{section.6.6}{Global evaluation}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.7}{Conclusions}{chapter.6}% 79
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 80
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 81
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 82
+\BOOKMARK [0][-]{section*.148}{Bibliography}{}% 83

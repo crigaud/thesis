@@ -7,12 +7,14 @@
 \contentsline {table}{\numberline {4.1}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{48}{table.caption.60}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction results.\relax }}{84}{table.caption.114}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{85}{table.caption.116}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision.\relax }}{87}{table.caption.121}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Balloon shape detection recall and precision.\relax }}{87}{table.caption.123}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Panel extraction results.\relax }}{88}{table.caption.128}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Balloon extraction results.\relax }}{90}{table.caption.132}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Text localisation results.\relax }}{91}{table.caption.134}
-\contentsline {table}{\numberline {6.8}{\ignorespaces Character localisation results.\relax }}{92}{table.caption.139}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction results.\relax }}{84}{table.caption.113}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{85}{table.caption.114}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision.\relax }}{86}{table.caption.118}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Balloon shape detection recall and precision.\relax }}{87}{table.caption.120}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Tail extraction results.\relax }}{88}{table.caption.123}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Character localisation results.\relax }}{89}{table.caption.125}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Panel extraction results.\relax }}{89}{table.caption.126}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Balloon extraction results.\relax }}{91}{table.caption.129}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Text localisation results.\relax }}{92}{table.caption.130}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Character detection performance\relax }}{94}{table.caption.135}
 \addvspace {10\p@ }

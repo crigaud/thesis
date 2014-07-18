@@ -119,7 +119,7 @@ There is text without any surrounding balloons on 33 images of the corpus.
 \paragraph{Text} % (fold)
 \label{par:text}
  is either typewritten (61\% of the image) or handwritten, mainly upper-case.
-The text lines contains 12 elements in average (Figure~\ref{fig:ex:textline_lenth_distribution}) and there are more than hundred text lines that are composed by only one letter which are punctuation or single letter words such as ``I'' or ``A''.
+The text lines contains 12 elements in average (Figure~\ref{fig:ex:textline_lenth_distribution}) and there are more than hundred text lines that are composed by only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
 
 Most pages are from French artworks, where the text is written in French.
 Only 13 pages contain English text and 6 images are in Japanese.
@@ -128,7 +128,7 @@ Onomatopoeia appears in 18 pages.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
-      \includegraphics[trim= 100px 130px 120px 120px, clip, width=0.65\textwidth]{number_of_letter_per_textline.pdf}
+      \includegraphics[trim= 0px 5px 65px 5px, clip, width=0.85\textwidth]{number_of_letter_per_textline.png}
       \caption[Distribution of the number of elements per text lines]{Distribution of the number of elements per text lines.
       }
       \label{fig:ex:textline_lenth_distribution}
@@ -453,7 +453,10 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
   </svg>
   <svg class="Panel">
     <polygon points="53,95 268,95 268,292 53,292 53,95">
-      <metadata rank="1"/>
+      <metadata 
+        idPanel="P01"
+        rank="1"
+      />
     </polygon>
     ...
   </svg>
@@ -461,8 +464,8 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
     <polygon points="61,103 143,103 143,172 61,172 61,103">
       <metadata
         idBalloon="B01" 
-        idCharacter="C01" 
         shape="smooth"
+        tailTaip="153,167"
         tailDirection="SE" 
         rank="1"
       />
@@ -471,7 +474,10 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
   </svg>
   <svg class="Line">
     <polygon points="373,121 432,121 432,132 373,132 373,121">
-      <metadata idBalloon="B01">
+      <metadata 
+        idLine="L01"
+        idBalloon="B01"
+      >
         LIKE YOU.
       </metadata>
     </polygon>
@@ -480,6 +486,15 @@ An example of ground truth file is given figure~\ref{list:svg}.% présente un ex
   <svg class="Character">
     <polygon points="84,153 261,153 261,298 84,298 84,153"/>
       <metadata idCharacter="C01"/>
+    ...
+  </svg>
+  <svg class="LinkSBSC">
+    <polygon points="34,234 56,235 79,340 79,339 34,234"/>
+      <metadata 
+        idLinkSBSC="LSBSC01"
+        idBalloon="B01"
+        idCharacter="C01"
+      />
     ...
   </svg>
 </svg>
@@ -1160,7 +1175,7 @@ The minimum number of children $minNbChildren$ of a balloon was set to 8, just b
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
-      \includegraphics[trim= 10px 0px 60px 0px, clip, width=0.38\textwidth]{number_of_letter_per_balloon.pdf}
+      \includegraphics[trim= 10px 0px 60px 0px, clip, width=0.75\textwidth]{number_of_letter_per_balloon.pdf}
       \caption[Distribution of the number of letter per speech balloon]{Distribution of the number of letter per speech balloon.
       }
       \label{fig:ex:min_number_children_validation}
@@ -1279,21 +1294,22 @@ We evaluated the subset of English and French pages using the OCR with the corre
 This was performed at the text line level taking as correct the text lines that were transcribed exactly as the ground truth transcription, considering all the letters as lower case and ignoring accents (for predicted and ground truth regions).
 % with a edit distance $<$ 10\% of their length using equation~\ref{eq:recall} and~\ref{eq:precision}.
 %For instance a recognised text line of ten elements will be considered as correct if less than three are split, deleted, transposed, replaced or inserted. 
-We obtained a score of 7.18\% accuracy which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
-We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy improved to 10.46\%.
-The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
+We obtained a score of $A_{textReco}=$7.18\% which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
+We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy rise to 10.46\%.
+%The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
+Note that the average text line length is quite short in comic books compared to other documents, the distribution is given Figure~\ref{fig:ex:textline_lenth_distribution} for the eBDtheque dataset.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
-      \centering
-      \includegraphics[trim= 100px 130px 120px 120px, clip, width=0.45\textwidth]{number_of_letter_per_textline.pdf}
-      \caption[Distribution of the number of letter per text lines]{Distribution of the number of letter per text lines.
-      }
-      \label{fig:textline_lenth_distribution}
-    \end{figure}  
+    % \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+    %   \centering
+    %   \includegraphics[trim= 0px 5px 65px 5px, clip, width=0.85\textwidth]{number_of_letter_per_textline.png}
+    %   \caption[Distribution of the number of letter per text lines]{Distribution of the number of letter per text lines.
+    %   }
+    %   \label{fig:textline_lenth_distribution}
+    % \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Note that in Figure~\ref{fig:textline_lenth_distribution}, there are more than a hundred text lines of only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
+% Note that in Figure~\ref{fig:ex:textline_lenth_distribution}, there are more than a hundred text lines of only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
 
 % paragraph text_recognition_evaluation (end)
 

@@ -4,12 +4,12 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Flow diagram of comic balloon detection}}{11}{figure.caption.9}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Illustration of the diversity of comics character postures}}{13}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Panel extraction process}}{19}{figure.caption.13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Binary segmented image}}}{19}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Connected-component bounding boxes}}}{19}{subfigure.1.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Panel cluster}}}{19}{subfigure.1.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Text cluster}}}{19}{subfigure.1.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Descendant histogram of the connected component bounding box heights}}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Panel extraction process}}{20}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Binary segmented image}}}{20}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Connected-component bounding boxes}}}{20}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Panel cluster}}}{20}{subfigure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Text cluster}}}{20}{subfigure.1.4}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Descendant histogram of the connected component bounding box heights}}{21}{figure.caption.15}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Topological pruning of panel bounding box extraction}}{21}{figure.caption.17}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Candidate panels}}}{21}{subfigure.3.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Pruned panels}}}{21}{subfigure.3.2}
@@ -40,14 +40,14 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Inter-connected letters}}{39}{figure.caption.47}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{40}{figure.caption.48}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Difference between black over white and white over black connected-components}}{40}{figure.caption.49}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Text extraction neighbourhood validation}}{40}{figure.caption.50}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Text extraction neighbourhood validation}}{41}{figure.caption.50}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Examples of text lines from comics images}}{41}{figure.caption.51}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{42}{figure.caption.52}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{43}{figure.caption.52}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Balloon content alignment measures}}{43}{figure.caption.53}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Relation between speech balloon shape and contour informations}}{44}{figure.caption.54}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Relation between speech balloon shape and contour informations}}{45}{figure.caption.54}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Balloon contour time series}}{46}{figure.caption.56}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{47}{figure.caption.58}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{49}{figure.caption.61}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{48}{figure.caption.58}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{50}{figure.caption.61}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{51}{figure.caption.62}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{52}{figure.caption.63}
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{53}{figure.caption.64}
@@ -57,12 +57,12 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{58}{figure.caption.67}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Initial hypothesis about the content of a given image}}{59}{figure.caption.69}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Validation of the hypothesis using the properties of the knowledge base}}{60}{figure.caption.71}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}}{61}{figure.caption.73}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}}{60}{figure.caption.73}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}}{61}{figure.caption.75}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Character locations ($C$) returned by the low level processing}}{62}{figure.caption.76}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Validation of the character regions ($C$) by the expert system}}{63}{figure.caption.78}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}}{64}{figure.caption.80}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces A representation of the image model involved in the expert system}}{65}{figure.caption.81}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Validation of the character regions ($C$) by the expert system}}{62}{figure.caption.78}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}}{63}{figure.caption.80}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces A representation of the image model involved in the expert system}}{64}{figure.caption.81}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces A representation of the main aspects of the comics model involved in the expert system}}{65}{figure.caption.82}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Examples of comic panels that reflect the diversity of comic books of the dataset}}{70}{figure.caption.85}
@@ -76,11 +76,10 @@
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Distance to the mean position}}{81}{figure.caption.111}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Image used for ground truth quality assessment}}{82}{figure.caption.112}
 \contentsline {figure}{\numberline {6.11}{\ignorespaces Regular balloon extraction results}}{86}{figure.caption.116}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Example of comic character predicted regions}}{88}{figure.caption.124}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Example of comic character predicted regions}}{89}{figure.caption.124}
 \contentsline {figure}{\numberline {6.13}{\ignorespaces Independent panel extraction score details}}{90}{figure.caption.127}
 \contentsline {figure}{\numberline {6.14}{\ignorespaces Distribution of the number of letter per speech balloon}}{91}{figure.caption.128}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Distribution of the number of letter per text lines}}{92}{figure.caption.132}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting descriptor size validation}}{93}{figure.caption.133}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Character spotting result sample}}{95}{figure.caption.137}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Knowledge-driven extraction performance evolution}}{97}{figure.caption.139}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Character spotting descriptor size validation}}{94}{figure.caption.132}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting result sample}}{96}{figure.caption.136}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Knowledge-driven extraction performance evolution}}{97}{figure.caption.138}
 \addvspace {10\p@ }

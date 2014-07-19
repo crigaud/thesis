@@ -43,11 +43,10 @@ In this case, the reader distinguish them by comparing the difference of colour 
 We use a global binary segmentation method to separate the page background from its content (figure~\ref{fig:se:panel_binary}).
 We do not use a local segmentation approach because it has higher chances to split the panel border and over-segment its content.
 
-Connected-component labelling algorithm~\cite{Szeliski2010Computer} is then used to extract outermost contours from the binary image content, see figure~\ref{fig:in:panel_outermost_contours}.
-Note, we reject panel detection bellow a minimum area relative to the image size $minAreaFactor$ in order to avoid considering isolated elements (e.g text, logo, page number) as panel, see figure~\ref{fig:in:panel_big_contours}
+Connected-component labelling algorithm~\cite{Szeliski2010Computer} is then used to extract outermost contours from the binary image content (Figure~\ref{fig:in:panel_outermost_contours}).
+Note, we reject panel detection bellow a minimum area relative to the image size $minAreaFactor$ in order to avoid considering isolated elements (e.g text, logo, page number) as panel (Figure~\ref{fig:in:panel_big_contours})
 
-Finally, the convex hull or the bounding box of the panel contours can be computed in order to recover from discontinuous contour detection.
-See figure~\ref{fig:in:panel_big_contour_hull} and~\ref{fig:in:panels_detection_boxes}. 
+Finally, the convex hull or the bounding box of the panel contours can be computed in order to recover from discontinuous contour detection (Figure~\ref{fig:in:panel_big_contour_hull} and~\ref{fig:in:panels_detection_boxes}). 
 
 % Here we improve the binary image segmentation using adaptive thresholding method to overcome digitization variations.
 % Adaptive thresholding consist in deciding if a pixel at position $(x,y)$ belongs to the foreground or background according to the mean value of its neighbourhood pixels in a window of size $blockSize * blockSize$.
@@ -136,7 +135,6 @@ Segmentation is a crucial step in many text localization methods. Comic speech t
 
 Therefore, we propose an adaptive segmentation method. For a single page we assume that the text background brightness is similar around all the characters of the same page. However, in our case, the optimal segmentation threshold differs for every single page of comics depending on the background colour of the text areas. The method is based on the observation that choosing the threshold too low, as well as choosing the threshold too high leads to an excess of connected components (CC), figure~\ref{fig:in:bin}.
 
-
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!] %trim=l b r t
 	  \begin{center}$
@@ -151,6 +149,7 @@ Therefore, we propose an adaptive segmentation method. For a single page we assu
 	\label{fig:in:bin}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
  This phenomenon is intrinsic to the nature of comics, as due to the design process they contain textured areas and loosely connected strokes that give rise to merged components at different thresholds. This is intensified by the digitisation and image compression process that adds further noise to the page.
 
 Our method, Minimum Connected Components Thresholding (MCCT), automatically finds the right threshold by computing the number of CC for different threshold levels in a range of values from $th_{min}$ to $th_{max}$ and selecting the one that produces the minimum number of CC (in a 8 bits graylevels image). %We defined a range from 100 to 230 (grayscale value of 8 bits image) for the binarization threshold. 
@@ -174,7 +173,9 @@ As an alternative segmentation method, we also tried to extract text CC using th
 \subsection{Text/graphics separation}
 \label{sec:te:textgraphicseparation}
 %For the extraction we use CC algorithm for the reason presented in~\ref{sec:segmentation}. We considered only the CC that are black on a white background in the binary image (see figure~\ref{fig:in:bw_wb}). %For the white CC on black background see experiments (section~\ref{sec:experiments}).
-After the segmentation step, the CC may correspond to graphics, single letters or a sequence of letters if some are connected (figure~\ref{fig:in:detach_attach_letter}). The objective of this section is to separate the last two categories from the first one. Note that the merged letters will not affect our results (if they are part of the same word) as we are aiming to text line localization.
+After the segmentation step, the CC may correspond to graphics, single letters or a sequence of letters if some are connected (figure~\ref{fig:in:detach_attach_letter}).
+The objective of this section is to separate the last two categories from the first one.
+Note that the merged letters will not affect our results (if they are part of the same word) as we are aiming to text line localization.
 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -242,7 +243,7 @@ Rule 1: we compare the standard deviation of the greylevels of each CC bounding 
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Rule 2: we apply a topological filtering that consists in removing all the CC that overlap with others assuming that a letter CC can't contain another CC (similar to~\cite{Kasar07}). In our study we consider only the black on white CC. (see figure~\ref{fig:in:bw_wb}).
+Rule 2: we apply a topological filtering that consists in removing all the CC that overlap with others assuming that a letter CC can't contain another CC (similar to~\cite{Kasar07}). In our study we consider only the black on white CC. (Figure~\ref{fig:in:bw_wb}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]%trim=l b r t
@@ -258,7 +259,8 @@ Rule 2: we apply a topological filtering that consists in removing all the CC th
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Rule 3:  we check that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines). To do so, we check for similar in height components in an area equal to the size of the component's bounding box extended to its left/right/top/bottom directions (figure~\ref{fig:in:4_direction}). For instance, $l_i$ is similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
+Rule 3: we check that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines).
+To do so, we check for similar in height components in an area equal to the size of the component's bounding box extended to its left/right/top/bottom directions (figure~\ref{fig:in:4_direction}). For instance, $l_i$ is similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
 %\end{enumerate}
 
 
@@ -284,7 +286,7 @@ Automatic text recognition has been studied for many years, today OCR systems ar
 The principal interest of text recognition is the ability of searching images by using keywords.
 
 Text recognition applied to comics is really challenging because it includes most of the difficulties from text recognition in document analysis domain if we consider all the type of text that composed the comics.
-From typewritten to handwritten and free-form text in uniform to complex background including image noise, text deformation and overlapping (see figure~\ref{fig:in:texlines_example}).
+From typewritten to handwritten and free-form text in uniform to complex background including image noise, text deformation and overlapping (Figure~\ref{fig:in:texlines_example}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -354,7 +356,7 @@ We use the difference of alignment between the balloon candidate and its childre
 This is similar to the text dependent balloon extraction method presented in section~\ref{sec:se:panel_and_text}.
 The difference is that here we have no idea about the nature of the children (not detected as text before).
 This independent balloon extraction method can be seen as an ``intelligent'' balloon extractor that embeds a part of a the domain knowledge related to text (balloons are expected to contain text).
-The difference of alignment is computed for the horizontal ($d_x$) and the vertical ($d_y$) axis from the Euclidean distance between the parent and children hull centroids, see figure~\ref{fig:in:coaxial_alignment}.
+The difference of alignment is computed for the horizontal ($d_x$) and the vertical ($d_y$) axis from the Euclidean distance between the parent and children hull centroids (Figure~\ref{fig:in:coaxial_alignment}).
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -466,7 +468,7 @@ The first dimension aims to differentiates contours which have a high variations
 
 The first feature $f_1$ consists in measuring the standard deviation $\sigma_c$ of the contour signal $c$ normalized by the original signal average $\bar{o}$, see eq.~\ref{eq:be:distortion}.
 
-In order to measure the second feature $f_2$, we split the contour signal $c$ in two signals $c_{pos}$ and $c_{neg}$ which correspond to the signal parts that are strictly above and bellow the average $\bar{c}$ (see fig.~\ref{fig:be:signal_decomposition}) and then we measure the standard deviation differences, see eq.~\ref{eq:be:var_diff}.% compares the superior and inferior variances of the contour signal average $\bar{c}$
+In order to measure the second feature $f_2$, we split the contour signal $c$ in two signals $c_{pos}$ and $c_{neg}$ which correspond to the signal parts that are strictly above and bellow the average $\bar{c}$ (Figure~\ref{fig:be:signal_decomposition}) and then we measure the standard deviation differences, see eq.~\ref{eq:be:var_diff}.% compares the superior and inferior variances of the contour signal average $\bar{c}$
 
 \begin{equation}\label{eq:be:distortion}
  f_1 = \frac{\sigma_c}{\bar{o}}% * \sum_{i=-M/2}^{+M/2} o
@@ -576,7 +578,7 @@ The retrieval (search) step can be extended to other albums from the same collec
 %------------------------------------------------------------------------
 \subsection{Input query}
 \label{sec:in:input_query}
-A minimal user interaction is necessary to tell the system what to retrieve in the album or collection. We only ask the user to give an information about the object's colours by selecting few pixels from the query object. We propose to use a pointing device (e.g. mouse, finger on touchsreen) to click, drag and release over the object colours and make the selection of pixels (see fig.~\ref{fig:in:user_selection}).
+A minimal user interaction is necessary to tell the system what to retrieve in the album or collection. We only ask the user to give an information about the object's colours by selecting few pixels from the query object. We propose to use a pointing device (e.g. mouse, finger on touchsreen) to click, drag and release over the object colours and make the selection of pixels (Figure~\ref{fig:in:user_selection}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
@@ -599,7 +601,7 @@ Once the user has highlighted the query region, we reduce the number of colour o
 
 The query descriptor we use is a non ordered colour vector that contains the information of presence of certain colours in the query ($D \subset P_c$). It is not composed by spatial or quantitative information (e.g. region positions, number of pixels) because is it not scale and deformation invariant.% The integration of these spatial information is the object of current research in our research group.
 
-The colour subset $D$ is composed by $N$ colours which have the highest number of pixels in the query region and that are the most discriminant. We call, for a given colour $c$, the number of pixel $L_{1c}$ and the discriminability level $L_{2c}$ which is the percentage of pixel which are in the query region compared to rest of the pixels in the image of the same colour (equivalent to TF-IDF~\cite{salton1986introduction}). Each value of $L_1$ and $L_2$ are normalized as a percentage between 0 and 1, the score for each colour is the sum of both term: $Score(c) = L_{1c} + L_{2c}$ (see fig.~\ref{fig:in:dominant_colour_hist_desc}).
+The colour subset $D$ is composed by $N$ colours which have the highest number of pixels in the query region and that are the most discriminant. We call, for a given colour $c$, the number of pixel $L_{1c}$ and the discriminability level $L_{2c}$ which is the percentage of pixel which are in the query region compared to rest of the pixels in the image of the same colour (equivalent to TF-IDF~\cite{salton1986introduction}). Each value of $L_1$ and $L_2$ are normalized as a percentage between 0 and 1, the score for each colour is the sum of both term: $Score(c) = L_{1c} + L_{2c}$ (Figure~\ref{fig:in:dominant_colour_hist_desc}).
 
 The discriminability level allows us to ignore colours that not only dominant in the query region but also in the rest of the image. For instance, black and white are most of the time present in the query but also in many contour and background regions which may create noise in the retrieval process.
 
@@ -632,7 +634,7 @@ The discriminability level allows us to ignore colours that not only dominant in
 \subsection{Object retrieval}
 Comics have a particular structure that allows different approaches for object retrieval. An interesting point is that similar objects often appear several times in each image (page) of the album.%, which allow to searcat permits to think about searching other object occurrences.% from in the same image as the query and the others.
 
-First, for each page and colour value (RGB) in the descriptor, we compute the corresponding colour mask (see fig.~\ref{fig:in:masks}). %Note, mathematical morphology may be used to remove isolated pixel noise (e.g. paper texture) in some cases.
+First, for each page and colour value (RGB) in the descriptor, we compute the corresponding colour mask (Figure~\ref{fig:in:masks}). %Note, mathematical morphology may be used to remove isolated pixel noise (e.g. paper texture) in some cases.
 Second we find the object position in each pages by using a sliding window approach at different window size and for each mask. The window sizes are defined according to the user query size (maximum between the query width or height) which gives an information about the definition of the document $S=\{s_0,s_1,...,s_n\}$ in order to retrieve the object at different scales.
 
 

@@ -40,14 +40,14 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Inter-connected letters}}{39}{figure.caption.47}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{40}{figure.caption.48}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Difference between black over white and white over black connected-components}}{40}{figure.caption.49}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Text extraction neighbourhood validation}}{41}{figure.caption.50}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Text extraction neighbourhood validation}}{40}{figure.caption.50}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Examples of text lines from comics images}}{41}{figure.caption.51}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{43}{figure.caption.52}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{42}{figure.caption.52}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Balloon content alignment measures}}{43}{figure.caption.53}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Relation between speech balloon shape and contour informations}}{45}{figure.caption.54}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Relation between speech balloon shape and contour informations}}{44}{figure.caption.54}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Balloon contour time series}}{46}{figure.caption.56}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{48}{figure.caption.58}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{50}{figure.caption.61}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{47}{figure.caption.58}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{49}{figure.caption.61}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{51}{figure.caption.62}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{52}{figure.caption.63}
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{53}{figure.caption.64}
@@ -75,11 +75,10 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Annotation rendering in a browser}}{78}{figure.caption.110}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Distance to the mean position}}{81}{figure.caption.111}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Image used for ground truth quality assessment}}{82}{figure.caption.112}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Regular balloon extraction results}}{86}{figure.caption.116}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Example of comic character predicted regions}}{89}{figure.caption.124}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Independent panel extraction score details}}{90}{figure.caption.127}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Distribution of the number of letter per speech balloon}}{91}{figure.caption.128}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Character spotting descriptor size validation}}{94}{figure.caption.132}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting result sample}}{96}{figure.caption.136}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Knowledge-driven extraction performance evolution}}{97}{figure.caption.138}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset. \relax }}{86}{figure.caption.117}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Distribution of the number of letter per speech balloon}}{87}{figure.caption.120}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Example of comic character predicted regions}}{92}{figure.caption.131}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Character spotting descriptor size validation}}{93}{figure.caption.133}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Character spotting result sample}}{96}{figure.caption.137}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Knowledge-driven extraction performance evolution}}{97}{figure.caption.139}
 \addvspace {10\p@ }

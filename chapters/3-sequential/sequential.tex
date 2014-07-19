@@ -139,9 +139,7 @@ This method assumes that the image is highly contrasted and contains a high disp
 \paragraph{Pruning} % (fold)
 \label{par:se:pruning}
 The results from the clustering operation can be pruned using domain knowledge.
-First, a panel is rarely included in another so 
-% Components clustered as panel sometimes include other panel which is really rare in comics.
-we take out components which are included in other regions of the panel cluster.  
+First, a panel is rarely included in another so we take out components which are included in other regions of the panel cluster.  
 % After the classification step, the second characteristic of panel is used in order to keep only the components that are not overlapped by others.
 Given the set of component bounding boxes from the panel cluster $R = \{R_1, R_2, ... , R_n\}$, we filter out panel candidates that do not verify this relation $R_i\notin{R_j} \forall j, i \neq j$ (Figure \ref{fig:se:frame_candidates} and~\ref{fig:se:frame_cleaned}).
 

@@ -59,25 +59,32 @@
 \BOOKMARK [2][-]{subsection.6.1.2}{Terms of use}{section.6.1}% 59
 \BOOKMARK [2][-]{subsection.6.1.3}{Ground truth construction}{section.6.1}% 60
 \BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 61
-\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 62
-\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation}{section.6.2}% 63
-\BOOKMARK [2][-]{subsection.6.2.2}{Tail detection}{section.6.2}% 64
-\BOOKMARK [2][-]{subsection.6.2.3}{Semantic links}{section.6.2}% 65
-\BOOKMARK [2][-]{subsection.6.2.4}{Text recognition}{section.6.2}% 66
-\BOOKMARK [1][-]{section.6.3}{Sequential information extraction evaluation}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.3.1}{Panel extraction evaluation}{section.6.3}% 68
-\BOOKMARK [2][-]{subsection.6.3.2}{Text extraction evaluation}{section.6.3}% 69
-\BOOKMARK [2][-]{subsection.6.3.3}{Balloon and tail extraction evaluation}{section.6.3}% 70
-\BOOKMARK [2][-]{subsection.6.3.4}{Comic character extraction evaluation}{section.6.3}% 71
-\BOOKMARK [1][-]{section.6.4}{Independent information extraction evaluation}{chapter.6}% 72
-\BOOKMARK [2][-]{subsection.6.4.1}{Panel extraction evaluation}{section.6.4}% 73
-\BOOKMARK [2][-]{subsection.6.4.2}{Balloon extraction evaluation}{section.6.4}% 74
-\BOOKMARK [2][-]{subsection.6.4.3}{Text extraction evaluation}{section.6.4}% 75
-\BOOKMARK [2][-]{subsection.6.4.4}{Comic character extraction evaluation}{section.6.4}% 76
-\BOOKMARK [1][-]{section.6.5}{Knowledge-driven analysis evaluation}{chapter.6}% 77
-\BOOKMARK [1][-]{section.6.6}{Global evaluation}{chapter.6}% 78
-\BOOKMARK [1][-]{section.6.7}{Conclusions}{chapter.6}% 79
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 80
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 81
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 82
-\BOOKMARK [0][-]{section*.147}{Bibliography}{}% 83
+\BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 62
+\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 63
+\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation}{section.6.2}% 64
+\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation}{section.6.2}% 65
+\BOOKMARK [2][-]{subsection.6.2.3}{Tail detection}{section.6.2}% 66
+\BOOKMARK [2][-]{subsection.6.2.4}{Semantic links}{section.6.2}% 67
+\BOOKMARK [2][-]{subsection.6.2.5}{Text recognition}{section.6.2}% 68
+\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 69
+\BOOKMARK [2][-]{subsection.6.3.1}{Experimental settings}{section.6.3}% 70
+\BOOKMARK [2][-]{subsection.6.3.2}{Result analysis}{section.6.3}% 71
+\BOOKMARK [1][-]{section.6.4}{Balloon extraction evaluation \(method 1 + 2 + 3\)}{chapter.6}% 72
+\BOOKMARK [2][-]{subsection.6.4.1}{Experimental settings}{section.6.4}% 73
+\BOOKMARK [2][-]{subsection.6.4.2}{Result analysis}{section.6.4}% 74
+\BOOKMARK [1][-]{section.6.5}{Tail detection evaluation}{chapter.6}% 75
+\BOOKMARK [1][-]{section.6.6}{Text extraction and recognition evaluation}{chapter.6}% 76
+\BOOKMARK [2][-]{subsection.6.6.1}{Experimental settings}{section.6.6}% 77
+\BOOKMARK [2][-]{subsection.6.6.2}{Method B}{section.6.6}% 78
+\BOOKMARK [2][-]{subsection.6.6.3}{Method C}{section.6.6}% 79
+\BOOKMARK [2][-]{subsection.6.6.4}{Results analysis}{section.6.6}% 80
+\BOOKMARK [1][-]{section.6.7}{Comic character extraction evaluation}{chapter.6}% 81
+\BOOKMARK [2][-]{subsection.6.7.1}{Result analysis}{section.6.7}% 82
+\BOOKMARK [2][-]{subsection.6.7.2}{Character spotting}{section.6.7}% 83
+\BOOKMARK [1][-]{section.6.8}{Semantic links evaluation}{chapter.6}% 84
+\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis evaluation}{chapter.6}% 85
+\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 86
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 87
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 88
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 89
+\BOOKMARK [0][-]{section*.148}{Bibliography}{}% 90

@@ -69,22 +69,24 @@
 \BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 69
 \BOOKMARK [2][-]{subsection.6.3.1}{Experimental settings}{section.6.3}% 70
 \BOOKMARK [2][-]{subsection.6.3.2}{Result analysis}{section.6.3}% 71
-\BOOKMARK [1][-]{section.6.4}{Balloon extraction evaluation \(method 1 + 2 + 3\)}{chapter.6}% 72
+\BOOKMARK [1][-]{section.6.4}{Text extraction and recognition evaluation}{chapter.6}% 72
 \BOOKMARK [2][-]{subsection.6.4.1}{Experimental settings}{section.6.4}% 73
-\BOOKMARK [2][-]{subsection.6.4.2}{Result analysis}{section.6.4}% 74
-\BOOKMARK [1][-]{section.6.5}{Tail detection evaluation}{chapter.6}% 75
-\BOOKMARK [1][-]{section.6.6}{Text extraction and recognition evaluation}{chapter.6}% 76
-\BOOKMARK [2][-]{subsection.6.6.1}{Experimental settings}{section.6.6}% 77
-\BOOKMARK [2][-]{subsection.6.6.2}{Method B}{section.6.6}% 78
-\BOOKMARK [2][-]{subsection.6.6.3}{Method C}{section.6.6}% 79
-\BOOKMARK [2][-]{subsection.6.6.4}{Results analysis}{section.6.6}% 80
+\BOOKMARK [2][-]{subsection.6.4.2}{Results analysis}{section.6.4}% 74
+\BOOKMARK [1][-]{section.6.5}{Balloon extraction evaluation}{chapter.6}% 75
+\BOOKMARK [2][-]{subsection.6.5.1}{Experimental settings}{section.6.5}% 76
+\BOOKMARK [2][-]{subsection.6.5.2}{Result analysis}{section.6.5}% 77
+\BOOKMARK [1][-]{section.6.6}{Tail detection evaluation}{chapter.6}% 78
+\BOOKMARK [2][-]{subsection.6.6.1}{Experimental settings}{section.6.6}% 79
+\BOOKMARK [2][-]{subsection.6.6.2}{Result analysis}{section.6.6}% 80
 \BOOKMARK [1][-]{section.6.7}{Comic character extraction evaluation}{chapter.6}% 81
-\BOOKMARK [2][-]{subsection.6.7.1}{Result analysis}{section.6.7}% 82
-\BOOKMARK [2][-]{subsection.6.7.2}{Character spotting}{section.6.7}% 83
+\BOOKMARK [2][-]{subsection.6.7.1}{Experimental settings}{section.6.7}% 82
+\BOOKMARK [2][-]{subsection.6.7.2}{Result analysis}{section.6.7}% 83
 \BOOKMARK [1][-]{section.6.8}{Semantic links evaluation}{chapter.6}% 84
-\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis evaluation}{chapter.6}% 85
-\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 86
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 87
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 88
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 89
-\BOOKMARK [0][-]{section*.148}{Bibliography}{}% 90
+\BOOKMARK [2][-]{subsection.6.8.1}{Experimental settings}{section.6.8}% 85
+\BOOKMARK [2][-]{subsection.6.8.2}{Results analysis}{section.6.8}% 86
+\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis evaluation}{chapter.6}% 87
+\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 88
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 89
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 91
+\BOOKMARK [0][-]{section*.162}{Bibliography}{}% 92

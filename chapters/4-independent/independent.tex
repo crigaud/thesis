@@ -165,7 +165,9 @@ Then we find the first minimal number of CC. See example on figure~\ref{fig:in:C
 	\end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As an alternative segmentation method, we also tried to extract text CC using the Maximally Stable Extremal Region (MSER) algorithm~\cite{Matas02} nevertheless, this algorithm produces an excess of false detections as in general a lot of the graphical elements are equally stable as the text. We also try the well known Otsu~\cite{otsu79} algorithm. %\footnote{http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html}
+As an alternative segmentation method, we also tried to extract text CC using the Maximally Stable Extremal Region (MSER) algorithm~\cite{matas2004robust}.
+This algorithm produces an excess of false detections as in general a lot of the graphical elements are equally stable as the text. We also try the well known Otsu~\cite{otsu79} algorithm \modif{TODO; justify or delete}.
+%\footnote{http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html}
 % (see section~\ref{sec:experiments}).
 
 %Our method is similar to Maximally Stable Extremal Region (MSER) algorithm~\cite{Matas02} because we also try to find an extrema. However, MSER accuracy is low because of the stroke of the text which is very thin compare to the other elements present in the page. This algorithm require a minimum number of stable regions as threshold which as to be very low in our case (text is small region) and a lot of other regions will remain then.
@@ -278,6 +280,7 @@ we check all the CC bounding boxes pairs that overlap more than $b$\% each other
 
 % \end{itemize}
 The four rules exploit contrast, topology and text structure to classify the CCs as being either graphics or text.
+We can group text parts to text lines using the method presented in Section~\ref{par:se:letter_to_line}.
 
 
 \subsection{Text recognition} % (fold)
@@ -299,7 +302,7 @@ From typewritten to handwritten and free-form text in uniform to complex backgro
 
 Text recognition in comics would allow full-text search, tagging, image description, comic character labelling etc.
 Text recognition in comics requires an extensive work to be addressed properly, which has not been addressed in this thesis work.
-Nevertheless, we measure the performance of current OCR systems in section~\ref{sub:ex:independent_text_extraction_evaluation}.
+Nevertheless, we measure the performance of current OCR systems in section~\ref{sub:ex:text_extraction_recognition_evaluation}.
 
 % section text_localisation_and_recognition (end)
 
@@ -578,7 +581,10 @@ The retrieval (search) step can be extended to other albums from the same collec
 %------------------------------------------------------------------------
 \subsection{Input query}
 \label{sec:in:input_query}
-A minimal user interaction is necessary to tell the system what to retrieve in the album or collection. We only ask the user to give an information about the object's colours by selecting few pixels from the query object. We propose to use a pointing device (e.g. mouse, finger on touchsreen) to click, drag and release over the object colours and make the selection of pixels (Figure~\ref{fig:in:user_selection}).
+A minimal user interaction is necessary to tell the system what to retrieve in the album or collection.
+We only ask the user to give an information about the object's colours by selecting few pixels from the query object.
+We propose to use a pointing device (e.g. mouse, finger on touchsreen) to click, drag and release over the object colours and make the selection of pixels (Figure~\ref{fig:in:user_selection}).
+This selection can be assisted using a scribble-based tool~\cite{Xu2012LazySelection}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,

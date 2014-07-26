@@ -21,15 +21,15 @@ In fact, people want to continue reading their favourite comics or manga on the 
 Printed comics require tedious work to be manually scanned and split into screen size parts small enough to avoid zooming and scrolling.
 
 Several techniques have been proposed to automatically extract panels as~\cite{In11}, assuming that panels are small enough elements to be comfortably read on mobile devices.
-They are based on white line cutting algorithm~\cite{Duda72,li2012automatic,Chan2007Automatic}, recursive X-Y cut~\cite{Han07} or gradient~\cite{Tan07}.
+They are based on white line cutting algorithm~\cite{Duda72,Luyuan2014Automatic,Chan2007Automatic}, recursive X-Y cut~\cite{Han07} or gradient~\cite{Tan07}.
 Those methods do not consider empty area~\cite{In11} and border free panels.
 These issues have been corrected by connected component approaches~\cite{Arai10} 
 %,Rigaud2012LNCS} 
 but they are sensible to region that sometimes connect several panels and increase the detection error rate.
-Another approach based on morphological mathematics and growing region~\cite{Khoi11} can remove such connecting elements but also remove information on the panel border.
-After the region segmentation step, heuristic filtering is often applied~\cite{Arai11,Khoi11} to classify panel region according to the size ratio according to the page size, which depends on the page format.
+Another approach based on growing region and morphological mathematics can remove such connecting elements but also remove information on the panel border~\cite{Ho2012}.
+After the region segmentation step, heuristic filtering is often applied to classify panel region according to the size ratio according to the page size, which depends on the page format~\cite{Arai11,Ho2012}.
 More recently, new methods have shown interesting results for manga and European comics with different background colours.
-They are based on watershed~\cite{ponsard2012ocr}, line segmentation using Canny operator and polygon detection~\cite{Luyuan2014Automatic}, region of interest detection~\cite{stommel2012segmentation} such as corners~\cite{Tsai2013Adaptive} and line segments.
+They are based on watershed~\cite{ponsard2012ocr}, line segmentation using Canny operator and polygon detection~\cite{Luyuan2014Automatic}, region of interest detection such as corners and line segments~\cite{stommel2012segmentation,Tsai2013Adaptive}.
 Panel retargeting have been addressed for manga by Matsui~\cite{Matsui2011}.
 
 Page layout analysis have been studied to calculate the reading order of the panels.
@@ -176,7 +176,8 @@ This is a big difference compared to natural images and human detection, since c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Recent studies have been published for partial manga copy detection~\cite{Sun2010}, mainly based on shape information because of the absence of color information.
-This work has been extended to Manga copyright infringement protection~\cite{Sun2013IJDAR} using a faces~\cite{Viola2004robust} as region of interest and concentric HOG~\cite{Dalal05} as region descriptor.
+This work has been extended to Manga copyright infringement protection~\cite{Sun2009Detecting,Sun2013IJDAR} using MSER~\cite{matas2004robust} or faces~\cite{Viola2004robust} for region detection and HOG~\cite{Dalal05} as region descriptor.
+A recent study discuss the local feature extraction and the approximate nearest neighbour (ANN) search~\cite{Iwata2014StudyManga} .
 This work shows good results for manga part retrieval which is a subset of the whole comics world.
 % In our work we focus on a complementary subset, corresponding to colored comics analysis.
 
@@ -187,6 +188,7 @@ The thesis of TA~\cite{TAPhD2010} (section 1.1 and 1.2) gives a good overview ab
 TA~\cite{TAPhD2010} also mentions that ``story board scene understanding still remains an open problem, few results are available in the literature about stroke images''.
 
 Another work uses HOG descriptor with redundant information classification to also find the most frequent elements~\cite{SunICDAR2013}.
+% It has been improved  
 Both graph and descriptor based methods need an image preprocessing step to remove irrelevant redundant elements such as text and speech balloons.
 
 Other interesting approaches tries to automatize comic generation~\cite{Tobita2010Comic,WangHYYC12} using image cartoonification and script analysis.

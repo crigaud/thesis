@@ -305,17 +305,11 @@ Alice Hermann, Sébastien Ferré, and Mireille Ducassé.
 \newblock In {\em EKAW}, volume 7603 of {\em Lecture Notes in Computer
   Science}, pages 430--433. Springer, 2012.
 
-\bibitem{Khoi11}
-Anh Khoi~Ngo Ho, Jean-Christophe Burie, and Jean-Marc Ogier.
-\newblock Comics page structure analysis based on automatic panel extraction.
-\newblock In {\em GREC 2011, Nineth IAPR International Workshop on Graphics
-  Recognition}, Seoul, Korea, September, 15-16 2011.
-
 \bibitem{Ho2012}
 Anh Khoi~Ngo Ho, Jean-Christophe Burie, and Jean-Marc Ogier.
-\newblock {Panel and Speech Balloon Extraction from Comic Books}.
+\newblock Panel and speech balloon extraction from comic books.
 \newblock In {\em 2012 10th IAPR International Workshop on Document Analysis
-  Systems}, pages 424--428. Ieee, March 2012.
+  Systems}, pages 424--428. Ieee, 2012.
 
 \bibitem{HoGREC2013}
 Hoang~Nam Ho, Christophe Rigaud, Jean-Christophe Burie, and Jean-Marc Ogier.
@@ -344,6 +338,12 @@ Yusuke In, Takashi Oie, Masakazu Higuchi, Shuji Kawasaki, Atushi Koike, and
   phone comic images.
 \newblock {\em Internatinal journal of systems applications, engineering and
   development}, 5(2):216--223, 2011.
+
+\bibitem{Iwata2014StudyManga}
+Motoi Iwata, Atsushi Ito, and Koichi Kise.
+\newblock A study to achieve manga character retrieval method for manga images.
+\newblock In {\em Document Analysis Systems (DAS), 2014 11th IAPR International
+  Workshop on}, pages 309--313, April 2014.
 
 \bibitem{Raulet2013Comics}
 Raulet J{\'e}r{\'e}my and Boyer Vincent.
@@ -380,6 +380,11 @@ Wonjun Kim and Changick Kim.
   video scene.
 \newblock {\em Image Processing, IEEE Transactions on}, 18(2):401 --411, feb.
   2009.
+
+\bibitem{Kopf2012DigitalReconstruction}
+Johannes Kopf and Dani Lischinski.
+\newblock Digital reconstruction of halftoned color comics.
+\newblock {\em ACM Trans. Graph.}, 31(6):140:1--140:10, November 2012.
 
 \bibitem{kuhne2001motion}
 Gerald K{\"u}hne, Stephan Richter, and Markus Beier.
@@ -433,15 +438,10 @@ Congcong Li, Adarsh Kowdle, Ashutosh Saxena, and Tsuhan Chen.
 \newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 34(7):1394--1408,
   2012.
 
-\bibitem{li2012automatic}
-Luyuan Li, Yongtao Wang, Zhi Tang, and Liangcai Gao.
-\newblock Automatic comic page segmentation based on polygon detection.
-\newblock {\em Multimedia Tools and Applications}, 11042:1--27, 2012.
-
 \bibitem{Luyuan2014Automatic}
 Luyuan Li, Yongtao Wang, Zhi Tang, and Liangcai Gao.
 \newblock Automatic comic page segmentation based on polygon detection.
-\newblock {\em Multimedia Tools Appl.}, 69(1):171--197, 2014.
+\newblock {\em Multimedia Tools Applications}, 69(1):171--197, 2014.
 
 \bibitem{Li2013Comic}
 Luyuan Li, Yongtao Wang, Zhi Tang, and Dong Liu.
@@ -494,10 +494,10 @@ Christy Marx.
 \newblock {\em Writing for Animation, Comics, and Games}.
 \newblock Focal Press, 2006.
 
-\bibitem{Matas02}
-J.~Matas, O.~Chum, M.~Urban, and T.~Pajdla.
-\newblock Robust wide baseline stereo from.
-\newblock In {\em In British Machine Vision Conference}, pages 384--393, 2002.
+\bibitem{matas2004robust}
+Jiri Matas, Ondrej Chum, Martin Urban, and Tom{\'a}s Pajdla.
+\newblock Robust wide-baseline stereo from maximally stable extremal regions.
+\newblock {\em Image and vision computing}, 22(10):761--767, 2004.
 
 \bibitem{Matsui2011}
 Yusuke Matsui, Toshihiko Yamasaki, and Kiyoharu Aizawa.
@@ -638,13 +638,6 @@ Christophe Rigaud, Dimosthenis Karatzas, Joost Van~de Weijer, Jean-Christophe
 \newblock In {\em Proceedings of the 8th International Conference on Computer
   Vision Theory and Applications (VISAPP)}. SCITEPRESS Digital Library, 2013.
 
-\bibitem{Rigaud2012LNCS}
-Christophe Rigaud, Norbert Tsopze, Jean-Christophe Burie, and Jean-Marc Ogier.
-\newblock Robust frame and text extraction from comic books.
-\newblock In Young-Bin Kwon and Jean-Marc Ogier, editors, {\em Graphics
-  Recognition. New Trends and Challenges}, volume 7423 of {\em Lecture Notes in
-  Computer Science}, pages 129--138. Springer Berlin Heidelberg, 2013.
-
 \bibitem{Rissen2012}
 Paul Rissen.
 \newblock {A Comics Ontology}, 2012.
@@ -739,6 +732,13 @@ Kang~B Sun and Boaz~J Super.
 \newblock Classification of contour shapes using class segment sets.
 \newblock In {\em Computer Vision and Pattern Recognition, 2005. CVPR 2005.
   IEEE Computer Society Conference on}, volume~2, pages 727--733. IEEE, 2005.
+
+\bibitem{Sun2009Detecting}
+Weihan Sun and K.~Kise.
+\newblock Detecting printed and handwritten partial copies of line drawings
+  embedded in complex backgrounds.
+\newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
+  International Conference on}, pages 341--345, July 2009.
 
 \bibitem{Sun2010}
 Weihan Sun and Koichi Kise.
@@ -886,6 +886,18 @@ J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
 C~Xu and J~L Prince.
 \newblock Snakes, shapes, and gradient vector flow.
 \newblock {\em IEEE Transactions on Image Processing}, 7(3):359--369, 1998.
+
+\bibitem{l0smoothing2011}
+Li~Xu, Cewu Lu, Yi~Xu, and Jiaya Jia.
+\newblock Image smoothing via l0 gradient minimization.
+\newblock In {\em Proceedings of the 2011 SIGGRAPH Asia Conference}, SA '11,
+  pages 174:1--174:12, New York, NY, USA, 2011. ACM.
+
+\bibitem{Xu2012LazySelection}
+Pengfei Xu, Hongbo Fu, Oscar Kin-Chung Au, and Chiew-Lan Tai.
+\newblock Lazy selection: A scribble-based tool for smart shape elements
+  selection.
+\newblock {\em ACM Trans. Graph.}, 31(6):142:1--142:9, November 2012.
 
 \bibitem{Yam04}
 Masashi Yamada, Rahmat Budiarto, Mamoru Endo, and Shinya Miyazaki.

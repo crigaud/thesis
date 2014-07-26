@@ -188,6 +188,12 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 
 	% paragraph pruning (end)
 
+
+\paragraph{Text line construction} % (fold)
+\label{par:se:letter_to_line}
+
+TODO (already published somewhere...) 
+
 % paragraph classification (end)
 
 % section panel_and_text (end)
@@ -197,7 +203,7 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 % In this section we detail a novel approach for closed and non-closed speech balloon localization in scanned comic book pages, an essential step towards a fully automatic comic book understanding. 
 For comics content understanding, speech balloons present a lot of interest since they offer the links between the textual content and the comic characters providing information about the localization of the characters and the tone of speech. 
 As mentioned in section~\ref{??}, speech balloons are the more frequent type of balloon in comics and are highly related to speech text regions.
-In this section we propose two approaches form balloon extraction based on text region location that can be detected using the methods presented in section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text_localisation_and_recognition}.
+In this section we propose two approaches for balloon extraction based on text region location that can be detected using the methods presented in section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text_localisation_and_recognition}.
 The first method defined as ``balloon'' the smallest connected-components contains several text regions.
 The second method groups text lines into paragraphs and initializes an active contour model (snake) on its outline.
 From the initial position, the snake is pushed away from the text and attracted by surrounding edges at the same time in order to stick to any potential balloon stroke close by.

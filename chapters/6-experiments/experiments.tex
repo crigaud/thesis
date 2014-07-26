@@ -685,7 +685,7 @@ We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percent
 % subsection semantic_links_and_text_recognition (end)
 
 \subsection{Text recognition} % (fold)
-\label{sub:text_recognition}
+\label{sub:ex:text_recognition_metric}
 Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{??} using commercial OCR systems on the eBDtheque dataset.
 We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth~\cite{Guerin2013}.
 
@@ -706,19 +706,51 @@ We evaluated the text detection accuracy $A_{textReco}$ at a given string edit d
 % TODO
 
 \section{Panel extraction evaluation} % (fold)
-\label{sub:ex:sequential_panel_extraction_evaluation}
+\label{sub:ex:panel_extraction_evaluation}
 % We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 
-In this section we evaluate our three approaches and \modif{N} method from the literature on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level, and using the recall and precision metrics introduced Section~\ref{sec:ex:metrics}.
+In this section we evaluate our three approaches and compare them to two methods from the literature.
+We chose to compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two methods from the state of the art (Section~\ref{sec:sota:layout_panel}).
+The first one use connected component analysis similarly to our proposition and the second differs because it is based on growing region that does not require binary segmentation.
+
+The comparative evaluation is performed on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level, and using the recall and precision metrics introduced Section~\ref{sec:ex:metrics}.
 
 \subsection{Experimental settings} % (fold)
 \label{sub:experimental_settings}
 
-\subsubsection{Method 1} % (fold)
+TODO
+
+\subsubsection{Arai's method~\cite{Arai10}} % (fold)
+% \label{sub:arai_cite_arai}
+We re implemented the comic panel extraction method presented in~\cite{Arai10} except not the division line detection by lake of detail in the original paper.
+
+TODO: describe the method
+
+This line detection approach is able to cut overlapped panel on a page width or height basis which is appropriate for pages with a single panel per strip as illustrated Figure~\ref{fig:ex:division_line_detection}.
+Single panel strips are not so common and would not have affected the result significantly.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{division_line_detection_arai10.png}
+\caption[Division line detection from~\cite{Arai10}]{Division line detection from~\cite{Arai10} (figure 5 in the author' paper).}
+\label{fig:ex:division_line_detection}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% subsection arai_cite_arai (end)
+
+\subsubsection{Ho's method~\cite{Ho2012}} % (fold)
+We re implemented the Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the growing region method to 20, which was no mentioned in the original paper.
+
+TODO: describe the method
+
+\subsubsection{Method A} % (fold)
 % \label{sub:method_1}
 
 The method presented Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method Section~\ref{sec:se:panel_and_text}.
-Note that the method also extract text region at the same time (Section~\ref{sub:ex:sequential_text_extraction_evaluation}) which does not interfere with panel.
+Note that the method also extract text region at the same time (Section~\ref{sub:ex:text_extraction_recognition_evaluation}) which does not interfere with panel.
 
 \subsubsection{Method B} % (fold)
 % \label{sub:method_b}
@@ -755,13 +787,15 @@ Table~\ref{tab:panel} presents the average results we obtained for the three pro
           \hline
           &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)     \\
           \hline
-          Arai~\cite{Arai11}   & \modif{58.03}       & \modif{75.30}    & \modif{65.55}    \\
+          Arai~\cite{Arai11}   & 20.0       & 18.75    & 19.35    \\
           \hline
-          Method A   & \modif{78.02}       & \modif{73.17}   & \modif{75.52}     \\
+          Ho~\cite{Ho2012}   & 49.76       & 68.03    & 57.48    \\
           \hline
-          Method B   & 81.24     & 86.55     & \bf{83.81}      \\
+          Method A          & 64.24       & 83.81   & \bf{72.72}     \\
           \hline
-          Method C   & 80.69     & 87.03     & 83.74      \\
+          Method B          & 60.59       & 82.51   & 69.87      \\
+          \hline
+          Mtehod C   & ?     & ?     & ?      \\
           \hline
         \end{tabular}
     \label{tab:panel}
@@ -770,14 +804,20 @@ Table~\ref{tab:panel} presents the average results we obtained for the three pro
 
 %TODO: re evaluate Arai's result from his method (still waiting for is email 2014-07-01)
 
-The proposed panel extraction based on connected component clustering is simple to implement, and is a fast and efficient method for comics with disconnected panels (separated by a white gutter).
+The main drawback of the Arai's method is the binary segmentation with a fixed value that works best for comic book with a white background but it is not appropriate for digitization defaults and paper yellowing.
+
+Ho's method is adaptive to background variation but considers as panel all the elements that are directly included (first topological level) in the page background.
+This over segment the image that include some text of of panel or in implicit balloons \modif{TODO: to illustrate}.
+When those out of panel elements are small, they prevent the connected panel separation process to work properly because the stopping criterion is based on element size.
+
+The first proposed panel extraction (Method A) based on connected component clustering is simple to implement, and is a fast and efficient method for comics with disconnected panels (separated by a white gutter).
 % The validation by the expert system was not significant here because the low level processing had already reached the limits of the model.
 % Figure~\ref{ap:panel_extraction} shows the details for each image tested, which were mainly comics with gutters.
 % The proposed method is not appropriate for gutterless comics such as ``INOUE'' or strip without panel border such as ``MONTAIGNE'' or a extra frame around several panels (``SAINTOGAN\_PROSPER'').
 
 \begin{figure}
  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset.
+ \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO replace for table?}.
  }
  \label{ap:panel_extraction}
 \end{figure}
@@ -797,8 +837,165 @@ We automatically remove this by cropping the image where a panel with an area $>
 % subsection sequential_panel_extraction_evaluation (end)
 
 
-\section{Balloon extraction evaluation (method 1 + 2 + 3)} % (fold)
-\label{sub:ex:sequential_balloon_extraction_evaluation}
+\section{Text extraction and recognition evaluation} % (fold)
+\label{sub:ex:text_extraction_recognition_evaluation}
+
+We evaluated our method for text extraction on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
+Also, a text recognition evaluation is given as baseline.
+
+\subsection{Experimental settings} % (fold)
+% \label{sub:experimental_settings}
+
+TODO
+
+\subsubsection[Arai's method]{Arai~\cite{Arai11}} % (fold)
+This method is a sequential approach that requires panel and balloon extraction presented in Section~\ref{sub:ex:panel_extraction_evaluation} and~\ref{sub:ex:balloon_extraction_evaluation} respectively.
+
+TODO: detail the method here?
+
+This approach was first developed for Japanese manga text extraction but we adapt it to also handle horizontal text.
+Its adaptation to horizontal text consist in switching width and height related parameters of the concerned elements throughout the method.
+Also, the kernel used for mathematical morphology is rotated of 90$^{\circ}$.
+
+
+\subsubsection{Method A} % (fold)
+% \label{sub:method_1}
+The method proposed Section~\ref{sec:se:panel_and_text} does not require any particular parameter, only the number of cluster has to be fixed $k=3$ for the k-mean clustering.
+
+
+% subsection method_1 (end)
+\subsubsection{Method B} % (fold)
+% \label{sub:method_b}
+
+TODO
+
+% subsection method_b (end)
+
+\subsubsection{Method C} % (fold)
+% \label{sub:method_c}
+
+TODO?
+
+% subsection method_c (end)
+
+% subsection experimental_settings (end)
+
+
+\subsection{Results analysis} % (fold)
+\label{sub:results_analysis}
+
+TODO
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+    \centering
+    \caption{Text localisation results.}
+    \begin{tabular}{|c|c|c|c|}
+          % \hline
+          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+          \hline
+          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
+          % \hline
+          % Before validation   & ?   & ?           \\
+          \hline
+          Tanaka?\\ Chinese ICDAR? Stroke-based? Lluis?  & \modif{??}   & \modif{??}    & \modif{??}       \\
+          \hline
+          Arai~\cite{Arai11}  & 2.81   & 1.63    & 2.07       \\
+          \hline
+          Method A  & 54.68   & 56.92    & 55.78       \\
+          \hline
+          Method B  & 59.92   & 46.26    & 52.21       \\
+          \hline
+          Method C  & \modif{?}   & \modif{?}    & \modif{?}       \\
+          \hline
+          % Proposed (\cite{Rigaud2013VISAPP}+OCR)  & 60.13   & 42.43   & 49.75        \\
+          % \hline
+          % Proposed + validation   & 44.54     & 65.05     & 52.88      \\
+          % \hline
+          %Proposed (\cite{Rigaud2013VISAPP}+OCR+$ST$ only)  & ?   & ?   & ?        \\
+          % \hline
+          % Proposed (OCR transcription)  & ?   & ?           \\
+          % \hline
+        \end{tabular}
+    \label{tab:text_results}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
+% Here we applied it to the whole dataset.
+% We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
+% The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
+% The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
+% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % \begin{table}[ht]
+  %   \normalsize
+  %   \centering
+  %   \caption{Text localisation results.}
+  %   \begin{tabular}{|c|c|c|c|}
+  %         % \hline
+  %         %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+  %         \hline
+  %         &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
+  %         % \hline
+  %         % Before validation   & ?   & ?           \\
+  %         \hline
+  %         Rigaud~\cite{Rigaud2013VISAPP}  & 61.00   & 19.66    & 29.75       \\
+  %         \hline
+  %         Proposed (\cite{Rigaud2013VISAPP}+OCR)  & 60.13   & 42.43   & 49.75        \\
+  %         \hline
+  %         Proposed + validation   & 44.54     & 65.05     & 52.88      \\
+  %         % \hline
+  %         %Proposed (\cite{Rigaud2013VISAPP}+OCR+$ST$ only)  & ?   & ?   & ?        \\
+  %         % \hline
+  %         % Proposed (OCR transcription)  & ?   & ?           \\
+  %         \hline
+  %       \end{tabular}
+  %   \label{tab:text_results}
+  % \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Arai's method is a sequential approach that requires panel and balloon regions as input.
+As shown in Table~\ref{tab:ex:bal_loc}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn.
+Moreover, this text extraction method uses several thresholds which reduces its fields of application.
+
+
+% In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
+% Here we applied it to the whole dataset.
+We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
+The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
+The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
+% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
+As in~\cite{Rigaud2013VISAPP}, this method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
+
+This method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
+Nevertheless, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
+
+TODO RESULT ANALYSIS
+
+
+\paragraph{Text recognition evaluation} % (fold)
+\label{par:ex:text_recognition_evaluation}
+
+We also evaluated text transcription using string edit distance~\cite{wagner1974string} between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth. % $T_{gr}$.
+The eBDtheque dataset is composed of English, Japanese and French texts.
+We evaluated the subset of English and French pages using the OCR with the corresponding training data\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}. % corresponding to the language defined in the ground truth of each image of the dataset.
+This was performed at the text line level taking as correct the text lines that were transcribed exactly as the ground truth transcription, considering all the letters as lower case and ignoring accents (for predicted and ground truth regions).
+% with a edit distance $<$ 10\% of their length using equation~\ref{eq:recall} and~\ref{eq:precision}.
+%For instance a recognised text line of ten elements will be considered as correct if less than three are split, deleted, transposed, replaced or inserted. 
+We obtained a score of $A_{textReco}=$7.18\% which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
+We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy rise to 10.46\%.
+%The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
+Note that the average text line length is quite short in comic books compared to other documents, the distribution is given Figure~\ref{fig:ex:textline_lenth_distribution} for the eBDtheque dataset.
+
+% subsection results_analysis (end)
+
+
+
+\section{Balloon extraction evaluation} % (fold)
+\label{sub:ex:balloon_extraction_evaluation}
 
 We evaluate the three approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box and pixel levels, and compare to previous work from the literature.
 % We also evaluate the tail detection for each balloon extraction approaches
@@ -810,23 +1007,42 @@ One the other hand, implicit the balloon extraction method is able to extract cl
 \subsection{Experimental settings} % (fold)
 % \label{sub:experimental_settings}
 
+TODO
+
+\subsubsection{Arai's method~\cite{Arai11}} % (fold)
+% \label{sub:arai_s_method_cite}
+
+TODO: describe the method here or in intro contribution justification?
+Arai's method is a sequential approach that search for panel first and then balloons inside panels.
+Customization: vertical AND horizontal text adaptation + adaptive thresholding
+
+% subsection arai_s_method_cite (end)
+
+\subsubsection{Ho's method~\cite{Ho2012}} % (fold)
+% \label{sub:arai_s_method_cite}
+
+TODO: describe the method here? Ho's method is a sequential approach that search for panel first and then balloon inside panels and text inside balloons.
+The parameter used in the experiment are not given, I propose mine...
+
+% subsection ho_s_method_cite (end)
+
 \subsubsection{Method A} % (fold)
 % \label{sub:method_a}
 
-In Section~\ref{sec:se:from_text_to_balloon} we presented two approaches for regular and implicit balloon extraction from text line positions.
+In Section~\ref{sec:se:from_text_to_balloon} we presented two sequential approaches for regular and implicit balloon extraction from text line positions.
+Here, we evaluated them separately and detail the benefits of of energies that compose the implicit balloon extraction.
 
 Regular balloon extraction method attributes a confidence value $C_{balloon}$ to each balloon candidate according to the alignment of the text paragraph it contains.
-We consider as correctly detected the balloon with a confidence value higher than \modif{10\%} in Table~\ref{tab:ex:bal_loc} (1).
+We consider as correctly detected the balloon with a confidence value higher than \modif{10\%} (Table~\ref{tab:ex:bal_loc}, Method A (1)).
 
-The implicit balloon extraction method is evaluated using two different scenarios in order to highlight the benefits of both active contour theory
-and domain specific knowledge.
+The implicit balloon extraction method is evaluated using two different scenarios in order to highlight the benefits of both active contour theory and domain specific knowledge.
 % that considers as balloon any white connected components that overlaps at more than $10\%$ with text regions.
-First, the active contour with the distance transform based external energy described section~\ref{sec:se:external_energie} (2) and second, we add the domain knowledge energy $E_{text}$ (3) from Section~\ref{sec:se:text_energie}.
+First, the active contour with the distance transform based external energy described section~\ref{sec:se:external_energie} (Table~\ref{tab:ex:bal_loc}, Method A (2)) and second, we add the domain knowledge energy $E_{text}$ from Section~\ref{sec:se:text_energie} (Table~\ref{tab:ex:bal_loc}, Method A (3)).
 % Fourth, after a two stage contour fitting (4).
 % Results are presented in table~\ref{tab:ex:bal_loc}.
 
 
-For both regular and implicit balloon extraction of Method A, the input text is given from the sequential text extraction method (Section~\ref{sec:se:panel_and_text}) as it is the previous step in this approach.
+For both regular and implicit balloon extraction of Method A, the input text is given from the sequential text extraction method (Section~\ref{sec:se:panel_and_text}) as it is the previous step of this approach.
 %, the recall $R=??\%$, precision $P=?\%$ and f-measure $F=?\%$.
 
 % subsection method_a (end)
@@ -919,39 +1135,34 @@ Object localisation are usually performed at the level of object bounding box.
 % \extrarowheight as needed to properly center the text within the cells
   \centering
   \caption[Balloon localization recall and precision results]{Balloon localization recall and precision results.}
-  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|}
   % \hline
 
     % & \multicolumn{3}{|c|}{Text from GT}  & \multicolumn{3}{|c|}{Text from method 2}   \\
   \hline
-  Method  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)\\
+  Method  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)  \\
   \hline
-%   Ho~\cite{Ho2012}  & ???     & ???   & & ???     & ???&    \\
+  
+  Arai~\cite{Arai11}     & 13.21       & 11.61     & 12.36          \\
+  
+  \hline
+  Ho~\cite{Ho2012}  & 13.95     & 24.73   & 17.84 \\
+  
+  \hline
+  Method A (1)     & \modif{53.1}     & \modif{53.0} & \modif{53.1}    \\
 
-  Arai~\cite{Arai11}     & \modif{0.8}       & \modif{0.8}     & \modif{???}       & \modif{???}  & \modif{???} & \modif{???}   \\
   \hline
-  Method A (1)     & \modif{56.6}     & \modif{79.2}   & \modif{66.0}  & \modif{53.1}     & \modif{53.0} & \modif{53.1}    \\
-%   \hline
-%   (2) & ???     & ???   & & ???     & ???&    \\
-  %\hline
-  %Log dist. trans.       & ???       & ???   & & ???       & ???   \\  
-%   \hline
-%   (2)     & ??? & ??? & ???   & ??? & ??? & ??? \\
+  Method A (2)   & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
   \hline
-  Method A (2)   & \modif{89.0}  & \modif{90.7}   & \modif{89.8}  & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
+  Method A (3)   & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
+  % \hline
+  % Method A (4)   & \modif{?}      & \modif{?}      & \modif{?}  \\
   \hline
-  Method A (3)   & \modif{92.3}  & \modif{94.4}  & \modif{93.4}  & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
+  Method B        & 52.66  & 44.17      & 48.05    \\
   \hline
-  (4)   & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
+  Method C        & \modif{?}     & \modif{?}       & \modif{?}  \\
   \hline
-  Method B   & \modif{57.9}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
-  \hline
-  Method C   & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
-  \hline
-% Multi {\bf DEL?}      & 92.3  & 94.4  & 93.4  & 83.4  & 55.5    & 66.6  \\
-  %\hline
-%       Proposed multi scale  & ??? &???  & ???   & ???       \\
-%   \hline
+
   \end{tabular}
       \label{tab:ex:bal_loc}
 \end{table}%
@@ -1053,7 +1264,7 @@ Such analysis requires a finer extraction of the balloon contour at the level of
   \hline
   Method A (3)   & \modif{92.3}  & \modif{94.4}  & \modif{93.4}  & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
   \hline
-  (4)   & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
+  Method A (4)   & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
   \hline
   Method B   & \modif{57.9}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
   \hline
@@ -1119,8 +1330,25 @@ An way to circumvent this problem could be to either define the boundary in a fl
 \section{Tail detection evaluation} % (fold)
 \label{sec:tail_detection_evaluation}
 
+\subsection{Experimental settings} % (fold)
+% \label{sub:experimental_settings}
+
 We evaluated the new tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' and both regular and implicit balloon extraction methods presented Section~\ref{sec:se:from_text_to_balloon} (Table~\ref{tab:ex:tail_evaluation}).
 
+\subsubsection{Method A} % (fold)
+% \label{sub:method_a}
+TODO: regular + implicit
+% subsection method_a (end)
+
+\subsubsection{Method B} % (fold)
+% \label{sub:method_b}
+TODO: regular
+% subsection method_b (end)
+
+% subsection experimental_settings (end)
+
+\subsection{Result analysis} % (fold)
+% \label{sub:result_analysis}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{table}[ht]
@@ -1156,144 +1384,11 @@ We evaluated the new tail extraction method on the 1092 balloons of the eBDthequ
 
 TODO RESULT ANALYSIS
 
+
+% subsection result_analysis (end)
+
 % paragraph tail_detection (end)
 
-
-
-\section{Text extraction and recognition evaluation} % (fold)
-\label{sub:ex:sequential_text_extraction_evaluation}
-
-We evaluated our method for text extraction on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
-Also, a text recognition evaluation is given as baseline.
-
-\subsection{Experimental settings} % (fold)
-% \label{sub:experimental_settings}
-
-\subsubsection{Method A} % (fold)
-% \label{sub:method_1}
-The method proposed Section~\ref{sec:se:panel_and_text} does not require any particular parameter, only the number of cluster has to be fixed $k=3$ for the k-mean clustering.
-
-% subsection method_1 (end)
-\subsection{Method B} % (fold)
-% \label{sub:method_b}
-
-TODO
-
-% subsection method_b (end)
-
-\subsection{Method C} % (fold)
-% \label{sub:method_c}
-
-TODO?
-
-% subsection method_c (end)
-
-% subsection experimental_settings (end)
-
-
-\subsection{Results analysis} % (fold)
-\label{sub:results_analysis}
-
-TODO
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[ht]
-    \normalsize
-    \centering
-    \caption{Text localisation results.}
-    \begin{tabular}{|c|c|c|c|}
-          % \hline
-          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
-          \hline
-          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
-          % \hline
-          % Before validation   & ?   & ?           \\
-          \hline
-          Other? Arai? Tanaka?\\ Chinese ICDAR? Stroke-based? Lluis?  & \modif{??}   & \modif{??}    & \modif{??}       \\
-          \hline
-          Method A  & \modif{61.00}   & \modif{19.66}    & \modif{29.75}       \\
-          \hline
-          Method B  & \modif{?}   & \modif{?}    & \modif{?}       \\
-          \hline
-          Method C  & \modif{?}   & \modif{?}    & \modif{?}       \\
-          \hline
-          % Proposed (\cite{Rigaud2013VISAPP}+OCR)  & 60.13   & 42.43   & 49.75        \\
-          % \hline
-          % Proposed + validation   & 44.54     & 65.05     & 52.88      \\
-          % \hline
-          %Proposed (\cite{Rigaud2013VISAPP}+OCR+$ST$ only)  & ?   & ?   & ?        \\
-          % \hline
-          % Proposed (OCR transcription)  & ?   & ?           \\
-          % \hline
-        \end{tabular}
-    \label{tab:text_results}
-  \end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
-% Here we applied it to the whole dataset.
-% We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
-% The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
-% The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
-% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % \begin{table}[ht]
-  %   \normalsize
-  %   \centering
-  %   \caption{Text localisation results.}
-  %   \begin{tabular}{|c|c|c|c|}
-  %         % \hline
-  %         %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
-  %         \hline
-  %         &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
-  %         % \hline
-  %         % Before validation   & ?   & ?           \\
-  %         \hline
-  %         Rigaud~\cite{Rigaud2013VISAPP}  & 61.00   & 19.66    & 29.75       \\
-  %         \hline
-  %         Proposed (\cite{Rigaud2013VISAPP}+OCR)  & 60.13   & 42.43   & 49.75        \\
-  %         \hline
-  %         Proposed + validation   & 44.54     & 65.05     & 52.88      \\
-  %         % \hline
-  %         %Proposed (\cite{Rigaud2013VISAPP}+OCR+$ST$ only)  & ?   & ?   & ?        \\
-  %         % \hline
-  %         % Proposed (OCR transcription)  & ?   & ?           \\
-  %         \hline
-  %       \end{tabular}
-  %   \label{tab:text_results}
-  % \end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
-% Here we applied it to the whole dataset.
-We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
-The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
-The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
-% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
-As in~\cite{Rigaud2013VISAPP}, this method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
-
-This method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
-Nevertheless, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
-
-TODO RESULT ANALYSIS
-
-
-\paragraph{Text recognition evaluation} % (fold)
-\label{par:ex:text_recognition_evaluation}
-
-We also evaluated text transcription using string edit distance~\cite{wagner1974string} between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth. % $T_{gr}$.
-The eBDtheque dataset is composed of English, Japanese and French texts.
-We evaluated the subset of English and French pages using the OCR with the corresponding training data\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}. % corresponding to the language defined in the ground truth of each image of the dataset.
-This was performed at the text line level taking as correct the text lines that were transcribed exactly as the ground truth transcription, considering all the letters as lower case and ignoring accents (for predicted and ground truth regions).
-% with a edit distance $<$ 10\% of their length using equation~\ref{eq:recall} and~\ref{eq:precision}.
-%For instance a recognised text line of ten elements will be considered as correct if less than three are split, deleted, transposed, replaced or inserted. 
-We obtained a score of $A_{textReco}=$7.18\% which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
-We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy rise to 10.46\%.
-%The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
-Note that the average text line length is quite short in comic books compared to other documents, the distribution is given Figure~\ref{fig:ex:textline_lenth_distribution} for the eBDtheque dataset.
-
-% subsection results_analysis (end)
 
 
 % subsection sequential_information_extraction_evaluation (end)
@@ -1327,6 +1422,56 @@ An example of valid and rejected regions is shown on Figure~\ref{fig:ex:characte
       \label{fig:ex:characters_overlap_ratio}
     \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Experimental settings} % (fold)
+% \label{sub:experimental_settings}
+
+\subsubsection{Method A} % (fold)
+% \label{sub:method_a}
+TODO
+% subsection method_a (end)
+
+\subsubsection{Method B} % (fold)
+% \label{sub:method_b}
+
+Method B consist in an independent comic character instance spotting given an example.
+To perform this experiments, we asked the users to manually highlight the object position as described in section~\ref{sec:input_query}.
+The selection usually includes hair, head and top body colours because lower body parts are often hidden by the frame border or the posture. 
+From the user pixel selection, we computed the bounding box to show that the system does not need a precise object colour selection. 
+We reduced the number of colour to a \modif{standard web palette $P_c$ of 256 colours} because comics are colourful drawings similar to web pages and icons that contain a limited number of colour. 
+We fixed the descriptor size to $N=3$ according to the evaluation figure~\ref{fig:ex:descriptor_size_evaluation}.
+In the retrieval process, we set $T=N$ which means that the confidence of the candidate region equal 100\% (all the query colours must be present in the candidate region to be considered as a correct detection).
+We used three squared window sizes according to the query height: half of the query height, query height and twice the query height.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[trim= 5mm 0mm 30mm 0mm, clip, width=250px]{descriptor_size_evaluation.png}
+  \caption[Character spotting descriptor size validation]{Descriptor size validation. Measure of recall (blue square) and precision (red diamond) detection for different descriptor sizes from a testing set of 17 comics pages. The maximum recall is for $N=3$.}
+  \label{fig:ex:descriptor_size_evaluation}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \paragraph{Performance evaluation}
+The following results were obtained with the common evaluation measures of recall, precision at object level which means that we considered as correctly detected the objects that are overlapped by a detected region without considering the percentage of overlapping.
+Recall ($R$) is the number of correctly detected object divided by the number of objects to detect.
+Precision ($P$) is the number of correctly detected objects divided by the number of detected objects.
+%Each detected object $D$ was compared to the corresponding ground truth one $G$ with the nearest centroid, considering only one matching per ground truth balloon.
+We consider as candidate regions, regions that have $C=100\%$ confidence (contains at least all the descriptor colours).% Lower confidence detection need additional processing to be considerate as correct results.
+
+We evaluated our method on 34 comics pages from 10 different albums which represent 22 comic characters that appear 352 times in total. We obtained 90.3\% recall and 46.7\% precision in average. Results are detailed in table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to MIDAM GAMEOVER T05, TARZAN COCHON, CYB COSMOZONE, CYB MAGICIENLOOSE, CYB MOUETTEMAN, LAMISSEB LESNOEILS1, LUBBIN LESBULLESDULABO, MIDAM KIDPADDLE7, PIKE BOYLOVEGIRLS T41 and TRONDHEIM LES TROIS CHEMINS 005 respectively from the eBDtheque dataset~\cite{Guerin2013}. %Another album of two pages has also been evaluated, we had 83\% recall and 66\% precision score.
+
+
+% subsection method_b (end)
+
+\subsubsection{Method C} % (fold)
+% \label{sub:method_c}
+TODO
+% subsection method_c (end)
+
+% subsection experimental_settings (end)
 
 \subsection{Result analysis} % (fold)
 \label{sub:result_analysis}
@@ -1395,40 +1540,12 @@ If we focus on the subset of 880 speakers, the recall, precision and f-measure w
 
 % subsection result_analysis (end)
 
-\subsection{Character spotting} % (fold)
+\paragraph{Character spotting} % (fold)
 % \label{par:character_spotting}
 
 
-To perform this experiments, we asked the users to manually highlight the object position as described in section~\ref{sec:input_query}.
-The selection usually includes hair, head and top body colours because lower body parts are often hidden by the frame border or the posture. 
-From the user pixel selection, we computed the bounding box to show that the system does not need a precise object colour selection. 
-We reduced the number of colour to a \modif{standard web palette $P_c$ of 256 colours} because comics are colourful drawings similar to web pages and icons that contain a limited number of colour. 
-We fixed the descriptor size to $N=3$ according to the evaluation figure~\ref{fig:ex:descriptor_size_evaluation}.
-In the retrieval process, we set $T=N$ which means that the confidence of the candidate region equal 100\% (all the query colours must be present in the candidate region to be considered as a correct detection).
-We used three squared window sizes according to the query height: half of the query height, query height and twice the query height.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-  \includegraphics[trim= 5mm 0mm 30mm 0mm, clip, width=250px]{descriptor_size_evaluation.png}
-  \caption[Character spotting descriptor size validation]{Descriptor size validation. Measure of recall (blue square) and precision (red diamond) detection for different descriptor sizes from a testing set of 17 comics pages. The maximum recall is for $N=3$.}
-  \label{fig:ex:descriptor_size_evaluation}
- \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\paragraph{Performance evaluation}
-The following results were obtained with the common evaluation measures of recall, precision at object level which means that we considered as correctly detected the objects that are overlapped by a detected region without considering the percentage of overlapping.
-Recall ($R$) is the number of correctly detected object divided by the number of objects to detect.
-Precision ($P$) is the number of correctly detected objects divided by the number of detected objects.
-%Each detected object $D$ was compared to the corresponding ground truth one $G$ with the nearest centroid, considering only one matching per ground truth balloon.
-We consider as candidate regions, regions that have $C=100\%$ confidence (contains at least all the descriptor colours).% Lower confidence detection need additional processing to be considerate as correct results.
-
-We evaluated our method on 34 comics pages from 10 different albums which represent 22 comic characters that appear 352 times in total. We obtained 90.3\% recall and 46.7\% precision in average. Results are detailed in table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to MIDAM GAMEOVER T05, TARZAN COCHON, CYB COSMOZONE, CYB MAGICIENLOOSE, CYB MOUETTEMAN, LAMISSEB LESNOEILS1, LUBBIN LESBULLESDULABO, MIDAM KIDPADDLE7, PIKE BOYLOVEGIRLS T41 and TRONDHEIM LES TROIS CHEMINS 005 respectively from the eBDtheque dataset~\cite{Guerin2013}. %Another album of two pages has also been evaluated, we had 83\% recall and 66\% precision score.
-
-
-\begin{table}[htbp]
+\begin{table}%[htbp]
 \caption{Character detection performance}
 \begin{tabular}{|c|l|l|r|r|r|}
 \hline
@@ -1463,10 +1580,10 @@ We evaluated our method on 34 comics pages from 10 different albums which repres
 \end{table}
 
 
-\paragraph{Detection results}
+% \paragraph{Detection results}
 % \label{sec:eval}
 
-We evaluated present interesting detection results based on a three colours user defined query descriptor (see section~\ref{sec:proposed_method}). 
+The results present interesting detection results based on a three colours user defined query descriptor (see section~\ref{sec:proposed_method}). 
 The processing time was about 6 seconds per image for a A4 300DPI image on a regular machine. Most of the time consumption is for the mask creation and it is proportional to the number of mask to create.  Detection result examples are presented figure~\ref{fig:ex:character_spotting_results}.
 
 The detected region aims to localize the smallest regions containing all the colours of the query descriptor. This region is usually smaller than the ground truth region which is defined at character bounding box level. A post processing is needed to compute the character bounding box from the detected region by extending it to the colour region boundaries.
@@ -1519,7 +1636,7 @@ Correct detections show the variety of comics character position and deformation
 
 \paragraph{Discussion}
 The proposed framework gives promising results for contemporary comics, we also tried on historical such as FRED PHILEMON12 and MCCALL ROBINHOOD from the eBDtheque dataset but the printing process generates a lot of noise (thickness of ink). 
-A pre-processing smoothing~\cite{l0smoothing2011} is required in this case. The colour palette we used has 256 colours, we believe that we can improve the presented method by computing the palette from the user's query in order to ignore unwanted colours and speed up the process. 
+A pre-processing smoothing is required in this case~\cite{l0smoothing2011,Kopf2012DigitalReconstruction}. The colour palette we used has 256 colours, we believe that we can improve the presented method by computing the palette from the user's query in order to ignore unwanted colours and speed up the process. 
 The sliding windows approach does not allow to segment comics character at a pixel level, a distance measure between the colour mask regions could solve this.
  Also, once we retrieved all colour similar objects, we could learn a shape model and try to find more objects occurrences based on shape information in a second stage, this will be a future work.
 
@@ -1886,7 +2003,20 @@ The sliding windows approach does not allow to segment comics character at a pix
 \section{Semantic links evaluation} % (fold)
 \label{sec:semantic_links_evaluation}
 
+\subsection{Experimental settings} % (fold)
+% \label{sub:experimental_settings}
+
+\subsubsection{Method C} % (fold)
+% \label{sub:method_c}
 TODO? Only for the inference system~\ref{sub:inference_from_low_level}?
+% subsection method_c (end)
+
+% subsection experimental_settings (end)
+
+\subsection{Results analysis} % (fold)
+% \label{sub:results_analysis}
+
+% subsection results_analysis (end)
 
 % section semantic_links_evaluation (end)
 

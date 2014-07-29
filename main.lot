@@ -2,16 +2,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Values of the offset $O$ on horizontal and vertical axis and panel's corner selection according to the eight directions of the tail.\relax }}{34}{table.caption.43}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Values of the shift $O$ on horizontal and vertical axis and panel's corner selection according to the eight directions of the tail.\relax }}{34}{table.caption.45}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{48}{table.caption.61}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{50}{table.caption.63}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{87}{table.caption.120}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{89}{table.caption.126}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision results}}{92}{table.caption.135}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{93}{table.caption.138}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Tail extraction results.\relax }}{94}{table.caption.142}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Character localisation results.\relax }}{96}{table.caption.148}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Character detection performance\relax }}{97}{table.caption.150}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{89}{table.caption.122}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{91}{table.caption.128}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision results}}{94}{table.caption.137}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{95}{table.caption.140}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Tail extraction results.\relax }}{96}{table.caption.144}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Character localisation results.\relax }}{99}{table.caption.150}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Character detection performance\relax }}{100}{table.caption.152}
 \addvspace {10\p@ }

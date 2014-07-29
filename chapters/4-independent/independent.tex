@@ -20,7 +20,7 @@ TODO
 % \subsubsection{Method 2: topological analysis} % (fold)
 % \label{sub:outermost_contour_filtering}
 The previous clustering-based method presented in section~\ref{sec:se:panel_and_text} is particularly useful for simultaneous extractions, as illustrated panel and text while removing noise region at the same time.
-Nevertheless, the panel extraction be improved if we focus on panel elements only.
+Nevertheless, the panel extraction can be improved if we focus on panel elements only.
 We propose to use a second characteristic of panels which is their topological relations with other elements in the image.
 Figure~\ref{fig:se:cc_bounding_box} shows that outermost or external contours actually corresponds to panels.
 We base this method on this criteria, considering the panels to be the outermost contours.
@@ -37,10 +37,13 @@ Non included contour (outermost) would have the maximum confidence and fully inc
 % A generic method that works best with both styles is not obvious.
 % We combine~\cite{Arai11,Rigaud2012LNCS} to introduce a new method, especially suitable for general comics using gutter (white space) between panels.
 
-Panel contours are usually dark and similar for all the panel of a comics page.
+Panel contours are usually dark and similar for all the panels of a comics page.
 Sometimes panel contours are implicit as shown in figure~\ref{fig:in:se:panel_img} (considered as a difficult case).
-In this case, the reader distinguish them by comparing the difference of colour between the panel content and the page background.
+In this case, the reader distinguishes them by comparing the difference of colour between the panel content and the page background.
 We use a global binary segmentation method to separate the page background from its content (figure~\ref{fig:se:panel_binary}).
+
+\modif{TODO: detail global binarisation and inversion by referring to a method introduced in the SOTA.}
+
 We do not use a local segmentation approach because it has higher chances to split the panel border and over-segment its content.
 
 Connected-component labelling algorithm~\cite{Szeliski2010Computer} is then used to extract outermost contours from the binary image content (Figure~\ref{fig:in:panel_outermost_contours}).

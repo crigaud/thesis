@@ -232,6 +232,9 @@ We propose to use this characteristic to compute a confidence value to each conn
 
 A typical ``closed'' balloon is surrounded by a black stroke that defined a white region (blob) inside it, with holes created by the presence of text letters.
 We propose to make a binary segmentation of the comics image and then use connected-component labelling method to extract white blobs (Figure~\ref{fig:se:closed_balloon}).
+Closed balloons are usually surrounded by a black stroke with no difference from one to another in a given image.
+We use a global binary segmentation method to separate the page background from its content (black strokes).
+Here, we do not use a local segmentation approach because it has more chances to split the balloon border and over-segment them.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,

@@ -1146,15 +1146,15 @@ Object localisation are usually performed at the level of object bounding box.
   Arai~\cite{Arai11}     & 13.21       & 11.61     & 12.36          \\
   
   \hline
-  Ho~\cite{Ho2012}  & 13.95     & 24.73   & 17.84 \\
+  Ho~\cite{Ho2012}& 13.95     & 24.73   & 17.84 \\
   
   \hline
-  Method A (1)     & \modif{53.1}     & \modif{53.0} & \modif{53.1}    \\
+  Method A (1)    & 37.24     & 45.19   & 40.83    \\
 
   \hline
-  Method A (2)   & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
+  Method A (2)    & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
   \hline
-  Method A (3)   & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
+  Method A (3)    & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
   % \hline
   % Method A (4)   & \modif{?}      & \modif{?}      & \modif{?}  \\
   \hline
@@ -1168,9 +1168,22 @@ Object localisation are usually performed at the level of object bounding box.
 \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The baseline Method A (1) detects half of the balloons (about $56\%$ recall) in this dataset as it is not able to detect open balloons or balloons containing little text.
+The baseline Method A (1) detects less than half of the balloons (about $37\%$ recall) of this dataset.
+This approach is not originally designed for detecting implicit balloons but knowing the position of the panels allows masking non panel regions that sometimes recover implicit balloons (Figure~\ref{}).
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{figure_here.png}
+    \caption[Implicit balloon recovering by panel and balloon extraction combination]{Implicit balloon recovering by panel and balloon extraction combination.}
+    \label{fig:ex:implicit_balloon_recovery_by_panel}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 However, it has two advantages in comparison with the proposed active contour based method.
-First, as the a connected component is considered as balloon, when correct, the precision at the pixel level is maximal. Second, it is faster to compute.
+First, as the a connected component is considered as balloon, when correct, the precision at the pixel level is maximal.
+Second, it is faster to compute.
 The results using active contour with distance transform Method A (2) shows a significant improvement, thanks to the active contour theory that detect much more balloons whether open or closed than connected component based methods. 
 %Making the edges attract the active contour from further is an essential step as we can see line (3). We gain up to {\bf X RECALL AND Y PRECISION}.
 %Mono-resolution and multi-resolution shows similar recall result because the high resolution affects only the shape details, not significantly changing the location of the detection. Next section explains how to evaluate the benefits of the high-resolution detection. %However there is a slight improvement for the precision measure due to higher precision in the shape detection. {\bf ADD RESULT FIGURE?}
@@ -1189,7 +1202,6 @@ The drop in recall was due to the balloons that were correctly extracted but whi
 %Nevertheless, the proposed method does not beat our previous method~\cite{rigaud2013active} that is also able to extract non closed balloons from text regions (from the ground truth here).
 Figure~\ref{fig:text_extraction_detail} confirms that our method works best when the balloons are closed, well segmented and with non cursive text inside.
 This experiment was performed in 22 minutes for the whole dataset using one CPU at 2.5GHz (2.2s per balloon on average).
-
 
 
 \paragraph{Balloon segmentation}
@@ -1283,6 +1295,7 @@ Such analysis requires a finer extraction of the balloon contour at the level of
 Table~\ref{tab:ex:high_res} shows...
 
 TODO
+
 
 % higher score for the two-stage variant for the page 1 and 3.
 % These two pages contain mainly closed balloons, we see here that the second stage improves the accuracy of the detection of closed balloons.

@@ -6,7 +6,7 @@
 % Abstract -------------------------------------------------------------------------------------------------------------------------------------------
 This chapter presents a sequential information extraction approach for comic book content retrieval.
 The sequence of extraction starts from elementary elements such as panel and text that initiate further processing.
-Once the text regions are discovered, we use them as seeds to search for balloon and then analysis the balloon contour to detection the tail.
+Once the text regions are discovered, we use them as seeds to search for balloons and then analysis the balloon contours to detect the tails.
 From the tail, comic character regions are computed according to previously extracted element positions.
 
 % -------------------------------------------------------------
@@ -14,14 +14,14 @@ From the tail, comic character regions are computed according to previously extr
 \section{Introduction} % (fold)
 \label{sec:introduction}
 
-In comics art, the page structure depends on the author style which is why so many different structures and drawing types exist.
+In comics art, the page structure depends on the author style, this is why so many different structures and drawing types exist.
 It is unavoidable because it gives an unique graphical identity to the comics and contributes to attract the curiosity of the readers.
-Despite the differences of style, the comics drawings follow ``general use'' characteristic intrinsically to the design process (see section~\ref{??}).
+Despite the differences of style, the comics drawings follow ``general use'' characteristic intrinsically to the design process~\cite{mccloud2006Making}.
 % Relations between elements and inking process are particularities that we we rely on when processing such images. surrounded by a black stroke.
 For instance, the inking process requires to magnify the main strokes and then colourize.
 We propose to rely on this main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling~\cite{Szeliski2010Computer} approach.
-Then, the analysis of speech balloon contour allow to detect the tail precisely and its direction is used to compute the of region of interest of comic characters.
-In this section, all the processes here are related to each other, for instance, the text extraction output is the input of the balloon extraction process.
+Then, the analysis of speech balloon contour allows to detect the tail precisely and its direction is used to compute the regions of interest where comic characters are supposed to be.
+In this section, all the processes are related to each other, for instance, the text extraction output is the input of the balloon extraction process.
 
 
 % section introduction (end)
@@ -38,8 +38,9 @@ Here we consider all the text regions of the image using connected-component lab
 % \label{sec:se:methodology}
 
 To be clustered, the connected components have to be extracted from the image first.
-A commonly used method is to segment the original image pixels into two categories called foreground and background (binary segmentation).
+A commonly used method is to segment the original image pixels into two categories called foreground and background.
 The foreground category corresponds to the set of pixels of interest, here the pixels of the panel border strokes.
+The background includes other pixels.
 This is usually performed using binary segmentation techniques which assign each pixel to one of the two categories.
 From the foreground pixels, a structural analysis (connected-component labelling) allows us to group ``connected'' pixels into components according to their connectivity.
  % that are connected (black pixels over white background).
@@ -69,7 +70,8 @@ The process can be summarize as bellow:
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
 Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSL) representation of the RGB colour space.
 Here we use the lightness channel because the panel border strokes and text are usually darker than other element in the image, including the background. 
-Then, a global binary segmentation (figure~\ref{fig:se:binary_img}) is applied with a threshold computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
+Then, a global binary segmentation~\ref{??} (figure~\ref{fig:se:binary_img}) is applied with a threshold determined dynamically.
+The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
 We assume that the border pixels of the page are representative of the page background (depending on the digitization process).
 If the median value is closer to ``black'' than ``white'' grey level, then, image inversion is applied and we redo the complete process in order to always get a white background at the end of this step.
 % This pre-processing is more robust than~\cite{Arai11} who assumes that the page is always white and uses a constant threshold.
@@ -79,8 +81,8 @@ The binary conversion step is very important for the rest of the method because 
 \paragraph{Connected-component extraction} % (fold)
  \label{par:connected_component_extraction}
  
-The connected-component algorithm is applied on the binary image and the bounding box of each of the black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
-We do not consider white connected-component here because we expected panel border and text elements to be darker than other elements in the page (segmented as black region).
+The connected-component algorithm~\ref{??} is applied on the binary image and the bounding box of each black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
+We do not consider white connected-component here because we assume that panel border and text elements are darker than other elements in the page (segmented as black region).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}	%trim=l b r t  width=0.5\textwidth, 
@@ -112,7 +114,7 @@ Knowing the number of cluster facilitate the clustering, here
 %We define the set of component bounding boxes $R = \{R_1, R_2, ... , R_n\}$.
 we set the number of clusters $k=3$ according to the domain knowledge of comics.
 They aim to reflect the ``panel'' (the highest), the ``text'' (medium height) and the ``noise'' (few pixels height) as shown on figure~\ref{fig:se:histo_roi}.
-One of the most popular clustering algorithm is k-means clustering method.
+One of the most popular clustering algorithm is k-means clustering method~\ref{??}.
 It aims to partition $(x_1, x_2, ...,x_n)$ observations into $k$ clusters ($k <= n$) $S=\{S_1, S_2, ..., S_k\}$ in which each observation belongs to the cluster with the nearest mean.
 This optimisation problem is formulated as formula~\ref{eq:se:k-means}.
 
@@ -122,14 +124,14 @@ This optimisation problem is formulated as formula~\ref{eq:se:k-means}.
 \end{equation}
 where $\mu_i$ is the mean of points in the cluster $S_i$.
 
-This clustering is performed dynamically on each image which makes this method parameter-free (given a number of cluster) and invariant to page format and resolution.
+This clustering is performed dynamically on each image which makes this method parameter-free (given a number of clusters) and invariant to page format and resolution.
 % Indeed, the height-based classification is not page size dependent unlike~\cite{Khoi11,Arai11}, and the number of pixels for each ROI is proportional to the page resolution (do not bias the classification).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth, 
 	  \centering
 		\includegraphics[trim= 5mm 0mm 10mm 0mm, clip,width=1.0\textwidth]{Histogram_en.png}
-		\caption[Descendant histogram of the connected component bounding box heights]{Descendent histogram of the bounding boxes in figure~\ref{fig:se:cc_bounding_box}. Vertical black lines represent an example of three cluster limits labelled as ``panel'', ``text'' ``noise'' .}
+		\caption[Descendant histogram of the connected component bounding box heights]{Descendent histogram of the bounding boxes in figure~\ref{fig:se:cc_bounding_box}. Vertical black lines represent an example of three cluster limits labelled as ``panel'', ``text'' and ``noise''. Note that the lowest part of the ``panel'' cluster do not correspond to panel regions, we present how we pruned them in the next paragraph.}
 		\label{fig:se:histo_roi}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,7 +155,7 @@ Given the set of component bounding boxes from the panel cluster $R = \{R_1, R_2
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Concerning the text cluster, we clearly see in figure~\ref{fig:se:frame_cleaned} that the spatial organisation is a characteristics of text regions (regardless of the language).
+Concerning the text cluster, we clearly see in figure~\ref{fig:se:cc_bounding_box} that the spatial organisation is a characteristic of text regions (regardless of the language).
 We group text candidates into text lines according to alignment and ignore text candidate that can not be part of any text line.
 
 The gap between text (e.g. letter or attached letters, word) and text lines can vary significantly.
@@ -165,9 +167,11 @@ A letter is considered first if it is positioned on the left, on the same horizo
 Then the other letters on the right are added by checking their relative horizontal and vertical positions.
 For this purpose, we defined two conditions that are auto-adaptive to each letter (Figure~\ref{fig:se:letter_position}):
 
+TODO: attention l'interligne est grand
+
 \begin{itemize}
     \item The horizontal inter-letter distance $d$ should be smaller than the maximal height of the letters ($d<Max(h1,h2)$);
-    \item The vertical alignment is considered as correct if the vertical coordinate of the centre of the next letter $c2$ passes trough the first letter ($y_{min}(letter_1)>c2.y$ and $y_{max}(letter_1)>c2.y$);
+    \item The vertical alignment is considered as correct if the vertical coordinate of the centre of the next letter $c2$ passes through the first letter ($y_{min}(letter_1)>c2.y$ and $y_{max}(letter_1)>c2.y$);
 \end{itemize}
 
 
@@ -211,7 +215,7 @@ The main advantage of the second method is its ability to detect implicit or par
 
 \subsection{Regular balloon extraction} % (fold)
 \label{sub:se:regular_balloon_extraction}
-Regular balloon are defined as closed balloon with a completely drawn contour unlike implicit contour discussed in the next subsection~\ref{sub:implicit_balloon_extraction}.
+Regular balloon are defined as closed balloon with a completely drawn contour unlike implicit contour discussed in the next subsection~\ref{sub:se:implicit_balloon_extraction}.
 Closed balloon are easily extractable using blob detection method similarly to the panel and text extraction presented above.
 The main different lies in their dominant colour with is white and implies do extract white connected-components instead of black for panels and text.
 One particularity of text inside balloons is its vertical and/or horizontal alignment in the balloon (Figure~\ref{fig:se:text_in_balloon}).
@@ -296,7 +300,7 @@ Balloon confidence value is used for balloon and non balloon classification in~\
 % subsection regular_balloon_extraction (end)
 
 \subsection{Implicit balloon extraction} % (fold)
-\label{sub:implicit_balloon_extraction}
+\label{sub:se:implicit_balloon_extraction}
 
 Balloon contour is not always completely drawn, it may be implied by contrast difference or other surrounding elements (Figure~\ref{fig:se:balloon_examples}c).
 In most of the cases, including when contours are implicit, the location of text is generally a good clue to guess where the balloon is.

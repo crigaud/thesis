@@ -362,6 +362,14 @@ D.~Karatzas and A.~Antonacopoulos.
 \newblock Colour text segmentation in web images based on human perception.
 \newblock {\em Image and Vision Computing}, 25(5):564 -- 577, 2007.
 
+\bibitem{KaratzasICDAR2013Robust}
+D.~Karatzas, F.~Shafait, S.~Uchida, M.~Iwamura, L.~Gomez~i Bigorda,
+  S.~Robles~Mestre, J.~Mas, D.~Fernandez~Mota, J.~Almazan~Almazan, and L.-P.
+  de~las Heras.
+\newblock Icdar 2013 robust reading competition.
+\newblock In {\em Document Analysis and Recognition (ICDAR), 2013 12th
+  International Conference on}, pages 1484--1493, Aug 2013.
+
 \bibitem{Kass1988}
 Michael Kass, Andrew Witkin, and Demetri Terzopoulos.
 \newblock {Snakes: Active contour models}.
@@ -568,6 +576,12 @@ L.~Neumann and J.~Matas.
 \newblock {\em Computer Vision and Pattern Recognition}, pages 1485--1490,
   2012.
 
+\bibitem{Nguyen2013BagOfSubjects}
+Nhu~Van Nguyen, Jean-Marc Ogier, and Franck Charneau.
+\newblock Bag of subjects: Lecture videos multimodal indexing.
+\newblock In {\em Proceedings of the 2013 ACM Symposium on Document
+  Engineering}, DocEng '13, pages 225--226, New York, NY, USA, 2013. ACM.
+
 \bibitem{Ogier2000Semantic}
 J.M. Ogier, R.~Mullot, J.~Labiche, and Y.~Lecourtier.
 \newblock Semantic coherency: the basis of an image interpretation
@@ -671,6 +685,13 @@ Sohail Sarwar, Zia~Ul Qayyum, and Saqib Majeed.
 Eugenio~Di Sciascio, Francesco~M. Donini, and Marina Mongiello.
 \newblock Structured knowledge representation for image retrieval.
 \newblock {\em CoRR}, abs/1109.1498, 2011.
+
+\bibitem{ShahabICDAR2011Robust}
+A~Shahab, F.~Shafait, and A~Dengel.
+\newblock Icdar 2011 robust reading competition challenge 2: Reading text in
+  scene images.
+\newblock In {\em Document Analysis and Recognition (ICDAR), 2011 International
+  Conference on}, pages 1491--1496, Sept 2011.
 
 \bibitem{Shamir2006Generating}
 Ariel Shamir, Michael Rubinstein, and Tomer Levinboim.

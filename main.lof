@@ -78,8 +78,9 @@
 \contentsline {figure}{\numberline {6.11}{\ignorespaces Division line detection from~\cite {Arai10}}}{85}{figure.caption.115}
 \contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO replace for table?}. \relax }}{87}{figure.caption.121}
 \contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of the number of letter per speech balloon}}{91}{figure.caption.132}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Example of comic character predicted regions}}{95}{figure.caption.142}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Character spotting descriptor size validation}}{95}{figure.caption.145}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting result sample}}{98}{figure.caption.150}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Knowledge-driven extraction performance evolution}}{100}{figure.caption.153}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{92}{figure.caption.136}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Example of comic character predicted regions}}{95}{figure.caption.143}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting descriptor size validation}}{96}{figure.caption.146}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Character spotting result sample}}{98}{figure.caption.151}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Knowledge-driven extraction performance evolution}}{100}{figure.caption.154}
 \addvspace {10\p@ }

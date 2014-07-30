@@ -518,6 +518,12 @@ Scott McCloud.
 \newblock {\em Understanding comics: The Invisible Art}.
 \newblock Kitchen Sink Press, 1993.
 
+\bibitem{mccloud2006Making}
+Scott McCloud.
+\newblock {\em Making Comics: Storytelling Secrets of Comics, Manga and Graphic
+  Novels}.
+\newblock HarperCollins, 2006.
+
 \bibitem{McGuinness2004}
 Deborah~L. McGuinness and Frank {Van Harmelen}.
 \newblock {OWL Web Ontology Language Overview}.
@@ -902,6 +908,11 @@ J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
   belief propagation.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 31(10):1733 --1746, 2009.
+
+\bibitem{wong1982document}
+Kwan~Y. Wong, Richard~G. Casey, and Friedrich~M. Wahl.
+\newblock Document analysis system.
+\newblock {\em IBM journal of research and development}, 26(6):647--656, 1982.
 
 \bibitem{Xu1998}
 C~Xu and J~L Prince.

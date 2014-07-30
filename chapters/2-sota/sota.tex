@@ -14,13 +14,80 @@ Montrer que tu as un vision plus large du traitement/ analyse des images, des do
 cela pourrait peut-être se faire  en expliquant la chaine de traitement et détailler rapidement les principales méthodes. 
 }
 
-Comics images are mixed content documents that are processed differently depending on the purpose.
-The involved techniques can vary a lot between panel, balloon, text and comic character extractions.
+\section{Document image analysis} % (fold)
+\label{sec:document_image_analysis}
+Document image analysis is a sub-domain of computer vision systems that includes methods for acquiring, processing, analysing and understanding images in order to produce numerical or symbolic information.
+The organization of a document analysis system is highly application dependent. Many functions are specific to the application.
+However, there are typical functions which are found in many computer vision systems.
+
+\begin{itemize}
+	\item \textbf{Document creation} The first time a document containing a information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
+	This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
+	\item \textbf{Image acquisition} A digital image produced by the sensors of various devices (e.g. scanner, camera, web-cam) from the physical document.
+	The digital image is an ordered set of pixel with an associated colour value from a certain colour space.
+	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the method and its application domain (e.g. noise removal, contrast enhancement, binary segmentation).
+	\item \textbf{Feature extraction} Image features are from different levels depending on their distance to pixel information (low level) and human understanding (high level).
+	Low level feature such as line, corner, edges and blobs are computed directly from the spatial organisation of pixels.
+	However, high level information are usually computed from a global view of the image to extract texture and shape for example.
+	\item \textbf{Detection/classification} At some point in the processing, decisions are made about which images, point of interests or regions are relevant for further processing.
+	\item \textbf{High-level processing} Integration of domain knowledge and making the final decision required for the application.
+	This operation may require a user interaction that is sometimes taken into account for future automatic decisions.
+\end{itemize}
+
+An illustration of the application of document analysis system to text recognition and graphics enhancement have been presented by Wong in 1982~\cite{wong1982document} (Figure~\ref{fig:sota:document_analysis_system}).
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[width=0.9\textwidth]{document_analysis_system.png}
+    \caption[Document analysis system]{Document analysis system~\cite{wong1982document}.}
+    \label{fig:sota:document_analysis_system}
+    \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The content of a document is generally divided into textual and graphical information.
+This corresponds to two active research fields, the first one, text recognition aims to convert the text into a character-encoding scheme such as ASCII.
+The second one, graphics or symbol recognition, focuses on the recovery of graphical information in documents.
+Graphics consist of spatial arrangements of symbols; examples include engineering drawings, maps, architectural drawings, music scores, formulas, tables and charts (Figure~\ref{fig:sota:graphics_reco}).
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[width=0.9\textwidth]{graphics_reco.pdf}
+    \caption[Graphics recognition]{Graphics recognition~\cite{wong1982document}.}
+    \label{fig:sota:graphics_reco}
+    \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Beside its content, a document is usually structured according to its intend of use.
+This is an helpful information which is called layout analysis approaches and often related to domain knowledge information.
+
+
+
+Document Image Degradation, Low/high level analysis, Binarisation
+Ye, Peng, and David Doermann. "Document Image Quality
+Assessment: A Brief Survey." Document Analysis and
+Recognition (ICDAR), 2013 12th International Conference
+
+
+
+% section document_image_analysis (end)
+
+\section{Comic book image analysis} % (fold)
+\label{sec:comic_book_image}
+
+% section comic_book_image (end)
+
+Comics images are mixed content documents combining textual and graphical information to create stories.
+Depending on the purpose, the document analysis techniques involved for comics image processing varies a lot between panel, balloon, text and comic character extractions.
 The contents of different nature are related to each other to produce a story.
 Treating each of the content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher level of semantic.
 We review specific comics image content processing, holistic understanding and the existing state-of-the-art applications related to comics.%in this section.
 
-\section{Panel extraction and layout analysis}
+
+
+\subsection{Panel extraction and layout analysis}
 \label{sec:sota:layout_panel}
 
 
@@ -45,7 +112,7 @@ Page layout analysis has been studied to calculate the reading order of the pane
 The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, nevertheless few studies~\cite{Guerin2012Ontologies,Ponsard09,Arai2010Automatic} demonstrated the possibility of calculating such Z-path (left-to-right and down) or right-to-left (e.g. Arabic, Japanese) and down~\cite{Li2013Comic,Tsai2013Adaptive} according to the position of the panels. 
 
 %--------------------------------------------------------------------------------
-\section{Balloon segmentation and tail detection}
+\subsection{Balloon segmentation and tail detection}
 \label{sec:sota:balloon_segmentation}
 
 % Balloons or bubbles are the visual unit that conveys dialogue, either spoken or thought
@@ -113,7 +180,7 @@ Balloon classification and tail detection are also important in a context of dia
 
 
 
-\section{Text extraction and recognition}
+\subsection{Text extraction and recognition}
 \label{sec:sota:text}
 
 % \begin{itemize}
@@ -153,7 +220,7 @@ From typewritten to handwritten and free-form text in uniform to complex backgro
 Nevertheless, Ponsard~\cite{ponsard2012ocr} solved a sub part of the problem by focusing on speech text of a single font and language for which an OCR system is trained for.
 
 
-\section{Comic character detection}
+\subsection{Comic character detection}
 \label{sec:sota:comic_character}
 
 % \begin{itemize}

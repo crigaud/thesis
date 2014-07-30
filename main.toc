@@ -51,19 +51,19 @@
 \contentsline {subsection}{\numberline {4.3.1}Introduction}{39}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Adaptive segmentation}{40}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{41}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Text recognition}{42}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Balloon segmentation and classification}{44}{section.4.4}
+\contentsline {subsection}{\numberline {4.3.4}Text recognition}{43}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Balloon segmentation and classification}{43}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Balloon segmentation}{44}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Balloon classification}{46}{subsection.4.4.2}
 \contentsline {subsubsection}{Shape/contour separation}{46}{section*.58}
 \contentsline {subsubsection}{Contour description}{47}{section*.60}
 \contentsline {subsubsection}{Contour classification}{49}{section*.62}
-\contentsline {section}{\numberline {4.5}Comic character spotting}{50}{section.4.5}
+\contentsline {section}{\numberline {4.5}Comic character spotting}{51}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Input query}{51}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Colour reduction}{51}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{51}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{52}{subsection.4.5.4}
-\contentsline {section}{\numberline {4.6}Conclusions}{54}{section.4.6}
+\contentsline {subsection}{\numberline {4.5.2}Colour reduction}{52}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{52}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{53}{subsection.4.5.4}
+\contentsline {section}{\numberline {4.6}Conclusions}{55}{section.4.6}
 \contentsline {chapter}{\numberline {5}Method 3: knowledge-driven analysis}{57}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{57}{section.5.1}
 \contentsline {section}{\numberline {5.2}Expert system}{57}{section.5.2}

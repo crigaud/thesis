@@ -41,16 +41,16 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{42}{figure.caption.51}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Difference between black over white and white over black connected-components}}{42}{figure.caption.52}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Text extraction neighbourhood validation}}{43}{figure.caption.53}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Examples of text lines from comics images}}{43}{figure.caption.54}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Examples of text lines from comics images}}{44}{figure.caption.54}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{45}{figure.caption.55}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Balloon content alignment measures}}{45}{figure.caption.56}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Balloon content alignment measures}}{46}{figure.caption.56}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Relation between speech balloon shape and contour informations}}{47}{figure.caption.57}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Balloon contour time series}}{48}{figure.caption.59}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{50}{figure.caption.61}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{52}{figure.caption.64}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{53}{figure.caption.65}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{54}{figure.caption.66}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{55}{figure.caption.67}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{56}{figure.caption.67}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{58}{figure.caption.68}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Process loop of the knowledge-driven system}}{58}{figure.caption.69}

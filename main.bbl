@@ -57,6 +57,12 @@ Thomas Bader, René Räpple, and Jürgen Beyerer.
   of Images and Patterns}, volume 5702 of {\em Lecture Notes in Computer
   Science}, pages 689--696. Springer Berlin Heidelberg, 2009.
 
+\bibitem{bhattacharyya2011brief}
+Siddhartha Bhattacharyya.
+\newblock A brief survey of color image preprocessing and segmentation
+  techniques.
+\newblock {\em Journal of Pattern Recognition Research}, 1(1):120--129, 2011.
+
 \bibitem{Blaschke2014Geographic}
 Thomas Blaschke, Geoffrey~J. Hay, Maggi Kelly, Stefan Lang, Peter Hofmann,
   Elisabeth Addink, Raul~Queiroz Feitosa, Freek van~der Meer, Harald van~der
@@ -74,6 +80,12 @@ Micha{\l} Borodo.
 DC~Brandon.
 \newblock Graphic novels and comics for the visually impaired explored in
   award-winning paper, 2014.
+
+\bibitem{breuel2003high}
+Thomas~M Breuel.
+\newblock High performance document layout analysis.
+\newblock In {\em Proceedings of the Symposium on Document Image Understanding
+  Technology}, pages 209--218, 2003.
 
 \bibitem{OCRMangaReader}
 Christopher Brochtrup.
@@ -159,6 +171,11 @@ International Committee.
 \newblock {\em Introduction to publishing in Japan}.
 \newblock Japan Book Publishers Association, Tokyo, Japan, 2014.
 
+\bibitem{cooperman1998system}
+Robert~S Cooperman.
+\newblock System for document layout analysis, 1998.
+\newblock US Patent 5,784,487.
+
 \bibitem{Cortsen2012Comics}
 {Rikke Platz} Cortsen.
 \newblock {\em Comics as Assemblage: How spatio-temporality in comics is
@@ -213,6 +230,11 @@ Richard~O. Duda and Peter~E. Hart.
 \newblock Use of the hough transformation to detect lines and curves in
   pictures.
 \newblock {\em Commun. ACM}, 15:11--15, January 1972.
+
+\bibitem{due1996feature}
+{\O}ivind Due~Trier, Anil~K Jain, and Torfinn Taxt.
+\newblock Feature extraction methods for character recognition-a survey.
+\newblock {\em Pattern recognition}, 29(4):641--662, 1996.
 
 \bibitem{Eisner1985Comics}
 Will Eisner.
@@ -275,8 +297,8 @@ Cl{\'e}ment Gu{\'e}rin.
 
 \bibitem{phdthesisGuerin14}
 Cl{\'e}ment Gu{\'e}rin.
-\newblock {\em Repr{\'e}sentation des donn{\'e}es complexes pour une plateforme
-  de recherche d'information interactive}.
+\newblock {\em Enrichissement s{\'e}mantique d'images de planches de bandes
+  d{\'e}ssin{\'e}es numérisées}.
 \newblock PhD thesis, Universit{\'e} de La Rochelle, Technoforum - 23, avenue
   Albert Einstein BP 33060 - 17031 La Rochelle - France, 2014.
 
@@ -482,6 +504,12 @@ Gérald Lubbin.
 \newblock {\em Les bulles du labo}.
 \newblock Doc en Stock, Paris, France, 2012.
 
+\bibitem{luccheseyz2001color}
+L~Luccheseyz and SK~Mitray.
+\newblock Color image segmentation: A state-of-the-art survey.
+\newblock {\em Proceedings of the Indian National Science Academy (INSA-A)},
+  67(2):207--221, 2001.
+
 \bibitem{Boudissa2011Bande}
 Boudissa Magali.
 \newblock {\em La bande dessin\'{e}e entre la page et l'\'{e}cran : \'{e}tude
@@ -608,6 +636,11 @@ N.~Otsu.
 \newblock {\em {IEEE} Trans. Systems, Man and Cybernetics}, 9:62--66, March
   1979.
 \newblock minimize inter class variance.
+
+\bibitem{pal1993review}
+Nikhil~R Pal and Sankar~K Pal.
+\newblock A review on image segmentation techniques.
+\newblock {\em Pattern recognition}, 26(9):1277--1294, 1993.
 
 \bibitem{ComicLife3}
 Plasq.
@@ -836,6 +869,11 @@ Takamasa Tanaka, Kenji Shoji, Fubito Toyama, and Juichi Miyamichi.
 \newblock Layout analysis of tree-structured scene frames in comic images.
 \newblock In {\em IJCAI'07}, pages 2885--2890, 2007.
 
+\bibitem{tang1996automatic}
+Yuan~Y Tang, Seong-Whan Lee, and Ching~Y Suen.
+\newblock Automatic document processing: a survey.
+\newblock {\em Pattern recognition}, 29(12):1931--1952, 1996.
+
 \bibitem{Kasar07}
 {T}hotreingam {K}asar, {J}ayant {K}umar, and {A}.~{G}. {R}amakrishnan.
 \newblock {F}ont and {B}ackground {C}olor {I}ndependent {T}ext {B}inarization.
@@ -909,11 +947,6 @@ J.J. Weinman, E.~Learned-Miller, and A.R. Hanson.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 31(10):1733 --1746, 2009.
 
-\bibitem{wong1982document}
-Kwan~Y. Wong, Richard~G. Casey, and Friedrich~M. Wahl.
-\newblock Document analysis system.
-\newblock {\em IBM journal of research and development}, 26(6):647--656, 1982.
-
 \bibitem{Xu1998}
 C~Xu and J~L Prince.
 \newblock Snakes, shapes, and gradient vector flow.
@@ -942,5 +975,11 @@ B.~Yao, X.~Yang, and S.C. Zhu.
   methodology, annotation tool and benchmarks.
 \newblock In {\em Energy Minimization Methods in Computer Vision and Pattern
   Recognition}, pages 169--183. Springer, 2007.
+
+\bibitem{Peng2013Document}
+Peng Ye and D.~Doermann.
+\newblock Document image quality assessment: A brief survey.
+\newblock In {\em Document Analysis and Recognition (ICDAR), 2013 12th
+  International Conference on}, pages 723--727, Aug 2013.
 
 \end{thebibliography}

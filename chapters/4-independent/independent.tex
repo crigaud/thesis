@@ -11,7 +11,7 @@
 
 In this section present independent processes to extract comics image content.
 
-TODO
+\modif{TODOOOOOOOOOOOOOO}
 
 \section{Panel extraction}
 \label{sec:in:panel_extraction}
@@ -120,7 +120,7 @@ In addition, text localization in comic images opens up several interesting appl
 Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout method applicable.
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
 To solve the particular problems which are provoked by the combination of complex background and unstructured documents, we propose a new text localization method.
-(We improve the initial segmentation step to cope with complex backgrounds.) Furthermore, we adapt the line extraction method to cope with unstructured documents.
+\modif{We improve the initial segmentation step to cope with complex backgrounds.} Furthermore, we adapt the line extraction method to cope with unstructured documents.
 
 
 % subsection introduction (end)
@@ -143,7 +143,8 @@ A perfect text segmentation would result to individual text letters represented 
 The complex background of comic documents complicates this step.
 Typical thresholding methods would fail to segment the text because text is drawn with the same style of strokes as many other graphical elements in the page \modif{TODO: argue or delete}.
 
-Therefore, we propose to improve the Otsu's threshold selection method. For a single page we assume that the text background brightness is similar around all the characters of the same page. However, in our case, the optimal segmentation threshold differs for every single page of comics depending on the background colour of the text areas. The method is based on the observation that choosing the threshold too low, as well as choosing the threshold too high leads to an over segmentation of the connected components (CC), figure~\ref{fig:in:bin}.
+Therefore, we propose to improve the Otsu's threshold selection method~\ref{sub:ap:bi_threshold}.
+For a single page we assume that the text background brightness is similar around all the characters of the same page. However, in our case, the optimal segmentation threshold differs for every single page of comics depending on the background colour of the text areas. The method is based on the observation that choosing the threshold too low, as well as choosing the threshold too high leads to an over segmentation of the connected components (CC) (Figure~\ref{fig:in:bin}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!] %trim=l b r t
@@ -244,7 +245,7 @@ We propose a number of rules, applied sequentially, to separate graphics from te
 % \begin{itemize}
 
 %[(a)]
-Rule 1: we compare the standard deviation of the greylevels of each CC bounding boxes (see  figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a hight/low local contrast CC separation. We assume a Gaussian distribution but other distribution are under study. The contrast ratio of the page is the absolute difference between the minimum and the maximum greylevels found on the page. In order to avoid artefacts pixel values, we apply a median filtering as preprocessing.%The higher the standard deviation is, the higher the probably of being a letter.
+Rule 1: we compare the standard deviation of the grey-levels of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a hight/low local contrast CC separation. We assume a Gaussian distribution but other distribution are under study. The contrast ratio of the page is the absolute difference between the minimum and the maximum grey-levels found on the page. In order to avoid artefacts pixel values, we apply a median filtering as preprocessing.%The higher the standard deviation is, the higher the probably of being a letter.
 
 %The minimum of difference between letter standard deviation ($\sigma$) and the page content ratio was 1/2 (according to $\sigma=68.27\%$ of the values)
 
@@ -262,7 +263,8 @@ Rule 1: we compare the standard deviation of the greylevels of each CC bounding 
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Rule 2: we apply a topological filtering that consists in removing all the CC that overlap with others assuming that the CC of a letter can not contain another CC (similar to~\cite{Kasar07}). In our study we consider only the black on white CC. (Figure~\ref{fig:in:bw_wb}).
+Rule 2: we apply a topological filtering that consists in removing all the CC that overlap with others assuming that the CC of a letter can not contain another CC, similar to~\cite{Kasar07}.
+In our study we consider only the black on white CC. (Figure~\ref{fig:in:bw_wb}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]%trim=l b r t
@@ -297,7 +299,7 @@ we check all the CC bounding boxes pairs that overlap more than $b$\% each other
 
 % \end{itemize}
 The four rules exploit contrast, topology and text structure to classify the CCs as being either graphics or text.
-We can group text parts to text lines using the method presented in Section~\ref{par:se:letter_to_line}.
+We can group text parts to text lines using the method presented Section~\ref{par:se:letter_to_line}.
 
 
 \subsection{Text recognition} % (fold)
@@ -319,14 +321,14 @@ From typewritten to handwritten and free-form text in uniform to complex backgro
 
 Text recognition in comics would allow full-text search, tagging, image description, comic character labelling etc.
 Text recognition in comics requires an extensive work to be addressed properly, which has not been addressed in this thesis work.
-Nevertheless, we measure the performance of current OCR systems in section~\ref{sub:ex:text_extraction_recognition_evaluation}.
+Nevertheless, we measure the performance of current OCR systems Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
 
 % section text_localisation_and_recognition (end)
 
 \section{Balloon segmentation and classification}
 \label{sec:in:balloon}
 
-In this section we present a method for pixel level balloon segmentation that do not requires previous text extraction unlike~\ref{sub:se:regular_balloon_extraction}.
+In this section we present a method for pixel level balloon segmentation that do not requires previous text extraction unlike the method presented Section~\ref{sub:se:regular_balloon_extraction}.
 Then we analyse the balloon contour for classification purposes, as ``smooth'', ``wavy'' and ``zigzag'' that may correspond to ``dialogue'', ``thought'' and ``exclamation'' in a higher level context.
 
 \subsection{Balloon segmentation} % (fold)
@@ -372,7 +374,7 @@ For instance, if we consider two children $E$ and $F$, they are considered as al
 The child $F$ is also considered to be aligned (horizontally) to $E$ by changing $x$ to $y$ which become the top and bottom bounding box limits.
 
 We use the difference of alignment between the balloon candidate and its children as a clue about its probability of being a real balloon in image.
-This is similar to the text dependent balloon extraction method presented in section~\ref{sec:se:panel_and_text}.
+This is similar to the text dependent balloon extraction method presented Section~\ref{sec:se:panel_and_text}.
 The difference is that here we have no idea about the nature of the children (not detected as text before).
 This independent balloon extraction method can be seen as an ``intelligent'' balloon extractor that embeds a part of a the domain knowledge related to text (balloons are expected to contain text).
 The difference of alignment is computed for the horizontal ($d_x$) and the vertical ($d_y$) axis from the Euclidean distance between the parent and children hull centroids (Figure~\ref{fig:in:coaxial_alignment}).
@@ -448,7 +450,7 @@ However, the contour contains the speech tone information according to the diffe
 
 \subsubsection{Shape/contour separation}
 \label{sec:contour_detection}
-As introduced Section~\ref{sec:sota:balloon_segmentation}, the discriminant information for speech balloon classification is not provided by the global shape but by the contour variations. 
+As introduced in Section~\ref{sec:sota:balloon_segmentation}, the discriminant information for speech balloon classification is not provided by the global shape but by the contour variations. 
 
 First, we propose to represent the speech balloon as a time series (one dimensional signal over $360^\circ$) which corresponds to the distance in number of pixels between the balloon barycentre and the contour points. 
 
@@ -515,7 +517,7 @@ where $f_2$ is the feature two, $\sigma_{pos}$ and $\sigma_{neg}$ are the standa
 
 
 \subsubsection{Contour classification}
-Contour classification is performed according to the selected contour descriptor (see section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997}.
+Contour classification is performed according to the selected contour descriptor (see section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997} \modif{TODO: link to method description in appendix?}.
 This classifier has been chosen because it requires a small amount of training data.
 Let a label set $L=(l_1,l_2,l_3)$ represent the three contour classes ``smooth'', ``wavy'' and ``zigzag''. Given a new unlabelled contour $c$ described by its descriptor $D=(f_1,f_2)$, the naive Bayes approach assigns $D$ to a class $l_{MAP}$ as follow:
 
@@ -752,7 +754,7 @@ One of the limitation of this approach is for tail detection.
 Tail detection without previous balloon segmentation makes no sense because it is a specific region of the balloon contour.
 Also, unsupervised comic characters extraction is a real challenge, here we proposed a first query based approach which is given by a user but it can replaced by a comic characters region of interest computation presented in Section~\ref{sec:se:tail_to_character}.
 
-Next chapter \modif{TODO}
+\modif{Next chapter... TODO}
 
 %In this chapter we have proposed a graph based approach for symbol spotting in graphical documents. We represent the documents with graphs where the critical points detected in the vectorized graphical documents are considered as the nodes and the lines joining them are considered as the edges. The document database is represented by the unification of the serialized substructures of graphs. Here the graph substructures are the acyclic graph paths between each pair of connected nodes. The factorized substructures are the one-dimensional (sub)graphs which give efficiency in terms of computation and since they provide a unified representation over the database, the computation is substantially reduced. Moreover, the paths give adaptation to some structural errors in documents with a certain degree of tolerance. We organize the graph paths in hash tables using the LSH technique, this helps to retrieve symbols in real time. We have tested the method on different datasets of various kinds of document images and the results are quite encouraging.
 

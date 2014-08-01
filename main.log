@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  31 JUL 2014 16:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  1 AUG 2014 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1433,7 +1433,7 @@ LaTeX Info: Redefining \nameref on input line 355.
 \openout4 = `main.out'.
 
 
-<images/LogoUAB.pdf, id=384, 343.52339pt x 222.5916pt>
+<images/LogoUAB.pdf, id=433, 343.52339pt x 222.5916pt>
 File: images/LogoUAB.pdf Graphic file (type pdf)
 
 <use images/LogoUAB.pdf>
@@ -1445,7 +1445,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 362--362
 e
  []
 
-<template_ULR/frontpage.pdf, id=386, 598.1477pt x 845.90027pt>
+<template_ULR/frontpage.pdf, id=435, 598.1477pt x 845.90027pt>
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
 <use template_ULR/frontpage.pdf>
@@ -1461,7 +1461,7 @@ Package pdftex.def Info: template_ULR/frontpage.pdf used on input line 362.
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/LogoUAB.pdf>] <template_ULR/frontpage.pdf, id=402, page=1, 598.1477pt x 845.9
+s/LogoUAB.pdf>] <template_ULR/frontpage.pdf, id=451, page=1, 598.1477pt x 845.9
 0027pt>
 File: template_ULR/frontpage.pdf Graphic file (type pdf)
 
@@ -1494,13 +1494,13 @@ Package pdftex.def Info: template_ULR/frontpage.pdf, page1 used on input line 3
 62.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
  [2 <./template_ULR/frontpage.pdf>]
-<images/LogoL3i.pdf, id=430, 123.38045pt x 76.8992pt>
+<images/LogoL3i.pdf, id=478, 123.38045pt x 76.8992pt>
 File: images/LogoL3i.pdf Graphic file (type pdf)
  <use images/LogoL3i.pdf>
 Package pdftex.def Info: images/LogoL3i.pdf used on input line 362.
 (pdftex.def)             Requested size: 79.6678pt x 36.28523pt.
 
-<images/LogoCVC.pdf, id=431, 597.50829pt x 422.52354pt>
+<images/LogoCVC.pdf, id=479, 597.50829pt x 422.52354pt>
 File: images/LogoCVC.pdf Graphic file (type pdf)
 
 <use images/LogoCVC.pdf>
@@ -1606,75 +1606,49 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 ]
 Chapter 2.
-[9] <./chapters/2-sota/figs/graphics_reco.pdf, id=997, 722.7pt x 531.9674pt>
+[9] <./chapters/2-sota/figs/graphics_reco.pdf, id=1061, 722.7pt x 531.9674pt>
 File: ./chapters/2-sota/figs/graphics_reco.pdf Graphic file (type pdf)
 
 <use ./chapters/2-sota/figs/graphics_reco.pdf>
 Package pdftex.def Info: ./chapters/2-sota/figs/graphics_reco.pdf used on input
  line 62.
-(pdftex.def)             Requested size: 351.3904pt x 230.77975pt.
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 85.
-
-Overfull \hbox (35.46497pt too wide) in paragraph at lines 85--85
-[]\OT1/cmr/bx/n/10 Pre-processing meth-ods ([]$\OT1/pcr/b/n/10 http : / / fr . 
-wikipedia . org / wiki / Segmentation _
- []
-
-
-Overfull \hbox (7.72339pt too wide) in paragraph at lines 85--85
-[]\OT1/cmr/bx/n/10 Shape-based (thresh-old-ing, re-gion grow-ing, connected-com
-ponent
- []
-
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./chapters/2-sota/figs/graphics_reco.pdf>]
-<./chapters/2-sota/figs/document_degradation.png, id=1417, 701.62125pt x 386.44
+(pdftex.def)             Requested size: 351.3904pt x 142.56409pt.
+ [10 <./chapters/2-sota/figs/graphics_reco.pdf>]
+<./chapters/2-sota/figs/document_degradation.png, id=1474, 701.62125pt x 386.44
 376pt>
 File: ./chapters/2-sota/figs/document_degradation.png Graphic file (type png)
  <use ./chapters/2-sota/figs/document_degradation.png>
 Package pdftex.def Info: ./chapters/2-sota/figs/document_degradation.png used o
-n input line 134.
+n input line 115.
 (pdftex.def)             Requested size: 314.4052pt x 173.17279pt.
- [12] [13 <./chapters/2-sota/figs/document_degradation.png>]
-<./chapters/2-sota/figs/Arai_balloon_extraction_process.pdf, id=1480, 187.23952
+ [11] [12 <./chapters/2-sota/figs/document_degradation.png>]
+<./chapters/2-sota/figs/Arai_balloon_extraction_process.pdf, id=1526, 187.23952
 pt x 176.36891pt>
 File: ./chapters/2-sota/figs/Arai_balloon_extraction_process.pdf Graphic file (
 type pdf)
 
 <use ./chapters/2-sota/figs/Arai_balloon_extraction_process.pdf>
 Package pdftex.def Info: ./chapters/2-sota/figs/Arai_balloon_extraction_process
-.pdf used on input line 202.
+.pdf used on input line 214.
 (pdftex.def)             Requested size: 150.56305pt x 141.82462pt.
- [14 <./chapters/2-sota/figs/Arai_balloon_extraction_process.pdf>] [15]
-<figs/prunelle.png, id=1594, 430.60875pt x 134.5025pt>
+ [13] [14 <./chapters/2-sota/figs/Arai_balloon_extraction_process.pdf>] [15]
+<figs/prunelle.png, id=1667, 430.60875pt x 134.5025pt>
 File: figs/prunelle.png Graphic file (type png)
  <use figs/prunelle.png>
-Package pdftex.def Info: figs/prunelle.png used on input line 314.
+Package pdftex.def Info: figs/prunelle.png used on input line 326.
 (pdftex.def)             Requested size: 220.8258pt x 68.97708pt.
 
-[16] [17 <./figs/prunelle.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18])
-(./chapters/3-sequential/sequential.tex [19] [20
-
-]
+[16 <./figs/prunelle.png>] [17]) (./chapters/3-sequential/sequential.tex
+[18]
 Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
+ [19
 
-LaTeX Warning: Reference `??' on page 22 undefined on input line 73.
-
-
-LaTeX Warning: Reference `??' on page 22 undefined on input line 84.
-
-[22]
-<./chapters/3-sequential/figs/binary.png, id=1738, 656.4525pt x 704.6325pt>
+]
+[20]
+<./chapters/3-sequential/figs/binary.png, id=1795, 656.4525pt x 704.6325pt>
 File: ./chapters/3-sequential/figs/binary.png Graphic file (type png)
 
 <use ./chapters/3-sequential/figs/binary.png>
@@ -1682,7 +1656,7 @@ Package pdftex.def Info: ./chapters/3-sequential/figs/binary.png used on input
 line 92.
 (pdftex.def)             Requested size: 147.95206pt x 158.80426pt.
 
-<./chapters/3-sequential/figs/roi.png, id=1740, 662.475pt x 708.6475pt>
+<./chapters/3-sequential/figs/roi.png, id=1797, 662.475pt x 708.6475pt>
 File: ./chapters/3-sequential/figs/roi.png Graphic file (type png)
 
 <use ./chapters/3-sequential/figs/roi.png>
@@ -1690,7 +1664,7 @@ Package pdftex.def Info: ./chapters/3-sequential/figs/roi.png used on input lin
 e 93.
 (pdftex.def)             Requested size: 147.95206pt x 158.26018pt.
 
-<./chapters/3-sequential/figs/frame_unrecognized.png, id=1742, 658.46pt x 708.6
+<./chapters/3-sequential/figs/frame_unrecognized.png, id=1799, 658.46pt x 708.6
 475pt>
 File: ./chapters/3-sequential/figs/frame_unrecognized.png Graphic file (type pn
 g)
@@ -1699,7 +1673,7 @@ Package pdftex.def Info: ./chapters/3-sequential/figs/frame_unrecognized.png us
 ed on input line 95.
 (pdftex.def)             Requested size: 147.95206pt x 159.91458pt.
 
-<./chapters/3-sequential/figs/text.png, id=1744, 662.475pt x 708.6475pt>
+<./chapters/3-sequential/figs/text.png, id=1801, 662.475pt x 708.6475pt>
 File: ./chapters/3-sequential/figs/text.png Graphic file (type png)
 
 <use ./chapters/3-sequential/figs/text.png>
@@ -1707,225 +1681,221 @@ Package pdftex.def Info: ./chapters/3-sequential/figs/text.png used on input li
 ne 96.
 (pdftex.def)             Requested size: 147.95206pt x 158.9414pt.
 
-
-LaTeX Warning: Reference `??' on page 23 undefined on input line 117.
-
-
-<./chapters/3-sequential/figs/Histogram_en.png, id=1750, 1361.085pt x 324.21124
+<./chapters/3-sequential/figs/Histogram_en.png, id=1807, 1361.085pt x 324.21124
 pt>
 File: ./chapters/3-sequential/figs/Histogram_en.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/Histogram_en.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/Histogram_en.png used on 
-input line 133.
+input line 126.
 (pdftex.def)             Requested size: 369.88582pt x 90.95662pt.
 File: ./chapters/3-sequential/figs/frame_unrecognized.png Graphic file (type pn
 g)
 
 <use ./chapters/3-sequential/figs/frame_unrecognized.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/frame_unrecognized.png us
-ed on input line 151.
+ed on input line 144.
 (pdftex.def)             Requested size: 110.96687pt x 119.93864pt.
 
-<./chapters/3-sequential/figs/frame_cleaned.png, id=1757, 662.475pt x 706.64pt>
+<./chapters/3-sequential/figs/frame_cleaned.png, id=1814, 662.475pt x 706.64pt>
 File: ./chapters/3-sequential/figs/frame_cleaned.png Graphic file (type png)
 <use ./chapters/3-sequential/figs/frame_cleaned.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/frame_cleaned.png used on
- input line 152.
+ input line 145.
 (pdftex.def)             Requested size: 110.96687pt x 118.86566pt.
- [23] [24 <./chapters/3-sequential/figs/binary.png> <./chapters/3-sequential/fi
+ [21] [22 <./chapters/3-sequential/figs/binary.png> <./chapters/3-sequential/fi
 gs/roi.png> <./chapters/3-sequential/figs/frame_unrecognized.png> <./chapters/3
 -sequential/figs/text.png>]
-<./chapters/3-sequential/figs/letter_position.pdf, id=1790, 181.78282pt x 105.6
+<./chapters/3-sequential/figs/letter_position.pdf, id=1842, 181.78282pt x 105.6
 8962pt>
 File: ./chapters/3-sequential/figs/letter_position.pdf Graphic file (type pdf)
  <use ./chapters/3-sequential/figs/letter_position.pdf>
 Package pdftex.def Info: ./chapters/3-sequential/figs/letter_position.pdf used 
-on input line 181.
+on input line 174.
 (pdftex.def)             Requested size: 184.9429pt x 107.52621pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25 <./chapters/3-sequential/figs/Histogram_en.png> <./chapters/3-sequential/fi
+[23 <./chapters/3-sequential/figs/Histogram_en.png> <./chapters/3-sequential/fi
 gs/frame_cleaned.png>]
-<./chapters/3-sequential/figs/line_to_paragraphs.pdf, id=1802, 282.96956pt x 32
+<./chapters/3-sequential/figs/line_to_paragraphs.pdf, id=1854, 282.96956pt x 32
 1.73486pt>
 File: ./chapters/3-sequential/figs/line_to_paragraphs.pdf Graphic file (type pd
 f)
  <use ./chapters/3-sequential/figs/line_to_paragraphs.pdf>
 Package pdftex.def Info: ./chapters/3-sequential/figs/line_to_paragraphs.pdf us
-ed on input line 211.
+ed on input line 204.
 (pdftex.def)             Requested size: 184.9429pt x 210.27884pt.
- [26 <./chapters/3-sequential/figs/letter_position.pdf> <./chapters/3-sequentia
+ [24 <./chapters/3-sequential/figs/letter_position.pdf> <./chapters/3-sequentia
 l/figs/line_to_paragraphs.pdf>]
-<./chapters/3-sequential/figs/text_in_balloon.png, id=1843, 641.39626pt x 226.8
+<./chapters/3-sequential/figs/text_in_balloon.png, id=1894, 641.39626pt x 226.8
 475pt>
 File: ./chapters/3-sequential/figs/text_in_balloon.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/text_in_balloon.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/text_in_balloon.png used 
-on input line 245.
+on input line 238.
 (pdftex.def)             Requested size: 277.41435pt x 98.11711pt.
- [27 <./chapters/3-sequential/figs/text_in_balloon.png>]
-<./chapters/3-sequential/figs/closed_balloon_process.png, id=1853, 821.469pt x 
+
+<./chapters/3-sequential/figs/closed_balloon_process.png, id=1897, 821.469pt x 
 293.095pt>
 File: ./chapters/3-sequential/figs/closed_balloon_process.png Graphic file (typ
 e png)
  <use ./chapters/3-sequential/figs/closed_balloon_process.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/closed_balloon_process.pn
-g used on input line 264.
+g used on input line 257.
 (pdftex.def)             Requested size: 277.41435pt x 98.98013pt.
 
-<./chapters/3-sequential/figs/text_balloon_alignment.pdf, id=1858, 455.37268pt 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25 <./chapters/3-sequential/figs/text_in_balloon.png>]
+<./chapters/3-sequential/figs/text_balloon_alignment.pdf, id=1909, 455.37268pt 
 x 178.69258pt>
 File: ./chapters/3-sequential/figs/text_balloon_alignment.pdf Graphic file (typ
 e pdf)
  <use ./chapters/3-sequential/figs/text_balloon_alignment.pdf>
 Package pdftex.def Info: ./chapters/3-sequential/figs/text_balloon_alignment.pd
-f used on input line 283.
+f used on input line 276.
 (pdftex.def)             Requested size: 184.9429pt x 104.96417pt.
 
-[28 <./chapters/3-sequential/figs/closed_balloon_process.png> <./chapters/3-seq
-uential/figs/text_balloon_alignment.pdf>]
-<./chapters/3-sequential/figs/round_balloon.png, id=1899, 14.6949pt x 19.0311pt
+Underfull \vbox (badness 6792) has occurred while \output is active []
+
+ [26 <./chapters/3-sequential/figs/closed_balloon_process.png> <./chapters/3-se
+quential/figs/text_balloon_alignment.pdf>]
+<./chapters/3-sequential/figs/round_balloon.png, id=1953, 14.6949pt x 19.0311pt
 >
 File: ./chapters/3-sequential/figs/round_balloon.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/round_balloon.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/round_balloon.png used on
- input line 320.
+ input line 313.
 (pdftex.def)             Requested size: 48.08696pt x 55.7203pt.
 
-<./chapters/3-sequential/figs/peaked_balloon.png, id=1901, 29.1489pt x 25.5354p
+<./chapters/3-sequential/figs/peaked_balloon.png, id=1955, 29.1489pt x 25.5354p
 t>
 File: ./chapters/3-sequential/figs/peaked_balloon.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/peaked_balloon.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/peaked_balloon.png used o
-n input line 321.
+n input line 314.
 (pdftex.def)             Requested size: 62.8799pt x 55.08546pt.
 
-<./chapters/3-sequential/figs/open_balloon.png, id=1903, 39.5076pt x 44.0847pt>
+<./chapters/3-sequential/figs/open_balloon.png, id=1957, 39.5076pt x 44.0847pt>
 File: ./chapters/3-sequential/figs/open_balloon.png Graphic file (type png)
 <use ./chapters/3-sequential/figs/open_balloon.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/open_balloon.png used on 
-input line 322.
+input line 315.
 (pdftex.def)             Requested size: 53.63501pt x 66.71384pt.
 
+Underfull \vbox (badness 6412) has occurred while \output is active []
 
-LaTeX Warning: Reference `??' on page 29 undefined on input line 334.
-
-[29 <./chapters/3-sequential/figs/round_balloon.png> <./chapters/3-sequential/f
-igs/peaked_balloon.png> <./chapters/3-sequential/figs/open_balloon.png>]
-<./chapters/3-sequential/figs/edge_dist_trans.png, id=1930, 356.33125pt x 266.9
+ [27 <./chapters/3-sequential/figs/round_balloon.png> <./chapters/3-sequential/
+figs/peaked_balloon.png> <./chapters/3-sequential/figs/open_balloon.png>]
+<./chapters/3-sequential/figs/edge_dist_trans.png, id=1979, 356.33125pt x 266.9
 975pt>
 File: ./chapters/3-sequential/figs/edge_dist_trans.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/edge_dist_trans.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/edge_dist_trans.png used 
-on input line 389.
+on input line 382.
 (pdftex.def)             Requested size: 230.86334pt x 183.22624pt.
- [30] [31 <./chapters/3-sequential/figs/edge_dist_trans.png>]
+ [28 <./chapters/3-sequential/figs/edge_dist_trans.png>] [29]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 456.
- [32]
-<./chapters/3-sequential/figs/group_lines.png, id=1970, 113.42375pt x 99.37125p
+put line 449.
+ [30]
+<./chapters/3-sequential/figs/group_lines.png, id=2038, 113.42375pt x 99.37125p
 t>
 File: ./chapters/3-sequential/figs/group_lines.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/group_lines.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/group_lines.png used on i
-nput line 507.
+nput line 500.
 (pdftex.def)             Requested size: 73.97603pt x 64.8104pt.
 
-<./chapters/3-sequential/figs/convex_hull.png, id=1972, 110.4125pt x 95.35625pt
+<./chapters/3-sequential/figs/convex_hull.png, id=2040, 110.4125pt x 95.35625pt
 >
 File: ./chapters/3-sequential/figs/convex_hull.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/convex_hull.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/convex_hull.png used on i
-nput line 508.
+nput line 501.
 (pdftex.def)             Requested size: 73.97603pt x 63.89125pt.
 
-<./chapters/3-sequential/figs/snake_init.png, id=1974, 248.93pt x 91.34125pt>
+<./chapters/3-sequential/figs/snake_init.png, id=2042, 248.93pt x 91.34125pt>
 File: ./chapters/3-sequential/figs/snake_init.png Graphic file (type png)
 
 <use ./chapters/3-sequential/figs/snake_init.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/snake_init.png used on in
-put line 509.
+put line 502.
 (pdftex.def)             Requested size: 73.97603pt x 60.14185pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33 <./chapters/3-sequential/figs/group_lines.png> <./chapters/3-sequential/fi
-gs/convex_hull.png> <./chapters/3-sequential/figs/snake_init.png>]
-<./chapters/3-sequential/figs/mono_res_det.png, id=2006, 371.3875pt x 211.79124
+<./chapters/3-sequential/figs/mono_res_det.png, id=2045, 371.3875pt x 211.79124
 pt>
 File: ./chapters/3-sequential/figs/mono_res_det.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/mono_res_det.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/mono_res_det.png used on 
-input line 535.
+input line 528.
 (pdftex.def)             Requested size: 220.8258pt x 119.1645pt.
-
-<./chapters/3-sequential/figs/multi_res_det.png, id=2011, 353.32pt x 174.6525pt
+ [31 <./chapters/3-sequential/figs/group_lines.png> <./chapters/3-sequential/fi
+gs/convex_hull.png> <./chapters/3-sequential/figs/snake_init.png> <./chapters/3
+-sequential/figs/mono_res_det.png>]
+<./chapters/3-sequential/figs/multi_res_det.png, id=2064, 353.32pt x 174.6525pt
 >
 File: ./chapters/3-sequential/figs/multi_res_det.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/multi_res_det.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/multi_res_det.png used on
- input line 563.
+ input line 556.
 (pdftex.def)             Requested size: 180.67566pt x 84.94653pt.
 
-Overfull \hbox (0.80931pt too wide) in paragraph at lines 576--582
+Overfull \hbox (0.80931pt too wide) in paragraph at lines 569--575
 \OT1/cmr/m/n/10 Speech bal-loons in-di-cate di-a-logue us-ing tails point-ing a
-t their re-spec-tive speak-ers [[][]116[]].
+t their re-spec-tive speak-ers [[][]126[]].
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34 <./chapters/3-sequential/figs/mono_res_det.png>]
-<./chapters/3-sequential/figs/tail_types.png, id=2024, 551.05875pt x 116.435pt>
+<./chapters/3-sequential/figs/tail_types.png, id=2069, 551.05875pt x 116.435pt>
 File: ./chapters/3-sequential/figs/tail_types.png Graphic file (type png)
 <use ./chapters/3-sequential/figs/tail_types.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/tail_types.png used on in
-put line 586.
+put line 579.
 (pdftex.def)             Requested size: 277.41435pt x 58.6171pt.
-
-<./chapters/3-sequential/figs/tail_description.pdf, id=2028, 552.20157pt x 317.
+ [32 <./chapters/3-sequential/figs/multi_res_det.png>]
+<./chapters/3-sequential/figs/tail_description.pdf, id=2082, 552.20157pt x 317.
 24902pt>
 File: ./chapters/3-sequential/figs/tail_description.pdf Graphic file (type pdf)
 
  <use ./chapters/3-sequential/figs/tail_description.pdf>
 Package pdftex.def Info: ./chapters/3-sequential/figs/tail_description.pdf used
- on input line 610.
+ on input line 603.
 (pdftex.def)             Requested size: 332.89497pt x 191.2561pt.
- [35 <./chapters/3-sequential/figs/multi_res_det.png> <./chapters/3-sequential/
-figs/tail_types.png>] [36 <./chapters/3-sequential/figs/tail_description.pdf>]
-<./chapters/3-sequential/figs/tail_direction.png, id=2072, 391.4625pt x 381.425
+ [33 <./chapters/3-sequential/figs/tail_types.png> <./chapters/3-sequential/fig
+s/tail_description.pdf>]
+<./chapters/3-sequential/figs/tail_direction.png, id=2117, 391.4625pt x 381.425
 pt>
 File: ./chapters/3-sequential/figs/tail_direction.png Graphic file (type png)
  <use ./chapters/3-sequential/figs/tail_direction.png>
 Package pdftex.def Info: ./chapters/3-sequential/figs/tail_direction.png used o
-n input line 677.
+n input line 670.
 (pdftex.def)             Requested size: 184.9429pt x 180.20097pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37 <./chapters/3-sequential/figs/tail_direction.png>]
-<./chapters/3-sequential/figs/roi_hypothesis.pdf, id=2085, 308.75351pt x 197.93
+ [34]
+<./chapters/3-sequential/figs/roi_hypothesis.pdf, id=2130, 308.75351pt x 197.93
 95pt>
 File: ./chapters/3-sequential/figs/roi_hypothesis.pdf Graphic file (type pdf)
  <use ./chapters/3-sequential/figs/roi_hypothesis.pdf>
 Package pdftex.def Info: ./chapters/3-sequential/figs/roi_hypothesis.pdf used o
-n input line 765.
+n input line 758.
 (pdftex.def)             Requested size: 180.67566pt x 115.82886pt.
- [38])
-(./chapters/4-independent/independent.tex [39 <./chapters/3-sequential/figs/roi
-_hypothesis.pdf>] [40
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./chapters/3-sequential/figs/tail_direction.png>])
+(./chapters/4-independent/independent.tex [36 <./chapters/3-sequential/figs/roi
+_hypothesis.pdf>]
+Chapter 4.
+[37
 
 ]
-Chapter 4.
-[41]
 Overfull \hbox (0.34418pt too wide) in paragraph at lines 45--46
 []\OT1/cmr/bx/n/10 TODO: de-tail global bi-na-ri-sa-tion and in-ver-sion by re-
 fer-ring to a method
  []
 
-<./chapters/4-independent/figs/panel_img.jpg, id=2197, 851.18pt x 1204.5pt>
+<./chapters/4-independent/figs/panel_img.jpg, id=2238, 851.18pt x 1204.5pt>
 File: ./chapters/4-independent/figs/panel_img.jpg Graphic file (type jpg)
 
 <use ./chapters/4-independent/figs/panel_img.jpg>
@@ -1933,7 +1903,7 @@ Package pdftex.def Info: ./chapters/4-independent/figs/panel_img.jpg used on in
 put line 84.
 (pdftex.def)             Requested size: 73.97603pt x 104.66934pt.
 
-<./chapters/4-independent/figs/panel_binary.png, id=2199, 851.18pt x 1204.5pt>
+<./chapters/4-independent/figs/panel_binary.png, id=2240, 851.18pt x 1204.5pt>
 File: ./chapters/4-independent/figs/panel_binary.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/panel_binary.png>
@@ -1946,7 +1916,7 @@ Underfull \hbox (badness 4859) in paragraph at lines 86--86
  []
 
 
-<./chapters/4-independent/figs/panel_all_contours.png, id=2201, 851.18pt x 1204
+<./chapters/4-independent/figs/panel_all_contours.png, id=2242, 851.18pt x 1204
 .5pt>
 File: ./chapters/4-independent/figs/panel_all_contours.png Graphic file (type p
 ng)
@@ -1960,7 +1930,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--88
  []
 
 
-<./chapters/4-independent/figs/panel_big_contours.png, id=2203, 851.18pt x 1204
+<./chapters/4-independent/figs/panel_big_contours.png, id=2244, 851.18pt x 1204
 .5pt>
 File: ./chapters/4-independent/figs/panel_big_contours.png Graphic file (type p
 ng)
@@ -1969,7 +1939,7 @@ Package pdftex.def Info: ./chapters/4-independent/figs/panel_big_contours.png u
 sed on input line 90.
 (pdftex.def)             Requested size: 73.97603pt x 104.66934pt.
 
-<./chapters/4-independent/figs/panel_big_contour_hull.png, id=2205, 851.18pt x 
+<./chapters/4-independent/figs/panel_big_contour_hull.png, id=2246, 851.18pt x 
 1204.5pt>
 File: ./chapters/4-independent/figs/panel_big_contour_hull.png Graphic file (ty
 pe png)
@@ -1978,7 +1948,7 @@ Package pdftex.def Info: ./chapters/4-independent/figs/panel_big_contour_hull.p
 ng used on input line 91.
 (pdftex.def)             Requested size: 73.97603pt x 104.66934pt.
 
-<./chapters/4-independent/figs/panels_detection_boxes.png, id=2207, 851.18pt x 
+<./chapters/4-independent/figs/panels_detection_boxes.png, id=2248, 851.18pt x 
 1204.5pt>
 File: ./chapters/4-independent/figs/panels_detection_boxes.png Graphic file (ty
 pe png)
@@ -1989,117 +1959,117 @@ ng used on input line 93.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <./chapters/4-independent/figs/panel_img.jpg> <./chapters/4-independent/fi
+ [38 <./chapters/4-independent/figs/panel_img.jpg> <./chapters/4-independent/fi
 gs/panel_binary.png (PNG copy)> <./chapters/4-independent/figs/panel_all_contou
 rs.png (PNG copy)> <./chapters/4-independent/figs/panel_big_contours.png (PNG c
 opy)> <./chapters/4-independent/figs/panel_big_contour_hull.png (PNG copy)> <./
 chapters/4-independent/figs/panels_detection_boxes.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-<./chapters/4-independent/figs/bin_50.png, id=2234, 1606.0pt x 877.2775pt>
+ [39]
+<./chapters/4-independent/figs/bin_50.png, id=2277, 1606.0pt x 877.2775pt>
 File: ./chapters/4-independent/figs/bin_50.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/bin_50.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/bin_50.png used on input
- line 152.
+ line 153.
 (pdftex.def)             Requested size: 81.37532pt x 73.44905pt.
 
-<./chapters/4-independent/figs/bin_80.png, id=2236, 1606.0pt x 877.2775pt>
+<./chapters/4-independent/figs/bin_80.png, id=2279, 1606.0pt x 877.2775pt>
 File: ./chapters/4-independent/figs/bin_80.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/bin_80.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/bin_80.png used on input
- line 153.
+ line 154.
 (pdftex.def)             Requested size: 81.37532pt x 73.44905pt.
 
-<./chapters/4-independent/figs/bin_120.png, id=2238, 1606.0pt x 877.2775pt>
+<./chapters/4-independent/figs/bin_120.png, id=2281, 1606.0pt x 877.2775pt>
 File: ./chapters/4-independent/figs/bin_120.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/bin_120.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/bin_120.png used on inpu
-t line 154.
+t line 155.
 (pdftex.def)             Requested size: 81.37532pt x 73.44905pt.
 
-<./chapters/4-independent/figs/bin_200.png, id=2240, 1606.0pt x 877.2775pt>
+<./chapters/4-independent/figs/bin_200.png, id=2283, 1606.0pt x 877.2775pt>
 File: ./chapters/4-independent/figs/bin_200.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/bin_200.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/bin_200.png used on inpu
-t line 155.
+t line 156.
 (pdftex.def)             Requested size: 81.37532pt x 73.44905pt.
- [44 <./chapters/4-independent/figs/bin_50.png> <./chapters/4-independent/figs/
+ [40 <./chapters/4-independent/figs/bin_50.png> <./chapters/4-independent/figs/
 bin_80.png> <./chapters/4-independent/figs/bin_120.png> <./chapters/4-independe
 nt/figs/bin_200.png>]
-<./chapters/4-independent/figs/CC_graph_source_one_curve.pdf, id=2259, 597.2312
+<./chapters/4-independent/figs/CC_graph_source_one_curve.pdf, id=2301, 597.2312
 5pt x 284.06125pt>
 File: ./chapters/4-independent/figs/CC_graph_source_one_curve.pdf Graphic file 
 (type pdf)
 
 <use ./chapters/4-independent/figs/CC_graph_source_one_curve.pdf>
 Package pdftex.def Info: ./chapters/4-independent/figs/CC_graph_source_one_curv
-e.pdf used on input line 179.
+e.pdf used on input line 180.
 (pdftex.def)             Requested size: 277.41435pt x 131.9484pt.
 
-<./chapters/4-independent/figs/deattached_letter.png, id=2263, 200.75pt x 48.18
+<./chapters/4-independent/figs/deattached_letter.png, id=2305, 200.75pt x 48.18
 pt>
 File: ./chapters/4-independent/figs/deattached_letter.png Graphic file (type pn
 g)
  <use ./chapters/4-independent/figs/deattached_letter.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/deattached_letter.png us
-ed on input line 204.
+ed on input line 205.
 (pdftex.def)             Requested size: 82.98499pt x 19.91692pt.
 
-<./chapters/4-independent/figs/attached_letter.png, id=2264, 102.3825pt x 41.15
+<./chapters/4-independent/figs/attached_letter.png, id=2306, 102.3825pt x 41.15
 375pt>
 File: ./chapters/4-independent/figs/attached_letter.png Graphic file (type png)
 
  <use ./chapters/4-independent/figs/attached_letter.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/attached_letter.png used
- on input line 205.
+ on input line 206.
 (pdftex.def)             Requested size: 49.55078pt x 19.91692pt.
- [45 <./chapters/4-independent/figs/CC_graph_source_one_curve.pdf> <./chapters/
+ [41 <./chapters/4-independent/figs/CC_graph_source_one_curve.pdf> <./chapters/
 4-independent/figs/deattached_letter.png> <./chapters/4-independent/figs/attach
 ed_letter.png>]
-<./chapters/4-independent/figs/letter_N_gs.png, id=2279, 3.1317pt x 4.5771pt>
+<./chapters/4-independent/figs/letter_N_gs.png, id=2321, 3.1317pt x 4.5771pt>
 File: ./chapters/4-independent/figs/letter_N_gs.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/letter_N_gs.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/letter_N_gs.png used on 
-input line 255.
+input line 256.
 (pdftex.def)             Requested size: 19.47137pt x 28.45274pt.
 
-<./chapters/4-independent/figs/letter_eyeblow_gs.png, id=2280, 5.7816pt x 3.613
+<./chapters/4-independent/figs/letter_eyeblow_gs.png, id=2322, 5.7816pt x 3.613
 5pt>
 File: ./chapters/4-independent/figs/letter_eyeblow_gs.png Graphic file (type pn
 g)
  <use ./chapters/4-independent/figs/letter_eyeblow_gs.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/letter_eyeblow_gs.png us
-ed on input line 256.
+ed on input line 257.
 (pdftex.def)             Requested size: 45.52686pt x 28.45274pt.
 
-<./chapters/4-independent/figs/BW_bin_CC.png, id=2283, 83.31125pt x 36.135pt>
+<./chapters/4-independent/figs/BW_bin_CC.png, id=2325, 83.31125pt x 36.135pt>
 File: ./chapters/4-independent/figs/BW_bin_CC.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/BW_bin_CC.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/BW_bin_CC.png used on in
-put line 271.
+put line 273.
 (pdftex.def)             Requested size: 65.14903pt x 22.76219pt.
 
-<./chapters/4-independent/figs/WB_bin_CC.png, id=2285, 83.31125pt x 36.135pt>
+<./chapters/4-independent/figs/WB_bin_CC.png, id=2327, 83.31125pt x 36.135pt>
 File: ./chapters/4-independent/figs/WB_bin_CC.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/WB_bin_CC.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/WB_bin_CC.png used on in
-put line 272.
+put line 274.
 (pdftex.def)             Requested size: 65.14903pt x 22.76219pt.
 
-<./chapters/4-independent/figs/4_direction.png, id=2288, 412.54124pt x 313.17pt
+<./chapters/4-independent/figs/4_direction.png, id=2330, 412.54124pt x 313.17pt
 >
 File: ./chapters/4-independent/figs/4_direction.png Graphic file (type png)
  <use ./chapters/4-independent/figs/4_direction.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/4_direction.png used on 
-input line 289.
+input line 291.
 (pdftex.def)             Requested size: 184.9429pt x 140.39476pt.
 
 
@@ -2108,133 +2078,130 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./chapters/4-independent/figs/BW_bin_CC.png> <./chapters/4-independent/fi
+ [42 <./chapters/4-independent/figs/BW_bin_CC.png> <./chapters/4-independent/fi
 gs/WB_bin_CC.png> <./chapters/4-independent/figs/letter_N_gs.png> <./chapters/4
 -independent/figs/letter_eyeblow_gs.png>]
-<./chapters/4-independent/figs/text_line_examples.png, id=2300, 642.4pt x 401.5
+<./chapters/4-independent/figs/text_line_examples.png, id=2342, 642.4pt x 401.5
 pt>
 File: ./chapters/4-independent/figs/text_line_examples.png Graphic file (type p
 ng)
  <use ./chapters/4-independent/figs/text_line_examples.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/text_line_examples.png u
-sed on input line 314.
+sed on input line 316.
 (pdftex.def)             Requested size: 277.41435pt x 173.16487pt.
-
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
- [47 <./chapters/4-independent/figs/4_direction.png>]
-<./chapters/4-independent/figs/closed_balloon_process.png, id=2316, 821.469pt x
+ [43 <./chapters/4-independent/figs/4_direction.png>]
+<./chapters/4-independent/figs/closed_balloon_process.png, id=2359, 821.469pt x
  293.095pt>
 File: ./chapters/4-independent/figs/closed_balloon_process.png Graphic file (ty
 pe png)
  <use ./chapters/4-independent/figs/closed_balloon_process.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/closed_balloon_process.p
-ng used on input line 354.
+ng used on input line 356.
 (pdftex.def)             Requested size: 332.89497pt x 118.77884pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48 <./chapters/4-independent/figs/text_line_examples.png>]
-<./chapters/4-independent/figs/coaxial_alignment.png, id=2327, 248.93pt x 168.6
+ [44 <./chapters/4-independent/figs/text_line_examples.png>]
+<./chapters/4-independent/figs/coaxial_alignment.png, id=2371, 248.93pt x 168.6
 3pt>
 File: ./chapters/4-independent/figs/coaxial_alignment.png Graphic file (type pn
 g)
  <use ./chapters/4-independent/figs/coaxial_alignment.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/coaxial_alignment.png us
-ed on input line 384.
+ed on input line 386.
 (pdftex.def)             Requested size: 129.46228pt x 99.41028pt.
 
 
 LaTeX Warning: Reference `sub:ex:independent_text_extraction_evaluation' on pag
-e 49 undefined on input line 398.
+e 45 undefined on input line 400.
 
-[49 <./chapters/4-independent/figs/closed_balloon_process.png>]
-<./chapters/4-independent/figs/contour_style.png, id=2339, 778.91pt x 737.75626
+[45 <./chapters/4-independent/figs/closed_balloon_process.png>]
+<./chapters/4-independent/figs/contour_style.png, id=2382, 778.91pt x 737.75626
 pt>
 File: ./chapters/4-independent/figs/contour_style.png Graphic file (type png)
  <use ./chapters/4-independent/figs/contour_style.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/contour_style.png used o
-n input line 419.
+n input line 421.
 (pdftex.def)             Requested size: 295.90977pt x 279.19058pt.
- [50 <./chapters/4-independent/figs/coaxial_alignment.png>]
-<./chapters/4-independent/figs/time_series.png, id=2356, 1164.35pt x 853.1875pt
+ [46 <./chapters/4-independent/figs/coaxial_alignment.png>]
+<./chapters/4-independent/figs/time_series.png, id=2398, 1164.35pt x 853.1875pt
 >
 File: ./chapters/4-independent/figs/time_series.png Graphic file (type png)
  <use ./chapters/4-independent/figs/time_series.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/time_series.png used on 
-input line 463.
+input line 465.
 (pdftex.def)             Requested size: 332.89497pt x 243.92906pt.
- [51 <./chapters/4-independent/figs/contour_style.png>] [52 <./chapters/4-indep
+ [47 <./chapters/4-independent/figs/contour_style.png>] [48 <./chapters/4-indep
 endent/figs/time_series.png>]
-<./chapters/4-independent/figs/signal_decomposition.png, id=2374, 855.195pt x 3
+<./chapters/4-independent/figs/signal_decomposition.png, id=2416, 855.195pt x 3
 28.22626pt>
 File: ./chapters/4-independent/figs/signal_decomposition.png Graphic file (type
  png)
  <use ./chapters/4-independent/figs/signal_decomposition.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/signal_decomposition.png
- used on input line 510.
+ used on input line 512.
 (pdftex.def)             Requested size: 341.27625pt x 130.98267pt.
 
-[53]
+[49]
 Underfull \vbox (badness 2088) has occurred while \output is active []
 
- [54 <./chapters/4-independent/figs/signal_decomposition.png>]
-<./chapters/4-independent/figs/user_selection.png, id=2396, 215.80624pt x 212.7
+ [50 <./chapters/4-independent/figs/signal_decomposition.png>]
+<./chapters/4-independent/figs/user_selection.png, id=2439, 215.80624pt x 212.7
 95pt>
 File: ./chapters/4-independent/figs/user_selection.png Graphic file (type png)
  <use ./chapters/4-independent/figs/user_selection.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/user_selection.png used 
-on input line 614.
+on input line 616.
 (pdftex.def)             Requested size: 184.9429pt x 182.36696pt.
- [55] [56 <./chapters/4-independent/figs/user_selection.png>]
-<./chapters/4-independent/figs/description_sequence.png, id=2411, 874.26625pt x
+ [51] [52 <./chapters/4-independent/figs/user_selection.png>]
+<./chapters/4-independent/figs/description_sequence.png, id=2453, 874.26625pt x
  583.17876pt>
 File: ./chapters/4-independent/figs/description_sequence.png Graphic file (type
  png)
  <use ./chapters/4-independent/figs/description_sequence.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/description_sequence.png
- used on input line 665.
+ used on input line 667.
 (pdftex.def)             Requested size: 332.89497pt x 222.05516pt.
 
-[57 <./chapters/4-independent/figs/description_sequence.png>]
-<./chapters/4-independent/figs/masks.png, id=2418, 878.28125pt x 1093.08376pt>
+[53 <./chapters/4-independent/figs/description_sequence.png>]
+<./chapters/4-independent/figs/masks.png, id=2460, 878.28125pt x 1093.08376pt>
 File: ./chapters/4-independent/figs/masks.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/masks.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/masks.png used on input 
-line 684.
+line 686.
 (pdftex.def)             Requested size: 295.90977pt x 368.29106pt.
 
-Overfull \hbox (5.14781pt too wide) in paragraph at lines 691--694
+Overfull \hbox (5.14781pt too wide) in paragraph at lines 693--696
 \OT1/cmr/m/n/10 be-tween the query de-scrip-tor $\OML/cmm/m/it/10 D$ \OT1/cmr/m
 /n/10 and each slid-ing win-dow po-si-tions $\OML/cmm/m/it/10 W \OT1/cmr/m/n/10
  = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 w[]; w[]; :::; w[]\OMS/cmsy/m/n/10 g$
  []
 
-[58 <./chapters/4-independent/figs/masks.png>]
-<./chapters/4-independent/figs/filtering.png, id=2430, 511.9125pt x 264.99pt>
+[54 <./chapters/4-independent/figs/masks.png>]
+<./chapters/4-independent/figs/filtering.png, id=2472, 511.9125pt x 264.99pt>
 File: ./chapters/4-independent/figs/filtering.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/filtering.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/filtering.png used on in
-put line 737.
+put line 739.
 (pdftex.def)             Requested size: 258.91893pt x 133.51945pt.
- [59])
-(./chapters/5-knowledge/knowledge.tex [60 <./chapters/4-independent/figs/filter
+ [55])
+(./chapters/5-knowledge/knowledge.tex [56 <./chapters/4-independent/figs/filter
 ing.png>]
 Chapter 5.
 
-<./chapters/5-knowledge/figs/expert_system.pdf, id=2462, 349.305pt x 360.59718p
+<./chapters/5-knowledge/figs/expert_system.pdf, id=2505, 349.305pt x 360.59718p
 t>
 File: ./chapters/5-knowledge/figs/expert_system.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/expert_system.pdf>
 Package pdftex.def Info: ./chapters/5-knowledge/figs/expert_system.pdf used on 
 input line 32.
 (pdftex.def)             Requested size: 184.9429pt x 190.923pt.
- [61
+ [57
 
 ]
-<./chapters/5-knowledge/figs/process_loop.pdf, id=2468, 796.9775pt x 597.23125p
+<./chapters/5-knowledge/figs/process_loop.pdf, id=2511, 796.9775pt x 597.23125p
 t>
 File: ./chapters/5-knowledge/figs/process_loop.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/process_loop.pdf>
@@ -2244,17 +2211,17 @@ nput line 48.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62 <./chapters/5-knowledge/figs/expert_system.pdf> <./chapters/5-knowledge/fi
+ [58 <./chapters/5-knowledge/figs/expert_system.pdf> <./chapters/5-knowledge/fi
 gs/process_loop.pdf>]
-<./chapters/5-knowledge/figs/GTFitting.png, id=2499, 419.31656pt x 258.9675pt>
+<./chapters/5-knowledge/figs/GTFitting.png, id=2541, 419.31656pt x 258.9675pt>
 File: ./chapters/5-knowledge/figs/GTFitting.png Graphic file (type png)
 
 <use ./chapters/5-knowledge/figs/GTFitting.png>
 Package pdftex.def Info: ./chapters/5-knowledge/figs/GTFitting.png used on inpu
 t line 98.
 (pdftex.def)             Requested size: 295.90977pt x 182.74991pt.
- [63] [64 <./chapters/5-knowledge/figs/GTFitting.png>]
-<./chapters/5-knowledge/figs/process_illustration_hypo_1.png, id=2518, 426.5937
+ [59] [60 <./chapters/5-knowledge/figs/GTFitting.png>]
+<./chapters/5-knowledge/figs/process_illustration_hypo_1.png, id=2560, 426.5937
 5pt x 331.2375pt>
 File: ./chapters/5-knowledge/figs/process_illustration_hypo_1.png Graphic file 
 (type png)
@@ -2264,7 +2231,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/process_illustration_hypo_
 1.png used on input line 189.
 (pdftex.def)             Requested size: 184.9429pt x 143.60698pt.
 
-<./chapters/5-knowledge/figs/graph_init_1.pdf, id=2520, 796.9775pt x 597.23125p
+<./chapters/5-knowledge/figs/graph_init_1.pdf, id=2562, 796.9775pt x 597.23125p
 t>
 File: ./chapters/5-knowledge/figs/graph_init_1.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/graph_init_1.pdf>
@@ -2272,7 +2239,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/graph_init_1.pdf used on i
 nput line 190.
 (pdftex.def)             Requested size: 295.90977pt x 126.07848pt.
 
-<./chapters/5-knowledge/figs/process_illustration_valid_1.png, id=2525, 426.593
+<./chapters/5-knowledge/figs/process_illustration_valid_1.png, id=2567, 426.593
 75pt x 331.2375pt>
 File: ./chapters/5-knowledge/figs/process_illustration_valid_1.png Graphic file
  (type png)
@@ -2282,7 +2249,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/process_illustration_valid
 _1.png used on input line 206.
 (pdftex.def)             Requested size: 184.9429pt x 143.60698pt.
 
-<./chapters/5-knowledge/figs/graph_valid_1.pdf, id=2527, 796.9775pt x 597.23125
+<./chapters/5-knowledge/figs/graph_valid_1.pdf, id=2569, 796.9775pt x 597.23125
 pt>
 File: ./chapters/5-knowledge/figs/graph_valid_1.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/graph_valid_1.pdf>
@@ -2290,18 +2257,18 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/graph_valid_1.pdf used on
 input line 207.
 (pdftex.def)             Requested size: 295.90977pt x 126.07848pt.
 
-<./chapters/5-knowledge/figs/graph_infer_1.pdf, id=2530, 796.9775pt x 597.23125
+<./chapters/5-knowledge/figs/graph_infer_1.pdf, id=2572, 796.9775pt x 597.23125
 pt>
 File: ./chapters/5-knowledge/figs/graph_infer_1.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/graph_infer_1.pdf>
 Package pdftex.def Info: ./chapters/5-knowledge/figs/graph_infer_1.pdf used on 
 input line 220.
 (pdftex.def)             Requested size: 295.90977pt x 126.07848pt.
- [65 <./chapters/5-knowledge/figs/process_illustration_hypo_1.png> <./chapters/
-5-knowledge/figs/graph_init_1.pdf>] [66 <./chapters/5-knowledge/figs/process_il
+ [61 <./chapters/5-knowledge/figs/process_illustration_hypo_1.png> <./chapters/
+5-knowledge/figs/graph_init_1.pdf>] [62 <./chapters/5-knowledge/figs/process_il
 lustration_valid_1.png> <./chapters/5-knowledge/figs/graph_valid_1.pdf> <./chap
 ters/5-knowledge/figs/graph_infer_1.pdf>]
-<./chapters/5-knowledge/figs/process_illustration_hypo_2_1.png, id=2611, 426.59
+<./chapters/5-knowledge/figs/process_illustration_hypo_2_1.png, id=2654, 426.59
 375pt x 331.2375pt>
 File: ./chapters/5-knowledge/figs/process_illustration_hypo_2_1.png Graphic fil
 e (type png)
@@ -2311,7 +2278,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/process_illustration_hypo_
 2_1.png used on input line 239.
 (pdftex.def)             Requested size: 184.9429pt x 143.60698pt.
 
-<./chapters/5-knowledge/figs/graph_init_2_1.pdf, id=2613, 796.9775pt x 597.2312
+<./chapters/5-knowledge/figs/graph_init_2_1.pdf, id=2656, 796.9775pt x 597.2312
 5pt>
 File: ./chapters/5-knowledge/figs/graph_init_2_1.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/graph_init_2_1.pdf>
@@ -2319,7 +2286,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/graph_init_2_1.pdf used on
  input line 240.
 (pdftex.def)             Requested size: 295.90977pt x 126.07848pt.
 
-<./chapters/5-knowledge/figs/process_illustration_hypo_2_2.png, id=2615, 426.59
+<./chapters/5-knowledge/figs/process_illustration_hypo_2_2.png, id=2658, 426.59
 375pt x 331.2375pt>
 File: ./chapters/5-knowledge/figs/process_illustration_hypo_2_2.png Graphic fil
 e (type png)
@@ -2330,11 +2297,11 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/process_illustration_hypo_
 (pdftex.def)             Requested size: 184.9429pt x 143.60698pt.
 
 
-LaTeX Warning: Reference `sub:kn:knowledge_base' on page 67 undefined on input 
+LaTeX Warning: Reference `sub:kn:knowledge_base' on page 63 undefined on input 
 line 261.
 
 
-<./chapters/5-knowledge/figs/process_illustration_valid_2.png, id=2620, 426.593
+<./chapters/5-knowledge/figs/process_illustration_valid_2.png, id=2663, 426.593
 75pt x 331.2375pt>
 File: ./chapters/5-knowledge/figs/process_illustration_valid_2.png Graphic file
  (type png)
@@ -2344,7 +2311,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/process_illustration_valid
 _2.png used on input line 267.
 (pdftex.def)             Requested size: 184.9429pt x 143.60698pt.
 
-<./chapters/5-knowledge/figs/graph_valid_2.pdf, id=2622, 796.9775pt x 597.23125
+<./chapters/5-knowledge/figs/graph_valid_2.pdf, id=2665, 796.9775pt x 597.23125
 pt>
 File: ./chapters/5-knowledge/figs/graph_valid_2.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/graph_valid_2.pdf>
@@ -2352,7 +2319,7 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/graph_valid_2.pdf used on
 input line 268.
 (pdftex.def)             Requested size: 295.90977pt x 146.0449pt.
 
-<./chapters/5-knowledge/figs/process_illustration_infer_2.png, id=2626, 426.593
+<./chapters/5-knowledge/figs/process_illustration_infer_2.png, id=2669, 426.593
 75pt x 331.2375pt>
 File: ./chapters/5-knowledge/figs/process_illustration_infer_2.png Graphic file
  (type png)
@@ -2362,44 +2329,41 @@ Package pdftex.def Info: ./chapters/5-knowledge/figs/process_illustration_infer
 _2.png used on input line 283.
 (pdftex.def)             Requested size: 184.9429pt x 143.60698pt.
 
-<./chapters/5-knowledge/figs/graph_infer_2.pdf, id=2628, 796.9775pt x 597.23125
+<./chapters/5-knowledge/figs/graph_infer_2.pdf, id=2671, 796.9775pt x 597.23125
 pt>
 File: ./chapters/5-knowledge/figs/graph_infer_2.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/graph_infer_2.pdf>
 Package pdftex.def Info: ./chapters/5-knowledge/figs/graph_infer_2.pdf used on 
 input line 284.
 (pdftex.def)             Requested size: 295.90977pt x 146.0449pt.
- [67 <./chapters/5-knowledge/figs/process_illustration_hypo_2_1.png> <./chapter
+ [63 <./chapters/5-knowledge/figs/process_illustration_hypo_2_1.png> <./chapter
 s/5-knowledge/figs/graph_init_2_1.pdf>]
 Underfull \vbox (badness 3179) has occurred while \output is active []
 
- [68 <./chapters/5-knowledge/figs/process_illustration_hypo_2_2.png> <./chapter
+ [64 <./chapters/5-knowledge/figs/process_illustration_hypo_2_2.png> <./chapter
 s/5-knowledge/figs/process_illustration_valid_2.png> <./chapters/5-knowledge/fi
-gs/graph_valid_2.pdf>] [69 <./chapters/5-knowledge/figs/process_illustration_in
+gs/graph_valid_2.pdf>] [65 <./chapters/5-knowledge/figs/process_illustration_in
 fer_2.png> <./chapters/5-knowledge/figs/graph_infer_2.pdf>]
-<./chapters/5-knowledge/figs/model_image.pdf, id=2719, 234.8775pt x 156.585pt>
+<./chapters/5-knowledge/figs/model_image.pdf, id=2762, 234.8775pt x 156.585pt>
 File: ./chapters/5-knowledge/figs/model_image.pdf Graphic file (type pdf)
 
 <use ./chapters/5-knowledge/figs/model_image.pdf>
 Package pdftex.def Info: ./chapters/5-knowledge/figs/model_image.pdf used on in
 put line 318.
 (pdftex.def)             Requested size: 184.9429pt x 123.2946pt.
- [70 <./chapters/5-knowledge/figs/model_image.pdf>]
-<./chapters/5-knowledge/figs/model_comics.pdf, id=2735, 392.96812pt x 279.29344
+ [66 <./chapters/5-knowledge/figs/model_image.pdf>]
+<./chapters/5-knowledge/figs/model_comics.pdf, id=2778, 392.96812pt x 279.29344
 pt>
 File: ./chapters/5-knowledge/figs/model_comics.pdf Graphic file (type pdf)
  <use ./chapters/5-knowledge/figs/model_comics.pdf>
 Package pdftex.def Info: ./chapters/5-knowledge/figs/model_comics.pdf used on i
 nput line 344.
 (pdftex.def)             Requested size: 258.91893pt x 184.03166pt.
- [71 <./chapters/5-knowledge/figs/model_comics.pdf>] [72]
-Underfull \vbox (badness 1783) has occurred while \output is active []
-
- [73])
-(./chapters/6-experiments/experiments.tex [74]
+ [67 <./chapters/5-knowledge/figs/model_comics.pdf>] [68] [69])
+(./chapters/6-experiments/experiments.tex [70]
 Chapter 6.
 
-<./chapters/6-experiments/figs/comics_diversity.png, id=2778, 601.24625pt x 584
+<./chapters/6-experiments/figs/comics_diversity.png, id=2820, 601.24625pt x 584
 .1825pt>
 File: ./chapters/6-experiments/figs/comics_diversity.png Graphic file (type png
 )
@@ -2407,10 +2371,10 @@ File: ./chapters/6-experiments/figs/comics_diversity.png Graphic file (type png
 Package pdftex.def Info: ./chapters/6-experiments/figs/comics_diversity.png use
 d on input line 43.
 (pdftex.def)             Requested size: 230.86334pt x 225.8157pt.
- [75
+ [71
 
-] [76 <./chapters/6-experiments/figs/comics_diversity.png>] [77]
-<./chapters/6-experiments/figs/number_of_letter_per_textline.png, id=2815, 712.
+] [72 <./chapters/6-experiments/figs/comics_diversity.png>] [73]
+<./chapters/6-experiments/figs/number_of_letter_per_textline.png, id=2857, 712.
 91344pt x 387.69844pt>
 File: ./chapters/6-experiments/figs/number_of_letter_per_textline.png Graphic f
 ile (type png)
@@ -2419,9 +2383,9 @@ ile (type png)
 Package pdftex.def Info: ./chapters/6-experiments/figs/number_of_letter_per_tex
 tline.png used on input line 135.
 (pdftex.def)             Requested size: 314.4052pt x 183.33243pt.
- [78 <./chapters/6-experiments/figs/number_of_letter_per_textline.png (PNG copy
+ [74 <./chapters/6-experiments/figs/number_of_letter_per_textline.png (PNG copy
 )>]
-<./chapters/6-experiments/figs/segPanel.png, id=2826, 1178.90437pt x 334.24875p
+<./chapters/6-experiments/figs/segPanel.png, id=2869, 1178.90437pt x 334.24875p
 t>
 File: ./chapters/6-experiments/figs/segPanel.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segPanel.png>
@@ -2432,8 +2396,8 @@ ut line 208.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[79]
-<./chapters/6-experiments/figs/segBalloon1.png, id=2838, 353.06906pt x 575.1487
+[75]
+<./chapters/6-experiments/figs/segBalloon1.png, id=2882, 353.06906pt x 575.1487
 4pt>
 File: ./chapters/6-experiments/figs/segBalloon1.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segBalloon1.png>
@@ -2441,7 +2405,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/segBalloon1.png used on
 input line 236.
 (pdftex.def)             Requested size: 80.3003pt x 130.80705pt.
 
-<./chapters/6-experiments/figs/segBalloon2.png, id=2839, 313.9228pt x 463.7325p
+<./chapters/6-experiments/figs/segBalloon2.png, id=2883, 313.9228pt x 463.7325p
 t>
 File: ./chapters/6-experiments/figs/segBalloon2.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segBalloon2.png>
@@ -2449,30 +2413,17 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/segBalloon2.png used on
 input line 238.
 (pdftex.def)             Requested size: 80.3003pt x 118.61462pt.
 
-<./chapters/6-experiments/figs/segBalloon3.png, id=2840, 359.09157pt x 443.4065
+<./chapters/6-experiments/figs/segBalloon3.png, id=2884, 359.09157pt x 443.4065
 6pt>
 File: ./chapters/6-experiments/figs/segBalloon3.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segBalloon3.png>
 Package pdftex.def Info: ./chapters/6-experiments/figs/segBalloon3.png used on 
 input line 240.
 (pdftex.def)             Requested size: 80.3003pt x 99.15324pt.
-
-
-LaTeX Warning: Reference `fig:gt:segLines' on page 80 undefined on input line 2
-52.
-
-
-LaTeX Warning: Reference `fig:gt:segLines' on page 80 undefined on input line 2
-57.
-
-
-LaTeX Warning: Reference `fig:gt:segLines' on page 80 undefined on input line 2
-58.
-
-[80 <./chapters/6-experiments/figs/segPanel.png> <./chapters/6-experiments/figs
-/segBalloon1.png> <./chapters/6-experiments/figs/segBalloon2.png> <./chapters/6
--experiments/figs/segBalloon3.png>]
-<./chapters/6-experiments/figs/segLine1.png, id=2847, 349.305pt x 318.43968pt>
+ [76 <./chapters/6-experiments/figs/segPanel.png> <./chapters/6-experiments/fig
+s/segBalloon1.png> <./chapters/6-experiments/figs/segBalloon2.png> <./chapters/
+6-experiments/figs/segBalloon3.png>]
+<./chapters/6-experiments/figs/segLine1.png, id=2893, 349.305pt x 318.43968pt>
 File: ./chapters/6-experiments/figs/segLine1.png Graphic file (type png)
 
 <use ./chapters/6-experiments/figs/segLine1.png>
@@ -2480,7 +2431,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/segLine1.png used on inp
 ut line 265.
 (pdftex.def)             Requested size: 80.3003pt x 73.20557pt.
 
-<./chapters/6-experiments/figs/segLine2.png, id=2848, 462.97969pt x 429.10312pt
+<./chapters/6-experiments/figs/segLine2.png, id=2894, 462.97969pt x 429.10312pt
 >
 File: ./chapters/6-experiments/figs/segLine2.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segLine2.png>
@@ -2488,7 +2439,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/segLine2.png used on inp
 ut line 267.
 (pdftex.def)             Requested size: 80.3003pt x 74.41977pt.
 
-<./chapters/6-experiments/figs/segLine3.png, id=2849, 309.40594pt x 507.39563pt
+<./chapters/6-experiments/figs/segLine3.png, id=2895, 309.40594pt x 507.39563pt
 >
 File: ./chapters/6-experiments/figs/segLine3.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segLine3.png>
@@ -2496,12 +2447,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/segLine3.png used on inp
 ut line 269.
 (pdftex.def)             Requested size: 80.3003pt x 131.68748pt.
 
-
-LaTeX Warning: Reference `fig:gt:segCharater' on page 81 undefined on input lin
-e 287.
-
-
-<./chapters/6-experiments/figs/segCharacter.png, id=2850, 752.0597pt x 414.7996
+<./chapters/6-experiments/figs/segCharacter.png, id=2897, 752.0597pt x 414.7996
 8pt>
 File: ./chapters/6-experiments/figs/segCharacter.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segCharacter.png>
@@ -2512,20 +2458,20 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/segCharacter.png used on
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[81 <./chapters/6-experiments/figs/segLine1.png> <./chapters/6-experiments/figs
+[77 <./chapters/6-experiments/figs/segLine1.png> <./chapters/6-experiments/figs
 /segLine2.png> <./chapters/6-experiments/figs/segLine3.png>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 330.
- [82 <./chapters/6-experiments/figs/segCharacter.png>]
-<./chapters/6-experiments/figs/balloonShape.png, id=2866, 480.3546pt x 166.221p
+ [78 <./chapters/6-experiments/figs/segCharacter.png>]
+<./chapters/6-experiments/figs/balloonShape.png, id=2913, 480.3546pt x 166.221p
 t>
 File: ./chapters/6-experiments/figs/balloonShape.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/balloonShape.png>
 Package pdftex.def Info: ./chapters/6-experiments/figs/balloonShape.png used on
  input line 339.
 (pdftex.def)             Requested size: 240.42352pt x 83.1965pt.
- [83 <./chapters/6-experiments/figs/balloonShape.png>]
-<./chapters/6-experiments/figs/svgPanel.png, id=2893, 310.91156pt x 461.47406pt
+ [79 <./chapters/6-experiments/figs/balloonShape.png>]
+<./chapters/6-experiments/figs/svgPanel.png, id=2940, 310.91156pt x 461.47406pt
 >
 File: ./chapters/6-experiments/figs/svgPanel.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/svgPanel.png>
@@ -2533,7 +2479,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/svgPanel.png used on inp
 ut line 394.
 (pdftex.def)             Requested size: 100.37537pt x 148.98442pt.
 
-<./chapters/6-experiments/figs/svgBalloon.png, id=2894, 310.91156pt x 461.47406
+<./chapters/6-experiments/figs/svgBalloon.png, id=2941, 310.91156pt x 461.47406
 pt>
 File: ./chapters/6-experiments/figs/svgBalloon.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/svgBalloon.png>
@@ -2541,7 +2487,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/svgBalloon.png used on i
 nput line 396.
 (pdftex.def)             Requested size: 100.37537pt x 148.98442pt.
 
-<./chapters/6-experiments/figs/svgTextlines.png, id=2895, 310.91156pt x 461.474
+<./chapters/6-experiments/figs/svgTextlines.png, id=2942, 310.91156pt x 461.474
 06pt>
 File: ./chapters/6-experiments/figs/svgTextlines.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/svgTextlines.png>
@@ -2553,10 +2499,10 @@ Overfull \hbox (7.39032pt too wide) in paragraph at lines 393--400
  [] 
  []
 
-[84 <./chapters/6-experiments/figs/svgPanel.png> <./chapters/6-experiments/figs
-/svgBalloon.png> <./chapters/6-experiments/figs/svgTextlines.png>] [85]
-[86]
-<./chapters/6-experiments/figs/stdVT.png, id=2989, 737.154pt x 481.3182pt>
+[80 <./chapters/6-experiments/figs/svgPanel.png> <./chapters/6-experiments/figs
+/svgBalloon.png> <./chapters/6-experiments/figs/svgTextlines.png>] [81]
+[82]
+<./chapters/6-experiments/figs/stdVT.png, id=3036, 737.154pt x 481.3182pt>
 File: ./chapters/6-experiments/figs/stdVT.png Graphic file (type png)
 
 <use ./chapters/6-experiments/figs/stdVT.png>
@@ -2564,7 +2510,7 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/stdVT.png used on input
 line 561.
 (pdftex.def)             Requested size: 258.91893pt x 169.05878pt.
 
-<./chapters/6-experiments/figs/segDifference.png, id=2991, 752.8125pt x 1063.97
+<./chapters/6-experiments/figs/segDifference.png, id=3038, 752.8125pt x 1063.97
 5pt>
 File: ./chapters/6-experiments/figs/segDifference.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/segDifference.png>
@@ -2578,15 +2524,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [87 <./chapters/6-experiments/figs/stdVT.png>]
+ [83 <./chapters/6-experiments/figs/stdVT.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [88 <./chapters/6-experiments/figs/segDifference.png (PNG copy)>] [89]
+ [84 <./chapters/6-experiments/figs/segDifference.png (PNG copy)>] [85]
 
-LaTeX Warning: Reference `??' on page 90 undefined on input line 689.
+LaTeX Warning: Reference `??' on page 86 undefined on input line 689.
 
-[90]
-<./chapters/6-experiments/figs/division_line_detection_arai10.png, id=3036, 138
+[86]
+<./chapters/6-experiments/figs/division_line_detection_arai10.png, id=3084, 138
 1.16pt x 732.7375pt>
 File: ./chapters/6-experiments/figs/division_line_detection_arai10.png Graphic 
 file (type png)
@@ -2595,8 +2541,8 @@ file (type png)
 Package pdftex.def Info: ./chapters/6-experiments/figs/division_line_detection_
 arai10.png used on input line 735.
 (pdftex.def)             Requested size: 295.90977pt x 156.97646pt.
- [91 <./chapters/6-experiments/figs/division_line_detection_arai10.png>] [92]
-<./chapters/6-experiments/figs/Panel_object_proposed.pdf, id=3065, 1447.40125pt
+ [87 <./chapters/6-experiments/figs/division_line_detection_arai10.png>] [88]
+<./chapters/6-experiments/figs/Panel_object_proposed.pdf, id=3113, 1447.40125pt
  x 431.142pt>
 File: ./chapters/6-experiments/figs/Panel_object_proposed.pdf Graphic file (typ
 e pdf)
@@ -2605,9 +2551,9 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/Panel_object_proposed.pd
 f used on input line 819.
 (pdftex.def)             Requested size: 369.88857pt x 113.80473pt.
 
-[93 <./chapters/6-experiments/figs/Panel_object_proposed.pdf>] [94] [95]
-[96]
-<./chapters/6-experiments/figs/number_of_letter_per_balloon.pdf, id=3188, 455.7
+[89 <./chapters/6-experiments/figs/Panel_object_proposed.pdf>] [90] [91]
+[92]
+<./chapters/6-experiments/figs/number_of_letter_per_balloon.pdf, id=3236, 455.7
 025pt x 255.95625pt>
 File: ./chapters/6-experiments/figs/number_of_letter_per_balloon.pdf Graphic fi
 le (type pdf)
@@ -2618,10 +2564,10 @@ loon.pdf used on input line 1058.
 (pdftex.def)             Requested size: 277.41435pt x 184.21805pt.
 
 
-LaTeX Warning: Reference `' on page 97 undefined on input line 1172.
+LaTeX Warning: Reference `' on page 93 undefined on input line 1172.
 
-[97 <./chapters/6-experiments/figs/number_of_letter_per_balloon.pdf>]
-<./chapters/6-experiments/figs/figure_here.png, id=3208, 301.125pt x 100.375pt>
+[93 <./chapters/6-experiments/figs/number_of_letter_per_balloon.pdf>]
+<./chapters/6-experiments/figs/figure_here.png, id=3257, 301.125pt x 100.375pt>
 File: ./chapters/6-experiments/figs/figure_here.png Graphic file (type png)
 <use ./chapters/6-experiments/figs/figure_here.png>
 Package pdftex.def Info: ./chapters/6-experiments/figs/figure_here.png used on 
@@ -2629,32 +2575,32 @@ input line 1177.
 (pdftex.def)             Requested size: 277.41435pt x 92.47935pt.
 
 
-LaTeX Warning: Reference `sub:text_extraction' on page 98 undefined on input li
+LaTeX Warning: Reference `sub:text_extraction' on page 94 undefined on input li
 ne 1197.
 
 
-LaTeX Warning: Reference `fig:text_extraction_detail' on page 98 undefined on i
+LaTeX Warning: Reference `fig:text_extraction_detail' on page 94 undefined on i
 nput line 1203.
 
-[98 <./chapters/6-experiments/figs/figure_here.png>]
+[94 <./chapters/6-experiments/figs/figure_here.png>]
 
-LaTeX Warning: Reference `??' on page 99 undefined on input line 1210.
+LaTeX Warning: Reference `??' on page 95 undefined on input line 1210.
 
 
-LaTeX Warning: Reference `tab:high_res' on page 99 undefined on input line 1213
+LaTeX Warning: Reference `tab:high_res' on page 95 undefined on input line 1213
 .
 
 
 Underfull \vbox (badness 3815) has occurred while \output is active []
 
- [99]
+ [95]
 Overfull \hbox (4.50363pt too wide) in paragraph at lines 1416--1420
 \OT1/cmr/m/n/10 We eval-u-ated the de-tec-tion of comic char-ac-ters on the 155
 0 char-ac-ters of the eBDtheque
  []
 
-[100]
-<./chapters/6-experiments/figs/characters_overlap_ratio.png, id=3244, 1050.9262
+[96]
+<./chapters/6-experiments/figs/characters_overlap_ratio.png, id=3291, 1050.9262
 5pt x 413.545pt>
 File: ./chapters/6-experiments/figs/characters_overlap_ratio.png Graphic file (
 type png)
@@ -2665,11 +2611,11 @@ Package pdftex.def Info: ./chapters/6-experiments/figs/characters_overlap_ratio
 (pdftex.def)             Requested size: 129.46228pt x 104.90674pt.
 
 
-LaTeX Warning: Reference `sec:input_query' on page 101 undefined on input line 
-1455.
+LaTeX Warning: Reference `sec:input_query' on page 97 undefined on input line 1
+455.
 
 
-<./chapters/6-experiments/figs/descriptor_size_evaluation.png, id=3247, 455.451
+<./chapters/6-experiments/figs/descriptor_size_evaluation.png, id=3294, 455.451
 57pt x 255.95625pt>
 File: ./chapters/6-experiments/figs/descriptor_size_evaluation.png Graphic file
  (type png)
@@ -2678,7 +2624,7 @@ File: ./chapters/6-experiments/figs/descriptor_size_evaluation.png Graphic file
 Package pdftex.def Info: ./chapters/6-experiments/figs/descriptor_size_evaluati
 on.png used on input line 1467.
 (pdftex.def)             Requested size: 250.93842pt x 180.48822pt.
- [101 <./chapters/6-experiments/figs/characters_overlap_ratio.png>]
+ [97 <./chapters/6-experiments/figs/characters_overlap_ratio.png>]
 Overfull \hbox (16.66727pt too wide) in paragraph at lines 1481--1482
 \OT1/cmr/m/n/10 NOEILS1, LUB-BIN LES-BULLES-DU-LABO, MI-DAM KID-PAD-DLE7, PIKE 
 BOYLOVE-
@@ -2687,14 +2633,14 @@ BOYLOVE-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [102 <./chapters/6-experiments/figs/descriptor_size_evaluation.png (PNG copy)>
-]
+ [98 <./chapters/6-experiments/figs/descriptor_size_evaluation.png (PNG copy)>]
+
 Overfull \hbox (23.87221pt too wide) in paragraph at lines 1567--1597
 [][]
  []
 
 
-<./chapters/6-experiments/figs/result_exemples.png, id=3270, 653.44125pt x 1355
+<./chapters/6-experiments/figs/result_exemples.png, id=3318, 653.44125pt x 1355
 .0625pt>
 File: ./chapters/6-experiments/figs/result_exemples.png Graphic file (type png)
 
@@ -2702,13 +2648,13 @@ File: ./chapters/6-experiments/figs/result_exemples.png Graphic file (type png)
 Package pdftex.def Info: ./chapters/6-experiments/figs/result_exemples.png used
  on input line 1611.
 (pdftex.def)             Requested size: 184.9429pt x 383.50888pt.
- [103] [104]
+ [99] [100]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [105 <./chapters/6-experiments/figs/result_exemples.png>]
+ [101 <./chapters/6-experiments/figs/result_exemples.png>]
 
 LaTeX Warning: Reference `sub:ex:independent_information_extraction_evaluation'
- on page 106 undefined on input line 2048.
+ on page 102 undefined on input line 2048.
 
 
 Overfull \hbox (10.50871pt too wide) in paragraph at lines 2055--2056
@@ -2717,21 +2663,41 @@ Overfull \hbox (10.50871pt too wide) in paragraph at lines 2055--2056
  []
 
 
-<./chapters/6-experiments/figs/radar_chart.png, id=3296, 986.18437pt x 1016.296
+<./chapters/6-experiments/figs/radar_chart.png, id=3343, 986.18437pt x 1016.296
 88pt>
 File: ./chapters/6-experiments/figs/radar_chart.png Graphic file (type png)
  <use ./chapters/6-experiments/figs/radar_chart.png>
 Package pdftex.def Info: ./chapters/6-experiments/figs/radar_chart.png used on 
 input line 2091.
 (pdftex.def)             Requested size: 230.86334pt x 237.91486pt.
- [106] [107 <./chapters/6-experiments/figs/radar_chart.png>])
-(./chapters/7-conclusions/conclusions.tex [108]
+ [102] [103 <./chapters/6-experiments/figs/radar_chart.png>])
+(./chapters/7-conclusions/conclusions.tex [104]
 Chapter 7.
-) (./chapters/MyPublications/publications.tex [109
+) (./chapters/Appendix/Pre-processing.tex [105
 
-] [110
+] [106
 
-] [111]
+]
+Appendix A.
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[][][][]$\OT1/pcr/m/n/9 http : / / en . wikipedia . org / wiki / Image _ segmen
+tation # Region-[]growing _
+ []
+
+[108] [109]) (./chapters/Appendix/Feature.tex [110]
+Appendix B.
+
+Overfull \hbox (1.36244pt too wide) in paragraph at lines 29--29
+[]\OT1/cmr/bx/n/10 Shape-based (thresh-old-ing, re-gion grow-ing, connected-com
+ponent ex-
+ []
+
+[111
+
+]) (./chapters/MyPublications/publications.tex [112] [113
+
+]
 Overfull \hbox (6.10098pt too wide) in paragraph at lines 49--51
 []\OT1/cmr/m/n/10 Christophe Rigaud, Di-mos-the-nis Karatzas, Joost Van de Wei-
 jer, Jean-Christophe
@@ -2743,39 +2709,37 @@ Overfull \hbox (6.10098pt too wide) in paragraph at lines 58--60
 jer, Jean-Christophe
  []
 
-[112]) [113] [114
+[114]) [115] [116
 
 ] (./main.bbl (./main.brf)
 \tf@brf=\write8
 \openout8 = `main.brf'.
 
- [115
+ [117
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
- [116]
-Underfull \hbox (badness 1320) in paragraph at lines 191--191
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+ [118]
+Underfull \hbox (badness 1320) in paragraph at lines 209--209
 []\OT1/cmr/m/n/10 Daniel Cre-mers, Flo-rian Tis-chh^^?auser, Joachim We-ick-ert
 , and Christoph
  []
 
-[117] [118] [119] [120] [121] [122]
-Underfull \hbox (badness 1365) in paragraph at lines 686--686
+[119] [120] [121] [122] [123] [124] [125]
+Underfull \hbox (badness 1365) in paragraph at lines 742--742
 []\OT1/cmr/m/n/10 Christophe Rigaud, Di-mos-the-nis Karatzas, Joost Van de Wei-
 jer, Jean-
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 693--693
+Underfull \hbox (badness 1365) in paragraph at lines 749--749
 []\OT1/cmr/m/n/10 Christophe Rigaud, Di-mos-the-nis Karatzas, Joost Van de Wei-
 jer, Jean-
  []
 
-[123] [124] [125] [126]) [127] [128
-
-]
-<template_ULR/backpage.pdf, id=3636, 598.1477pt x 845.90027pt>
+[126] [127] [128] [129]) [130]
+<template_ULR/backpage.pdf, id=3763, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf>
@@ -2786,7 +2750,7 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf used on input line 417.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 
-<template_ULR/backpage.pdf, id=3639, page=1, 598.1477pt x 845.90027pt>
+<template_ULR/backpage.pdf, id=3766, page=1, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
@@ -2817,7 +2781,9 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf, page1 used on input line 41
 7.
 (pdftex.def)             Requested size: 483.37437pt x 683.58788pt.
- [129 <./template_ULR/backpage.pdf>]
+ [131
+
+ <./template_ULR/backpage.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
 
@@ -2825,15 +2791,10 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9CA9CC80F43A50E5C4F495A56EF65F55;6561.
+(rerunfilecheck)             Checksum: DF327524D6ED38F7CF750D87CF49F686;7382.
+Package rerunfilecheck Info: File `main.brf' has not changed.
+(rerunfilecheck)             Checksum: 5394C5697344F27716610B140E61E5E2;12028.
 
-
-Package rerunfilecheck Warning: File `main.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `main.brf':
-(rerunfilecheck)             Before: 28E37A4A343B9FC10B50B9B2A50B08AE;11257
-(rerunfilecheck)             After:  AE5B1D5BE52A2F45638F554F88F9B61C;11306.
 
 LaTeX Warning: There were undefined references.
 
@@ -2843,44 +2804,44 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
  ) 
 Here is how much of TeX's memory you used:
- 24910 strings out of 493308
- 447206 string characters out of 6137822
- 587542 words of memory out of 5000000
- 26981 multiletter control sequences out of 15000+600000
- 25249 words of font info for 91 fonts, out of 8000000 for 9000
+ 25016 strings out of 493308
+ 449367 string characters out of 6137822
+ 587591 words of memory out of 5000000
+ 27053 multiletter control sequences out of 15000+600000
+ 25093 words of font info for 90 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  55i,18n,54p,1370b,1976s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/te
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
-/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/c
-ourier/ucrb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/courier/u
-crr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (152 pages, 13503356 bytes).
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on main.pdf (154 pages, 13589794 bytes).
 PDF statistics:
- 3889 PDF objects out of 4296 (max. 8388607)
- 3110 compressed objects within 32 object streams
- 746 named destinations out of 1000 (max. 500000)
- 1677 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4021 PDF objects out of 4296 (max. 8388607)
+ 3239 compressed objects within 33 object streams
+ 774 named destinations out of 1000 (max. 500000)
+ 1773 words of extra memory for PDF output out of 10000 (max. 10000000)
 

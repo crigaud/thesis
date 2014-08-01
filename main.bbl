@@ -1,5 +1,11 @@
 \begin{thebibliography}{100}
 
+\bibitem{adams1994seeded}
+Rolf Adams and Leanne Bischof.
+\newblock Seeded region growing.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 16(6):641--647, 1994.
+
 \bibitem{ahmadimpactsOfManga}
 Hafiz~Aziz AHMAD, Shinichi KOYAMA, and Haruo HIBINO.
 \newblock Impacts of manga on indonesian readers self-efficacy and behavior
@@ -63,6 +69,12 @@ Siddhartha Bhattacharyya.
   techniques.
 \newblock {\em Journal of Pattern Recognition Research}, 1(1):120--129, 2011.
 
+\bibitem{Bishop2006PRM}
+Christopher~M. Bishop.
+\newblock {\em Pattern Recognition and Machine Learning (Information Science
+  and Statistics)}.
+\newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2006.
+
 \bibitem{Blaschke2014Geographic}
 Thomas Blaschke, Geoffrey~J. Hay, Maggi Kelly, Stefan Lang, Peter Hofmann,
   Elisabeth Addink, Raul~Queiroz Feitosa, Freek van~der Meer, Harald van~der
@@ -100,6 +112,12 @@ Chrysoline Canivet-Fovez.
 \newblock {\em Le manga Une synthèse de référence qui éclaire en image
   l'origine, l'histoire et l'influence de la bande dessinée japonaise}.
 \newblock Eyrolles, 2014.
+
+\bibitem{canny1986computational}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, PAMI-8(6):679--698, Nov 1986.
 
 \bibitem{Chan2007Automatic}
 ChungHo Chan, Howard Leung, and Taku Komura.
@@ -213,6 +231,12 @@ Adrien Delaye and Cheng-Lin Liu.
 \newblock {\em International Journal on Document Analysis and Recognition
   (IJDAR)}, pages 1--17, 2014.
 
+\bibitem{dillencourt1992general}
+Michael~B Dillencourt, Hanan Samet, and Markku Tamminen.
+\newblock A general approach to connected-component labeling for arbitrary
+  image representations.
+\newblock {\em Journal of the ACM (JACM)}, 39(2):253--280, 1992.
+
 \bibitem{duc1997art}
 B.~Duc.
 \newblock {\em L'art de la B.D.: Du sc{\'e}nario {\`a} la r{\'e}alisation
@@ -271,6 +295,12 @@ Joyce Goggin.
 \newblock {\em The Rise and Reason of Comics and Graphic Literature: Critical
   Essays on the Form}, volume~1, chapter~4, pages 56--74.
 \newblock McFarland, Book News, Inc., Portland, OR, 1 edition, 2010.
+
+\bibitem{Gonzalez1992Digital}
+Rafael~C. Gonzalez and Richard~E. Woods.
+\newblock {\em Digital Image Processing}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2nd
+  edition, 1992.
 
 \bibitem{griffinHolubPerona}
 G.~Griffin, A.~Holub, and P.~Perona.
@@ -340,6 +370,11 @@ Hoang~Nam Ho, Christophe Rigaud, Jean-Christophe Burie, and Jean-Marc Ogier.
 \newblock In {\em Proceedings of the 10th IAPR International Workshop on
   Graphics Recognition (GREC)}, Bethlehem, PA, USA, 2013.
 
+\bibitem{horowitz1976picture}
+Steven~L Horowitz and Theodosios Pavlidis.
+\newblock Picture segmentation by a tree traversal algorithm.
+\newblock {\em Journal of the ACM (JACM)}, 23(2):368--388, 1976.
+
 \bibitem{Hu2003Ontology}
 B.~Hu, S.~Dasmahapatra, P.~Lewis, and N.~Shadbolt.
 \newblock Ontology-based medical image annotation with description logics.
@@ -396,6 +431,12 @@ D.~Karatzas, F.~Shafait, S.~Uchida, M.~Iwamura, L.~Gomez~i Bigorda,
 Michael Kass, Andrew Witkin, and Demetri Terzopoulos.
 \newblock {Snakes: Active contour models}.
 \newblock {\em International Journal of Computer Vision}, 1(4):321--331, 1988.
+
+\bibitem{Kelkar2008Improved}
+D.~Kelkar and S.~Gupta.
+\newblock Improved quadtree method for split merge image segmentation.
+\newblock In {\em Emerging Trends in Engineering and Technology, 2008. ICETET
+  '08. First International Conference on}, pages 44--47, July 2008.
 
 \bibitem{Khan12}
 Fahad~Shahbaz Khan, Muhammad~Anwer Rao, Joost van~de Weijer, Andrew~D.
@@ -566,6 +607,11 @@ Stuart Medley.
 \newblock Discerning pictures: How we look at and understand images in comics.
 \newblock {\em Studies in Comics}, 1(1):53--70, 2010.
 
+\bibitem{mehnert1997improved}
+Andrew Mehnert and Paul Jackway.
+\newblock An improved seeded region growing algorithm.
+\newblock {\em Pattern Recognition Letters}, 18(10):1065--1071, 1997.
+
 \bibitem{Meng12}
 Quan Meng and Yonghong Song.
 \newblock Text detection in natural scenes with salient region.
@@ -646,6 +692,11 @@ Nikhil~R Pal and Sankar~K Pal.
 Plasq.
 \newblock Comic life 3, 2014.
 
+\bibitem{PonceForsyth2012}
+J~Ponce and D~Forsyth.
+\newblock {\em Computer vision: a modern approach}.
+\newblock Prentice Hall (2 edition), 2012.
+
 \bibitem{Ponsard09}
 Christophe Ponsard.
 \newblock Enhancing the accessibility for all of digital comic books.
@@ -661,6 +712,11 @@ Christophe Ponsard, Ravi Ramdoyal, and Daniel Dziamski.
 Pratt and William K.
 \newblock {\em Digital image processing (2nd ed.)}.
 \newblock John Wiley \& Sons, Inc., New York, NY, USA, 1991.
+
+\bibitem{Pratt2007Digital}
+William~K. Pratt.
+\newblock {\em Digital Image Processing: PIKS Inside}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 4th edition, 2001.
 
 \bibitem{Ratier2013Deceleration}
 Gilles Ratier.
@@ -724,6 +780,12 @@ Sohail Sarwar, Zia~Ul Qayyum, and Saqib Majeed.
 Eugenio~Di Sciascio, Francesco~M. Donini, and Marina Mongiello.
 \newblock Structured knowledge representation for image retrieval.
 \newblock {\em CoRR}, abs/1109.1498, 2011.
+
+\bibitem{sezgin2004survey}
+Mehmet Sezgin et~al.
+\newblock Survey over image thresholding techniques and quantitative
+  performance evaluation.
+\newblock {\em Journal of Electronic imaging}, 13(1):146--168, 2004.
 
 \bibitem{ShahabICDAR2011Robust}
 A~Shahab, F.~Shafait, and A~Dengel.
@@ -835,6 +897,13 @@ M.~Sundaresan and S.~Ranjini.
 \newblock In {\em Pattern Recognition, Informatics and Medical Engineering
   (PRIME), 2012 International Conference on}, pages 449--452, March 2012.
 
+\bibitem{suzuki1985topological}
+Satoshi Suzuki et~al.
+\newblock Topological structural analysis of digitized binary images by border
+  following.
+\newblock {\em Computer Vision, Graphics, and Image Processing}, 30(1):32--46,
+  1985.
+
 \bibitem{Syed2012}
 Saira Syed.
 \newblock Comic giants battle for readers, 2012.
@@ -907,6 +976,13 @@ Shingo Uchihashi, Jonathan Foote, Andreas Girgensohn, and John Boreczky.
 \newblock In {\em Proceedings of the Seventh ACM International Conference on
   Multimedia (Part 1)}, MULTIMEDIA '99, pages 383--392, New York, NY, USA,
   1999. ACM.
+
+\bibitem{Vajda2012Method}
+Szilárd Vajda, Leonard Rothacker, and GernotA. Fink.
+\newblock A method for camera-based interactive whiteboard reading.
+\newblock In Masakazu Iwamura and Faisal Shafait, editors, {\em Camera-Based
+  Document Analysis and Recognition}, volume 7139 of {\em Lecture Notes in
+  Computer Science}, pages 112--125. Springer Berlin Heidelberg, 2012.
 
 \bibitem{Viola2004robust}
 Paul Viola and Michael~J Jones.

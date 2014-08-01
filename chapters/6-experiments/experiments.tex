@@ -269,7 +269,7 @@ b) \includegraphics[width=80px]{segLine2.png}
 c) \includegraphics[width=80px]{segLine3.png}
 \end{tabular}
 \caption[Text line location annotation]{Different examples of text line position annotation: a) a classical text line in a speech balloon, b) a unique symbol, c) illustrative text, non horizontal.} 
-\label{fig:segLines}
+\label{fig:gt:segLines}
 \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
@@ -284,7 +284,7 @@ Characters in a comic have not necessarily a human-like, or even living beings a
 Even so, it would be appropriate to annotate every human being appearing in a box while some are nothing but a part of the scenery.
 Therefore, we have chosen to limit the annotation to the comic characters that emits at least one speech balloon in the album (minimal impact in the story).
 Their bounding box has been defined to maximize the region occupied by the comic character inside the box region.
-Therefore, some parts of the character such as arms or legs, are clipped sometimes (Figure~\ref{fig:gt:segCharater}).
+Therefore, some parts of the character such as arms or legs, are clipped sometimes (Figure~\ref{fig:gt:segCharacter}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
@@ -307,7 +307,7 @@ This second level of annotation complete each spacial region with additional inf
 Also, the image itself is annotated with extra information about its origin (e.g. album, collection, author, publisher).
 %Once segmented, each object is annotated with a set of predefined metadata as follows. 
 
-TODO describe metadata attribute \emph{idBalloon} in Line elements and \emph{idCharacter} in Character element
+\modif{TODO describe metadata attribute \emph{idBalloon} in Line elements and \emph{idCharacter} in Character element}
 
 \paragraph{Images}
 The image, often assimilated as pages, has been annotated with bibliographical information, so that anyone using this ground truth is free to get is own paper copy of the comic books for extra uses.
@@ -327,7 +327,7 @@ For a page containing $m$ balloons, the first balloon's rank will be 1 and the l
 %Moreover, two additional metadata are given. 
 A second information concerns the \texttt{{shape}} of the balloon.
 This feature conveys an information about how the contained text is spoken (tone).
-The type of \texttt{{shape}} is given from the following list \{\texttt{smooth, wavy, spiky, suggested}\} as pictured in figure~\ref{fig:gt:balloonShape}.
+The type of \texttt{{shape}} is given from the following list \{\texttt{smooth, wavy, spiky, suggested}\} as pictured in Figure~\ref{fig:gt:balloonShape}.
 Finally, the tail tip position (extremity) and its pointing direction have been added into the second version of the ground truth.
 There are given through the \texttt{{tailTip}} and \texttt{{tailDirection}} properties.
 The possible values of the direction are reduced to the eight cardinal directions plus a ninth additional value for the lack of tail: \{\texttt{N, NE, E, SE, S, SW, W, NW, none}\}.
@@ -423,7 +423,7 @@ The four following \texttt{<svg>} siblings, \texttt{<svg class=``Panel''>}, \tex
 They all contain SVG \texttt{<polygon>} elements with a list of five or more points in a \texttt{point} attribute that define the position of the bounding box corners or the pixel-level contour. %four corners position coordinates of a bounding box. 
 Note that the last point is always equal the first one to ``close'' the polygon according to the SVG specifications. 
 Those points are used by the viewer to draw polygons with the corresponding CSS style. 
-Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on the corresponding polygon, according to the attributes list described in \ref{sub:gt:semantic_annotation}.
+Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on the corresponding polygon, according to the attributes list described Section~\ref{sub:gt:semantic_annotation}.
 
 An example of ground truth file is given figure~\ref{list:svg}.% présente un exemple du contenu de l'un de ces fichiers.
 
@@ -591,7 +591,7 @@ The pixel-level balloon and the comic characters visual annotation have been car
 \subsection{Discussions}
 \label{ssec:gt:siscussions}
 
-TODO (conclude the dataset + ground truth presentations)
+\modif{TODO (conclude the dataset + ground truth presentations)}
 
 
 % section dataset_and_ground_truth_construction (end)
@@ -608,7 +608,7 @@ Object localisation developments are evaluated using the commonly used recall an
 % paragraph metrics (end)
 We evaluate the different extractions (panel, balloon and text regions) in terms of object bounding boxes such as the PASCAL VOC challenge~\cite{everingham2010pascal}.
 The detections are assigned to ground truth objects and judged to be true or false positives by measuring bounding box overlap.
-To be considered a correct detection, the overlap ratio $a_0$ between the predicted bounding box $B_p$ and the ground truth bounding box $B_{gt}$ (see formula~\ref{eq:ex:overlap_ratio}) must exceed 0.5.
+To be considered a correct detection, the overlap ratio $a_0$ between the predicted bounding box $B_p$ and the ground truth bounding box $B_{gt}$ (Formula~\ref{eq:ex:overlap_ratio}) must exceed 0.5.
 The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or false positive $FP$ (prediction errors).
 
 \begin{equation}
@@ -619,7 +619,7 @@ The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or fal
 Detections returned by a method are assigned to ground truth objects satisfying the overlap criterion ranked by the confidence output (decreasing).
 Multiple detections of the same object in an image are considered false detections (e.g. 5 detections of a single object counted as 1 correct detection and 4 false detections).
 
-The number $TP$, $FP$ and false negative (missed elements) $FN$ was used to compute the recall $R$ and the precision $P$ of each the methods using formula~\ref{eq:recall} and~\ref{eq:precision}.
+The number $TP$, $FP$ and false negative (missed elements) $FN$ was used to compute the recall $R$ and the precision $P$ of each the methods using Formula~\ref{eq:recall} and~\ref{eq:precision}.
 We also compute the F-measure $F$ for each result.
 
 \begin{equation}

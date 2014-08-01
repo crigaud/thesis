@@ -29,7 +29,7 @@ However, there are typical functions which are found in many computer vision sys
 	This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
 	\item \textbf{Image acquisition} A digital image produced by the sensors of various devices (e.g. scanner, camera, web-cam) from the physical document.
 	The digital image is an ordered set of pixel with an associated colour value from a certain colour space.
-	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the method and its application domain (e.g. noise removal, contrast enhancement, binary segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
+	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the method and its application domain (e.g. noise removal, contrast enhancement, segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
 	\item \textbf{Feature extraction} Feature extraction involves reducing the amount of data accurately.
   Image features are from different levels depending on their distance to pixel information (low level) and human understanding (high level).
 	Low level feature such as line, corner, edges and blobs are computed directly from the spatial organisation of pixels~\cite{due1996feature}.
@@ -59,30 +59,11 @@ Graphics consist of spatial arrangements of symbols; examples include engineerin
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[t]%trim=l b r t  width=0.5\textwidth,  
       \centering
-      \includegraphics[trim= 5mm 10mm 10mm 20mm, clip, width=0.95\textwidth]{graphics_reco.pdf}
-    \caption[Graphics recognition]{Graphics recognition. S.R. stands for symbol recognition - \emph{Joseph Llados - International Document Image Processing Summer School (IDIPS) 2014}.}
+      \includegraphics[trim= 5mm 70mm 10mm 20mm, clip, width=0.95\textwidth]{graphics_reco.pdf}
+    \caption[Graphics recognition]{Graphics recognition - \emph{Joseph Llados - International Document Image Processing Summer School (IDIPS) 2014}.}
     \label{fig:sota:graphics_reco}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\modif{TODO: detail features and classification methods from Figure 2.1?
-Puisque tu en parles par la suite des méthodes de binarisation (globale, locale, binaire), celles sur les composantes connexes, contour actifs, séparation text/graphique ou clustering?
-
-
-Here we briefly review the most used pre-processing and feature extraction methods for document analysis:
-
-\begin{itemize}
-  \item Pre-processing methods (\url{http://fr.wikipedia.org/wiki/Segmentation_d'image} FR + EN) -> comic character -> simple PIL with palette + colour L0-smoothing ++
-  \item Feature extraction (textures, outline(), shapes, colour)
-  \begin{itemize}
-    \item Pixel-based (edge, Harris corner, blobs detections)
-    \item Shape-based (thresholding, region growing, connected-component extraction, template matching, Hough transform) 
-    \item Flexible (deformable shapes, active contours)
-  \end{itemize}
-  \item Feature description (to delete?)
-  \item Shape-based (compactness, curvature scale space, freeman coding, Fourier transform, invariant moments, texture)
-\end{itemize}
-}
 
 Beside its content, a document is usually structured according to its intend of use.
 Tang mentioned in 1996 ``A document has two structures: geometric (layout) structure and logical structure.
@@ -136,6 +117,37 @@ The main sources of noise are the manual operations variabilities, the degradati
     \label{fig:sota:document_degradation}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Here we briefly detail the most used pre-processing and feature extraction methods related to document image analysis and comics design process.
+
+% \paragraph{Pre-processing} % (fold)
+% \label{par:pre_processing}
+% Stroke-based images such as comics can be pre-processes is order to extract all the strokes for further analysis.
+% Several method from the literature exist, 
+
+% paragraph pre_processing (end)
+
+% \modif{TODO: detail features and classification methods from Figure 2.1?
+% Puisque tu en parles par la suite des méthodes de binarisation (globale, locale, binaire), celles sur les composantes connexes, contour actifs, séparation text/graphique ou clustering?
+
+
+
+% \begin{itemize}
+%   \item Pre-processing methods (\url{http://fr.wikipedia.org/wiki/Segmentation_d'image} FR + EN) -> comic character -> simple PIL with palette + colour L0-smoothing ++
+%   \item Feature extraction (textures, outline(), shapes, colour)
+%   \begin{itemize}
+%     \item Pixel-based (edge, Harris corner, blobs detections)
+%     \item Shape-based (thresholding, region growing, connected-component extraction, template matching, Hough transform) 
+%     \item Flexible (deformable shapes, active contours)
+%   \end{itemize}
+%   \item Feature description (to delete?)
+%   \begin{itemize}
+%     \item Shape-based (compactness, curvature scale space, freeman coding, Fourier transform, invariant moments, texture)
+%   \end{itemize}
+  
+% \end{itemize}
+% }
 
 
 
@@ -262,7 +274,7 @@ Comics differ from classical documents in that they comprise complex backgrounds
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
 
 Text localization in complex images has been previously studied in scene images~\cite{Weinman09,Epshtein10,Neumann12} and~\cite{Wang10,Meng12}, video sequences~\cite{Wonjun09,Shivakumara09} and digital-born images (Web and email)~\cite{Karatzas07}. 
-Text localization in unstructured documents has been studied for teaching boards and slide show presentation~\cite{Oliveira10,Nguyen2013BagOfSubjects}.
+Text localization in unstructured documents has been studied for teaching boards and slide show presentation~\cite{Oliveira10,Vajda2012Method,Nguyen2013BagOfSubjects}.
 However, text localization in documents which are both unstructured and have complex background has received relatively little attention~\cite{Clavelli09}.
 
 % Nevertheless, plates are typewritten with a fixed length.

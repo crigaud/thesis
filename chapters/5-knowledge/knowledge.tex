@@ -351,7 +351,7 @@ The image and comics models are linked through two bridges.
 First, the \textit{Image} from the image model and \textit{Page} from the comics model concepts are made equivalent by the axiom \texttt{owl:equivalentClass}.
 This way we ensure that all extracted content related to an image is equally related to a corresponding page in the comics domain $Page \equiv  Image$.
 
-Second, the classes $Cl=\{Panel$, $Balloon$, $TextLine$, $Character\}$ are defined as equivalent to the corresponding set of regions of interest $Sr = \{panels$, $balloons$, $text lines$, $characters\}$, see Equation~\ref{eq:kn:class_region_equivalence}.% that have an extractor which purpose is to extract the corresponding panels (resp. balloons, text lines and characters).
+Second, the classes $Cl=\{Panel$, $Balloon$, $TextLine$, $Character\}$ are defined as equivalent to the corresponding set of regions of interest $Sr = \{panels$, $balloons$, $text lines$, $characters\}$ Equation~\ref{eq:kn:class_region_equivalence}).% that have an extractor which purpose is to extract the corresponding panels (resp. balloons, text lines and characters).
 	
 
 \begin{equation}
@@ -443,7 +443,7 @@ In other words, the text lines marked as being part of a speech balloon are auto
 
 \paragraph{Speaking characters} % (fold)
 \label{sub:inference_of_the_speaking_characters}
-Among the validated characters (see~\ref{sub:kn:validation}), we considered as being potential speakers those who intersect with the hypothetical region computed in \ref{sec:se:tail_to_character}.
+Among the validated characters (Section~\ref{sub:kn:validation}), we considered as being potential speakers those who intersect with the hypothetical region computed in \ref{sec:se:tail_to_character}.
 These regions were computed from each speech balloon, i.e. the balloons that had an identified tail.
 An abstract straight line was drawn from that tail tip in the direction indicated by the tail.
 The first region of a potential speaker that it touched was considered to be the source of the speech balloon.
@@ -457,7 +457,7 @@ Since the range of this property was set to the concept of \textit{speaking char
 \section{Conclusions}
 \label{sec:kn:conclusion}
 
-TODO
+\modif{TODO}
 
 In the next chapter, we are going to experiment the different contributions presented in this thesis and compare them to other methods from the literature.
 The dataset is first introduced along with the metrics we used to evaluate information retrieval. 

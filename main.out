@@ -91,4 +91,16 @@
 \BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 91
 \BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 92
 \BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 93
-\BOOKMARK [0][-]{section*.167}{Bibliography}{}% 94
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 94
+\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 95
+\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 96
+\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 97
+\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 98
+\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 99
+\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 100
+\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 101
+\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 102
+\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 103
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 104
+\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 105
+\BOOKMARK [0][-]{section*.166}{Bibliography}{}% 106

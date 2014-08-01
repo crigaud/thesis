@@ -70,7 +70,7 @@ The process can be summarize as bellow:
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
 Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSL) representation of the RGB colour space.
 Here we use the lightness channel because the panel border strokes and text are usually darker than other element in the image, including the background. 
-Then, a global binary segmentation~\ref{??} (figure~\ref{fig:se:binary_img}) is applied with a threshold determined dynamically.
+Then, a global binary segmentation~\ref{sub:ap:bi_threshold} (figure~\ref{fig:se:binary_img}) is applied with a threshold determined dynamically.
 The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
 We assume that the border pixels of the page are representative of the page background (depending on the digitization process).
 If the median value is closer to ``black'' than ``white'' grey level, then, image inversion is applied and we redo the complete process in order to always get a white background at the end of this step.
@@ -81,7 +81,7 @@ The binary conversion step is very important for the rest of the method because 
 \paragraph{Connected-component extraction} % (fold)
  \label{par:connected_component_extraction}
  
-The connected-component algorithm~\ref{??} is applied on the binary image and the bounding box of each black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
+The connected-component algorithm~\ref{sec:ap:connected_component_labelling} is applied on the binary image and the bounding box of each black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
 We do not consider white connected-component here because we assume that panel border and text elements are darker than other elements in the page (segmented as black region).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,15 +114,8 @@ Knowing the number of cluster facilitate the clustering, here
 %We define the set of component bounding boxes $R = \{R_1, R_2, ... , R_n\}$.
 we set the number of clusters $k=3$ according to the domain knowledge of comics.
 They aim to reflect the ``panel'' (the highest), the ``text'' (medium height) and the ``noise'' (few pixels height) as shown on figure~\ref{fig:se:histo_roi}.
-One of the most popular clustering algorithm is k-means clustering method~\ref{??}.
-It aims to partition $(x_1, x_2, ...,x_n)$ observations into $k$ clusters ($k <= n$) $S=\{S_1, S_2, ..., S_k\}$ in which each observation belongs to the cluster with the nearest mean.
-This optimisation problem is formulated as formula~\ref{eq:se:k-means}.
+One of the most popular clustering algorithm is k-means clustering method~\ref{sub:ap:muli_threshold}.
 
-\begin{equation}
-	arg min \sum\limits_{i=1}^k \sum\limits_{n_j \in S_i} ||x_j - \mu_i||^2
-	\label{eq:se:k-means}
-\end{equation}
-where $\mu_i$ is the mean of points in the cluster $S_i$.
 
 This clustering is performed dynamically on each image which makes this method parameter-free (given a number of clusters) and invariant to page format and resolution.
 % Indeed, the height-based classification is not page size dependent unlike~\cite{Khoi11,Arai11}, and the number of pixels for each ROI is proportional to the page resolution (do not bias the classification).
@@ -224,8 +217,8 @@ First, we require that the candidate text lines to group have similar heights (o
 \label{sec:se:from_text_to_balloon}
 % In this section we detail a novel approach for closed and non-closed speech balloon localization in scanned comic book pages, an essential step towards a fully automatic comic book understanding. 
 For comics content understanding, speech balloons are of significant interest since they offer the links between the textual content and the comic characters providing, in this way, information about the localization of the characters and the tone of speech. 
-As mentioned in section~\ref{sec:sota:balloon_segmentation}, speech balloons are the more frequent type of balloon in comics and are highly related to speech text regions.
-In this section, we propose two approaches for balloon extraction based on text region location detection using the methods presented in section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text_localisation_and_recognition}.
+As mentioned Section~\ref{sec:sota:balloon_segmentation}, speech balloons are the more frequent type of balloon in comics and are highly related to speech text regions.
+In this section, we propose two approaches for balloon extraction based on text region location detection using the methods presented Section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text_localisation_and_recognition}.
 The first method defined as ``balloon'' the smallest connected-component that contains several text-like regions.
 The second method groups text lines into paragraphs and initializes an active contour model (snake) on its outline.
 From the initial position, the snake is pushed away from the text and attracted by surrounding edges at the same time in order to stick to any potential balloon stroke close by.
@@ -233,7 +226,7 @@ The main difference with the first approach is its ability to detect implicit or
 
 \subsection{Regular balloon extraction} % (fold)
 \label{sub:se:regular_balloon_extraction}
-Regular balloon are defined as closed balloon with a completely drawn contour unlike implicit contour discussed in the next subsection~\ref{sub:se:implicit_balloon_extraction}.
+Regular balloon are defined as closed balloon with a completely drawn contour unlike implicit contour discussed in the next Subsection~\ref{sub:se:implicit_balloon_extraction}.
 Closed balloon are easily extractable using blob detection method similarly to the panel and text extraction presented above.
 The main difference lies in their dominant colour which is generally white and implies to extract white connected-components instead of black ones as for panels and text.
 One particularity of text inside balloons is its vertical and/or horizontal alignment in the balloon (Figure~\ref{fig:se:text_in_balloon}).
@@ -331,29 +324,29 @@ For the examples given in Figure~\ref{fig:se:balloon_examples}, this would be a 
 Observing the heterogeneity of balloons, and considering the difficulty to manage ``open'' or ``implicit'' balloons, it appears necessary to use a dynamic and adaptive outline detection algorithm.
 Active contours appear to be suitable to the problem.
 The active contour framework was developed for delineating an object outline in an image.
-The algorithm attempts to minimize the energy associated to the current contour, defined as the sum of an internal and an external energy term (Section~\ref{??}). 
+The algorithm attempts to minimize the energy associated to the current contour, defined as the sum of an internal and an external energy term (Section~\ref{sub:ap:contour_based}). 
 In this paper we propose two adaptations of the active contour theory to the domain of comic balloon detection.
 Specifically, we handle the case of balloons with missing parts or implicit contours, while we adopt a two-step approach to fit irregular outline types such as peak and cloud type balloons. 
 To achieve this, we propose new energy terms making use of domain knowledge.
 
 
-%------------------------------------------------------------------------
-\subsubsection{Active contours TODO: move to SOTA}
-\label{sec:se:active_contour}
+% %------------------------------------------------------------------------
+% \subsubsection{Active contours TODO: move to SOTA}
+% \label{sec:se:active_contour}
 
-The active contour~\cite{Kass1988} model is a deformable model, also known as snake, corresponding to a curve $\mathbf{v}(s)=[x(s),y(s)], s \in [0,1]$, that moves through the spatial domain of an image to minimize the energy functional (equation~\ref{eq:se:energy1}).
+% The active contour~\cite{Kass1988} model is a deformable model, also known as snake, corresponding to a curve $\mathbf{v}(s)=[x(s),y(s)], s \in [0,1]$, that moves through the spatial domain of an image to minimize the energy functional (equation~\ref{eq:se:energy1}).
 
-\begin{equation}\label{eq:se:energy1}
-  E = \int_0^1 \! \frac{1}{2} \left( \alpha \left|\mathbf{v}'(s) \right|^2 + \beta \left| \mathbf{v}''(s) \right|^2 \right) + E_{ext}(\mathbf{v}(s))ds\\
-\end{equation}
-where $\alpha$ and $\beta$ are weighting parameters that respectively control the snake's tension and rigidity, and $\mathbf{v}'$ and $\mathbf{v}''$ denote the first and second derivatives of $\mathbf{v}(s)$ with respect to $s$. This functional energy is also called $E_{int}$ for internal energy.
-The external energy function $E_{ext}$ is computed from the image so that it takes on its smaller values at the features of interest, such as boundaries~\cite{Xu1998}.
-%It was initially designed to localize nearby edges accurately by using both internal and external energies (see eq.~\ref{eq:se:energy1}). 
-%The external energy function $E_{ext}$ aim to attract the snake to the feature of interest (e.g. line, edge, corner), it is the image force. 
-One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq:se:edge} which attracts the contour to edges with large image gradients. 
-\begin{equation}\label{eq:se:edge}
-  E_{ext} = -|\nabla \mathbf{I}(x,y)^2|
-\end{equation}
+% \begin{equation}\label{eq:se:energy1}
+%   E = \int_0^1 \! \frac{1}{2} \left( \alpha \left|\mathbf{v}'(s) \right|^2 + \beta \left| \mathbf{v}''(s) \right|^2 \right) + E_{ext}(\mathbf{v}(s))ds\\
+% \end{equation}
+% where $\alpha$ and $\beta$ are weighting parameters that respectively control the snake's tension and rigidity, and $\mathbf{v}'$ and $\mathbf{v}''$ denote the first and second derivatives of $\mathbf{v}(s)$ with respect to $s$. This functional energy is also called $E_{int}$ for internal energy.
+% The external energy function $E_{ext}$ is computed from the image so that it takes on its smaller values at the features of interest, such as boundaries~\cite{Xu1998}.
+% %It was initially designed to localize nearby edges accurately by using both internal and external energies (see eq.~\ref{eq:se:energy1}). 
+% %The external energy function $E_{ext}$ aim to attract the snake to the feature of interest (e.g. line, edge, corner), it is the image force. 
+% One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq:se:edge} which attracts the contour to edges with large image gradients. 
+% \begin{equation}\label{eq:se:edge}
+%   E_{ext} = -|\nabla \mathbf{I}(x,y)^2|
+% \end{equation}
 
 We adapt the active contour framework to the domain of comics to detect speech balloons given a prior detection of text regions, introducing new energy terms based on domain knowledge about the relationship between text and balloons.
 For the discussion below, we assume that text has been already detected in the image (Section~\ref{sec:se:panel_and_text} and~\ref{sec:in:text_localisation_and_recognition}).% and we use the method of \cite{Rigaud2013VISAPP} for text detection.
@@ -666,7 +659,7 @@ where $W_{b_i}$ and $H_{b_i}$ correspond to the width and the height of a speech
 % paragraph tail_direction (end)
 Once we found the tail tip position, we analyse its local region to find the orientation and the direction of the tail (directed towards the speaker).
 
-\modif{TODO:} give more detail about this approach
+\modif{TODO: give more detail about this approach}
 
 We compute a $M$x$M$ square region centred on the tail tip position in the balloon mask and use a line fitting algorithm (weighted least-squares) that returns the representative line that minimizes the distance between all the points of the local region (Figure~\ref{fig:se:orientation}).
 

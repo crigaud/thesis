@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284272"
-     inkscape:cx="471.12159"
-     inkscape:cy="78.882227"
+     inkscape:zoom="1"
+     inkscape:cx="102.33135"
+     inkscape:cy="204.66036"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1243,5 +1243,20 @@
          style="font-size:22px">s<tspan
    style="font-size:14.30020142px;baseline-shift:sub"
    id="tspan4675-4">b</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:27.34033585px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+       x="629.37512"
+       y="956.67273"
+       id="text3839-6-4-62-6-7-5"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99757439,1.0024315)"><tspan
+         sodipodi:role="line"
+         id="tspan3841-6-1-20-6-1-5"
+         x="629.37512"
+         y="956.67273"
+         style="font-size:16.33818054px;writing-mode:lr-tb">v<tspan
+   style="font-size:65.00000026%;baseline-shift:sub"
+   id="tspan3242">7</tspan>=v*</tspan></text>
   </g>
 </svg>

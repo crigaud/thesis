@@ -582,8 +582,8 @@ Other types require a specific study from the speech balloon extraction that sho
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Tail tip position} % (fold)
-\label{par:se:tail_tip_position}
+% \paragraph{Tail tip position} % (fold)
+% \label{par:se:tail_tip_position}
 
 % paragraph tail_tip_position (end)
 
@@ -623,6 +623,8 @@ This can be formulated as:
    v* = argmax\big( max(dc+df_a+df_b) + min(ds_a + ds_b) \big)\\
  \end{equation}
  where $v*$ is the optimal vertex from the set of vertex $V$.
+In Figure~\ref{fig:se:convexity_defects}, the optimal vertex is $v_7$.
+
 %NEW IDEA: for all the vertex between the two defects, min/max a feature vector (dist to barycentre, distance to tail origin).
 % Most of the time both triangles intersect on the same point which is the tail tip $T$.
 % If not, we determine which pair of points from the two segments that are the closest ($t_1$ and $t_2$) and then which one is the tail tip ($t_1$ or $t_2$).
@@ -647,21 +649,24 @@ In fact, the tail tip is often located at the extremity of black stroke surround
 
 We propose to detect the external border line the balloon contour in the region of the optimal convex hull vertex $v*$ presented above and define its extremity as the tail tip position.
 Image pre-processing and contour detection are performed in the same way as presented Section~\ref{sub:se:regular_balloon_extraction}.
-From all the detected contours, we select the one $O$ that has the closest point $O_i$ from $v*$ (Euclidean distance).
-Then we run through all the points of the sequence of points that defines the contour $O=\{o_0, o_1,...,o_n\}$ and define as tail tip position the one at the first maximum Euclidean distance to the tail origin.
+From all the detected contours, we select the contour $O$ that has the closest point $o_i$ from $v*$ (Euclidean distance).
+Then we run through all the points of the sequence of points that defines the contour $O=\{o_0, o_1,...,o_m\}$ and define as tail tip position $o*$ the one at the first maximum Euclidean distance to the tail origin.
 The tail origin is a virtual point midway between $f_a$ and $f_b$ (Figure~\ref{fig:se:tail_tip_refinement}).
 
+\modif{TODO: update tail direction (improve) by computing a white region that includes the balloon border line}
+
+The tail direction is given by the last part of the tail which corresponds to the vector $\overrightarrow{v*o*}$.
+Note that starting from $v*$ is more accurate than the tail origin point because the last segment of the tail is oriented towards the speaker while the tail origin is just ``getting out'' of the balloon.
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[width=0.95\textwidth]{tail_refinement.png}
-    \caption[Tail tip position detection]{Tail tip position detection. From left to right, the optimal vertex $v*$ in green and the local contour detection in blue, the closest point $O_i$ in red and its first stop at the maximal distance with the tail origin (dark green point).}
+    \caption[Tail tip position and direction detection]{Tail tip position and direction detection. From left to right, the optimal vertex $v*$ in green and the local contour detection in blue, the closest point to $v*$, $o_i$ in red and its first stop at the maximal distance with the tail origin (dark green point) $o*$. The last vignette on the right hand side represents the tail direction vector $\overrightarrow{v*,o*}$.}
     \label{fig:se:tail_tip_refinement}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 We also propose to compute the confidence value of the tail position prediction $C_{tail}$, related to the mean of the depths $d_a$ and $d_b$ over the mean balloon size $meanBalloonSize$ (Formula~\ref{eq:se:confidence_tail}).
 The confidence value is minimal when the mean of the two convexity defects (used for tail position detection) is very small compare to the balloon sizes in the current image.
@@ -690,29 +695,27 @@ The confidence value $C_{tail}$ may be useful for further decision making proces
 % \end{equation}
 % where $thV$ is a decision threshold relative to the average balloon size in the image.
 
-\paragraph{Tail direction} % (fold)
-\label{par:se:tail_direction}
+% \paragraph{Tail direction} % (fold)
+% \label{par:se:tail_direction}
 
 % paragraph tail_direction (end)
-Once we found the tail tip position, we analyse its local region to find the orientation and the direction of the tail (directed towards the speaker).
+% Once we found the tail tip position, we analyse its local region to find the orientation and the direction of the tail (directed towards the speaker).
 
-\modif{TODO: give more detail about this approach}
-
-We compute a $M$x$M$ square region centred on the tail tip position in the balloon mask and use a line fitting algorithm (weighted least-squares) that returns the representative line that minimizes the distance between all the points of the local region (Figure~\ref{fig:se:orientation}).
+% We compute a $M$x$M$ square region centred on the tail tip position in the balloon mask and use a line fitting algorithm (weighted least-squares) that returns the representative line that minimizes the distance between all the points of the local region (Figure~\ref{fig:se:orientation}).
 
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
-      \centering
-      \includegraphics[width=0.5\textwidth]{tail_direction.png}
-    \caption[Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip]{Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip.}
-    \label{fig:se:orientation}
-    \end{figure}  
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+%       \centering
+%       \includegraphics[width=0.5\textwidth]{tail_direction.png}
+%     \caption[Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip]{Tail orientation given by the line fitting algorithm in the neighbourhood of the tail tip.}
+%     \label{fig:se:orientation}
+%     \end{figure}  
+%    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The tail direction is computed from the tail orientation that has initially two possible directions.
-We define the tail direction from the closest point $fitLinePoint$ of the representative line to the tail origin, to the tail tip ($vec\{fitLinePoint,$ $tailTip\}$).
+% The tail direction is computed from the tail orientation that has initially two possible directions.
+% We define the tail direction from the closest point $fitLinePoint$ of the representative line to the tail origin, to the tail tip ($vec\{fitLinePoint,$ $tailTip\}$).
  %by selecting the vector that starts close to the $F$ points and ends far from the $F$ points:
 
 %$\dot{\vec{p}} = m\vec{v}$

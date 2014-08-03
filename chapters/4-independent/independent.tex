@@ -19,7 +19,7 @@ In this section present independent processes to extract comics image content.
 
 % \subsubsection{Method 2: topological analysis} % (fold)
 % \label{sub:outermost_contour_filtering}
-The previous clustering-based method presented in section~\ref{sec:se:panel_and_text} is particularly useful for simultaneous extractions, as illustrated panel and text while removing noise region at the same time.
+The previous clustering-based method presented in Section~\ref{sec:se:panel_and_text} is particularly useful for simultaneous extractions, as illustrated panel and text while removing noise region at the same time.
 Nevertheless, the panel extraction can be improved if we focus on panel elements only.
 We propose to use a second characteristic of panels which is their topological relations with other elements in the image.
 Figure~\ref{fig:se:cc_bounding_box} shows that outermost or external contours actually corresponds to panels.
@@ -37,17 +37,15 @@ Non included contour (outermost) would have the maximum confidence and fully inc
 % A generic method that works best with both styles is not obvious.
 % We combine~\cite{Arai11,Rigaud2012LNCS} to introduce a new method, especially suitable for general comics using gutter (white space) between panels.
 
-Panel contours are usually dark and similar for all the panels of a comics page.
-Sometimes panel contours are implicit as shown in figure~\ref{fig:in:se:panel_img} (considered as a difficult case).
+Panel contours (border line) are usually dark and similar for all the panels of a comics page.
+Sometimes panel contours are implicit as shown Figure~\ref{fig:in:se:panel_img} (considered as a difficult case).
 In this case, the reader distinguishes them by comparing the difference of colour between the panel content and the page background.
-We use a global binary segmentation method to separate the page background from its content (figure~\ref{fig:se:panel_binary}).
+We use a global binary segmentation method (Section~\ref{sub:ap:bi_threshold}) to separate the page background (expected to be clear) from its content (dark elements such as panel border lines), considered as foreground here (Figure~\ref{fig:se:panel_binary}).
+An binary inversion should be performed when the image background is darker that the content of the panels.
+We do not use a local segmentation approach here because it has higher chances to split the panel border and over-segment its content.
 
-\modif{TODO: detail global binarisation and inversion by referring to a method introduced in the SOTA.}
-
-We do not use a local segmentation approach because it has higher chances to split the panel border and over-segment its content.
-
-Connected-component labelling algorithm~\cite{Szeliski2010Computer} is then used to extract outermost contours from the binary image content (Figure~\ref{fig:in:panel_outermost_contours}).
-Note, we reject panel detection below a minimum area relative to the image size $minAreaFactor$ in order to avoid considering isolated elements (e.g text, logo, page number) as panel (Figure~\ref{fig:in:panel_big_contours})
+Then, a connected-component labelling algorithm (Section~\ref{sec:ap:connected_component_labelling}) is used to extract outermost contours from the binary image, (Figure~\ref{fig:in:panel_outermost_contours}).
+Note, we filter out contours below a minimum area relative to the image size $minAreaFactor$ in order to avoid considering isolated elements (e.g text, logo, page number) as panel in a later stage (Figure~\ref{fig:in:panel_big_contours})
 
 Finally, the convex hull or the bounding box of the panel contours can be computed in order to recover from discontinuous contour detection (Figure~\ref{fig:in:panel_big_contour_hull} and~\ref{fig:in:panels_detection_boxes}).
 In this example, some of the panel borders have low contrast compared to the page background which makes difficult their extraction.
@@ -83,7 +81,7 @@ Such issue can be post processed using line detection and layout analysis.
 	%\includegraphics[trim= 0mm 0mm 0mm 0mm]{figure/BUBBLEGOM_T01_P007.jpg}
 	\subfloat[Original image]{\label{fig:in:se:panel_img}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_img.jpg}}
 	\hspace{1em}
-	\subfloat[Inverted binary image]{\label{fig:se:panel_binary}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_binary.png}}
+	\subfloat[Binary segmentation]{\label{fig:se:panel_binary}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_binary.png}}
 	\hspace{1em}
 	\subfloat[Outermost contours]{\label{fig:in:panel_outermost_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_all_contours.png}}
 	\\
@@ -103,7 +101,7 @@ Such issue can be post processed using line detection and layout analysis.
 In this section we present a method for automatic text localization in scanned comic books written in Latin script, an essential step towards an automatic comics understanding.
 Our first intention is to localize the text regions and separate them from the graphical content (text/graphic separation).
 In comics, as in many other unstructured documents, text recognition quality relies on text localization.
-Text recognition is not a contribution of this work, nevertheless, we present a first approach in section~\ref{sub:te:text_recognition}.
+Text recognition is not a contribution of this work, nevertheless, we present a first approach Section~\ref{sub:te:text_recognition}.
 
 \subsection{Introduction} % (fold)
 \label{sub:introduction}
@@ -117,10 +115,11 @@ Knowing the positions of other elements in the image can help to predict text po
 Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
 In addition, text localization in comic images opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and retargeting to different mobile reading devices~\cite{Matsui2011}.
 
-Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout method applicable.
+Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout analysis method applicable if we consider all the diversity of comics.
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
 To solve the particular problems which are provoked by the combination of complex background and unstructured documents, we propose a new text localization method.
-\modif{We improve the initial segmentation step to cope with complex backgrounds.} Furthermore, we adapt the line extraction method to cope with unstructured documents.
+We improve the initial segmentation step to cope with complex backgrounds.
+Furthermore, we adapt the text line extraction method to cope with unstructured documents.
 
 
 % subsection introduction (end)
@@ -281,7 +280,7 @@ In our study we consider only the black on white CC. (Figure~\ref{fig:in:bw_wb})
 
 
 Rule 3: we check that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines).
-To do so, we check for similar in height components in an area equal to the size of the component's bounding box extended to its left/right/top/bottom directions (figure~\ref{fig:in:4_direction}). For instance, $l_i$ is similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
+To do so, we check for similar in height components in an area equal to the size of the component's bounding box extended to its left/right/top/bottom directions (Figure~\ref{fig:in:4_direction}). For instance, $l_i$ is similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
 %\end{enumerate}
 
 
@@ -410,7 +409,7 @@ Speech balloon classification is a real challenge if we consider a lot of differ
 First, each author has his own representation of the speech sounds. Second, the reader interpretation is subjective (each balloon style is interpreted in comparison to the already read balloon styles).
 For those reasons, it is really hard to directly define the purpose (e.g. dialogue, thought and exclamation) of a speech balloon without knowing its context in the story.
 In fact, the context is defined by both graphic (e.g. other strokes, protagonists personality) and textual (e.g. vocabulary, punctuation) elements.
-For instance, figure~\ref{fig:in:contour_style} shows six different speech balloon comics styles where we can note the difficulty to assign one class for each balloon without knowing others balloon shapes and reading the contained text.
+For instance, Figure~\ref{fig:in:contour_style} shows six different speech balloon comics styles where we can note the difficulty to assign one class for each balloon without knowing others balloon shapes and reading the contained text.
 
 % Note, speech balloon classification is complementary to speech balloon extraction that has already been studied using white connected component extraction and filtering~\cite{Arai11,Ho2012} or active contour model~\cite{Rigaud2013ICDAR}.
 
@@ -517,7 +516,7 @@ where $f_2$ is the feature two, $\sigma_{pos}$ and $\sigma_{neg}$ are the standa
 
 
 \subsubsection{Contour classification}
-Contour classification is performed according to the selected contour descriptor (see section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997} \modif{TODO: link to method description in appendix?}.
+Contour classification is performed according to the selected contour descriptor (Section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997} \modif{TODO: link to method description in appendix?}.
 This classifier has been chosen because it requires a small amount of training data.
 Let a label set $L=(l_1,l_2,l_3)$ represent the three contour classes ``smooth'', ``wavy'' and ``zigzag''. Given a new unlabelled contour $c$ described by its descriptor $D=(f_1,f_2)$, the naive Bayes approach assigns $D$ to a class $l_{MAP}$ as follow:
 
@@ -560,7 +559,7 @@ where $P(l)$ is the \textit{a priori} probability of class $l$ and $P(D|l)$ is t
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\modif{TODO: Ces valeurs sont pour quels types de dessins (cf. figure 4.11). 
+\modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
 ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
 Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
 
@@ -640,7 +639,7 @@ The colour subset $D$ is composed by the $N$ colours the most represented in the
 We define, for a given colour $c$, $L_{1c}$ the number of pixel and $L_{2c}$ the discriminability level which is the percentage of pixels present in the query region compared to rest of the same colour pixels in the image (equivalent to TF-IDF~\cite{salton1986introduction}).
 Each value of $L_{1c}$ and $L_{2c}$ are normalized as a percentage between 0 and 1, the score for each colour is the sum of both term: $Score(c) = L_{1c} + L_{2c}$ (Figure~\ref{fig:in:dominant_colour_hist_desc}).
 
-\modif{TODO: Essaye de détailler chaque étape en t'appuyant sur la figure 4.15 pour que l'on comprenne bien la méthode.
+\modif{TODO: Essaye de détailler chaque étape en t'appuyant sur la Figure4.15 pour que l'on comprenne bien la méthode.
 Il faudrait expliciter plus le critère L2 car ce n'est pas évident à comprendre à la lecture de ton texte.}
 
 The discriminability level $L_{2c}$ allows us to ignore colours that are not only dominant in the query region but also in the rest of the image.
@@ -684,7 +683,7 @@ Second we find the object position in each pages by using a sliding window appro
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[width=0.8\textwidth]{masks.png}
-  \caption[Colour mask corresponding to five colour of the query descriptor]{Example of colour mask corresponding to the 5 first colours in the top histogram of figure~\ref{fig:in:dominant_colour_hist_desc}.}
+  \caption[Colour mask corresponding to five colour of the query descriptor]{Example of colour mask corresponding to the 5 first colours in the top histogram of Figure~\ref{fig:in:dominant_colour_hist_desc}.}
   \label{fig:in:masks}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

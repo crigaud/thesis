@@ -570,7 +570,7 @@ Speech balloons indicate dialogue using tails pointing at their respective speak
 %Balloon tails tell the reader the relationships between a set of textual or graphic elements contained in the speech balloons and the comics characters [REF???].
 They are usually represented by a discontinuity on balloon contour (Figure~\ref{fig:se:tail_types}). 
 We propose to detect the tail position and direction based on the balloon contour analysis.
-We limit this study to the tail types that can be considered has an extension of the inside region (background) of the speech balloon namely types ``comma'', ``zigzag'' and ``absent'' in Figure~\ref{fig:se:tail_types} because they can all be extracted from the segmentation of the balloon background.
+We limit this study to the tail types that can be considered has an extension of the inside region (background) of the speech balloon namely types ``comma'', ``zigzag'' and ``absent'' in Figure~\ref{fig:se:tail_types}, because they can all be extracted from the segmentation of the balloon background.
 Other types require a specific study from the speech balloon extraction that should consider the contour stroke and surrounding elements.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -587,7 +587,7 @@ Other types require a specific study from the speech balloon extraction that sho
 
 % paragraph tail_tip_position (end)
 
-We propose a method to describe ``comma'', ``zigzag'' and ``absent'' (no tail) types.
+We propose a method to detect ``comma'', ``zigzag'' and ``absent'' (no tail) tail types.
 The tail can be decomposed into four elements: origin, path, tip and pointed direction.
 The contour of a speech balloon is mainly convex except in the region where the tail is connected to the balloon (origin) which produces the highest convexity defects.
 If the speech balloon has no tail, there is no particular convexity defect.
@@ -595,19 +595,19 @@ If the speech balloon has no tail, there is no particular convexity defect.
 %We propose to detect the two biggest convexity defects to locate the tail origin.
 A convexity defect is defined by a triangle from one segment of the balloon convex hull to the farthest point on the balloon contour (Figure~\ref{fig:se:convexity_defects}).
 The set $F=\{f_0,f_1,...f_n\}$ represents farthest points from the corresponding hull segments $S=\{s_0, s_1,...,s_n\}$ where $n$ is the number of hull segments.
-We define the top two farthest points $f_a$ and $f_b$ corresponding to the convex hull segments $s_a$ and $s_b$, as the coordinates of the tail origin (Figure~\ref{fig:se:convexity_defects}).
+We define the top two farthest points $f_a$ and $f_b$ corresponding to the two farthest points of the convex hull segments $s_a$ and $s_b$, as the coordinates of the tail origin (Figure~\ref{fig:se:convexity_defects}).
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[width=0.9\textwidth]{tail_description.pdf}
-    \caption[Representation of the two biggest convexity defects that defines the tail origin]{Convex hull and convexity defects of a speech balloon (top part). Bottom-left figure represents the two biggest convexity defects that defines the tail origin $f_a$ and $f_b$. Bottom-right figure represents the distances related to the vertex $v_7$ to illustrate the variables of equation~\ref{eq:se:optimisation}. In this case $ds_b=0$ because $v_7$ coincides with an end of segment $s_b$ (distance equal to zero).}
+    \caption[Convex hull and convexity defects of a speech balloon]{Convex hull and convexity defects of a speech balloon (top part). Bottom-left figure represents the two biggest convexity defects that defines the tail origin $f_a$ and $f_b$. Bottom-right figure represents the distances related to the vertex $v_7$ to illustrate the variables of Equation~\ref{eq:se:optimisation}. In this case $ds_b=0$ because $v_7$ coincides with an end of segment $s_b$ (distance equal to zero).}
     \label{fig:se:convexity_defects}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We assume that the tail tip corresponds to one of the vertices $V=\{v_0,v_1,...v_n\}$ of the convex hull (Figure~\ref{fig:se:convexity_defects}), which is the case for most of the speech balloons.% except .
-% We define the set of vertices $V=\{v_1,v_2,...,$ $v_n\}$.
+We assume that the tail tip corresponds to one of the vertices $V=\{v_0,v_1,...v_n\}$ of the convex hull (Figure~\ref{fig:se:convexity_defects}), which is the case for most of the speech balloons except when the tail is partially surrounded by the balloon (in a recess).
+In such cases, another approach has to be considered.
 The optimal vertex is computed by comparing five features that corresponds to the Euclidean distances:
 
 \begin{itemize}
@@ -628,21 +628,58 @@ This can be formulated as:
 % If not, we determine which pair of points from the two segments that are the closest ($t_1$ and $t_2$) and then which one is the tail tip ($t_1$ or $t_2$).
 % The tail tip is defined by the farthest from the tail origin:
 % $T = \begin{cases} t_1, & \mbox{if } dist(f_1,t_1) > dist(f_2,t_2) \\ t_2, & \mbox{else} \end{cases}$
-%Each segment of the convect hull has a convexity defect that we $cd_i$ 
+%Each segment of the convect hull has a convexity defect that we $cd_i$
 
-We also compute a confidence value $C_{tail}$ related to the mean depth $d_a$ and $d_b$ over the mean balloon size $meanBalloonSize$ (Formula~\ref{eq:se:confidence_tail}).
+From our knowledge, all the balloon extractor, closed or implicit, proposed so far consider the inside balloon region, ignoring the balloon contour (black stroke) region.
+This is acceptable for localising the tail on the balloon contour (angular position) but it is not accurate enough to detect the tail tip in the sense of human understanding.
+In fact, the tail tip is often located at the extremity of black stroke surrounding the inside balloon region (Figure~\ref{fig:se:tail_examples}).
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[width=0.9\textwidth]{tail_examples.png}
+    \caption[Tail tip position precise position]{Tail tip detection differences considering the balloon border line or not. In each vignette, the green point represent the tail tip position detection by considering the balloon inside region only.
+    The red point is the tail tip position considering also the border line.}
+    \label{fig:se:tail_examples}
+    \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We propose to detect the external border line the balloon contour in the region of the optimal convex hull vertex $v*$ presented above and define its extremity as the tail tip position.
+Image pre-processing and contour detection are performed in the same way as presented Section~\ref{sub:se:regular_balloon_extraction}.
+From all the detected contours, we select the one $O$ that has the closest point $O_i$ from $v*$ (Euclidean distance).
+Then we run through all the points of the sequence of points that defines the contour $O=\{o_0, o_1,...,o_n\}$ and define as tail tip position the one at the first maximum Euclidean distance to the tail origin.
+The tail origin is a virtual point midway between $f_a$ and $f_b$ (Figure~\ref{fig:se:tail_tip_refinement}).
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[width=0.95\textwidth]{tail_refinement.png}
+    \caption[Tail tip position detection]{Tail tip position detection. From left to right, the optimal vertex $v*$ in green and the local contour detection in blue, the closest point $O_i$ in red and its first stop at the maximal distance with the tail origin (dark green point).}
+    \label{fig:se:tail_tip_refinement}
+    \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+We also propose to compute the confidence value of the tail position prediction $C_{tail}$, related to the mean of the depths $d_a$ and $d_b$ over the mean balloon size $meanBalloonSize$ (Formula~\ref{eq:se:confidence_tail}).
+The confidence value is minimal when the mean of the two convexity defects (used for tail position detection) is very small compare to the balloon sizes in the current image.
+It is maximal when equal or higher than the mean balloon size which means that the tail is at least as big as the balloons (clearly visible).
 
 \begin{equation}
 \label{eq:se:confidence_tail}
   C_{tail} = \frac{(d_a+d_b)/2}{meanBalloonSize}
 \end{equation}
-where $d_a$ and $d_b$ are the depth of the corresponding defect in number of pixels (Figure~\ref{fig:se:convexity_defects}) and $meanBalloonSize$ is defined in equation~\ref{eq:se:mean_balloon_size}.
+where $d_a$ and $d_b$ are the depth of the two biggest convexity defects in number of pixels (Figure~\ref{fig:se:convexity_defects}) and $meanBalloonSize$ is defined in equation~\ref{eq:se:mean_balloon_size}.
 
 \begin{equation}
   \label{eq:se:mean_balloon_size}
   meanBalloonSize = \frac{\sum\limits_{i=0}^n W_{b_i} + \sum\limits_{i=0}^n H_{b_i}}{n * 2}  
 \end{equation}
 where $W_{b_i}$ and $H_{b_i}$ correspond to the width and the height of a speech  balloon $i$ and $n$ the number of speech balloons in the image.
+
+The confidence value $C_{tail}$ may be useful for further decision making processes.
 
 % By measuring the variance in of all the convexity defect distances $\sum\limits_{i=0}^n var(f_i)$ of the contour we can detect if there is a tail or not, see equation~\ref{eq:se:var_defects}.
 % We use a fixed threshold of $thV=10\%$ of the balloon height to decide if a balloon has a tail or not, see equation~\ref{eq:se:var_defects}.

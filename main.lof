@@ -38,11 +38,11 @@
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Panel contours}}}{40}{subfigure.1.4}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Panel contour hulls}}}{40}{subfigure.1.5}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Panel contour bounding boxes}}}{40}{subfigure.1.6}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Threshold selection effect}}{42}{figure.caption.48}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Threshold selection effect}}{43}{figure.caption.48}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Evolution of the number of connected-component}}{43}{figure.caption.49}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Inter-connected letters}}{43}{figure.caption.50}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Inter-connected letters}}{44}{figure.caption.50}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{44}{figure.caption.51}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Difference between black over white and white over black connected-components}}{44}{figure.caption.52}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Difference between black over white and white over black connected-components}}{45}{figure.caption.52}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Text extraction neighbourhood validation}}{45}{figure.caption.53}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Examples of text lines from comics images}}{46}{figure.caption.54}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{47}{figure.caption.55}
@@ -52,7 +52,7 @@
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{52}{figure.caption.61}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{54}{figure.caption.64}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{55}{figure.caption.65}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{56}{figure.caption.66}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{57}{figure.caption.66}
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{58}{figure.caption.67}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{60}{figure.caption.68}

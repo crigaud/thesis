@@ -168,7 +168,6 @@ Treating each of the content separately has a limit that can be exceeded in a ho
 \subsection{Panel extraction and layout analysis}
 \label{sec:sota:layout_panel}
 
-
 Panel extraction and ordering have been mainly studied for panel to panel reading.
 The need is increasing since the first generation of mobile devices with small screens in colour or B\&W.
 In fact, people want to continue reading their favourite comics or manga on the way, without caring kilos of books.
@@ -187,7 +186,7 @@ They are based on watershed~\cite{ponsard2012ocr}, line segmentation using Canny
 Panel retargeting have been addressed for manga by Matsui~\cite{Matsui2011}.
 
 Page layout analysis has been studied to calculate the reading order of the panels.
-The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, nevertheless few studies~\cite{Guerin2012Ontologies,Ponsard09,Arai2010Automatic} demonstrated the possibility of calculating such Z-path (left-to-right and down) or right-to-left (e.g. Arabic, Japanese) and down~\cite{Li2013Comic,Tsai2013Adaptive} according to the position of the panels. 
+The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, nevertheless few studies~\cite{Guerin2012Ontologies,Ponsard09,Arai2010Automatic} demonstrated the possibility of calculating such Z-path (left-to-right and down) or right-to-left and down (e.g. Arabic, Japanese) according to the arrangement of the panels~\cite{Li2013Comic,Tsai2013Adaptive,Liu2014Automatic}. 
 
 %--------------------------------------------------------------------------------
 \subsection{Balloon segmentation and tail detection}
@@ -269,6 +268,7 @@ Text localization in real scenes and video frames is an active research topic~\c
 However, applying existing real scene text detection methods to comics would not be optimal to cope with all the different types of text that are combined in comic book documents (e.g. typewritten, handwritten, graphic sound).
 If we consider typewritten text, the most similar application to comics is car plate recognition because the text is in a salient and contrasted area with a complex background around the plate such as speech balloon for comics~\cite{anagnostopoulos2008license}.
 The documents that have attracted of lot a attention are newspaper, administrative documents, cheques, maps, floor plans and engineering drawings.
+Nevertheless, text localization in comic images opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
 Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout method applicable.
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
@@ -291,11 +291,11 @@ Li~\cite{Li2013Unsupervised} proposed unsupervised speech text localization for 
 % make use of ``the median value of the border page pixels'' to binarize the image, extract CC and then classify them into ``noise'', ``text'' or ``frame'' (based on CC heights). This method assumes that the page always contains text and that the text background colour is similar to the paper background. 
 
 Top-down approaches starting from balloons (white blobs) detection followed by mathematical morphology operations have been proposed by Arai~\cite{Arai11}, Yamada~\cite{Yam04} and Sundaresan~\cite{Sundaresan2012Text}.
-From our knowledge, there are no work concerning graphic sounds (onomatopoeia) and illustrative text extraction.
+From our knowledge, there are no published work concerning graphic sounds (onomatopoeia) and illustrative text extraction.
 
 Text recognition applied to comics is really challenging because it includes most of the difficulties from text recognition in document analysis domain if we consider all the type of text that composed the comics.
 From typewritten to handwritten and free-form text in uniform to complex background including image noise, text deformation and overlapping.
-Nevertheless, Ponsard~\cite{ponsard2012ocr} solved a sub part of the problem by focusing on speech text of a single font and language for which an OCR system is trained for.
+Nevertheless, Ponsard~\cite{ponsard2012ocr} solved a sub part of the problem by focusing on speech text of a single typewritten font and language for which an OCR system is trained for.
 
 
 \subsection{Comic character detection}

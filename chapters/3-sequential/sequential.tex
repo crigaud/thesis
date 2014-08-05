@@ -68,7 +68,7 @@ The process can be summarize as bellow:
 \label{par:se:image_segmentation}
 
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
-Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSL) representation of the RGB colour space.
+Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
 Here we use the lightness channel because the panel border strokes and text are usually darker than other element in the image, including the background. 
 Then, a global binary segmentation~\ref{sub:ap:bi_threshold} (figure~\ref{fig:se:binary_img}) is applied with a threshold determined dynamically.
 The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
@@ -653,7 +653,7 @@ From all the detected contours, we select the contour $O$ that has the closest p
 Then we run through all the points of the sequence of points that defines the contour $O=\{o_0, o_1,...,o_m\}$ and define as tail tip position $o*$ the one at the first maximum Euclidean distance to the tail origin.
 The tail origin is a virtual point midway between $f_a$ and $f_b$ (Figure~\ref{fig:se:tail_tip_refinement}).
 
-\modif{TODO: update tail direction (improve) by computing a white region that includes the balloon border line}
+% \modif{TODO: update tail direction (improve) by computing a white region that includes the balloon border line}
 
 The tail direction is given by the last part of the tail which corresponds to the vector $\overrightarrow{v*o*}$.
 Note that starting from $v*$ is more accurate than the tail origin point because the last segment of the tail is oriented towards the speaker while the tail origin is just ``getting out'' of the balloon.

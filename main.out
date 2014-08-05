@@ -30,7 +30,7 @@
 \BOOKMARK [1][-]{section.4.2}{Panel extraction}{chapter.4}% 30
 \BOOKMARK [1][-]{section.4.3}{Text localisation and recognition}{chapter.4}% 31
 \BOOKMARK [2][-]{subsection.4.3.1}{Introduction}{section.4.3}% 32
-\BOOKMARK [2][-]{subsection.4.3.2}{Adaptive segmentation}{section.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.3.2}{Bi-level segmentation}{section.4.3}% 33
 \BOOKMARK [2][-]{subsection.4.3.3}{Text/graphics separation}{section.4.3}% 34
 \BOOKMARK [2][-]{subsection.4.3.4}{Text recognition}{section.4.3}% 35
 \BOOKMARK [1][-]{section.4.4}{Balloon segmentation and classification}{chapter.4}% 36

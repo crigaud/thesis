@@ -98,28 +98,37 @@ Such issue can be post processed using line detection and layout analysis.
 \section{Text localisation and recognition} % (fold)
 \label{sec:in:text_localisation_and_recognition}
 
-In this section we present a method for automatic text localization in scanned comic books written in Latin script, an essential step towards an automatic comics understanding.
-Our first intention is to localize the text regions and separate them from the graphical content (text/graphic separation).
-In comics, as in many other unstructured documents, text recognition quality relies on text localization.
-Text recognition is not a contribution of this work, nevertheless, we present a first approach Section~\ref{sub:te:text_recognition}.
+In this section we present a method for automatic text localization in scanned comic books, an essential step towards an automatic comics understanding.
+Our first intention is to localize multi-oriented text regions, independently from script and language, and separate them from the graphical content (text/graphic separation).
+In document analysis systems, text recognition quality often relies on text localization.
+This is particularly the case for comics which have a complex background.
+We present how to take advantage of Optical Character Recognition systems (OCR) in order to improve text localisation.
 
 \subsection{Introduction} % (fold)
 \label{sub:introduction}
 
-In comic book documents, text is mixed with graphical content which produces a lot of noise and false detections if we submit the whole image directly to an Optical Character Recognition (OCR) system.
-The mixture of typewritten, handwritten-like and handwritten text makes the task particularly difficult.
+In comic book documents, text is mixed with graphical content which produces a lot false detections if we submit the whole image directly to an OCR system, usually coupled with a layer analysis pre-processing to avoid trying to recognize text in graphical region (e.g images, tables and formulas).
+The mixture of typewritten, handwritten-like and handwritten text makes the task particularly difficult for comics.
 Moreover, text presents a lot of variations (e.g. stroke, orientation, colour, size) that can cause many issues at both the localization and recognition levels.
-Text localization provides text-only images to a recognition system in order to improve recognition accuracy and reduce computing time.
-Knowing the positions of other elements in the image can help to predict text position because they are related to speech balloons (e.g. dialogue, thought), characters (e.g. graphic sound, illustration), panels (e.g. captions) or the page itself (e.g. page number, title, author name).
-% and defines the reading order~\cite{Tsopze12}.
-Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
-In addition, text localization in comic images opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and retargeting to different mobile reading devices~\cite{Matsui2011}.
+Text localization aims to provide text-only (or graphics-free) images to a text recognition system in order to improve its accuracy and reduce computing time.
+Knowing the positions of other elements in the image is a good clue for predicting text position because they are related to speech balloons (e.g. dialogue, thought), characters (e.g. graphic sound, illustration), panels (e.g. captions) or the page itself (e.g. page number, title, author name), this approach is detailed \ch{chap:knowledge}.
 
-Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout analysis method applicable if we consider all the diversity of comics.
+Few works concern text extraction in comics analysis literature (Section~\ref{sec:sota:text}) and most of them rely on speech balloon regions which make them dependent on other processing quality.
+Here we want to avoid such dependency between processes.
+From our knowledge, only Li~\cite{Li2013Unsupervised} proposed an independent and unsupervised speech text localization.
+It is a two step analysis that first generates text lines using ``a set of very rigorous rules'' to test each pair of connected component and decide if they are candidate text regions or not.
+From the first-round generated text lines, the method automatically learns a font set which is propagated to all text lines in the second-round and filters out non font-matched candidate regions.
+The font set is generated from the distribution of heights and widths of the connected components that compose the candidate text line (composed by multi-segment characters).
+The method is promising but there are nine rules in total that must be met to achieve text line extraction with several heuristics that are not discussed.
+The experiments have been performed on 1000 images from 10 countries (balanced) but they are unfortunately not publicly available to assess their diversity and the genericity of this approach. 
+
+The genericity is always a challenge for document image analysis, especially because this field of research is highly application dependent (Section~\ref{sec:document_image_analysis}).
+Moreover, comic book images differ from classical documents in that they comprise complex backgrounds of a graphical nature.
+They belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout analysis method applicable if we consider all the diversity of comics.
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
 To solve the particular problems which are provoked by the combination of complex background and unstructured documents, we propose a new text localization method.
-We improve the initial segmentation step to cope with complex backgrounds.
-Furthermore, we adapt the text line extraction method to cope with unstructured documents.
+% We improve the initial segmentation step to cope with complex backgrounds.
+% Furthermore, we adapt the text line extraction method to cope with unstructured documents.
 
 
 % subsection introduction (end)
@@ -128,22 +137,36 @@ Furthermore, we adapt the text line extraction method to cope with unstructured 
 % \label{sub:methodology}
 
 
-The contributions come at different levels. First, an adaptive comics page segmentation method is presented. Second, a text/graphic separation algorithm is proposed based on the local contrast ratio. Third, a grouping method is proposed to create lines and finally text recognition is discussed.
+The contributions come at different levels. 
+First, an adapted binary segmentation method is presented followed by a text/graphic separation algorithm based on the local contrast and neighbourhood similarities and finally, text recognition is used to verify the presence of textual information in the result.
 
 % \subsection{Text localization} % (fold)
 % \label{sub:te:text_localization}
 
 
-\subsection{Adaptive segmentation}
+\subsection{Bi-level segmentation}
 \label{sec:te:segmentation}
 Segmentation is a crucial step in many text localization methods.
-Comic speech text is made of strokes, generally black on white, that we need to segment.
-A perfect text segmentation would result to individual text letters represented by single connected components.
+Comic speech text is made of strokes, generally black on white, that we would like to isolate from the rest of the image content (background).
+A perfect text segmentation would result to individual text letters represented by single connected components (Section~\ref{sec:ap:connected_component_labelling}).
 The complex background of comic documents complicates this step.
-Typical thresholding methods would fail to segment the text because text is drawn with the same style of strokes as many other graphical elements in the page \modif{TODO: argue or delete}.
+Separating text from other elements in once is quite hard since we have no information about its position (independent approach) and it is similar to many other stroke in the image.
+Therefore, we propose first to separate bright from dark regions and then classify text and non text regions using size and alignment properties only.
+This approach is unsupervised and do not requires any training step.
+Bright/dark region separation can be done using a bi-level segmentation algorithm.
+Several approaches exist and their performance relies on the input data distribution.
+If the input data are composed by only black or white pixels any method will do the work be it is rarely the case.
+The best input would be a highly contrasted image where the feature of interest are concentrated in one of the extrema.
+As we do not use the colour information, we convert the 3 channel colour image into a single channel grey image.
+There are several manners to create a grey-scale image from a colour image.
+The first approach is to combine each pixel value from each colour channel with different weighting coefficients corresponding to the measured intensity perception of typical trichromat humans\footnote{\url{http://en.wikipedia.org/wiki/Grayscale}}, in order to produce a single value per pixel.
 
-Therefore, we propose to improve the Otsu's threshold selection method~\ref{sub:ap:bi_threshold}.
-For a single page we assume that the text background brightness is similar around all the characters of the same page. However, in our case, the optimal segmentation threshold differs for every single page of comics depending on the background colour of the text areas. The method is based on the observation that choosing the threshold too low, as well as choosing the threshold too high leads to an over segmentation of the connected components (CC) (Figure~\ref{fig:in:bin}).
+
+
+%Typical thresholding methods would fail to segment the text because text is drawn with the same style of strokes as many other graphical elements in the page \modif{TODO: delete + explain the interest of choosing a good threshold, refer the standard Otsu from SOTA, its interest and the importance of its input (gray image). Assuming that text is written in dark over bright background or vice versa, we don't need the colour information (assuming we don't want to extract coloured text with this method). The widely used RGB2GRAY conversion combine the colour channel to produce a grey image. As we don't need the colour information, we convert RGB to HSL ans use the luminance layer as input for Otsu auto threshold selection. (illustrate the differences between Otsu'method applied on RGB2GRAY, H, S and L.)}.
+
+%Therefore, we propose to improve the Otsu's threshold selection method~\ref{sub:ap:bi_threshold}.
+%For a single page we assume that the text background brightness is similar around all the characters of the same page. However, in our case, the optimal segmentation threshold differs for every single page of comics depending on the background colour of the text areas. The method is based on the observation that choosing the threshold too low, as well as choosing the threshold too high leads to an over segmentation of the connected components (CC) (Figure~\ref{fig:in:bin}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!] %trim=l b r t
@@ -160,8 +183,8 @@ For a single page we assume that the text background brightness is similar aroun
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- This phenomenon is intrinsic to the nature of comics, as due to the design process they contain textured areas and loosely connected strokes that give rise to merged components at different thresholds.
- This is intensified by the digitization and image compression process that adds further noise to the page.
+This phenomenon is intrinsic to the nature of comics, as due to the design process they contain textured areas and loosely connected strokes that give rise to merged components at different thresholds.
+This is intensified by the digitization and image compression process that adds further noise to the page.
 
 %Our method, Minimum Connected Components Thresholding (MCCT), automatically finds the right threshold by computing the number of CC for different threshold levels in a range of values from $th_{min}$ to $th_{max}$ and selecting the one that produces the minimum number of CC between the  (in a 8 bits grey image). %We defined a range from 100 to 230 (grayscale value of 8 bits image) for the binarization threshold.
 Our method, Minimum Connected Components Thresholding (MCCT), improves Otsu's threshold selection method by shifting the threshold according to the number of CC that are created.
@@ -318,9 +341,14 @@ From typewritten to handwritten and free-form text in uniform to complex backgro
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Text recognition in comics would allow full-text search, tagging, image description, comic character labelling etc.
-Text recognition in comics requires an extensive work to be addressed properly, which has not been addressed in this thesis work.
-Nevertheless, we measure the performance of current OCR systems Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
+% Text recognition in comics would allow full-text search, tagging, image description, comic character labelling etc.
+Text recognition for comics requires an extensive work to be addressed properly, which is out of the scope of this thesis work.
+
+Even if standard OCR systems output is not yet at a 90\% accuracy for comic book fonts, they can help a separating text/non text regions.
+\modif{TODO: to continue (Latin/Japanese)}
+
+
+% Nevertheless, we measure the performance of current OCR systems Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
 
 % section text_localisation_and_recognition (end)
 

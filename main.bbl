@@ -525,6 +525,12 @@ Luyuan Li, Yongtao Wang, Zhi Tang, Xiaoqing Lu, and Liangcai Gao.
 \newblock In {\em 12th International Conference on Document Analysis and
   Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
 
+\bibitem{Liu2014Automatic}
+Dong Liu, Yongtao Wang, Zhi Tang, Luyuan Li, and Liangcai Gao.
+\newblock Automatic comic page image understanding based on edge segment
+  analysis.
+\newblock In {\em Proc. SPIE}, volume 9021, pages 90210J--90210J--12, 2013.
+
 \bibitem{liu1990partial}
 H-C Liu and Mandyam~D. Srinath.
 \newblock Partial shape classification using contour matching in distance

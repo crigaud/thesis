@@ -224,6 +224,12 @@ Navneet Dalal and Bill Triggs.
 Danica Davidson.
 \newblock Manga grows in the heart of europe, 2012.
 
+\bibitem{de2000mahalanobis}
+Roy De~Maesschalck, Delphine Jouan-Rimbaud, and D{\'e}sir{\'e}~L Massart.
+\newblock The mahalanobis distance.
+\newblock {\em Chemometrics and intelligent laboratory systems}, 50(1):1--18,
+  2000.
+
 \bibitem{Delaye2014Multi}
 Adrien Delaye and Cheng-Lin Liu.
 \newblock Multi-class segmentation of free-form online documents with tree
@@ -564,6 +570,12 @@ Boudissa Magali.
   b\'{e}d\'{e}ique sous influence num\'{e}rique}.
 \newblock PhD thesis, University Paris 8 Vincennes Saint-Denis, Paris, France,
   2011.
+
+\bibitem{mahalanobis1936generalized}
+Prasanta~Chandra Mahalanobis.
+\newblock On the generalized distance in statistics.
+\newblock {\em Proceedings of the National Institute of Sciences (Calcutta)},
+  2:49--55, 1936.
 
 \bibitem{Mao2003Document}
 Song Mao, Azriel Rosenfeld, and Tapas Kanungo.
@@ -948,12 +960,6 @@ Takamasa Tanaka, Kenji Shoji, Fubito Toyama, and Juichi Miyamichi.
 Yuan~Y Tang, Seong-Whan Lee, and Ching~Y Suen.
 \newblock Automatic document processing: a survey.
 \newblock {\em Pattern recognition}, 29(12):1931--1952, 1996.
-
-\bibitem{Kasar07}
-{T}hotreingam {K}asar, {J}ayant {K}umar, and {A}.~{G}. {R}amakrishnan.
-\newblock {F}ont and {B}ackground {C}olor {I}ndependent {T}ext {B}inarization.
-\newblock In {\em {I}ntl. workshop on {C}amera {B}ased {D}ocument {A}nalysis
-  and {R}ecognition (workshop of {ICDAR})}, pages 3--9, 2007.
 
 \bibitem{tieng1997recognition}
 Quang~Minh Tieng and WW~Boles.

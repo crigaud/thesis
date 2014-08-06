@@ -168,19 +168,18 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 \end{itemize}
 
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
-	  \centering
-		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{letter_position.pdf}
-		\caption[Text component horizontal and vertical alignments]{Text component horizontal and vertical alignments. The two rectangles represent the bounding boxes and $c_1$ and $c_2$ their centres.}
-		\label{fig:se:letter_position}
-	\end{figure}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
+  \centering
+	\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{letter_position.pdf}
+	\caption[Text component horizontal and vertical alignments]{Text component horizontal and vertical alignments. The two rectangles represent the bounding boxes and $c_1$ and $c_2$ their centres.}
+	\label{fig:se:letter_position}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  The principle is similar to the one presented in~\cite{Clavelli09} but adapted to take into account the horizontal alignment of text lines.
  Our method does not consider the letter width as we never know how many letters correspond to the CC.
- It can easily be used for vertical text (e.g. Japanese, Chinese, Korean) by switching horizontal and vertical measurements.
+ This method can easily be used for vertical text (e.g. Japanese, Chinese, Korean) by switching horizontal and vertical measurements.
 
 
 

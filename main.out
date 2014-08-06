@@ -32,75 +32,77 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Introduction}{section.4.3}% 32
 \BOOKMARK [2][-]{subsection.4.3.2}{Bi-level segmentation}{section.4.3}% 33
 \BOOKMARK [2][-]{subsection.4.3.3}{Text/graphics separation}{section.4.3}% 34
-\BOOKMARK [2][-]{subsection.4.3.4}{Text recognition}{section.4.3}% 35
-\BOOKMARK [1][-]{section.4.4}{Balloon segmentation and classification}{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.4.1}{Balloon segmentation}{section.4.4}% 37
-\BOOKMARK [2][-]{subsection.4.4.2}{Balloon classification}{section.4.4}% 38
-\BOOKMARK [1][-]{section.4.5}{Comic character spotting}{chapter.4}% 39
-\BOOKMARK [2][-]{subsection.4.5.1}{Input query}{section.4.5}% 40
-\BOOKMARK [2][-]{subsection.4.5.2}{Colour reduction}{section.4.5}% 41
-\BOOKMARK [2][-]{subsection.4.5.3}{Query descriptor}{section.4.5}% 42
-\BOOKMARK [2][-]{subsection.4.5.4}{Object retrieval}{section.4.5}% 43
-\BOOKMARK [1][-]{section.4.6}{Conclusions}{chapter.4}% 44
-\BOOKMARK [0][-]{chapter.5}{Method 3: knowledge-driven analysis}{}% 45
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.2}{Expert system}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.3}{Knowledge representation}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.4}{Processing sequence}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.5}{Presentation of the model}{chapter.5}% 50
-\BOOKMARK [2][-]{subsection.5.5.1}{Image model}{section.5.5}% 51
-\BOOKMARK [2][-]{subsection.5.5.2}{Comics model}{section.5.5}% 52
-\BOOKMARK [2][-]{subsection.5.5.3}{Model interactions}{section.5.5}% 53
-\BOOKMARK [1][-]{section.5.6}{Interactions between high and low level processing}{chapter.5}% 54
-\BOOKMARK [2][-]{subsection.5.6.1}{Validation of the extractions}{section.5.6}% 55
-\BOOKMARK [2][-]{subsection.5.6.2}{Inferences from the low level information}{section.5.6}% 56
-\BOOKMARK [1][-]{section.5.7}{Conclusions}{chapter.5}% 57
-\BOOKMARK [0][-]{chapter.6}{Experimentations}{}% 58
-\BOOKMARK [1][-]{section.6.1}{Dataset and ground truth construction}{chapter.6}% 59
-\BOOKMARK [2][-]{subsection.6.1.1}{Dataset description}{section.6.1}% 60
-\BOOKMARK [2][-]{subsection.6.1.2}{Terms of use}{section.6.1}% 61
-\BOOKMARK [2][-]{subsection.6.1.3}{Ground truth construction}{section.6.1}% 62
-\BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 63
-\BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 64
-\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 65
-\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation}{section.6.2}% 66
-\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation}{section.6.2}% 67
-\BOOKMARK [2][-]{subsection.6.2.3}{Tail detection}{section.6.2}% 68
-\BOOKMARK [2][-]{subsection.6.2.4}{Semantic links}{section.6.2}% 69
-\BOOKMARK [2][-]{subsection.6.2.5}{Text recognition}{section.6.2}% 70
-\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 71
-\BOOKMARK [2][-]{subsection.6.3.1}{Experimental settings}{section.6.3}% 72
-\BOOKMARK [2][-]{subsection.6.3.2}{Result analysis}{section.6.3}% 73
-\BOOKMARK [1][-]{section.6.4}{Text extraction and recognition evaluation}{chapter.6}% 74
-\BOOKMARK [2][-]{subsection.6.4.1}{Experimental settings}{section.6.4}% 75
-\BOOKMARK [2][-]{subsection.6.4.2}{Results analysis}{section.6.4}% 76
-\BOOKMARK [1][-]{section.6.5}{Balloon extraction evaluation}{chapter.6}% 77
-\BOOKMARK [2][-]{subsection.6.5.1}{Experimental settings}{section.6.5}% 78
-\BOOKMARK [2][-]{subsection.6.5.2}{Result analysis}{section.6.5}% 79
-\BOOKMARK [1][-]{section.6.6}{Tail detection evaluation}{chapter.6}% 80
-\BOOKMARK [2][-]{subsection.6.6.1}{Experimental settings}{section.6.6}% 81
-\BOOKMARK [2][-]{subsection.6.6.2}{Result analysis}{section.6.6}% 82
-\BOOKMARK [1][-]{section.6.7}{Comic character extraction evaluation}{chapter.6}% 83
-\BOOKMARK [2][-]{subsection.6.7.1}{Experimental settings}{section.6.7}% 84
-\BOOKMARK [2][-]{subsection.6.7.2}{Result analysis}{section.6.7}% 85
-\BOOKMARK [1][-]{section.6.8}{Semantic links evaluation}{chapter.6}% 86
-\BOOKMARK [2][-]{subsection.6.8.1}{Experimental settings}{section.6.8}% 87
-\BOOKMARK [2][-]{subsection.6.8.2}{Results analysis}{section.6.8}% 88
-\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis evaluation}{chapter.6}% 89
-\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 90
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 91
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 92
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 93
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 94
-\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 95
-\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 96
-\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 97
-\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 98
-\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 99
-\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 100
-\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 101
-\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 102
-\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 103
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 104
-\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 105
-\BOOKMARK [0][-]{section*.165}{Bibliography}{}% 106
+\BOOKMARK [2][-]{subsection.4.3.4}{Text line generation}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.5}{Text recognition}{section.4.3}% 36
+\BOOKMARK [2][-]{subsection.4.3.6}{Conclusion}{section.4.3}% 37
+\BOOKMARK [1][-]{section.4.4}{Balloon extraction and classification}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.4.1}{Balloon segmentation}{section.4.4}% 39
+\BOOKMARK [2][-]{subsection.4.4.2}{Balloon classification}{section.4.4}% 40
+\BOOKMARK [1][-]{section.4.5}{Comic character spotting}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.5.1}{Input query}{section.4.5}% 42
+\BOOKMARK [2][-]{subsection.4.5.2}{Colour reduction}{section.4.5}% 43
+\BOOKMARK [2][-]{subsection.4.5.3}{Query descriptor}{section.4.5}% 44
+\BOOKMARK [2][-]{subsection.4.5.4}{Object retrieval}{section.4.5}% 45
+\BOOKMARK [1][-]{section.4.6}{Conclusions}{chapter.4}% 46
+\BOOKMARK [0][-]{chapter.5}{Method 3: knowledge-driven analysis}{}% 47
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.2}{Expert system}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.3}{Knowledge representation}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.4}{Processing sequence}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.5}{Presentation of the model}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.5.1}{Image model}{section.5.5}% 53
+\BOOKMARK [2][-]{subsection.5.5.2}{Comics model}{section.5.5}% 54
+\BOOKMARK [2][-]{subsection.5.5.3}{Model interactions}{section.5.5}% 55
+\BOOKMARK [1][-]{section.5.6}{Interactions between high and low level processing}{chapter.5}% 56
+\BOOKMARK [2][-]{subsection.5.6.1}{Validation of the extractions}{section.5.6}% 57
+\BOOKMARK [2][-]{subsection.5.6.2}{Inferences from the low level information}{section.5.6}% 58
+\BOOKMARK [1][-]{section.5.7}{Conclusions}{chapter.5}% 59
+\BOOKMARK [0][-]{chapter.6}{Experimentations}{}% 60
+\BOOKMARK [1][-]{section.6.1}{Dataset and ground truth construction}{chapter.6}% 61
+\BOOKMARK [2][-]{subsection.6.1.1}{Dataset description}{section.6.1}% 62
+\BOOKMARK [2][-]{subsection.6.1.2}{Terms of use}{section.6.1}% 63
+\BOOKMARK [2][-]{subsection.6.1.3}{Ground truth construction}{section.6.1}% 64
+\BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 65
+\BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 66
+\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation}{section.6.2}% 68
+\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation}{section.6.2}% 69
+\BOOKMARK [2][-]{subsection.6.2.3}{Tail detection}{section.6.2}% 70
+\BOOKMARK [2][-]{subsection.6.2.4}{Semantic links}{section.6.2}% 71
+\BOOKMARK [2][-]{subsection.6.2.5}{Text recognition}{section.6.2}% 72
+\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 73
+\BOOKMARK [2][-]{subsection.6.3.1}{Experimental settings}{section.6.3}% 74
+\BOOKMARK [2][-]{subsection.6.3.2}{Result analysis}{section.6.3}% 75
+\BOOKMARK [1][-]{section.6.4}{Text extraction and recognition evaluation}{chapter.6}% 76
+\BOOKMARK [2][-]{subsection.6.4.1}{Experimental settings}{section.6.4}% 77
+\BOOKMARK [2][-]{subsection.6.4.2}{Results analysis}{section.6.4}% 78
+\BOOKMARK [1][-]{section.6.5}{Balloon extraction evaluation}{chapter.6}% 79
+\BOOKMARK [2][-]{subsection.6.5.1}{Experimental settings}{section.6.5}% 80
+\BOOKMARK [2][-]{subsection.6.5.2}{Result analysis}{section.6.5}% 81
+\BOOKMARK [1][-]{section.6.6}{Tail detection evaluation}{chapter.6}% 82
+\BOOKMARK [2][-]{subsection.6.6.1}{Experimental settings}{section.6.6}% 83
+\BOOKMARK [2][-]{subsection.6.6.2}{Result analysis}{section.6.6}% 84
+\BOOKMARK [1][-]{section.6.7}{Comic character extraction evaluation}{chapter.6}% 85
+\BOOKMARK [2][-]{subsection.6.7.1}{Experimental settings}{section.6.7}% 86
+\BOOKMARK [2][-]{subsection.6.7.2}{Result analysis}{section.6.7}% 87
+\BOOKMARK [1][-]{section.6.8}{Semantic links evaluation}{chapter.6}% 88
+\BOOKMARK [2][-]{subsection.6.8.1}{Experimental settings}{section.6.8}% 89
+\BOOKMARK [2][-]{subsection.6.8.2}{Results analysis}{section.6.8}% 90
+\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis evaluation}{chapter.6}% 91
+\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 92
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 93
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 94
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 95
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 96
+\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 97
+\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 98
+\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 99
+\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 100
+\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 101
+\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 102
+\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 103
+\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 104
+\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 105
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 106
+\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 107
+\BOOKMARK [0][-]{section*.165}{Bibliography}{}% 108

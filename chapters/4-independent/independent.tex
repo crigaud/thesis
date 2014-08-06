@@ -105,7 +105,7 @@ This is particularly the case for comics which have a complex background.
 We present how to take advantage of Optical Character Recognition systems (OCR) in order to improve text localisation.
 
 \subsection{Introduction} % (fold)
-\label{sub:introduction}
+\label{sub:in:text_introduction}
 
 In comic book documents, text is mixed with graphical content which produces a lot false detections if we submit the whole image directly to an OCR system, usually coupled with a layer analysis pre-processing to avoid trying to recognize text in graphical region (e.g images, tables and formulas).
 The mixture of typewritten, handwritten-like and handwritten text makes the task particularly difficult for comics.
@@ -130,13 +130,6 @@ To solve the particular problems which are provoked by the combination of comple
 % We improve the initial segmentation step to cope with complex backgrounds.
 % Furthermore, we adapt the text line extraction method to cope with unstructured documents.
 
-
-% subsection introduction (end)
-
-% \subsection{Methodology} % (fold)
-% \label{sub:methodology}
-
-
 The contributions come at different levels. 
 First, an adapted binary segmentation method is presented followed by a text/graphic separation algorithm based on the local contrast and neighbourhood similarities and finally, text recognition is used to verify the presence of textual information in the result.
 
@@ -145,7 +138,7 @@ First, an adapted binary segmentation method is presented followed by a text/gra
 
 
 \subsection{Bi-level segmentation}
-\label{sec:te:segmentation}
+\label{sec:in:segmentation}
 Segmentation is a crucial step in many text localization methods.
 Comic speech text is made of strokes, generally black on white, that we would like to isolate from the rest of the image content (background).
 A perfect text segmentation would result to individual text letters represented by single connected components (Section~\ref{sec:ap:connected_component_labelling}).
@@ -157,9 +150,42 @@ Bright/dark region separation can be done using a bi-level segmentation algorith
 Several approaches exist and their performance relies on the input data distribution.
 If the input data are composed by only black or white pixels any method will do the work be it is rarely the case.
 The best input would be a highly contrasted image where the feature of interest are concentrated in one of the extrema.
-As we do not use the colour information, we convert the 3 channel colour image into a single channel grey image.
+As we do not use the colour information, we convert the 3 channel colour image (RGB) into a single channel grey image.
 There are several manners to create a grey-scale image from a colour image.
 The first approach is to combine each pixel value from each colour channel with different weighting coefficients corresponding to the measured intensity perception of typical trichromat humans\footnote{\url{http://en.wikipedia.org/wiki/Grayscale}}, in order to produce a single value per pixel.
+Another approach is to use only one channel but as the text we are interested in is not in red, green or blue (RGB colour space) it is irrelevant in our case.
+Nevertheless, RGB colour space can easily be converted to a different colour space such as HSV or HSL that encodes colours as Hue, Saturation, Value or Luminance.
+The luminance channel is particularly appropriate for bright and dark region separation~\cite{Ho2012}.
+
+Even if looking at the pixel from the luminance point of view is more appropriate for our purpose, we still need to determine the threshold value that will best divide the grey value distribution into two clusters (Figure~\ref{fig:in:greyscale_text_pixel_distribution}).
+
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
+	  \centering
+		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{threshold_selection_methods.jpg}
+		\caption[Grey scale image pixel value distribution for text and non text region]{Grey scale image pixel value distribution and text repartition. The percentage of pixel belonging to text regions are in green, others in red \modif{TODO: update figure}.}
+		\label{fig:in:greyscale_text_pixel_distribution}
+	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fixing a threshold value like Arai's method~\cite{Arai11} works only for few comics type with a same text background intensity (Figure~\ref{fig:in:threshold_selection_methods}).
+This phenomenon is intrinsic to the nature of comics, as due to the design process they contain textured areas and loosely connected strokes that give rise to merged components at different thresholds.
+This is intensified by the digitization and image compression process that adds further noise to the page (Section~\ref{sec:document_image_analysis}).
+Instead of using a fixed threshold, we use the well known Otsu's threshold selection method that have been extensively use since decades for this purpose (Section~\ref{sub:ap:bi_threshold}).
+Otsu's threshold is computed for each image and applied to the whole image assuming that the image have not been degraded locally.
+In case of such local degradation (e.g. holes, crossed text, partial erasure, highlighting, tearing paper, stain), a local threshold selection method should be used (Section~\ref{sub:ap:bi_threshold}).
+
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
+	  \centering
+		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.95\textwidth]{threshold_selection.jpg}
+		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of several comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation with a fixed threshold at 250 (as Arai~\cite{Arai11}) and fourth row shows the corresponding results using the automatic Otsu's threshold selection method.}
+		\label{fig:in:threshold_selection_methods}
+	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -183,41 +209,43 @@ The first approach is to combine each pixel value from each colour channel with 
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This phenomenon is intrinsic to the nature of comics, as due to the design process they contain textured areas and loosely connected strokes that give rise to merged components at different thresholds.
-This is intensified by the digitization and image compression process that adds further noise to the page.
 
 %Our method, Minimum Connected Components Thresholding (MCCT), automatically finds the right threshold by computing the number of CC for different threshold levels in a range of values from $th_{min}$ to $th_{max}$ and selecting the one that produces the minimum number of CC between the  (in a 8 bits grey image). %We defined a range from 100 to 230 (grayscale value of 8 bits image) for the binarization threshold.
-Our method, Minimum Connected Components Thresholding (MCCT), improves Otsu's threshold selection method by shifting the threshold according to the number of CC that are created.
-Given an Otsu's threshold $th_i$, we segment the image at different threshold centred on $th_i$ (e.g. $th_{i-1}$ to $th_{i-n}$ and $th_{i+1}$ to $th_{i+n}$) and select the one that produces the minimum number of CC (Figure~\ref{fig:in:CC_graph}).
-Note that the threshold selection method requires a single channel image (e.g intensity, luminance) %We defined a range from 100 to 230 (grayscale value of 8 bits image) for the binarization threshold.
-\modif{TODO: experiment and remove $th_{min}$ and $th_{max}$ if possible.}
+% Our method, Minimum Connected Components Thresholding (MCCT), improves Otsu's threshold selection method by shifting the threshold according to the number of CC that are created.
+% Given an Otsu's threshold $th_i$, we segment the image at different threshold centred on $th_i$ (e.g. $th_{i-1}$ to $th_{i-n}$ and $th_{i+1}$ to $th_{i+n}$) and select the one that produces the minimum number of CC (Figure~\ref{fig:in:CC_graph}).
+% Note that the threshold selection method requires a single channel image (e.g intensity, luminance) %We defined a range from 100 to 230 (grayscale value of 8 bits image) for the binarization threshold.
+% \modif{TODO: experiment and remove $th_{min}$ and $th_{max}$ if possible.}
 
 % Then we find the first minimal number of CC. See example on figure~\ref{fig:in:CC_graph}.
 % Note, that the optimal threshold is correctly predicted by MCCT as it corresponds to the bottom-left image figure~\ref{fig:in:bin}.
 
 % 
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
-	  \centering
-		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{CC_graph_source_one_curve.pdf}
-		\caption[Evolution of the number of connected-component]{Example of number of CC function of the segmentation threshold. In this case, $th_{min}=100$, $th_{max}=230$ and our algorithm found 150 as optimal threshold threshold \modif{TODO: update with more credible figure from 0 to 255 (average CC evolution instead of single image???)}.}
-		\label{fig:in:CC_graph}
-	\end{figure}
+	% \begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
+	%   \centering
+	% 	\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{CC_graph_source_one_curve.pdf}
+	% 	\caption[Evolution of the number of connected-component]{Example of number of CC function of the segmentation threshold. In this case, $th_{min}=100$, $th_{max}=230$ and our algorithm found 150 as optimal threshold threshold \modif{TODO: update with more credible figure from 0 to 255 (average CC evolution instead of single image???)}.}
+	% 	\label{fig:in:CC_graph}
+	% \end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As an alternative segmentation method, we also tried to extract text CC using the Maximally Stable Extremal Region (MSER) algorithm~\cite{matas2004robust}.
-This algorithm produces an excess of false detections as in general a lot of the graphical elements are equally stable as the text.% We also try the well known Otsu~\cite{otsu79} algorithm \modif{TODO; justify or delete}.
+As an alternative segmentation method, we also tried to extract text region using the Maximally Stable Extremal Region (MSER) algorithm~\cite{matas2004robust}.
+This algorithm was better than the proposed method only for text region of type onomatopoeia but produced an excess of false detections as in general a lot of the graphical elements are equally stable as the text (flat regions).
+
+% We also try the well known Otsu~\cite{otsu79} algorithm \modif{TODO; justify or delete}.
 %\footnote{http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html}
 % (see section~\ref{sec:experiments}).
 
 %Our method is similar to Maximally Stable Extremal Region (MSER) algorithm~\cite{Matas02} because we also try to find an extrema. However, MSER accuracy is low because of the stroke of the text which is very thin compare to the other elements present in the page. This algorithm require a minimum number of stable regions as threshold which as to be very low in our case (text is small region) and a lot of other regions will remain then.
 
 \subsection{Text/graphics separation}
-\label{sec:te:textgraphicseparation}
+\label{sec:in:textgraphicseparation}
 %For the extraction we use CC algorithm for the reason presented in~\ref{sec:segmentation}. We considered only the CC that are black on a white background in the binary image (see figure~\ref{fig:in:bw_wb}). %For the white CC on black background see experiments (section~\ref{sec:experiments}).
-After the binarisation step, the connected component may correspond to graphics, single letters or a sequence of letters if some are connected (Figure~\ref{fig:in:detach_attach_letter}).
+
+After the binary segmentation step we apply the connected-component (CC) labelling method (Section~\ref{sec:ap:connected_component_labelling}) to extract the black strokes as many previous work in the literature (Section~\ref{sec:sota:text}).
+At this stage, the extracted components may correspond to part of drawing, single letters or a sequence of letters if some are connected (Figure~\ref{fig:in:detach_attach_letter}).
 The objective of this section is to separate the last two categories from the first one.
-Note that the merged letters will not affect our results (if they are part of the same word) because the expected output is at text line level.
+Note that connected letters will not affect our results (if they are part of the same word) because the expected output is at text line level.
 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,7 +279,7 @@ Note that the merged letters will not affect our results (if they are part of th
 
 %\subsubsection{Letter filtering}
 
-We propose a number of rules, applied sequentially, to separate graphics from text. Due to the wide variety of text usage in comic albums, the method should be size, translation, rotation, scale and contrast invariant. In addition, it should be robust to text-less pages which may appear randomly within an album. From all the components extracted by the CC algorithm, we use three filtering rules to select only the ones corresponding to textual elements.
+We propose a number of rules, applied sequentially, to separate graphics from text. Due to the wide variety of text usage in comic albums, the method should be size, translation, rotation, scale and contrast invariant. In addition, it should be robust to text-less pages which may appear randomly within an album. From all the components extracted by the CC algorithm, we use three filtering rules to select only the ones corresponding to potential textual elements.
 
 %The idea is to keep only the groups of very contrasted CC.
 
@@ -266,8 +294,10 @@ We propose a number of rules, applied sequentially, to separate graphics from te
 
 % \begin{itemize}
 
-%[(a)]
-Rule 1: we compare the standard deviation of the grey-levels of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a hight/low local contrast CC separation. We assume a Gaussian distribution but other distribution are under study. The contrast ratio of the page is the absolute difference between the minimum and the maximum grey-levels found on the page. In order to avoid artefacts pixel values, we apply a median filtering as preprocessing.%The higher the standard deviation is, the higher the probably of being a letter.
+Rule 1: we compare the standard deviation of the grey-levels of the luminance layer of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a high/low local contrast CC separation, similarly to~\cite{Li2013Unsupervised} using the Mahalanobis distance~\cite{mahalanobis1936generalized,de2000mahalanobis}.
+We assume a Gaussian distribution of the grey level pixels but other distribution are under study. The contrast ratio of the page is the absolute difference between the minimum and the maximum grey-levels found on the page.
+% In order to avoid artefacts pixel values, we apply a median filtering as preprocessing.
+%The higher the standard deviation is, the higher the probably of being a letter.
 
 %The minimum of difference between letter standard deviation ($\sigma$) and the page content ratio was 1/2 (according to $\sigma=68.27\%$ of the values)
 
@@ -285,25 +315,25 @@ Rule 1: we compare the standard deviation of the grey-levels of each CC bounding
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Rule 2: we apply a topological filtering that consists in removing all the CC that overlap with others assuming that the CC of a letter can not contain another CC, similar to~\cite{Kasar07}.
-In our study we consider only the black on white CC. (Figure~\ref{fig:in:bw_wb}).
+% Rule 2: we apply a topological filtering that consists in removing all the CC that overlap with others assuming that the CC of a letter can not contain another CC, similar to~\cite{Kasar07}.
+% In our study we consider only the black on white CC (Figure~\ref{fig:in:bw_wb}).
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[h!]%trim=l b r t
-	  \begin{center}$
-	    \begin{array}{cc}
-	      \includegraphics[height=8mm, trim= 0px 4px 0px 3px, clip]{BW_bin_CC.png} &
-	      \includegraphics[height=8mm, trim= 0px 4px 0px 3px, clip]{WB_bin_CC.png}
-	    \end{array}$
-	  \end{center}
-	\caption[Difference between black over white and white over black connected-components]{On the left an example of black on white CC bounding box (red rectangle) and the right a white on black.}
-\label{fig:in:bw_wb}
-	\end{figure}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}[h!]%trim=l b r t
+% 	  \begin{center}$
+% 	    \begin{array}{cc}
+% 	      \includegraphics[height=8mm, trim= 0px 4px 0px 3px, clip]{BW_bin_CC.png} &
+% 	      \includegraphics[height=8mm, trim= 0px 4px 0px 3px, clip]{WB_bin_CC.png}
+% 	    \end{array}$
+% 	  \end{center}
+% 	\caption[Difference between black over white and white over black connected-components]{On the left, an example of black over white CC bounding box (red rectangle) and on the right side, a white over black (the white inside region of the letter ``A'').}
+% 	\label{fig:in:bw_wb}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Rule 3: we check that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines).
-To do so, we check for similar in height components in an area equal to the size of the component's bounding box extended to its left/right/top/bottom directions (Figure~\ref{fig:in:4_direction}). For instance, $l_i$ is similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
+Rule 2: we verify that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines).
+To do so, we check for similar in height components in a local region equal to the size of the component's bounding box extended to its left/right/top/bottom directions (Figure~\ref{fig:in:4_direction}). For instance, $l_i$ is considered similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
 %\end{enumerate}
 
 
@@ -311,26 +341,32 @@ To do so, we check for similar in height components in an area equal to the size
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[width=0.50\textwidth]{4_direction.png}
-		\caption[Text extraction neighbourhood validation]{Example of the letter validation method (rule 3). The area of the bounding box of the letter ``A'' is extended in four directions around the letter ``A'' to check if any other letter (blue rectangles) overlaps with it. In this case, there are two overlapping components (red dashed rectangles) at the right and the bottom of the letter ``A''. The component is thus accepted as a possible letter.}
+		\caption[Text candidate region neighbourhood analysis]{Neighbourhood analysis for text and non text classification (rule 3). The area of the bounding box of the letter ``A'' is extended in four directions around the letter ``A'' to check if any other letter (blue rectangles) overlaps with it. In this example, there are two overlapping components (red dashed rectangles) at the right and the bottom of the letter ``A''. The component is thus accepted as a text letter candidate.}
 		\label{fig:in:4_direction}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Rule 4:
-we check all the CC bounding boxes pairs that overlap more than $b$\% each other. We remove the biggest from each pairs.
+Rule 3:
+we check all the CC bounding boxes pairs that overlap more than $b$\% each other.
+We remove the biggest from each pairs.
 
+\subsection{Text line generation} % (fold)
+\label{sub:in:text_line_generation}
+As already mentioned Section~\ref{par:se:letter_to_line}, the gap between text component (e.g. letter or attached letters, word) and text lines can vary significantly.
+Here we use the same method presented in Section~\ref{par:se:letter_to_line} to group text component into text lines considering only the text height (or width for vertical text).
+%We can group text parts to text lines using the method presented Section~\ref{par:se:letter_to_line}.
+
+% subsection text_line_generation (end)
 % \end{itemize}
-The four rules exploit contrast, topology and text structure to classify the CCs as being either graphics or text.
-We can group text parts to text lines using the method presented Section~\ref{par:se:letter_to_line}.
 
 
 \subsection{Text recognition} % (fold)
-\label{sub:te:text_recognition}
+\label{sub:in:text_recognition}
 Automatic text recognition has been studied for many years, today OCR systems are very efficient for standard fonts but not optimized for comics fonts which are mostly handwritten.
-The principal interest of text recognition is the ability of searching images by using keywords.
-
+The principal interest of text recognition is the ability of searching images by using keywords which opens up many applications (Section~\ref{sec:sota:text}).
 Text recognition applied to comics is really challenging because it includes most of the difficulties from text recognition in document analysis domain if we consider all the type of text that composed the comics.
 From typewritten to handwritten and free-form text in uniform to complex background including image noise, text deformation and overlapping (Figure~\ref{fig:in:texlines_example}).
+Note that the text is mainly written in upper case for Latin scripts in comics which reduce the complexity of recognition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -343,19 +379,30 @@ From typewritten to handwritten and free-form text in uniform to complex backgro
 
 % Text recognition in comics would allow full-text search, tagging, image description, comic character labelling etc.
 Text recognition for comics requires an extensive work to be addressed properly, which is out of the scope of this thesis work.
+Even if standard OCR recognition rate is not yet acceptable yet for full-text based application in comics, they can help at separating text/non text regions.
 
-Even if standard OCR systems output is not yet at a 90\% accuracy for comic book fonts, they can help a separating text/non text regions.
-\modif{TODO: to continue (Latin/Japanese)}
+We pass each text line candidate through an OCR system to validate its content.
+The validation criterion is that the OCR recognize at least one alphabetical symbol within the candidate region, else it is rejected.
+The text line are composed by 12 character in average which give a good chances to OCR to recognize at least on of them (Section~\ref{sec:dataset_description}).
 
 
 % Nevertheless, we measure the performance of current OCR systems Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
 
+\subsection{Conclusion} % (fold)
+\label{sub:in:text_conclusion}
+The proposed approach consist in a adapted bi-level segmentation followed by a three rules filtering based on contrast, topology and local similarities to classify the connected components as being part of either graphics or text region.
+A text line level verification valid the textual content of the candidate regions using an OCR system.
+The method does not require previous knowledge about the image content unlike the sequential approach proposed Section~\ref{sec:se:panel_and_text} that is implicitly linked to the panel regions.
+This method is experimented Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
+
+% subsection conclusion (end)
 % section text_localisation_and_recognition (end)
 
-\section{Balloon segmentation and classification}
+\section{Balloon extraction and classification}
 \label{sec:in:balloon}
 
-In this section we present a method for pixel level balloon segmentation that do not requires previous text extraction unlike the method presented Section~\ref{sub:se:regular_balloon_extraction}.
+In this section we present a method for pixel level balloon extraction based on connected-component content analysis.
+This method does not requires previous text extraction unlike the method presented Section~\ref{sub:se:regular_balloon_extraction}.
 Then we analyse the balloon contour for classification purposes, as ``smooth'', ``wavy'' and ``zigzag'' that may correspond to ``dialogue'', ``thought'' and ``exclamation'' in a higher level context.
 
 \subsection{Balloon segmentation} % (fold)
@@ -650,10 +697,14 @@ This selection can be assisted using a scribble-based tool~\cite{Xu2012LazySelec
 %------------------------------------------------------------------------
 \subsection{Colour reduction}
 Once the user has highlighted the query region, we reduce the number of colour of all the images of the album (including the query region) according to a colour palette $P_c$.
-This limited amount of colours allows to describe and retrieve the object with only few representative colours.
+Colour reduction or quantization generally involves two steps.
+The first step is to choose a proper colour palette and the second step is to reconstruct an image by replacing original colours with the most similar colour from the palette.
 
 \modif{TODO: Il faut donner les détails de la méthode que tu utilises sauf si tu l'as mise dans l'état de l'art au chapitre 2 (faire lien).
 Describe method and propose L0-smoothing ++ as promising alternative but the chosen method is simple, faster and good enough for our purpose. RGB colour space?}
+
+This limited amount of colours allows to describe and retrieve the object with only few representative colours.
+
 
 % An alternative would be to compute a more specific palette according to the query colours.
 
@@ -717,14 +768,14 @@ Second we find the object position in each pages by using a sliding window appro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We define the detection confidence $C$ according to the number of identical colours between the query descriptor $D$ and each sliding window positions $W=\{w_0,w_1,...,w_n\}$ (Equation.~\ref{eq:in:confidence_character_spotting}).
+We define the detection confidence $C_{w_i}$ according to the number of identical colours between the query descriptor $D$ and each sliding window positions $W=\{w_0,w_1,...,w_n\}$ (Equation.~\ref{eq:in:confidence_character_spotting}).
 This is equal to the cardinality of the intersection between the two colour set $D$ and $w_i$. The confidence is maximal when all the colours in the query descriptor are contained by the window (high probability of the object to be at this location).
-The confidence $C$ is defined as follow:
+The confidence $C_{w_i}$ is defined as follow:
 
 \begin{equation}\label{eq:in:confidence_character_spotting}
-   C(w_i) = \frac{|D|}{|D \cap w_i|}\\
+   C_{w_i} = \frac{|D|}{|D \cap w_i|}\\
  \end{equation}
-where $C$ is the confidence value for the region $w_i$, $|D|$ the cardinality of the colour set $D$ and $|D \cap w_i|$ the cardinality (number of element) of the intersection between $D$ and $w_i$ .
+where $C_{w_i}$ is the confidence value for the region $w_i$, $|D|$ the cardinality of the colour set $D$ and $|D \cap w_i|$ the cardinality (number of element) of the intersection between $D$ and $w_i$ .
 
 The confidence value is compared to a threshold value $T$ to decide whether or not the detection is correct. By using a multi-scale approach, a same region may be detected at different scales. In order to keep only the smallest region that include a minimal amount of background information, we compute the percentage of pixel $p$ which are of a colour from the descriptor for each detection region. 
 A post processing step removes multiple object detections by keeping only the regions (windows) that are not overlapped by other regions with a higher $p$ value (best detected). See algorithm~\ref{al:in:retrieval} and Figure~\ref{fig:in:filtering}.

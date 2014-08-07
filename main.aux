@@ -308,7 +308,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Conclusion}{18}{section.2.5}}
 \newlabel{sec:sota:conclusion}{{2.5}{18}{Conclusion}{section.2.5}{}}
 \citation{mccloud2006Making}
-\citation{Szeliski2010Computer}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Method 1: sequential information extraction}{19}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -316,22 +315,19 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{19}{section.3.1}}
 \newlabel{sec:introduction}{{3.1}{19}{Introduction}{section.3.1}{}}
 \@writefile{brf}{\backcite{mccloud2006Making}{{19}{3.1}{section.3.1}}}
-\@writefile{brf}{\backcite{Szeliski2010Computer}{{19}{3.1}{section.3.1}}}
 \citation{Pratt91}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Panel and text}{20}{section.3.2}}
 \newlabel{sec:se:panel_and_text}{{3.2}{20}{Panel and text}{section.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Image segmentation}{20}{section*.13}}
 \newlabel{par:se:image_segmentation}{{3.2}{20}{Image segmentation}{section*.13}{}}
-\@writefile{toc}{\contentsline {paragraph}{Image segmentation}{20}{section*.13}}
 \@writefile{brf}{\backcite{Pratt91}{{20}{3.2}{section*.13}}}
 \citation{Bubble09}
+\@writefile{toc}{\contentsline {subsubsection}{Connected-component extraction}{21}{section*.14}}
 \newlabel{par:connected_component_extraction}{{3.2}{21}{Connected-component extraction}{section*.14}{}}
-\@writefile{toc}{\contentsline {paragraph}{Connected-component extraction}{21}{section*.14}}
+\@writefile{toc}{\contentsline {subsubsection}{Clustering}{21}{section*.16}}
 \newlabel{par:clustering}{{3.2}{21}{Clustering}{section*.16}{}}
-\@writefile{toc}{\contentsline {paragraph}{Clustering}{21}{section*.16}}
+\@writefile{toc}{\contentsline {subsubsection}{Panel pruning}{21}{section*.18}}
 \newlabel{par:se:pruning}{{3.2}{21}{Panel pruning}{section*.18}{}}
-\@writefile{toc}{\contentsline {paragraph}{Panel pruning}{21}{section*.18}}
-\newlabel{par:se:letter_to_line}{{3.2}{21}{Letter to text line}{section*.20}{}}
-\@writefile{toc}{\contentsline {paragraph}{Letter to text line}{21}{section*.20}}
 \newlabel{fig:se:binary_img}{{3.1a}{22}{Subfigure 3 3.1a}{subfigure.3.1.1}{}}
 \newlabel{sub@fig:se:binary_img}{{(a)}{a}{Subfigure 3 3.1a\relax }{subfigure.3.1.1}{}}
 \newlabel{fig:se:cc_bounding_box}{{3.1b}{22}{Subfigure 3 3.1b}{subfigure.3.1.2}{}}
@@ -346,7 +342,6 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Connected-component bounding boxes}}}{22}{subfigure.1.2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Panel cluster}}}{22}{subfigure.1.3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Text cluster}}}{22}{subfigure.1.4}}
-\citation{Clavelli09}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Descendant histogram of the connected component bounding box heights}}{23}{figure.caption.17}}
 \newlabel{fig:se:histo_roi}{{3.2}{23}{Descendant histogram of the connected component bounding box heights}{figure.caption.17}{}}
 \newlabel{fig:se:frame_candidates}{{3.3a}{23}{Subfigure 3 3.3a}{subfigure.3.3.1}{}}
@@ -356,66 +351,69 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Topological pruning of panel bounding box extraction}}{23}{figure.caption.19}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Candidate panels}}}{23}{subfigure.3.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Pruned panels}}}{23}{subfigure.3.2}}
-\@writefile{brf}{\backcite{Clavelli09}{{23}{3.2}{figure.caption.21}}}
-\newlabel{par:text_line_grouping}{{3.2}{23}{Text line to paragraph}{section*.22}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Letter to text line}{23}{section*.20}}
+\newlabel{par:se:letter_to_line}{{3.2}{23}{Letter to text line}{section*.20}{}}
+\citation{Clavelli09}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Text component horizontal and vertical alignments}}{24}{figure.caption.21}}
 \newlabel{fig:se:letter_position}{{3.4}{24}{Text component horizontal and vertical alignments}{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {paragraph}{Text line to paragraph}{24}{section*.22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Text line to text paragraph conversion illustration}}{24}{figure.caption.23}}
-\newlabel{fig:se:line_to_paragraphs}{{3.5}{24}{Text line to text paragraph conversion illustration}{figure.caption.23}{}}
+\@writefile{brf}{\backcite{Clavelli09}{{24}{3.2}{figure.caption.21}}}
+\@writefile{toc}{\contentsline {subsubsection}{Text line to paragraph}{24}{section*.22}}
+\newlabel{par:text_line_grouping}{{3.2}{24}{Text line to paragraph}{section*.22}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}From text to balloon}{24}{section.3.3}}
 \newlabel{sec:se:from_text_to_balloon}{{3.3}{24}{From text to balloon}{section.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Text line to text paragraph conversion illustration}}{25}{figure.caption.23}}
+\newlabel{fig:se:line_to_paragraphs}{{3.5}{25}{Text line to text paragraph conversion illustration}{figure.caption.23}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Regular balloon extraction}{25}{subsection.3.3.1}}
 \newlabel{sub:se:regular_balloon_extraction}{{3.3.1}{25}{Regular balloon extraction}{subsection.3.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Text positions in speech balloons}}{25}{figure.caption.24}}
-\newlabel{fig:se:text_in_balloon}{{3.6}{25}{Text positions in speech balloons}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Blob extraction}{25}{section*.25}}
 \newlabel{par:blob_extraction}{{3.3.1}{25}{Blob extraction}{section*.25}{}}
-\@writefile{toc}{\contentsline {paragraph}{Blob extraction}{25}{section*.25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Text positions in speech balloons}}{26}{figure.caption.24}}
+\newlabel{fig:se:text_in_balloon}{{3.6}{26}{Text positions in speech balloons}{figure.caption.24}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Sequential balloon extraction process illustration}}{26}{figure.caption.26}}
 \newlabel{fig:se:closed_balloon}{{3.7}{26}{Sequential balloon extraction process illustration}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Balloon extraction}{26}{section*.27}}
 \newlabel{par:balloon_extraction}{{3.3.1}{26}{Balloon extraction}{section*.27}{}}
-\@writefile{toc}{\contentsline {paragraph}{Balloon extraction}{26}{section*.27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}}{26}{figure.caption.28}}
-\newlabel{fig:se:align_diff}{{3.8}{26}{Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}{figure.caption.28}{}}
 \newlabel{eq:se:balloon_confidence_value}{{3.1}{26}{Balloon extraction}{equation.3.3.1}{}}
 \citation{Bubble09}
 \citation{Bubble09}
-\citation{Cremers2002}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}}{27}{figure.caption.28}}
+\newlabel{fig:se:align_diff}{{3.8}{27}{Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}{figure.caption.28}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Implicit balloon extraction}{27}{subsection.3.3.2}}
 \newlabel{sub:se:implicit_balloon_extraction}{{3.3.2}{27}{Implicit balloon extraction}{subsection.3.3.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Speech balloon contour types}}{27}{figure.caption.29}}
 \@writefile{brf}{\backcite{Bubble09}{{27}{3.9}{figure.caption.29}}}
 \newlabel{fig:se:balloon_examples}{{3.9}{27}{Speech balloon contour types}{figure.caption.29}{}}
-\@writefile{brf}{\backcite{Cremers2002}{{27}{3.3.2}{figure.caption.29}}}
+\citation{Cremers2002}
 \citation{Kass1988}
 \citation{Xu1998}
+\@writefile{brf}{\backcite{Cremers2002}{{28}{3.3.2}{figure.caption.29}}}
 \newlabel{eq:se:energy2}{{3.2}{28}{Implicit balloon extraction}{equation.3.3.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{External energy}{28}{section*.30}}
 \newlabel{sec:se:external_energie}{{3.3.2}{28}{External energy}{section*.30}{}}
 \@writefile{brf}{\backcite{Kass1988}{{28}{3.3.2}{section*.30}}}
 \@writefile{brf}{\backcite{Xu1998}{{28}{3.3.2}{section*.30}}}
 \newlabel{eq:se:energy3}{{3.3}{28}{External energy}{equation.3.3.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Active contour energies for open balloon extraction}}{28}{figure.caption.31}}
-\newlabel{fig:se:distance_transform}{{3.10}{28}{Active contour energies for open balloon extraction}{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Internal energy}{29}{section*.32}}
+\@writefile{toc}{\contentsline {subsubsection}{Internal energy}{28}{section*.32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Active contour energies for open balloon extraction}}{29}{figure.caption.31}}
+\newlabel{fig:se:distance_transform}{{3.10}{29}{Active contour energies for open balloon extraction}{figure.caption.31}{}}
 \newlabel{eq:se:cont}{{3.4}{29}{Internal energy}{equation.3.3.4}{}}
 \newlabel{eq:se:curv}{{3.5}{29}{Internal energy}{equation.3.3.5}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Text energy}{29}{section*.33}}
 \newlabel{sec:se:text_energie}{{3.3.2}{29}{Text energy}{section*.33}{}}
-\newlabel{eq:se:know}{{3.6}{29}{Text energy}{equation.3.3.6}{}}
+\newlabel{eq:se:know}{{3.6}{30}{Text energy}{equation.3.3.6}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Proposed method}{30}{section*.34}}
 \newlabel{sec:proposed_method}{{3.3.2}{30}{Proposed method}{section*.34}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Open balloon detection loop\relax }}{30}{algorithm.1}}
-\newlabel{al:be:method}{{1}{30}{Open balloon detection loop\relax }{algorithm.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Active contour initialisation}{30}{section*.35}}
 \newlabel{sec:se:cont_init}{{3.3.2}{30}{Active contour initialisation}{section*.35}{}}
+\@writefile{toc}{\contentsline {paragraph}{Active contour initialisation}{30}{section*.35}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Open balloon detection loop\relax }}{31}{algorithm.1}}
+\newlabel{al:be:method}{{1}{31}{Open balloon detection loop\relax }{algorithm.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{31}{figure.caption.36}}
 \newlabel{fig:se:paragraphs}{{3.11}{31}{Active contour initialization based on text region convex hull}{figure.caption.36}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Low resolution contour localization}{31}{section*.37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{31}{figure.caption.38}}
-\newlabel{fig:se:mono_res_det}{{3.12}{31}{Examples of low resolution contour detection for balloon extraction}{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {paragraph}{Low resolution contour localization}{31}{section*.37}}
 \citation{Varnum2007Language}
-\@writefile{toc}{\contentsline {subsubsection}{High resolution contour shape fitting}{32}{section*.39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{32}{figure.caption.38}}
+\newlabel{fig:se:mono_res_det}{{3.12}{32}{Examples of low resolution contour detection for balloon extraction}{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {paragraph}{High resolution contour shape fitting}{32}{section*.39}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{32}{figure.caption.40}}
 \newlabel{fig:se:hd_contour}{{3.13}{32}{Examples of high resolution contour detection for balloon extraction}{figure.caption.40}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}From balloon to tail}{32}{section.3.4}}
@@ -423,24 +421,24 @@
 \@writefile{brf}{\backcite{Varnum2007Language}{{32}{3.4}{section.3.4}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{33}{figure.caption.41}}
 \newlabel{fig:se:tail_types}{{3.14}{33}{Examples of type of speech balloon tails}{figure.caption.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{33}{figure.caption.42}}
-\newlabel{fig:se:convexity_defects}{{3.15}{33}{Convex hull and convexity defects of a speech balloon}{figure.caption.42}{}}
-\newlabel{eq:se:optimisation}{{3.7}{34}{From balloon to tail}{equation.3.4.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{34}{figure.caption.43}}
-\newlabel{fig:se:tail_examples}{{3.16}{34}{Tail tip position precise position}{figure.caption.43}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{35}{figure.caption.44}}
-\newlabel{fig:se:tail_tip_refinement}{{3.17}{35}{Tail tip position and direction detection}{figure.caption.44}{}}
+\newlabel{eq:se:optimisation}{{3.7}{33}{From balloon to tail}{equation.3.4.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{34}{figure.caption.42}}
+\newlabel{fig:se:convexity_defects}{{3.15}{34}{Convex hull and convexity defects of a speech balloon}{figure.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{35}{figure.caption.43}}
+\newlabel{fig:se:tail_examples}{{3.16}{35}{Tail tip position precise position}{figure.caption.43}{}}
 \newlabel{eq:se:confidence_tail}{{3.8}{35}{From balloon to tail}{equation.3.4.8}{}}
 \newlabel{eq:se:mean_balloon_size}{{3.9}{35}{From balloon to tail}{equation.3.4.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}From tail to comic character}{35}{section.3.5}}
 \newlabel{sec:se:tail_to_character}{{3.5}{35}{From tail to comic character}{section.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{36}{figure.caption.44}}
+\newlabel{fig:se:tail_tip_refinement}{{3.17}{36}{Tail tip position and direction detection}{figure.caption.44}{}}
 \newlabel{eq:se:roi_position_around_balloon}{{3.10}{36}{From tail to comic character}{equation.3.5.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Values of the shift $O$ on horizontal and vertical axis and panel's corner selection according to the eight directions of the tail.\relax }}{36}{table.caption.45}}
 \newlabel{tab:se:offset_panel_corner}{{3.1}{36}{Values of the shift $O$ on horizontal and vertical axis and panel's corner selection according to the eight directions of the tail.\relax }{table.caption.45}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Conclusions}{36}{section.3.6}}
-\newlabel{sec:se:conclusion}{{3.6}{36}{Conclusions}{section.3.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{37}{figure.caption.46}}
 \newlabel{fig:se:roi_area}{{3.18}{37}{Illustration of the character region of interested computation for each of the eight directions of the tail}{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Conclusions}{37}{section.3.6}}
+\newlabel{sec:se:conclusion}{{3.6}{37}{Conclusions}{section.3.6}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Method 2: independent information extraction}{39}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -450,137 +448,129 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Panel extraction}{39}{section.4.2}}
 \newlabel{sec:in:panel_extraction}{{4.2}{39}{Panel extraction}{section.4.2}{}}
 \citation{Lubbin12}
-\newlabel{fig:in:se:panel_img}{{4.1a}{40}{Subfigure 4 4.1a}{subfigure.4.1.1}{}}
-\newlabel{sub@fig:in:se:panel_img}{{(a)}{a}{Subfigure 4 4.1a\relax }{subfigure.4.1.1}{}}
-\newlabel{fig:se:panel_binary}{{4.1b}{40}{Subfigure 4 4.1b}{subfigure.4.1.2}{}}
-\newlabel{sub@fig:se:panel_binary}{{(b)}{b}{Subfigure 4 4.1b\relax }{subfigure.4.1.2}{}}
-\newlabel{fig:in:panel_outermost_contours}{{4.1c}{40}{Subfigure 4 4.1c}{subfigure.4.1.3}{}}
-\newlabel{sub@fig:in:panel_outermost_contours}{{(c)}{c}{Subfigure 4 4.1c\relax }{subfigure.4.1.3}{}}
-\newlabel{fig:in:panel_big_contours}{{4.1d}{40}{Subfigure 4 4.1d}{subfigure.4.1.4}{}}
-\newlabel{sub@fig:in:panel_big_contours}{{(d)}{d}{Subfigure 4 4.1d\relax }{subfigure.4.1.4}{}}
-\newlabel{fig:in:panel_big_contour_hull}{{4.1e}{40}{Subfigure 4 4.1e}{subfigure.4.1.5}{}}
-\newlabel{sub@fig:in:panel_big_contour_hull}{{(e)}{e}{Subfigure 4 4.1e\relax }{subfigure.4.1.5}{}}
-\newlabel{fig:in:panels_detection_boxes}{{4.1f}{40}{Subfigure 4 4.1f}{subfigure.4.1.6}{}}
-\newlabel{sub@fig:in:panels_detection_boxes}{{(f)}{f}{Subfigure 4 4.1f\relax }{subfigure.4.1.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Independent panel extraction process}}{40}{figure.caption.47}}
-\@writefile{brf}{\backcite{Lubbin12}{{40}{4.1}{figure.caption.47}}}
-\newlabel{fig:in:panel_detection_process}{{4.1}{40}{Independent panel extraction process}{figure.caption.47}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Original image}}}{40}{subfigure.1.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Binary segmentation}}}{40}{subfigure.1.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Outermost contours}}}{40}{subfigure.1.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Panel contours}}}{40}{subfigure.1.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Panel contour hulls}}}{40}{subfigure.1.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Panel contour bounding boxes}}}{40}{subfigure.1.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Text localisation and recognition}{40}{section.4.3}}
+\newlabel{sec:in:text_localisation_and_recognition}{{4.3}{40}{Text localisation and recognition}{section.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Introduction}{40}{subsection.4.3.1}}
+\newlabel{sub:in:text_introduction}{{4.3.1}{40}{Introduction}{subsection.4.3.1}{}}
 \citation{Li2013Unsupervised}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Text localisation and recognition}{41}{section.4.3}}
-\newlabel{sec:in:text_localisation_and_recognition}{{4.3}{41}{Text localisation and recognition}{section.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Introduction}{41}{subsection.4.3.1}}
-\newlabel{sub:in:text_introduction}{{4.3.1}{41}{Introduction}{subsection.4.3.1}{}}
+\newlabel{fig:in:se:panel_img}{{4.1a}{41}{Subfigure 4 4.1a}{subfigure.4.1.1}{}}
+\newlabel{sub@fig:in:se:panel_img}{{(a)}{a}{Subfigure 4 4.1a\relax }{subfigure.4.1.1}{}}
+\newlabel{fig:se:panel_binary}{{4.1b}{41}{Subfigure 4 4.1b}{subfigure.4.1.2}{}}
+\newlabel{sub@fig:se:panel_binary}{{(b)}{b}{Subfigure 4 4.1b\relax }{subfigure.4.1.2}{}}
+\newlabel{fig:in:panel_outermost_contours}{{4.1c}{41}{Subfigure 4 4.1c}{subfigure.4.1.3}{}}
+\newlabel{sub@fig:in:panel_outermost_contours}{{(c)}{c}{Subfigure 4 4.1c\relax }{subfigure.4.1.3}{}}
+\newlabel{fig:in:panel_big_contours}{{4.1d}{41}{Subfigure 4 4.1d}{subfigure.4.1.4}{}}
+\newlabel{sub@fig:in:panel_big_contours}{{(d)}{d}{Subfigure 4 4.1d\relax }{subfigure.4.1.4}{}}
+\newlabel{fig:in:panel_big_contour_hull}{{4.1e}{41}{Subfigure 4 4.1e}{subfigure.4.1.5}{}}
+\newlabel{sub@fig:in:panel_big_contour_hull}{{(e)}{e}{Subfigure 4 4.1e\relax }{subfigure.4.1.5}{}}
+\newlabel{fig:in:panels_detection_boxes}{{4.1f}{41}{Subfigure 4 4.1f}{subfigure.4.1.6}{}}
+\newlabel{sub@fig:in:panels_detection_boxes}{{(f)}{f}{Subfigure 4 4.1f\relax }{subfigure.4.1.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Independent panel extraction process}}{41}{figure.caption.47}}
+\@writefile{brf}{\backcite{Lubbin12}{{41}{4.1}{figure.caption.47}}}
+\newlabel{fig:in:panel_detection_process}{{4.1}{41}{Independent panel extraction process}{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Original image}}}{41}{subfigure.1.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Binary segmentation}}}{41}{subfigure.1.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Outermost contours}}}{41}{subfigure.1.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Panel contours}}}{41}{subfigure.1.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Panel contour hulls}}}{41}{subfigure.1.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Panel contour bounding boxes}}}{41}{subfigure.1.6}}
 \@writefile{brf}{\backcite{Li2013Unsupervised}{{41}{4.3.1}{subsection.4.3.1}}}
 \citation{Ho2012}
-\citation{Arai11}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Bi-level segmentation}{42}{subsection.4.3.2}}
 \newlabel{sec:in:segmentation}{{4.3.2}{42}{Bi-level segmentation}{subsection.4.3.2}{}}
-\@writefile{brf}{\backcite{Ho2012}{{42}{4.3.2}{subsection.4.3.2}}}
 \citation{Arai11}
 \citation{Arai11}
-\citation{Roudier11}
-\citation{Roudier11}
+\citation{Arai11}
 \citation{matas2004robust}
+\@writefile{brf}{\backcite{Ho2012}{{43}{4.3.2}{subsection.4.3.2}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Grey scale image pixel value distribution for text and non text region}}{43}{figure.caption.48}}
 \newlabel{fig:in:greyscale_text_pixel_distribution}{{4.2}{43}{Grey scale image pixel value distribution for text and non text region}{figure.caption.48}{}}
 \@writefile{brf}{\backcite{Arai11}{{43}{4.3.2}{figure.caption.48}}}
-\@writefile{brf}{\backcite{matas2004robust}{{43}{4.3.2}{figure.caption.50}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{43}{subsection.4.3.3}}
-\newlabel{sec:in:textgraphicseparation}{{4.3.3}{43}{Text/graphics separation}{subsection.4.3.3}{}}
-\citation{Li2013Unsupervised}
-\citation{mahalanobis1936generalized,de2000mahalanobis}
+\@writefile{brf}{\backcite{matas2004robust}{{43}{4.3.2}{figure.caption.49}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Different threshold selection applied on a grey-scale image}}{44}{figure.caption.49}}
 \@writefile{brf}{\backcite{Arai11}{{44}{4.3}{figure.caption.49}}}
 \newlabel{fig:in:threshold_selection_methods}{{4.3}{44}{Different threshold selection applied on a grey-scale image}{figure.caption.49}{}}
-\@writefile{brf}{\backcite{Li2013Unsupervised}{{44}{4.3.3}{figure.caption.51}}}
-\@writefile{brf}{\backcite{mahalanobis1936generalized,de2000mahalanobis}{{44}{4.3.3}{figure.caption.51}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Threshold selection effect}}{45}{figure.caption.50}}
-\@writefile{brf}{\backcite{Roudier11}{{45}{4.4}{figure.caption.50}}}
-\newlabel{fig:in:bin}{{4.4}{45}{Threshold selection effect}{figure.caption.50}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Inter-connected letters}}{45}{figure.caption.51}}
-\newlabel{fig:in:detach_attach_letter}{{4.5}{45}{Inter-connected letters}{figure.caption.51}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{45}{figure.caption.52}}
-\newlabel{fig:in:std_dev}{{4.6}{45}{Mean and standard variation values of connected-component bounding boxes}{figure.caption.52}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Text candidate region neighbourhood analysis}}{46}{figure.caption.53}}
-\newlabel{fig:in:4_direction}{{4.7}{46}{Text candidate region neighbourhood analysis}{figure.caption.53}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Text line generation}{46}{subsection.4.3.4}}
-\newlabel{sub:in:text_line_generation}{{4.3.4}{46}{Text line generation}{subsection.4.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{44}{subsection.4.3.3}}
+\newlabel{sec:in:textgraphicseparation}{{4.3.3}{44}{Text/graphics separation}{subsection.4.3.3}{}}
+\citation{Li2013Unsupervised}
+\citation{mahalanobis1936generalized,de2000mahalanobis}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Inter-connected letters}}{45}{figure.caption.50}}
+\newlabel{fig:in:detach_attach_letter}{{4.4}{45}{Inter-connected letters}{figure.caption.50}{}}
+\@writefile{brf}{\backcite{Li2013Unsupervised}{{45}{4.3.3}{figure.caption.50}}}
+\@writefile{brf}{\backcite{mahalanobis1936generalized,de2000mahalanobis}{{45}{4.3.3}{figure.caption.50}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{45}{figure.caption.51}}
+\newlabel{fig:in:std_dev}{{4.5}{45}{Mean and standard variation values of connected-component bounding boxes}{figure.caption.51}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Text line generation}{45}{subsection.4.3.4}}
+\newlabel{sub:in:text_line_generation}{{4.3.4}{45}{Text line generation}{subsection.4.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Text candidate region neighbourhood analysis}}{46}{figure.caption.52}}
+\newlabel{fig:in:4_direction}{{4.6}{46}{Text candidate region neighbourhood analysis}{figure.caption.52}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Text recognition}{46}{subsection.4.3.5}}
 \newlabel{sub:in:text_recognition}{{4.3.5}{46}{Text recognition}{subsection.4.3.5}{}}
 \citation{Arai11}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Examples of text lines from comics images}}{47}{figure.caption.54}}
-\newlabel{fig:in:texlines_example}{{4.8}{47}{Examples of text lines from comics images}{figure.caption.54}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Conclusion}{47}{subsection.4.3.6}}
-\newlabel{sub:in:text_conclusion}{{4.3.6}{47}{Conclusion}{subsection.4.3.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Balloon extraction and classification}{47}{section.4.4}}
-\newlabel{sec:in:balloon}{{4.4}{47}{Balloon extraction and classification}{section.4.4}{}}
 \citation{Arai11}
 \citation{otsu79}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Balloon segmentation}{48}{subsection.4.4.1}}
-\newlabel{sub:in:balloon_segmentation}{{4.4.1}{48}{Balloon segmentation}{subsection.4.4.1}{}}
-\@writefile{brf}{\backcite{Arai11}{{48}{4.4.1}{subsection.4.4.1}}}
-\@writefile{brf}{\backcite{Arai11}{{48}{4.4.1}{subsection.4.4.1}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Examples of text lines from comics images}}{47}{figure.caption.53}}
+\newlabel{fig:in:texlines_example}{{4.7}{47}{Examples of text lines from comics images}{figure.caption.53}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Balloon extraction and classification}{47}{section.4.4}}
+\newlabel{sec:in:balloon}{{4.4}{47}{Balloon extraction and classification}{section.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Balloon segmentation}{47}{subsection.4.4.1}}
+\newlabel{sub:in:balloon_segmentation}{{4.4.1}{47}{Balloon segmentation}{subsection.4.4.1}{}}
+\@writefile{brf}{\backcite{Arai11}{{47}{4.4.1}{subsection.4.4.1}}}
+\@writefile{brf}{\backcite{Arai11}{{47}{4.4.1}{subsection.4.4.1}}}
 \@writefile{brf}{\backcite{otsu79}{{48}{4.4.1}{subsection.4.4.1}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon extraction process}}{48}{figure.caption.55}}
-\newlabel{fig:in:balloon_binarisation}{{4.9}{48}{Balloon extraction process}{figure.caption.55}{}}
-\newlabel{eq:in:balloon_alignment}{{4.1}{49}{Balloon segmentation}{equation.4.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Balloon content alignment measures}}{49}{figure.caption.56}}
-\newlabel{fig:in:coaxial_alignment}{{4.10}{49}{Balloon content alignment measures}{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Balloon extraction process}}{48}{figure.caption.54}}
+\newlabel{fig:in:balloon_binarisation}{{4.8}{48}{Balloon extraction process}{figure.caption.54}{}}
+\newlabel{eq:in:balloon_alignment}{{4.1}{48}{Balloon segmentation}{equation.4.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon content alignment measures}}{49}{figure.caption.55}}
+\newlabel{fig:in:coaxial_alignment}{{4.9}{49}{Balloon content alignment measures}{figure.caption.55}{}}
 \newlabel{eq:in:balloon_confidence_value}{{4.2}{49}{Balloon segmentation}{equation.4.4.2}{}}
-\citation{Guerin2013}
-\citation{Guerin2013}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Balloon classification}{50}{subsection.4.4.2}}
-\newlabel{sub:in:balloon_classification}{{4.4.2}{50}{Balloon classification}{subsection.4.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Relation between speech balloon shape and contour informations}}{50}{figure.caption.57}}
-\@writefile{brf}{\backcite{Guerin2013}{{50}{4.11}{figure.caption.57}}}
-\newlabel{fig:in:contour_style}{{4.11}{50}{Relation between speech balloon shape and contour informations}{figure.caption.57}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Shape/contour separation}{51}{section*.58}}
-\newlabel{sec:contour_detection}{{4.4.2}{51}{Shape/contour separation}{section*.58}{}}
-\newlabel{eq:be:smooth}{{4.3}{51}{Shape/contour separation}{equation.4.4.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Contour description}{51}{section*.60}}
-\newlabel{sec:be:description}{{4.4.2}{51}{Contour description}{section*.60}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Balloon contour time series}}{52}{figure.caption.59}}
-\newlabel{fig:be:time_series}{{4.12}{52}{Balloon contour time series}{figure.caption.59}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Balloon classification}{49}{subsection.4.4.2}}
+\newlabel{sub:in:balloon_classification}{{4.4.2}{49}{Balloon classification}{subsection.4.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Relation between speech balloon shape and contour informations}}{50}{figure.caption.56}}
+\newlabel{fig:in:contour_style}{{4.10}{50}{Relation between speech balloon shape and contour informations}{figure.caption.56}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Shape/contour separation}{51}{section*.57}}
+\newlabel{sec:contour_detection}{{4.4.2}{51}{Shape/contour separation}{section*.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Balloon contour time series}}{51}{figure.caption.58}}
+\newlabel{fig:be:time_series}{{4.11}{51}{Balloon contour time series}{figure.caption.58}{}}
 \citation{Mitchell1997}
-\newlabel{eq:be:distortion}{{4.4}{53}{Contour description}{equation.4.4.4}{}}
-\newlabel{eq:be:var_diff}{{4.5}{53}{Contour description}{equation.4.4.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Contour signal decomposition}}{53}{figure.caption.61}}
-\newlabel{fig:be:signal_decomposition}{{4.13}{53}{Contour signal decomposition}{figure.caption.61}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Contour classification}{53}{section*.62}}
-\@writefile{brf}{\backcite{Mitchell1997}{{53}{4.4.2}{section*.62}}}
-\newlabel{eq:be:fine_class}{{4.6}{54}{Contour classification}{equation.4.4.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{54}{table.caption.63}}
-\newlabel{tab:in:coefficient}{{4.1}{54}{Example of Gaussian distribution parameters.\relax }{table.caption.63}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Comic character spotting}{54}{section.4.5}}
-\newlabel{sec:in:character_spotting}{{4.5}{54}{Comic character spotting}{section.4.5}{}}
+\newlabel{eq:be:smooth}{{4.3}{52}{Shape/contour separation}{equation.4.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Contour description}{52}{section*.59}}
+\newlabel{sec:be:description}{{4.4.2}{52}{Contour description}{section*.59}{}}
+\newlabel{eq:be:distortion}{{4.4}{52}{Contour description}{equation.4.4.4}{}}
+\newlabel{eq:be:var_diff}{{4.5}{52}{Contour description}{equation.4.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Contour signal decomposition}}{53}{figure.caption.60}}
+\newlabel{fig:be:signal_decomposition}{{4.12}{53}{Contour signal decomposition}{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Contour classification}{53}{section*.61}}
+\@writefile{brf}{\backcite{Mitchell1997}{{53}{4.4.2}{section*.61}}}
+\newlabel{eq:be:fine_class}{{4.6}{53}{Contour classification}{equation.4.4.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Comic character spotting}{53}{section.4.5}}
+\newlabel{sec:in:character_spotting}{{4.5}{53}{Comic character spotting}{section.4.5}{}}
+\citation{Kopf2012DigitalReconstruction}
 \citation{Xu2012LazySelection}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Input query}{55}{subsection.4.5.1}}
-\newlabel{sec:in:input_query}{{4.5.1}{55}{Input query}{subsection.4.5.1}{}}
-\@writefile{brf}{\backcite{Xu2012LazySelection}{{55}{4.5.1}{subsection.4.5.1}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Colour reduction}{55}{subsection.4.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Colour quantization}{54}{subsection.4.5.1}}
+\@writefile{brf}{\backcite{Kopf2012DigitalReconstruction}{{54}{4.5.1}{subsection.4.5.1}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Colour image smoothing and quantization for comic character extraction}}{55}{figure.caption.62}}
+\newlabel{fig:in:smoothing_quantization}{{4.13}{55}{Colour image smoothing and quantization for comic character extraction}{figure.caption.62}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Input query}{55}{subsection.4.5.2}}
+\newlabel{sec:in:input_query}{{4.5.2}{55}{Input query}{subsection.4.5.2}{}}
+\@writefile{brf}{\backcite{Xu2012LazySelection}{{55}{4.5.2}{subsection.4.5.2}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{55}{figure.caption.63}}
+\newlabel{fig:in:user_selection}{{4.14}{55}{User defined comics character selection}{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{55}{subsection.4.5.3}}
 \citation{salton1986introduction}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{56}{figure.caption.64}}
-\newlabel{fig:in:user_selection}{{4.14}{56}{User defined comics character selection}{figure.caption.64}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{56}{subsection.4.5.3}}
 \@writefile{brf}{\backcite{salton1986introduction}{{56}{4.5.3}{subsection.4.5.3}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{57}{figure.caption.65}}
-\newlabel{fig:in:dominant_colour_hist_desc}{{4.15}{57}{Comic character query description}{figure.caption.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{56}{figure.caption.64}}
+\newlabel{fig:in:dominant_colour_hist_desc}{{4.15}{56}{Comic character query description}{figure.caption.64}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{57}{subsection.4.5.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{58}{figure.caption.66}}
-\newlabel{fig:in:masks}{{4.16}{58}{Colour mask corresponding to five colour of the query descriptor}{figure.caption.66}{}}
-\newlabel{eq:in:confidence_character_spotting}{{4.7}{58}{Object retrieval}{equation.4.5.7}{}}
+\newlabel{eq:in:confidence_character_spotting}{{4.7}{57}{Object retrieval}{equation.4.5.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Conclusions}{57}{section.4.6}}
+\newlabel{sec:in:conclusion}{{4.6}{57}{Conclusions}{section.4.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{58}{figure.caption.65}}
+\newlabel{fig:in:masks}{{4.16}{58}{Colour mask corresponding to five colour of the query descriptor}{figure.caption.65}{}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Object retrieval\relax }}{59}{algorithm.2}}
 \newlabel{al:in:retrieval}{{2}{59}{Object retrieval\relax }{algorithm.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{59}{figure.caption.67}}
-\newlabel{fig:in:filtering}{{4.17}{59}{Multi-scale comic character spotting}{figure.caption.67}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Conclusions}{60}{section.4.6}}
-\newlabel{sec:in:conclusion}{{4.6}{60}{Conclusions}{section.4.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{59}{figure.caption.66}}
+\newlabel{fig:in:filtering}{{4.17}{59}{Multi-scale comic character spotting}{figure.caption.66}{}}
 \citation{Sciascio2011Structured}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Method 3: knowledge-driven analysis}{61}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -591,10 +581,10 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Expert system}{61}{section.5.2}}
 \newlabel{sec:kn:expert_system}{{5.2}{61}{Expert system}{section.5.2}{}}
 \@writefile{brf}{\backcite{Sciascio2011Structured}{{61}{5.2}{section.5.2}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{62}{figure.caption.68}}
-\newlabel{fig:kn:generic_expert_system}{{5.1}{62}{Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}{figure.caption.68}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Process loop of the knowledge-driven system}}{62}{figure.caption.69}}
-\newlabel{fig:kn:process_loop}{{5.2}{62}{Process loop of the knowledge-driven system}{figure.caption.69}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{62}{figure.caption.67}}
+\newlabel{fig:kn:generic_expert_system}{{5.1}{62}{Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}{figure.caption.67}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Process loop of the knowledge-driven system}}{62}{figure.caption.68}}
+\newlabel{fig:kn:process_loop}{{5.2}{62}{Process loop of the knowledge-driven system}{figure.caption.68}{}}
 \citation{Laine2010,Duc1982}
 \citation{Guerin2013}
 \citation{Guerin2013}
@@ -603,47 +593,47 @@
 \newlabel{sec:kn:knowledge_representation}{{5.3}{63}{Knowledge representation}{section.5.3}{}}
 \@writefile{brf}{\backcite{Laine2010,Duc1982}{{63}{5.3}{section.5.3}}}
 \@writefile{brf}{\backcite{Guerin2013}{{63}{5.3}{section.5.3}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{64}{figure.caption.70}}
-\@writefile{brf}{\backcite{Guerin2013}{{64}{5.3}{figure.caption.70}}}
-\newlabel{fig:kn:gtfitting}{{5.3}{64}{Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{64}{figure.caption.69}}
+\@writefile{brf}{\backcite{Guerin2013}{{64}{5.3}{figure.caption.69}}}
+\newlabel{fig:kn:gtfitting}{{5.3}{64}{Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}{figure.caption.69}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Processing sequence}{64}{section.5.4}}
 \newlabel{sec:kn:framework_}{{5.4}{64}{Processing sequence}{section.5.4}{}}
-\newlabel{par:step_1}{{5.4}{65}{Iteration 1 - step 1 (hypothesis)}{section*.71}{}}
-\@writefile{toc}{\contentsline {paragraph}{Iteration 1 - step 1 (hypothesis)}{65}{section*.71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Initial hypothesis about the content of a given image}}{65}{figure.caption.72}}
-\newlabel{fig:kn:graph0}{{5.4}{65}{Initial hypothesis about the content of a given image}{figure.caption.72}{}}
-\newlabel{par:step_2}{{5.4}{65}{Iteration 1 - step 2 (validation)}{section*.73}{}}
-\@writefile{toc}{\contentsline {paragraph}{Iteration 1 - step 2 (validation)}{65}{section*.73}}
-\newlabel{par:step_3}{{5.4}{65}{Iteration 1 - step 3 (inference)}{section*.75}{}}
-\@writefile{toc}{\contentsline {paragraph}{Iteration 1 - step 3 (inference)}{65}{section*.75}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Validation of the hypothesis using the properties of the knowledge base}}{66}{figure.caption.74}}
-\newlabel{fig:kn:graph_valid_initial}{{5.5}{66}{Validation of the hypothesis using the properties of the knowledge base}{figure.caption.74}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}}{66}{figure.caption.76}}
-\newlabel{fig:kn:graph_specific_types}{{5.6}{66}{Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}{figure.caption.76}{}}
-\newlabel{par:step_4}{{5.4}{66}{Iteration 2 - step 1 (hypothesis)}{section*.77}{}}
-\@writefile{toc}{\contentsline {paragraph}{Iteration 2 - step 1 (hypothesis)}{67}{section*.77}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}}{67}{figure.caption.78}}
-\newlabel{fig:kn:hypothesis_roi}{{5.7}{67}{Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}{figure.caption.78}{}}
-\newlabel{par:step_5}{{5.4}{67}{Iteration 2 - step 2 (validation)}{section*.80}{}}
-\@writefile{toc}{\contentsline {paragraph}{Iteration 2 - step 2 (validation)}{67}{section*.80}}
-\newlabel{par:step_6}{{5.4}{67}{Iteration 2 - step 3 (inference)}{section*.82}{}}
-\@writefile{toc}{\contentsline {paragraph}{Iteration 2 - step 3 (inference)}{67}{section*.82}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Character locations ($C$) returned by the low level processing}}{68}{figure.caption.79}}
-\newlabel{fig:kn:graph_character_region}{{5.8}{68}{Character locations ($C$) returned by the low level processing}{figure.caption.79}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Validation of the character regions ($C$) by the expert system}}{68}{figure.caption.81}}
-\newlabel{fig:kn:valid_2}{{5.9}{68}{Validation of the character regions ($C$) by the expert system}{figure.caption.81}{}}
+\newlabel{par:step_1}{{5.4}{65}{Iteration 1 - step 1 (hypothesis)}{section*.70}{}}
+\@writefile{toc}{\contentsline {paragraph}{Iteration 1 - step 1 (hypothesis)}{65}{section*.70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Initial hypothesis about the content of a given image}}{65}{figure.caption.71}}
+\newlabel{fig:kn:graph0}{{5.4}{65}{Initial hypothesis about the content of a given image}{figure.caption.71}{}}
+\newlabel{par:step_2}{{5.4}{65}{Iteration 1 - step 2 (validation)}{section*.72}{}}
+\@writefile{toc}{\contentsline {paragraph}{Iteration 1 - step 2 (validation)}{65}{section*.72}}
+\newlabel{par:step_3}{{5.4}{65}{Iteration 1 - step 3 (inference)}{section*.74}{}}
+\@writefile{toc}{\contentsline {paragraph}{Iteration 1 - step 3 (inference)}{65}{section*.74}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Validation of the hypothesis using the properties of the knowledge base}}{66}{figure.caption.73}}
+\newlabel{fig:kn:graph_valid_initial}{{5.5}{66}{Validation of the hypothesis using the properties of the knowledge base}{figure.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}}{66}{figure.caption.75}}
+\newlabel{fig:kn:graph_specific_types}{{5.6}{66}{Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}{figure.caption.75}{}}
+\newlabel{par:step_4}{{5.4}{66}{Iteration 2 - step 1 (hypothesis)}{section*.76}{}}
+\@writefile{toc}{\contentsline {paragraph}{Iteration 2 - step 1 (hypothesis)}{67}{section*.76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}}{67}{figure.caption.77}}
+\newlabel{fig:kn:hypothesis_roi}{{5.7}{67}{Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}{figure.caption.77}{}}
+\newlabel{par:step_5}{{5.4}{67}{Iteration 2 - step 2 (validation)}{section*.79}{}}
+\@writefile{toc}{\contentsline {paragraph}{Iteration 2 - step 2 (validation)}{67}{section*.79}}
+\newlabel{par:step_6}{{5.4}{67}{Iteration 2 - step 3 (inference)}{section*.81}{}}
+\@writefile{toc}{\contentsline {paragraph}{Iteration 2 - step 3 (inference)}{67}{section*.81}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Character locations ($C$) returned by the low level processing}}{68}{figure.caption.78}}
+\newlabel{fig:kn:graph_character_region}{{5.8}{68}{Character locations ($C$) returned by the low level processing}{figure.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Validation of the character regions ($C$) by the expert system}}{68}{figure.caption.80}}
+\newlabel{fig:kn:valid_2}{{5.9}{68}{Validation of the character regions ($C$) by the expert system}{figure.caption.80}{}}
 \citation{McGuinness2004}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}}{69}{figure.caption.83}}
-\newlabel{fig:kn:final_information}{{5.10}{69}{Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}{figure.caption.83}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}}{69}{figure.caption.82}}
+\newlabel{fig:kn:final_information}{{5.10}{69}{Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}{figure.caption.82}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.5}Presentation of the model}{69}{section.5.5}}
 \newlabel{sec:kn:model}{{5.5}{69}{Presentation of the model}{section.5.5}{}}
 \@writefile{brf}{\backcite{McGuinness2004}{{69}{5.5}{section.5.5}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Image model}{70}{subsection.5.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces A representation of the image model involved in the expert system}}{70}{figure.caption.84}}
-\newlabel{fig:kn:model_image}{{5.11}{70}{A representation of the image model involved in the expert system}{figure.caption.84}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces A representation of the image model involved in the expert system}}{70}{figure.caption.83}}
+\newlabel{fig:kn:model_image}{{5.11}{70}{A representation of the image model involved in the expert system}{figure.caption.83}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Comics model}{70}{subsection.5.5.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces A representation of the main aspects of the comics model involved in the expert system}}{71}{figure.caption.85}}
-\newlabel{fig:kn:model_image}{{5.12}{71}{A representation of the main aspects of the comics model involved in the expert system}{figure.caption.85}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces A representation of the main aspects of the comics model involved in the expert system}}{71}{figure.caption.84}}
+\newlabel{fig:kn:model_image}{{5.12}{71}{A representation of the main aspects of the comics model involved in the expert system}{figure.caption.84}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Model interactions}{71}{subsection.5.5.3}}
 \newlabel{eq:kn:class_region_equivalence}{{5.1}{71}{Model interactions}{equation.5.5.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.6}Interactions between high and low level processing}{72}{section.5.6}}
@@ -654,12 +644,12 @@
 \citation{Sirin2007a}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Inferences from the low level information}{73}{subsection.5.6.2}}
 \newlabel{sub:inference_from_low_level}{{5.6.2}{73}{Inferences from the low level information}{subsection.5.6.2}{}}
-\newlabel{par:speech_balloon_and_speech_text}{{5.6.2}{73}{Speech balloon and speech text}{section*.86}{}}
-\@writefile{toc}{\contentsline {paragraph}{Speech balloon and speech text}{73}{section*.86}}
-\@writefile{brf}{\backcite{Haarslev2012}{{73}{5.6.2}{section*.86}}}
-\@writefile{brf}{\backcite{Sirin2007a}{{73}{5.6.2}{section*.86}}}
-\newlabel{sub:inference_of_the_speaking_characters}{{5.6.2}{73}{Speaking characters}{section*.87}{}}
-\@writefile{toc}{\contentsline {paragraph}{Speaking characters}{73}{section*.87}}
+\newlabel{par:speech_balloon_and_speech_text}{{5.6.2}{73}{Speech balloon and speech text}{section*.85}{}}
+\@writefile{toc}{\contentsline {paragraph}{Speech balloon and speech text}{73}{section*.85}}
+\@writefile{brf}{\backcite{Haarslev2012}{{73}{5.6.2}{section*.85}}}
+\@writefile{brf}{\backcite{Sirin2007a}{{73}{5.6.2}{section*.85}}}
+\newlabel{sub:inference_of_the_speaking_characters}{{5.6.2}{73}{Speaking characters}{section*.86}{}}
+\@writefile{toc}{\contentsline {paragraph}{Speaking characters}{73}{section*.86}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.7}Conclusions}{73}{section.5.7}}
 \newlabel{sec:kn:conclusion}{{5.7}{73}{Conclusions}{section.5.7}{}}
 \citation{pascal-voc-2012,smeaton2006evaluation,griffinHolubPerona}
@@ -674,83 +664,83 @@
 \@writefile{toc}{\contentsline {section}{\numberline {6.1}Dataset and ground truth construction}{75}{section.6.1}}
 \newlabel{sec:dataset_and_ground_truth_construction}{{6.1}{75}{Dataset and ground truth construction}{section.6.1}{}}
 \citation{mccloud1994understanding}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Examples of comic panels that reflect the diversity of comic books of the dataset}}{76}{figure.caption.88}}
-\newlabel{fig:ex:comics_diversity}{{6.1}{76}{Examples of comic panels that reflect the diversity of comic books of the dataset}{figure.caption.88}{}}
-\@writefile{brf}{\backcite{Guerin2013}{{76}{6.1}{figure.caption.88}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Examples of comic panels that reflect the diversity of comic books of the dataset}}{76}{figure.caption.87}}
+\newlabel{fig:ex:comics_diversity}{{6.1}{76}{Examples of comic panels that reflect the diversity of comic books of the dataset}{figure.caption.87}{}}
+\@writefile{brf}{\backcite{Guerin2013}{{76}{6.1}{figure.caption.87}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Dataset description}{76}{subsection.6.1.1}}
 \newlabel{sec:dataset_description}{{6.1.1}{76}{Dataset description}{subsection.6.1.1}{}}
 \@writefile{brf}{\backcite{mccloud1994understanding}{{76}{6.1.1}{subsection.6.1.1}}}
-\newlabel{par:albums}{{6.1.1}{77}{Albums}{section*.89}{}}
-\@writefile{toc}{\contentsline {paragraph}{Albums}{77}{section*.89}}
-\newlabel{par:pages}{{6.1.1}{77}{Pages}{section*.90}{}}
-\@writefile{toc}{\contentsline {paragraph}{Pages}{77}{section*.90}}
-\newlabel{par:panels}{{6.1.1}{77}{Panels}{section*.91}{}}
-\@writefile{toc}{\contentsline {paragraph}{Panels}{77}{section*.91}}
-\newlabel{par:balloons}{{6.1.1}{77}{Balloons}{section*.92}{}}
-\@writefile{toc}{\contentsline {paragraph}{Balloons}{77}{section*.92}}
-\newlabel{par:text}{{6.1.1}{77}{Text}{section*.93}{}}
-\@writefile{toc}{\contentsline {paragraph}{Text}{77}{section*.93}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of the number of elements per text lines}}{78}{figure.caption.94}}
-\newlabel{fig:ex:textline_lenth_distribution}{{6.2}{78}{Distribution of the number of elements per text lines}{figure.caption.94}{}}
-\newlabel{par:comic_characters}{{6.1.1}{78}{Comic characters}{section*.95}{}}
-\@writefile{toc}{\contentsline {paragraph}{Comic characters}{78}{section*.95}}
+\newlabel{par:albums}{{6.1.1}{77}{Albums}{section*.88}{}}
+\@writefile{toc}{\contentsline {paragraph}{Albums}{77}{section*.88}}
+\newlabel{par:pages}{{6.1.1}{77}{Pages}{section*.89}{}}
+\@writefile{toc}{\contentsline {paragraph}{Pages}{77}{section*.89}}
+\newlabel{par:panels}{{6.1.1}{77}{Panels}{section*.90}{}}
+\@writefile{toc}{\contentsline {paragraph}{Panels}{77}{section*.90}}
+\newlabel{par:balloons}{{6.1.1}{77}{Balloons}{section*.91}{}}
+\@writefile{toc}{\contentsline {paragraph}{Balloons}{77}{section*.91}}
+\newlabel{par:text}{{6.1.1}{77}{Text}{section*.92}{}}
+\@writefile{toc}{\contentsline {paragraph}{Text}{77}{section*.92}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of the number of elements per text lines}}{78}{figure.caption.93}}
+\newlabel{fig:ex:textline_lenth_distribution}{{6.2}{78}{Distribution of the number of elements per text lines}{figure.caption.93}{}}
+\newlabel{par:comic_characters}{{6.1.1}{78}{Comic characters}{section*.94}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comic characters}{78}{section*.94}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Terms of use}{78}{subsection.6.1.2}}
 \newlabel{sub:term_of_use}{{6.1.2}{78}{Terms of use}{subsection.6.1.2}{}}
 \citation{pascal-voc-2012,yao2007introduction}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Ground truth construction}{79}{subsection.6.1.3}}
 \newlabel{sec:ground_truth_construction}{{6.1.3}{79}{Ground truth construction}{subsection.6.1.3}{}}
 \@writefile{brf}{\backcite{pascal-voc-2012, yao2007introduction}{{79}{6.1.3}{subsection.6.1.3}}}
-\@writefile{toc}{\contentsline {subsubsection}{Visual annotation}{79}{section*.96}}
-\newlabel{sub:visual_annotation}{{6.1.3}{79}{Visual annotation}{section*.96}{}}
-\newlabel{par:panels}{{6.1.3}{79}{Panels}{section*.97}{}}
-\@writefile{toc}{\contentsline {paragraph}{Panels}{79}{section*.97}}
-\newlabel{par:balloons}{{6.1.3}{79}{Balloons}{section*.99}{}}
-\@writefile{toc}{\contentsline {paragraph}{Balloons}{79}{section*.99}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Panel annotation}}{80}{figure.caption.98}}
-\newlabel{fig:gt:segPanel}{{6.3}{80}{Panel annotation}{figure.caption.98}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Speech balloon contour annotation}}{80}{figure.caption.100}}
-\newlabel{fig:gt:segBalloons}{{6.4}{80}{Speech balloon contour annotation}{figure.caption.100}{}}
-\newlabel{par:text_lines}{{6.1.3}{80}{Text lines}{section*.101}{}}
-\@writefile{toc}{\contentsline {paragraph}{Text lines}{80}{section*.101}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Text line location annotation}}{81}{figure.caption.102}}
-\newlabel{fig:gt:segLines}{{6.5}{81}{Text line location annotation}{figure.caption.102}{}}
-\newlabel{par:comic_characters}{{6.1.3}{81}{Comic characters}{section*.103}{}}
-\@writefile{toc}{\contentsline {paragraph}{Comic characters}{81}{section*.103}}
-\@writefile{toc}{\contentsline {subsubsection}{Semantic annotation}{81}{section*.105}}
-\newlabel{sub:gt:semantic_annotation}{{6.1.3}{81}{Semantic annotation}{section*.105}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Comic character position annotation}}{82}{figure.caption.104}}
-\newlabel{fig:gt:segCharacter}{{6.6}{82}{Comic character position annotation}{figure.caption.104}{}}
-\@writefile{toc}{\contentsline {paragraph}{Images}{82}{section*.106}}
-\@writefile{toc}{\contentsline {paragraph}{Panels}{82}{section*.107}}
-\@writefile{toc}{\contentsline {paragraph}{Balloons}{82}{section*.108}}
+\@writefile{toc}{\contentsline {subsubsection}{Visual annotation}{79}{section*.95}}
+\newlabel{sub:visual_annotation}{{6.1.3}{79}{Visual annotation}{section*.95}{}}
+\newlabel{par:panels}{{6.1.3}{79}{Panels}{section*.96}{}}
+\@writefile{toc}{\contentsline {paragraph}{Panels}{79}{section*.96}}
+\newlabel{par:balloons}{{6.1.3}{79}{Balloons}{section*.98}{}}
+\@writefile{toc}{\contentsline {paragraph}{Balloons}{79}{section*.98}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Panel annotation}}{80}{figure.caption.97}}
+\newlabel{fig:gt:segPanel}{{6.3}{80}{Panel annotation}{figure.caption.97}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Speech balloon contour annotation}}{80}{figure.caption.99}}
+\newlabel{fig:gt:segBalloons}{{6.4}{80}{Speech balloon contour annotation}{figure.caption.99}{}}
+\newlabel{par:text_lines}{{6.1.3}{80}{Text lines}{section*.100}{}}
+\@writefile{toc}{\contentsline {paragraph}{Text lines}{80}{section*.100}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Text line location annotation}}{81}{figure.caption.101}}
+\newlabel{fig:gt:segLines}{{6.5}{81}{Text line location annotation}{figure.caption.101}{}}
+\newlabel{par:comic_characters}{{6.1.3}{81}{Comic characters}{section*.102}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comic characters}{81}{section*.102}}
+\@writefile{toc}{\contentsline {subsubsection}{Semantic annotation}{81}{section*.104}}
+\newlabel{sub:gt:semantic_annotation}{{6.1.3}{81}{Semantic annotation}{section*.104}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Comic character position annotation}}{82}{figure.caption.103}}
+\newlabel{fig:gt:segCharacter}{{6.6}{82}{Comic character position annotation}{figure.caption.103}{}}
+\@writefile{toc}{\contentsline {paragraph}{Images}{82}{section*.105}}
+\@writefile{toc}{\contentsline {paragraph}{Panels}{82}{section*.106}}
+\@writefile{toc}{\contentsline {paragraph}{Balloons}{82}{section*.107}}
 \citation{McIntosh2011}
 \citation{Walsh2012a}
 \citation{Rissen2012}
 \citation{phdthesisGuerin14}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Balloon shapes}}{83}{figure.caption.109}}
-\newlabel{fig:gt:balloonShape}{{6.7}{83}{Balloon shapes}{figure.caption.109}{}}
-\@writefile{toc}{\contentsline {paragraph}{Text lines}{83}{section*.110}}
-\newlabel{par:comic_characters}{{6.1.3}{83}{Comic characters}{section*.111}{}}
-\@writefile{toc}{\contentsline {paragraph}{Comic characters}{83}{section*.111}}
-\@writefile{toc}{\contentsline {subsubsection}{File structure}{83}{section*.112}}
-\newlabel{sub:file_structure}{{6.1.3}{83}{File structure}{section*.112}{}}
-\@writefile{brf}{\backcite{McIntosh2011}{{83}{6.1.3}{section*.112}}}
-\@writefile{brf}{\backcite{Walsh2012a}{{83}{6.1.3}{section*.112}}}
-\@writefile{brf}{\backcite{Rissen2012}{{83}{6.1.3}{section*.112}}}
-\@writefile{brf}{\backcite{phdthesisGuerin14}{{83}{6.1.3}{section*.112}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Annotation rendering in a browser}}{84}{figure.caption.113}}
-\newlabel{fig:gt:svgImage}{{6.8}{84}{Annotation rendering in a browser}{figure.caption.113}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Balloon shapes}}{83}{figure.caption.108}}
+\newlabel{fig:gt:balloonShape}{{6.7}{83}{Balloon shapes}{figure.caption.108}{}}
+\@writefile{toc}{\contentsline {paragraph}{Text lines}{83}{section*.109}}
+\newlabel{par:comic_characters}{{6.1.3}{83}{Comic characters}{section*.110}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comic characters}{83}{section*.110}}
+\@writefile{toc}{\contentsline {subsubsection}{File structure}{83}{section*.111}}
+\newlabel{sub:file_structure}{{6.1.3}{83}{File structure}{section*.111}{}}
+\@writefile{brf}{\backcite{McIntosh2011}{{83}{6.1.3}{section*.111}}}
+\@writefile{brf}{\backcite{Walsh2012a}{{83}{6.1.3}{section*.111}}}
+\@writefile{brf}{\backcite{Rissen2012}{{83}{6.1.3}{section*.111}}}
+\@writefile{brf}{\backcite{phdthesisGuerin14}{{83}{6.1.3}{section*.111}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Annotation rendering in a browser}}{84}{figure.caption.112}}
+\newlabel{fig:gt:svgImage}{{6.8}{84}{Annotation rendering in a browser}{figure.caption.112}{}}
 \newlabel{list:svg}{{6.1}{85}{Sample of SVG file from the eBDtheque ground truth}{lstlisting.6.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}Sample of SVG file from the eBDtheque ground truth}{85}{lstlisting.6.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Ground truth quality assessment}{86}{subsection.6.1.4}}
 \newlabel{sec:gt:ground_truth_quality_assessment}{{6.1.4}{86}{Ground truth quality assessment}{subsection.6.1.4}{}}
 \citation{Bubble09}
 \citation{Bubble09}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Distance to the mean position}}{87}{figure.caption.114}}
-\newlabel{fig:gt:graphiqueStdVT}{{6.9}{87}{Distance to the mean position}{figure.caption.114}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Image used for ground truth quality assessment}}{88}{figure.caption.115}}
-\@writefile{brf}{\backcite{Bubble09}{{88}{6.10}{figure.caption.115}}}
-\newlabel{fig:gt:diffVT}{{6.10}{88}{Image used for ground truth quality assessment}{figure.caption.115}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Distance to the mean position}}{87}{figure.caption.113}}
+\newlabel{fig:gt:graphiqueStdVT}{{6.9}{87}{Distance to the mean position}{figure.caption.113}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Image used for ground truth quality assessment}}{88}{figure.caption.114}}
+\@writefile{brf}{\backcite{Bubble09}{{88}{6.10}{figure.caption.114}}}
+\newlabel{fig:gt:diffVT}{{6.10}{88}{Image used for ground truth quality assessment}{figure.caption.114}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Discussions}{88}{subsection.6.1.5}}
 \newlabel{ssec:gt:siscussions}{{6.1.5}{88}{Discussions}{subsection.6.1.5}{}}
 \citation{everingham2010pascal}
@@ -792,31 +782,31 @@
 \@writefile{brf}{\backcite{Guerin2013}{{91}{6.3}{section.6.3}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Experimental settings}{91}{subsection.6.3.1}}
 \newlabel{sub:experimental_settings}{{6.3.1}{91}{Experimental settings}{subsection.6.3.1}{}}
-\@writefile{brf}{\backcite{Arai10}{{91}{6.3.1}{section*.116}}}
-\@writefile{toc}{\contentsline {subsubsection}{Arai's method~\cite  {Arai10}}{91}{section*.116}}
-\@writefile{brf}{\backcite{Arai10}{{91}{6.3.1}{section*.116}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces Division line detection from~\cite  {Arai10}}}{91}{figure.caption.117}}
-\@writefile{brf}{\backcite{Arai10}{{91}{6.11}{figure.caption.117}}}
-\newlabel{fig:ex:division_line_detection}{{6.11}{91}{Division line detection from~\cite {Arai10}}{figure.caption.117}{}}
+\@writefile{brf}{\backcite{Arai10}{{91}{6.3.1}{section*.115}}}
+\@writefile{toc}{\contentsline {subsubsection}{Arai's method~\cite  {Arai10}}{91}{section*.115}}
+\@writefile{brf}{\backcite{Arai10}{{91}{6.3.1}{section*.115}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces Division line detection from~\cite  {Arai10}}}{91}{figure.caption.116}}
+\@writefile{brf}{\backcite{Arai10}{{91}{6.11}{figure.caption.116}}}
+\newlabel{fig:ex:division_line_detection}{{6.11}{91}{Division line detection from~\cite {Arai10}}{figure.caption.116}{}}
 \citation{Arai11}
 \citation{Arai11}
 \citation{Ho2012}
-\@writefile{brf}{\backcite{Ho2012}{{92}{6.3.1}{section*.118}}}
-\@writefile{toc}{\contentsline {subsubsection}{Ho's method~\cite  {Ho2012}}{92}{section*.118}}
-\@writefile{brf}{\backcite{Ho2012}{{92}{6.3.1}{section*.118}}}
-\@writefile{toc}{\contentsline {subsubsection}{Method A}{92}{section*.119}}
-\@writefile{toc}{\contentsline {subsubsection}{Method B}{92}{section*.120}}
-\@writefile{toc}{\contentsline {subsubsection}{Method C}{92}{section*.121}}
+\@writefile{brf}{\backcite{Ho2012}{{92}{6.3.1}{section*.117}}}
+\@writefile{toc}{\contentsline {subsubsection}{Ho's method~\cite  {Ho2012}}{92}{section*.117}}
+\@writefile{brf}{\backcite{Ho2012}{{92}{6.3.1}{section*.117}}}
+\@writefile{toc}{\contentsline {subsubsection}{Method A}{92}{section*.118}}
+\@writefile{toc}{\contentsline {subsubsection}{Method B}{92}{section*.119}}
+\@writefile{toc}{\contentsline {subsubsection}{Method C}{92}{section*.120}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Result analysis}{92}{subsection.6.3.2}}
 \newlabel{sub:result_analysis}{{6.3.2}{92}{Result analysis}{subsection.6.3.2}{}}
 \@writefile{brf}{\backcite{Arai11}{{92}{6.3.2}{subsection.6.3.2}}}
 \citation{Guerin2013}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{93}{table.caption.122}}
-\@writefile{brf}{\backcite{Arai11}{{93}{6.1}{table.caption.122}}}
-\@writefile{brf}{\backcite{Ho2012}{{93}{6.1}{table.caption.122}}}
-\newlabel{tab:panel}{{6.1}{93}{Panel extraction evaluation results}{table.caption.122}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf  \color  {red}TODO replace for table?}. \relax }}{93}{figure.caption.123}}
-\newlabel{ap:panel_extraction}{{6.12}{93}{Panel extraction score details for each image of the eBDtheque dataset \modif {TODO replace for table?}. \relax }{figure.caption.123}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{93}{table.caption.121}}
+\@writefile{brf}{\backcite{Arai11}{{93}{6.1}{table.caption.121}}}
+\@writefile{brf}{\backcite{Ho2012}{{93}{6.1}{table.caption.121}}}
+\newlabel{tab:panel}{{6.1}{93}{Panel extraction evaluation results}{table.caption.121}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf  \color  {red}TODO replace for table?}. \relax }}{93}{figure.caption.122}}
+\newlabel{ap:panel_extraction}{{6.12}{93}{Panel extraction score details for each image of the eBDtheque dataset \modif {TODO replace for table?}. \relax }{figure.caption.122}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.4}Text extraction and recognition evaluation}{93}{section.6.4}}
 \newlabel{sub:ex:text_extraction_recognition_evaluation}{{6.4}{93}{Text extraction and recognition evaluation}{section.6.4}{}}
 \@writefile{brf}{\backcite{Guerin2013}{{93}{6.4}{section.6.4}}}
@@ -824,24 +814,24 @@
 \citation{Arai11}
 \citation{Rigaud2013VISAPP}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Experimental settings}{94}{subsection.6.4.1}}
-\@writefile{brf}{\backcite{Arai11}{{94}{6.4.1}{section*.124}}}
-\@writefile{toc}{\contentsline {subsubsection}{Arai's method}{94}{section*.124}}
-\@writefile{toc}{\contentsline {subsubsection}{Method A}{94}{section*.125}}
-\@writefile{toc}{\contentsline {subsubsection}{Method B}{94}{section*.126}}
-\@writefile{toc}{\contentsline {subsubsection}{Method C}{94}{section*.127}}
+\@writefile{brf}{\backcite{Arai11}{{94}{6.4.1}{section*.123}}}
+\@writefile{toc}{\contentsline {subsubsection}{Arai's method}{94}{section*.123}}
+\@writefile{toc}{\contentsline {subsubsection}{Method A}{94}{section*.124}}
+\@writefile{toc}{\contentsline {subsubsection}{Method B}{94}{section*.125}}
+\@writefile{toc}{\contentsline {subsubsection}{Method C}{94}{section*.126}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Results analysis}{94}{subsection.6.4.2}}
 \newlabel{sub:results_analysis}{{6.4.2}{94}{Results analysis}{subsection.6.4.2}{}}
 \citation{wagner1974string}
 \citation{Guerin2013}
 \citation{Guerin2013}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{95}{table.caption.128}}
-\@writefile{brf}{\backcite{Arai11}{{95}{6.2}{table.caption.128}}}
-\newlabel{tab:text_results}{{6.2}{95}{Text localisation results.\relax }{table.caption.128}{}}
-\@writefile{brf}{\backcite{Rigaud2013VISAPP}{{95}{6.4.2}{table.caption.128}}}
-\newlabel{par:ex:text_recognition_evaluation}{{6.4.2}{95}{Text recognition evaluation}{section*.129}{}}
-\@writefile{toc}{\contentsline {paragraph}{Text recognition evaluation}{95}{section*.129}}
-\@writefile{brf}{\backcite{wagner1974string}{{95}{6.4.2}{section*.129}}}
-\@writefile{brf}{\backcite{Guerin2013}{{95}{6.4.2}{section*.129}}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{95}{table.caption.127}}
+\@writefile{brf}{\backcite{Arai11}{{95}{6.2}{table.caption.127}}}
+\newlabel{tab:text_results}{{6.2}{95}{Text localisation results.\relax }{table.caption.127}{}}
+\@writefile{brf}{\backcite{Rigaud2013VISAPP}{{95}{6.4.2}{table.caption.127}}}
+\newlabel{par:ex:text_recognition_evaluation}{{6.4.2}{95}{Text recognition evaluation}{section*.128}{}}
+\@writefile{toc}{\contentsline {paragraph}{Text recognition evaluation}{95}{section*.128}}
+\@writefile{brf}{\backcite{wagner1974string}{{95}{6.4.2}{section*.128}}}
+\@writefile{brf}{\backcite{Guerin2013}{{95}{6.4.2}{section*.128}}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.5}Balloon extraction evaluation}{95}{section.6.5}}
 \newlabel{sub:ex:balloon_extraction_evaluation}{{6.5}{95}{Balloon extraction evaluation}{section.6.5}{}}
 \@writefile{brf}{\backcite{Guerin2013}{{95}{6.5}{section.6.5}}}
@@ -849,100 +839,106 @@
 \citation{Ho2012}
 \citation{Guerin2013}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Experimental settings}{96}{subsection.6.5.1}}
-\@writefile{brf}{\backcite{Arai11}{{96}{6.5.1}{section*.130}}}
-\@writefile{toc}{\contentsline {subsubsection}{Arai's method~\cite  {Arai11}}{96}{section*.130}}
-\@writefile{brf}{\backcite{Ho2012}{{96}{6.5.1}{section*.131}}}
-\@writefile{toc}{\contentsline {subsubsection}{Ho's method~\cite  {Ho2012}}{96}{section*.131}}
-\@writefile{toc}{\contentsline {subsubsection}{Method A}{96}{section*.132}}
+\@writefile{brf}{\backcite{Arai11}{{96}{6.5.1}{section*.129}}}
+\@writefile{toc}{\contentsline {subsubsection}{Arai's method~\cite  {Arai11}}{96}{section*.129}}
+\@writefile{brf}{\backcite{Ho2012}{{96}{6.5.1}{section*.130}}}
+\@writefile{toc}{\contentsline {subsubsection}{Ho's method~\cite  {Ho2012}}{96}{section*.130}}
+\@writefile{toc}{\contentsline {subsubsection}{Method A}{96}{section*.131}}
 \citation{Guerin2013}
 \citation{Arai11}
 \citation{Ho2012}
-\@writefile{toc}{\contentsline {subsubsection}{Method B}{97}{section*.133}}
-\@writefile{brf}{\backcite{Guerin2013}{{97}{6.5.1}{section*.133}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of the number of letter per speech balloon}}{97}{figure.caption.134}}
-\newlabel{fig:ex:min_number_children_validation}{{6.13}{97}{Distribution of the number of letter per speech balloon}{figure.caption.134}{}}
-\@writefile{brf}{\backcite{Guerin2013}{{97}{6.5.1}{figure.caption.134}}}
-\@writefile{toc}{\contentsline {subsubsection}{Method C}{97}{section*.135}}
+\@writefile{toc}{\contentsline {subsubsection}{Method B}{97}{section*.132}}
+\@writefile{brf}{\backcite{Guerin2013}{{97}{6.5.1}{section*.132}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of the number of letter per speech balloon}}{97}{figure.caption.133}}
+\newlabel{fig:ex:min_number_children_validation}{{6.13}{97}{Distribution of the number of letter per speech balloon}{figure.caption.133}{}}
+\@writefile{brf}{\backcite{Guerin2013}{{97}{6.5.1}{figure.caption.133}}}
+\@writefile{toc}{\contentsline {subsubsection}{Method C}{97}{section*.134}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Result analysis}{97}{subsection.6.5.2}}
-\newlabel{par:balloon_localisation}{{6.5.2}{97}{Balloon localisation}{section*.136}{}}
-\@writefile{toc}{\contentsline {paragraph}{Balloon localisation}{97}{section*.136}}
+\newlabel{par:balloon_localisation}{{6.5.2}{97}{Balloon localisation}{section*.135}{}}
+\@writefile{toc}{\contentsline {paragraph}{Balloon localisation}{97}{section*.135}}
 \citation{Arai11}
 \citation{Arai11}
 \citation{rigaud2013active}
 \citation{rigaud2013active}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision results}}{98}{table.caption.137}}
-\@writefile{brf}{\backcite{Arai11}{{98}{6.3}{table.caption.137}}}
-\@writefile{brf}{\backcite{Ho2012}{{98}{6.3}{table.caption.137}}}
-\newlabel{tab:ex:bal_loc}{{6.3}{98}{Balloon localization recall and precision results}{table.caption.137}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{98}{figure.caption.138}}
-\newlabel{fig:ex:implicit_balloon_recovery_by_panel}{{6.14}{98}{Implicit balloon recovering by panel and balloon extraction combination}{figure.caption.138}{}}
-\@writefile{brf}{\backcite{Arai11}{{98}{6.5.2}{figure.caption.138}}}
-\@writefile{brf}{\backcite{Arai11}{{98}{6.5.2}{figure.caption.138}}}
-\@writefile{brf}{\backcite{rigaud2013active}{{98}{6.5.2}{figure.caption.138}}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision results}}{98}{table.caption.136}}
+\@writefile{brf}{\backcite{Arai11}{{98}{6.3}{table.caption.136}}}
+\@writefile{brf}{\backcite{Ho2012}{{98}{6.3}{table.caption.136}}}
+\newlabel{tab:ex:bal_loc}{{6.3}{98}{Balloon localization recall and precision results}{table.caption.136}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{98}{figure.caption.137}}
+\newlabel{fig:ex:implicit_balloon_recovery_by_panel}{{6.14}{98}{Implicit balloon recovering by panel and balloon extraction combination}{figure.caption.137}{}}
+\@writefile{brf}{\backcite{Arai11}{{98}{6.5.2}{figure.caption.137}}}
+\@writefile{brf}{\backcite{Arai11}{{98}{6.5.2}{figure.caption.137}}}
+\@writefile{brf}{\backcite{rigaud2013active}{{98}{6.5.2}{figure.caption.137}}}
 \citation{Arai11}
 \citation{Xu1998}
+\@writefile{brf}{\backcite{rigaud2013active}{{99}{6.5.2}{figure.caption.137}}}
+\@writefile{toc}{\contentsline {paragraph}{Balloon segmentation (pixel-level)}{99}{section*.138}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{99}{table.caption.139}}
+\@writefile{brf}{\backcite{Arai11}{{99}{6.4}{table.caption.139}}}
+\newlabel{tab:ex:high_res}{{6.4}{99}{Pixel-level balloon segmentation evaluation scores}{table.caption.139}{}}
+\newlabel{par:balloon_classification}{{6.5.2}{99}{Balloon classification}{section*.140}{}}
+\@writefile{toc}{\contentsline {paragraph}{Balloon classification}{99}{section*.140}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces Training set for balloon contour classification}}{99}{figure.caption.141}}
+\newlabel{fig:ex:balloon_training_set}{{6.15}{99}{Training set for balloon contour classification}{figure.caption.141}{}}
 \citation{Guerin2013}
-\@writefile{brf}{\backcite{rigaud2013active}{{99}{6.5.2}{figure.caption.138}}}
-\@writefile{toc}{\contentsline {paragraph}{Balloon segmentation}{99}{section*.139}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{99}{table.caption.140}}
-\@writefile{brf}{\backcite{Arai11}{{99}{6.4}{table.caption.140}}}
-\newlabel{tab:ex:high_res}{{6.4}{99}{Pixel-level balloon segmentation evaluation scores}{table.caption.140}{}}
-\@writefile{toc}{\contentsline {paragraph}{Discussion}{99}{section*.141}}
-\@writefile{brf}{\backcite{Xu1998}{{99}{6.5.2}{section*.141}}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{100}{table.caption.142}}
+\newlabel{tab:in:coefficient}{{6.5}{100}{Example of Gaussian distribution parameters.\relax }{table.caption.142}{}}
+\@writefile{toc}{\contentsline {paragraph}{Discussion}{100}{section*.143}}
+\@writefile{brf}{\backcite{Xu1998}{{100}{6.5.2}{section*.143}}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.6}Tail detection evaluation}{100}{section.6.6}}
 \newlabel{sec:tail_detection_evaluation}{{6.6}{100}{Tail detection evaluation}{section.6.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.6.1}Experimental settings}{100}{subsection.6.6.1}}
 \@writefile{brf}{\backcite{Guerin2013}{{100}{6.6.1}{subsection.6.6.1}}}
-\@writefile{toc}{\contentsline {subsubsection}{Method A}{100}{section*.142}}
-\@writefile{toc}{\contentsline {subsubsection}{Method B}{100}{section*.143}}
+\@writefile{toc}{\contentsline {subsubsection}{Method A}{100}{section*.144}}
+\@writefile{toc}{\contentsline {subsubsection}{Method B}{100}{section*.145}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.6.2}Result analysis}{100}{subsection.6.6.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces Tail extraction results.\relax }}{100}{table.caption.144}}
-\newlabel{tab:ex:tail_evaluation}{{6.5}{100}{Tail extraction results.\relax }{table.caption.144}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Comic character extraction evaluation}{100}{section.6.7}}
-\newlabel{ssub:sequential_comic_character_extraction_evaluation}{{6.7}{100}{Comic character extraction evaluation}{section.6.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces Example of comic character predicted regions}}{101}{figure.caption.145}}
-\newlabel{fig:ex:characters_overlap_ratio}{{6.15}{101}{Example of comic character predicted regions}{figure.caption.145}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.1}Experimental settings}{101}{subsection.6.7.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Method A}{101}{section*.146}}
-\@writefile{toc}{\contentsline {subsubsection}{Method B}{101}{section*.147}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces Tail extraction results.\relax }}{101}{table.caption.146}}
+\newlabel{tab:ex:tail_evaluation}{{6.6}{101}{Tail extraction results.\relax }{table.caption.146}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Comic character extraction evaluation}{101}{section.6.7}}
+\newlabel{ssub:sequential_comic_character_extraction_evaluation}{{6.7}{101}{Comic character extraction evaluation}{section.6.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces Example of comic character predicted regions}}{101}{figure.caption.147}}
+\newlabel{fig:ex:characters_overlap_ratio}{{6.16}{101}{Example of comic character predicted regions}{figure.caption.147}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7.1}Experimental settings}{102}{subsection.6.7.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Method A}{102}{section*.148}}
+\@writefile{toc}{\contentsline {subsubsection}{Method B}{102}{section*.149}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.17}{\ignorespaces Character spotting descriptor size validation}}{102}{figure.caption.150}}
+\newlabel{fig:ex:descriptor_size_evaluation}{{6.17}{102}{Character spotting descriptor size validation}{figure.caption.150}{}}
 \citation{Guerin2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting descriptor size validation}}{102}{figure.caption.148}}
-\newlabel{fig:ex:descriptor_size_evaluation}{{6.16}{102}{Character spotting descriptor size validation}{figure.caption.148}{}}
-\@writefile{brf}{\backcite{Guerin2013}{{102}{6.7.1}{figure.caption.148}}}
-\@writefile{toc}{\contentsline {subsubsection}{Method C}{102}{section*.149}}
-\citation{l0smoothing2011,Kopf2012DigitalReconstruction}
+\@writefile{brf}{\backcite{Guerin2013}{{103}{6.7.1}{figure.caption.150}}}
+\@writefile{toc}{\contentsline {subsubsection}{Method C}{103}{section*.151}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.7.2}Result analysis}{103}{subsection.6.7.2}}
 \newlabel{sub:result_analysis}{{6.7.2}{103}{Result analysis}{subsection.6.7.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces Character localisation results.\relax }}{103}{table.caption.150}}
-\newlabel{tab:ex:eval_characters}{{6.6}{103}{Character localisation results.\relax }{table.caption.150}{}}
-\@writefile{toc}{\contentsline {paragraph}{Character spotting}{103}{table.caption.152}}
-\@writefile{toc}{\contentsline {paragraph}{Discussion}{103}{section*.154}}
-\@writefile{brf}{\backcite{l0smoothing2011,Kopf2012DigitalReconstruction}{{103}{6.7.2}{section*.154}}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.7}{\ignorespaces Character detection performance\relax }}{104}{table.caption.152}}
-\newlabel{tab:ex:character_spotting_detail_result}{{6.7}{104}{Character detection performance\relax }{table.caption.152}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.17}{\ignorespaces Character spotting result sample}}{105}{figure.caption.153}}
-\newlabel{fig:ex:character_spotting_results}{{6.17}{105}{Character spotting result sample}{figure.caption.153}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.7}{\ignorespaces Character localisation results.\relax }}{103}{table.caption.152}}
+\newlabel{tab:ex:eval_characters}{{6.7}{103}{Character localisation results.\relax }{table.caption.152}{}}
+\@writefile{toc}{\contentsline {paragraph}{Character spotting}{103}{table.caption.154}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.8}{\ignorespaces Character detection performance\relax }}{104}{table.caption.154}}
+\newlabel{tab:ex:character_spotting_detail_result}{{6.8}{104}{Character detection performance\relax }{table.caption.154}{}}
+\citation{l0smoothing2011,Kopf2012DigitalReconstruction}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.18}{\ignorespaces Character spotting result sample}}{105}{figure.caption.155}}
+\newlabel{fig:ex:character_spotting_results}{{6.18}{105}{Character spotting result sample}{figure.caption.155}{}}
 \citation{Guerin2013}
+\@writefile{toc}{\contentsline {paragraph}{Discussion}{106}{section*.156}}
+\@writefile{brf}{\backcite{l0smoothing2011,Kopf2012DigitalReconstruction}{{106}{6.7.2}{section*.156}}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.8}Semantic links evaluation}{106}{section.6.8}}
 \newlabel{sec:semantic_links_evaluation}{{6.8}{106}{Semantic links evaluation}{section.6.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.8.1}Experimental settings}{106}{subsection.6.8.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Method C}{106}{section*.155}}
+\@writefile{toc}{\contentsline {subsubsection}{Method C}{106}{section*.157}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.8.2}Results analysis}{106}{subsection.6.8.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.9}Knowledge-driven analysis evaluation}{106}{section.6.9}}
 \newlabel{sub:ex:knowledge_driven_analysis_evaluation}{{6.9}{106}{Knowledge-driven analysis evaluation}{section.6.9}{}}
-\newlabel{par:process_details}{{6.9}{106}{Process details}{section*.157}{}}
-\@writefile{toc}{\contentsline {paragraph}{Process details}{106}{section*.157}}
-\@writefile{brf}{\backcite{Guerin2013}{{106}{6.9}{section*.157}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.18}{\ignorespaces Knowledge-driven extraction performance evolution}}{107}{figure.caption.156}}
-\newlabel{fig:ex:score_evolution}{{6.18}{107}{Knowledge-driven extraction performance evolution}{figure.caption.156}{}}
-\newlabel{par:low_level_processing}{{6.9}{107}{Low level processing}{section*.158}{}}
-\@writefile{toc}{\contentsline {paragraph}{Low level processing}{107}{section*.158}}
-\newlabel{sec:semantic_links_evaluation}{{6.9}{107}{Semantic links}{section*.159}{}}
-\@writefile{toc}{\contentsline {paragraph}{Semantic links}{107}{section*.159}}
+\newlabel{par:process_details}{{6.9}{106}{Process details}{section*.159}{}}
+\@writefile{toc}{\contentsline {paragraph}{Process details}{106}{section*.159}}
+\@writefile{brf}{\backcite{Guerin2013}{{106}{6.9}{section*.159}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.19}{\ignorespaces Knowledge-driven extraction performance evolution}}{107}{figure.caption.158}}
+\newlabel{fig:ex:score_evolution}{{6.19}{107}{Knowledge-driven extraction performance evolution}{figure.caption.158}{}}
 \citation{Guerin2013}
-\newlabel{par:global_evaluation}{{6.9}{108}{General evaluation}{section*.160}{}}
-\@writefile{toc}{\contentsline {paragraph}{General evaluation}{108}{section*.160}}
-\@writefile{brf}{\backcite{Guerin2013}{{108}{6.9}{section*.160}}}
+\newlabel{par:low_level_processing}{{6.9}{108}{Low level processing}{section*.160}{}}
+\@writefile{toc}{\contentsline {paragraph}{Low level processing}{108}{section*.160}}
+\newlabel{sec:semantic_links_evaluation}{{6.9}{108}{Semantic links}{section*.161}{}}
+\@writefile{toc}{\contentsline {paragraph}{Semantic links}{108}{section*.161}}
+\newlabel{par:global_evaluation}{{6.9}{108}{General evaluation}{section*.162}{}}
+\@writefile{toc}{\contentsline {paragraph}{General evaluation}{108}{section*.162}}
+\@writefile{brf}{\backcite{Guerin2013}{{108}{6.9}{section*.162}}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.10}Conclusions}{108}{section.6.10}}
 \newlabel{sub:ex:conclusion}{{6.10}{108}{Conclusions}{section.6.10}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{109}{chapter.7}}
@@ -1002,6 +998,7 @@
 \@writefile{brf}{\backcite{PonceForsyth2012}{{114}{A.2.5}{subsection.A.2.5}}}
 \@writefile{brf}{\backcite{Bishop2006PRM}{{114}{A.2.5}{subsection.A.2.5}}}
 \newlabel{eq:se:k-means}{{A.3}{114}{Multi-level colour thresholding}{equation.A.2.3}{}}
+\citation{Szeliski2010Computer}
 \citation{dillencourt1992general}
 \@writefile{toc}{\contentsline {chapter}{\numberline {B}Feature extraction}{115}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -1009,6 +1006,7 @@
 \newlabel{app:feature_extraction}{{B}{115}{Feature extraction}{appendix.B}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {B.1}Connected-component labelling}{115}{section.B.1}}
 \newlabel{sec:ap:connected_component_labelling}{{B.1}{115}{Connected-component labelling}{section.B.1}{}}
+\@writefile{brf}{\backcite{Szeliski2010Computer}{{115}{B.1}{section.B.1}}}
 \@writefile{brf}{\backcite{dillencourt1992general}{{115}{B.1}{section.B.1}}}
 \citation{suzuki1985topological}
 \@writefile{brf}{\backcite{suzuki1985topological}{{116}{B.1}{section.B.1}}}
@@ -1023,7 +1021,7 @@
 \bibcite{Arai11}{7}
 \bibcite{Back2001}{8}
 \bibcite{bader2009}{9}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{121}{section*.165}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{121}{section*.167}}
 \bibcite{bhattacharyya2011brief}{10}
 \bibcite{Bishop2006PRM}{11}
 \bibcite{Blaschke2014Geographic}{12}

@@ -1204,7 +1204,7 @@ Figure~\ref{fig:text_extraction_detail} confirms that our method works best when
 This experiment was performed in 22 minutes for the whole dataset using one CPU at 2.5GHz (2.2s per balloon on average).
 
 
-\paragraph{Balloon segmentation}
+\paragraph{Balloon segmentation (pixel-level)}
 % \label{par:}
 % Balloon localisation is enough for object detection purposes at bounding box level.
 As mention Section~\ref{??}, the balloon contour contains part of information that is also important to retrieve in the context of understanding comic book documents (e.g. tail, tone information).
@@ -1296,6 +1296,63 @@ Table~\ref{tab:ex:high_res} shows...
 
 TODO
 
+
+\paragraph{Balloon classification} % (fold)
+\label{par:balloon_classification}
+
+
+An example of the Gaussian distribution parameters of the training set presented Figure~\ref{fig:ex:balloon_training_set} is given table~\ref{tab:in:coefficient}.
+Those parameters can be used for other dataset containing similar images without needing to train the classifier again.
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+     \centering
+    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.7\textwidth]{figure_here.png}
+    \caption[Training set for balloon contour classification]{Training set for balloon contour classification.}
+    \label{fig:ex:balloon_training_set}
+   \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    % \normalsize
+% \renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Example of Gaussian distribution parameters.}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{Zigzag}  \\
+  \hline
+    & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$    \\
+  \hline
+    Feature $f_1$ & 0.019   & 0.012 & 0.042 & 0.020 & 0.148 & 0.118   \\
+  \hline
+    Feature $f_2$ & -0.004  & 0.006 & 0.007 & 0.010 & -0.017 & 0.023   \\
+  \hline
+   %\multicolumn{1}{ |c| }{ Feature 2 } &  8  & 5 & 15 & 6 & 8 & 4 \\
+  %\cline{2-5}
+  %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ Zigzag }}   & ? & ? & 12 \\
+  %\hline
+  %\hline
+%       Proposed multi scale & ???  &???  & ???   & ???       \\
+%   \hline
+        \end{tabular}
+    \label{tab:in:coefficient}
+  \end{table}%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
+% ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
+% Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
+
+
+% paragraph balloon_classification (end)
 
 % higher score for the two-stage variant for the page 1 and 3.
 % These two pages contain mainly closed balloons, we see here that the second stage improves the accuracy of the detection of closed balloons.

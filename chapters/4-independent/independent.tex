@@ -6,19 +6,21 @@
 %Abstract-------------------------------------------------------------------------------------------------------------
 %In this chapter we propose a symbol spotting technique in graphical documents. Graphs are used to represent the documents and an error tolerant (sub)graph matching technique is used to detect the symbols in them. We propose a graph serialization to reduce the usual computational complexity of graph matching. Serialization of graphs is performed by computing acyclic graph paths between each pair of connected nodes. Graph paths are one dimensional structures of graphs, handling which is less expensive in terms of computation. At the same time they enable robust localization even in the presence of noise and distortion. Indexing in large graph databases involves a computational burden as well. We utilize a graph factorization approach to tackle this problem. Factorization is intended to create a unified indexed structure over the database of graphical documents. Once graph paths are extracted, the entire database of graphical documents is indexed in hash tables by locality sensitive hashing (LSH) of shape descriptors of the paths. The hashing data structure aims to execute an approximate $k$-NN search in a sub-linear time. We have performed detailed experiments with various datasets of line drawings and the results demonstrate the effectiveness and efficiency of our technique.
 %----------------------------------------------------------------------------------------------------------------------
+
+In this chapter we propose an independent extraction of each element contained by comic book images.
+This content retrieval approach tries to fill the weaknesses of the sequential approach presented in the previous chapter.
+New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order as they are completely independent for each other.
+New domain knowledge are embedded in the low level processing to process each image in and autonomous way with a similar performance.
+
+
 \section{Introduction}
 \label{sec:in:intro}
 
-In this section present independent processes to extract comics image content.
-
-\modif{TODOOOOOOOOOOOOOO}
+\modif{TODO or REMOVE}
 
 \section{Panel extraction}
 \label{sec:in:panel_extraction}
 
-
-% \subsubsection{Method 2: topological analysis} % (fold)
-% \label{sub:outermost_contour_filtering}
 The previous clustering-based method presented in Section~\ref{sec:se:panel_and_text} is particularly useful for simultaneous extractions, as illustrated panel and text while removing noise region at the same time.
 Nevertheless, the panel extraction can be improved if we focus on panel elements only.
 We propose to use a second characteristic of panels which is their topological relations with other elements in the image.
@@ -75,20 +77,20 @@ Such issue can be post processed using line detection and layout analysis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}	%trim=l b r t  width=0.5\textwidth, 
+\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth, 
   \centering
 	%\includegraphics[height=60mm]{figure/BUBBLEGOM_T01_P007_crop.jpg}
 	%\includegraphics[trim= 0mm 0mm 0mm 0mm]{figure/BUBBLEGOM_T01_P007.jpg}
-	\subfloat[Original image]{\label{fig:in:se:panel_img}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_img.jpg}}
+	\subfloat[Original image]{\label{fig:in:se:panel_img}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.27\textwidth]{panel_img.jpg}}
 	\hspace{1em}
-	\subfloat[Binary segmentation]{\label{fig:se:panel_binary}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_binary.png}}
+	\subfloat[Binary segmentation]{\label{fig:se:panel_binary}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.27\textwidth]{panel_binary.png}}
 	\hspace{1em}
-	\subfloat[Outermost contours]{\label{fig:in:panel_outermost_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_all_contours.png}}
+	\subfloat[Outermost contours]{\label{fig:in:panel_outermost_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.27\textwidth]{panel_all_contours.png}}
 	\\
-	\subfloat[Panel contours]{\label{fig:in:panel_big_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_big_contours.png}}	\hspace{1em}
-	\subfloat[Panel contour hulls]{\label{fig:in:panel_big_contour_hull}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panel_big_contour_hull.png}}
+	\subfloat[Panel contours]{\label{fig:in:panel_big_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.27\textwidth]{panel_big_contours.png}}	\hspace{1em}
+	\subfloat[Panel contour hulls]{\label{fig:in:panel_big_contour_hull}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.27\textwidth]{panel_big_contour_hull.png}}
 	  \hspace{1em}
-	\subfloat[Panel contour bounding boxes]{\label{fig:in:panels_detection_boxes}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{panels_detection_boxes.png}}
+	\subfloat[Panel contour bounding boxes]{\label{fig:in:panels_detection_boxes}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.27\textwidth]{panels_detection_boxes.png}}
 	  \caption[Independent panel extraction process]{Panel extraction process. Image credits:~\cite{Lubbin12}.}
 	  \label{fig:in:panel_detection_process}
 \end{figure}
@@ -111,7 +113,7 @@ In comic book documents, text is mixed with graphical content which produces a l
 The mixture of typewritten, handwritten-like and handwritten text makes the task particularly difficult for comics.
 Moreover, text presents a lot of variations (e.g. stroke, orientation, colour, size) that can cause many issues at both the localization and recognition levels.
 Text localization aims to provide text-only (or graphics-free) images to a text recognition system in order to improve its accuracy and reduce computing time.
-Knowing the positions of other elements in the image is a good clue for predicting text position because they are related to speech balloons (e.g. dialogue, thought), characters (e.g. graphic sound, illustration), panels (e.g. captions) or the page itself (e.g. page number, title, author name), this approach is detailed \ch{chap:knowledge}.
+Knowing the positions of other elements in the image is a good clue for predicting text position because they are related to speech balloons (e.g. dialogue, thought), characters (e.g. graphic sound, illustration), panels (e.g. captions) or the page itself (e.g. page number, title, author name), this approach is discussed \ch{chap:knowledge}.
 
 Few works concern text extraction in comics analysis literature (Section~\ref{sec:sota:text}) and most of them rely on speech balloon regions which make them dependent on other processing quality.
 Here we want to avoid such dependency between processes.
@@ -181,7 +183,7 @@ In case of such local degradation (e.g. holes, crossed text, partial erasure, hi
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.95\textwidth]{threshold_selection.jpg}
-		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of several comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation with a fixed threshold at 250 (as Arai~\cite{Arai11}) and fourth row shows the corresponding results using the automatic Otsu's threshold selection method.}
+		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation of the grey-scale image with a fixed threshold at 250 (as Arai~\cite{Arai11}) and fourth row shows the corresponding results using the automatic Otsu's threshold selection method.}
 		\label{fig:in:threshold_selection_methods}
 	\end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,18 +197,18 @@ In case of such local degradation (e.g. holes, crossed text, partial erasure, hi
 %For a single page we assume that the text background brightness is similar around all the characters of the same page. However, in our case, the optimal segmentation threshold differs for every single page of comics depending on the background colour of the text areas. The method is based on the observation that choosing the threshold too low, as well as choosing the threshold too high leads to an over segmentation of the connected components (CC) (Figure~\ref{fig:in:bin}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[h!] %trim=l b r t
-	  \begin{center}$
-	    \begin{array}{cccc}
-	      \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_50.png}} &
-	      \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_80.png}}  \\
-	      \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_120.png}} &
-	      \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_200.png}}
-	    \end{array}$
-	  \end{center}
-	\caption[Threshold selection effect]{Segmentation at different threshold levels from the lower top-left to the higher bottom-right (threshold = 50, 100, 150, 200). We observe that the number of CC increases when the dark lines are cut and also when background start to appear as salt and paper noise. Image credits:~\cite{Roudier11}.}
-	\label{fig:in:bin}
-	\end{figure}
+	% \begin{figure}[h!] %trim=l b r t
+	%   \begin{center}$
+	%     \begin{array}{cccc}
+	%       \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_50.png}} &
+	%       \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_80.png}}  \\
+	%       \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_120.png}} &
+	%       \fbox{\includegraphics[trim= 597px 20px 500px 400px, clip, width=0.22\textwidth]{bin_200.png}}
+	%     \end{array}$
+	%   \end{center}
+	% \caption[Threshold selection effect]{Segmentation at different threshold levels from the lower top-left to the higher bottom-right (threshold = 50, 100, 150, 200). We observe that the number of CC increases when the dark lines are cut and also when background start to appear as salt and paper noise. Image credits:~\cite{Roudier11}.}
+	% \label{fig:in:bin}
+	% \end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -353,7 +355,7 @@ We remove the biggest from each pairs.
 \subsection{Text line generation} % (fold)
 \label{sub:in:text_line_generation}
 As already mentioned Section~\ref{par:se:letter_to_line}, the gap between text component (e.g. letter or attached letters, word) and text lines can vary significantly.
-Here we use the same method presented in Section~\ref{par:se:letter_to_line} to group text component into text lines considering only the text height (or width for vertical text).
+Here we use the same method as presented in Section~\ref{par:se:letter_to_line} to group text component into text lines considering only the text height (or width for vertical text).
 %We can group text parts to text lines using the method presented Section~\ref{par:se:letter_to_line}.
 
 % subsection text_line_generation (end)
@@ -383,27 +385,19 @@ Even if standard OCR recognition rate is not yet acceptable yet for full-text ba
 
 We pass each text line candidate through an OCR system to validate its content.
 The validation criterion is that the OCR recognize at least one alphabetical symbol within the candidate region, else it is rejected.
-The text line are composed by 12 character in average which give a good chances to OCR to recognize at least on of them (Section~\ref{sec:dataset_description}).
+The text line are composed by 12 character in average which give a good chances to OCR to recognize at least one of them (Section~\ref{sec:dataset_description}).
 
 
 % Nevertheless, we measure the performance of current OCR systems Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
 
-\subsection{Conclusion} % (fold)
-\label{sub:in:text_conclusion}
-The proposed approach consist in a adapted bi-level segmentation followed by a three rules filtering based on contrast, topology and local similarities to classify the connected components as being part of either graphics or text region.
-A text line level verification valid the textual content of the candidate regions using an OCR system.
-The method does not require previous knowledge about the image content unlike the sequential approach proposed Section~\ref{sec:se:panel_and_text} that is implicitly linked to the panel regions.
-This method is experimented Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
-
-% subsection conclusion (end)
 % section text_localisation_and_recognition (end)
 
 \section{Balloon extraction and classification}
 \label{sec:in:balloon}
 
-In this section we present a method for pixel level balloon extraction based on connected-component content analysis.
-This method does not requires previous text extraction unlike the method presented Section~\ref{sub:se:regular_balloon_extraction}.
-Then we analyse the balloon contour for classification purposes, as ``smooth'', ``wavy'' and ``zigzag'' that may correspond to ``dialogue'', ``thought'' and ``exclamation'' in a higher level context.
+In this section we present a method for pixel level balloon extraction and for balloon classification.
+Balloon extraction does not requires previous text extraction unlike the method presented Section~\ref{sub:se:regular_balloon_extraction} but uses a careful analysis of the region content (e.g. similarities, spacial organisation) to predict which are most likely balloon regions.
+Balloon contour and shape information differences are presented and a contour-based classification method is detailed for ``smooth'', ``wavy'' and ``zigzag'' classes that may correspond to ``dialogue'', ``thought'' and ``exclamation'' in a higher level context (\ch{chap:knowledge}).
 
 \subsection{Balloon segmentation} % (fold)
 \label{sub:in:balloon_segmentation}
@@ -434,7 +428,7 @@ We extract connected components from the binary image and analyse their parent-c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We assume that a balloon has a minimum of children $minNbChildren$ which are horizontally or vertically aligned and centred inside the balloon region (property of text).
-The percentage of alignment $align$ is computed for each child $ch_i$ considering $CHA(ch_i)$ the subset of children that are aligned to $ch_i$, see equation~\ref{eq:in:balloon_alignment}.
+The percentage of alignment $align$ is computed for each child $ch_i$ considering $CHA(ch_i)$ the subset of children that are aligned to $ch_i$ (Equation~\ref{eq:in:balloon_alignment}).
 
 \begin{equation}
 	\label{eq:in:balloon_alignment}
@@ -471,11 +465,13 @@ The average of the alignments, $\overline{align}$, $d_x$ and $d_y$ gives a confi
 	C_{balloon} = \frac{1}{3} * \Big( \overline{align} + d_x + d_y \Big)
 \end{equation}
 
-The confidence value is used for balloon and non balloon decision (Section~\ref{sub:ex:independent_text_extraction_evaluation}).
+The confidence value is used for balloon and non balloon decision (Section~\ref{sub:ex:balloon_extraction_evaluation}).
 %TODO: justify the product with fuzzy logic approaches for information combination
 
 % This work have been submitted to the International Journal on Document Analysis and Recognition~\ref{???}.
 
+Tail detection is not treated as an independent extraction because it is part of balloons and never appears without being related to a regular or implicit balloon.
+Please refer to Section~\ref{sec:se:from_balloon_to_tail} for more detail about tail detection.
 
 \subsection{Balloon classification} % (fold)
 \label{sub:in:balloon_classification}
@@ -493,7 +489,7 @@ For instance, Figure~\ref{fig:in:contour_style} shows six different speech ballo
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\fbox{\includegraphics[trim = 0mm 1mm 0mm 0mm, clip, width=0.8\textwidth]{contour_style.png}}
-		\caption[Relation between speech balloon shape and contour informations]{Examples of speech balloons from 6 comics albums (rows) that represent 3 different expressions (columns) from the eBDtheque dataset~\cite{Guerin2013}.}
+		\caption[Relation between speech balloon shape and contour informations]{Examples of speech balloons from 6 comics albums (rows) that represent 3 different expressions (columns).}
 		\label{fig:in:contour_style}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -534,7 +530,7 @@ Examples are given Figure~\ref{fig:be:time_series}.
 % and normalized by the letter height $\bar{H}$ (see eq.~\ref{eq:avg_height}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}	%trim=l b r t  width=0.5\textwidth,
+	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\fbox{\includegraphics[ width=0.9\textwidth]{time_series.png}}
 		\caption[Balloon contour time series]{Balloon detection, time series representation and shape/contour separation. Left column represents balloon detection with the barycentre (white hole) and the starting point (top left half square). Middle column represents the distance between the barycentre and the balloon boundary over $360^\circ$ (clockwise) where the original signal $o$ is in blue and the smoothed signal $s$ in red. Right column is the difference between $s$ and $o$.}
@@ -546,7 +542,7 @@ Examples are given Figure~\ref{fig:be:time_series}.
 \label{eq:be:smooth}
  s(o) = \frac{1}{M} * \sum_{-M/2}^{+M/2} o
 \end{equation}
-where $M$ is the window size.% For instance, if $M=10$ and $i=20 \in[0, 360]$, $s_{20}$ will be the average of the distances between $o_{15}$ to $o_{25}$.
+% where $M$ is the window size.% For instance, if $M=10$ and $i=20 \in[0, 360]$, $s_{20}$ will be the average of the distances between $o_{15}$ to $o_{25}$.
 
 
 
@@ -591,7 +587,7 @@ where $f_2$ is the feature two, $\sigma_{pos}$ and $\sigma_{neg}$ are the standa
 
 
 \subsubsection{Contour classification}
-Contour classification is performed according to the selected contour descriptor (Section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997} \modif{TODO: link to method description in appendix?}.
+Contour classification is performed according to the selected contour descriptor (Section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997}.
 This classifier has been chosen because it requires a small amount of training data.
 Let a label set $L=(l_1,l_2,l_3)$ represent the three contour classes ``smooth'', ``wavy'' and ``zigzag''. Given a new unlabelled contour $c$ described by its descriptor $D=(f_1,f_2)$, the naive Bayes approach assigns $D$ to a class $l_{MAP}$ as follow:
 
@@ -601,42 +597,8 @@ Let a label set $L=(l_1,l_2,l_3)$ represent the three contour classes ``smooth''
   = \mbox{argmax}_{l} \frac{P(l) P(D | l)}{P(D)}\\
   = \mbox{argmax}_{l} P(l) P(D | l)
 \end{equation}
-where $P(l)$ is the \textit{a priori} probability of class $l$ and $P(D|l)$ is the conditional probability of a given descriptor $D$ to be in the class $l$. This conditional probability follows a Gaussian distribution for which we learn the parameters during the training step. An example of the Gaussian distribution parameters is given table~\ref{tab:in:coefficient}. Those parameters can be used for other dataset containing similar images without needing to train the classifier again.
+where $P(l)$ is the \textit{a priori} probability of class $l$ and $P(D|l)$ is the conditional probability of a given descriptor $D$ to be in the class $l$. This conditional probability follows a Gaussian distribution for which we learn the parameters during the training step.
 
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{table}[ht]
-		% \normalsize
-% \renewcommand{\arraystretch}{1.2}
-
-		\centering
-		\caption{Example of Gaussian distribution parameters.}
-		\begin{tabular}{|c|c|c|c|c|c|c|}
-	\hline
-	  & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{Zigzag}	\\
-	\hline
-	  & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ 	 	\\
-	\hline
-	  Feature $f_1$ & 0.019 	& 0.012 & 0.042 & 0.020 & 0.148 & 0.118   \\
-	\hline
-	  Feature $f_2$ & -0.004 	& 0.006 & 0.007 & 0.010 & -0.017 & 0.023   \\
-	\hline
-	 %\multicolumn{1}{ |c| }{ Feature 2 }	&  8	& 5 & 15 & 6 & 8 & 4 \\
-	%\cline{2-5}
-	%\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ Zigzag }} 	& ?	& ? & 12 \\
-	%\hline
-	%\hline
-%       Proposed multi scale & ???	&??? 	& ???		& ???     	\\
-% 	\hline
-	      \end{tabular}
-		\label{tab:in:coefficient}
-	\end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
-ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
-Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
 
 % This work have been submitted to the Tenth IAPR International Workshop on Graphics Recognition~\cite{RigaudGREC2013} and extended in the a chapter of the Graphics Recognition book~\ref{???} (Lecture Note in Computer Science).
 
@@ -666,8 +628,8 @@ Given a comic page, we first ask the user about the position of one object examp
 
 The proposed method can be summarized as follows (for a given comics album) :
 \begin{itemize}
-  \item Get the object colours from input query
   \item Compute and apply a reduced colour palette to all pages
+  \item Get the object colours from input query
   %\item select query colours (most representative colours)
   \item Compute the query descriptor
   \item Retrieve similar objects
@@ -675,6 +637,37 @@ The proposed method can be summarized as follows (for a given comics album) :
 
 The retrieval (search) step can be extended to other albums from the same collection (similar comics characters).
  
+
+
+%------------------------------------------------------------------------
+\subsection{Colour quantization}
+Once the user has highlighted the query region, we reduce the number of colour of all the images of the album (including the query region) according to a colour palette $P_c$.
+Colour reduction or quantization generally involves two steps.
+The first step is to choose a proper colour palette and the second step is to reconstruct an image by replacing original colours with the most similar colour from the palette.
+
+% \modif{TODO: Il faut donner les détails de la méthode que tu utilises sauf si tu l'as mise dans l'état de l'art au chapitre 2 (faire lien).
+%Describe method and propose L0-smoothing ++ as promising alternative but the chosen method is simple, faster and good enough for our purpose. RGB colour space?}
+
+Before quantizing the image colours, we smooth the image in order to reduce the impact of printed dithering effects that sometimes appear during the printing and scanning process and obtain flat colours.
+We use a state of the art method of Kopf that shown very good results on comics images~\cite{Kopf2012DigitalReconstruction} (Figure~\ref{fig:in:smoothing_quantization}).
+
+The colour palette $P_c$ is computed from the $N$ most frequent colours in the album and then each pixel is changed by its most similar colour from the palette to produce the quantized image.
+
+This limited amount of colours allows to describe and retrieve the object with only few representative colours.
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{figure_here.png}
+    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction.}
+    \label{fig:in:smoothing_quantization}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% An alternative would be to compute a more specific palette according to the query colours.
+
 
 %------------------------------------------------------------------------
 \subsection{Input query}
@@ -692,22 +685,6 @@ This selection can be assisted using a scribble-based tool~\cite{Xu2012LazySelec
  	\label{fig:in:user_selection}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%------------------------------------------------------------------------
-\subsection{Colour reduction}
-Once the user has highlighted the query region, we reduce the number of colour of all the images of the album (including the query region) according to a colour palette $P_c$.
-Colour reduction or quantization generally involves two steps.
-The first step is to choose a proper colour palette and the second step is to reconstruct an image by replacing original colours with the most similar colour from the palette.
-
-\modif{TODO: Il faut donner les détails de la méthode que tu utilises sauf si tu l'as mise dans l'état de l'art au chapitre 2 (faire lien).
-Describe method and propose L0-smoothing ++ as promising alternative but the chosen method is simple, faster and good enough for our purpose. RGB colour space?}
-
-This limited amount of colours allows to describe and retrieve the object with only few representative colours.
-
-
-% An alternative would be to compute a more specific palette according to the query colours.
-
 
 %------------------------------------------------------------------------
 \subsection{Query descriptor}
@@ -826,13 +803,32 @@ A post processing step removes multiple object detections by keeping only the re
 \section{Conclusions}
 \label{sec:in:conclusion}
 
-In this chapter we have proposed independent extraction method for panel, text, balloon and comics characters.
-The main advantage of being independent is do not propagate extraction errors.
-One of the limitation of this approach is for tail detection.
-Tail detection without previous balloon segmentation makes no sense because it is a specific region of the balloon contour.
-Also, unsupervised comic characters extraction is a real challenge, here we proposed a first query based approach which is given by a user but it can replaced by a comic characters region of interest computation presented in Section~\ref{sec:se:tail_to_character}.
+In this chapter we have proposed independent extraction methods for panel, text, balloon and comics characters.
 
-\modif{Next chapter... TODO}
+%PANEL
+The panel extraction method is simple, fast and efficient for comics layout that have disconnected panels as the method relies on outermost contour analysis.
+This method is experimented Section~\ref{sub:ex:panel_extraction_evaluation}.
+%TEXT
+The proposed approach for text extraction consists in an adapted bi-level segmentation followed by a filtering process of three steps based on contrast, topology and local similarities to classify the connected-components as graphics or text region.
+A final text line level verification valid the textual content of the candidate regions using an OCR system.
+The method does not requires previous knowledge about the image content unlike the sequential approach proposed Section~\ref{sec:se:panel_and_text} that is implicitly linked to the panel regions.
+This method is experimented Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
+%BALLOON EXTRACTION, CLASSIFICATION AND TAIl
+Independent balloon extraction and classification methods have been presented.
+The balloon extractor relies on topological and spatial relations similarly to the text extraction method.
+In fact, balloon and text extractions are often correlated in the literature as well because those regions are often associated to convey most of the textual information of comics.
+As mentioned earlier, tail detection without previous balloon segmentation makes no sense because it is a specific region of the balloon contour.
+This method is experimented Section~\ref{sub:ex:balloon_extraction_evaluation}.
+%CHARACTERS
+The main advantage of being independent is do not propagate extraction errors.
+Also, unsupervised comic characters extraction is a real challenge, here we proposed a first query based approach which is given by a user but it can replaced by a comic characters region of interest computation presented in Section~\ref{sec:se:tail_to_character}.
+%GENERAL
+In each extraction process, we strive to produce indicators of confidence, conscious that it could be useful for a higher level processing system such as that presented in the next chapter.
+
+Next chapter is going to present a high level approach for understanding the image content and its semantic.
+We will propose a model for the image processing and the comics domains in order to validate or infer the relations between all the extracted elements such as the reading order, the type of text (e.g. spoken, onomatopoeic, illustrative) and the positions of the speaking characters.
+
+% This approach is based on a expert system coupled with an inference engine.
 
 %In this chapter we have proposed a graph based approach for symbol spotting in graphical documents. We represent the documents with graphs where the critical points detected in the vectorized graphical documents are considered as the nodes and the lines joining them are considered as the edges. The document database is represented by the unification of the serialized substructures of graphs. Here the graph substructures are the acyclic graph paths between each pair of connected nodes. The factorized substructures are the one-dimensional (sub)graphs which give efficiency in terms of computation and since they provide a unified representation over the database, the computation is substantially reduced. Moreover, the paths give adaptation to some structural errors in documents with a certain degree of tolerance. We organize the graph paths in hash tables using the LSH technique, this helps to retrieve symbols in real time. We have tested the method on different datasets of various kinds of document images and the results are quite encouraging.
 

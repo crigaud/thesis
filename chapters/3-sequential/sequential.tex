@@ -18,8 +18,8 @@ In comics art, the page structure depends on the author style, this is why so ma
 It is unavoidable because it gives an unique graphical identity to the comics and contributes to attract the curiosity of the readers.
 Despite the differences of style, the comics drawings follow ``general use'' characteristic intrinsically to the design process~\cite{mccloud2006Making}.
 % Relations between elements and inking process are particularities that we we rely on when processing such images. surrounded by a black stroke.
-For instance, the inking process requires to magnify the main strokes and then colourize.
-We propose to rely on this main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling~\cite{Szeliski2010Computer} approach.
+For instance, the inking process requires to magnify the main strokes that defines regions which are then filled with flat colours~\ref{sec:document_image_analysis}.
+We propose to rely on this main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling approach.
 Then, the analysis of speech balloon contour allows to detect the tail precisely and its direction is used to compute the regions of interest where comic characters are supposed to be.
 In this section, all the processes are related to each other, for instance, the text extraction output is the input of the balloon extraction process.
 
@@ -64,7 +64,7 @@ The process can be summarize as bellow:
 % paragraph principle (end)
 
 
-\paragraph{Image segmentation} % (fold)
+\subsubsection{Image segmentation} % (fold)
 \label{par:se:image_segmentation}
 
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
@@ -78,7 +78,7 @@ If the median value is closer to ``black'' than ``white'' grey level, then, imag
 The binary conversion step is very important for the rest of the method because the background part will not be considered for further processing. %Sometimes, parts of text can be merged with background if their background intensity level is higher than the binarisation threshold.
 
 
-\paragraph{Connected-component extraction} % (fold)
+\subsubsection{Connected-component extraction} % (fold)
  \label{par:connected_component_extraction}
  
 The connected-component algorithm~\ref{sec:ap:connected_component_labelling} is applied on the binary image and the bounding box of each black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
@@ -104,7 +104,7 @@ We do not consider white connected-component here because we assume that panel b
  % paragraph connected_component_extraction (end) 
 
 
-\paragraph{Clustering} % (fold)
+\subsubsection{Clustering} % (fold)
 \label{par:clustering}
 By looking at the figure~\ref{fig:se:cc_bounding_box}, we can clearly see that the bounding boxes of the panel are bigger than the others.
 Also, they include more regions than others.
@@ -131,7 +131,7 @@ This clustering is performed dynamically on each image which makes this method p
 
 This method assumes that the image is highly contrasted and contains a high disparity between stroke sizes otherwise the binary segmentation or the clustering process may fail.
 
-\paragraph{Panel pruning} % (fold)
+\subsubsection{Panel pruning} % (fold)
 \label{par:se:pruning}
 The results from the clustering operation can be pruned using domain knowledge.
 First, a panel is rarely included in another so we take out components which are included in other regions of the panel cluster.  
@@ -151,7 +151,7 @@ Given the set of component bounding boxes from the panel cluster $R = \{R_1, R_2
 Concerning the text cluster, we clearly see in figure~\ref{fig:se:cc_bounding_box} that the spatial organisation is a characteristic of text regions (regardless of the language).
 We group text candidates into text lines according to alignment and ignore text candidate that can not be part of any text line.
 
-\paragraph{Letter to text line} % (fold)
+\subsubsection{Letter to text line} % (fold)
 \label{par:se:letter_to_line}
 The gap between text component (e.g. letter or attached letters, word) and text lines can vary significantly.
 In fact, handwriting generates a lot of artefacts such as alignment variations, mergers between letters and text lines.
@@ -190,7 +190,7 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 % \label{par:se:letter_to_line}
 
 
-\paragraph{Text line to paragraph} % (fold)
+\subsubsection{Text line to paragraph} % (fold)
 \label{par:text_line_grouping}
 
 % As we are interested in localizing balloons from text, we post-process the results of the text line detection to group text lines into text area (paragraph), according to two rules.
@@ -241,7 +241,7 @@ We propose to use this characteristic to compute a confidence value to each conn
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % The alignment confidence can be used in a later stage to classify balloon and non regions.
-\paragraph{Blob extraction} % (fold)
+\subsubsection{Blob extraction} % (fold)
 \label{par:blob_extraction}
 
 A typical ``closed'' balloon is surrounded by a black stroke that defined a white region (blob) inside it, with holes created by the presence of text letters.
@@ -263,7 +263,7 @@ Here, we do not use a local segmentation approach because it has more chances to
 % paragraph blob_extraction (end)
 
 
-\paragraph{Balloon extraction} % (fold)
+\subsubsection{Balloon extraction} % (fold)
 \label{par:balloon_extraction}
 
 For each extracted blob that includes a text paragraph (Section~\ref{par:text_line_grouping}), we compute the difference of alignment on the horizontal $d_x$ and the vertical $d_y$ axis between the balloon barycentre $c_1$ and the text paragraph barycentre $c_2$ (Figure~\ref{fig:se:align_diff}).
@@ -474,7 +474,7 @@ We perform a first smooth-contour approximation of the balloon boundary (low res
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Active contour initialisation}
+\paragraph{Active contour initialisation}
 \label{sec:se:cont_init}
 
 The active contour is initialized on the outline of the text paragraph region.
@@ -511,7 +511,7 @@ In the subsequent high resolution fitting stage, we add more intermediate points
 %We initialize the active contour of $N$ points on the paragraph shape (group of lines) figure~\ref{fig:se:paragraphs} and then we make it grow until it hits edges.
 %We define a paragraph as a group of text lines spoken by the same speaker and with no interruptions (e.g. time break, interaction, other person talk). These group of lines are written close to each other by convention . We labelize two consecutive lines as part of the same paragraph if there is no enough space for an other line similar in height between them.
 
-\subsubsection{Low resolution contour localization}
+\paragraph{Low resolution contour localization}
 Following a two stage process, we first aim to obtain a rough localization of the balloons by fitting a smooth contour using a few contour points during initialization.
 The idea is to progressively push the snake away from the text area and towards the balloon boundary giving an increased weight to both the $E_{ext}$ and $E_{text}$ energy terms.
 If the balloon has an explicit boundary then $E_{ext}$ will attract the snake to it.
@@ -539,7 +539,7 @@ At the end of this step, we obtain a preliminary localization of the speech ball
  %An example of candidate points is on figure~\ref{fig:se:multiscale01} and~\ref{fig:se:multiscale02}). We keep those new generated points only if they hit and edge before the snake stabilize again (only if they improve the contour detection). The aim is to get a higher resolution contour detection only where there is a contour drawn. If no contour (non closed balloon case) then we keep the appropriate shape from low resolution detection.
 
 
-\subsubsection{High resolution contour shape fitting}
+\paragraph{High resolution contour shape fitting}
 Figure~\ref{fig:se:mono_res_det} shows that the global shape of the top balloon has been detected although it is still far from a perfect fit because, as we can see on bottom part of the balloon, the snake was not able to fit precisely balloon outline, for instance peaky and tail regions are not well segmented.
 To achieve a better fitting, we increase the resolution of the snake by adding new points between the current ones and by changing the weighting parameters of the energy function, and go through a second fitting process.
 At this stage, we relax the $E_{curv}$ energy to make the snake to thinner parts of the boundary and we set $E_{cont}$ strong enough to keep a regular inter-point distance all over the contour.
@@ -662,7 +662,7 @@ Note that starting from $v*$ is more accurate than the tail origin point because
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[width=0.95\textwidth]{tail_refinement.png}
-    \caption[Tail tip position and direction detection]{Tail tip position and direction detection. From left to right, the optimal vertex $v*$ in green and the local contour detection in blue, the closest point to $v*$, $o_i$ in red and its first stop at the maximal distance with the tail origin (dark green point) $o*$. The last vignette on the right hand side represents the tail direction vector $\overrightarrow{v*,o*}$.}
+    \caption[Tail tip position and direction detection]{Tail tip position and direction detection. From left to right, the optimal vertex $v*$ in green and the local contour detection in blue, the closest point to $v*$, $o_i$ in red and its first stop at the maximal distance with the tail origin (dark green point) $o*$. The last vignette on the right hand side represents the tail direction vector $\overrightarrow{v*,o*}$ by a white arrow.}
     \label{fig:se:tail_tip_refinement}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -739,7 +739,7 @@ The confidence value $C_{tail}$ may be useful for further decision making proces
 As we know which balloons are in which panel (overlapping), we can estimate from the position and direction of the tail, which part of the panel may contain the speaking character.
 The tail orientation is quantized in eight cones of $\pi/4$ radius so we can consider that, in a rectangular-shaped panel (or its bounding box), the tail is either pointing towards a corner or towards a border of the panel.
 We define the ROI for the character as a squared region beside the speech balloon.
-The maximum width $w_{max}$ and height $h_{max}$ of the ROI are equal to the mean widths and heights of all the balloons in the image, see equation \ref{eq:se:mean_balloon_size}.
+The maximum width $w_{max}$ and height $h_{max}$ of the ROI are equal to the mean widths and heights of all the balloons in the image (Equation \ref{eq:se:mean_balloon_size}).
 
 The position of the ROI around the speech balloon is defined by two opposite points of a square $A_{x,y}$ and $B_{x,y}$ according to formula~\ref{eq:se:roi_position_around_balloon} which is sometimes constrained by a panel border that is why the term $min()$ appears (Figure \ref{fig:se:roi_area}).
 % The different positions of the ROI are illustrated on figure \ref{fig:se:roi_area}.
@@ -821,7 +821,7 @@ The experiments, presented in \ch{chap:experimentations}, evaluates the processe
 
 % Then, the variance of each class is computed to check the homogeneity of the ROI. If the variance of the ``frame'' class is high, a specific algorithm~\cite{Khoi11} is applied in order to improve the previous steps (binarisation and/or classification). 
 
-In the next chapter a non sequential approach will be presented in order to extract comics image content using independent processing and so, avoid error propagation.
+In the next chapter a non sequential approach will be presented in order to extract comics image content using independent processing and so, avoid error propagation which is the main drawback of applying several consecutive processing.
 
 % Also, an open balloon detection method based on speech text position will be presented.
 

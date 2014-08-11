@@ -1,21 +1,55 @@
-\chapter{Method 3: knowledge-driven analysis}
+\chapter{Method C: knowledge-driven analysis}
 \chaptermark{Knowledge-driven analysis}
 \label{chap:knowledge}
 \graphicspath{{./chapters/5-knowledge/figs/}}
 
+Document image analysis is an active field of research which can attain a complete understanding of the semantics of a given document.
+One example of the document understanding process is enabling a computer to understand a comic strip story.
+In this chapter we propose a knowledge-driven system that can interact with bottom-up and top-down information to progressively understand the content of a document.
+We also model the comic book's and the image processing domains knowledge for information consistency analysis.
+
+%----------------------------------------------
 % Introduction
 \section{Introduction}
 \label{sec:kn:introduction}
-% more detail in the thesis of Clement
 
-In this section, we introduce an unsupervised framework for understanding comic book images, based on expert system and knowledge base.
-We also detail its application to understanding comics.
+In this chapter we address the problem of understanding comics by automatically improving the consistency of the extracted elements according to the domain knowledge and by inferring new information and launching further processing iteratively.
+Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
+Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and their semantic relations (Figure~\ref{fig:kn:intro_illustration}).
 
-\modif{TODO: 
-Developed in collaboration with Clement...
-... Detecting these elements and establishing their relationship is crucial towards complete comics understanding...
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[trim= 0px 10px 3px 10px, clip, width=0.5\textwidth]{intro_illustration.pdf}
+  \caption{The left panel $P_0$ represents a comics character labelled as $C_0$ saying the content of balloon $B_0$ to another character labelled as $C_1$. In the right panel $P_1$, the character $C_1$ is saying $B_1$ to $C_0$.}
+  \label{fig:kn:intro_illustration}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+The proposed framework is based on interactions between low and high level processing in order to reduce the challenging semantic gap.
+%Here, the different level of information are given by an image processing and an expert system respectively. 
+We call each image processing algorithm an ``extractor'' of panels, balloons (or bubbles), tails and comic characters (protagonists) according to the type of region they are designed for.
+Extractors provide a set of regions that feeds a knowledge base.
+%in the different extraction processes such as panel and speech balloon improvements and validation (e.g. panel, text, speech balloon) and their combination to guide other feature extractions (e.g. person object).
+The knowledge base is associated with rules that form an ontology.
+The main difficulty is to extract but also to model the diversity of styles, format, definition and the differences between design and printing techniques (Figure~\ref{fig:kn:comics_diversity}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[trim= 4px 0px 0px 0px, clip, width=0.5\textwidth]{comics_diversity.png}
+  \caption{Examples of comic panels that reflect the diversity of comics.}
+  \label{fig:kn:comics_diversity}
+ \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+An expert system uses the ontology to assert the relations between regions and the corresponding inference engine to deduct new information in order to perform further image processing (e.g. hypotheses of the regions of interest for the localisation of comic characters or speech balloons).
+Note that in the rest of the chapter ``character'' is used in the sense of actor or protagonist of the comics, not as a piece of text.
+This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining applied to comic book contents.
+
+%--------------------------------------------------
 \section{Expert system} % (fold)
 \label{sec:kn:expert_system}
 
@@ -68,7 +102,7 @@ Because comics, as an art form, do not follow any strict specifications it is re
 There are some instances of comic books without balloons or without panels.
 If webcomics are also considered, then a comic is not even necessarily composed of pages.
 A model that would be true for every type of comic book would be too general to be of any use in this work.
-Instead we define a general comic book model with more constrained properties that represent a large subset of comics (Franco-Belgian, Japanese, American).
+Instead we define a general comic book model with more constrained properties that represent a large subset of comics (Franco-Belgian, Japanese and American).
 The main advantage is that it can be adapted to any kind of document images by defining properties according to the application domain.
 We define the general properties of comics as follows:
 
@@ -98,7 +132,7 @@ Figure~\ref{fig:kn:gtfitting} shows the percentage of panels, balloons, text lin
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[width=0.8\textwidth]{GTFitting.png}
-  \caption[Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model]{Percentage of panels, balloons, text lines and characters from the eBDtheque dataset~\cite{Guerin2013} that fit the definition given in \ref{sec:kn:knowledge_representation}according to the area proportion that need to be covered.}
+  \caption[Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model]{Percentage of panels, balloons, text lines and characters from the eBDtheque dataset~\ref{sec:dataset_and_ground_truth_construction} that fit the definition given in \ref{sec:kn:knowledge_representation} according to the area proportion that need to be covered.}
   \label{fig:kn:gtfitting}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -136,8 +170,8 @@ These figures represent the theoretical limit that can be reached with the model
 \section{Processing sequence} % (fold)
 \label{sec:kn:framework_}
 The expert system asserts the extraction of simple elements such as panels, texts, balloons and tails in order to infer speech balloons before searching for more complex elements (e.g. comic book characters) based on the context defined by the simple elements and their relations.
-This can be demonstrated with the first two iterations of the process loop as shown in Figure~\ref{fig:kn:process_loop}.
-These sections are detailed bellow.
+This can be demonstrated with the first two iterations of the process loop (Figure~\ref{fig:kn:process_loop}).
+The process flow of the two iterations is detailed hereafter.
 % The details of the two iteration process used here is described in table~\ref{tab:two_iteration}.% decomposed as follows:%in the global loop process:
 
 
@@ -228,7 +262,7 @@ From the validated information, the expert system infers the semantic informatio
 
 \paragraph{Iteration 2 - step 1 (hypothesis)} % (fold)
 \label{par:step_4}
-This step is the beginning of the second iteration of the process illustrated Figure~\ref{fig:kn:process_loop}.
+This step is the beginning of the second iteration of the process (Figure~\ref{fig:kn:process_loop}).
 At this point the expert system already has some information about the content of the image from which a further hypothesis can be made concerning complex elements such as the region of interest (ROI) of the characters from the speech balloon positions (Figure~\ref{fig:kn:hypothesis_roi}).
 The ROIs defined by the expert system are given as seeds to the image processing algorithm (extractor of characters) which in turn feeds the expert system with more precise character locations (Figure~\ref{fig:kn:graph_character_region}).
 
@@ -252,7 +286,7 @@ The ROIs defined by the expert system are given as seeds to the image processing
    \centering
    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_2_2.png}\\
   % \includegraphics[trim= 0px 168px 20px 85px, clip, width=0.8\textwidth]{fig/graph_init_2_2.pdf}
-  \caption[Character locations ($C$) returned by the low level processing]{Character locations ($C$) returned by the low level processing from the ROIs defined in Figure~\ref{fig:kn:hypothesis_roi}.
+  \caption[Character locations $C$ returned by the low level processing]{Character locations $C$ returned by the low level processing from the ROIs defined in Figure~\ref{fig:kn:hypothesis_roi}.
   }% added into the graph and the corresponding region in the image $I$.}
   \label{fig:kn:graph_character_region}
  \end{figure}
@@ -260,7 +294,7 @@ The ROIs defined by the expert system are given as seeds to the image processing
 
 \paragraph{Iteration 2 - step 2 (validation)} % (fold)
 \label{par:step_5}
-The expert system checks if the spatial relations of the characters $C$ match the properties of the knowledge base defined in Section~\ref{sub:kn:knowledge_base} (Figure~\ref{fig:kn:valid_2}).
+The expert system checks if the spatial relations of the characters $C$ match the properties of the knowledge base defined in Section~\ref{sec:kn:knowledge_representation} (Figure~\ref{fig:kn:valid_2}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -268,7 +302,7 @@ The expert system checks if the spatial relations of the characters $C$ match th
    \centering
    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_valid_2.png}\\
   \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_valid_2.pdf}
-  \caption[Validation of the character regions ($C$) by the expert system]{Validation of the character regions ($C$) by the expert system and the corresponding image $I$.
+  \caption[Validation of the character regions $C$ by the expert system]{Validation of the character regions $C$ by the expert system and the corresponding image $I$.
   }
   \label{fig:kn:valid_2}
  \end{figure}
@@ -276,7 +310,7 @@ The expert system checks if the spatial relations of the characters $C$ match th
 
 \paragraph{Iteration 2 - step 3 (inference)} % (fold)
 \label{par:step_6}
-The expert system infers which characters are speaking $SC$ (see Section~\ref{sub:inference_of_the_speaking_characters}) and makes a semantic link to the corresponding speech balloons which have already been linked to speech text regions in {\it Iteration 1 - inference} step. (Figure~\ref{fig:kn:final_information}).
+The expert system infers which characters are speaking $SC$ (Section~\ref{sub:inference_of_the_speaking_characters}) and makes a semantic link to the corresponding speech balloons which have already been linked to speech text regions in {\it Iteration 1 - inference} step. (Figure~\ref{fig:kn:final_information}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,7 +318,7 @@ The expert system infers which characters are speaking $SC$ (see Section~\ref{su
    \centering
    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_infer_2.png}\\
   \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_infer_2.pdf}
-  \caption[Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions]{Inference of the two speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions.
+  \caption[Inference of the speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions]{Inference of the two speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions.
   The two semantic links are represented by a grey stroke in the image over the regions concerned and a non oriented horizontal edge in the graph.
   }
   \label{fig:kn:final_information}
@@ -311,7 +345,7 @@ Therefore, the ROI concept is linked to the \textit{Image} and \textit{Extractor
 %Their coordinates are stored in the OpenGIS Well-Know Text (WKT) format \cite{OpenGISConsortiumInc.2011}.
 
 Algorithms may have specific characteristics so they don't produce the same set of regions as the result of the analysis of an image.
-Extractors are also usually designed to extract one kind of elements, e.g. panels, balloons, etc.
+Extractors are also usually designed to extract one kind of elements (e.g. panels, balloons and text).
 The purpose of each algorithm is given through the data property \textit{roiType}.
 Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts altogether.
 
@@ -377,7 +411,7 @@ In order to validate the extraction of the comic page's components, we made sure
 %Those which are not consistent with our model are rejected.
 
 Firstly, each item was loaded into the model as it was labelled (page, panel, balloon, text line or comics character) by the low level processing step.
-Then, each element was linked to its smallest container in a half-blind way (as defined Section~\ref{sec:kn:knowledge_representation}).
+Then, each element was linked to its smallest container in a half-blind way (Section~\ref{sec:kn:knowledge_representation}).
 That is to say that the type of contained element was known, while the type of  potential container was not.
 Not knowing the type of container might have lead to incorrect assertions that would have produced inconsistencies in the model.
 Those inconsistencies are the result of possible mistakes made during the extraction process that were filtered out in order to improve the overall detection precision.
@@ -454,15 +488,24 @@ Since the range of this property was set to the concept of \textit{speaking char
 
 % section interaction_low_high_level_processing (end)
 
+\subsection{Hypothesis} % (fold)
+\label{sub:hypothesis}
+
+\modif{TODO: ROI same as Method 1, reading order (SOTA), other from Clement's thesis (coming soon)}
+
+% subsection hypothesis (end)
 
 % Conclusion --------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:kn:conclusion}
 
-\modif{TODO}
+We presented a new framework for understanding documents that can interact with low and high level information suitable for semi structured and complex background documents such as comics.
+Several key improvements to information extraction and processing methods have been developed. 
+%We suggest improved methods for panel and balloon extraction along with a first method in the literature to locate the tail tip and the indicated direction by analysing the balloon contour.
+We provide a novel generic and unsupervised definition of the comic character region of interest that takes into account the spatial organisation of the rest of the elements in an image.
+It relies on an inference engine that interacts with two knowledge models, one for image processing and the other one for comics.
+In the future we plan to add more iterations of the process in order to retrieve new information such as spotting the non speaking comic characters using those already detected (speaking characters) for training.
+In addition, the expert system will be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from text locations. 
 
 In the next chapter, we are going to experiment the different contributions presented in this thesis and compare them to other methods from the literature.
 The dataset is first introduced along with the metrics we used to evaluate information retrieval. 
-
-% the first comics image dataset and ground truth publicly available for researchers. It is a selection of hundred pages from more than twenty different albums from America, Japan and Europe.
-% The construction of the dataset and ground truth and a quality assessment test are detailed.

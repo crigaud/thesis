@@ -51,42 +51,52 @@
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Contour signal decomposition}}{53}{figure.caption.60}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Colour image smoothing and quantization for comic character extraction}}{55}{figure.caption.62}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces User defined comics character selection}}{55}{figure.caption.63}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{56}{figure.caption.64}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Comic character query description}}{57}{figure.caption.64}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{58}{figure.caption.65}
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Multi-scale comic character spotting}}{59}{figure.caption.66}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{62}{figure.caption.67}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Process loop of the knowledge-driven system}}{62}{figure.caption.68}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{64}{figure.caption.69}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Initial hypothesis about the content of a given image}}{65}{figure.caption.71}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Validation of the hypothesis using the properties of the knowledge base}}{66}{figure.caption.73}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}}{66}{figure.caption.75}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}}{67}{figure.caption.77}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Character locations ($C$) returned by the low level processing}}{68}{figure.caption.78}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Validation of the character regions ($C$) by the expert system}}{68}{figure.caption.80}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Inference of the speaking characters ($SC$) and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}}{69}{figure.caption.82}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces A representation of the image model involved in the expert system}}{70}{figure.caption.83}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces A representation of the main aspects of the comics model involved in the expert system}}{71}{figure.caption.84}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The left panel $P_0$ represents a comics character labelled as $C_0$ saying the content of balloon $B_0$ to another character labelled as $C_1$. In the right panel $P_1$, the character $C_1$ is saying $B_1$ to $C_0$.\relax }}{62}{figure.caption.67}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Examples of comic panels that reflect the diversity of comics.\relax }}{62}{figure.caption.68}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{63}{figure.caption.69}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Process loop of the knowledge-driven system}}{63}{figure.caption.70}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{65}{figure.caption.71}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Initial hypothesis about the content of a given image}}{66}{figure.caption.73}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Validation of the hypothesis using the properties of the knowledge base}}{67}{figure.caption.75}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base}}{68}{figure.caption.77}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$}}{68}{figure.caption.79}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Character locations $C$ returned by the low level processing}}{69}{figure.caption.80}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Validation of the character regions $C$ by the expert system}}{69}{figure.caption.82}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Inference of the speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions}}{70}{figure.caption.84}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces A representation of the image model involved in the expert system}}{71}{figure.caption.85}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces A representation of the main aspects of the comics model involved in the expert system}}{72}{figure.caption.86}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Examples of comic panels that reflect the diversity of comic books of the dataset}}{76}{figure.caption.87}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Distribution of the number of elements per text lines}}{78}{figure.caption.93}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Panel annotation}}{80}{figure.caption.97}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Speech balloon contour annotation}}{80}{figure.caption.99}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Text line location annotation}}{81}{figure.caption.101}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Comic character position annotation}}{82}{figure.caption.103}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Balloon shapes}}{83}{figure.caption.108}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Annotation rendering in a browser}}{84}{figure.caption.112}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Distance to the mean position}}{87}{figure.caption.113}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Image used for ground truth quality assessment}}{88}{figure.caption.114}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Division line detection from~\cite {Arai10}}}{91}{figure.caption.116}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO replace for table?}. \relax }}{93}{figure.caption.122}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Distribution of the number of letter per speech balloon}}{97}{figure.caption.133}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{98}{figure.caption.137}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Training set for balloon contour classification}}{99}{figure.caption.141}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Example of comic character predicted regions}}{101}{figure.caption.147}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Character spotting descriptor size validation}}{102}{figure.caption.150}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Character spotting result sample}}{105}{figure.caption.155}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Knowledge-driven extraction performance evolution}}{107}{figure.caption.158}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Distribution of the number of elements per text lines}}{80}{figure.caption.94}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Panel annotation}}{81}{figure.caption.98}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Speech balloon contour annotation}}{82}{figure.caption.100}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Text line location annotation}}{83}{figure.caption.102}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Comic character position annotation}}{83}{figure.caption.104}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Balloon contour styles}}{84}{figure.caption.109}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Annotation rendering in a browser}}{86}{figure.caption.113}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Distance to the mean position}}{89}{figure.caption.114}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Image used for ground truth quality assessment}}{90}{figure.caption.115}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Division line detection from~\cite {Arai10}}}{93}{figure.caption.116}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Panel extraction process of Ho~\cite {Ho2012}}}{94}{figure.caption.117}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Original image}}}{94}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Binary segmentation}}}{94}{subfigure.11.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {After dilatation step}}}{94}{subfigure.11.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {After erosion step}}}{94}{subfigure.11.4}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{95}{figure.caption.118}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{95}{figure.caption.119}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{96}{figure.caption.120}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{96}{figure.caption.121}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Distribution of the number of letter per speech balloon}}{101}{figure.caption.129}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{102}{figure.caption.133}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Training set for balloon contour classification}}{103}{figure.caption.137}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Example of comic character predicted regions}}{105}{figure.caption.143}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Character spotting descriptor size validation}}{106}{figure.caption.146}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Character spotting result sample}}{109}{figure.caption.151}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Knowledge-driven extraction performance evolution}}{111}{figure.caption.154}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

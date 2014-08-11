@@ -11,11 +11,11 @@ With the analysis and processing of data comes the need of the output results ev
 Traditionally, this evaluation is made by validating the results of an algorithm with a ground truth that represents what an ideal output should be\cite{pascal-voc-2012, smeaton2006evaluation, griffinHolubPerona}.
 Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm to the community \cite{lamiroy:inria-00537035}.
 This can be applied to any kind of results from image segmentation to classification or information retrieval.
-In this chapter we present the dataset and ground truth we provide to evaluate comic book image related works.
-We describe the metrics we use to evaluate each contribution (method 1, method 2 and method 3).
+In this chapter we present the dataset and ground truth we provided to evaluate comic book image related works.
+We describe the metrics we used to evaluate each contribution (method 1, 2 and 3).
 The evaluation of method 3 is decomposed in two parts: the validation and the inference processes.
-Validation are combined with method 1 and 2 in each extraction evaluation to show its benefits.
-The inference part can not be directly compared to low level information extraction, hence we discuss it in a proper section (Section~\ref{sec:semantic_links_evaluation}).
+Validations are combined with method 1 and 2 in each extraction evaluation to show its benefits.
+The inference part of method 3 can not be directly compared to low level information extraction, hence we discuss it in a proper section (Section~\ref{sec:semantic_links_evaluation}).
 
 % compare our work to previous approaches from the literature.
 
@@ -34,24 +34,25 @@ The inference part can not be directly compared to low level information extract
 \label{sec:dataset_and_ground_truth_construction}
 
 Being in need of comic books material and an associated ground truth to evaluate our work, we noticed that there is not such dataset publicly available for scientific purpose. 
-Therefore, we decided to gather the first publicly available comic books dataset in association with several comic books authors and publishers and to build up the corresponding ground truth according to document analysis and understanding concerns.% which are image segmentation and semantic analysis.
-The comic book images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that had the objective to foster innovation in this domain trough academic research (Figure~\ref{fig:ex:comics_diversity}).
+Therefore, we decided to gather the first publicly available comic books dataset in association with several comic books authors and publishers and to build up the corresponding ground truth according to document analysis and understanding concerns.
+% which are image segmentation and semantic analysis.
+The comic book images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that had the objective to foster innovation in this domain trough academic research (Appendix~\ref{app:dataset}).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-  \includegraphics[trim= 4px 0px 0px 0px, clip, width=230px]{comics_diversity.png}
-  \caption[Examples of comic panels that reflect the diversity of comic books of the dataset]{Examples of comic panels that reflect the diversity of comic books of the dataset.}
-  \label{fig:ex:comics_diversity}
- \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+%    \centering
+%   \includegraphics[trim= 4px 0px 0px 0px, clip, width=230px]{comics_diversity.png}
+%   \caption[Examples of comic panels that reflect the diversity of comic books of the dataset]{Examples of comic panels that reflect the diversity of comic books of the dataset.}
+%   \label{fig:ex:comics_diversity}
+%  \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 It took almost one year to define which type of comics are the most interesting for researchers, meet and convince comic book authors and publishers, get copyright authorizations for the scientific community, develop a specific annotation tool and finally to hire people to do the ground truth (manual task).
 
 A selection of hundred comic pages were annotated in one day by twenty volunteers affiliated to the L3i lab.
 In order to provide a common basis for evaluating research work, the ground truth have been published in 2013~\cite{Guerin2013} and made available to the scientific community through a dedicated website\footnote{\url{http://ebdtheque.univ-lr.fr}}.
-It has been enriched in 2014 by adding semantic information to the already annotated elements.
+It has been enriched in 2014 by adding the location of the principal comic characters and semantic information to the already annotated elements.
 
 The content of the dataset and its terms of use, the ground truth construction protocol and its quality assessment are detailed in the four next sub sections.
 
@@ -307,8 +308,6 @@ This second level of annotation complete each spacial region with additional inf
 Also, the image itself is annotated with extra information about its origin (e.g. album, collection, author, publisher).
 %Once segmented, each object is annotated with a set of predefined metadata as follows. 
 
-\modif{TODO describe metadata attribute \emph{idBalloon} in Line elements and \emph{idCharacter} in Character element}
-
 \paragraph{Images}
 The image, often assimilated as pages, has been annotated with bibliographical information, so that anyone using this ground truth is free to get is own paper copy of the comic books for extra uses.
 The first annotation is the page number (\texttt{{pageNumber}}) then the comic book title, from which the page has been picked up, and its release date (\texttt{{albumTitle, releaseDate}}), the series it belongs to (\texttt{{collectionTitle}}), the authors and editor names (\texttt{{writerName, drawerName, editorName}}) and, finally, the website and/or ISBN (\texttt{{website, ISBN}}).
@@ -317,7 +316,7 @@ Structural information about the page content has been added as well, such as re
 % These annotation are stored in a tag named \texttt{{Pages}}.
 
 \paragraph{Panels} 
-The panes are annotated with a \texttt{{rank}} metadata which stand for its position in the reading sequence. 
+The panels are annotated with a \texttt{{rank}} metadata which stand for its position in the reading sequence. 
 The first panel to be read on a given page has its rank property set to 1, while the last one is set to \textit{n}, where \textit{n} is the number of panels in the page.
 
 \paragraph{Balloons}
@@ -327,7 +326,7 @@ For a page containing $m$ balloons, the first balloon's rank will be 1 and the l
 %Moreover, two additional metadata are given. 
 A second information concerns the \texttt{{shape}} of the balloon.
 This feature conveys an information about how the contained text is spoken (tone).
-The type of \texttt{{shape}} is given from the following list \{\texttt{smooth, wavy, spiky, suggested}\} as pictured in Figure~\ref{fig:gt:balloonShape}.
+The type of \texttt{{shape}} is given from the following list \{\texttt{smooth, wavy, spiky, suggested, other}\} as pictured in Figure~\ref{fig:gt:balloonShape}.
 Finally, the tail tip position (extremity) and its pointing direction have been added into the second version of the ground truth.
 There are given through the \texttt{{tailTip}} and \texttt{{tailDirection}} properties.
 The possible values of the direction are reduced to the eight cardinal directions plus a ninth additional value for the lack of tail: \{\texttt{N, NE, E, SE, S, SW, W, NW, none}\}.
@@ -337,7 +336,7 @@ In the second version of the ground truth (2014), we added the identifier of the
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.65\textwidth]{balloonShape.png}
-\caption[Balloon shapes]{Les différents types de contour de bulle, de gauche à droite et de haut en bas : nuage, hérissé, suggéré, rectangle, ovale.}
+\caption[Balloon contour styles]{Balloon contour styles, from top-left to bottom-right: cloud, spiky, suggested and two smoothed contour type. Note that the two last ones are not labelled as rectangle or oval because here we annotated the type of contour and not shape (Section~\ref{sub:in:balloon_classification})}
 \label{fig:gt:balloonShape}
 \end{center}
 \end{figure}
@@ -345,6 +344,12 @@ In the second version of the ground truth (2014), we added the identifier of the
 
 \paragraph{Text lines}
 The text lines are associated with their transcription and the identifier of the corresponding balloon is added in \texttt{{idBalloon}} if the text line is included in a balloon.
+In a second step, the function of each text line was specified through metadata \texttt{textType}. 
+We identified six distinct categories of text.
+The text that is used to tell the story and that can be either spoken (\texttt{speech}) or thought (\texttt{thought}) or narrated (\texttt{narrative}).
+On the other hand, there are textual information that bring timely and contextual information, they are the onomatopoeia (\texttt{onomatopoeia}) and drawn text (\texttt{illustrative}) as part of the drawing such as license plate, storefront, brand.
+The sixth category have been defined as notes (\texttt{note}) for embedded text in the page, such as the signature of the author, the page number, the title (every other readable text type).
+%Another information have been added in 2014: the \texttt{textType} that specifies if the text is of type \{\texttt{speech, thought, onomatopoeia, narrative, illustrative, note}\}
 
 \paragraph{Comic characters} % (fold)
 \label{par:comic_characters}
@@ -413,7 +418,7 @@ These contain annotations collected on five types of elements which are the page
 The type of element in a tag is specified by its \texttt{class} attribute.
 The first tag, \texttt{class = ``Page''} contains description on the image and has two daughters.
 The first one, \texttt{image} has several attributes which specifies a link to the image file in the dataset \texttt{xlink: href} and two specifying the \texttt{width} and \texttt{height} of the image.
-The second, \texttt{metadata}, contains bibliographic information about the album and page properties described in \ref{sub:gt:semantic_annotation}.
+The second, \texttt{metadata}, contains bibliographic information about the album and page properties described in Section\ref{sub:gt:semantic_annotation}.
 %A SVG file begins with information about the XML version and encoding system and then a root \texttt{<svg>} element containing the title of the document \texttt{<title>} and four others \texttt{<svg>} elements with different class attributes. % that describe the page, the panels, the text lines and the text areas the entire set of annotations for the attached page.
 %The annotations are the same for all the \texttt{<svg>} nodes, each of them describing one kind of element (e.g. panel, balloon) according to its {\tt class} attribute. 
 %The first \texttt{<svg>} element, \texttt{<svg class=``Page''>}, has two children.
@@ -424,10 +429,9 @@ They all contain SVG \texttt{<polygon>} elements with a list of five or more poi
 Note that the last point is always equal the first one to ``close'' the polygon according to the SVG specifications. 
 Those points are used by the viewer to draw polygons with the corresponding CSS style. 
 Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on the corresponding polygon, according to the attributes list described Section~\ref{sub:gt:semantic_annotation}.
+An example of ground truth file is given Listing~\ref{list:svg}.% présente un exemple du contenu de l'un de ces fichiers.
 
-An example of ground truth file is given figure~\ref{list:svg}.% présente un exemple du contenu de l'un de ces fichiers.
-
-\begin{lstlisting}[language=XML, frame=single, caption=Sample of SVG file from the eBDtheque ground truth, captionpos=b, label=list:svg]
+\begin{lstlisting}[language=XML, frame=single, caption=Example of SVG file from the eBDtheque ground truth, captionpos=b, label=list:svg]
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg>
   <title>CYB_BUBBLEGOM_T01_005</title>
@@ -565,7 +569,7 @@ Figure~\ref{fig:gt:graphiqueStdVT} shows the amount of corners for a distance, c
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
 
-Given the threshold $p=0.5$, 87.5\% of pointed corners can be considered as being homogeneous over the group of labelling people. 
+Given the threshold $th=0.5$, 87.5\% of pointed corners can be considered as being homogeneous over the group of labelling people. 
 %{\bf what is p?} p is the threshold
 The overall mean standard deviation on this page reaches 0,15\%
  (1.13 pixels) for the width, and 0.12\% (1.28 pixels) for the height.
@@ -591,7 +595,10 @@ The pixel-level balloon and the comic characters visual annotation have been car
 \subsection{Discussions}
 \label{ssec:gt:siscussions}
 
-\modif{TODO (conclude the dataset + ground truth presentations)}
+We presented the eBDtheque dataset, the first comic image dataset and associated ground truth on comic books containing spatial and semantic annotations, publicly available for the scientific community.
+% The corpus has been introduced as well as the construction protocol.
+The corpus can be extended to enlarge the diversity of the dataset and provide consecutive page or full album in order to allow a wider level of comic books analysis.
+ New semantic annotations can be added, such as the view angle and the shot type for panels, text at the level of letters, comic character's role, profile and relationships. 
 
 
 % section dataset_and_ground_truth_construction (end)
@@ -638,7 +645,18 @@ We also compute the F-measure $F$ for each result.
 \subsection{Object segmentation} % (fold)
 \label{sub:ex:object_segmentation_metric}
 
-TODO for pixel-level balloon extraction section?
+Object bounding box based evaluation is appropriate for surfaces comparison but not for detailed region extraction evaluation.
+In section~\ref{sub:in:balloon_classification} we extract balloon contour at the level of pixel for analysis and classification purposes.
+In order to make the difference between the errors sources we need to use a more precise evaluation framework.
+Here we keep using recall and precision metrics as introduced in the previous section but instead of counting the number of object that valid a certain criterion, we simply count the number of pixel that have been correctly ($TP$), incorrectly ($FP$) or missed ($FN$).
+
+
+\subsection{Text recognition} % (fold)
+\label{sub:ex:text_recognition_metric}
+Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{??} using commercial OCR systems on the eBDtheque dataset.
+We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth~\cite{Guerin2013}.
+
+% subsection text_recognition (end)
 
 % subsection object_localisation (end)
 \subsection{Tail detection} % (fold)
@@ -666,11 +684,10 @@ The direction accuracy $A_{tailDir}$ was measured according to the distance $d_1
 \label{eq:ex:accuracy_taildir}
   A_{tailDir} = 1- \frac{d_1}{8}
 \end{equation}
-\modif{DOUBLE CHECK with code}
 
 For instance if the detected direction was $S$ (south) and the ground truth was $SE$ (south-east) then $d_1=1$.
 Note that our method can also detect when there is no tail on the balloon contour $C_{tail}=0\%$ (confidence equal to zero percent); in this case $A_{tailTip}=A_{tailDir}=100\%$ if there was effectively no tail to detect or $A_{tailTip}=A_{tailDir}=0\%$.
-For this experiment, the local window size $M$ of the tail direction process was set to 10\% of the mean balloon size (Equation~\ref{eq:se:mean_balloon_size}) in order to be invariant to the image definition \modif{TODO: justify}.
+% For this experiment, the local window size $M$ of the tail direction process was set to 10\% of the mean balloon size (Equation~\ref{eq:se:mean_balloon_size}) in order to be invariant to the image definition \modif{TODO: justify}.
 
 % subsection tail_detection (end)
 
@@ -684,12 +701,6 @@ We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percent
 
 % subsection semantic_links_and_text_recognition (end)
 
-\subsection{Text recognition} % (fold)
-\label{sub:ex:text_recognition_metric}
-Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{??} using commercial OCR systems on the eBDtheque dataset.
-We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth~\cite{Guerin2013}.
-
-% subsection text_recognition (end)
 % section metrics (end)
 
 % \section{Parameter validation}
@@ -709,70 +720,135 @@ We evaluated the text detection accuracy $A_{textReco}$ at a given string edit d
 \label{sub:ex:panel_extraction_evaluation}
 % We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 
-In this section we evaluate our three approaches and compare them to two methods from the literature.
-We chose to compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two methods from the state of the art (Section~\ref{sec:sota:layout_panel}).
-The first one use connected component analysis similarly to our proposition and the second differs because it is based on growing region that does not require binary segmentation.
+In this section we evaluate our three approaches (method A, B and C) and compare them to two methods from the literature.
+We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two methods from the state of the art (Section~\ref{sec:sota:layout_panel}).
+The first one use connected-component analysis similarly to our proposition and the second is based on growing region.
 
-The comparative evaluation is performed on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level, and using the recall and precision metrics introduced Section~\ref{sec:ex:metrics}.
+All the evaluation are performed on the 850 panels of the eBDtheque dataset~\ref{sec:dataset_and_ground_truth_construction} at object bounding box level, using the recall and precision metrics introduced Section~\ref{sub:ex:object_localisation_metric}.
 
-\subsection{Experimental settings} % (fold)
-\label{sub:experimental_settings}
+% \subsection{Experimental settings} % (fold)
+% \label{sub:experimental_settings}
 
-TODO
+% TODO
 
-\subsubsection{Arai's method~\cite{Arai10}} % (fold)
+\subsection{Arai's method~\cite{Arai10}} % (fold)
 % \label{sub:arai_cite_arai}
-We re implemented the comic panel extraction method presented in~\cite{Arai10} except not the division line detection by lake of detail in the original paper.
+We re implemented the comic panel extraction method presented in~\cite{Arai10} except the division line detection by lake of detail in the original paper.
 
-TODO: describe the method
-
+This method consists in a bi-level segmentation with an empiric threshold value of 250 followed by a connected-component extraction, binary image inversion and blob selection.
+The final blob selection is based on a minimal size of $Image.Width / 6$ and $Image.Height / 8$.
+From the selected blobs, a line detection approach is applied as final decision.
 This line detection approach is able to cut overlapped panel on a page width or height basis which is appropriate for pages with a single panel per strip as illustrated Figure~\ref{fig:ex:division_line_detection}.
-Single panel strips are not so common and would not have affected the result significantly.
+The author did not share the code and were not able to re implement this part by lake of detail in the original paper.
+Anyway, the line division method works only for panels that are as large as the page which is not so common and would not have affected the result significantly (Figure~\ref{fig:ex:division_line_detection}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{division_line_detection_arai10.png}
-\caption[Division line detection from~\cite{Arai10}]{Division line detection from~\cite{Arai10} (figure 5 in the author' paper).}
+\caption[Division line detection from~\cite{Arai10}]{Division line detection from~\cite{Arai10} (figure 5 in the author's paper).}
 \label{fig:ex:division_line_detection}
 \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The score of this method was in average for recall and precision of 20.00\% and 18.75\%.
+
 % subsection arai_cite_arai (end)
 
-\subsubsection{Ho's method~\cite{Ho2012}} % (fold)
-We re implemented the Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the growing region method to 20, which was no mentioned in the original paper.
+\subsection{Ho's method~\cite{Ho2012}} % (fold)
+We re implemented the Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the growing region method to 20 (not mentioned in the original paper).
+The image border is filled with the average five-pixel page border colour and four seeds are initialized on the four corners of the image.
+When the region growing algorithm stops, the background is removed which separated panel blocks.
+Mathematical morphology (dilatation) is then applied until block become smaller than $1/6$ of the page size and then the same number of erosion is applied in order to give back to the objects their initial size.
+This manipulation separates the connected panels but has the disadvantage of creating unwanted holes as well (Figure~\ref{fig:ex:panel_ho_extraction_process}).
 
-TODO: describe the method
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth, 
+  \centering
+  %\includegraphics[height=60mm]{figure/BUBBLEGOM_T01_P007_crop.jpg}
+  %\includegraphics[trim= 0mm 0mm 0mm 0mm]{figure/BUBBLEGOM_T01_P007.jpg}
+  \subfloat[Original image]{\label{fig:ex:se:panel_ho_img}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho01.png}}
+  \hspace{1em}
+  \subfloat[Binary segmentation]{\label{fig:se:panel_ho_binary}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho02.png}}
+  \hspace{1em}
+  \subfloat[After dilatation step]{\label{fig:ex:panel_ho_dilate}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho03.png}}
+  \subfloat[After erosion step]{\label{fig:ex:panel_ho_erode}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho04.png}}  
+    \caption[Panel extraction process of Ho~\cite{Ho2012}]{Panel extraction and separation process of Ho~\cite{Ho2012}.}
+    \label{fig:ex:panel_ho_extraction_process}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Method A} % (fold)
+The score of this method was in average for recall and precision of 49.76\% and 68.03\% (Figure~\ref{fig:ex:panel_ho_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:panel_ho_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Method A} % (fold)
 % \label{sub:method_1}
 
-The method presented Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method Section~\ref{sec:se:panel_and_text}.
-Note that the method also extract text region at the same time (Section~\ref{sub:ex:text_extraction_recognition_evaluation}) which does not interfere with panel.
+The method presented Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
+Note that the method also extract text region at the same time which does not interfere with panel (Section~\ref{sub:ex:text_extraction_recognition_evaluation}).
+The score of this method  was in average for recall and precision of 64.24\% and 83.81\% (Figure~\ref{fig:ex:panel_methodA_extraction_detail}).
 
-\subsubsection{Method B} % (fold)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:panel_methodA_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Method B} % (fold)
 % \label{sub:method_b}
 The method presented Section~\ref{sec:in:panel_extraction} requires only a minimal area factor.
 Assuming that a panel is a big region, we ignored the panel detection with a area lower than 4\% ($minAreaFactor$) of the page area according to a validation on the eBDtheque dataset.
-This parameter avoid considering small and isolated elements (e.g text, logo, page number) as panel.
+This parameter avoids considering small and isolated elements (e.g text, logo, page number) as panel.
+The score of this method was in average for recall and precision of 60.59\% and 82.51\% (Figure~\ref{fig:ex:panel_methodB_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:panel_methodB_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % subsection method_b (end)
 
-\subsubsection{Method C} % (fold)
+\subsection{Method C} % (fold)
 % \label{sub:method_c}
 The knowledge-driven method can be used as a post processing of the panel extraction.
-It valid or reject panel candidates using the proposed model (Section~\ref{sub:kn:validation}).
+It validates or rejects panel candidates using the proposed model (Section~\ref{sub:kn:validation}).
 In the model, the only rule about the panel is that they should be contained in a image.
+The score of this method was in average for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:panel_methodC_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:panel_methodC_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % subsection method_c (end)
 
-\subsection{Result analysis} % (fold)
+%-----------------------------------------------------------
+\subsection{Comparison and analysis} % (fold)
 \label{sub:result_analysis}
 
-TODO
+Table~\ref{tab:panel} compare the average results we obtained for the three proposed methods and two methods from the literature~\cite{Arai11}.
+Note that some of the dataset images were digitized with a dark background surrounding the cover of the book.
+We automatically remove this by cropping the image where a panel with an area $>$ 90\% of the page area was detected.
 
-Table~\ref{tab:panel} presents the average results we obtained for the three proposed methods and a method from the literature~\cite{Arai11}.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{table}[ht]
@@ -807,29 +883,23 @@ Table~\ref{tab:panel} presents the average results we obtained for the three pro
 The main drawback of the Arai's method is the binary segmentation with a fixed value that works best for comic book with a white background but it is not appropriate for digitization defaults and paper yellowing.
 
 Ho's method is adaptive to background variation but considers as panel all the elements that are directly included (first topological level) in the page background.
-This over segment the image that include some text of of panel or in implicit balloons \modif{TODO: to illustrate}.
+This produce an over-segmentation by including some text which are inside the frame-less panels or inside implicit balloons.
 When those out of panel elements are small, they prevent the connected panel separation process to work properly because the stopping criterion is based on element size.
 
-The first proposed panel extraction (Method A) based on connected component clustering is simple to implement, and is a fast and efficient method for comics with disconnected panels (separated by a white gutter).
-% The validation by the expert system was not significant here because the low level processing had already reached the limits of the model.
+The first method we proposed (Method A) extracts panel and text simultaneously and then other elements in a sequential manner.
+It assumes that there are the distinguishable cluster of connected-component height in the image which is not always the case in this dataset.
+Anyway, it still more powerful that the two method from the literature, mainly because of the more generic pre-processing steps.
+
+The second proposed panel extraction method (Method B), based on connected-component clustering, is simple to implement, fast and efficient for comics with disconnected panels (separated by a white gutter).
 % Figure~\ref{ap:panel_extraction} shows the details for each image tested, which were mainly comics with gutters.
 % The proposed method is not appropriate for gutterless comics such as ``INOUE'' or strip without panel border such as ``MONTAIGNE'' or a extra frame around several panels (``SAINTOGAN\_PROSPER'').
-
-\begin{figure}
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO replace for table?}.
- }
- \label{ap:panel_extraction}
-\end{figure}
-
 This method is not appropriate for gutterless comics (e.b. some mangas) or strip without panel borders such as those with an extra frame around several panels.
-
 Another weakness is when panels are connected by other elements, they may not be split as desired but will remain clustered as panel anyway.
 
-This experiment was performed in \modif{??} seconds for the whole dataset using one CPU at 2.5GHz (\modif{??}s per panel on average).
-Note that some of the dataset images were digitized with a dark background surrounding the cover of the book.
-We automatically remove this by cropping the image where a panel with an area $>$ 90\% of the page area was detected.
+Method C benefits form the domain knowledge to filter out irrelevant panel candidates from the independent extraction approach (Method B).
+Nevertheless, the validation by the expert system was not significant here because the low level processing had already reached the limits of the model (Section~\ref{sec:kn:knowledge_representation}).
 
+% This experiment was performed in \modif{??} seconds for the whole dataset using one CPU at 2.5GHz (\modif{??}s per panel on average).
 
 % subsection result_analysis (end)
 
@@ -840,38 +910,39 @@ We automatically remove this by cropping the image where a panel with an area $>
 \section{Text extraction and recognition evaluation} % (fold)
 \label{sub:ex:text_extraction_recognition_evaluation}
 
-We evaluated our method for text extraction on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
-Also, a text recognition evaluation is given as baseline.
+In this section we evaluated our three propositions for text extraction and compare them to \modif{??} methods from the literature.
+All the evaluation of text localisation was performed on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} at object bounding box level (Section~\ref{sub:ex:object_localisation_metric}).
+Text recognition evaluation have been performed on the same dataset but using the accuracy metric presented Section~\ref{sub:ex:text_recognition_metric}.
 
-\subsection{Experimental settings} % (fold)
-% \label{sub:experimental_settings}
+% \subsection{Experimental settings} % (fold)
+% % \label{sub:experimental_settings}
 
-TODO
+% TODO
 
-\subsubsection[Arai's method]{Arai~\cite{Arai11}} % (fold)
+\subsection[Arai's method]{Arai~\cite{Arai11}} % (fold)
 This method is a sequential approach that requires panel and balloon extraction presented in Section~\ref{sub:ex:panel_extraction_evaluation} and~\ref{sub:ex:balloon_extraction_evaluation} respectively.
 
-TODO: detail the method here?
+\modif{TODO: detail the method here}
 
 This approach was first developed for Japanese manga text extraction but we adapt it to also handle horizontal text.
 Its adaptation to horizontal text consist in switching width and height related parameters of the concerned elements throughout the method.
 Also, the kernel used for mathematical morphology is rotated of 90$^{\circ}$.
 
 
-\subsubsection{Method A} % (fold)
+\subsection{Method A} % (fold)
 % \label{sub:method_1}
 The method proposed Section~\ref{sec:se:panel_and_text} does not require any particular parameter, only the number of cluster has to be fixed $k=3$ for the k-mean clustering.
 
 
 % subsection method_1 (end)
-\subsubsection{Method B} % (fold)
+\subsection{Method B} % (fold)
 % \label{sub:method_b}
 
 TODO
 
 % subsection method_b (end)
 
-\subsubsection{Method C} % (fold)
+\subsection{Method C} % (fold)
 % \label{sub:method_c}
 
 TODO?
@@ -881,7 +952,7 @@ TODO?
 % subsection experimental_settings (end)
 
 
-\subsection{Results analysis} % (fold)
+\subsection{Comparison and analysis} % (fold)
 \label{sub:results_analysis}
 
 TODO

@@ -6,14 +6,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{93}{table.caption.121}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{95}{table.caption.127}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision results}}{98}{table.caption.136}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{99}{table.caption.139}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{100}{table.caption.142}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Tail extraction results.\relax }}{101}{table.caption.146}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Character localisation results.\relax }}{103}{table.caption.152}
-\contentsline {table}{\numberline {6.8}{\ignorespaces Character detection performance\relax }}{104}{table.caption.154}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{96}{table.caption.122}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Text localisation results.\relax }}{98}{table.caption.123}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Balloon localization recall and precision results}}{101}{table.caption.132}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{103}{table.caption.135}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{103}{table.caption.138}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Tail extraction results.\relax }}{104}{table.caption.142}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Character localisation results.\relax }}{107}{table.caption.148}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Character detection performance\relax }}{108}{table.caption.150}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

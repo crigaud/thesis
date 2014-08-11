@@ -1,4 +1,4 @@
-\chapter{Method 2: independent information extraction}
+\chapter{Method B: independent information extraction}
 \chaptermark{Independent information extraction}
 \label{chap:independent}
 \graphicspath{{./chapters/4-independent/figs/}}
@@ -660,7 +660,7 @@ This limited amount of colours allows to describe and retrieve the object with o
   \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{figure_here.png}
-    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction.}
+    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction (3 columns, original, l0-smoothed, corresponding 256 palette).}
     \label{fig:in:smoothing_quantization}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -691,15 +691,91 @@ This selection can be assisted using a scribble-based tool~\cite{Xu2012LazySelec
 
 The query descriptor we use is a non ordered colour vector that contains the information of presence of certain colours in the query ($D \subset P_c$). It is not composed by spatial or quantitative information (e.g. region positions, number of pixels) because these parameters are not scale and deformation invariant.% The integration of these spatial information is the object of current research in our research group.
 
-The colour subset $D$ is composed by the $N$ colours the most represented in the query region and that are the most discriminating.
-We define, for a given colour $c$, $L_{1c}$ the number of pixel and $L_{2c}$ the discriminability level which is the percentage of pixels present in the query region compared to rest of the same colour pixels in the image (equivalent to TF-IDF~\cite{salton1986introduction}).
-Each value of $L_{1c}$ and $L_{2c}$ are normalized as a percentage between 0 and 1, the score for each colour is the sum of both term: $Score(c) = L_{1c} + L_{2c}$ (Figure~\ref{fig:in:dominant_colour_hist_desc}).
+% -------------------------------------
 
-\modif{TODO: Essaye de détailler chaque étape en t'appuyant sur la Figure4.15 pour que l'on comprenne bien la méthode.
-Il faudrait expliciter plus le critère L2 car ce n'est pas évident à comprendre à la lecture de ton texte.}
+% The ROIs computed by the expert system are less accurate than the one given by the user in~\cite{RigaudDAS2014}, it may cut a part of the character and contains more pixels from background than from the comics character (see figure~\ref{fig:query_user_expert}).
+% Computing the query descriptor directly from the region proposed by the expert system would result in considering a lot of information that is not part of the character (noise).
+% We need to remove background information first and then describe the query region.
+% We propose to automatically find the $N$ more discriminant hue values of the character from the hue values that are inside but not outside the expected region in the panel.
+%This can be formalized as a TF-IDF~\cite{salton1986introduction} (Term Frequency - Inverse Document Frequency).
+% The application of classical TF-IDF~\cite{salton1986introduction} numerical statistic to hue values allows us to identify the importance weights of the different hue value in the query image.
+%We propose then to combine the inverse term frequency and the document frequency in order to highlight the transcriptions that are not frequent in a single page but that constantly appear in invoices from the same provider. 
+%Given a word transcription w and a document set d, the itf-df weight is computed as:
+% In our application, the {\it term frequency} $(tf)$ corresponds to the ratio of pixels of a particular hue value $h_i$ in the set of hue values that compose the query region $qH=\{h_0, h_1,...,h_n\}$.% over the number of pixel in the query region $q$.
+% The {\it inverse DOCUMENT frequency} $(idf)$ corresponds, for a given hue value $h_i$, to the logarithm of the total number of pixel in the panel $|p|$ (corpus) over the number of pixel of hue value $h_i$ in the panel $|p| \cup |h_i|$.
+% The score for each hue value $h_i$ in $qH$ corresponds to $tf_i * idf_i$ and the $N$ hue values that correspond to the $N$ highest scores are used to define the colour descriptor $D=\{h_0,h_1,...,h_N\}$.
+% See equation~\ref{eq:query_colors_tf},~\ref{eq:in:query_colors_idf} and figure~\ref{fig:color_filtering}.
+
+% %The query descriptor $D$ is a set of $N$ hue values $D=\{h_0,h_1,...,h_N\}$.
+
+% % % tf = float(nbPixelMatchInQnbPixInQueryy
+% % % idf = math.log(float(nbPixInPanel) / nbPixelMatchInPanel)
+
+% % %scores val = tf * idf
+
+% \begin{equation}
+%    %tf = \frac{nbPixelMatchInQuery}{nbPixInQuery}
+%    tf = \frac{nbPixelMatchInQuery}{nbPixInQuery}
+%    \label{eq:query_colors_tf}  
+%   \end{equation}
+
+% \begin{equation}
+%  idf = \log \frac{nbPixInPanel}{nbPixelMatchInPanel}
+%    \label{eq:in:query_colors_idf}  
+%   \end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+ %   \centering
+ %  \includegraphics[trim= 0px 75px 0px 0px, clip, width=240px]{fig/masks.png}
+ %  \caption{Original panel with the query (blue rectangle) and the corresponding hue value histogram in the query region and non query region from top to bottom.% Each image has its corresponding histogram of hue values normalized between 0 and 255 on the right hand side.
+ %  %The bar graph in the bottom part represents the hue values that are present in the inside ROI but not in the outside ROI histograms.
+ %  }
+ %  \label{fig:color_filtering}
+ % \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Once the discriminant colours are extracted, we build the query descriptor $D$ from the $N$ most important colours.
+
+% -----------------------------------------------
+
+\modif{TODO: use Hue instead of colour quantization = experiment more}
+
+The colour subset $D$ is composed by the $N$ colours the most represented in the query region and that are the most discriminating in the image or collection.
+We define two metric for each colour of the query region in order to determinate which ones will be used for the query description.
+The first metric $L_{1c}$ corresponds to the number of pixel of a colour $c$ in the query region (colour histogram Figure~\ref{fig:in:dominant_colour_hist_desc}) and $L_{2c}$, the discriminability level of the colour $c$ in the whole image.
+
+The discriminability level can be formalized as a TF-IDF~\cite{salton1986introduction} (Term Frequency - Inverse Document Frequency) numerical statistics that allows us to identify the importance weights of the different colour value in the query image.
+In our application, the {\it term frequency} $(tf)$ corresponds to the ratio of pixels of a particular hue value $h_i$ in the set of hue values that compose the query region $qH=\{h_0, h_1,...,h_n\}$.% over the number of pixel in the query region $q$.
+The {\it inverse document frequency} $(idf)$ corresponds, for a given hue value $h_i$, to the logarithm of the total number of pixel in the image $|p|$ (corpus) over the number of pixel of hue value $h_i$ in the image $|p| \cup |h_i|$.
+The score for each hue value $h_i$ in $qH$ corresponds to $L_{2c_i} = tf_i * idf_i$ and the $N$ hue values that has the $N$ highest scores are used as colour descriptor of the query region $D=\{h_0,h_1,...,h_N\}$.
+See Equations~\ref{eq:query_colors_tf},~\ref{eq:in:query_colors_idf}.% and figure~\ref{fig:color_filtering}.
+
+%The query descriptor $D$ is a set of $N$ hue values $D=\{h_0,h_1,...,h_N\}$.
+
+% % tf = float(nbPixelMatchInQnbPixInQueryy
+% % idf = math.log(float(nbPixInPanel) / nbPixelMatchInPanel)
+
+% %scores val = tf * idf
+
+\begin{equation}
+   %tf = \frac{nbPixelMatchInQuery}{nbPixInQuery}
+   tf = \frac{nbPixelMatchInQuery}{nbPixInQuery}
+   \label{eq:query_colors_tf}  
+  \end{equation}
+
+\begin{equation}
+ idf = \log \frac{nbPixInImage}{nbPixelMatchInImage}
+   \label{eq:in:query_colors_idf}  
+  \end{equation}
 
 The discriminability level $L_{2c}$ allows us to ignore colours that are not only dominant in the query region but also in the rest of the image.
-For instance, black and white are most of the time present in the query but also in many contour and background regions which may create noise in the retrieval process.
+For instance, black and white colours are often in the query region but also in many contour and background regions which will not help the retrieval process if we include them in the query description (not discriminant colours).
+
+Each value of $L_{1c}$ and $L_{2c}$ are normalized as a percentage between 0 and 1, the score for each colour is the average of both term: $Score(c) = 1/2 * (L_{1c} + L_{2c})$ (Figure~\ref{fig:in:dominant_colour_hist_desc}).
+
+% \modif{TODO: Essaye de détailler chaque étape en t'appuyant sur la Figure4.15 pour que l'on comprenne bien la méthode.
+% Il faudrait expliciter plus le critère L2 car ce n'est pas évident à comprendre à la lecture de ton texte.}
 
 %The basic representation of colours in images is the colour histogram. Colour histogram has two information, first the colour value from the palette and second the number of pixels corresponding per colour. The second information is relative to the image definition and object deformation (change of posture) while the first one is sensitive to region occlusion only. In this work, we chose to only use the colour information to be invariant to image definition and affine transformation.
 
@@ -732,8 +808,9 @@ Comics have a particular structure that allows different approaches for object r
 %, which allow to searcat permits to think about searching other object occurrences.% from in the same image as the query and the others.
 
 First, for a given page, we consider each colour value in the descriptor and compute the corresponding colour mask (Figure~\ref{fig:in:masks}). %Note, mathematical morphology may be used to remove isolated pixel noise (e.g. paper texture) in some cases.
-Second we find the object position in each pages by using a sliding window approach at different window size and for each mask. The window sizes are defined according to the user query size (maximum between the query width or height) which gives an information about the definition of the document $S=\{s_0,s_1,...,s_n\}$ in order to retrieve the object at different scales.
-\modif{TODO: Quelle stratégie pour faire glisser les fenêtres, chevauchement ?}
+Second we find the object position in each pages by using a sliding window approach at different window size and for each mask.
+The window sizes are defined according to the user query size (maximum between the query width or height) which gives an information about the definition of the document $S=\{s_0,s_1,...,s_n\}$ in order to retrieve the object at different scales.
+Each window position is computed with 50\% percent overlapping with its four neighbouring windows.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -746,7 +823,7 @@ Second we find the object position in each pages by using a sliding window appro
 
 
 We define the detection confidence $C_{w_i}$ according to the number of identical colours between the query descriptor $D$ and each sliding window positions $W=\{w_0,w_1,...,w_n\}$ (Equation.~\ref{eq:in:confidence_character_spotting}).
-This is equal to the cardinality of the intersection between the two colour set $D$ and $w_i$. The confidence is maximal when all the colours in the query descriptor are contained by the window (high probability of the object to be at this location).
+This is equal to the cardinality of the intersection between the two colour set $D \cap w_i$. The confidence is maximal when all the colours in the query descriptor are contained by the window (high probability of the object to be at this location).
 The confidence $C_{w_i}$ is defined as follow:
 
 \begin{equation}\label{eq:in:confidence_character_spotting}
@@ -813,6 +890,7 @@ The proposed approach for text extraction consists in an adapted bi-level segmen
 A final text line level verification valid the textual content of the candidate regions using an OCR system.
 The method does not requires previous knowledge about the image content unlike the sequential approach proposed Section~\ref{sec:se:panel_and_text} that is implicitly linked to the panel regions.
 This method is experimented Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
+
 %BALLOON EXTRACTION, CLASSIFICATION AND TAIl
 Independent balloon extraction and classification methods have been presented.
 The balloon extractor relies on topological and spatial relations similarly to the text extraction method.
@@ -820,13 +898,12 @@ In fact, balloon and text extractions are often correlated in the literature as 
 As mentioned earlier, tail detection without previous balloon segmentation makes no sense because it is a specific region of the balloon contour.
 This method is experimented Section~\ref{sub:ex:balloon_extraction_evaluation}.
 %CHARACTERS
-The main advantage of being independent is do not propagate extraction errors.
-Also, unsupervised comic characters extraction is a real challenge, here we proposed a first query based approach which is given by a user but it can replaced by a comic characters region of interest computation presented in Section~\ref{sec:se:tail_to_character}.
+Unsupervised comic characters extraction is a real challenge, here we proposed a user-defined query-based approach but it can be replaced by a comic characters region of interest, automatically computed from surrounding information (context) (Section~\ref{sec:se:tail_to_character}).
 %GENERAL
 In each extraction process, we strive to produce indicators of confidence, conscious that it could be useful for a higher level processing system such as that presented in the next chapter.
 
 Next chapter is going to present a high level approach for understanding the image content and its semantic.
-We will propose a model for the image processing and the comics domains in order to validate or infer the relations between all the extracted elements such as the reading order, the type of text (e.g. spoken, onomatopoeic, illustrative) and the positions of the speaking characters.
+We will propose a model for both comic book's and image processing domains knowledge for information consistency analysis and relation inferences between all the extracted elements such as the reading order, the type of text (e.g. spoken, onomatopoeic, illustrative) and the positions of the speaking characters.
 
 % This approach is based on a expert system coupled with an inference engine.
 

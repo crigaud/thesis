@@ -721,7 +721,7 @@ We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percent
 % We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 
 In this section we evaluate our three approaches (method A, B and C) and compare them to two methods from the literature.
-We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two methods from the state of the art (Section~\ref{sec:sota:layout_panel}).
+We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two state of the art methods (Section~\ref{sec:sota:layout_panel}).
 The first one use connected-component analysis similarly to our proposition and the second is based on growing region.
 
 All the evaluation are performed on the 850 panels of the eBDtheque dataset~\ref{sec:dataset_and_ground_truth_construction} at object bounding box level, using the recall and precision metrics introduced Section~\ref{sub:ex:object_localisation_metric}.
@@ -907,7 +907,7 @@ Nevertheless, the validation by the expert system was not significant here becau
 % subsection sequential_panel_extraction_evaluation (end)
 
 
-\section{Text extraction and recognition evaluation} % (fold)
+\section{Text extraction evaluation} % (fold)
 \label{sub:ex:text_extraction_recognition_evaluation}
 
 In this section we evaluated our three propositions for text extraction and compare them to \modif{??} methods from the literature.
@@ -970,11 +970,14 @@ The score of this method  was in average for recall and precision of 54.68\% and
 % \label{sub:method_b}
 
 The method presented Section~\ref{sec:in:text_localisation_and_recognition} consist in a bi-level segmentation, text/graphic separation, text line generation and finally text line recognition.
-A comparison between two threshold selection methods and two colour-to-grey image conversion are shown Figure~\ref{fig:ex:text_extraction_methodB_segmentation}.
+A comparison between two threshold selection methods and two colour-to-grey image conversion are shown Table~\ref{fig:ex:text_extraction_methodB_segmentation}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{figure}[!ht]%trim=l b r t  width=0.5\textwidth,
-  \begin{center}
+
+  \begin{table}[ht]
+    % \normalsize
+    \centering
+    \caption[Results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods]{Results for fixed ($th=250$) and adaptive threshold selection method corresponding to combined (RGB to grey) and separated (Luminance layer) colour to grey conversion methods.}
     \begin{tabular}{|c|c|c|}
       \hline
        & Fixed & Otsu \\ 
@@ -984,17 +987,53 @@ A comparison between two threshold selection methods and two colour-to-grey imag
       Luminance layer & \modif{??} & \modif{??} \\ 
       \hline
     \end{tabular}
-  \caption[Results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods]{Results for fixed ($th=250$) and adaptive threshold selection method corresponding to combined (RGB to grey) and separated (Luminance layer) colour to grey conversion methods.}
-  \label{fig:ex:text_extraction_methodB_segmentation}
-  \end{center}
-  \end{figure}  
+    \label{fig:ex:text_extraction_methodB_segmentation}
+  \end{table}%
+
+  % \begin{figure}[!ht]%trim=l b r t  width=0.5\textwidth,
+  % \begin{center}
+  %   \begin{tabular}{|c|c|c|}
+  %     \hline
+  %      & Fixed & Otsu \\ 
+  %     \hline
+  %     RGB to grey & \modif{??} & \modif{??}  \\ 
+  %     \hline
+  %     Luminance layer & \modif{??} & \modif{??} \\ 
+  %     \hline
+  %   \end{tabular}
+  % \caption[Results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods]{Results for fixed ($th=250$) and adaptive threshold selection method corresponding to combined (RGB to grey) and separated (Luminance layer) colour to grey conversion methods.}
+  % \label{fig:ex:text_extraction_methodB_segmentation}
+  % \end{center}
+  % \end{figure}  
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Text and graphics separation is performed using the Mahalanobis' distance which is related to the number of standard deviations.
 An validation on the eBDtheque dataset shown that the best Mahalanobis' distance is \modif{???}.
 The similarity offset $a$ and the overlapping percentage $b$ have been also validated over the eBDtheque dataset and their best values are $a=$\modif{???} and $b=$\modif{???} respectively.
+Text line recognition is used as last filtering operation to validate the presence of text inside the candidate regions, it improves the result quality about \modif{2.00\%} and \modif{20.00\%} for recall and precision respectively.
 
-The score of this method was in average for recall and precision of 59.92\% and 46.26\% (Figure~\ref{fig:ex:text_methodB_extraction_detail}).
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % \begin{table}[ht]
+  %   % \normalsize
+  %   \centering
+  %   \caption{Score for text localisation using method B.}
+  %   \begin{tabular}{|c|c|c|c|}
+  %         \hline
+  %          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
+  %         \hline
+  %         Not using OCR  & \modif{??}   & \modif{??} & \modif{??}       \\
+  %         \hline
+  %         Using OCR  &  \modif{59.92\%}  & \modif{46.26\%}     & \modif{??}       \\
+  %         \hline
+  %       \end{tabular}
+  %   \label{tab:ex:ocr_impact_text_localisation}
+  % \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The score of this method was in average for recall and precision of \modif{59.92\%} and \modif{46.26\%} (Figure~\ref{fig:ex:text_methodB_extraction_detail}).
+
+%The detailed results using the OCR system are given Figure~\ref{fig:ex:text_methodB_extraction_detail}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1108,35 +1147,53 @@ Considering the best method for panel extraction (\modif{???} in Figure~\ref{tab
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Arai's method is a sequential approach that requires panel and balloon regions as input.
-As shown in Table~\ref{tab:ex:bal_loc}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn.
+As shown in Table~\ref{tab:ex:bal_loc}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn (Table~\ref{tab:text_results}).
 Moreover, this text extraction method uses several thresholds which reduces its fields of application.
 
 
 % In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
 % Here we applied it to the whole dataset.
-We used our previous method as a baseline to show an improvement in the precision of 20\% when using an OCR-based filter, without a significant loss in recall.
-The validation by the expert system improved the precision as expected but also resulted in a drop in recall.
+Method A improve by \modif{???}\% the recall thanks to its genericity, moreover, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
+Method B raise the precision by \modif{20}\% when using an OCR-based filter, without a significant loss in recall.
+The validation by the expert system in method C improved the precision as expected but also resulted in a drop in recall.
 The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
-% in recall that could probably be filled for specific writing style by training the OCR on a specific font. %, when using an OCR system to filter out non text regions.
-As in~\cite{Rigaud2013VISAPP}, this method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
-
-This method has some difficulty coping with certain types of text that can be found in the comics e.g. graphic sounds.
-Nevertheless, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
-
-TODO RESULT ANALYSIS
+All the methods still encounter difficulties with certain types of text that can be found in the comics (e.g. illustrative text, graphic sounds) due to strong deformation or colour variations.
 
 
-\paragraph{Text recognition evaluation} % (fold)
+\section{Text recognition evaluation} % (fold)
 \label{par:ex:text_recognition_evaluation}
+% \paragraph{Text recognition evaluation} % (fold)
+% \label{par:ex:text_recognition_evaluation}
 
-We also evaluated text transcription using string edit distance~\cite{wagner1974string} between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth. % $T_{gr}$.
+We evaluated text transcription using string edit distance between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth (Section~\ref{sub:ex:text_recognition_metric}).
 The eBDtheque dataset is composed of English, Japanese and French texts.
-We evaluated the subset of English and French pages using the OCR with the corresponding training data\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}. % corresponding to the language defined in the ground truth of each image of the dataset.
-This was performed at the text line level taking as correct the text lines that were transcribed exactly as the ground truth transcription, considering all the letters as lower case and ignoring accents (for predicted and ground truth regions).
+We evaluated the transcription given by the OCR engine Tesseract version 3.02.02 with the provided training data for each language\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}.
+% corresponding to the language defined in the ground truth of each image of the dataset.
+This was performed at the text line level, taking as correct the text lines that were transcribed exactly as the ground truth transcription, considering all the letters as lower case and ignoring accents (for predicted and ground truth regions).
 % with a edit distance $<$ 10\% of their length using equation~\ref{eq:recall} and~\ref{eq:precision}.
 %For instance a recognised text line of ten elements will be considered as correct if less than three are split, deleted, transposed, replaced or inserted. 
-We obtained a score of $A_{textReco}=$7.18\% which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
-We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy rise to 10.46\%.
+Table~\ref{tab:ex:text_recogniton_results} shows text recognition results given the text line position from the ground truth (best reachable score) and from the best automatic text localisation method (\modif{Method B} in Figure~\ref{tab:text_results}).
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    % \normalsize
+    \centering
+    \caption{Text recognition results from ground truth and automatic text line localisation with an edit distance ($ED$) of 0, 1 and 2.}
+    \begin{tabular}{|c|c|c|c|}
+          \hline
+          Text extraction method &  $ED=0$  & $ED=1$  & $ED=2$  \\
+          \hline
+          Ground truth  & \modif{??}   & \modif{??} & \modif{??}       \\
+          \hline
+          Method B  &  \modif{??}  & \modif{??}     & \modif{??}       \\
+          \hline
+        \end{tabular}
+    \label{tab:ex:text_recogniton_results}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We obtained a score of $A_{textReco}=$\modif{7.18\%} from the automatic text extraction method which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
+We performed a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one, the accuracy rise to \modif{10.46\%}.
 %The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
 Note that the average text line length is quite short in comic books compared to other documents, the distribution is given Figure~\ref{fig:ex:textline_lenth_distribution} for the eBDtheque dataset.
 
@@ -1146,37 +1203,52 @@ Note that the average text line length is quite short in comic books compared to
 
 \section{Balloon extraction evaluation} % (fold)
 \label{sub:ex:balloon_extraction_evaluation}
-
-We evaluate the three approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box and pixel levels, and compare to previous work from the literature.
+In this section we evaluate our three balloon extraction approaches (method A, B and C) and compare them to two methods from the literature.
+We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two state of the art methods (Section~\ref{sec:sota:layout_panel}).
+The first one use connected-component analysis similarly to our proposition and the second is based on growing region.
+The performed the evaluation on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} at object (Section~\ref{sub:ex:object_segmentation_metric}) and pixel levels in order to provide a performance evaluation for localisation and contour analysis purposes.
+%also measure the impact on the balloon classification based on balloon's contour analysis.
+% We evaluate the three approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} at object bounding box and pixel levels, and compare to previous work from the literature.
 % We also evaluate the tail detection for each balloon extraction approaches
 
 In the eBDtheque ground truth, 84.5\% of the balloons are closed and 15.5\% are not (implicit).
 Thus we do not expect to reach 100\% recall and precision for the regular balloon extraction methods because they are not designed for implicit balloons.
 One the other hand, implicit the balloon extraction method is able to extract closed balloon as well.
 
-\subsection{Experimental settings} % (fold)
-% \label{sub:experimental_settings}
+% \subsection{Experimental settings} % (fold)
+% % \label{sub:experimental_settings}
 
-TODO
+% TODO
 
-\subsubsection{Arai's method~\cite{Arai11}} % (fold)
+\subsection{Arai's method} % (fold)
 \label{sub:ex:balloon_extraction_arai}
 
-TODO: describe the method here or in intro contribution justification?
-Arai's method is a sequential approach that search for panel first and then balloons inside panels.
-Customization: vertical AND horizontal text adaptation + adaptive thresholding
+Arai's method in a sequential method that extracts balloon inside panel regions in order to extract text inside~\cite{Arai11}.
+It it similar to its panel extraction work-flow also presented in the same paper (Section~\ref{sub:ex:panel_extraction_arai}), without image inversion which basically detect white blobs (assuming speech balloon have a white background).
+Not all the white blobs correspond to balloon in the comic book images, especially for the monochrome ones.
+They select blob candidate according to four rules based on blob size, white pixel occurrence, vertical straight line detection and width to length ratio.
+We reused all the rules and heuristics of the original paper except for the straight line detection that we rotated of 90 degrees for images using horizontal text.
 
 % subsection arai_s_method_cite (end)
 
-\subsubsection{Ho's method~\cite{Ho2012}} % (fold)
+\subsection{Ho's method~\cite{Ho2012}} % (fold)
 % \label{sub:arai_s_method_cite}
 
-TODO: describe the method here? Ho's method is a sequential approach that search for panel first and then balloon inside panels and text inside balloons.
-The parameter used in the experiment are not given, I propose mine...
+Ho's method is a sequential approach, similarly to Arai's approach, that extracts balloon inside panel regions in order to extract text inside~\cite{Ho2012}.
+First it converts the image from RBG to HSV colour representation and select candidate regions with a high value (V) and low saturation (S) level.
+To reduce the number of candidate regions, a second selection is applied according to size and shape.
+Small regions are removed and only region with a ratio between the number of pixel in the region over the number of pixel in its bounding higher than are kept.
+In the original paper, only the ratio between the region area and its bounding box was given (60\%).
+We removed the value (V) from the saturation (S) in order to reduce the number of parameters and fixed it at 200 (region with a higher brightness are kept).
+We considered as small regions the region with a width or height inferior to three pixels.
+
+
+% TODO: describe the method here? Ho's method is a sequential approach that search for panel first and then balloon inside panels and text inside balloons.
+% The parameter used in the experiment are not given, I propose mine...
 
 % subsection ho_s_method_cite (end)
 
-\subsubsection{Method A} % (fold)
+\subsection{Method A} % (fold)
 % \label{sub:method_a}
 
 In Section~\ref{sec:se:from_text_to_balloon} we presented two sequential approaches for regular and implicit balloon extraction from text line positions.
@@ -1196,7 +1268,7 @@ For both regular and implicit balloon extraction of Method A, the input text is 
 %, the recall $R=??\%$, precision $P=?\%$ and f-measure $F=?\%$.
 
 % subsection method_a (end)
-\subsubsection{Method B} % (fold)
+\subsection{Method B} % (fold)
 % \label{sub:method_b}
 
 The minimum number of children $minNbChildren$ of a balloon was set to 8, just before the first peak in the distribution of the number of letters per speech balloon in the eBDtheque dataset~\cite{Guerin2013} (Figure~\ref{fig:ex:min_number_children_validation}).
@@ -1220,15 +1292,22 @@ We voluntary omitted them here to avoid detecting a lot of non balloon regions.
 Balloons with a confidence value $C_{balloon}$ lower than 10\% were rejected according to the validation experiments on the eBDtheque dataset~\cite{Guerin2013}.
 
 % subsection method_b (end)
-\subsubsection{Method C} % (fold)
+\subsection{Method C} % (fold)
 % \label{sub:method_c}
+
+\modif{TODO}
 
 % subsection method_c (end)
 % subsection experimental_settings (end)
 
-\subsection{Result analysis} % (fold)
+\subsection{Comparison and analysis} % (fold)
 % \label{sub:result_analysis}
+
 The evaluation results are presented in Table~\ref{tab:ex:bal_loc} at object bounding box level (Section~\ref{sub:ex:object_localisation_metric}) and then in Table~\ref{tab:ex:high_res} at the level of pixel (Section~\ref{sub:ex:object_segmentation_metric}) to illustrate the level of detail of the segmentation.
+
+
++ Sequential approaches such as Arai, Ho and method A search for balloon inside the panel region, as a consequence, these methods can not extract balloons that overlap several panels.
+This is easily handled by independent method such as method B because it does not consider panel positions and search for balloons everywhere in the image.
 
 % subsection result_analysis (end)
 

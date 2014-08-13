@@ -653,7 +653,7 @@ Here we keep using recall and precision metrics as introduced in the previous se
 
 \subsection{Text recognition} % (fold)
 \label{sub:ex:text_recognition_metric}
-Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{??} using commercial OCR systems on the eBDtheque dataset.
+Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{par:ex:text_recognition_evaluation} using commercial OCR systems on the eBDtheque dataset.
 We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth~\cite{Guerin2013}.
 
 % subsection text_recognition (end)
@@ -845,7 +845,7 @@ The score of this method was in average for recall and precision of \modif{??}\%
 \subsection{Comparison and analysis} % (fold)
 \label{sub:result_analysis}
 
-Table~\ref{tab:panel_extraction_comparision_results} compare the average results we obtained for the three proposed methods and two methods from the literature~\cite{Arai11}.
+Table~\ref{tab:panel_extraction_comparision_results} compare the average results we obtained for the three proposed methods and two methods from the literature.
 Note that some of the dataset images were digitized with a dark background surrounding the cover of the book.
 We automatically remove this by cropping the image where a panel with an area $>$ 90\% of the page area was detected.
 
@@ -1206,7 +1206,7 @@ Note that the average text line length is quite short in comic books compared to
 In this section we evaluate our three balloon extraction approaches (method A, B and C) and compare them to two methods from the literature.
 We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two state of the art methods (Section~\ref{sec:sota:layout_panel}).
 The first one use connected-component analysis similarly to our proposition and the second is based on growing region.
-The performed the evaluation on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} at object (Section~\ref{sub:ex:object_segmentation_metric}) and pixel levels in order to provide a performance evaluation for localisation and contour analysis purposes.
+The performed the evaluation on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} at object and pixel levels in order to provide a performance evaluation for localisation and contour analysis purposes (sections~\ref{sub:ex:object_localisation_metric} and~\ref{sub:ex:object_segmentation_metric}).
 %also measure the impact on the balloon classification based on balloon's contour analysis.
 % We evaluate the three approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} at object bounding box and pixel levels, and compare to previous work from the literature.
 % We also evaluate the tail detection for each balloon extraction approaches
@@ -1229,6 +1229,16 @@ Not all the white blobs correspond to balloon in the comic book images, especial
 They select blob candidate according to four rules based on blob size, white pixel occurrence, vertical straight line detection and width to length ratio.
 We reused all the rules and heuristics of the original paper except for the straight line detection that we rotated of 90 degrees for images using horizontal text.
 
+The score of this method  was in average for recall and precision of \modif{??\%} and \modif{??\%} (Figure~\ref{fig:ex:balloon_arai_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Balloon extraction score details of Arai's method for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:balloon_arai_extraction_detail}
+\end{figure}
+
 % subsection arai_s_method_cite (end)
 
 \subsection{Ho's method~\cite{Ho2012}} % (fold)
@@ -1243,6 +1253,17 @@ We removed the value (V) from the saturation (S) in order to reduce the number o
 We considered as small regions the region with a width or height inferior to three pixels.
 
 
+The score of this method  was in average for recall and precision of \modif{??\%} and \modif{??\%} (Figure~\ref{fig:ex:balloon_ho_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Balloon extraction score details of Ho's method for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:balloon_ho_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % TODO: describe the method here? Ho's method is a sequential approach that search for panel first and then balloon inside panels and text inside balloons.
 % The parameter used in the experiment are not given, I propose mine...
 
@@ -1251,63 +1272,332 @@ We considered as small regions the region with a width or height inferior to thr
 \subsection{Method A} % (fold)
 % \label{sub:method_a}
 
-In Section~\ref{sec:se:from_text_to_balloon} we presented two sequential approaches for regular and implicit balloon extraction from text line positions.
-Here, we evaluated them separately and detail the benefits of of energies that compose the implicit balloon extraction.
+In sections~\ref{sub:se:regular_balloon_extraction} and~\ref{sub:se:implicit_balloon_extraction} we presented two sequential approaches for regular and implicit balloon extraction from text line positions.
+Here, we evaluated them separately and detail the benefits of energies used for implicit balloon extraction by active contour model.
+For both regular and implicit balloon extraction, the input text is given from the sequential text extraction method (Section~\ref{sec:se:panel_and_text}) as it is the previous step of this approach.
 
-Regular balloon extraction method attributes a confidence value $C_{balloon}$ to each balloon candidate according to the alignment of the text paragraph it contains.
-We consider as correctly detected the balloon with a confidence value higher than \modif{10\%} (Table~\ref{tab:ex:bal_loc}, Method A (1)).
+\paragraph{Regular balloons} % (fold)
+\label{par:regular_balloons}
 
-The implicit balloon extraction method is evaluated using two different scenarios in order to highlight the benefits of both active contour theory and domain specific knowledge.
+Regular balloon extraction method is based on a white blob selection according to the central position of text lines in the balloon.
+This central position is converted as confidence value $C_{balloon}$ for each balloon candidate.
+The evolution of the performance of recall and precision according to this confidence rejection criterion is plotted Figure~\ref{fig:ex:validation_confidence_balloon_methodA_regular}.
+The best score of \modif{$R=??$} and \modif{$P=??$} was obtained for \modif{$C_{balloon} > 10\%$}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+  \centering
+ \includegraphics[width=0.7\textwidth]{figure_here.png}
+ \caption{Validation of the regular balloon confidence value for method A.
+ }
+ \label{fig:ex:validation_confidence_balloon_methodA_regular}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%We consider as correctly detected the balloon with a confidence value higher than \modif{10\%} (Table~\ref{tab:ex:bal_loc}, Method A (1)).
+
+% paragraph regular_balloons (end)
+
+
+\paragraph{Implicit balloons} % (fold)
+\label{par:ex:implicit_balloons_reminder}
+
+The implicit balloon extraction method was evaluated using three different scenarios in order to highlight the benefits of both active contour theory and domain specific knowledge.
 % that considers as balloon any white connected components that overlaps at more than $10\%$ with text regions.
-First, the active contour with the distance transform based external energy described section~\ref{sec:se:external_energie} (Table~\ref{tab:ex:bal_loc}, Method A (2)) and second, we add the domain knowledge energy $E_{text}$ from Section~\ref{sec:se:text_energie} (Table~\ref{tab:ex:bal_loc}, Method A (3)).
+First, the performance using active contour model with only the internal energy, then with the distance transform based external energy described section~\ref{sec:se:external_energie} and third, we added the domain knowledge energy $E_{text}$ from Section~\ref{sec:se:text_energie} (Table~\ref{tab:ex:implicit_balloon_performance_object_pixel_comparison}).
 % Fourth, after a two stage contour fitting (4).
 % Results are presented in table~\ref{tab:ex:bal_loc}.
 
 
-For both regular and implicit balloon extraction of Method A, the input text is given from the sequential text extraction method (Section~\ref{sec:se:panel_and_text}) as it is the previous step of this approach.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+  \normalsize
+% \renewcommand{\arraystretch}{1.3}
+% \extrarowheight as needed to properly center the text within the cells
+  \centering
+  \caption{Implicit balloon performance evaluation at object and pixel-levels for different energy functions.}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    & \multicolumn{3}{|c|}{Object level}  & \multicolumn{3}{|c|}{Pixel level}   \\
+  \hline
+  Energy function  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)\\
+  \hline
+%   Ho~\cite{Ho2012}  & ???     & ???   & & ???     & ???&    \\
+
+  $E = E_{int}$     & \modif{???}       & \modif{???}     & \modif{???}       & \modif{???}  & \modif{???} & \modif{???}   \\
+  \hline
+   $E = E_{int} + E_{ext}$    & \modif{???}       & \modif{???}     & \modif{???}       & \modif{???}  & \modif{???} & \modif{???}   \\
+  \hline
+  $E = E_{int} + E_{ext} + E_{text}$   & \modif{???}       & \modif{???}     & \modif{???}       & \modif{???}  & \modif{???} & \modif{???}   \\
+  \hline
+  \end{tabular}
+      \label{tab:ex:implicit_balloon_performance_object_pixel_comparison}
+\end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% paragraph implicit_balloons (end)
+
 %, the recall $R=??\%$, precision $P=?\%$ and f-measure $F=?\%$.
 
 % subsection method_a (end)
 \subsection{Method B} % (fold)
 % \label{sub:method_b}
 
-The minimum number of children $minNbChildren$ of a balloon was set to 8, just before the first peak in the distribution of the number of letters per speech balloon in the eBDtheque dataset~\cite{Guerin2013} (Figure~\ref{fig:ex:min_number_children_validation}).
-
+We introduced Method B in Section~\ref{sub:in:balloon_segmentation}, it is a independent approach that does not require any previous other element extraction.
+This method requires one parameter which is the minimum number of children $minNbChildren$ of a balloon (number of included connected-components).
+We set $minNbChildren=8$ according to the parameter validation, just before the first peak in the distribution of the number of letters per speech balloon (Figure~\ref{fig:ex:min_number_children_validation}).
+Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons bellow the selected threshold that contain one or two letters, usually punctuation marks.
+%such as ``?'' or ``!''. 
+We voluntary omitted them here to avoid detecting a lot of non balloon regions.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+    \begin{figure}[h]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[trim= 10px 0px 60px 0px, clip, width=0.75\textwidth]{number_of_letter_per_balloon.pdf}
-      \caption[Distribution of the number of letter per speech balloon]{Distribution of the number of letter per speech balloon.
+      \caption[Distribution of the number of letter per speech balloon]{Distribution of the number of letter per speech balloon in the eBDtheque dataset~\cite{Guerin2013}.
       }
       \label{fig:ex:min_number_children_validation}
     \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Balloons with a confidence value $C_{balloon}$ lower than 10\% were rejected according to the validation experiments on the eBDtheque dataset~\cite{Guerin2013}.
 
-Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons bellow the selected threshold that contain one or two letters, usually punctuation marks.
-%such as ``?'' or ``!''. 
-We voluntary omitted them here to avoid detecting a lot of non balloon regions.
+This regular balloon extraction method attributes a confidence value $C_{balloon}$ to each balloon candidate according to the alignment of the connected-components it contains (children), similarly to regular balloon extraction of method A.
+The evolution of the performance of recall and precision according to this confidence rejection criterion is plotted Figure~\ref{fig:ex:validation_confidence_balloon_methodB_regular}.
+The best score of \modif{$R=??$} and \modif{$P=??$} was obtained for \modif{$C_{balloon} > 10\%$}, details are given Figure~\ref{}.
 
-Balloons with a confidence value $C_{balloon}$ lower than 10\% were rejected according to the validation experiments on the eBDtheque dataset~\cite{Guerin2013}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+  \centering
+ \includegraphics[width=0.7\textwidth]{figure_here.png}
+ \caption{Validation of the regular balloon confidence value for method B.
+ }
+ \label{fig:ex:balloon_extraction_methodB_regular}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:ex:balloon_extraction_methodB_regular} confirms that our method works best when the balloons are closed, well segmented and with non cursive text inside.
 
 % subsection method_b (end)
 \subsection{Method C} % (fold)
 % \label{sub:method_c}
 
-\modif{TODO}
+The knowledge-driven method can be used as a post processing of the balloon extraction.
+It validates or rejects balloon candidates according to contextual information from the proposed model (Section~\ref{sub:kn:validation}).
+In the model, the rules concerning balloon are that they should be contained in a panel and not contain other balloon, panel or comic character.
+Considering the best method for balloon extraction (\modif{???}, the score of this method was in average for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:balloon_methodC_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Balloon extraction score details using method C for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:balloon_methodC_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % subsection method_c (end)
 % subsection experimental_settings (end)
 
+\subsection{Balloon classification} % (fold)
+\label{sub:balloon_classification}
+We evaluated balloon classification using the pixel-level balloon segmentation from the eBDtheque ground truth and from the best automatic segmentation of regular balloon from method B.
+The ground truth was composed by \modif{68\%}, \modif{18.3\%} and \modif{13.7\%} speech balloons of type ``smooth'', ``wavy'' and ``zigzag'' respectively.
+This unbalanced repartition reflects the usual speech balloon repartition in comics.
+
+For the shape/contour separation part (section~\ref{sec:contour_detection}) we first cast the original signal $o$ into 360 values and then we use a window of size $M=20$ according to the parameter validation Table~\ref{tab:validation_parameter_m} (maximum average and global accuracy).
+%In other words, we split the balloon contour into 20 sectors of 18 degrees each.
+%which correspond to 5.5\% of 360 values 
+% This parameter can be adjusted according the contour descriptor type.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Validation of parameter $M$ for $D=(f_1,f_2)$ scenario \modif{TODO: update with new training set?}.}
+    \begin{tabular}{c|c|c|c|c|c|}
+  \cline{2-6}
+    & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
+  \cline{2-6}
+    & Smooth & Wavy & Zigzag & Avg & Global \\
+  \hline
+  \multicolumn{1}{ |c| }{$M=10$}& 80.63   & \textbf{70.58} & 58.80 & 70.00 & 75.8 \\
+  \hline
+  \multicolumn{1}{ |c| }{$M=20$}& \textbf{89.30}  & 69.1  & 86.20 & \textbf{81.53} & \textbf{85.2} \\
+  \hline
+  \multicolumn{1}{ |c| }{$M=30$}& 88.53 & 67.64 & \textbf{86.25}  & 80.81 & 84.4 \\
+  %\hline
+  \hline
+  \multicolumn{1}{ |c| }{$M=40$}& 87.35 & 61.76 & 82.35 & 77.15 & 81.99 \\
+  %\hline
+  \hline
+  \multicolumn{1}{ |c| }{$M=50$}& 79.05 & 63.23 & 80.39 & 74.22 & 76.34 \\
+  %\hline
+  \hline
+%       Proposed multi scale & ???  &???  & ???   & ???       \\
+%   \hline
+        \end{tabular}
+    \label{tab:validation_parameter_m}
+  \end{table}%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+We evaluated our method based on a one-versus-all scenario, classification results are presented in Table~\ref{tab:ex:desc_test_balloon_classification} for different descriptors.
+First we show the effect of the two features $f_1$ and $f_2$ separately with without a priori information $P(l_1)=P(l_2)=P(l_3)$ and then using the prior probabilities about the classes repartition from the eBDtheque dataset \modif{$P(l_1)=0.68, P(l_2)= 0.183$ and $P(l_3)=0.137$}.
+We detailed our best results from ground truth and automatic balloon contour extraction in the confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification}.
+Note that we also show the results when we automatically remove the tail region from its automatic detection (Section~\ref{sec:se:from_balloon_to_tail}).
+Tail removal is performed by ignoring the points of the contour that are between the two points defined as tail origin ($f_a$ and $f_b$ in Figure~\ref{fig:se:convexity_defects}).
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+    \renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Classification result accuracy for different descriptor configuration. \modif{TODO: update?}}
+    \begin{tabular}{c|c|c|c|c|c|}
+  \cline{2-6}
+    & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
+  \cline{2-6}
+    & Smooth & Wavy & Zigzag & Average & Global \\
+  \hline
+  \multicolumn{1}{ |c| }{ $D=(f_1)$ } & 86.5 & 48.5 & 70.6  & 68.5 & 77.4\\
+  \hline
+  \multicolumn{1}{ |c| }{ $D=(f_2)$ } & 89.3 & 69.1 & 86.2 & 81.5 & 85.2\\
+  \hline
+  \multicolumn{1}{ |c| }{$D=(f_1, f_2)$ } & 89.3 & \textbf{69.1} & \textbf{86.2} & \textbf{81.5} & \textbf{85.2}\\
+  %\hline
+  \hline
+  \multicolumn{1}{ |c| }{$D=(f_1, f_2)$ + $priors$}   & \textbf{93.3} & 55.9 & 82.4 & 77.2 & 84.9\\
+  %\hline
+  \hline
+%       Proposed multi scale & ???  &???  & ???   & ???       \\
+%   \hline
+        \end{tabular}
+    \label{tab:ex:desc_test_balloon_classification}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+\renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Confusion matrix for smooth (S), wavy (W) and zigzag (Z) balloon contour classification results.\modif{TODO: update?}}
+    \begin{tabular}{cc|c|c|c|c|c|c|c|c|c|}
+  \cline{3-11}
+   & & \multicolumn{3}{|c|}{Ground truth} & \multicolumn{3}{|c|}{Auto} & \multicolumn{3}{|c|}{Auto no tail} \\
+  \cline{3-11}
+   & & S & W  & Z & S & W  & Z & S & W  & Z   \\
+  \hline
+  \multicolumn{1}{ |c|  }{\multirow{3}{*}{Predict} } & Smooth & \textbf{227} & 17 & 4 & ? & ? & ? & ? & ? & ? \\
+  \cline{2-11}
+  \multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{ Wavy } & 21  & \textbf{47} & 3  & ? & ? & ? & ? & ? & ?\\
+  \cline{2-11}
+  \multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{ Zigzag }  & 5 & 4 & \textbf{44}  & ? & ? & ? & ? & ? & ?\\
+  %\hline
+  \hline
+%       Proposed multi scale & ???  &???  & ???   & ???       \\
+%   \hline
+        \end{tabular}
+    \label{tab:ex:confusion_matrix_balloon_classification}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% An example of the Gaussian distribution parameters of the training set presented Figure~\ref{fig:ex:balloon_training_set} is given Table~\ref{tab:ex:coefficient_balloon_classification}.
+% Those parameters can be used for other dataset containing similar images without needing to train the classifier again.
+
+
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+%      \centering
+%     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.7\textwidth]{figure_here.png}
+%     \caption[Training set for balloon contour classification]{Training set for balloon contour classification.}
+%     \label{fig:ex:balloon_training_set}
+%    \end{figure}
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \begin{table}[ht]
+%     % \normalsize
+% % \renewcommand{\arraystretch}{1.2}
+
+%     \centering
+%     \caption{Example of Gaussian distribution parameters.}
+%     \begin{tabular}{|c|c|c|c|c|c|c|}
+%   \hline
+%     & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{Zigzag}  \\
+%   \hline
+%     & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$    \\
+%   \hline
+%     Feature $f_1$ & 0.019   & 0.012 & 0.042 & 0.020 & 0.148 & 0.118   \\
+%   \hline
+%     Feature $f_2$ & -0.004  & 0.006 & 0.007 & 0.010 & -0.017 & 0.023   \\
+%   \hline
+%    %\multicolumn{1}{ |c| }{ Feature 2 } &  8  & 5 & 15 & 6 & 8 & 4 \\
+%   %\cline{2-5}
+%   %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ Zigzag }}   & ? & ? & 12 \\
+%   %\hline
+%   %\hline
+% %       Proposed multi scale & ???  &???  & ???   & ???       \\
+% %   \hline
+%         \end{tabular}
+%     \label{tab:ex:coefficient_balloon_classification}
+%   \end{table}%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
+% ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
+% Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
+
+
+The different accuracy results table~\ref{tab:ex:desc_test_balloon_classification} show that the second feature $f_2$ is more discriminant than the first one $f_1$ and their combination does not exceed the second itself.
+Adding the prior knowledge about the testing classes repartition improves the ``smooth'' class only and decrease the two others.
+The global accuracy represents the number of good classification divided by the number of element to classify independently from the class.
+The confusion matrix table~\ref{tab:ex:confusion_matrix_balloon_classification} shows good classification results for the ``zigzag'' class even for cases that are quite different in terms of drawing styles (Figure~\ref{fig:good_detection_balloon_classification}) and sources (real and synthetic).
+Concerning the ``smooth'' and ``wavy'' classes, some speech balloons are very hard to classify out of context causing confusion (Figure~\ref{fig:bad_detection_balloon_classification}).
+Also, the tail of the balloon creates some noise and the radius average ($\bar{o}$) we use to normalize the descriptor features may not be appropriate for elongated balloons.
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{good_detection.png}
+    \caption{Correct classification examples for ``zigzag'' (top) and ``smooth'' classes (bottom).}
+    \label{fig:good_detection_balloon_classification}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{bad_detection.png}
+    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{wavy_instead_smooth.png}
+    \caption{Wrong classification examples which have been classified as ``smooth'' instead of  ``wavy'' in the first row and ``wavy'' instead of  ``smooth'' in the second row.}
+    \label{fig:bad_detection_balloon_classification}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% subsection balloon_classification (end)
+
 \subsection{Comparison and analysis} % (fold)
 % \label{sub:result_analysis}
 
-The evaluation results are presented in Table~\ref{tab:ex:bal_loc} at object bounding box level (Section~\ref{sub:ex:object_localisation_metric}) and then in Table~\ref{tab:ex:high_res} at the level of pixel (Section~\ref{sub:ex:object_segmentation_metric}) to illustrate the level of detail of the segmentation.
 
-
-+ Sequential approaches such as Arai, Ho and method A search for balloon inside the panel region, as a consequence, these methods can not extract balloons that overlap several panels.
-This is easily handled by independent method such as method B because it does not consider panel positions and search for balloons everywhere in the image.
+In this sub-section, we will discuss balloon localisation at bounding box and pixel-level, and balloon classification.
 
 % subsection result_analysis (end)
 
@@ -1353,7 +1643,8 @@ This is easily handled by independent method such as method B because it does no
 \paragraph{Balloon localisation} % (fold)
 \label{par:balloon_localisation}
 Balloon localisation aims to evaluate how the presented methods are good at predicting where the balloon are in the image.
-Object localisation are usually performed at the level of object bounding box.
+Object localisation are performed at the level of object bounding box (Section~\ref{sub:ex:object_localisation_metric}).
+Table~\ref{tab:ex:bal_loc} compare the average results we obtained for the best performance of the three proposed methods and two methods from the literature.
 
 % paragraph balloon_localisation (end)
 
@@ -1372,36 +1663,41 @@ Object localisation are usually performed at the level of object bounding box.
   Method  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)  \\
   \hline
   
-  Arai~\cite{Arai11}     & 13.21       & 11.61     & 12.36          \\
+  Arai~\cite{Arai11}  & 13.21       & 11.61           & 12.36          \\
   
   \hline
-  Ho~\cite{Ho2012}& 13.95     & 24.73   & 17.84 \\
-  
-  \hline
-  Method A (1)    & 37.24     & 45.19   & 40.83    \\
+  Ho~\cite{Ho2012}    & 13.95       & 24.73           & 17.84 \\  
+  % \hline
+  % Method A (1)    & 37.24     & 45.19   & 40.83    \\
 
+  % \hline
+  % Method A (2)    & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
   \hline
-  Method A (2)    & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
-  \hline
-  Method A (3)    & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
+  Method A        & \modif{83.4}    & \modif{55.5}      & \modif{66.6}  \\
   % \hline
   % Method A (4)   & \modif{?}      & \modif{?}      & \modif{?}  \\
   \hline
-  Method B        & 52.66  & 44.17      & 48.05    \\
+  Method B        & 52.66           & 44.17             & 48.05    \\
   \hline
-  Method C        & \modif{?}     & \modif{?}       & \modif{?}  \\
+  Method C        & \modif{??}      & \modif{??}        & \modif{??}  \\
   \hline
-
   \end{tabular}
       \label{tab:ex:bal_loc}
 \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The baseline Method A (1) detects less than half of the balloons (about $37\%$ recall) of this dataset.
-This approach is not originally designed for detecting implicit balloons but knowing the position of the panels allows masking non panel regions that sometimes recover implicit balloons (Figure~\ref{}).
+Our methods outperforms~\cite{Arai11} thanks to its genericity, since it can process all the image styles of the eBDtheque dataset.
+This was expected as~\cite{Arai11} was specifically developed for manga comics that have certain stylistic particularities.
+
+Method A detects less than half of the balloons (about \modif{$37\%$} recall) of this dataset.
+This approach is not originally designed for detecting implicit balloons but knowing the position of the panels allows closing open panels that sometimes recover implicit balloons (Figure~\ref{fig:ex:implicit_balloon_recovery_by_panel}).
+However, it has two advantages in comparison with the proposed active contour based method.
+First, as the connected-component is considered as balloon, when correct, the precision at the pixel level is maximal.
+Second, it is faster to compute.
+The results using active contour with distance transform shows a significant improvement, thanks to the active contour theory that detect much more balloons whether open or closed than connected component based methods (Table~\ref{tab:ex:implicit_balloon_performance_object_pixel_comparison}).
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
+  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{figure_here.png}
     \caption[Implicit balloon recovering by panel and balloon extraction combination]{Implicit balloon recovering by panel and balloon extraction combination.}
@@ -1410,36 +1706,34 @@ This approach is not originally designed for detecting implicit balloons but kno
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-However, it has two advantages in comparison with the proposed active contour based method.
-First, as the a connected component is considered as balloon, when correct, the precision at the pixel level is maximal.
-Second, it is faster to compute.
-The results using active contour with distance transform Method A (2) shows a significant improvement, thanks to the active contour theory that detect much more balloons whether open or closed than connected component based methods. 
 %Making the edges attract the active contour from further is an essential step as we can see line (3). We gain up to {\bf X RECALL AND Y PRECISION}.
 %Mono-resolution and multi-resolution shows similar recall result because the high resolution affects only the shape details, not significantly changing the location of the detection. Next section explains how to evaluate the benefits of the high-resolution detection. %However there is a slight improvement for the precision measure due to higher precision in the shape detection. {\bf ADD RESULT FIGURE?}
-Doing just the low resolution localization step, or continuing to include the high resolution fitting step does not cause any difference for Method A (3) under this evaluation scheme, as the evaluation is performed at the level of bounding boxes object overlapping.
-The independent balloon extraction Method C is TODO...
+% Doing just the low resolution localization step, or continuing to include the high resolution fitting step does not cause any difference for Method A (3) under this evaluation scheme, as the evaluation is performed at the level of bounding boxes object overlapping.
 
-OTHER VERSION
 
-Our method outperforms~\cite{Arai11} thanks to its genericity, since it can process all the image styles of the eBDtheque dataset.
-This was expected as~\cite{Arai11} was specifically developed for manga comics that have certain stylistic particularities.
-We also surpassed our previous method~\cite{rigaud2013active} because it needs text lines as input which were given in our proposed text extraction method (Section~\ref{sub:text_extraction}).
-Here we clearly see the limitations of dependency between the processing.
-The performance of our text extractor was 49.75\% (Table~\ref{tab:text_results}) which was used as input for balloon extraction so the balloon extraction~\cite{rigaud2013active} was inevitably affected.
-The validation of the expert system once again improve the precision but decreased the recall of the extraction while improving the overall f-measure by almost 3\%.
-The drop in recall was due to the balloons that were correctly extracted but which contained no detectable.
+% \modif{TODO: OTHER VERSION?}
+
+% Our methods outperforms~\cite{Arai11} thanks to its genericity, since it can process all the image styles of the eBDtheque dataset.
+% This was expected as~\cite{Arai11} was specifically developed for manga comics that have certain stylistic particularities.
+% We also surpassed our previous method~\cite{rigaud2013active} because it needs text lines as input which were given in our proposed text extraction method (Section~\ref{sub:text_extraction}).
+Sequential approaches such as Arai, Ho and method A suffer from limitations of dependency between the different processing.
+For instance, in Method A the performance of our text extractor was \modif{49.75\%} (Table~\ref{tab:text_results}) which was used as input for balloon extraction so the balloon extraction was inevitably affected.
+Also, such approaches search for balloon inside the panel region, as a consequence, these methods can not extract balloons that overlap several panels.
+This is easily handled by independent method such as method B because it does not consider panel positions and search for balloons everywhere in the image.
+The post validation by the expert system improved the precision but decreased the recall of the extraction while improving the overall f-measure by almost 3\% (Method 3).
+The drop in recall was due to the balloons that were correctly extracted but which contained undetected text regions.
 %Nevertheless, the proposed method does not beat our previous method~\cite{rigaud2013active} that is also able to extract non closed balloons from text regions (from the ground truth here).
-Figure~\ref{fig:text_extraction_detail} confirms that our method works best when the balloons are closed, well segmented and with non cursive text inside.
-This experiment was performed in 22 minutes for the whole dataset using one CPU at 2.5GHz (2.2s per balloon on average).
+% This experiment was performed in 22 minutes for the whole dataset using one CPU at 2.5GHz (2.2s per balloon on average).
 
 
-\paragraph{Balloon segmentation (pixel-level)}
+
+% \paragraph{Balloon segmentation (pixel-level)}
 % \label{par:}
 % Balloon localisation is enough for object detection purposes at bounding box level.
-As mention Section~\ref{??}, the balloon contour contains part of information that is also important to retrieve in the context of understanding comic book documents (e.g. tail, tone information).
-In this context, the location of the balloon is not enough sufficient.
- % in our case because later we will also consider tail detection based on balloon contour analysis.
-Such analysis requires a finer extraction of the balloon contour at the level of pixel (Table~\ref{tab:high_res}), not bounding box only.
+
+
+% \modif{TODO}
+
 % Balloon segmentation is performed at the level of pixel and can reflects such level of details.
 % To evaluate the segmentation level, we repeated the evaluation using a pixel level evaluation scheme.
 % The results are shown in table~\ref{tab:high_res}.
@@ -1448,140 +1742,10 @@ Such analysis requires a finer extraction of the balloon contour at the level of
 %\subsection{Balloon shape detection}
 %The bounding box level ground truth we used for balloon localization evaluation is not precise enough to know if all the detail of the balloon shape have been correctly detected or not. Here we evaluate the balloon detection from a pixel level ground truth (including the tail) on few pages\footnote{Page 1 refer to ``CYB\_BUBBLEGOM\_T01\_008'', page 2 to ``6673465787\_668ec4eff4\_o'' and page 3 to ``LAMISSEB\_ETPISTAF\_013''.{\bf should I add complete ref. in ref. section instead?}} from the same dataset as section~\ref{sec:dataset} and the evaluation measures of section~\ref{sec:eval}, in order to compare the performance between mono and multi-scale detection with more accuracy (see table~\ref{tab:high_res}). Note, for this experiment we selected only pages where ground truth and automatic text detection give same results.
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   \begin{table}[ht]
-%     \normalsize
-% \renewcommand{\arraystretch}{1.2}
 
-%     \centering
-%     \caption[Pixel-level balloon segmentation evaluation scores]{Pixel-level balloon segmentation evaluation scores.}
-%     \begin{tabular}{|c|c|c|c|c|c|c|}
-%           \hline
-%             & \multicolumn{2}{|c|}{Single-stage}  & \multicolumn{2}{|c|}{Two-stage}   \\
-%           \hline
-%             &  R (\%)  & P (\%) & F (\%)   &  R (\%)  & P (\%)  & F (\%)   \\
-%           \hline
-%           Page 1  & 91.3      & 86.5    & 95.9      & 90.1  & ? & ?    \\
-%           \hline
-%           Page 2  & 79.0      & 95.9    & 78.4      & 94.8  & ? & ?    \\
-%           \hline
-%           Page 3  & 93.4      & 92.8    & 97.7      & 88.7  & ? & ?    \\
-%           \hline
-%         %       Proposed multi scale & ???  &???  & ???   & ???       \\
-%         %   \hline
-%         \end{tabular}
-%     \label{tab:ex:high_res}
-%   \end{table}%
-%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table~\ref{tab:ex:high_res} shows...
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht]
-  \normalsize
-% \renewcommand{\arraystretch}{1.3}
-% \extrarowheight as needed to properly center the text within the cells
-  \centering
-  \caption[Pixel-level balloon segmentation evaluation scores]{Pixel-level balloon segmentation evaluation scores.}
-  \begin{tabular}{|c|c|c|c|c|c|c|}
-  % \hline
-
-    % & \multicolumn{3}{|c|}{Text from GT}  & \multicolumn{3}{|c|}{Text from method 2}   \\
-  \hline
-  Method  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)\\
-  \hline
-%   Ho~\cite{Ho2012}  & ???     & ???   & & ???     & ???&    \\
-
-  Arai~\cite{Arai11}     & \modif{0.8}       & \modif{0.8}     & \modif{???}       & \modif{???}  & \modif{???} & \modif{???}   \\
-  \hline
-  Method A (1)     & \modif{56.6}     & \modif{79.2}   & \modif{66.0}  & \modif{53.1}     & \modif{53.0} & \modif{53.1}    \\
-%   \hline
-%   (2) & ???     & ???   & & ???     & ???&    \\
-  %\hline
-  %Log dist. trans.       & ???       & ???   & & ???       & ???   \\  
-%   \hline
-%   (2)     & ??? & ??? & ???   & ??? & ??? & ??? \\
-  \hline
-  Method A (2)   & \modif{89.0}  & \modif{90.7}   & \modif{89.8}  & \modif{82.1}  & \modif{53.7}    & \modif{64.9}  \\
-  \hline
-  Method A (3)   & \modif{92.3}  & \modif{94.4}  & \modif{93.4}  & \modif{83.4}  & \modif{55.5}    & \modif{66.6}  \\
-  \hline
-  Method A (4)   & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
-  \hline
-  Method B   & \modif{57.9}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
-  \hline
-  Method C   & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}  & \modif{?}    & \modif{?}  \\
-  \hline
-% Multi {\bf DEL?}      & 92.3  & 94.4  & 93.4  & 83.4  & 55.5    & 66.6  \\
-  %\hline
-%       Proposed multi scale  & ??? &???  & ???   & ???       \\
-%   \hline
-  \end{tabular}
-      \label{tab:ex:high_res}
-\end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-Table~\ref{tab:ex:high_res} shows...
-
-TODO
-
-
-\paragraph{Balloon classification} % (fold)
-\label{par:balloon_classification}
-
-
-An example of the Gaussian distribution parameters of the training set presented Figure~\ref{fig:ex:balloon_training_set} is given table~\ref{tab:in:coefficient}.
-Those parameters can be used for other dataset containing similar images without needing to train the classifier again.
-
-
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-     \centering
-    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.7\textwidth]{figure_here.png}
-    \caption[Training set for balloon contour classification]{Training set for balloon contour classification.}
-    \label{fig:ex:balloon_training_set}
-   \end{figure}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[ht]
-    % \normalsize
-% \renewcommand{\arraystretch}{1.2}
-
-    \centering
-    \caption{Example of Gaussian distribution parameters.}
-    \begin{tabular}{|c|c|c|c|c|c|c|}
-  \hline
-    & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{Zigzag}  \\
-  \hline
-    & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$    \\
-  \hline
-    Feature $f_1$ & 0.019   & 0.012 & 0.042 & 0.020 & 0.148 & 0.118   \\
-  \hline
-    Feature $f_2$ & -0.004  & 0.006 & 0.007 & 0.010 & -0.017 & 0.023   \\
-  \hline
-   %\multicolumn{1}{ |c| }{ Feature 2 } &  8  & 5 & 15 & 6 & 8 & 4 \\
-  %\cline{2-5}
-  %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ Zigzag }}   & ? & ? & 12 \\
-  %\hline
-  %\hline
-%       Proposed multi scale & ???  &???  & ???   & ???       \\
-%   \hline
-        \end{tabular}
-    \label{tab:in:coefficient}
-  \end{table}%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% \modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
-% ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
-% Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
-
-
-% paragraph balloon_classification (end)
 
 % higher score for the two-stage variant for the page 1 and 3.
 % These two pages contain mainly closed balloons, we see here that the second stage improves the accuracy of the detection of closed balloons.
@@ -1606,10 +1770,25 @@ Those parameters can be used for other dataset containing similar images without
 % As mention Section~\ref{??}, the balloon contour contains part of information that is also important to retrieve in the context of understanding comic book documents.
 % Balloon segmentation is performed at the level of pixel and can reflects such level of details.
 
-% TODO
+\paragraph{Balloon classification analysis} % (fold)
+\label{par:balloon_classification_analysis}
+
+As mentioned Section~\ref{??}, the balloon contour contains part of information that is also important to retrieve in the context of understanding comic book documents (e.g. tail, tone information).
+In this context, the location of the balloon is not enough sufficient.
+ % in our case because later we will also consider tail detection based on balloon contour analysis.
+Such analysis requires a finer extraction of the balloon contour at the level of pixel (Table~\ref{tab:high_res}), not bounding box only.
+
+
+The proposed method covers the comics balloon classification in general accept for open balloons.
+However, in this particular case, we can probably use extra features (e.g. tail type recognition, language analysis) to get more information about the text tone.
+Also, other distortion measures have to be investigated, especially for ``wavy'' contours that are the most difficult contour to classify using the proposed method.
+%In this study, the proposed descriptor we proposed is not sensitive enough to properly classify the ``wavy'' nor the definition of what is a ``wavy'' contour as to be revised.
+Concerning the tail region, its removal definitely improves the accuracy of the classification process (Table~\ref{tab:ex:confusion_matrix_balloon_classification}).
+
+% paragraph balloon_classification_analysis (end)
 
 % subsection result_comparison (end)
-\paragraph{Discussion}
+\paragraph{Discussion about implicit balloons \modif{TODO: move?}}
 The presented implicit balloon extraction method highly depends on the active contour initialization success.
 In this study, we relied on text detection as we assume it is the most common feature that balloons include, while past experiments have shown that its accurate detection is feasible and stable.
 A side-effect of this choice is that balloon sometimes can not be detected because their contain non text information (e.g. drawings, punctuation).

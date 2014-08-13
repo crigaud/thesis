@@ -90,33 +90,34 @@
 \BOOKMARK [2][-]{subsection.6.6.3}{Method A}{section.6.6}% 90
 \BOOKMARK [2][-]{subsection.6.6.4}{Method B}{section.6.6}% 91
 \BOOKMARK [2][-]{subsection.6.6.5}{Method C}{section.6.6}% 92
-\BOOKMARK [2][-]{subsection.6.6.6}{Comparison and analysis}{section.6.6}% 93
-\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 94
-\BOOKMARK [2][-]{subsection.6.7.1}{Experimental settings}{section.6.7}% 95
-\BOOKMARK [2][-]{subsection.6.7.2}{Result analysis}{section.6.7}% 96
-\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 97
-\BOOKMARK [2][-]{subsection.6.8.1}{Experimental settings}{section.6.8}% 98
-\BOOKMARK [2][-]{subsection.6.8.2}{Result analysis}{section.6.8}% 99
-\BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 100
-\BOOKMARK [2][-]{subsection.6.9.1}{Experimental settings}{section.6.9}% 101
-\BOOKMARK [2][-]{subsection.6.9.2}{Results analysis}{section.6.9}% 102
-\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 103
-\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 104
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 105
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 106
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 107
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 108
-\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 109
-\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 110
-\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 111
-\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 112
-\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 113
-\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 114
-\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 115
-\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 116
-\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 117
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 118
-\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 119
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 120
-\BOOKMARK [1][-]{section.C.1}{eBDtheque dataset}{appendix.C}% 121
-\BOOKMARK [0][-]{section*.163}{Bibliography}{}% 122
+\BOOKMARK [2][-]{subsection.6.6.6}{Balloon classification}{section.6.6}% 93
+\BOOKMARK [2][-]{subsection.6.6.7}{Comparison and analysis}{section.6.6}% 94
+\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 95
+\BOOKMARK [2][-]{subsection.6.7.1}{Experimental settings}{section.6.7}% 96
+\BOOKMARK [2][-]{subsection.6.7.2}{Result analysis}{section.6.7}% 97
+\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 98
+\BOOKMARK [2][-]{subsection.6.8.1}{Experimental settings}{section.6.8}% 99
+\BOOKMARK [2][-]{subsection.6.8.2}{Result analysis}{section.6.8}% 100
+\BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 101
+\BOOKMARK [2][-]{subsection.6.9.1}{Experimental settings}{section.6.9}% 102
+\BOOKMARK [2][-]{subsection.6.9.2}{Results analysis}{section.6.9}% 103
+\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 104
+\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 105
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 106
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 107
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 108
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 109
+\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 110
+\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 111
+\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 112
+\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 113
+\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 114
+\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 115
+\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 116
+\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 117
+\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 118
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 119
+\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 120
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 121
+\BOOKMARK [1][-]{section.C.1}{eBDtheque dataset}{appendix.C}% 122
+\BOOKMARK [0][-]{section*.173}{Bibliography}{}% 123

@@ -10,12 +10,14 @@
 \contentsline {table}{\numberline {6.2}{\ignorespaces Results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods}}{99}{table.caption.125}
 \contentsline {table}{\numberline {6.3}{\ignorespaces Text localisation results.\relax }}{100}{table.caption.128}
 \contentsline {table}{\numberline {6.4}{\ignorespaces Text recognition results from ground truth and automatic text line localisation with an edit distance ($ED$) of 0, 1 and 2.\relax }}{101}{table.caption.129}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Balloon localization recall and precision results}}{104}{table.caption.132}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Pixel-level balloon segmentation evaluation scores}}{105}{table.caption.135}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Example of Gaussian distribution parameters.\relax }}{106}{table.caption.138}
-\contentsline {table}{\numberline {6.8}{\ignorespaces Tail extraction results.\relax }}{107}{table.caption.142}
-\contentsline {table}{\numberline {6.9}{\ignorespaces Character localisation results.\relax }}{110}{table.caption.148}
-\contentsline {table}{\numberline {6.10}{\ignorespaces Character detection performance\relax }}{111}{table.caption.150}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Implicit balloon performance evaluation at object and pixel-levels for different energy functions.\relax }}{104}{table.caption.135}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Validation of parameter $M$ for $D=(f_1,f_2)$ scenario {\bf \color {red}TODO: update with new training set?}.\relax }}{106}{table.caption.139}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Classification result accuracy for different descriptor configuration. {\bf \color {red}TODO: update?}\relax }}{107}{table.caption.140}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Confusion matrix for smooth (S), wavy (W) and zigzag (Z) balloon contour classification results.{\bf \color {red}TODO: update?}\relax }}{107}{table.caption.141}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Balloon localization recall and precision results}}{108}{table.caption.145}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Tail extraction results.\relax }}{110}{table.caption.151}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Character localisation results.\relax }}{113}{table.caption.157}
+\contentsline {table}{\numberline {6.12}{\ignorespaces Character detection performance\relax }}{114}{table.caption.159}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

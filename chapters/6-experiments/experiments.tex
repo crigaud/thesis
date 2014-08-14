@@ -1146,7 +1146,7 @@ Considering the best method for panel extraction (\modif{???} in Figure~\ref{tab
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Arai's method is a sequential approach that requires panel and balloon regions as input.
-As shown in Table~\ref{tab:ex:bal_loc}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn (Table~\ref{tab:text_results}).
+As shown in Table~\ref{tab:ex:balloon_localisation_comparison_results}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn (Table~\ref{tab:text_results}).
 Moreover, this text extraction method uses several thresholds which reduces its fields of application.
 
 
@@ -1304,7 +1304,7 @@ The best score of \modif{$R=??$} and \modif{$P=??$} was obtained for \modif{$C_{
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%We consider as correctly detected the balloon with a confidence value higher than \modif{10\%} (Table~\ref{tab:ex:bal_loc}, Method A (1)).
+%We consider as correctly detected the balloon with a confidence value higher than \modif{10\%} (Table~\ref{tab:ex:balloon_localisation_comparison_results}, Method A (1)).
 
 % paragraph regular_balloons (end)
 
@@ -1316,7 +1316,7 @@ The implicit balloon extraction method was evaluated using three different scena
 % that considers as balloon any white connected components that overlaps at more than $10\%$ with text regions.
 First, the performance using active contour model with only the internal energy, then with the distance transform based external energy described section~\ref{sec:se:external_energie} and third, we added the domain knowledge energy $E_{text}$ from Section~\ref{sec:se:text_energie} (Table~\ref{tab:ex:implicit_balloon_performance_object_pixel_comparison}).
 % Fourth, after a two stage contour fitting (4).
-% Results are presented in table~\ref{tab:ex:bal_loc}.
+% Results are presented in table~\ref{tab:ex:balloon_localisation_comparison_results}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1656,14 +1656,14 @@ In this section, we will discuss balloon localisation at bounding box and pixel-
 % % that considers as balloon any white connected components that overlaps at more than $10\%$ with text regions.
 % Second, the active contour with the distance transform based external energy described section~\ref{sec:external_energie} (2) and third, we add the domain knowledge energy $E_{text}$ (3) from Section~\ref{sec:text_energie}.
 % Fourth, after a two stage contour fitting (4).
-% Results are presented in table~\ref{tab:ex:bal_loc}.
+% Results are presented in table~\ref{tab:ex:balloon_localisation_comparison_results}.
 % For each method, we present two variants, one making use of ground truth localization for the text areas as seeds for balloon localization, and another making use the results of the automatic text localization method presented Section~\ref{sec:se:panel_and_text}.
 
 \paragraph{Balloon localisation} % (fold)
 \label{par:balloon_localisation}
 Balloon localisation aims to evaluate how the presented methods are good at predicting where the balloon are in the image.
 Object localisation are performed at the level of object bounding box (Section~\ref{sub:ex:object_localisation_metric}).
-Table~\ref{tab:ex:bal_loc} compare the average results we obtained for the best performance of the three proposed methods and two methods from the literature.
+Table~\ref{tab:ex:balloon_localisation_comparison_results} compare the average results we obtained for the best performance of the three proposed methods and two methods from the literature.
 
 % paragraph balloon_localisation (end)
 
@@ -1701,7 +1701,7 @@ Table~\ref{tab:ex:bal_loc} compare the average results we obtained for the best 
   Method C        & \modif{??}      & \modif{??}        & \modif{??}  \\
   \hline
   \end{tabular}
-      \label{tab:ex:bal_loc}
+      \label{tab:ex:balloon_localisation_comparison_results}
 \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1831,7 +1831,7 @@ An way to circumvent this problem could be to either define the boundary in a fl
 % \label{sub:experimental_settings}
 
 In this section we evaluate the tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} from two balloon extraction methods, automatic and manual.
-The automatic extraction method is the best method from the summary Table~\ref{tab:ex:bal_loc} and the manual is simply the balloon contour from the eBDtheque dataset.
+The automatic extraction method is the best method from the summary Table~\ref{tab:ex:balloon_localisation_comparison_results} and the manual is simply the balloon contour from the eBDtheque dataset.
 The comparison of both balloon extraction method will highlight the part of error which comes from the balloon extraction and the proper tail extraction method's error when there is not possible error from the balloon extraction.
 As introduced in Section~\ref{sub:ex:tail_detection_metric}, we use two accuracy metrics, one for the predicted position of the tail tip $A_{tailTip}$ and the other one for the tail direction $A_{tailDir}$
  (Table~\ref{tab:ex:tail_evaluation}).
@@ -1901,9 +1901,9 @@ The importance of a precise pixel-level segmentation in the region of the tail t
 
 \section{Comic character extraction evaluation} % (fold)
 \label{sec:comic_character_extraction_evaluation}
-We evaluated the detection of comic characters on the 1550 characters of the eBDtheque dataset, given the input information from the ground truth (panel, balloon, tail position and tail direction).
+We evaluated the detection of comic characters on the 1550 characters of the eBDtheque dataset.
 In the eBDtheque ground truth, only 880 (56.8\%) of the character instances are speaking (and 43.3\% are not).
-Therefore, we do not expect to reach 100\% recall and precision with the sequential Method A because it is only able to extract characters from the tail (that are speaking).
+Therefore, we do not expect to reach 100\% recall and precision with the Method A and B because they are only able to extract speaking characters.
 The independent Method B is potentially able to retrieve all the character instance given one example of each of them.
 
 % \subsubsection{Sequential approach} % (fold)
@@ -1936,7 +1936,9 @@ This ratio can be relaxed according to the application e.g. face only, full body
 
 Method A computes a region of interest for comic characters from the tail tip position and tail direction inside a panel region (Section~\ref{sec:se:tail_to_character}).
 Its position is shifted in the region of the tail tip according to the tail direction which is quantized in eight cones of $\pi/4$ radius.
-The score of this method was in average for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:character_methodA_extraction_detail}).
+We compare the performance of this method given the input information of panel, balloon and tail from the ground truth and from the best automatic extraction method presented Table~\ref{tab:panel_extraction_comparision_results},~\ref{tab:ex:balloon_localisation_comparison_results} and~\ref{tab:ex:tail_evaluation} respectively.
+
+We obtained average recall and precision scores of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:character_methodA_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
@@ -2027,7 +2029,21 @@ Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} wher
 
 \subsection{Method C} % (fold)
 % \label{sub:method_c}
-TODO
+
+The knowledge-driven method can be used as a post processing of the comic character extraction.
+It validates or rejects character candidates according to contextual information from the proposed model (Section~\ref{sub:kn:validation}).
+In the model, the rules concerning comic book characters are that they should not contain any other extracted region because we assume that a character can not contain a panel, a balloon, text and another character. If they do, they are automatically deleted.
+We post processed the output of Method A and we obtained and average score for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:character_methodC_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+ \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+ \caption{Balloon extraction score details using Method C for each image of the eBDtheque dataset \modif{TODO: update}.
+ }
+ \label{fig:ex:character_methodC_extraction_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % subsection method_c (end)
 
 % subsection experimental_settings (end)
@@ -2035,6 +2051,10 @@ TODO
 \subsection{Comparison and analysis} % (fold)
 \label{sub:result_analysis}
 
+\paragraph{Character localisation} % (fold)
+\label{par:character_localisation}
+
+% paragraph character_localiatioin (end)
 The comic characters extraction are presented in Table~\ref{tab:ex:eval_characters} for the Method A and C.
 Method B is evaluated separately on a subset of the dataset.
 
@@ -2093,9 +2113,9 @@ Method B is evaluated separately on a subset of the dataset.
     % \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As shown on Figure~\ref{fig:ex:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
+% As shown on Figure~\ref{fig:ex:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
 The numbers in Table~\ref{tab:ex:eval_characters} are given for the whole dataset including the characters that are not speaking.
-If we focus on the subset of 880 speakers, the recall, precision and f-measure were 34.49\%, 32.02\% and 33.21\% respectively.
+If we focus on the subset of 880 speakers, the recall, precision and f-measure were 34.49\%, 32.02\% and 33.21\% respectively for Method C.
 
 % subsection result_analysis (end)
 
@@ -2105,23 +2125,28 @@ If we focus on the subset of 880 speakers, the recall, precision and f-measure w
 % \paragraph{Detection results}
 % \label{sec:eval}
 
-The results present interesting detection results based on a three colours user defined query descriptor (see section~\ref{sec:proposed_method}). 
-The processing time was about 6 seconds per image for a A4 300DPI image on a regular machine. Most of the time consumption is for the mask creation and it is proportional to the number of mask to create.  Detection result examples are presented figure~\ref{fig:ex:character_spotting_results}.
+The experiments show interesting detection results based on a \modif{user-defined colours query descriptor} (Section~\ref{sec:proposed_method}). 
+% The processing time was about 6 seconds per image for a A4 300DPI image on a regular machine.
+% Most of the time consumption is for the mask creation and it is proportional to the number of mask to create.
+Detection result examples are illustrated Figure~\ref{fig:ex:character_spotting_results}.
 
-The detected region aims to localize the smallest regions containing all the colours of the query descriptor. This region is usually smaller than the ground truth region which is defined at character bounding box level. A post processing is needed to compute the character bounding box from the detected region by extending it to the colour region boundaries.
+The detected region aims to localize the smallest regions containing all the colours of the query descriptor.
+This region is usually smaller than the ground truth region which is defined at character bounding box level.
+A post-processing is needed to compute the character bounding box from the detected region by extending it to the colour region boundaries.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+ \begin{figure}[!h]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[width=0.5\textwidth]{result_exemples.png}
   \caption[Character spotting result sample]{
-  Each line shows a character query region bounding box in white (left column), a correct detection (middle column) and a wrong detection (right column). Green rectangles represents the ground truth region and the red rectangle corresponds to the region detections. The corresponding character IDs in table~\ref{tab:ex:character_spotting_detail_result} are 12, 8, 0, 10, 16 and 2 from top to bottom. %and second columns show correct and wrong detection result for album 1. Third and fourth columns are correct and wrong detection results examples from album 2. Top first and top third columns are the user defined queries. %{\bf Update true and false positive examples and draw detection window (according to $S$ definition)
+  Each line shows a character query region bounding box in white (left column), a correct detection (middle column) and a wrong detection (right column). Green rectangles represents the ground truth region and the red rectangle corresponds to the region detections. The corresponding character IDs in Table~\ref{tab:ex:character_spotting_detail_result} are 12, 8, 0, 10, 16 and 2 from top to bottom. %and second columns show correct and wrong detection result for album 1. Third and fourth columns are correct and wrong detection results examples from album 2. Top first and top third columns are the user defined queries. %{\bf Update true and false positive examples and draw detection window (according to $S$ definition)
   }
   \label{fig:ex:character_spotting_results}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Correct detections show the variety of comics character position and deformation that we are able to detect with the presented framework. There are few missing detection and over detection are essentially due to other comics character detection and image pre processing (colour reduction).%character part missing, small size objects or low resolution images.
+Correct detections show the variety of comics character position and deformation that we are able to detect with the presented framework. There are few missing detection and over detection are essentially due to other comics character detection and image pre processing (colour reduction).
+%character part missing, small size objects or low resolution images.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   \begin{table}[ht]
@@ -2156,7 +2181,7 @@ Correct detections show the variety of comics character position and deformation
 %balloon localization performance at bounding box level to highlight the benefits of both active contour theory and domain specific knowledge. Second, we performed pixel level evaluation on a smaller subset to show the ability of our method to fit balloon contour details.
 
 
-\paragraph{Discussion}
+% \paragraph{Discussion}
 The proposed framework gives promising results for contemporary comics, we also tried on historical such as FRED PHILEMON12 and MCCALL ROBINHOOD from the eBDtheque dataset but the printing process generates a lot of noise (thickness of ink). 
 A pre-processing smoothing is required in this case~\cite{l0smoothing2011,Kopf2012DigitalReconstruction}. The colour palette we used has 256 colours, we believe that we can improve the presented method by computing the palette from the user's query in order to ignore unwanted colours and speed up the process. 
 The sliding windows approach does not allow to segment comics character at a pixel level, a distance measure between the colour mask regions could solve this.

@@ -736,7 +736,7 @@ The confidence value $C_{tail}$ may be useful for further decision making proces
 % We focus on the characters that are emitting a speech balloon (speaking characters) and try to localize them from the speech balloon informations.
 % That is to say that speech balloons will be associated one or several times to each of the character in different panels.
 
-As we know which balloons are in which panel (overlapping), we can estimate from the position and direction of the tail, which part of the panel may contain the speaking character.
+As we know which balloons are in which panel (total inclusion), we can estimate from the position and direction of the tail, which part of the panel may contain the speaking character.
 The tail orientation is quantized in eight cones of $\pi/4$ radius so we can consider that, in a rectangular-shaped panel (or its bounding box), the tail is either pointing towards a corner or towards a border of the panel.
 We define the ROI for the character as a squared region beside the speech balloon.
 The maximum width $w_{max}$ and height $h_{max}$ of the ROI are equal to the mean widths and heights of all the balloons in the image (Equation \ref{eq:se:mean_balloon_size}).

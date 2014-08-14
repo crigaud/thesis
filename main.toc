@@ -136,53 +136,48 @@
 \contentsline {subsection}{\numberline {6.6.2}Ho's method~\cite {Ho2012}}{102}{subsection.6.6.2}
 \contentsline {subsection}{\numberline {6.6.3}Method A}{103}{subsection.6.6.3}
 \contentsline {paragraph}{Regular balloons}{103}{section*.132}
-\contentsline {paragraph}{Implicit balloons}{103}{section*.134}
+\contentsline {paragraph}{Implicit balloons}{103}{section*.135}
 \contentsline {subsection}{\numberline {6.6.4}Method B}{104}{subsection.6.6.4}
 \contentsline {subsection}{\numberline {6.6.5}Method C}{105}{subsection.6.6.5}
 \contentsline {subsection}{\numberline {6.6.6}Balloon classification}{105}{subsection.6.6.6}
-\contentsline {subsection}{\numberline {6.6.7}Comparison and analysis}{108}{subsection.6.6.7}
-\contentsline {paragraph}{Balloon localisation}{108}{section*.144}
-\contentsline {paragraph}{Balloon classification analysis}{109}{section*.147}
-\contentsline {paragraph}{Discussion about implicit balloons {\bf \color {red}TODO: move?}}{109}{section*.148}
+\contentsline {subsection}{\numberline {6.6.7}Comparison and analysis}{107}{subsection.6.6.7}
+\contentsline {paragraph}{Balloon localisation}{107}{section*.146}
+\contentsline {paragraph}{Balloon classification analysis}{109}{section*.149}
+\contentsline {paragraph}{Discussion about implicit balloons {\bf \color {red}TODO: move?}}{109}{section*.150}
 \contentsline {section}{\numberline {6.7}Tail detection evaluation}{110}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Experimental settings}{110}{subsection.6.7.1}
-\contentsline {subsubsection}{Method A}{110}{section*.149}
-\contentsline {subsubsection}{Method B}{110}{section*.150}
-\contentsline {subsection}{\numberline {6.7.2}Result analysis}{110}{subsection.6.7.2}
 \contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{111}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}Experimental settings}{111}{subsection.6.8.1}
-\contentsline {subsubsection}{Method A}{111}{section*.153}
-\contentsline {subsubsection}{Method B}{111}{section*.154}
-\contentsline {subsubsection}{Method C}{113}{section*.156}
-\contentsline {subsection}{\numberline {6.8.2}Result analysis}{113}{subsection.6.8.2}
-\contentsline {paragraph}{Character spotting}{113}{table.caption.159}
-\contentsline {paragraph}{Discussion}{113}{section*.161}
-\contentsline {section}{\numberline {6.9}Semantic links evaluation}{116}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Experimental settings}{116}{subsection.6.9.1}
-\contentsline {subsubsection}{Method C}{116}{section*.162}
-\contentsline {subsection}{\numberline {6.9.2}Results analysis}{116}{subsection.6.9.2}
-\contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{116}{section.6.10}
-\contentsline {paragraph}{Process details}{116}{section*.164}
-\contentsline {paragraph}{Low level processing}{117}{section*.165}
-\contentsline {paragraph}{Semantic links}{117}{section*.166}
-\contentsline {paragraph}{General evaluation}{118}{section*.167}
-\contentsline {section}{\numberline {6.11}Conclusions}{118}{section.6.11}
-\contentsline {chapter}{\numberline {7}Conclusions}{119}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary and contributions}{119}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future perspectives}{119}{section.7.2}
-\contentsline {paragraph}{Balloon classification}{119}{section*.168}
-\contentsline {chapter}{\numberline {A}Pre-processing}{121}{appendix.A}
-\contentsline {section}{\numberline {A.1}Noise removal}{121}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Salt and pepper}{121}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Quantization}{121}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}Segmentation}{121}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Region-growing}{122}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Split and merge}{122}{subsection.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Contour-based}{122}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Bi-level grey-scale thresholding}{123}{subsection.A.2.4}
-\contentsline {subsection}{\numberline {A.2.5}Multi-level colour thresholding}{123}{subsection.A.2.5}
-\contentsline {chapter}{\numberline {B}Feature extraction}{125}{appendix.B}
-\contentsline {section}{\numberline {B.1}Connected-component labelling}{125}{section.B.1}
-\contentsline {chapter}{\numberline {C}Dataset}{127}{appendix.C}
-\contentsline {section}{\numberline {C.1}eBDtheque dataset}{127}{section.C.1}
-\contentsline {chapter}{Bibliography}{133}{section*.173}
+\contentsline {subsection}{\numberline {6.8.1}Method A}{112}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}Method B}{113}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.3}Method C}{114}{subsection.6.8.3}
+\contentsline {subsection}{\numberline {6.8.4}Comparison and analysis}{115}{subsection.6.8.4}
+\contentsline {paragraph}{Character spotting}{115}{section*.158}
+\contentsline {paragraph}{Discussion}{115}{section*.160}
+\contentsline {section}{\numberline {6.9}Semantic links evaluation}{117}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Experimental settings}{117}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Method C}{117}{subsection.6.9.2}
+\contentsline {subsection}{\numberline {6.9.3}Analysis and comparison}{117}{subsection.6.9.3}
+\contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{117}{section.6.10}
+\contentsline {paragraph}{Process details}{117}{section*.162}
+\contentsline {paragraph}{Low level processing}{118}{section*.163}
+\contentsline {paragraph}{Semantic links}{118}{section*.164}
+\contentsline {paragraph}{General evaluation}{119}{section*.165}
+\contentsline {section}{\numberline {6.11}Conclusions}{119}{section.6.11}
+\contentsline {chapter}{\numberline {7}Conclusions}{121}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary and contributions}{121}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future perspectives}{121}{section.7.2}
+\contentsline {paragraph}{Balloon classification}{121}{section*.166}
+\contentsline {chapter}{\numberline {A}Pre-processing}{123}{appendix.A}
+\contentsline {section}{\numberline {A.1}Noise removal}{123}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Salt and pepper}{123}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Quantization}{123}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Segmentation}{123}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Region-growing}{124}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Split and merge}{124}{subsection.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Contour-based}{124}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}Bi-level grey-scale thresholding}{125}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {A.2.5}Multi-level colour thresholding}{125}{subsection.A.2.5}
+\contentsline {chapter}{\numberline {B}Feature extraction}{127}{appendix.B}
+\contentsline {section}{\numberline {B.1}Connected-component labelling}{127}{section.B.1}
+\contentsline {chapter}{\numberline {C}Dataset}{129}{appendix.C}
+\contentsline {section}{\numberline {C.1}eBDtheque dataset}{129}{section.C.1}
+\contentsline {chapter}{Bibliography}{135}{section*.171}

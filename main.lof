@@ -90,22 +90,26 @@
 \contentsline {figure}{\numberline {6.14}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{96}{figure.caption.120}
 \contentsline {figure}{\numberline {6.15}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{96}{figure.caption.121}
 \contentsline {figure}{\numberline {6.16}{\ignorespaces Sample of Text Extraction Process. (a) Original balloon text image; (b) Threshold; (c) Morphology-Erosion filter; (d) Morphology-Opening filter; (e) Extracted blob from original image. Image from the original paper~\cite {Arai11}. \relax }}{98}{figure.caption.123}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Text extraction score details using method A for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{99}{figure.caption.124}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Text extraction score details using method B and the best bi-level combination method (Otsu + Luminance) for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{99}{figure.caption.126}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Text extraction score details using method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{100}{figure.caption.127}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Text extraction score details using Method A for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{99}{figure.caption.124}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Text extraction score details using Method B and the best bi-level combination method (Otsu + Luminance) for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{99}{figure.caption.126}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Text extraction score details using Method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{100}{figure.caption.127}
 \contentsline {figure}{\numberline {6.20}{\ignorespaces Balloon extraction score details of Arai's method for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{102}{figure.caption.130}
 \contentsline {figure}{\numberline {6.21}{\ignorespaces Balloon extraction score details of Ho's method for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{103}{figure.caption.131}
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Validation of the regular balloon confidence value for method A. \relax }}{104}{figure.caption.133}
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Distribution of the number of letter per speech balloon}}{105}{figure.caption.136}
-\contentsline {figure}{\numberline {6.24}{\ignorespaces Validation of the regular balloon confidence value for method B. \relax }}{105}{figure.caption.137}
-\contentsline {figure}{\numberline {6.25}{\ignorespaces Balloon extraction score details using method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{106}{figure.caption.138}
-\contentsline {figure}{\numberline {6.26}{\ignorespaces Correct classification examples for ``zigzag'' (top) and ``smooth'' classes (bottom).\relax }}{107}{figure.caption.142}
-\contentsline {figure}{\numberline {6.27}{\ignorespaces Wrong classification examples which have been classified as ``smooth'' instead of ``wavy'' in the first row and ``wavy'' instead of ``smooth'' in the second row.\relax }}{108}{figure.caption.143}
-\contentsline {figure}{\numberline {6.28}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{109}{figure.caption.146}
-\contentsline {figure}{\numberline {6.29}{\ignorespaces Example of comic character predicted regions}}{111}{figure.caption.152}
-\contentsline {figure}{\numberline {6.30}{\ignorespaces Character spotting descriptor size validation}}{112}{figure.caption.155}
-\contentsline {figure}{\numberline {6.31}{\ignorespaces Character spotting result sample}}{115}{figure.caption.160}
-\contentsline {figure}{\numberline {6.32}{\ignorespaces Knowledge-driven extraction performance evolution}}{117}{figure.caption.163}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Validation of the regular balloon confidence value for Method A. \relax }}{104}{figure.caption.133}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Balloon extraction score details of Method A for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{104}{figure.caption.134}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Distribution of the number of letter per speech balloon}}{105}{figure.caption.137}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Validation of the regular balloon confidence value for Method B. \relax }}{106}{figure.caption.138}
+\contentsline {figure}{\numberline {6.26}{\ignorespaces Balloon extraction score details of Method B for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{106}{figure.caption.139}
+\contentsline {figure}{\numberline {6.27}{\ignorespaces Balloon extraction score details using Method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{107}{figure.caption.140}
+\contentsline {figure}{\numberline {6.28}{\ignorespaces Correct classification examples for ``zigzag'' (top) and ``smooth'' classes (bottom).\relax }}{109}{figure.caption.144}
+\contentsline {figure}{\numberline {6.29}{\ignorespaces Wrong classification examples which have been classified as ``smooth'' instead of ``wavy'' in the first row and ``wavy'' instead of ``smooth'' in the second row.\relax }}{109}{figure.caption.145}
+\contentsline {figure}{\numberline {6.30}{\ignorespaces Implicit balloon recovering by panel and balloon extraction combination}}{110}{figure.caption.148}
+\contentsline {figure}{\numberline {6.31}{\ignorespaces Examples of correct and wrong tail tip position detection. {\bf \color {red}TODO: add direction mistakes as well?}\relax }}{111}{figure.caption.152}
+\contentsline {figure}{\numberline {6.32}{\ignorespaces Example of comic character region prediction}}{112}{figure.caption.153}
+\contentsline {figure}{\numberline {6.33}{\ignorespaces Character extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{112}{figure.caption.154}
+\contentsline {figure}{\numberline {6.34}{\ignorespaces Character spotting descriptor size validation}}{113}{figure.caption.155}
+\contentsline {figure}{\numberline {6.35}{\ignorespaces Character spotting result sample}}{116}{figure.caption.159}
+\contentsline {figure}{\numberline {6.36}{\ignorespaces Knowledge-driven extraction performance evolution}}{118}{figure.caption.161}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

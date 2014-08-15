@@ -150,22 +150,18 @@
 \contentsline {subsection}{\numberline {6.8.2}Method B}{113}{subsection.6.8.2}
 \contentsline {subsection}{\numberline {6.8.3}Method C}{114}{subsection.6.8.3}
 \contentsline {subsection}{\numberline {6.8.4}Comparison and analysis}{115}{subsection.6.8.4}
-\contentsline {paragraph}{Character localisation}{115}{section*.158}
-\contentsline {paragraph}{Character spotting}{115}{section*.160}
 \contentsline {section}{\numberline {6.9}Semantic links evaluation}{117}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Experimental settings}{117}{subsection.6.9.1}
-\contentsline {subsection}{\numberline {6.9.2}Method C}{117}{subsection.6.9.2}
-\contentsline {subsection}{\numberline {6.9.3}Analysis and comparison}{117}{subsection.6.9.3}
+\contentsline {subsection}{\numberline {6.9.1}Method C}{117}{subsection.6.9.1}
 \contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{117}{section.6.10}
-\contentsline {paragraph}{Process details}{117}{section*.163}
-\contentsline {paragraph}{Low level processing}{119}{section*.164}
-\contentsline {paragraph}{Semantic links}{119}{section*.165}
-\contentsline {paragraph}{General evaluation}{119}{section*.166}
+\contentsline {paragraph}{Process details}{118}{section*.161}
+\contentsline {paragraph}{Low level processing}{119}{section*.162}
+\contentsline {paragraph}{Semantic links}{119}{section*.163}
+\contentsline {paragraph}{General evaluation}{119}{section*.164}
 \contentsline {section}{\numberline {6.11}Conclusions}{119}{section.6.11}
 \contentsline {chapter}{\numberline {7}Conclusions}{121}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{121}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{121}{section.7.2}
-\contentsline {paragraph}{Balloon classification}{121}{section*.167}
+\contentsline {paragraph}{Balloon classification}{121}{section*.165}
 \contentsline {chapter}{\numberline {A}Pre-processing}{123}{appendix.A}
 \contentsline {section}{\numberline {A.1}Noise removal}{123}{section.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Salt and pepper}{123}{subsection.A.1.1}
@@ -180,4 +176,4 @@
 \contentsline {section}{\numberline {B.1}Connected-component labelling}{127}{section.B.1}
 \contentsline {chapter}{\numberline {C}Dataset}{129}{appendix.C}
 \contentsline {section}{\numberline {C.1}eBDtheque dataset}{129}{section.C.1}
-\contentsline {chapter}{Bibliography}{135}{section*.172}
+\contentsline {chapter}{Bibliography}{135}{section*.170}

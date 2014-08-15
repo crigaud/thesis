@@ -99,26 +99,24 @@
 \BOOKMARK [2][-]{subsection.6.8.3}{Method C}{section.6.8}% 99
 \BOOKMARK [2][-]{subsection.6.8.4}{Comparison and analysis}{section.6.8}% 100
 \BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 101
-\BOOKMARK [2][-]{subsection.6.9.1}{Experimental settings}{section.6.9}% 102
-\BOOKMARK [2][-]{subsection.6.9.2}{Method C}{section.6.9}% 103
-\BOOKMARK [2][-]{subsection.6.9.3}{Analysis and comparison}{section.6.9}% 104
-\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 105
-\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 106
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 107
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 108
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 109
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 110
-\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 111
-\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 112
-\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 113
-\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 114
-\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 115
-\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 116
-\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 117
-\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 118
-\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 119
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 120
-\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 121
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 122
-\BOOKMARK [1][-]{section.C.1}{eBDtheque dataset}{appendix.C}% 123
-\BOOKMARK [0][-]{section*.172}{Bibliography}{}% 124
+\BOOKMARK [2][-]{subsection.6.9.1}{Method C}{section.6.9}% 102
+\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 103
+\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 104
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 105
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 106
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 107
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 108
+\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 109
+\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 110
+\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 111
+\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 112
+\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 113
+\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 114
+\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 115
+\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 116
+\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 117
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 118
+\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 119
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 120
+\BOOKMARK [1][-]{section.C.1}{eBDtheque dataset}{appendix.C}% 121
+\BOOKMARK [0][-]{section*.170}{Bibliography}{}% 122

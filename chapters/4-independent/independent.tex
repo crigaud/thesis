@@ -143,7 +143,7 @@ First, an adapted binary segmentation method is presented followed by a text/gra
 \label{sec:in:segmentation}
 Segmentation is a crucial step in many text localization methods.
 Comic speech text is made of strokes, generally black on white, that we would like to isolate from the rest of the image content (background).
-A perfect text segmentation would result to individual text letters represented by single connected components (Section~\ref{sec:ap:connected_component_labelling}).
+A perfect text segmentation would result to individual text letters represented by single connected components (Appendix~\ref{sec:ap:connected_component_labelling}).
 The complex background of comic documents complicates this step.
 Separating text from other elements in once is quite hard since we have no information about its position (independent approach) and it is similar to many other stroke in the image.
 Therefore, we propose first to separate bright from dark regions and then classify text and non text regions using size and alignment properties only.
@@ -152,21 +152,23 @@ Bright/dark region separation can be done using a bi-level segmentation algorith
 Several approaches exist and their performance relies on the input data distribution.
 If the input data are composed by only black or white pixels any method will do the work be it is rarely the case.
 The best input would be a highly contrasted image where the feature of interest are concentrated in one of the extrema.
-As we do not use the colour information, we convert the 3 channel colour image (RGB) into a single channel grey image.
+As we do not use the colour information, we convert the 3 channel colour image (RGB) into a single channel image (grey-level or grey-scale image).
 There are several manners to create a grey-scale image from a colour image.
 The first approach is to combine each pixel value from each colour channel with different weighting coefficients corresponding to the measured intensity perception of typical trichromat humans\footnote{\url{http://en.wikipedia.org/wiki/Grayscale}}, in order to produce a single value per pixel.
 Another approach is to use only one channel but as the text we are interested in is not in red, green or blue (RGB colour space) it is irrelevant in our case.
 Nevertheless, RGB colour space can easily be converted to a different colour space such as HSV or HSL that encodes colours as Hue, Saturation, Value or Luminance.
 The luminance channel is particularly appropriate for bright and dark region separation~\cite{Ho2012}.
 
-Even if looking at the pixel from the luminance point of view is more appropriate for our purpose, we still need to determine the threshold value that will best divide the grey value distribution into two clusters (Figure~\ref{fig:in:greyscale_text_pixel_distribution}).
+%Even if looking at the pixel from the luminance point of view is more appropriate for our purpose, 
+Both colour layer combination and separation are experimented Section~\ref{sub:ex:text_extraction_evaluation_method_b}.
+From the grey-scale image, we still need to determine the threshold value that will best divide the grey value distribution into two clusters (Figure~\ref{fig:in:greyscale_text_pixel_distribution}).
 
 
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{threshold_selection_methods.jpg}
-		\caption[Grey scale image pixel value distribution for text and non text region]{Grey scale image pixel value distribution and text repartition. The percentage of pixel belonging to text regions are in green, others in red \modif{TODO: update figure}.}
+		\caption[Grey scale image pixel value distribution for text and non text region]{Grey scale image pixel value distribution and text repartition. The percentage of pixel belonging to text regions are in green, others in red \modif{TODO: update or delete figure}.}
 		\label{fig:in:greyscale_text_pixel_distribution}
 	\end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -281,7 +283,10 @@ Note that connected letters will not affect our results (if they are part of the
 
 %\subsubsection{Letter filtering}
 
-We propose a number of rules, applied sequentially, to separate graphics from text. Due to the wide variety of text usage in comic albums, the method should be size, translation, rotation, scale and contrast invariant. In addition, it should be robust to text-less pages which may appear randomly within an album. From all the components extracted by the CC algorithm, we use three filtering rules to select only the ones corresponding to potential textual elements.
+% We propose a number of rules, applied sequentially, to separate graphics from text.
+Due to the wide variety of text usage in comic albums, text and graphics separation is not obvious, the method should be size, position, rotation, scale and contrast invariant.
+In addition, it should be robust to text-less pages which may appear randomly within an album.
+From all the components extracted by the CC algorithm, we select only the ones corresponding to potential textual elements based on contrast ratio measure.
 
 %The idea is to keep only the groups of very contrasted CC.
 
@@ -296,8 +301,9 @@ We propose a number of rules, applied sequentially, to separate graphics from te
 
 % \begin{itemize}
 
-Rule 1: we compare the standard deviation of the grey-levels of the luminance layer of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a high/low local contrast CC separation, similarly to~\cite{Li2013Unsupervised} using the Mahalanobis distance~\cite{mahalanobis1936generalized,de2000mahalanobis}.
-We assume a Gaussian distribution of the grey level pixels but other distribution are under study. The contrast ratio of the page is the absolute difference between the minimum and the maximum grey-levels found on the page.
+We compare the standard deviation of the grey-levels of the luminance layer of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a high/low local contrast CC separation, similarly to~\cite{Li2013Unsupervised} using the Mahalanobis distance~\cite{mahalanobis1936generalized,de2000mahalanobis} $d_m$ \modif{TODO: add equation}.
+We assume a Gaussian distribution of the grey level pixels but other distribution are under study.
+The contrast ratio of the page is the absolute difference between the minimum and the maximum grey-levels found on the page.
 % In order to avoid artefacts pixel values, we apply a median filtering as preprocessing.
 %The higher the standard deviation is, the higher the probably of being a letter.
 
@@ -334,8 +340,8 @@ We assume a Gaussian distribution of the grey level pixels but other distributio
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Rule 2: we verify that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines).
-To do so, we check for similar in height components in a local region equal to the size of the component's bounding box extended to its left/right/top/bottom directions (Figure~\ref{fig:in:4_direction}). For instance, $l_i$ is considered similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
+% Rule 2: we verify that each letter $l_i$ is surrounded by other letters $l_j$ (with $_j\in{[0,n]}$) which is intrinsic to the design of text (grouping characters in words and text lines).
+% To do so, we check for similar in height components in a local region equal to the size of the component's bounding box extended to its left/right/top/bottom directions (Figure~\ref{fig:in:4_direction}). For instance, $l_i$ is considered similar in height to $l_i$ if $abs(l_i.height - l_j.height)<a*l_i.height$ ($a=$similarity offset). %If yes then both are considered as letter.
 %\end{enumerate}
 
 
@@ -348,9 +354,9 @@ To do so, we check for similar in height components in a local region equal to t
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Rule 3:
-we check all the CC bounding boxes pairs that overlap more than $b$\% each other.
-We remove the biggest from each pairs.
+% Rule 3:
+% we check all the CC bounding boxes pairs that overlap more than $b$\% each other.
+% We remove the biggest from each pairs.
 
 \subsection{Text line generation} % (fold)
 \label{sub:in:text_line_generation}

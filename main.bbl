@@ -531,6 +531,10 @@ Luyuan Li, Yongtao Wang, Zhi Tang, Xiaoqing Lu, and Liangcai Gao.
 \newblock In {\em 12th International Conference on Document Analysis and
   Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
 
+\bibitem{publishersweekly2014Surveying}
+Bruce Lidl.
+\newblock Surveying digital comics after amazon-comixology, 2014.
+
 \bibitem{Liu2014Automatic}
 Dong Liu, Yongtao Wang, Zhi Tang, Luyuan Li, and Liangcai Gao.
 \newblock Automatic comic page image understanding based on edge segment
@@ -751,20 +755,6 @@ Stephan Richter, Gerald K{\"u}hne, and Oliver Schuster.
 \newblock Contour-based classification of video objects.
 \newblock In {\em Proceedings of SPIE}, volume 4315, page 608, 2001.
 
-\bibitem{rigaud2013active}
-Christophe Rigaud, Dimosthenis Karatzas, Joost Van~de Weijer, Jean-Christophe
-  Burie, and Jean-Marc Ogier.
-\newblock An active contour model for speech balloon detection in comics.
-\newblock In {\em Proceedings of the 12th International Conference on Document
-  Analysis and Recognition (ICDAR)}. IEEE, 2013.
-
-\bibitem{Rigaud2013VISAPP}
-Christophe Rigaud, Dimosthenis Karatzas, Joost Van~de Weijer, Jean-Christophe
-  Burie, and Jean-Marc Ogier.
-\newblock Automatic text localisation in scanned comic books.
-\newblock In {\em Proceedings of the 8th International Conference on Computer
-  Vision Theory and Applications (VISAPP)}. SCITEPRESS Digital Library, 2013.
-
 \bibitem{Rissen2012}
 Paul Rissen.
 \newblock {A Comics Ontology}, 2012.
@@ -773,11 +763,6 @@ Paul Rissen.
 Gibbons Robin~Varnum, Christina~T.
 \newblock {\em The Language of Comics: Word and Image}.
 \newblock Studies in Popular Culture. University Press of Mississippi, 2007.
-
-\bibitem{Roudier11}
-Nicolas Roudier.
-\newblock {\em LES TERRES CREUSEES}, volume Acte sur BD.
-\newblock Actes Sud, 2011.
 
 \bibitem{Salovaara2007Appropriation}
 Antti Salovaara.
@@ -1000,11 +985,6 @@ Szilárd Vajda, Leonard Rothacker, and GernotA. Fink.
 Paul Viola and Michael~J Jones.
 \newblock Robust real-time face detection.
 \newblock {\em International journal of computer vision}, 57(2):137--154, 2004.
-
-\bibitem{wagner1974string}
-Robert~A Wagner and Michael~J Fischer.
-\newblock The string-to-string correction problem.
-\newblock {\em Journal of the ACM (JACM)}, 21(1):168--173, 1974.
 
 \bibitem{Walsh2012a}
 John~A Walsh.

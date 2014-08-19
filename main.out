@@ -65,14 +65,14 @@
 \BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 65
 \BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 66
 \BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation}{section.6.2}% 68
-\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation}{section.6.2}% 69
-\BOOKMARK [2][-]{subsection.6.2.3}{Text recognition}{section.6.2}% 70
-\BOOKMARK [2][-]{subsection.6.2.4}{Tail detection}{section.6.2}% 71
-\BOOKMARK [2][-]{subsection.6.2.5}{Semantic links}{section.6.2}% 72
+\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation metric}{section.6.2}% 68
+\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation metric}{section.6.2}% 69
+\BOOKMARK [2][-]{subsection.6.2.3}{Text recognition metric}{section.6.2}% 70
+\BOOKMARK [2][-]{subsection.6.2.4}{Tail detection metric}{section.6.2}% 71
+\BOOKMARK [2][-]{subsection.6.2.5}{Semantic links metric}{section.6.2}% 72
 \BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 73
-\BOOKMARK [2][-]{subsection.6.3.1}{Arai's method Arai10}{section.6.3}% 74
-\BOOKMARK [2][-]{subsection.6.3.2}{Ho's method Ho2012}{section.6.3}% 75
+\BOOKMARK [2][-]{subsection.6.3.1}{Arai's method}{section.6.3}% 74
+\BOOKMARK [2][-]{subsection.6.3.2}{Ho's method}{section.6.3}% 75
 \BOOKMARK [2][-]{subsection.6.3.3}{Method A}{section.6.3}% 76
 \BOOKMARK [2][-]{subsection.6.3.4}{Method B}{section.6.3}% 77
 \BOOKMARK [2][-]{subsection.6.3.5}{Method C}{section.6.3}% 78
@@ -119,4 +119,5 @@
 \BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 119
 \BOOKMARK [0][-]{appendix.C}{Dataset}{}% 120
 \BOOKMARK [1][-]{section.C.1}{eBDtheque dataset}{appendix.C}% 121
-\BOOKMARK [0][-]{section*.170}{Bibliography}{}% 122
+\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 122
+\BOOKMARK [0][-]{section*.165}{Bibliography}{}% 123

@@ -12,10 +12,10 @@ Traditionally, this evaluation is made by validating the results of an algorithm
 Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm to the community \cite{lamiroy:inria-00537035}.
 This can be applied to any kind of results from image segmentation to classification or information retrieval.
 In this chapter we present the dataset and ground truth we provided to evaluate comic book image related works.
-We describe the metrics we used to evaluate each contribution (Method A, B and C).
-The evaluation of Method C is decomposed in two parts: the validation and the inference processes.
-Validations are combined with Method A and B in each extraction evaluation to show its benefits.
-The inference part of Method C can not be directly compared to low level information extraction, hence we discuss it in a proper section (Section~\ref{sec:semantic_links_evaluation}).
+We describe the metrics we used to evaluate each contribution: Method A, B and C presented \ch{chap:sequential}, \ch{chap:independent} and \ch{chap:knowledge} respectively and evaluate our work compared to previous works from the literature.
+%The evaluation of Method C is decomposed in two parts: the validation and the inference processes.
+% Validations are combined with Method A and B in each extraction evaluation to show its benefits.
+% The inference part of Method C can not be directly compared to low level information extraction, hence we discuss it in a proper section (Section~\ref{sec:semantic_links_evaluation}).
 
 % compare our work to previous approaches from the literature.
 
@@ -429,84 +429,85 @@ They all contain SVG \texttt{<polygon>} elements with a list of five or more poi
 Note that the last point is always equal the first one to ``close'' the polygon according to the SVG specifications. 
 Those points are used by the viewer to draw polygons with the corresponding CSS style. 
 Each \texttt{<polygon>} has a \texttt{<metadata>} child to store information on the corresponding polygon, according to the attributes list described Section~\ref{sub:gt:semantic_annotation}.
-An example of ground truth file is given Listing~\ref{list:svg}.% présente un exemple du contenu de l'un de ces fichiers.
+An example of ground truth file is given Appendix~\ref{app:groundtruth}.
+% présente un exemple du contenu de l'un de ces fichiers.
 
-\begin{lstlisting}[language=XML, frame=single, caption=Example of SVG file from the eBDtheque ground truth, captionpos=b, label=list:svg]
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg>
-  <title>CYB_BUBBLEGOM_T01_005</title>
-  <svg class="Page">
-    <image 
-      x="0" 
-      y="0" 
-      width="750" 
-      height="1060" 
-      href="CYB_BUBBLEGOM_T01_005.jpg"
-    />
-    <metadata 
-      collectionTitle="Bubblegom_Gom"
-      editorName="Studio_Cyborga" 
-      doublePage="false"
-      website="http://bubblegom.over-blog.com"
-      albumTitle="La_Legende_des_Yaouanks"
-      drawerName="Cyborg_07"
-      language="french"
-      resolution="300"
-      ISBN="979-10-90655-01-0"
-      readingDirection="leftToRight" 
-      writerName="Cyborg_07"
-      releaseDate="2009"
-      pageNumber="5"
-    />
-  </svg>
-  <svg class="Panel">
-    <polygon points="53,95 268,95 268,292 53,292 53,95">
-      <metadata 
-        idPanel="P01"
-        rank="1"
-      />
-    </polygon>
-    ...
-  </svg>
-  <svg class="Balloon">
-    <polygon points="61,103 143,103 143,172 61,172 61,103">
-      <metadata
-        idBalloon="B01" 
-        shape="smooth"
-        tailTaip="153,167"
-        tailDirection="SE" 
-        rank="1"
-      />
-    </polygon>
-    ...
-  </svg>
-  <svg class="Line">
-    <polygon points="373,121 432,121 432,132 373,132 373,121">
-      <metadata 
-        idLine="L01"
-        idBalloon="B01"
-      >
-        LIKE YOU.
-      </metadata>
-    </polygon>
-    ...
-  </svg>
-  <svg class="Character">
-    <polygon points="84,153 261,153 261,298 84,298 84,153"/>
-      <metadata idCharacter="C01"/>
-    ...
-  </svg>
-  <svg class="LinkSBSC">
-    <polygon points="34,234 56,235 79,340 79,339 34,234"/>
-      <metadata 
-        idLinkSBSC="LSBSC01"
-        idBalloon="B01"
-        idCharacter="C01"
-      />
-    ...
-  </svg>
-</svg>
-\end{lstlisting}
+% \begin{lstlisting}[language=XML, frame=single, caption=Example of SVG file from the eBDtheque ground truth, captionpos=b, label=list:svg]
+% <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+% <svg>
+%   <title>CYB_BUBBLEGOM_T01_005</title>
+%   <svg class="Page">
+%     <image 
+%       x="0" 
+%       y="0" 
+%       width="750" 
+%       height="1060" 
+%       href="CYB_BUBBLEGOM_T01_005.jpg"
+%     />
+%     <metadata 
+%       collectionTitle="Bubblegom_Gom"
+%       editorName="Studio_Cyborga" 
+%       doublePage="false"
+%       website="http://bubblegom.over-blog.com"
+%       albumTitle="La_Legende_des_Yaouanks"
+%       drawerName="Cyborg_07"
+%       language="french"
+%       resolution="300"
+%       ISBN="979-10-90655-01-0"
+%       readingDirection="leftToRight" 
+%       writerName="Cyborg_07"
+%       releaseDate="2009"
+%       pageNumber="5"
+%     />
+%   </svg>
+%   <svg class="Panel">
+%     <polygon points="53,95 268,95 268,292 53,292 53,95">
+%       <metadata 
+%         idPanel="P01"
+%         rank="1"
+%       />
+%     </polygon>
+%     ...
+%   </svg>
+%   <svg class="Balloon">
+%     <polygon points="61,103 143,103 143,172 61,172 61,103">
+%       <metadata
+%         idBalloon="B01" 
+%         shape="smooth"
+%         tailTaip="153,167"
+%         tailDirection="SE" 
+%         rank="1"
+%       />
+%     </polygon>
+%     ...
+%   </svg>
+%   <svg class="Line">
+%     <polygon points="373,121 432,121 432,132 373,132 373,121">
+%       <metadata 
+%         idLine="L01"
+%         idBalloon="B01"
+%       >
+%         LIKE YOU.
+%       </metadata>
+%     </polygon>
+%     ...
+%   </svg>
+%   <svg class="Character">
+%     <polygon points="84,153 261,153 261,298 84,298 84,153"/>
+%       <metadata idCharacter="C01"/>
+%     ...
+%   </svg>
+%   <svg class="LinkSBSC">
+%     <polygon points="34,234 56,235 79,340 79,339 34,234"/>
+%       <metadata 
+%         idLinkSBSC="LSBSC01"
+%         idBalloon="B01"
+%         idCharacter="C01"
+%       />
+%     ...
+%   </svg>
+% </svg>
+% \end{lstlisting}
 
 %{\bf Add SVG code figure here?} Arnaud suggested it too but, we don't have room and it will be ugly...
 
@@ -608,7 +609,7 @@ The corpus can be extended to enlarge the diversity of the dataset and provide c
 The contribution of this thesis are from different nature that needs to be evaluated separately using appropriate metrics.
 Object localisation developments are evaluated using the commonly used recall and precision metrics and other contribution are evaluated using accuracy.
 
-\subsection{Object localisation} % (fold)
+\subsection{Object localisation metric} % (fold)
 \label{sub:ex:object_localisation_metric}
 
 
@@ -642,7 +643,7 @@ We also compute the F-measure $F$ for each result.
 % where $FP$ is the number of false positives (prediction errors).
 
 
-\subsection{Object segmentation} % (fold)
+\subsection{Object segmentation metric} % (fold)
 \label{sub:ex:object_segmentation_metric}
 
 Object bounding box based evaluation is appropriate for surfaces comparison but not for detailed region extraction evaluation.
@@ -651,7 +652,7 @@ In order to make the difference between the errors sources we need to use a more
 Here we keep using recall and precision metrics as introduced in the previous section but instead of counting the number of object that valid a certain criterion, we simply count the number of pixel that have been correctly ($TP$), incorrectly ($FP$) or missed ($FN$).
 
 
-\subsection{Text recognition} % (fold)
+\subsection{Text recognition metric} % (fold)
 \label{sub:ex:text_recognition_metric}
 Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{par:ex:text_recognition_evaluation} using commercial OCR systems on the eBDtheque dataset.
 We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth~\cite{Guerin2013}.
@@ -659,7 +660,7 @@ We evaluated the text detection accuracy $A_{textReco}$ at a given string edit d
 % subsection text_recognition (end)
 
 % subsection object_localisation (end)
-\subsection{Tail detection} % (fold)
+\subsection{Tail detection metric} % (fold)
 \label{sub:ex:tail_detection_metric}
 % We evaluated the proposed tail extraction method on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} ``version 2014''.
 % In the ground truth, some balloons do not have a tail but we did not remove them as the proposed method can also detect when there is no tail and return a correct answer.
@@ -690,7 +691,7 @@ Note that our method can also detect when there is no tail on the balloon contou
 
 % subsection tail_detection (end)
 
-\subsection{Semantic links} % (fold)
+\subsection{Semantic links metric} % (fold)
 \label{sub:ex:semantic_links_metric}
 
 The semantic links between speech text and speech balloon are called $STSB$ and the ones between speech balloon and speaking character $SBSC$; they characterise a dialogue.
@@ -723,14 +724,14 @@ In this section we evaluate our three approaches (Method A, B and C) and compare
 We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two state of the art methods (Section~\ref{sec:sota:layout_panel}).
 The first one use connected-component analysis similarly to our proposition and the second is based on growing region.
 
-All the evaluation are performed on the 850 panels of the eBDtheque dataset~\ref{sec:dataset_and_ground_truth_construction} at object bounding box level, using the recall and precision metrics introduced Section~\ref{sub:ex:object_localisation_metric}.
+All the evaluation are performed on the 850 panels of the eBDtheque dataset (Section~\ref{sec:dataset_and_ground_truth_construction}) at object bounding box level, using the recall and precision metrics introduced Section~\ref{sub:ex:object_localisation_metric}.
 
 % \subsection{Experimental settings} % (fold)
 % \label{sub:experimental_settings}
 
 % TODO
 
-\subsection{Arai's method~\cite{Arai10}} % (fold)
+\subsection{Arai's method} % (fold)
 \label{sub:ex:panel_extraction_arai}
 We re implemented the comic panel extraction method presented in~\cite{Arai10} except the division line detection by lake of detail in the original paper.
 
@@ -751,11 +752,21 @@ Anyway, the line division method works only for panels that are as large as the 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The score of this method was in average for recall and precision of 20.00\% and 18.75\%.
+The score of this method was in average for recall and precision of 20.00\% and 18.75\% (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}
+%  \includegraphics[width=\textwidth,height=4cm]{2014-07-20_svg_Arai2010_no_division_linePanel_object.pdf}
+%  \caption{Panel extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).
+%  }
+%  \label{fig:ex:panel_arai_extraction_detail}
+% \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % subsection arai_cite_arai (end)
 
-\subsection{Ho's method~\cite{Ho2012}} % (fold)
+\subsection{Ho's method} % (fold)
 We re implemented the Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the growing region method to 20 (not mentioned in the original paper).
 The image border is filled with the average five-pixel page border colour and four seeds are initialized on the four corners of the image.
 When the region growing algorithm stops, the background is removed which separated panel blocks.
@@ -778,15 +789,15 @@ This manipulation separates the connected panels but has the disadvantage of cre
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The score of this method was in average for recall and precision of 49.76\% and 68.03\% (Figure~\ref{fig:ex:panel_ho_extraction_detail}).
+The score of this method was in average for recall and precision of 49.76\% and 68.74\% (Figure~\ref{fig:ex:panel_ho_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:panel_ho_extraction_detail}
-\end{figure}
+% \begin{figure}
+%  \includegraphics[width=\textwidth,height=4cm]{2014-07-20_svg_Ho2012Panel_object.pdf}
+%  \caption{Panel extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).
+%  }
+%  \label{fig:ex:panel_ho_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Method A} % (fold)
@@ -797,12 +808,12 @@ Note that the method also extract text region at the same time which does not in
 The score of this method  was in average for recall and precision of 64.24\% and 83.81\% (Figure~\ref{fig:ex:panel_methodA_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:panel_methodA_extraction_detail}
-\end{figure}
+% \begin{figure}[h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:panel_methodA_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Method B} % (fold)
@@ -810,15 +821,15 @@ The score of this method  was in average for recall and precision of 64.24\% and
 The method presented Section~\ref{sec:in:panel_extraction} requires only a minimal area factor.
 Assuming that a panel is a big region, we ignored the panel detection with a area lower than 4\% ($minAreaFactor$) of the page area according to a validation on the eBDtheque dataset.
 This parameter avoids considering small and isolated elements (e.g text, logo, page number) as panel.
-The score of this method was in average for recall and precision of 60.59\% and 82.51\% (Figure~\ref{fig:ex:panel_methodB_extraction_detail}).
+The score of this method was in average for recall and precision of 62.94\% and 87.30\% (Figure~\ref{fig:ex:panel_methodB_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:panel_methodB_extraction_detail}
-\end{figure}
+% \begin{figure}[h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:panel_methodB_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % subsection method_b (end)
@@ -830,15 +841,45 @@ It validates or rejects panel candidates using the proposed model (Section~\ref{
 In the model, the only rule about the panel is that they should be contained in a image.
 The score of this method was in average for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:panel_methodC_extraction_detail}).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:panel_methodC_extraction_detail}
-\end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Panel extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:panel_methodC_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % subsection method_c (end)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth, 
+  \centering
+  %\includegraphics[height=60mm]{figure/BUBBLEGOM_T01_P007_crop.jpg}
+  %\includegraphics[trim= 0mm 0mm 0mm 0mm]{figure/BUBBLEGOM_T01_P007.jpg}
+  \subfloat[Arai's method]{\label{fig:ex:panel_arai_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-20_svg_Arai2010_no_division_linePanel_object.pdf}}
+  %\hspace{1em}
+  \\
+  \subfloat[Ho's method]{\label{fig:ex:panel_ho_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-20_svg_Ho2012Panel_object.pdf}}
+  %\hspace{1em}
+  \\
+  \subfloat[Method A]{\label{fig:ex:panel_methodA_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-24_svg_Rigaud2012LNCS_Method_APanel_object.pdf}}
+  %\hspace{1em}
+  \\
+  % \subfloat[Method A]{\label{fig:in:panel_outermost_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth,height=4cm\textwidth]{2014-07-20_svg_Arai2010_no_division_linePanel_object.pdf}}
+  % \\
+  \subfloat[Method B]{\label{fig:ex:panel_methodB_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_Rigaud2014Outermost_Method_BPanel_object.pdf}}% \hspace{1em}
+  \\
+  % \subfloat[Method A]{\label{fig:in:panel_outermost_contours}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth,height=4cm\textwidth]{2014-07-20_svg_Arai2010_no_division_linePanel_object.pdf}}
+  % \\
+  \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:panel_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_Rigaud2014Outermost_Method_BPanel_object.pdf}}% \hspace{1em}
+  % \\
+  % \subfloat[Method C]{\label{fig:in:panel_big_contour_hull}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth,height=4cm]{panel_big_contour_hull.png}}
+    \caption{Panel extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
+    \label{fig:ex:panel_detection_result_details}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %-----------------------------------------------------------
 \subsection{Comparison and analysis} % (fold)
@@ -864,13 +905,13 @@ We automatically remove this by cropping the image where a panel with an area $>
           \hline
           Arai~\cite{Arai11}   & 20.0       & 18.75    & 19.35    \\
           \hline
-          Ho~\cite{Ho2012}   & 49.76       & 68.03    & 57.48    \\
+          Ho~\cite{Ho2012}   & 49.76       & 68.74    & 57.48    \\
           \hline
           Method A          & 64.24       & 83.81   & \bf{72.72}     \\
           \hline
-          Method B          & 60.59       & 82.51   & 69.87      \\
+          Method B          & 62.94       & 87.30   & \modif{?}      \\
           \hline
-          Mtehod C   & ?     & ?     & ?      \\
+          Method C          & \modif{?}   & \modif{?} & \modif{?}      \\
           \hline
         \end{tabular}
     \label{tab:panel_extraction_comparision_results}
@@ -880,6 +921,7 @@ We automatically remove this by cropping the image where a panel with an area $>
 %TODO: re evaluate Arai's result from his method (still waiting for is email 2014-07-01)
 
 The main drawback of the Arai's method is the binary segmentation with a fixed value that works best for comic book with a white background but it is not appropriate for digitization defaults and paper yellowing.
+This method is only appropriate for webcomics with a perfectly white background clear separation between panels (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
 
 Ho's method is adaptive to background variation but considers as panel all the elements that are directly included (first topological level) in the page background.
 This produce an over-segmentation by including some text which are inside the frame-less panels or inside implicit balloons.
@@ -922,7 +964,6 @@ Text recognition evaluation have been performed on the same dataset but using th
 \subsection[Arai's method]{Arai's method} % (fold)
 We implemented Arai's method~\cite{Arai11} which is a sequential approach that requires panel and balloon extraction as input,
 presented in Section~\ref{sub:ex:panel_extraction_arai} and~\ref{sub:ex:balloon_extraction_arai} respectively.
-
 This method was developed for grey-scale Japanese mangas and is divided in five steps: pre-processing, blob extraction, feature extraction, text blob selection and text blob extraction.
 Pre-processing consists in an adaptive bi-level segmentation at 30\% (chosen empirically) above the average pixel value and mathematical morphology to group potential text letters into block (similar to the Run Length Smoothing Algorithm).
 Note that the threshold selection method can exceed the maximal pixel value and then produce an empty segmentation.
@@ -946,7 +987,7 @@ This approach was only developed for vertical text block extraction but we adapt
 Its adaptation to horizontal text consist in switching width and height related parameters in the pre-processing and feature extraction steps.
 Also, the kernel used for mathematical morphology is rotated of 90$^{\circ}$.
 
-The score of this method was in average for recall and precision of 2.81\% and 1.63\%.
+The score of this method was in average for recall and precision of 2.81\% and 1.63\% (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
 
 \subsection{Method A} % (fold)
 % \label{sub:method_1}
@@ -954,19 +995,19 @@ The method proposed Section~\ref{sec:se:panel_and_text} does not require any par
 Note that the method is designed to simultaneously extract panel regions which does not interfere with text.
 The score of this method  was in average for recall and precision of 54.68\% and 56.92\% (Figure~\ref{fig:ex:text_methodA_extraction_detail}).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Text extraction score details using Method A for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:text_methodA_extraction_detail}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Text extraction score details using Method A for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:text_methodA_extraction_detail}
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % subsection method_1 (end)
 \subsection{Method B} % (fold)
-% \label{sub:method_b}
+\label{sub:ex:text_extraction_evaluation_method_b}
 
 The method presented Section~\ref{sec:in:text_localisation_and_recognition} consist in a bi-level segmentation, text/graphic separation, text line generation and finally text line recognition.
 A comparison between two threshold selection methods and two colour-to-grey image conversion are shown Table~\ref{fig:ex:text_extraction_methodB_segmentation}.
@@ -976,14 +1017,14 @@ A comparison between two threshold selection methods and two colour-to-grey imag
   \begin{table}[ht]
     % \normalsize
     \centering
-    \caption[Results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods]{Results for fixed ($th=250$) and adaptive threshold selection method corresponding to combined (RGB to grey) and separated (Luminance layer) colour to grey conversion methods.}
+    \caption[F-measure results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods]{F-measure results for fixed ($th=250$) and adaptive threshold selection method corresponding to combined (RGB to grey) and separated (Luminance layer) colour to grey conversion methods.}
     \begin{tabular}{|c|c|c|}
       \hline
        & Fixed & Otsu \\ 
       \hline
-      RGB to grey & \modif{??} & \modif{??}  \\ 
+      RGB to grey & 11.74 & \textbf{51.35}  \\ 
       \hline
-      Luminance layer & \modif{??} & \modif{??} \\ 
+      Luminance layer & 11.66 & 51.31 \\ 
       \hline
     \end{tabular}
     \label{fig:ex:text_extraction_methodB_segmentation}
@@ -1007,41 +1048,21 @@ A comparison between two threshold selection methods and two colour-to-grey imag
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Text and graphics separation is performed using the Mahalanobis' distance which is related to the number of standard deviations.
-An validation on the eBDtheque dataset shown that the best Mahalanobis' distance is \modif{???}.
-The similarity offset $a$ and the overlapping percentage $b$ have been also validated over the eBDtheque dataset and their best values are $a=$\modif{???} and $b=$\modif{???} respectively.
-Text line recognition is used as last filtering operation to validate the presence of text inside the candidate regions, it improves the result quality about \modif{2.00\%} and \modif{20.00\%} for recall and precision respectively.
-
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % \begin{table}[ht]
-  %   % \normalsize
-  %   \centering
-  %   \caption{Score for text localisation using Method B.}
-  %   \begin{tabular}{|c|c|c|c|}
-  %         \hline
-  %          &  $R$ (\%)  & $P$ (\%)  & $F$ (\%)  \\
-  %         \hline
-  %         Not using OCR  & \modif{??}   & \modif{??} & \modif{??}       \\
-  %         \hline
-  %         Using OCR  &  \modif{59.92\%}  & \modif{46.26\%}     & \modif{??}       \\
-  %         \hline
-  %       \end{tabular}
-  %   \label{tab:ex:ocr_impact_text_localisation}
-  % \end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The score of this method was in average for recall and precision of \modif{59.92\%} and \modif{46.26\%} (Figure~\ref{fig:ex:text_methodB_extraction_detail}).
+A validation on the eBDtheque dataset shown that the best Mahalanobis' distance is $d_m=2$.
+% The similarity offset $a$ and the overlapping percentage $b$ have been also validated over the eBDtheque dataset and their best values are $a=$\modif{???} and $b=$\modif{???} respectively.
+Text line recognition is used as last filtering operation to validate the presence of text inside the candidate regions, its average benefit is shown Table~\ref{tab:text_results}.
+The score of this method was in average for recall and precision of 64.14\% and 70.28\% (Figure~\ref{fig:ex:text_methodB_extraction_detail}).
 
 %The detailed results using the OCR system are given Figure~\ref{fig:ex:text_methodB_extraction_detail}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Text extraction score details using Method B and the best bi-level combination method (Otsu + Luminance) for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:text_methodB_extraction_detail}
-\end{figure}
+% \begin{figure}[h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Text extraction score details using Method B and the best bi-level combination method (Otsu + Luminance) for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:text_methodB_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1053,20 +1074,39 @@ The score of this method was in average for recall and precision of \modif{59.92
 The knowledge-driven method can be used as a post processing of the text extraction.
 It validates or rejects text candidates using the proposed model (Section~\ref{sub:kn:validation}).
 In the model, the only rule concerning text location is that they should be contained in a panel.
-Considering the best method for panel extraction (\modif{???} in Figure~\ref{tab:panel_extraction_comparision_results}), the score of this method was in average for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:text_methodC_extraction_detail}).
+Considering the best method for panel extraction method from Table~\ref{tab:panel_extraction_comparision_results}, the score of this method was in average for recall and precision of \modif{??}\% and \modif{??}\% (Figure~\ref{fig:ex:text_methodC_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Text extraction score details using Method C for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:text_methodC_extraction_detail}
-\end{figure}
+% \begin{figure}[h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Text extraction score details using Method C for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:text_methodC_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % subsection method_c (end)
 
 % subsection experimental_settings (end)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth, 
+  \centering
+  \subfloat[Arai's method]{\label{fig:ex:panel_arai_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-26_svg_Arai2011IJIPLine_object.pdf}}
+  \\
+  % \subfloat[Ho's method]{\label{fig:ex:panel_ho_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-20_svg_Ho2012Panel_object.pdf}}
+  % \\
+  \subfloat[Method A]{\label{fig:ex:text_methodA_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-24_svg_Rigaud2012LNCS_letter2lineRigaud2014IJDARLine_object.pdf}}
+  \\
+  \subfloat[Method B using the best bi-level combination method (rgb2grey + Otsu) and OCR]{\label{fig:ex:text_methodB_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_RigaudVISAPPThesis2014_rgb2gray_otsu_ocr_Line.pdf}}
+  \\
+  \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:text_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_Rigaud2014Outermost_Method_BPanel_object.pdf}}
+
+  \caption{Text line extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
+    \label{fig:ex:text_detection_result_details}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Comparison and analysis} % (fold)
@@ -1089,11 +1129,13 @@ Considering the best method for panel extraction (\modif{???} in Figure~\ref{tab
           \hline
           Tanaka?\\ Chinese ICDAR? Stroke-based? Lluis?  & \modif{??}   & \modif{??}    & \modif{??}       \\
           \hline
-          Arai~\cite{Arai11}  & 2.81   & 1.63    & 2.07       \\
+          Arai~\cite{Arai11}  & 2.81    & 1.63      & 2.07       \\
           \hline
-          Method A  & 54.68   & 56.92    & 55.78       \\
+          Method A            & 54.91   & 57.15     & 56.01       \\
           \hline
-          Method B  & 59.92   & 46.26    & 52.21       \\
+          Method B (without OCR)  & \textbf{67.21}   & 41.54    & 51.35       \\
+          \hline
+          Method B (with OCR)  & 64.14   & \textbf{70.28}    & \textbf{67.07}       \\
           \hline
           Method C  & \modif{?}   & \modif{?}    & \modif{?}       \\
           \hline
@@ -1152,10 +1194,12 @@ Moreover, this text extraction method uses several thresholds which reduces its 
 
 % In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
 % Here we applied it to the whole dataset.
-Method A improve by \modif{???}\% the recall thanks to its genericity, moreover, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
-Method B raise the precision by \modif{20}\% when using an OCR-based filter, without a significant loss in recall.
+Method A improves by far the recall thanks to its genericity, moreover, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
+Method B is slightly better using RGB to grey image conversion than the luminance layer only (Table~\ref{fig:ex:text_extraction_methodB_segmentation}).
+It outperforms Method A in recall only when not using the last OCR filtering step and both recall and precision when using the OCR.
+The difference for Method B when using or not the OCR system is about an increase of 26.74\% of precision and a loss 3.07\% of recall.
 The validation by the expert system in Method C improved the precision as expected but also resulted in a drop in recall.
-The drop in recall can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
+The drop in recall of Method C can be explained by the fact that the text extractor is also able to detect texts which are not in the speech balloons but the model considers them as noise.
 All the methods still encounter difficulties with certain types of text that can be found in the comics (e.g. illustrative text, graphic sounds) due to strong deformation or colour variations.
 
 
@@ -1184,7 +1228,7 @@ Table~\ref{tab:ex:text_recogniton_results} shows text recognition results given 
           \hline
           Ground truth  & \modif{??}   & \modif{??} & \modif{??}       \\
           \hline
-          Method B  &  \modif{??}  & \modif{??}     & \modif{??}       \\
+          Method B  &  11.11  & \modif{??}     & \modif{??}       \\
           \hline
         \end{tabular}
     \label{tab:ex:text_recogniton_results}

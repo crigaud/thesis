@@ -213,7 +213,7 @@ The process flow of the two iterations is detailed hereafter.
 The initial extraction of panels, text and balloons feeds the knowledge base.
 All the elements are extracted independently using the method proposed Chapter~\ref{chap:independent}.
 % given an hypothesis on the labels of each region according to the extractor it is from (e.g. for a region from the balloon extractor, the hypothesis is a balloon label).
-In Figure~\ref{fig:kn:graph0}, dashed elements represent the initial hypotheses.
+In Figure~\ref{fig:kn:graph0}, dashed elements represent the initial hypotheses and each layer a result from a different extractor.
 Note that extraction errors can take place at this stage which the system can recover from at a later stage.
 % have been introduced in the example in order to demonstrate how the proposed system can recover them.
 % The regions that have been validated by the expert system have a solid border, others a dashed border.
@@ -223,7 +223,7 @@ Note that extraction errors can take place at this stage which the system can re
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_1.png}\\
-  \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_init_1.pdf}
+  \includegraphics[trim= 30px 168px 100px 110px, clip, width=0.8\textwidth]{graph_init_1_non_orderred.pdf}
   \caption[Initial hypothesis about the content of a given image]{Initial hypothesis (dashed elements) about the content of a given image $I$ after the initial extractions of panels $P$, text $T$ and balloons $B$ with tails $Q$.
   }
   \label{fig:kn:graph0}

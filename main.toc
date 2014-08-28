@@ -146,21 +146,21 @@
 \contentsline {section}{\numberline {6.7}Tail detection evaluation}{108}{section.6.7}
 \contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{109}{section.6.8}
 \contentsline {subsection}{\numberline {6.8.1}Method A}{109}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}Method B}{110}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.2}Method B}{111}{subsection.6.8.2}
 \contentsline {subsection}{\numberline {6.8.3}Method C}{112}{subsection.6.8.3}
 \contentsline {subsection}{\numberline {6.8.4}Comparison and analysis}{113}{subsection.6.8.4}
-\contentsline {section}{\numberline {6.9}Semantic links evaluation}{115}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Method C}{115}{subsection.6.9.1}
-\contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{115}{section.6.10}
-\contentsline {paragraph}{Process details}{116}{section*.152}
-\contentsline {paragraph}{Low level processing}{117}{section*.153}
-\contentsline {paragraph}{Semantic links}{117}{section*.154}
-\contentsline {paragraph}{General evaluation}{117}{section*.155}
-\contentsline {section}{\numberline {6.11}Conclusions}{117}{section.6.11}
+\contentsline {section}{\numberline {6.9}Semantic links evaluation}{114}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Method C}{114}{subsection.6.9.1}
+\contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{116}{section.6.10}
+\contentsline {paragraph}{Process details}{117}{section*.151}
+\contentsline {paragraph}{Low level processing}{117}{section*.152}
+\contentsline {paragraph}{Semantic links}{117}{section*.153}
+\contentsline {paragraph}{General evaluation}{118}{section*.154}
+\contentsline {section}{\numberline {6.11}Conclusions}{118}{section.6.11}
 \contentsline {chapter}{\numberline {7}Conclusions}{119}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{119}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{119}{section.7.2}
-\contentsline {paragraph}{Balloon classification}{119}{section*.156}
+\contentsline {paragraph}{Balloon classification}{119}{section*.155}
 \contentsline {chapter}{\numberline {A}Pre-processing}{121}{appendix.A}
 \contentsline {section}{\numberline {A.1}Noise removal}{121}{section.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Salt and pepper}{121}{subsection.A.1.1}
@@ -176,4 +176,4 @@
 \contentsline {chapter}{\numberline {C}Dataset}{127}{appendix.C}
 \contentsline {section}{\numberline {C.1}eBDtheque dataset}{127}{section.C.1}
 \contentsline {chapter}{\numberline {D}Ground truth}{129}{appendix.D}
-\contentsline {chapter}{Bibliography}{135}{section*.161}
+\contentsline {chapter}{Bibliography}{135}{section*.160}

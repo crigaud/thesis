@@ -696,7 +696,7 @@ Note that our method can also detect when there is no tail on the balloon contou
 
 The semantic links between speech text and speech balloon are called $STSB$ and the ones between speech balloon and speaking character $SBSC$; they characterise a dialogue.
 They are considered true or false according to their existence or not in the ground truth.
-We evaluated the semantic relations $STSB$ and $SBSC$ according to the metadata in the ground truth of the eBDtheque dataset~\cite{Guerin2013} called \texttt{{isLineOf}} and \texttt{{isSaidBy}}, which represent 3427 and 880 relations respectively.
+We evaluated the semantic relations $STSB$ and $SBSC$ according to the metadata in the ground truth of the eBDtheque dataset~\cite{Guerin2013} called \texttt{{isLineOf}} and \texttt{{isSaidBy}}, which represent 3427 and 829 relations respectively.
 We defined two accuracy metrics $A_{STSB}$ and $A_{SBSC}$ to measure the percentage of correctly predicted semantic links.
 
 % subsection semantic_links_and_text_recognition (end)
@@ -2070,8 +2070,8 @@ The importance of a precise pixel-level segmentation in the region of the tail t
 
 \section{Comic character extraction evaluation} % (fold)
 \label{sec:comic_character_extraction_evaluation}
-We evaluated the detection of comic characters on the 1550 characters of the eBDtheque dataset.
-In the eBDtheque ground truth, only 880 (56.8\%) of the character instances are speaking (and 43.3\% are not).
+We evaluated the detection of comic characters on the 1597 characters of the eBDtheque dataset.
+In the eBDtheque ground truth, only 829 (52\%) of the character instances are speaking (and 48\% are not).
 Therefore, we do not expect to reach 100\% recall and precision with the Method A and B because they are only able to extract speaking characters.
 The independent Method B is potentially able to retrieve all the character instance given one example of each of them.
 
@@ -2081,6 +2081,10 @@ The independent Method B is potentially able to retrieve all the character insta
 % subsection sequential_approach (end)
 Similarly to the other object extraction methods, the overlapping ratio between a predicted character region and a region from the ground truth should be above 50\% ($a_0>0.5$) for the predicted region to be considered as valid (Section~\ref{sub:ex:object_localisation_metric}).
 This ratio can be relaxed according to the application e.g. face only, full body, cropped body, an example of the impact of this ratio on validation and rejection of predicted regions is shown on Figure~\ref{fig:ex:characters_overlap_ratio}.
+For instance, the predictions that are presented on the left part of Figure~\ref{fig:ex:characters_overlap_ratio} could be accepted if the target was to roughly detect comic character locations.
+In this case, all the predicted region would have been accepted as correct with a validation criterion set to $a_0>0.1$.
+
+
 %, at level of object using equation
 %  with $th_0=0.2$.
 %Here we set $th_0=0.2$ (not 0.5) in order to accept prediction of the comic character location even if they are only partial, see figure~\ref{fig:ex:characters_overlap_ratio}.
@@ -2091,8 +2095,10 @@ This ratio can be relaxed according to the application e.g. face only, full body
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
       \centering
-      \includegraphics[trim= 0mm 0mm 190mm 0mm, clip, width=0.5\textwidth]{characters_overlap_ratio.png}
-      \caption[Example of comic character region prediction]{Example of predicted region considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$. Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$.}
+      \includegraphics[trim= 0mm 0mm 190mm 0mm, clip, width=0.41\textwidth]{characters_overlap_ratio.png}
+      % \hspace{1em}
+      \includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.49\textwidth]{overlap_ratio_evolution.pdf}
+      \caption[Example of comic character region prediction]{Example of predicted region considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$ (dashed lines in the right hand side figure). Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$.}
       \label{fig:ex:characters_overlap_ratio}
     \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2105,40 +2111,65 @@ This ratio can be relaxed according to the application e.g. face only, full body
 
 Method A is a sequential approach that computes a region of interest for comic characters from the tail tip position and tail direction inside a panel region (Section~\ref{sec:se:tail_to_character}).
 Its position is shifted in the region of the tail tip according to the tail direction which is quantized in eight cones of $\pi/4$ radius.
-We compare the performance of this method given the input information of panel, balloon and tail from the ground truth and from the best automatic extraction method presented Table~\ref{tab:panel_extraction_comparision_results},~\ref{tab:ex:balloon_localisation_comparison_results} and~\ref{tab:ex:tail_evaluation} respectively.
-Table~\ref{tab:ex:character_localisation_method_A} shows the results we obtained and the detail are given for each image of the dataset in Figure~\ref{fig:ex:character_methodA_extraction_detail}.
+We evaluated the performance of this method given the input information of panel, balloon and tail from the eBDtheqie ground truth and from the best automatic extraction methods from Table~\ref{tab:panel_extraction_comparision_results},~\ref{tab:ex:balloon_localisation_comparison_results} and~\ref{tab:ex:tail_evaluation} respectively (Figure~\ref{fig:ex:character_method_A_GT_extraction_detail} and~\ref{fig:ex:character_method_A_auto_extraction_detail}).
+Also, two set of images have been tested, one including all the comic character instance of the eBDtheque dataset and an other one with only the speaking character as this method is only able to predict speaking character location from the tail direction (Table~\ref{tab:ex:character_localisation_result_summary}).
+% The score of this method was in average for recall and precision of 15.59\% and 83.81% (Figure 6.12c).
+
+ 
+% Table~\ref{tab:ex:character_localisation_result_summary} shows the results we obtained and the detail are given for each image of the dataset in Figure~\ref{fig:ex:character_methodA_extraction_detail}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht]
-  % \normalsize
-% \renewcommand{\arraystretch}{1.3}
-% \extrarowheight as needed to properly center the text within the cells
-  \centering
-  \caption{Comic character localisation result for method A from manual and automatic previous element extractions.}
-  \begin{tabular}{|c|c|c|c|}
-  % \hline
-  % Previous extractions  & \multicolumn{3}{|c|}{Performance}   \\
-  \hline
-  Previous extractions  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   \\
-  \hline
-  Manual &  13.05    &  20.56   &  15.96   \\
-  \hline
-  Automatic &      &        &     \\
-  \hline
-  \end{tabular}
-      \label{tab:ex:character_localisation_method_A}
-\end{table}%
+% \begin{table}[ht]
+%   % \normalsize
+% % \renewcommand{\arraystretch}{1.3}
+% % \extrarowheight as needed to properly center the text within the cells
+%   \centering
+%   \caption{Comic character localisation result for method A from manual and automatic panel and balloon element extractions.}
+%   \begin{tabular}{|c|c|c|c|}
+%   % \hline
+%   % Previous extractions  & \multicolumn{3}{|c|}{Performance}   \\
+%   \hline
+%   Previous extractions  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   \\
+%   \hline
+%   Ground truth &  15.59    &  23.18   &  18.64   \\
+%   \hline
+%   Automatic &  6.84    &   12.13     &   8.75  \\
+%   \hline
+%   \end{tabular}
+%       \label{tab:ex:character_localisation_result_summary}
+% \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
- \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
- \caption{Character extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
- }
- \label{fig:ex:character_methodA_extraction_detail}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth, 
+  \centering
+  \subfloat[Method A (ground truth)]{\label{fig:ex:character_method_A_GT_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_GT_panel_balloon_Object.pdf}}
+  \\
+  \subfloat[Method A (automatic)]{\label{fig:ex:character_method_A_auto_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_method_B_panel_and_balloon_Object.pdf}}
+  \\
+  % \subfloat[Method A (regular)]{\label{fig:ex:balloon_methodA_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-26_svg_closed_thesis_method_A_Balloon.pdf}}
+  % \\
+  % \subfloat[Method A (implicit)]{\label{fig:ex:balloon_methodA_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-22_svg_implicit_ICDAR_Balloon_object_level.pdf}}
+  % \\
+  % \subfloat[Method B]{\label{fig:ex:balloon_methodB_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-21_svg_closed_IJDAR_method_B_Balloon.pdf}}
+  % \\
+  % \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:balloon_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_method_B_panel_and_balloon_Object.pdf}}
+
+  \caption{Character extraction score details at object level for each image of the eBDtheque dataset for all the characters (Appendix~\ref{app:dataset}).}
+    \label{fig:ex:character_methodA_extraction_detail}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%  \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
+%  \caption{Character extraction score details for each image of the eBDtheque dataset \modif{TODO: update}.
+%  }
+%  \label{fig:ex:character_methodA_extraction_detail}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % subsection method_a (end)
@@ -2247,9 +2278,9 @@ We post processed the output of Method A and we obtained and average score for r
 % \label{par:character_localisation}
 
 % paragraph character_localiatioin (end)
-The comic characters extraction are presented in Table~\ref{tab:ex:eval_characters} for Method A and C.
+The comic characters extraction are presented in Table~\ref{tab:ex:character_localisation_result_summary} for Method A and C.
 Method B is evaluated separately on a smaller subset of the dataset.
-Note that the scores in Table~\ref{tab:ex:eval_characters} are given for the whole dataset including the characters that are not speaking.
+Note that the scores in Table~\ref{tab:ex:character_localisation_result_summary} are given for the whole dataset including the characters that are not speaking.
 
 
  % which shows the performance of two steps of the process:
@@ -2262,39 +2293,66 @@ Note that the scores in Table~\ref{tab:ex:eval_characters} are given for the who
 %for the hypothesis of ROI of characters ($a$) corresponding to section~\ref{sub:hypo_roi}, the query pre processing ($b$) corresponding to section~\ref{pa:query_pre_processing} and the character spotting ($c$) of section~\ref{sub:character_extraction}.% and figure~\ref{fig:overlap_ratio_evolution}.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht]
+  % \normalsize
+% \renewcommand{\arraystretch}{1.3}
+% \extrarowheight as needed to properly center the text within the cells
+  \centering
+  \caption{Comic character localisation result for method A from manual and automatic panel and balloon element extractions.}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+    & \multicolumn{3}{|c|}{Speaking only}  & \multicolumn{3}{|c|}{All}   \\
+  \hline
+  Methods  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)\\
+  \hline
+  Method A (ground truth)  & \textbf{30.04} & \textbf{28.03} & \textbf{29.00} &  15.59    &  23.18   &  18.64   \\
+  \hline
+  Method A (automatic)     & 11.77  & 11.82 & 11.79 & 6.84    &   12.13     &   8.75  \\
+  \hline
+  Method C (ground truth)  &   & & &     &     &    \\
+  \hline
+  Method C (automatic)     &   & & &    &      &   \\
+  \hline
+  \end{tabular}
+      \label{tab:ex:character_localisation_result_summary}
+\end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[ht]
-    \normalsize
-%\renewcommand{\arraystretch}{1.2}
 
-    \centering
-    \caption{Character localisation results.}
-    \begin{tabular}{|c|c|c|c|}
-          % \hline
-          %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
-          \hline
-          &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)  \\
-          % \hline
-          % Before validation   & ?   & ?           \\
-          \hline
-          %Proposed (ROI)   & 70   & 49           \\
-          Method A   & \modif{??}   & \modif{??}    & \modif{??}      \\
-          \hline
-          %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
-          % Method B (all query?) & \modifc{?} & \modifc{?} & \modifc{?} \\
-          % \hline
-          % %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
-          % $a + b + c$  & \modifc{?} & \modifc{?} & ? \\
-          % \hline
-          Method C   & \modif{??}   & \modif{??}    & \modif{??}      \\
-          \hline
-          % TOTAL   & 93.4    & 92.8          \\
-          % \hline
-        %       Proposed multi scale & ???  &???  & ???   & ???       \\
-        %   \hline
-        \end{tabular}
-    \label{tab:ex:eval_characters}
-  \end{table}%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \begin{table}[ht]
+%     \normalsize
+% %\renewcommand{\arraystretch}{1.2}
+
+%     \centering
+%     \caption{Character localisation results.}
+%     \begin{tabular}{|c|c|c|c|}
+%           % \hline
+%           %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
+%           \hline
+%           &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)  \\
+%           % \hline
+%           % Before validation   & ?   & ?           \\
+%           \hline
+%           %Proposed (ROI)   & 70   & 49           \\
+%           Method A   & \modif{??}   & \modif{??}    & \modif{??}      \\
+%           \hline
+%           %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
+%           % Method B (all query?) & \modifc{?} & \modifc{?} & \modifc{?} \\
+%           % \hline
+%           % %Proposed (ROI + spotting)  & \modifc{46}   & \modifc{43}           \\
+%           % $a + b + c$  & \modifc{?} & \modifc{?} & ? \\
+%           % \hline
+%           Method C   & \modif{??}   & \modif{??}    & \modif{??}      \\
+%           \hline
+%           % TOTAL   & 93.4    & 92.8          \\
+%           % \hline
+%         %       Proposed multi scale & ???  &???  & ???   & ???       \\
+%         %   \hline
+%         \end{tabular}
+%     \label{tab:ex:character_localisation_result_summary}
+%   \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -2302,7 +2360,7 @@ Note that the scores in Table~\ref{tab:ex:eval_characters} are given for the who
     % \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
     %   \centering
     %   \includegraphics[width=200px]{fig/overlap_ratio_evolution.pdf}
-    % \caption{Score evolution according to overlap ratio. Black lines represent the score for $a_0=0.5$ as given in table~\ref{tab:ex:eval_characters}.}
+    % \caption{Score evolution according to overlap ratio. Black lines represent the score for $a_0=0.5$ as given in table~\ref{tab:ex:character_localisation_result_summary}.}
     % \label{fig:overlap_ratio_evolution}
     % \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2310,7 +2368,7 @@ Note that the scores in Table~\ref{tab:ex:eval_characters} are given for the who
 % As shown on Figure~\ref{fig:ex:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
 This low level of performance comes from various reasons.
 First, the limitation of the extractor to process speaking characters
-If we focus on the subset of 880 speaking characters, the recall, precision and f-measure were \modif{34.49\%}, \modif{32.02\%} and \modif{33.21\%} respectively.
+When we focused on the subset of 829 speaking characters, the recall and precision increased by 14.45\% and 4.85\% respectively.
 %First, the limitation of the extractor to process speaking characters; 
 Second, the variability of character styles in the eBDtheque dataset; third, the error propagation of previous processes (panel, text, balloon, and tail extractions) that are required to guess comic character locations.
 
@@ -2619,7 +2677,7 @@ Also, once we retrieved all colour similar objects, we could learn a shape model
 % \subsection{Comic character extraction evaluation} % (fold)
 % \label{ssub:independent_comic_character_extraction_evaluation}
 
-% We evaluated our method for character spotting on \modif{??} of 1550 comic character instances of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
+% We evaluated our method for character spotting on \modif{??} of 1597 comic character instances of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at object bounding box level.
 
 % To perform this experiments, we asked the users to manually highlight the object position as described in section~\ref{sec:input_query}.
 % The selection usually includes hair, head and top body colours because lower body parts are often hidden by the frame border or the posture. 
@@ -2761,11 +2819,11 @@ TODO? Only for the inference system~\ref{sub:inference_from_low_level}?
 Method C is the only method presented in this thesis able to infer semantic links from the image and comics models (Section~\ref{sec:kn:model}).
 The semantic links between speech text and speech balloon are called $STSB$ and the ones between speech balloon and speaking character $SBSC$; they characterise a dialogue.
 They are considered true or false according to their existence or not in the ground truth (Section~\ref{sub:ex:semantic_links_metric}).
-%We evaluated the semantic relations $STSB$ and $SBSC$ according to the metadata in the ground truth of the eBDtheque dataset~\cite{Guerin2013} called \emph{isLineOf} and \emph{isSaidBy}, which represent 3427 and 880 relations respectively.
+%We evaluated the semantic relations $STSB$ and $SBSC$ according to the metadata in the ground truth of the eBDtheque dataset~\cite{Guerin2013} called \emph{isLineOf} and \emph{isSaidBy}, which represent 3427 and 829 relations respectively.
 Given the panel, balloon and character position from the ground truth, the accuracy of the expert system in predicting the semantic relations was about $A_{STSB}=96.9\%$ and $A_{SBSC}=70.66\%$.
 
 The 3.1\% of missed \emph{isLineOf} relations came from balloons that were not compliant with our model.
-In the same way, of the 880 \emph{isSaidBy} relations, that link speech balloons to speaking characters, 9.5\% were undetectable because they were generated from balloons outside the panel.
+In the same way, of the 829 \emph{isSaidBy} relations, that link speech balloons to speaking characters, 9.5\% were undetectable because they were generated from balloons outside the panel.
 
 
 % section semantic_links_evaluation (end)

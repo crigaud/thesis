@@ -113,11 +113,13 @@
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Method C {\bf \color {red}TODO: update}}}}{107}{subfigure.22.6}
 \contentsline {figure}{\numberline {6.23}{\ignorespaces Examples of difficult balloons for tail tip position (left) and tail direction (right) extractions. Left balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted. In the right balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment.\relax }}{109}{figure.caption.142}
 \contentsline {figure}{\numberline {6.24}{\ignorespaces Example of comic character region prediction}}{110}{figure.caption.143}
-\contentsline {figure}{\numberline {6.25}{\ignorespaces Character extraction score details for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{110}{figure.caption.145}
-\contentsline {figure}{\numberline {6.26}{\ignorespaces Character spotting descriptor size validation}}{111}{figure.caption.146}
-\contentsline {figure}{\numberline {6.27}{\ignorespaces Balloon extraction score details using Method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{113}{figure.caption.148}
-\contentsline {figure}{\numberline {6.28}{\ignorespaces Character spotting result sample}}{114}{figure.caption.150}
-\contentsline {figure}{\numberline {6.29}{\ignorespaces Knowledge-driven extraction performance evolution}}{116}{figure.caption.151}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Character extraction score details at object level for each image of the eBDtheque dataset for all the characters (Appendix~\ref {app:dataset}).\relax }}{110}{figure.caption.144}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Method A (ground truth)}}}{110}{subfigure.25.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Method A (automatic)}}}{110}{subfigure.25.2}
+\contentsline {figure}{\numberline {6.26}{\ignorespaces Character spotting descriptor size validation}}{111}{figure.caption.145}
+\contentsline {figure}{\numberline {6.27}{\ignorespaces Balloon extraction score details using Method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{113}{figure.caption.147}
+\contentsline {figure}{\numberline {6.28}{\ignorespaces Character spotting result sample}}{115}{figure.caption.149}
+\contentsline {figure}{\numberline {6.29}{\ignorespaces Knowledge-driven extraction performance evolution}}{116}{figure.caption.150}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

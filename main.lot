@@ -15,9 +15,8 @@
 \contentsline {table}{\numberline {6.7}{\ignorespaces Confusion matrix for smooth (S), wavy (W) and zigzag (Z) balloon contour classification results with $D=(f_1, f_2)$.\relax }}{104}{table.caption.133}
 \contentsline {table}{\numberline {6.8}{\ignorespaces Balloon localisation result summary.\relax }}{105}{table.caption.137}
 \contentsline {table}{\numberline {6.9}{\ignorespaces Tail tip position ($A_{tailTip}$) and tail direction ($A_{tailDir}$) extraction results from automatic and manual balloon contour extractions.\relax }}{108}{table.caption.141}
-\contentsline {table}{\numberline {6.10}{\ignorespaces Comic character localisation result for method A from manual and automatic previous element extractions.\relax }}{110}{table.caption.144}
-\contentsline {table}{\numberline {6.11}{\ignorespaces Character detection performance\relax }}{112}{table.caption.147}
-\contentsline {table}{\numberline {6.12}{\ignorespaces Character localisation results.\relax }}{113}{table.caption.149}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Character detection performance\relax }}{112}{table.caption.146}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Comic character localisation result for method A from manual and automatic panel and balloon element extractions.\relax }}{113}{table.caption.148}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

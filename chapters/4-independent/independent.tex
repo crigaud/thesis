@@ -659,8 +659,9 @@ Before quantizing the image colours, we smooth the image in order to reduce the 
 We use a state of the art method of Kopf that shown very good results on comics images~\cite{Kopf2012DigitalReconstruction} (Figure~\ref{fig:in:smoothing_quantization}).
 
 The colour palette $P_c$ is computed from the $N$ most frequent colours in the album and then each pixel is changed by its most similar colour from the palette to produce the quantized image.
-
 This limited amount of colours allows to describe and retrieve the object with only few representative colours.
+
+\modif{TODO: use K-mean clustering for colour quantization (palette of 256? colours because comics are colourful drawings that contain a limited number of colour) and then replace each pixel by the colour of the closest cluster centre using by combining the distance between the three channels (RGB). This process can by applied to the page or the full album in order to insure that the colours will be identical from one page to another.}
 
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -746,7 +747,6 @@ The query descriptor we use is a non ordered colour vector that contains the inf
 
 % -----------------------------------------------
 
-\modif{TODO: use Hue instead of colour quantization = experiment more}
 
 The colour subset $D$ is composed by the $N$ colours the most represented in the query region and that are the most discriminating in the image or collection.
 We define two metric for each colour of the query region in order to determinate which ones will be used for the query description.
@@ -803,7 +803,7 @@ Each value of $L_{1c}$ and $L_{2c}$ are normalized as a percentage between 0 and
  \begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
  	 \centering
  	\includegraphics[width=0.9\textwidth]{description_sequence.png}
- 	\caption[Comic character query description]{The left part represents a query example after the colour reduction process and its original image. Top-right part shows the colour histogram of the 6 first colours with the highest number of pixel in the query as a percentage from the total number of pixel in the query ($L_1$). Middle-right figure represents the corresponding discriminability level for each colour according the other pixel in the page. Bottom-right figure represents the corresponding query descriptor of $N=3$ colours.}
+ 	\caption[Comic character query description]{The left part represents a query example after the colour reduction process and its original image. Top-right part shows the colour histogram of the 6 first colours with the highest number of pixel in the query as a percentage from the total number of pixel in the query ($L_1$). Middle-right figure represents the corresponding discriminability level for each colour according the other pixel in the page. Bottom-right figure represents the corresponding query descriptor of $N=3$ colours.\modif{TODO: update with a smoothed query region}}
  	\label{fig:in:dominant_colour_hist_desc}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  28 AUG 2014 19:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  29 AUG 2014 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2119,7 +2119,7 @@ Package pdftex.def Info: ./chapters/4-independent/figs/signal_decomposition.png
 File: ./chapters/4-independent/figs/figure_here.png Graphic file (type png)
 <use ./chapters/4-independent/figs/figure_here.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/figure_here.png used on 
-input line 669.
+input line 670.
 (pdftex.def)             Requested size: 277.41435pt x 92.47935pt.
 
 
@@ -2131,8 +2131,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./chapters/4-independent/figs/user_selection.png Graphic file (type png)
  <use ./chapters/4-independent/figs/user_selection.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/user_selection.png used 
-on input line 690.
+on input line 691.
 (pdftex.def)             Requested size: 184.9429pt x 182.36696pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [55 <./chapters/4-independent/figs/figure_here.png> <./chapters/4-independent/
 figs/user_selection.png>]
 <./chapters/4-independent/figs/description_sequence.png, id=2591, 874.26625pt x
@@ -2144,15 +2147,20 @@ Package pdftex.def Info: ./chapters/4-independent/figs/description_sequence.png
  used on input line 805.
 (pdftex.def)             Requested size: 332.89497pt x 222.05516pt.
 
-<./chapters/4-independent/figs/masks.png, id=2593, 878.28125pt x 1093.08376pt>
+[56]
+<./chapters/4-independent/figs/masks.png, id=2601, 878.28125pt x 1093.08376pt>
 File: ./chapters/4-independent/figs/masks.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/masks.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/masks.png used on input 
 line 825.
 (pdftex.def)             Requested size: 295.90977pt x 368.29106pt.
- [56] [57 <./chapters/4-independent/figs/description_sequence.png>]
-<./chapters/4-independent/figs/filtering.png, id=2614, 511.9125pt x 264.99pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57 <./chapters/4-independent/figs/description_sequence.png>] [58 <./chapters/
+4-independent/figs/masks.png>]
+<./chapters/4-independent/figs/filtering.png, id=2619, 511.9125pt x 264.99pt>
 File: ./chapters/4-independent/figs/filtering.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/filtering.png>
@@ -2162,8 +2170,8 @@ put line 878.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58 <./chapters/4-independent/figs/masks.png>] [59 <./chapters/4-independent/f
-igs/filtering.png>]) (./chapters/5-knowledge/knowledge.tex [60]
+ [59 <./chapters/4-independent/figs/filtering.png>]) (./chapters/5-knowledge/kn
+owledge.tex [60]
 Chapter 5.
 
 <./chapters/5-knowledge/figs/intro_illustration.pdf, id=2653, 421.575pt x 184.6
@@ -2986,19 +2994,12 @@ File: ./chapters/6-experiments/figs/result_exemples.png Graphic file (type png)
 Package pdftex.def Info: ./chapters/6-experiments/figs/result_exemples.png used
  on input line 2397.
 (pdftex.def)             Requested size: 184.9429pt x 383.50888pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[114]
+ [114 <./chapters/6-experiments/figs/result_exemples.png>]
 
 LaTeX Warning: Reference `sub:ex:independent_information_extraction_evaluation'
  on page 115 undefined on input line 2839.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [115 <./chapters/6-experiments/figs/result_exemples.png>]
+[115]
 Overfull \hbox (14.82552pt too wide) in paragraph at lines 2846--2847
 []\OT1/cmr/bx/n/10 TODO ADD TA-BLE WITH NUM-BERS COR-RE-POND-ING TO RADAR
  []
@@ -3011,11 +3012,9 @@ File: ./chapters/6-experiments/figs/radar_chart.png Graphic file (type png)
 Package pdftex.def Info: ./chapters/6-experiments/figs/radar_chart.png used on 
 input line 2882.
 (pdftex.def)             Requested size: 230.86334pt x 237.91486pt.
-
-Underfull \vbox (badness 1527) has occurred while \output is active []
-
- [116 <./chapters/6-experiments/figs/radar_chart.png>] [117])
-(./chapters/7-conclusions/conclusions.tex [118]
+ [116 <./chapters/6-experiments/figs/radar_chart.png>]) (./chapters/7-conclusio
+ns/conclusions.tex
+[117] [118]
 Chapter 7.
 
 Overfull \hbox (3.61304pt too wide) in paragraph at lines 38--40
@@ -3139,7 +3138,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 28E716BA4B96E56DD2BACC0D00BB30ED;8452.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 4574E34BF1C85D0F89D0F13B0C394D0E;12108.
+(rerunfilecheck)             Checksum: 48427DB9A642C11035A9E488183CC2A6;12108.
 
 
 LaTeX Warning: There were undefined references.
@@ -3152,7 +3151,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
 Here is how much of TeX's memory you used:
  25268 strings out of 493308
  461504 string characters out of 6137822
- 588363 words of memory out of 5000000
+ 589363 words of memory out of 5000000
  27224 multiletter control sequences out of 15000+600000
  24734 words of font info for 89 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -3184,7 +3183,7 @@ c/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (172 pages, 16220860 bytes).
+Output written on main.pdf (172 pages, 16212462 bytes).
 PDF statistics:
  5451 PDF objects out of 6186 (max. 8388607)
  3772 compressed objects within 38 object streams

@@ -60,10 +60,10 @@
 \contentsline {subsubsection}{Contour classification}{52}{section*.61}
 \contentsline {section}{\numberline {4.5}Comic character spotting}{53}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Colour quantization}{54}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Input query}{54}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{55}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.2}Input query}{55}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{56}{subsection.4.5.3}
 \contentsline {subsection}{\numberline {4.5.4}Object retrieval}{56}{subsection.4.5.4}
-\contentsline {section}{\numberline {4.6}Conclusions}{59}{section.4.6}
+\contentsline {section}{\numberline {4.6}Conclusions}{60}{section.4.6}
 \contentsline {chapter}{\numberline {5}Method C: knowledge-driven analysis}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{61}{section.5.1}
 \contentsline {section}{\numberline {5.2}Expert system}{62}{section.5.2}
@@ -149,14 +149,14 @@
 \contentsline {subsection}{\numberline {6.8.2}Method B}{111}{subsection.6.8.2}
 \contentsline {subsection}{\numberline {6.8.3}Method C}{112}{subsection.6.8.3}
 \contentsline {subsection}{\numberline {6.8.4}Comparison and analysis}{113}{subsection.6.8.4}
-\contentsline {section}{\numberline {6.9}Semantic links evaluation}{114}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Method C}{114}{subsection.6.9.1}
-\contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{116}{section.6.10}
-\contentsline {paragraph}{Process details}{117}{section*.151}
+\contentsline {section}{\numberline {6.9}Semantic links evaluation}{115}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Method C}{115}{subsection.6.9.1}
+\contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{115}{section.6.10}
+\contentsline {paragraph}{Process details}{116}{section*.151}
 \contentsline {paragraph}{Low level processing}{117}{section*.152}
 \contentsline {paragraph}{Semantic links}{117}{section*.153}
-\contentsline {paragraph}{General evaluation}{118}{section*.154}
-\contentsline {section}{\numberline {6.11}Conclusions}{118}{section.6.11}
+\contentsline {paragraph}{General evaluation}{117}{section*.154}
+\contentsline {section}{\numberline {6.11}Conclusions}{117}{section.6.11}
 \contentsline {chapter}{\numberline {7}Conclusions}{119}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{119}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{119}{section.7.2}

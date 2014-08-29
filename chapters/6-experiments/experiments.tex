@@ -2181,7 +2181,7 @@ Method B consists in an independent comic character instance spotting given an e
 To perform this experiments, we asked the users to manually highlight the object position as described in Section~\ref{sec:in:input_query}.
 The selection usually includes hair, head and top body colours because lower body parts are often hidden by the frame border or the posture. 
 From the user pixel selection, we computed the bounding box to show that the system does not need a precise object colour selection. 
-We reduced the number of colour to a \modif{standard web palette $P_c$ of 256 colours} because comics are colourful drawings similar to web pages and icons that contain a limited number of colour. 
+% We reduced the number of colour to a \modif{standard web palette $P_c$ of 256 colours} because comics are colourful drawings similar to web pages and icons that contain a limited number of colour. 
 We fixed the descriptor size to $N=3$ according to the evaluation Figure~\ref{fig:ex:descriptor_size_evaluation}.
 In the retrieval process, we set $T=N$ which means that the confidence of the candidate region equal 100\% (all the query colours must be present in the candidate region to be considered as a correct detection).
 We used three squared window sizes according to the query height: half of the query height, query height and twice the query height.
@@ -2382,7 +2382,7 @@ Second, the variability of character styles in the eBDtheque dataset; third, the
 % \label{sec:eval}
 
 As mentioned Section~\ref{sub:ex:character_extraction_method_b}, Method B have been evaluated on a subset of the eBDtheque dataset composed by coloured images and with a sufficient amount of character instances.
-The experiments shown interesting detection results based on a \modif{user-defined colours query descriptor} (Section~\ref{sec:proposed_method}).
+The experiments shown interesting detection results based on a user-defined colours query descriptor (Section~\ref{sec:proposed_method}).
 % The processing time was about 6 seconds per image for a A4 300DPI image on a regular machine.
 % Most of the time consumption is for the mask creation and it is proportional to the number of mask to create.
 Detection result examples are illustrated Figure~\ref{fig:ex:character_spotting_results}.

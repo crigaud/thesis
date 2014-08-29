@@ -17,18 +17,18 @@ In this appendix we detail some of the noise removal and segmentation methods wh
 % Stroke-based images such as comics can be pre-processes is order to extract all the strokes for further analysis.
 % Several method from the literature exist, 
 
-\section{Noise removal} % (fold)
+\section*{Noise removal} % (fold)
 \label{sub:ap:noise_removal}
 The image noise (unwanted signal) is the presence of parasite information in addition to the random details of the scene being shot digitally.
 It is particularly visible in the low light areas where the signal/noise ratio is low, but also in the flat parts such as a blue sky.
 It results in the loss of sharpness in the detailed regions.
 
-\subsection{Salt and pepper} % (fold)
+\subsection*{Salt and pepper} % (fold)
 \label{sub:salt_and_paper}
 TODO?
 % subsection salt_and_paper (end)
 
-\subsection{Quantization} % (fold)
+\subsection*{Quantization} % (fold)
 \label{sub:quantization}
 TODO?
 % subsection dithering (end)
@@ -37,13 +37,13 @@ TODO?
 
 
 
-\section{Segmentation} % (fold)
+\section*{Segmentation} % (fold)
 \label{sub:ap:segmentation}
 Image segmentation is a division or separation of the image into regions of similar attribute.
 The most basic attribute is image luminance amplitude for monochrome image or colour components for a colour image.
 Image edge and texture are also useful attributes for segmentation~\cite{Pratt2007Digital}.
 
-\subsection{Region-growing} % (fold)
+\subsection*{Region-growing} % (fold)
 \label{sub:ap:region_growing}
 Region-growing methods are region-based segmentation algorithm that mainly rely on the assumption that the neighbouring pixels within one region have similar values.
 The common procedure is to compare one pixel with its neighbours.
@@ -60,7 +60,7 @@ The segmentation by watershed, developed with mathematical morphology, belong to
 
 % subsection region_based (end)
 
-\subsection{Split and merge} % (fold)
+\subsection*{Split and merge} % (fold)
 \label{sub:split_and_merge}
 Split-and-merge segmentation is a region-based segmentation based on a quadtree split of the image.
 This method starts from the whole image (root of the tree) and if it is non-uniform (not homogeneous pixel repartition), then it is split into four son-squares (the splitting process), and so on so forth.
@@ -70,7 +70,7 @@ This process continues recursively until no further splits or merges are possibl
 
 % subsection split_and_merge (end)
 
-\subsection{Contour-based} % (fold)
+\subsection*{Contour-based} % (fold)
 \label{sub:ap:contour_based}
 This approach wants to take advantage of the fact that there is a detectable transition between two related areas.
 The oldest methods use edge detector such as the well know Canny filter, to highlight the pixels that appear to belong to a contour~\cite{canny1986computational}.
@@ -95,7 +95,7 @@ One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq
 
 % subsection contour_based (end)
 
-\subsection{Bi-level grey-scale thresholding} % (fold)
+\subsection*{Bi-level grey-scale thresholding} % (fold)
 \label{sub:ap:bi_threshold}
 A survey counts forty thresholding methods from histogram shape-based to spatial and local methods~\cite{sezgin2004survey}.
  
@@ -110,7 +110,7 @@ Those issues have been partially handled by local approaches determining thresho
 
 % subsection threshold_based (end)
 
-\subsection{Multi-level colour thresholding} % (fold)
+\subsection*{Multi-level colour thresholding} % (fold)
 \label{sub:ap:muli_threshold}
 
 A first approach for multi-level thresholding is to apply bi-level thresholding to each of the colour layer in one or several colour space and merge them to give a single output.

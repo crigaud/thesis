@@ -159,21 +159,11 @@
 \contentsline {section}{\numberline {6.11}Conclusions}{117}{section.6.11}
 \contentsline {chapter}{\numberline {7}Conclusions}{119}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{119}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future perspectives}{119}{section.7.2}
-\contentsline {paragraph}{Balloon classification}{119}{section*.155}
+\contentsline {section}{\numberline {7.2}Future perspectives}{120}{section.7.2}
+\contentsline {paragraph}{Balloon classification}{120}{section*.155}
 \contentsline {chapter}{\numberline {A}Pre-processing}{121}{appendix.A}
-\contentsline {section}{\numberline {A.1}Noise removal}{121}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Salt and pepper}{121}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Quantization}{121}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}Segmentation}{121}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Region-growing}{122}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Split and merge}{122}{subsection.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Contour-based}{122}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}Bi-level grey-scale thresholding}{123}{subsection.A.2.4}
-\contentsline {subsection}{\numberline {A.2.5}Multi-level colour thresholding}{123}{subsection.A.2.5}
 \contentsline {chapter}{\numberline {B}Feature extraction}{125}{appendix.B}
-\contentsline {section}{\numberline {B.1}Connected-component labelling}{125}{section.B.1}
 \contentsline {chapter}{\numberline {C}Dataset}{127}{appendix.C}
-\contentsline {section}{\numberline {C.1}eBDtheque dataset}{127}{section.C.1}
 \contentsline {chapter}{\numberline {D}Ground truth}{129}{appendix.D}
-\contentsline {chapter}{Bibliography}{135}{section*.160}
+\contentsline {chapter}{\numberline {E}List of Publications}{131}{appendix.E}
+\contentsline {chapter}{Bibliography}{135}{section*.170}

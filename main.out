@@ -106,18 +106,8 @@
 \BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 106
 \BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 107
 \BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 108
-\BOOKMARK [1][-]{section.A.1}{Noise removal}{appendix.A}% 109
-\BOOKMARK [2][-]{subsection.A.1.1}{Salt and pepper}{section.A.1}% 110
-\BOOKMARK [2][-]{subsection.A.1.2}{Quantization}{section.A.1}% 111
-\BOOKMARK [1][-]{section.A.2}{Segmentation}{appendix.A}% 112
-\BOOKMARK [2][-]{subsection.A.2.1}{Region-growing}{section.A.2}% 113
-\BOOKMARK [2][-]{subsection.A.2.2}{Split and merge}{section.A.2}% 114
-\BOOKMARK [2][-]{subsection.A.2.3}{Contour-based}{section.A.2}% 115
-\BOOKMARK [2][-]{subsection.A.2.4}{Bi-level grey-scale thresholding}{section.A.2}% 116
-\BOOKMARK [2][-]{subsection.A.2.5}{Multi-level colour thresholding}{section.A.2}% 117
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 118
-\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 119
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 120
-\BOOKMARK [1][-]{section.C.1}{eBDtheque dataset}{appendix.C}% 121
-\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 122
-\BOOKMARK [0][-]{section*.160}{Bibliography}{}% 123
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 109
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 110
+\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 111
+\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 112
+\BOOKMARK [0][-]{section*.170}{Bibliography}{}% 113

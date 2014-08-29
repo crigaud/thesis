@@ -79,20 +79,20 @@
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Annotation rendering in a browser}}{86}{figure.caption.113}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Distance to the mean position}}{87}{figure.caption.114}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Image used for ground truth quality assessment}}{88}{figure.caption.115}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Division line detection from~\cite {Arai10}}}{92}{figure.caption.116}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Panel extraction process of Ho~\cite {Ho2012}}}{92}{figure.caption.117}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Division line detection for panel extraction}}{92}{figure.caption.116}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Panel extraction process of Ho}}{92}{figure.caption.117}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Original image}}}{92}{subfigure.11.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Binary segmentation}}}{92}{subfigure.11.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {After dilatation step}}}{92}{subfigure.11.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {After erosion step}}}{92}{subfigure.11.4}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset (Appendix~\ref {app:dataset}).\relax }}{94}{figure.caption.118}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset}}{94}{figure.caption.118}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Arai's method}}}{94}{subfigure.12.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ho's method}}}{94}{subfigure.12.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Method A}}}{94}{subfigure.12.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Method B}}}{94}{subfigure.12.4}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Method C {\bf \color {red}TODO: update}}}}{94}{subfigure.12.5}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Sample of Text Extraction Process. (a) Original balloon text image; (b) Threshold; (c) Morphology-Erosion filter; (d) Morphology-Opening filter; (e) Extracted blob from original image. Image from the original paper~\cite {Arai11}. \relax }}{96}{figure.caption.120}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Text line extraction score details for each image of the eBDtheque dataset (Appendix~\ref {app:dataset}).\relax }}{98}{figure.caption.123}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Sample of text extraction process of Arai's method}}{96}{figure.caption.120}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Text line extraction score details for each image of the eBDtheque dataset}}{98}{figure.caption.123}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Arai's method}}}{98}{subfigure.14.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Method A}}}{98}{subfigure.14.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Method B using the best bi-level combination method (rgb2grey + Otsu) and OCR}}}{98}{subfigure.14.3}
@@ -104,22 +104,23 @@
 \contentsline {figure}{\numberline {6.19}{\ignorespaces Correct classification examples for ``zigzag'' (top) and ``smooth'' classes (bottom).\relax }}{104}{figure.caption.134}
 \contentsline {figure}{\numberline {6.20}{\ignorespaces Wrong classification examples which have been classified as ``smooth'' instead of ``wavy'' in the first row and ``wavy'' instead of ``smooth'' in the second row.\relax }}{105}{figure.caption.135}
 \contentsline {figure}{\numberline {6.21}{\ignorespaces Implicit balloon recovering by closing open panels}}{106}{figure.caption.138}
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Balloon extraction score details at object level for each image of the eBDtheque dataset (Appendix~\ref {app:dataset}).\relax }}{107}{figure.caption.139}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Balloon extraction score details at object level for each image of the eBDtheque dataset}}{107}{figure.caption.139}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Arai's method}}}{107}{subfigure.22.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ho's method}}}{107}{subfigure.22.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Method A (regular)}}}{107}{subfigure.22.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Method A (implicit)}}}{107}{subfigure.22.4}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Method B}}}{107}{subfigure.22.5}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Method C {\bf \color {red}TODO: update}}}}{107}{subfigure.22.6}
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Examples of difficult balloons for tail tip position (left) and tail direction (right) extractions. Left balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted. In the right balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment.\relax }}{109}{figure.caption.142}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Examples of difficult balloons for tail tip position (left) and tail direction (right) extractions}}{109}{figure.caption.142}
 \contentsline {figure}{\numberline {6.24}{\ignorespaces Example of comic character region prediction}}{110}{figure.caption.143}
-\contentsline {figure}{\numberline {6.25}{\ignorespaces Character extraction score details at object level for each image of the eBDtheque dataset for all the characters (Appendix~\ref {app:dataset}).\relax }}{110}{figure.caption.144}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Character extraction score details at object level for each image of the eBDtheque dataset}}{110}{figure.caption.144}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Method A (ground truth)}}}{110}{subfigure.25.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Method A (automatic)}}}{110}{subfigure.25.2}
 \contentsline {figure}{\numberline {6.26}{\ignorespaces Character spotting descriptor size validation}}{111}{figure.caption.145}
 \contentsline {figure}{\numberline {6.27}{\ignorespaces Balloon extraction score details using Method C for each image of the eBDtheque dataset {\bf \color {red}TODO: update}. \relax }}{113}{figure.caption.147}
 \contentsline {figure}{\numberline {6.28}{\ignorespaces Character spotting result sample}}{114}{figure.caption.149}
 \contentsline {figure}{\numberline {6.29}{\ignorespaces Knowledge-driven extraction performance evolution}}{116}{figure.caption.150}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

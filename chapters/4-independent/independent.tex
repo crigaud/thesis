@@ -656,7 +656,8 @@ The first step is to choose a proper colour palette and the second step is to re
 %Describe method and propose L0-smoothing ++ as promising alternative but the chosen method is simple, faster and good enough for our purpose. RGB colour space?}
 
 Before quantizing the image colours, we smooth the image in order to reduce the impact of printed dithering effects that sometimes appear during the printing and scanning process and obtain flat colours.
-We use a state of the art method of Kopf that shown very good results on comics images~\cite{Kopf2012DigitalReconstruction} (Figure~\ref{fig:in:smoothing_quantization}).
+We use a state of the art method for image smoothing that shown very good results for cartoonification and image compression denoising~\cite{l0smoothing2011}.
+An alternative can be used for halftoned colour print scanned at high resolution and dithering~\cite{Kopf2012DigitalReconstruction} (Figure~\ref{fig:in:smoothing_quantization}).
 
 The colour palette $P_c$ is computed from the $N$ most frequent colours in the album and then each pixel is changed by its most similar colour from the palette to produce the quantized image.
 This limited amount of colours allows to describe and retrieve the object with only few representative colours.

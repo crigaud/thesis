@@ -1,7 +1,11 @@
 \chapter{Conclusions} % 10 pages
 \chaptermark{Conclusions}
 \label{chap:conclusions}
-% Throughout the dissertation several methods for subgraph matching applied to symbol spotting have been presented. This chapter summarizes each main chapter by revisiting their contributions, strengths and weaknesses. Finally, a brief overview of the future research possibilities in the area of subgraph matching and symbol spotting is discussed.
+
+Throughout the dissertation several methods for images analysis and understanding applied to comic book images have been presented.
+This chapter summarizes each main chapter by revisiting their contributions, strengths and weaknesses.
+Finally, a overview of the future research possibilities in the area of comic analysis and understanding is discussed.
+
 % -----------------------------------------------------------
 \section{Summary and contributions}
 \label{conclusions:summary}
@@ -10,23 +14,44 @@
 
 \modif{TODO}
 
-% In this thesis work we have presented four different methods for symbol spotting on graphical documents represented as graphs. \ch{chap:intro} has introduced the main idea of structural pattern recognition, graphs as a tool of structural pattern recognition and the problem of symbol spotting.
+In this thesis work we have presented three different approaches for comic book image analysis. \ch{chap:intro} has introduced \modif{TODO}%the main idea of structural pattern recognition, graphs as a tool of structural pattern recognition and the problem of symbol spotting.
 
-% \ch{chap:gm} has introduced some useful definitions, concepts of graph matching and a brief state-of-the-art methods are discussed. These were necessary since all our symbol spotting methods are based on graph representation and use graph based methodologies to solve the problem.
+% \ch{chap:sota} has introduced some useful definitions, concepts of graph matching and a brief state-of-the-art methods are discussed. These were necessary since all our symbol spotting methods are based on graph representation and use graph based methodologies to solve the problem.
 
-% In \ch{chap:sota-ss}, an overview of the state-of-the-art methods have been presented. Here we have divided the main methods of symbol spotting into five different categories. Literature review in each of these categories have been presented along with the advantages, disadvantages in different scenarios.
+In \ch{chap:sota}, an overview of the state-of-the-art methods have been presented. Here we have handed the method in their context of document analysis and then highlighted the challenges of comic book document analysis due to their specific design process.
+All the past studies related to comic book image analysis have been reviewed into four different categories for panel, balloon, text, comic character respectively.
+Literature review in each of these categories have been presented along with the advantages, disadvantages in different scenarios.
+Also, state-of-the-art methods for holistic understanding of document images are reviewed and a list of the more advanced real-life application is given.
 
-% We have introduced the first approach to symbol spotting by hashing serialized graphs in \ch{chap:hssg}. The major contribution in this work is to serialize the planar graphs and form one dimensional graph paths. Graph paths are used to index a given database. The main motivation of this work came from the idea of graph indexing, which is a popular approach for applications dealing with large number of graphs. We model the structure of a path by off-the-shelf shape descriptor and we have used locality sensitive hashing for indexing those individual paths.
+We have introduced the first approach to sequential analysis of comic book image content by extracting elements using their relations one after others \ch{chap:sequential}.
+The major contribution in this work is to \modif{TODO}...
+%serialize the planar graphs and form one dimensional graph paths. Graph paths are used to index a given database. 
+The main motivation of this work came from the idea of \modif{TODO}...
+Some are improvement from method from the literature, other first method \modif{TODO}...
+%graph indexing, which is a popular approach for applications dealing with large number of graphs. We model the structure of a path by off-the-shelf shape descriptor and we have used locality sensitive hashing for indexing those individual paths.
 
-% \ch{chap:pg} has presented a subgraph matching technique based on product graph and it has been used for spotting symbols on graphical documents. The main contribution was the introduction of higher order contextual similarities which are obtained by propagating the pairwise similarities. The next contribution of this work was to formulate subgraph graph matching as a node, edge selection problem of the product graph. For that we constructed a constrained optimization problem whose objective function was created from the higher order contextual similarities.
+\ch{chap:independent} has presented a independent analysis technique based on \modif{TODO}...
+%subgraph matching technique based on product graph and it has been used for spotting symbols on graphical documents.
+The main contribution was the introduction of \modif{TODO}...
+%higher order contextual similarities which are obtained by propagating the pairwise similarities.
+The next contribution of this work was to \modif{TODO}...
+% formulate subgraph graph matching as a node, edge selection problem of the product graph. For that we constructed a constrained optimization problem whose objective function was created from the higher order contextual similarities.
 
-% In the \ch{chap:ncrag}, we have introduced near convex region adjacency graph. The main contribution was the introduction of near convex regions and forming a graph representation based on that. There are certain drawbacks of region adjacency graph (RAG), for example, the information that are not bounded in regions can not be represented by RAG. This contribution solves the limitation.
+In the \ch{chap:knowledge}, we have introduced \modif{TODO}...%near convex region adjacency graph. 
+The main contribution was the introduction of \modif{TODO}...
+%near convex regions and forming a graph representation based on that. 
+There are certain drawbacks of \modif{TODO}...
+%region adjacency graph (RAG), for example, the information that are not bounded in regions can not be represented by RAG. 
+This contribution solves the limitation ???
 
 % \ch{chap:hgr} has presented a hierarchical graph representation of line drawing graphical documents. Certain line drawings often suffer from structural errors or distortions. Hierarchical graph representation is a way to solve those structural errors in hierarchical simplification.
 
-% Finally in \ch{chap:experiments}, we have provided an experimental evaluation of all the proposed methods and some state-of-the-art methods and advantages and disadvantages have been pointed out.
+Finally in \ch{chap:experimentations}, we have provided an experimental evaluation of all the proposed methods and some state-of-the-art methods and advantages and disadvantages have been pointed out.
 
-% In general, in this thesis we have proposed several inexact subgraph matching algorithms which intend to solve the problem of inexact subgraph matching in a better approximated way. Different graph representations have been used and the purpose of them was to tolerate the structural noise and distortions and bring stability in the representation. Also a hierarchical graph representation is proposed to simplify/correct the structural errors in step-by-step manner. Detailed experimentations were performed to evaluate each of the methods and for comparison with some state-of-the-art algorithms and for that some model of datasets also have been proposed.
+In general, in this thesis we have proposed \modif{TODO}...
+%several inexact subgraph matching algorithms which intend to solve the problem of inexact subgraph matching in a better approximated way. Different graph representations have been used and the purpose of them was to tolerate the structural noise and distortions and bring stability in the representation. Also a hierarchical graph representation is proposed to simplify/correct the structural errors in step-by-step manner. 
+Detailed experimentations were performed to evaluate each of the methods and for comparison with some state-of-the-art algorithms and for that a first dataset and ground truth have been provided.
+
 % -----------------------------------------------------------------------------------------------------------------
 \section{Future perspectives}
 \label{conclusions:perspectives}
@@ -39,7 +64,9 @@ Speech balloon classification can be improved by analysing the nature of the con
 In a future work, this contour classification will be completed by a semantic analysis to give a meaning to each class given a particular album.
 
 % paragraph balloon_classification (end)
-% There are ideas that have come out from different contributions of this thesis but could not be evaluated due to the time constraints. The future perspective of this thesis can be listed as follows:
+
+There are ideas that have come out during this thesis work but could not be explored in the three year time.
+The future perspective of this thesis can be listed as follows:
 % \begin{itemize}
 % \item Since indexation of the serialized substructures was successful as shown in this thesis (\ch{chap:hssg}), a very good continuation of this work can be done by factorizing the graphs into two dimensional structures and making hash/indexation structure of them. Here also we can use some kind of graph embedding to transfer those factorized subgraphs into a vector space and do the same procedure as the \ch{chap:hssg}.
 % \item In \ch{chap:pg}, we have proposed higher order contextual similarities by propagating the pairwise similarities through random walk. This is an idea that crept in from random walk graph kernel. There are other kernel methods such as graphlet kernel, shortest path kernel etc. that measure the graph similarities by counting different common substructures such as graphlet, short path etc. It would be interesting to bring these ideas for the purpose of having contextual similarities and then apply the optimization technique as used in \ch{chap:pg}.

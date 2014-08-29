@@ -746,7 +746,7 @@ Anyway, the line division method works only for panels that are as large as the 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{division_line_detection_arai10.png}
-\caption[Division line detection from~\cite{Arai10}]{Division line detection from~\cite{Arai10} (figure 5 in the author's paper).}
+\caption[Division line detection for panel extraction]{Division line detection from~\cite{Arai10} (figure 5 in the author's paper).}
 \label{fig:ex:division_line_detection}
 \end{center}
 \end{figure}
@@ -784,7 +784,7 @@ This manipulation separates the connected panels but has the disadvantage of cre
   \hspace{1em}
   \subfloat[After dilatation step]{\label{fig:ex:panel_ho_dilate}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho03.png}}
   \subfloat[After erosion step]{\label{fig:ex:panel_ho_erode}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho04.png}}  
-    \caption[Panel extraction process of Ho~\cite{Ho2012}]{Panel extraction and separation process of Ho~\cite{Ho2012}.}
+    \caption[Panel extraction process of Ho]{Panel extraction and separation process of Ho~\cite{Ho2012}.}
     \label{fig:ex:panel_ho_extraction_process}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -875,7 +875,7 @@ The score of this method was in average for recall and precision of \modif{??}\%
   \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:panel_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_Rigaud2014Outermost_Method_BPanel_object.pdf}}% \hspace{1em}
   % \\
   % \subfloat[Method C]{\label{fig:in:panel_big_contour_hull}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth,height=4cm]{panel_big_contour_hull.png}}
-    \caption{Panel extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
+    \caption[Panel extraction score details for each image of the eBDtheque dataset]{Panel extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
     \label{fig:ex:panel_detection_result_details}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -977,7 +977,7 @@ Text blob are then extracted from the original image and directly sent to an OCR
 \begin{figure}[h]
  \centering
  \includegraphics[width=0.9\textwidth]{balloon_extraction_arai.png}
- \caption{Sample of Text Extraction Process. (a) Original balloon text image; (b) Threshold; (c) Morphology-Erosion filter; (d) Morphology-Opening filter; (e) Extracted blob from original image. Image from the original paper~\cite{Arai11}.
+ \caption[Sample of text extraction process of Arai's method]{Sample of text extraction process. (a) Original balloon text image; (b) Threshold; (c) Morphology-Erosion filter; (d) Morphology-Opening filter; (e) Extracted blob from original image. Image from the original paper~\cite{Arai11}.
  }
  \label{fig:ex:balloon_extraction_arai}
 \end{figure}
@@ -1199,7 +1199,7 @@ All the methods still encounter difficulties with certain types of text that can
   \\
   \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:text_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_Rigaud2014Outermost_Method_BPanel_object.pdf}}
 
-  \caption{Text line extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
+  \caption[Text line extraction score details for each image of the eBDtheque dataset]{Text line extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
     \label{fig:ex:text_detection_result_details}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1963,7 +1963,7 @@ The drop in recall was due to the balloons that were correctly extracted but whi
   \\
   \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:balloon_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_Rigaud2014Outermost_Method_BPanel_object.pdf}}
 
-  \caption{Balloon extraction score details at object level for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
+  \caption[Balloon extraction score details at object level for each image of the eBDtheque dataset]{Balloon extraction score details at object level for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
     \label{fig:ex:balloon_detection_result_details}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2056,7 +2056,7 @@ The importance of a precise pixel-level segmentation in the region of the tail t
   \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{tail_extraction_errors.png}
-    \caption{Examples of difficult balloons for tail tip position (left) and tail direction (right) extractions. Left balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted. In the right balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment.}
+    \caption[Examples of difficult balloons for tail tip position (left) and tail direction (right) extractions]{Examples of difficult balloons for tail tip position (left) and tail direction (right) extractions. Left balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted. In the right balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment.}
     \label{fig:ex:tail_extraction_mistake_errors}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2158,7 +2158,7 @@ Also, two set of images have been tested, one including all the comic character 
   % \\
   % \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:balloon_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_method_B_panel_and_balloon_Object.pdf}}
 
-  \caption{Character extraction score details at object level for each image of the eBDtheque dataset for all the characters (Appendix~\ref{app:dataset}).}
+  \caption[Character extraction score details at object level for each image of the eBDtheque dataset]{Character extraction score details at object level for each image of the eBDtheque dataset for speaking and non speaking characters (Appendix~\ref{app:dataset}).}
     \label{fig:ex:character_methodA_extraction_detail}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2382,7 +2382,7 @@ Second, the variability of character styles in the eBDtheque dataset; third, the
 % \label{sec:eval}
 
 As mentioned Section~\ref{sub:ex:character_extraction_method_b}, Method B have been evaluated on a subset of the eBDtheque dataset composed by coloured images and with a sufficient amount of character instances.
-The experiments shown interesting detection results based on a user-defined colours query descriptor (Section~\ref{sec:proposed_method}).
+The experiments shown interesting detection results based on a user-defined colours query descriptor.
 % The processing time was about 6 seconds per image for a A4 300DPI image on a regular machine.
 % Most of the time consumption is for the mask creation and it is proportional to the number of mask to create.
 Detection result examples are illustrated Figure~\ref{fig:ex:character_spotting_results}.

@@ -160,10 +160,9 @@
 \contentsline {chapter}{\numberline {7}Conclusions}{119}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{119}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{120}{section.7.2}
-\contentsline {paragraph}{Balloon classification}{120}{section*.155}
-\contentsline {chapter}{\numberline {A}Pre-processing}{121}{appendix.A}
-\contentsline {chapter}{\numberline {B}Feature extraction}{125}{appendix.B}
-\contentsline {chapter}{\numberline {C}Dataset}{127}{appendix.C}
-\contentsline {chapter}{\numberline {D}Ground truth}{129}{appendix.D}
-\contentsline {chapter}{\numberline {E}List of Publications}{131}{appendix.E}
-\contentsline {chapter}{Bibliography}{135}{section*.170}
+\contentsline {chapter}{\numberline {A}Pre-processing}{123}{appendix.A}
+\contentsline {chapter}{\numberline {B}Feature extraction}{127}{appendix.B}
+\contentsline {chapter}{\numberline {C}Dataset}{129}{appendix.C}
+\contentsline {chapter}{\numberline {D}Ground truth}{131}{appendix.D}
+\contentsline {chapter}{\numberline {E}List of Publications}{133}{appendix.E}
+\contentsline {chapter}{Bibliography}{137}{section*.169}

@@ -56,17 +56,28 @@ Detailed experimentations were performed to evaluate each of the methods and for
 \section{Future perspectives}
 \label{conclusions:perspectives}
 
-\modif{TODO}
-
-\paragraph{Balloon classification} % (fold)
-\label{par:balloon_classification}
-Speech balloon classification can be improved by analysing the nature of the contained text using natural language analysis.
-In a future work, this contour classification will be completed by a semantic analysis to give a meaning to each class given a particular album.
-
-% paragraph balloon_classification (end)
-
 There are ideas that have come out during this thesis work but could not be explored in the three year time.
-The future perspective of this thesis can be listed as follows:
+Some of the future perspectives of this thesis are listed as bellow.
+
+Panel extraction is the more studied part of comics analysis so far and still requires some efforts for implicit panel detection (e.g. when the panel border is partially or not drawn) and connected panels.
+Gutter-free panel extraction methods also require more experiments to show and compare their robustness against a huge variety of comics but datasets are lacking.
+
+Text extraction is a essential challenge that have been tackle only partially.
+Current methods focus on speech text, and further efforts has to be made to detect other types of text such as illustrative text (e.g brand name, storefront), caption, page number, author signature, and sound effects.
+
+Balloon extraction shown good performances when combined with text extraction but requires more efforts when processed independently in order to extract balloons that does not contain text as well (e.g. symbol, drawing, punctuation).
+Implicit balloons are important to consider as well but it is at best questionable as the exact localization of the balloon is quite subjective.
+Balloon classification is at his early stage, more balloon types have to be investigated and multi-segment classification would be more accurate for balloons with non homogeneous contour variations (e.g implicit, adjacency with other elements). 
+Speech balloon classification can also be improved by analysing the nature of the contained text using natural language analysis.
+The balloon classification should be completed by a semantic analysis to give a meaning to each class given a particular album (e.g. smooth for dialogues, wavy for thoughts) and finally characterize the contained text.
+
+This first work about tail detection presented here gave promising results that allow one-to-one connections between speech balloons and speaking characters but multi connections have to be considered as well (e.g a speech balloon with two tails pointing to two different characters saying the same thing).
+
+Comic character localization and identification is still an open issue for both supervised and unsupervised methods due to the variability of character styles and postures.
+Nevertheless, combining colour and multi-part shape description seems to be a good way to follow in order to describe the characters for spotting purposes but unsupervised localisation and identification require a higher level of description taking into account heterogeneous elements in the image (e.g. ontologies, graphs).
+
+Finally, we published the first dataset to initiate collaborative research but more data are needed to be fully representative of the comics diversity, train algorithms and evaluate research works of comics understanding.
+
 % \begin{itemize}
 % \item Since indexation of the serialized substructures was successful as shown in this thesis (\ch{chap:hssg}), a very good continuation of this work can be done by factorizing the graphs into two dimensional structures and making hash/indexation structure of them. Here also we can use some kind of graph embedding to transfer those factorized subgraphs into a vector space and do the same procedure as the \ch{chap:hssg}.
 % \item In \ch{chap:pg}, we have proposed higher order contextual similarities by propagating the pairwise similarities through random walk. This is an idea that crept in from random walk graph kernel. There are other kernel methods such as graphlet kernel, shortest path kernel etc. that measure the graph similarities by counting different common substructures such as graphlet, short path etc. It would be interesting to bring these ideas for the purpose of having contextual similarities and then apply the optimization technique as used in \ch{chap:pg}.

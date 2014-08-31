@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  30 AUG 2014 12:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  31 AUG 2014 13:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1532,50 +1532,44 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ] [6
 
 ]
-(./chapters/0.1-agraiments/agraiments.tex [0
+(./chapters/0.2-abstract/abstract_english.tex [0
 
 
-]
-Overfull \hbox (23.90651pt too wide) in paragraph at lines 7--8
-[]\OT1/cmr/m/n/10 eBDtheque dataset ma-te-rial con-trib-u-tors (see ac-knowl-ed
-ge-ment sec-tion of eBDtheque
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
-been already used, duplicate ignored
+]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 \clearpage
-               \thispagestyle{empty} [1])
+l.33 
+      [1]pdfTeX warning (ext4): destination with the same identifier (name{page
+.ii}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 \clearpage
+               \thispagestyle{empty} [2])
 (./chapters/0.2-abstract/abstract_french.texpdfTeX warning (ext4): destination 
-with the same identifier (name{page.ii}) has been already used, duplicate ignor
-ed
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            *{R{\'e}sum{\'e}} [2
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) h
-as been already used, duplicate ignored
+with the same identifier (name{page.iii}) has been already used, duplicate igno
+red
 <to be read again> 
                    \relax 
 l.5 \clearpage
-              \thispagestyle{empty} [3])
-(./chapters/0.2-abstract/abstract_english.texpdfTeX warning (ext4): destination
+              \thispagestyle{empty} [3
+
+
+])
+(./chapters/0.2-abstract/abstract_spanish.texpdfTeX warning (ext4): destination
  with the same identifier (name{page.iv}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
 l.1 \chapter
-            *{Abstract} [4
+            *{Resumen} [4
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5 \clearpage
+l.6 \clearpage
               \thispagestyle{empty} [5])pdfTeX warning (ext4): destination with
  the same identifier (name{page.vi}) has been already used, duplicate ignored
 <to be read again> 
@@ -3018,7 +3012,11 @@ ns/conclusions.tex
 Chapter 7.
 [119
 
-] [120]) (./chapters/Appendix/Pre-processing.tex [121] [122
+]
+Underfull \vbox (badness 1052) has occurred while \output is active []
+
+ [120])
+(./chapters/Appendix/Pre-processing.tex [121] [122
 
 ]
 Appendix A.
@@ -3132,7 +3130,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 18345E34FBA017E4F57FEE81D70A5704;7726.
+(rerunfilecheck)             Checksum: AA7AF80DFDF1CDC52372CB694939B188;7718.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: BF985339B29C4AB0D8B30EA462C0A5C6;11937.
 
@@ -3145,8 +3143,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
  ) 
 Here is how much of TeX's memory you used:
- 25259 strings out of 493308
- 461305 string characters out of 6137822
+ 25258 strings out of 493308
+ 461293 string characters out of 6137822
  587698 words of memory out of 5000000
  27214 multiletter control sequences out of 15000+600000
  24734 words of font info for 89 fonts, out of 8000000 for 9000
@@ -3179,7 +3177,7 @@ c/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (174 pages, 16265046 bytes).
+Output written on main.pdf (174 pages, 16267364 bytes).
 PDF statistics:
  5406 PDF objects out of 6186 (max. 8388607)
  3725 compressed objects within 38 object streams

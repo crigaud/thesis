@@ -14,41 +14,36 @@ Finally, a overview of the future research possibilities in the area of comic an
 
 \modif{TODO}
 
-In this thesis work we have presented three different approaches for comic book image analysis. \ch{chap:intro} has introduced \modif{TODO}%the main idea of structural pattern recognition, graphs as a tool of structural pattern recognition and the problem of symbol spotting.
-
-% \ch{chap:sota} has introduced some useful definitions, concepts of graph matching and a brief state-of-the-art methods are discussed. These were necessary since all our symbol spotting methods are based on graph representation and use graph based methodologies to solve the problem.
+In this thesis work we have presented three different approaches for comic book image analysis. \ch{chap:intro} has summarized the evolution of comic art from its creation to the 21st century with the impact of the Internet, its market place and the growing interest of the investigation this research field.
 
 In \ch{chap:sota}, an overview of the state-of-the-art methods have been presented. Here we have handed the method in their context of document analysis and then highlighted the challenges of comic book document analysis due to their specific design process.
 All the past studies related to comic book image analysis have been reviewed into four different categories for panel, balloon, text, comic character respectively.
 Literature review in each of these categories have been presented along with the advantages, disadvantages in different scenarios.
-Also, state-of-the-art methods for holistic understanding of document images are reviewed and a list of the more advanced real-life application is given.
+Also, state-of-the-art methods for holistic understanding of document images have been reviewed and a list of the more advanced real-life application is given.
 
-We have introduced the first approach to sequential analysis of comic book image content by extracting elements using their relations one after others \ch{chap:sequential}.
-The major contribution in this work is to \modif{TODO}...
-%serialize the planar graphs and form one dimensional graph paths. Graph paths are used to index a given database. 
-The main motivation of this work came from the idea of \modif{TODO}...
-Some are improvement from method from the literature, other first method \modif{TODO}...
+We have introduced the first approach of sequential analysis of comic book image content by extracting elements using their relations one after others in order to guide the retrieval process in \ch{chap:sequential}.
+The major contribution in this work is to go through all the extracted elements for predicting the region of interest of speaking characters.
+The main motivation of this work came from the idea of an intuitive approach for retrieving simple elements in order to facilitate the retrieval process of more complex ones.
+% Some are improvement from method from the literature, other first method \modif{TODO}...
 %graph indexing, which is a popular approach for applications dealing with large number of graphs. We model the structure of a path by off-the-shelf shape descriptor and we have used locality sensitive hashing for indexing those individual paths.
 
-\ch{chap:independent} has presented a independent analysis technique based on \modif{TODO}...
+\ch{chap:independent} has presented a independent analysis technique based on a separation of each extraction process.
 %subgraph matching technique based on product graph and it has been used for spotting symbols on graphical documents.
-The main contribution was the introduction of \modif{TODO}...
-%higher order contextual similarities which are obtained by propagating the pairwise similarities.
-The next contribution of this work was to \modif{TODO}...
+The main contribution was the introduction of a text extraction method independent from balloon location an able to detect out-of-balloon text regions such as illustration, page number, caption and author names.
+The benefit of using a standard OCR system is also stressed.
+The next contributions of this work were balloon contour type classification and comic character spotting based on partial user-defined example.
 % formulate subgraph graph matching as a node, edge selection problem of the product graph. For that we constructed a constrained optimization problem whose objective function was created from the higher order contextual similarities.
 
-In the \ch{chap:knowledge}, we have introduced \modif{TODO}...%near convex region adjacency graph. 
-The main contribution was the introduction of \modif{TODO}...
-%near convex regions and forming a graph representation based on that. 
-There are certain drawbacks of \modif{TODO}...
-%region adjacency graph (RAG), for example, the information that are not bounded in regions can not be represented by RAG. 
-This contribution solves the limitation ???
-
-% \ch{chap:hgr} has presented a hierarchical graph representation of line drawing graphical documents. Certain line drawings often suffer from structural errors or distortions. Hierarchical graph representation is a way to solve those structural errors in hierarchical simplification.
+In the \ch{chap:knowledge}, we have introduced a knowledge-driven analysis system for comic book images.
+The main contribution was the introduction of two models, one for comics and another one for related image processing.
+The two models are used by an inference engine to guide independent image processing and retrieve the contents and interactions in order to provide a higher level of description.
+There are certain limitations of the independent extraction approach presented in \ch{chap:independent} that can be recovered using this models.
+This contribution solves the limitation of error propagation which is implicit to the sequential approach presented in \ch{chap:sequential} while using relations between elements defined by the domain knowledge.
 
 Finally in \ch{chap:experimentations}, we have provided an experimental evaluation of all the proposed methods and some state-of-the-art methods and advantages and disadvantages have been pointed out.
 
-In general, in this thesis we have proposed \modif{TODO}...
+In general, in this thesis we have proposed different contributions inspired from previous work from the literature as for panel, text and regular balloon extraction.
+Other contributions are first studies 
 %several inexact subgraph matching algorithms which intend to solve the problem of inexact subgraph matching in a better approximated way. Different graph representations have been used and the purpose of them was to tolerate the structural noise and distortions and bring stability in the representation. Also a hierarchical graph representation is proposed to simplify/correct the structural errors in step-by-step manner. 
 Detailed experimentations were performed to evaluate each of the methods and for comparison with some state-of-the-art algorithms and for that a first dataset and ground truth have been provided.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  31 AUG 2014 13:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  1 SEP 2014 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3012,11 +3012,7 @@ ns/conclusions.tex
 Chapter 7.
 [119
 
-]
-Underfull \vbox (badness 1052) has occurred while \output is active []
-
- [120])
-(./chapters/Appendix/Pre-processing.tex [121] [122
+] [120]) (./chapters/Appendix/Pre-processing.tex [121] [122
 
 ]
 Appendix A.
@@ -3078,7 +3074,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 209--209
  []
 
 [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149]) [150]
-<template_ULR/backpage.pdf, id=5138, 598.1477pt x 845.90027pt>
+<template_ULR/backpage.pdf, id=5140, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf>
@@ -3089,7 +3085,7 @@ File: template_ULR/backpage.pdf Graphic file (type pdf)
 Package pdftex.def Info: template_ULR/backpage.pdf used on input line 420.
 (pdftex.def)             Requested size: 598.14624pt x 845.89821pt.
 
-<template_ULR/backpage.pdf, id=5141, page=1, 598.1477pt x 845.90027pt>
+<template_ULR/backpage.pdf, id=5143, page=1, 598.1477pt x 845.90027pt>
 File: template_ULR/backpage.pdf Graphic file (type pdf)
 
 <use template_ULR/backpage.pdf, page 1>
@@ -3177,10 +3173,10 @@ c/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (174 pages, 16267364 bytes).
+Output written on main.pdf (174 pages, 16268284 bytes).
 PDF statistics:
- 5406 PDF objects out of 6186 (max. 8388607)
- 3725 compressed objects within 38 object streams
+ 5408 PDF objects out of 6186 (max. 8388607)
+ 3727 compressed objects within 38 object streams
  828 named destinations out of 1000 (max. 500000)
  2093 words of extra memory for PDF output out of 10000 (max. 10000000)
 

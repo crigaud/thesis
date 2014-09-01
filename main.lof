@@ -101,7 +101,7 @@
 \contentsline {figure}{\numberline {6.16}{\ignorespaces Distribution of the number of letter per speech balloon}}{102}{figure.caption.129}
 \contentsline {figure}{\numberline {6.17}{\ignorespaces Validation of the regular balloon confidence value for Method B. \relax }}{102}{figure.caption.130}
 \contentsline {figure}{\numberline {6.18}{\ignorespaces Tail removal for balloon classification}}{103}{figure.caption.131}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Correct classification examples for ``zigzag'' (top) and ``smooth'' classes (bottom).\relax }}{104}{figure.caption.134}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Correct classification examples for ``spiky'' (top) and ``smooth'' classes (bottom).\relax }}{104}{figure.caption.134}
 \contentsline {figure}{\numberline {6.20}{\ignorespaces Wrong classification examples which have been classified as ``smooth'' instead of ``wavy'' in the first row and ``wavy'' instead of ``smooth'' in the second row.\relax }}{105}{figure.caption.135}
 \contentsline {figure}{\numberline {6.21}{\ignorespaces Implicit balloon recovering by closing open panels}}{106}{figure.caption.138}
 \contentsline {figure}{\numberline {6.22}{\ignorespaces Balloon extraction score details at object level for each image of the eBDtheque dataset}}{107}{figure.caption.139}

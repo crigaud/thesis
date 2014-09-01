@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  1 SEP 2014 11:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  1 SEP 2014 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1546,32 +1546,37 @@ l.33
                    \relax 
 l.60 \clearpage
                \thispagestyle{empty} [2])
-(./chapters/0.2-abstract/abstract_french.texpdfTeX warning (ext4): destination 
-with the same identifier (name{page.iii}) has been already used, duplicate igno
-red
+(./chapters/0.2-abstract/abstract_french.tex
+Overfull \hbox (3.97581pt too wide) in paragraph at lines 5--11
+\OT1/cmr/m/n/10 travers de s^^Sequences d'images, sou-vent en com-bi-nai-son av
+ec du textes et des graphiques.
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5 \clearpage
-              \thispagestyle{empty} [3
+l.30 
+      [3
 
 
-])
+]pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.36 \clearpage
+               \thispagestyle{empty} [4])
 (./chapters/0.2-abstract/abstract_spanish.texpdfTeX warning (ext4): destination
- with the same identifier (name{page.iv}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            *{Resumen} [4
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
- been already used, duplicate ignored
+ with the same identifier (name{page.v}) has been already used, duplicate ignor
+ed
 <to be read again> 
                    \relax 
 l.6 \clearpage
-              \thispagestyle{empty} [5])pdfTeX warning (ext4): destination with
- the same identifier (name{page.vi}) has been already used, duplicate ignored
+              \thispagestyle{empty} [5
+
+
+])pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) h
+as been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.373 \tableofcontents
@@ -3139,10 +3144,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
  ) 
 Here is how much of TeX's memory you used:
- 25258 strings out of 493308
- 461293 string characters out of 6137822
- 587698 words of memory out of 5000000
- 27214 multiletter control sequences out of 15000+600000
+ 25262 strings out of 493308
+ 461325 string characters out of 6137822
+ 587696 words of memory out of 5000000
+ 27218 multiletter control sequences out of 15000+600000
  24734 words of font info for 89 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  55i,18n,54p,1411b,1956s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3173,7 +3178,7 @@ c/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (174 pages, 16268284 bytes).
+Output written on main.pdf (174 pages, 16272903 bytes).
 PDF statistics:
  5408 PDF objects out of 6186 (max. 8388607)
  3727 compressed objects within 38 object streams

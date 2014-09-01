@@ -1470,7 +1470,7 @@ Considering the best method for balloon extraction (\modif{???}, the score of th
 \label{sub:balloon_classification}
 We evaluated balloon classification using the pixel-level balloon segmentation from the eBDtheque ground truth and from the best automatic segmentation of regular balloon from Method B.
 The ground truth was composed of only know balloon types, ignoring the class ``other'' which produce a subset of 940 balloons from the 1091 balloons present in the dataset.
-The repartition of the balloon types is 87.96\%, 8.75\% and 3.29\% of type ``smooth'', ``wavy'' and ``zigzag'' respectively.
+The repartition of the balloon types is 87.96\%, 8.75\% and 3.29\% of type ``smooth'', ``wavy'' and ``spiky'' respectively.
 This unbalanced repartition reflects the usual speech balloon types repartition in comics.
 
 For the shape/contour separation part (Section~\ref{sec:contour_detection}) we first cast the original signal $o$ into 360 values and then smooth it to approximate the shape signal $s$.
@@ -1501,7 +1501,7 @@ A validation of parameter $M$ have been performed and its best value was $M=7$.
 %   \cline{2-6}
 %     & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
 %   \cline{2-6}
-%     & Smooth & Wavy & Zigzag & Avg & Global \\
+%     & Smooth & Wavy & spiky & Avg & Global \\
 %   \hline
 %   \multicolumn{1}{ |c| }{$M=10$}& 80.63   & \textbf{70.58} & 58.80 & 70.00 & 75.8 \\
 %   \hline
@@ -1553,7 +1553,7 @@ Note that this process relies on the tail detection performance (Section~\ref{se
   \cline{2-6}
     & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
   \cline{2-6}
-    & Smooth & Wavy & Zigzag & Average & Global \\
+    & Smooth & Wavy & spiky & Average & Global \\
   \hline
   \multicolumn{1}{ |c| }{ $D=(f_1)$ } & 22.51 & 68.75 & 33.33  & 41.53 & 26.91  \\
   \hline
@@ -1579,7 +1579,7 @@ Note that this process relies on the tail detection performance (Section~\ref{se
     \renewcommand{\arraystretch}{1.2}
 
     \centering
-    \caption{Confusion matrix for smooth (S), wavy (W) and zigzag (Z) balloon contour classification results with $D=(f_1, f_2)$.}
+    \caption{Confusion matrix for smooth (S), wavy (W) and spiky (Z) balloon contour classification results with $D=(f_1, f_2)$.}
     \begin{tabular}{cc|c|c|c|c|c|c|}
   \cline{3-8}
    & & \multicolumn{3}{|c|}{Ground truth}  & \multicolumn{3}{|c|}{Ground truth no tail}  \\
@@ -1627,7 +1627,7 @@ Note that this process relies on the tail detection performance (Section~\ref{se
 %     \caption{Example of Gaussian distribution parameters.}
 %     \begin{tabular}{|c|c|c|c|c|c|c|}
 %   \hline
-%     & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{Zigzag}  \\
+%     & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{spiky}  \\
 %   \hline
 %     & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$    \\
 %   \hline
@@ -1637,7 +1637,7 @@ Note that this process relies on the tail detection performance (Section~\ref{se
 %   \hline
 %    %\multicolumn{1}{ |c| }{ Feature 2 } &  8  & 5 & 15 & 6 & 8 & 4 \\
 %   %\cline{2-5}
-%   %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ Zigzag }}   & ? & ? & 12 \\
+%   %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ spiky }}   & ? & ? & 12 \\
 %   %\hline
 %   %\hline
 % %       Proposed multi scale & ???  &???  & ???   & ???       \\
@@ -1655,7 +1655,7 @@ Note that this process relies on the tail detection performance (Section~\ref{se
 
 The different accuracy results Table~\ref{tab:ex:desc_test_balloon_classification} show that the second feature $f_2$ is more discriminant than the first one $f_1$ and their combination does not exceed the second itself.
 Adding the prior knowledge about the testing classes repartition improves the ``smooth'' class only and decrease the two others.
-The confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification} shows good classification results for the ``zigzag'' class even for cases that are quite different in terms of drawing styles (Figure~\ref{fig:good_detection_balloon_classification}) and sources (real and synthetic).
+The confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification} shows good classification results for the ``spiky'' class even for cases that are quite different in terms of drawing styles (Figure~\ref{fig:good_detection_balloon_classification}) and sources (real and synthetic).
 Concerning the ``smooth'' and ``wavy'' classes, some speech balloons are very hard to classify out of context causing confusion (Figure~\ref{fig:bad_detection_balloon_classification}).
 Also, the tail of the balloon creates some noise and the radius average ($\bar{o}$) we use to normalize the descriptor features may not be appropriate for elongated balloons.
 
@@ -1664,7 +1664,7 @@ Also, the tail of the balloon creates some noise and the radius average ($\bar{o
   \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{good_detection.png}
-    \caption{Correct classification examples for ``zigzag'' (top) and ``smooth'' classes (bottom).}
+    \caption{Correct classification examples for ``spiky'' (top) and ``smooth'' classes (bottom).}
     \label{fig:good_detection_balloon_classification}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

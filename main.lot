@@ -12,7 +12,7 @@
 \contentsline {table}{\numberline {6.4}{\ignorespaces Text recognition accuracy $A_{textReco}$ results from automatic text line localisation at an edit distance ($ED$) of 0, 1 and 2.\relax }}{99}{table.caption.124}
 \contentsline {table}{\numberline {6.5}{\ignorespaces Implicit balloon performance evaluation at object and pixel levels using the original form and the proposed (with $E_{text}$) energy functions.\relax }}{101}{table.caption.128}
 \contentsline {table}{\numberline {6.6}{\ignorespaces Classification result accuracy for different descriptor configuration}}{104}{table.caption.132}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Confusion matrix for smooth (S), wavy (W) and zigzag (Z) balloon contour classification results with $D=(f_1, f_2)$.\relax }}{104}{table.caption.133}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Confusion matrix for smooth (S), wavy (W) and spiky (Z) balloon contour classification results with $D=(f_1, f_2)$.\relax }}{104}{table.caption.133}
 \contentsline {table}{\numberline {6.8}{\ignorespaces Balloon localisation result summary.\relax }}{105}{table.caption.137}
 \contentsline {table}{\numberline {6.9}{\ignorespaces Tail tip position ($A_{tailTip}$) and tail direction ($A_{tailDir}$) extraction results from automatic and manual balloon contour extractions.\relax }}{108}{table.caption.141}
 \contentsline {table}{\numberline {6.10}{\ignorespaces Character detection performance\relax }}{112}{table.caption.146}

@@ -71,43 +71,20 @@
 \BOOKMARK [2][-]{subsection.6.2.4}{Tail detection metric}{section.6.2}% 71
 \BOOKMARK [2][-]{subsection.6.2.5}{Semantic links metric}{section.6.2}% 72
 \BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 73
-\BOOKMARK [2][-]{subsection.6.3.1}{Arai's method}{section.6.3}% 74
-\BOOKMARK [2][-]{subsection.6.3.2}{Ho's method}{section.6.3}% 75
-\BOOKMARK [2][-]{subsection.6.3.3}{Method A}{section.6.3}% 76
-\BOOKMARK [2][-]{subsection.6.3.4}{Method B}{section.6.3}% 77
-\BOOKMARK [2][-]{subsection.6.3.5}{Method C}{section.6.3}% 78
-\BOOKMARK [2][-]{subsection.6.3.6}{Comparison and analysis}{section.6.3}% 79
-\BOOKMARK [1][-]{section.6.4}{Text extraction evaluation}{chapter.6}% 80
-\BOOKMARK [2][-]{subsection.6.4.1}{Arai's method}{section.6.4}% 81
-\BOOKMARK [2][-]{subsection.6.4.2}{Method A}{section.6.4}% 82
-\BOOKMARK [2][-]{subsection.6.4.3}{Method B}{section.6.4}% 83
-\BOOKMARK [2][-]{subsection.6.4.4}{Method C}{section.6.4}% 84
-\BOOKMARK [2][-]{subsection.6.4.5}{Comparison and analysis}{section.6.4}% 85
-\BOOKMARK [1][-]{section.6.5}{Text recognition evaluation}{chapter.6}% 86
-\BOOKMARK [1][-]{section.6.6}{Balloon extraction evaluation}{chapter.6}% 87
-\BOOKMARK [2][-]{subsection.6.6.1}{Arai's method}{section.6.6}% 88
-\BOOKMARK [2][-]{subsection.6.6.2}{Ho's method Ho2012}{section.6.6}% 89
-\BOOKMARK [2][-]{subsection.6.6.3}{Method A}{section.6.6}% 90
-\BOOKMARK [2][-]{subsection.6.6.4}{Method B}{section.6.6}% 91
-\BOOKMARK [2][-]{subsection.6.6.5}{Method C}{section.6.6}% 92
-\BOOKMARK [2][-]{subsection.6.6.6}{Balloon classification}{section.6.6}% 93
-\BOOKMARK [2][-]{subsection.6.6.7}{Comparison and analysis}{section.6.6}% 94
-\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 95
-\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 96
-\BOOKMARK [2][-]{subsection.6.8.1}{Method A}{section.6.8}% 97
-\BOOKMARK [2][-]{subsection.6.8.2}{Method B}{section.6.8}% 98
-\BOOKMARK [2][-]{subsection.6.8.3}{Method C}{section.6.8}% 99
-\BOOKMARK [2][-]{subsection.6.8.4}{Comparison and analysis}{section.6.8}% 100
-\BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 101
-\BOOKMARK [2][-]{subsection.6.9.1}{Method C}{section.6.9}% 102
-\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 103
-\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 104
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 105
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 106
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 107
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 108
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 109
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 110
-\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 111
-\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 112
-\BOOKMARK [0][-]{section*.169}{Bibliography}{}% 113
+\BOOKMARK [1][-]{section.6.4}{Text extraction evaluation}{chapter.6}% 74
+\BOOKMARK [1][-]{section.6.5}{Text recognition evaluation}{chapter.6}% 75
+\BOOKMARK [1][-]{section.6.6}{Balloon extraction evaluation}{chapter.6}% 76
+\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 77
+\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 79
+\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 80
+\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 81
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 82
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 83
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 84
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 85
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 86
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 87
+\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 88
+\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 89
+\BOOKMARK [0][-]{section*.192}{Bibliography}{}% 90

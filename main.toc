@@ -45,24 +45,24 @@
 \contentsline {section}{\numberline {3.6}Conclusions}{37}{section.3.6}
 \contentsline {chapter}{\numberline {4}Method B: independent information extraction}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Panel extraction}{39}{section.4.2}
+\contentsline {section}{\numberline {4.2}Panel extraction}{40}{section.4.2}
 \contentsline {section}{\numberline {4.3}Text localisation and recognition}{40}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Introduction}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Introduction}{41}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Bi-level segmentation}{42}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{44}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{45}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Text line generation}{45}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Text recognition}{45}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.5}Text recognition}{46}{subsection.4.3.5}
 \contentsline {section}{\numberline {4.4}Balloon extraction and classification}{47}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Balloon segmentation}{47}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Balloon classification}{49}{subsection.4.4.2}
-\contentsline {subsubsection}{Shape/contour separation}{50}{section*.57}
+\contentsline {subsubsection}{Shape/contour separation}{51}{section*.57}
 \contentsline {subsubsection}{Contour description}{52}{section*.59}
-\contentsline {subsubsection}{Contour classification}{52}{section*.61}
+\contentsline {subsubsection}{Contour classification}{53}{section*.61}
 \contentsline {section}{\numberline {4.5}Comic character spotting}{53}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Colour quantization}{54}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}Input query}{55}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{56}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{56}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{55}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{57}{subsection.4.5.4}
 \contentsline {section}{\numberline {4.6}Conclusions}{60}{section.4.6}
 \contentsline {chapter}{\numberline {5}Method C: knowledge-driven analysis}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{61}{section.5.1}
@@ -118,45 +118,22 @@
 \contentsline {subsection}{\numberline {6.2.4}Tail detection metric}{90}{subsection.6.2.4}
 \contentsline {subsection}{\numberline {6.2.5}Semantic links metric}{91}{subsection.6.2.5}
 \contentsline {section}{\numberline {6.3}Panel extraction evaluation}{91}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Arai's method}{91}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Ho's method}{92}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Method A}{93}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Method B}{93}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Method C}{93}{subsection.6.3.5}
-\contentsline {subsection}{\numberline {6.3.6}Comparison and analysis}{93}{subsection.6.3.6}
 \contentsline {section}{\numberline {6.4}Text extraction evaluation}{95}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Arai's method}{95}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Method A}{96}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Method B}{96}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Method C}{97}{subsection.6.4.4}
-\contentsline {subsection}{\numberline {6.4.5}Comparison and analysis}{97}{subsection.6.4.5}
 \contentsline {section}{\numberline {6.5}Text recognition evaluation}{98}{section.6.5}
 \contentsline {section}{\numberline {6.6}Balloon extraction evaluation}{99}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Arai's method}{99}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Ho's method~\cite {Ho2012}}{100}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Method A}{100}{subsection.6.6.3}
-\contentsline {paragraph}{Regular balloons}{100}{section*.125}
-\contentsline {paragraph}{Implicit balloons}{100}{section*.127}
-\contentsline {subsection}{\numberline {6.6.4}Method B}{101}{subsection.6.6.4}
-\contentsline {subsection}{\numberline {6.6.5}Method C}{102}{subsection.6.6.5}
-\contentsline {subsection}{\numberline {6.6.6}Balloon classification}{102}{subsection.6.6.6}
-\contentsline {subsection}{\numberline {6.6.7}Comparison and analysis}{105}{subsection.6.6.7}
-\contentsline {paragraph}{Balloon localisation}{105}{section*.136}
-\contentsline {paragraph}{Balloon classification analysis}{107}{section*.140}
+\contentsline {paragraph}{Regular balloons}{100}{section*.139}
+\contentsline {paragraph}{Implicit balloons}{100}{section*.141}
+\contentsline {paragraph}{Balloon localisation}{105}{section*.154}
+\contentsline {paragraph}{Balloon classification analysis}{107}{section*.158}
 \contentsline {section}{\numberline {6.7}Tail detection evaluation}{108}{section.6.7}
 \contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{109}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}Method A}{109}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}Method B}{111}{subsection.6.8.2}
-\contentsline {subsection}{\numberline {6.8.3}Method C}{112}{subsection.6.8.3}
-\contentsline {subsection}{\numberline {6.8.4}Comparison and analysis}{113}{subsection.6.8.4}
 \contentsline {section}{\numberline {6.9}Semantic links evaluation}{115}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Method C}{115}{subsection.6.9.1}
 \contentsline {section}{\numberline {6.10}Knowledge-driven analysis evaluation}{115}{section.6.10}
-\contentsline {paragraph}{Process details}{116}{section*.151}
-\contentsline {paragraph}{Low level processing}{117}{section*.152}
-\contentsline {paragraph}{Semantic links}{117}{section*.153}
-\contentsline {paragraph}{General evaluation}{117}{section*.154}
-\contentsline {section}{\numberline {6.11}Conclusions}{117}{section.6.11}
+\contentsline {paragraph}{Process details}{116}{section*.174}
+\contentsline {paragraph}{Low level processing}{117}{section*.175}
+\contentsline {paragraph}{Semantic links}{117}{section*.176}
+\contentsline {paragraph}{General evaluation}{117}{section*.177}
+\contentsline {section}{\numberline {6.11}Conclusions}{118}{section.6.11}
 \contentsline {chapter}{\numberline {7}Conclusions}{119}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{119}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{120}{section.7.2}
@@ -165,4 +142,4 @@
 \contentsline {chapter}{\numberline {C}Dataset}{129}{appendix.C}
 \contentsline {chapter}{\numberline {D}Ground truth}{131}{appendix.D}
 \contentsline {chapter}{\numberline {E}List of Publications}{133}{appendix.E}
-\contentsline {chapter}{Bibliography}{137}{section*.169}
+\contentsline {chapter}{Bibliography}{137}{section*.192}

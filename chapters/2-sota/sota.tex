@@ -3,8 +3,6 @@
 \label{chap:sota}
 \graphicspath{{./chapters/2-sota/figs/}}
 
-% This thesis work has considered symbol spotting problem as an application of subgraph matching. Symbol spotting has experienced a lot of interests among the graphics recognition community. Here the main task starts by querying a given graphic symbol or model object, usually cropped from a bigger document. The main aim is to search the model object in a target document or set of target documents. In this dissertation we will alternatively name the model object to be queried as \emph{model symbol} or \emph{query symbol} or \emph{pattern} and the corresponding graph representing them as \emph{query graph} or \emph{model graph} or \emph{pattern graph}. And the document or the set of documents where the user intends to find the model symbol as \emph{input document} or \emph{target document} and the corresponding graph as \emph{target graph} or \emph{input graph}. Most of the time the user is interested in getting a ranked list of retrieved zones supposed to contain the queried symbol depending on the similarity or dissimilarity measure. This Chapter contains a review of the state-of-the-art of symbol spotting methods. The major existing research can be classified into five broad families as in~\cite{RusinolThesis2009}, which are listed in Table~\ref{table:sota-ss:relworks}. We review those families as follows:
-
 % \modif{JC:
 % Je pense qu'avant t'attaquer avec l'état  de l'art sur les BD, il serait intéressant de faire un état de l'art général sur les méthodes de reconnaissance graphique,  voire les documents non structuré et fond complexes comme évoqué au chp 1.
 % De même puisque tu en parles par la suite des méthodes de binarisation (globale, locale, binaire), celles sur les composantes connexes, contour actifs, séparation text/graphique ou clustering?...
@@ -440,7 +438,7 @@ This is one of the reasons that retains comics analysis to progress as fast as o
 
 In the next chapter, we are going to present a sequential content extraction approach that profits from the relations between elements to guide the retrieval process.
 We first process panel and text region extraction followed by speech balloon and tail segmentation.
-Then, speech balloon tail indications are used to compute a comic character region of interest according to the spatial organisation of previously extracted elements in the panels.
+Then, speech balloon tail indications are used to compute a comic character region of interest according to the spatial organisation of previously extracted elements in each panel.
 
 
 

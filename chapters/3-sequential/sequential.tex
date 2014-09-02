@@ -6,8 +6,8 @@
 % Abstract -------------------------------------------------------------------------------------------------------------------------------------------
 This chapter presents a sequential information extraction approach for comic book content retrieval.
 The sequence of extraction starts from elementary elements such as panel and text that initiate further processing.
-Once the text regions are discovered, we use them as seeds to search for balloons and then analysis the balloon contours to detect the tails.
-From the tail, comic character regions are computed according to previously extracted element positions.
+Once the text regions are discovered, we use them as seeds to search for balloons and then we analyse the balloon contours to detect the tails.
+From the tail position and location, comic character regions are computed according to previously extracted element positions.
 
 % -------------------------------------------------------------
 
@@ -18,10 +18,10 @@ In comics art, the page structure depends on the author style, this is why so ma
 It is unavoidable because it gives an unique graphical identity to the comics and contributes to attract the curiosity of the readers.
 Despite the differences of style, the comics drawings follow ``general use'' characteristic intrinsically to the design process~\cite{mccloud2006Making}.
 % Relations between elements and inking process are particularities that we we rely on when processing such images. surrounded by a black stroke.
-For instance, the inking process requires to magnify the main strokes that defines regions which are then filled with flat colours~\ref{sec:document_image_analysis}.
-We propose to rely on this main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling approach.
+For instance, the inking process requires to magnify the main strokes that defines regions which are then filled with flat colours (Section~\ref{sec:document_image_analysis}).
+We propose to rely on these main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling approach.
 Then, the analysis of speech balloon contour allows to detect the tail precisely and its direction is used to compute the regions of interest where comic characters are supposed to be.
-In this section, all the processes are related to each other, for instance, the text extraction output is the input of the balloon extraction process.
+In this section, all the processes are related to each other, for instance, the text extraction output is the input of the balloon extraction process and so on.
 
 
 % section introduction (end)
@@ -810,10 +810,10 @@ The panel's corner $P_i$ is chosen between two opposite corners in order to alwa
 % Conclusion --------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:se:conclusion}
-In this section we have presented how to understand comics image content by following the relations between elements, defined by knowledge domain.
+In this section we have presented how to benefit from simple element to retrieve more complex ones in a comics image by following the relations between elements.
 This approach is similar to the reader's reading behaviour opening a new comic book for the first time: first looking for traditional elements such as the panels, text and speech balloons and then, reading their content and retrieving the links with the comic characters and other graphics in the panel.
-Despite the intuitiveness of this approach, the main drawback of this sequential approach is the dependency of the processes which propagates errors.
-The experiments, presented in \ch{chap:experimentations}, evaluates the processes proposed here.
+Despite the intuitiveness of this approach, the main drawback of this sequential approach is the dependency of the processes which propagates detection errors.
+The experiments, presented in \ch{chap:experimentations}, evaluate the processes proposed here.
 
 % In this section we have presented and evaluated two methods for panel extraction based on connected-components labelling.
 % The experiments shows that both approaches are really efficient for comics using gutter where there is no drawing between panels.

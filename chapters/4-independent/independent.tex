@@ -9,14 +9,21 @@
 
 In this chapter we propose an independent extraction of each element contained by comic book images.
 This content retrieval approach tries to fill the weaknesses of the sequential approach presented in the previous chapter.
-New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order as they are completely independent for each other.
-New domain knowledge are embedded in the low level processing to process each image in and autonomous way with a similar performance.
+New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order or in parallel as they are completely independent from each other.
+More domain knowledge are embedded in the low level processing in order to process each image in and autonomous way with a similar performance.
 
 
 \section{Introduction}
 \label{sec:in:intro}
 
-\modif{TODO or REMOVE}
+Image content retrieval methods are useful for the community and the society when they can easily be applied on various type of images sharing similar properties independently from other pre or post processing.
+Another important aspect is to propose methods with a minimum number of parameters or at least that do not make the method too specific but generic in order to be usable for a maximum of applications.
+The first approach presented in \ch{chap:sequential} is very specific to images from comic books because each extraction of element require one or several pre-processing (other element extractions).
+In this chapter we present several contributions to extract elements independently from each other.
+Each contribution is then easily reusable for other application and comparable.
+The independence between the processing is also useful in a content of fully automated system to allow local optimisation without influencing the whole sequence and output.
+Independent panel, text and balloon extraction methods are proposed, additionally, text recognition and balloon classification complete the amount of information that are retrieved from the image content, towards a semantic description.
+The problem of comic character retrieval is simplified here as a character spotting giving an example as query for the reason presented Section~\ref{sec:intro:objectives_contributions}.
 
 \section{Panel extraction}
 \label{sec:in:panel_extraction}

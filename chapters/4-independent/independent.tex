@@ -168,16 +168,19 @@ The luminance channel is particularly appropriate for bright and dark region sep
 
 %Even if looking at the pixel from the luminance point of view is more appropriate for our purpose, 
 Both colour layer combination and separation are experimented Section~\ref{sub:ex:text_extraction_evaluation_method_b}.
-From the grey-scale image, we still need to determine the threshold value that will best divide the grey value distribution into two clusters (Figure~\ref{fig:in:greyscale_text_pixel_distribution}).
+From the grey-scale image, we determine the threshold value that will best divide the grey value distribution into two clusters.
+The ideal would be a cluster containing pixels from text regions (foreground) and another one with the rest of the content (background).
+In practise, the foreground cluster often contains text plus other similar grey value regions and the second one other pixels with a different grey value.
+% one containing pixel (Figure~\ref{fig:in:greyscale_text_pixel_distribution}).
 
 
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
-	  \centering
-		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{threshold_selection_methods.jpg}
-		\caption[Grey scale image pixel value distribution for text and non text region]{Grey scale image pixel value distribution and text repartition. The percentage of pixel belonging to text regions are in green, others in red \modif{TODO: update or delete figure}.}
-		\label{fig:in:greyscale_text_pixel_distribution}
-	\end{figure}
+	% \begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
+	%   \centering
+	% 	\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{threshold_selection_methods.jpg}
+	% 	\caption[Grey scale image pixel value distribution for text and non text region]{Grey scale image pixel value distribution and text repartition. The percentage of pixel belonging to text regions are in green, others in red \modif{TODO: update or delete figure}.}
+	% 	\label{fig:in:greyscale_text_pixel_distribution}
+	% \end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Fixing a threshold value like Arai's method~\cite{Arai11} works only for few comics type with a same text background intensity (Figure~\ref{fig:in:threshold_selection_methods}).
@@ -192,7 +195,7 @@ In case of such local degradation (e.g. holes, crossed text, partial erasure, hi
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.95\textwidth]{threshold_selection.jpg}
-		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation of the grey-scale image with a fixed threshold at 250 (as Arai~\cite{Arai11}) and fourth row shows the corresponding results using the automatic Otsu's threshold selection method.}
+		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation of the grey-scale image with a fixed threshold at 250 (as Arai~\cite{Arai11}) and the fourth row shows the corresponding results using the automatic Otsu's threshold selection method.}
 		\label{fig:in:threshold_selection_methods}
 	\end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,8 +311,9 @@ From all the components extracted by the CC algorithm, we select only the ones c
 
 % \begin{itemize}
 
-We compare the standard deviation of the grey-levels of the luminance layer of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a high/low local contrast CC separation, similarly to~\cite{Li2013Unsupervised} using the Mahalanobis distance~\cite{mahalanobis1936generalized,de2000mahalanobis} $d_m$ \modif{TODO: add equation}.
-We assume a Gaussian distribution of the grey level pixels but other distribution are under study.
+We compare the standard deviation of the pixel grey level distribution of each CC bounding boxes (Figure~\ref{fig:in:std_dev}) with the contrast ratio of the page to make a low/high local contrast CC separation, similarly to~\cite{Li2013Unsupervised} using the Mahalanobis distance.
+Mahalanobis distance measures how many standard deviation away a point is from the mean of the distribution~\cite{mahalanobis1936generalized,de2000mahalanobis}.
+We call this distance $d_m$ and assume a Gaussian distribution of the grey level pixels but other distribution are under study.
 The contrast ratio of the page is the absolute difference between the minimum and the maximum grey-levels found on the page.
 % In order to avoid artefacts pixel values, we apply a median filtering as preprocessing.
 %The higher the standard deviation is, the higher the probably of being a letter.
@@ -662,21 +666,24 @@ The first step is to choose a proper colour palette and the second step is to re
 % \modif{TODO: Il faut donner les détails de la méthode que tu utilises sauf si tu l'as mise dans l'état de l'art au chapitre 2 (faire lien).
 %Describe method and propose L0-smoothing ++ as promising alternative but the chosen method is simple, faster and good enough for our purpose. RGB colour space?}
 
-Before quantizing the image colours, we smooth the image in order to reduce the impact of printed dithering effects that sometimes appear during the printing and scanning process and obtain flat colours.
+Before quantizing the image colours, we smooth the image in order to reduce the impact of printed dithering effects that sometimes appear during the printing and scanning process, in order to obtain flat colours.
 We use a state of the art method for image smoothing that shown very good results for cartoonification and image compression denoising~\cite{l0smoothing2011}.
 An alternative can be used for halftoned colour print scanned at high resolution and dithering~\cite{Kopf2012DigitalReconstruction} (Figure~\ref{fig:in:smoothing_quantization}).
 
-The colour palette $P_c$ is computed from the $N$ most frequent colours in the album and then each pixel is changed by its most similar colour from the palette to produce the quantized image.
+% The colour palette $P_c$ is computed from the $N$ most frequent colours in the album and then each pixel is changed by its most similar colour from the palette to produce the quantized image.
+We use K-means clustering method for colour quantization into $N$ colours in order to compute a palette of $N$ colours representative of the image content.
+The number of colour/cluster can vary according to the type of image (e.g. flats, realistic, watercolour), we fixed $N=256$ because comics are generally colourful drawings that contain a limited number of colour, $N=64$ or $N=32$ can also be used in most of the cases (Figure~\ref{fig:in:smoothing_quantization}).
+Then we create a quantized image where each pixel colour corresponds to the colour of the closest cluster centre.
+The selection of the closest centre is performed by comparing the original colour of the pixel with the three channels (RGB) of each cluster centre.
+This process should be applied to the full album in order to insure that the colours will be identical from one page to another.
 This limited amount of colours allows to describe and retrieve the object with only few representative colours.
-
-\modif{TODO: use K-mean clustering for colour quantization (palette of 256? colours because comics are colourful drawings that contain a limited number of colour) and then replace each pixel by the colour of the closest cluster centre using by combining the distance between the three channels (RGB). This process can by applied to the page or the full album in order to insure that the colours will be identical from one page to another.}
 
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
     \centering
-    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{figure_here.png}
-    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction (3 columns, original, l0-smoothed, corresponding 256 palette).}
+    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{smoothing_quatization.png}
+    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction. From left to right columns: original image, smoothing~\cite{l0smoothing2011} and k-means clustering ($N=32$).}
     \label{fig:in:smoothing_quantization}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -811,7 +818,7 @@ Each value of $L_{1c}$ and $L_{2c}$ are normalized as a percentage between 0 and
  \begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
  	 \centering
  	\includegraphics[width=0.9\textwidth]{description_sequence.png}
- 	\caption[Comic character query description]{The left part represents a query example after the colour reduction process and its original image. Top-right part shows the colour histogram of the 6 first colours with the highest number of pixel in the query as a percentage from the total number of pixel in the query ($L_1$). Middle-right figure represents the corresponding discriminability level for each colour according the other pixel in the page. Bottom-right figure represents the corresponding query descriptor of $N=3$ colours.\modif{TODO: update with a smoothed query region}}
+ 	\caption[Comic character query description]{The left part represents a query example after the colour reduction process and its original image. Top-right part shows the colour histogram of the 6 first colours with the highest number of pixel in the query as a percentage from the total number of pixel in the query ($L_1$). Middle-right figure represents the corresponding discriminability level for each colour according the other pixel in the page. Bottom-right figure represents the corresponding query descriptor of $N=3$ colours.}
  	\label{fig:in:dominant_colour_hist_desc}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

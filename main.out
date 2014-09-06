@@ -45,46 +45,53 @@
 \BOOKMARK [1][-]{section.4.6}{Conclusions}{chapter.4}% 45
 \BOOKMARK [0][-]{chapter.5}{Method C: knowledge-driven analysis}{}% 46
 \BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.2}{Expert system}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.3}{Knowledge representation}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.4}{Processing sequence}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.5}{Presentation of the model}{chapter.5}% 51
-\BOOKMARK [2][-]{subsection.5.5.1}{Image model}{section.5.5}% 52
-\BOOKMARK [2][-]{subsection.5.5.2}{Comics model}{section.5.5}% 53
-\BOOKMARK [2][-]{subsection.5.5.3}{Model interactions}{section.5.5}% 54
-\BOOKMARK [1][-]{section.5.6}{Interactions between high and low level processing}{chapter.5}% 55
-\BOOKMARK [2][-]{subsection.5.6.1}{Validation of the extractions}{section.5.6}% 56
-\BOOKMARK [2][-]{subsection.5.6.2}{Inferences from the low level information}{section.5.6}% 57
-\BOOKMARK [2][-]{subsection.5.6.3}{Hypothesis}{section.5.6}% 58
-\BOOKMARK [1][-]{section.5.7}{Conclusions}{chapter.5}% 59
-\BOOKMARK [0][-]{chapter.6}{Experimentations}{}% 60
-\BOOKMARK [1][-]{section.6.1}{Dataset and ground truth construction}{chapter.6}% 61
-\BOOKMARK [2][-]{subsection.6.1.1}{Dataset description}{section.6.1}% 62
-\BOOKMARK [2][-]{subsection.6.1.2}{Terms of use}{section.6.1}% 63
-\BOOKMARK [2][-]{subsection.6.1.3}{Ground truth construction}{section.6.1}% 64
-\BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 65
-\BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 66
-\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation metric}{section.6.2}% 68
-\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation metric}{section.6.2}% 69
-\BOOKMARK [2][-]{subsection.6.2.3}{Text recognition metric}{section.6.2}% 70
-\BOOKMARK [2][-]{subsection.6.2.4}{Tail detection metric}{section.6.2}% 71
-\BOOKMARK [2][-]{subsection.6.2.5}{Semantic links metric}{section.6.2}% 72
-\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 73
-\BOOKMARK [1][-]{section.6.4}{Text extraction evaluation}{chapter.6}% 74
-\BOOKMARK [1][-]{section.6.5}{Text recognition evaluation}{chapter.6}% 75
-\BOOKMARK [1][-]{section.6.6}{Balloon extraction evaluation}{chapter.6}% 76
-\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 77
-\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 78
-\BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 79
-\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 80
-\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 81
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 82
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 83
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 84
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 85
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 86
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 87
-\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 88
-\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 89
-\BOOKMARK [0][-]{section*.191}{Bibliography}{}% 90
+\BOOKMARK [1][-]{section.5.2}{Proposed models}{chapter.5}% 48
+\BOOKMARK [2][-]{subsection.5.2.1}{Document image processing domain}{section.5.2}% 49
+\BOOKMARK [2][-]{subsection.5.2.2}{Comics domain}{section.5.2}% 50
+\BOOKMARK [2][-]{subsection.5.2.3}{Model interactions}{section.5.2}% 51
+\BOOKMARK [1][-]{section.5.3}{Expert system for contextual analysis}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.3.1}{Interactions between low and high level processing}{section.5.3}% 53
+\BOOKMARK [2][-]{subsection.5.3.2}{Constrains for the low level extractions}{section.5.3}% 54
+\BOOKMARK [1][-]{section.5.4}{Processing sequence \(red6.3 Clement\)}{chapter.5}% 55
+\BOOKMARK [2][-]{subsection.5.4.1}{Simple element extraction}{section.5.4}% 56
+\BOOKMARK [2][-]{subsection.5.4.2}{Complex element extraction}{section.5.4}% 57
+\BOOKMARK [1][-]{section.5.5}{Presentation of the models}{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.5.1}{Image model}{section.5.5}% 59
+\BOOKMARK [2][-]{subsection.5.5.2}{Comics model}{section.5.5}% 60
+\BOOKMARK [1][-]{section.5.6}{Interactions between high and low level processing}{chapter.5}% 61
+\BOOKMARK [2][-]{subsection.5.6.1}{Validation of the extractions}{section.5.6}% 62
+\BOOKMARK [2][-]{subsection.5.6.2}{Inferences from the low level information}{section.5.6}% 63
+\BOOKMARK [1][-]{section.5.7}{Conclusions}{chapter.5}% 64
+\BOOKMARK [0][-]{chapter.6}{Experimentations}{}% 65
+\BOOKMARK [1][-]{section.6.1}{Dataset and ground truth construction}{chapter.6}% 66
+\BOOKMARK [2][-]{subsection.6.1.1}{Dataset description}{section.6.1}% 67
+\BOOKMARK [2][-]{subsection.6.1.2}{Terms of use}{section.6.1}% 68
+\BOOKMARK [2][-]{subsection.6.1.3}{Ground truth construction}{section.6.1}% 69
+\BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 70
+\BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 71
+\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 72
+\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation metric}{section.6.2}% 73
+\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation metric}{section.6.2}% 74
+\BOOKMARK [2][-]{subsection.6.2.3}{Text recognition metric}{section.6.2}% 75
+\BOOKMARK [2][-]{subsection.6.2.4}{Tail detection metric}{section.6.2}% 76
+\BOOKMARK [2][-]{subsection.6.2.5}{Semantic links metric}{section.6.2}% 77
+\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.4}{Text extraction evaluation}{chapter.6}% 79
+\BOOKMARK [1][-]{section.6.5}{Text recognition evaluation}{chapter.6}% 80
+\BOOKMARK [1][-]{section.6.6}{Balloon extraction evaluation}{chapter.6}% 81
+\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 82
+\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 83
+\BOOKMARK [1][-]{section.6.9}{Semantic links evaluation}{chapter.6}% 84
+\BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis evaluation}{chapter.6}% 85
+\BOOKMARK [2][-]{subsection.6.10.1}{Model evaluation}{section.6.10}% 86
+\BOOKMARK [2][-]{subsection.6.10.2}{Framework evaluation}{section.6.10}% 87
+\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 88
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 89
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 91
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 92
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 93
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 94
+\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 95
+\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 96
+\BOOKMARK [0][-]{section*.200}{Bibliography}{}% 97

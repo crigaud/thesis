@@ -2834,9 +2834,34 @@ In the same way, of the 829 \emph{isSaidBy} relations, that link speech balloons
 \section{Knowledge-driven analysis evaluation} % (fold) %IJDAR
 \label{sub:ex:knowledge_driven_analysis_evaluation}
 
+\modif{TODO}
+
+
+\subsection{Model evaluation} % (fold)
+\label{sub:model_evaluation}
+
+% subsection model_evaluation (end)
+Considering the lack of accurate numbers on the overlapping ratio of comic book' elements in the literature, we estimated statistically what this \emph{significant proportion} would be using the eBDtheque dataset~\cite{Guerin2013}.
+%That proportion depends on the nature of the object as the rules of positioning may vary from a type of element to another.
+%We introduce four thresholds that respectively stand for these values for panels, balloons, text lines and characters.
+%They have been fixed empirically by monitoring the compliance of our reference dataset to the model, depending on these thresholds.
+Figure~\ref{fig:kn:gtfitting} shows the percentage of panels, balloons, text lines and characters that fit the enumerated constraints, as a function of their covered area.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[width=0.8\textwidth]{GTFitting.png}
+  \caption[Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model]{Percentage of panels, balloons, text lines and characters from the eBDtheque dataset~\ref{sec:dataset_and_ground_truth_construction} that fit the definition given in \ref{sec:kn:constrains_low_level_extraction} according to the area proportion that need to be covered.}
+  \label{fig:kn:gtfitting}
+ \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Considering ideal proportion covered for each type of element, we obtained the following overall scores: 99.6\% of the panels, 87.4\% of the balloons, 81.6\% of the text lines and 94.9\% of the characters are in accordance with the assumed constraints in the eBDtheque dataset.
+%Table~\ref{tab:related} shows the amount of panels, balloons and text lines from the the eBDtheque dataset that fit these constraints, depending on $T_r$.
+%
 
 %-------------------------------------------------------------------------
-% \subsection{Framework evaluation}
+\subsection{Framework evaluation}
 We evaluated our framework during the two iterations of the process loop introduced in Chapter~\ref{chap:knowledge} and particularly at the beginning (Step 1: hypothesis) and at the end (Step 3: inference) of each iteration.
 Note that using this framework some processes ($C$, $STSB$, $SBCS$) were related to previous processes which propagated errors and reduced their performance compared to their separated evaluation.
 % in Section~\ref{sub:ex:independent_information_extraction_evaluation}.

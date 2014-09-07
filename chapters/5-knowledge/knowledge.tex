@@ -3,27 +3,21 @@
 \label{chap:knowledge}
 \graphicspath{{./chapters/5-knowledge/figs/}}
 
-Document image analysis is an active field of research which can attain a complete understanding of the semantics of a given document.
-One example of the document understanding process is enabling a computer to understand a comic strip story.
-In this chapter we propose a knowledge-driven system that can interact with bottom-up and top-down information to progressively understand the content of a document.
-We also model the comic book's and the image processing domains knowledge for information consistency analysis.
+In this chapter we address the problem of understanding comics by automatically improving the consistency of the extracted elements according to the domain knowledge and by inferring new information and launching further processing iteratively.
+Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
+Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and their semantic relations
+
+%We also model the comic book's and the image processing domains knowledge and use an inference engine for information consistency analysis.
 
 %----------------------------------------------
 % Introduction
 \section{Introduction}
 \label{sec:kn:introduction}
 
-\modif{
-  Nous introduisons dans ce chapitre les ontologies développées pour l'analyse automatique de bandes dessinées.
-Nous progressons en plusieurs étapes.
-Tout d'abord, nous présentons une première ontologie formalisant les notions relatives au traitement d'images, le type de données, les entrées, les sorties et  l'évaluation des résultats.
-Dans un deuxième temps, nous déroulons le processus de conceptualisation du domaine de la bande dessinée, pensée pour être utilisée dans un contexte d'analyse d'images.
-Enfin, nous expliquons comment ces ontologies communiquent l'une avec l'autre, afin de pouvoir être utilisées conjointement.
-}
 
-In this chapter we address the problem of understanding comics by automatically improving the consistency of the extracted elements according to the domain knowledge and by inferring new information and launching further processing iteratively.
-Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
-Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and their semantic relations (Figure~\ref{fig:kn:intro_illustration}).
+Document image analysis is an active field of research which can attain a complete understanding of the semantics of a given document.
+One example of the document understanding process is enabling a computer to understand a comic strip story.
+In this chapter we propose a knowledge-driven system that can interact with bottom-up and top-down information to progressively understand the content of a document at the level of semantic (Figure~\ref{fig:kn:intro_illustration}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
@@ -37,11 +31,11 @@ Low level and high level information is used in a complementary and unsupervised
 
 The proposed framework is based on interactions between low and high level processing in order to reduce the challenging semantic gap.
 %Here, the different level of information are given by an image processing and an expert system respectively. 
-We call each image processing algorithm an ``extractor'' of panels, balloons (or bubbles), tails and comic characters (protagonists) according to the type of region they are designed for.
+\modif{We call each image processing algorithm an ``extractor'' of panels, balloons (or bubbles), tails and comic characters (protagonists) according to the type of region they are designed for.
 Extractors provide a set of regions that feeds a knowledge base.
 %in the different extraction processes such as panel and speech balloon improvements and validation (e.g. panel, text, speech balloon) and their combination to guide other feature extractions (e.g. person object).
 The knowledge base is associated with rules that form an ontology.
-The main difficulty is to extract but also to model the diversity of styles, format, definition and the differences between design and printing techniques (Figure~\ref{fig:kn:comics_diversity}).
+The main difficulty is to extract but also to model the diversity of styles, format, definition and the differences between design and printing techniques (Figure~\ref{fig:kn:comics_diversity}).}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
@@ -53,60 +47,78 @@ The main difficulty is to extract but also to model the diversity of styles, for
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-An expert system uses the ontology to assert the relations between regions and the corresponding inference engine to deduct new information in order to perform further image processing (e.g. hypotheses of the regions of interest for the localisation of comic characters or speech balloons).
+\modif{An expert system uses the ontology to assert the relations between regions and the corresponding inference engine to deduct new information in order to perform further image processing (e.g. hypotheses of the regions of interest for the localisation of comic characters or speech balloons).
 Note that in the rest of the chapter ``character'' is used in the sense of actor or protagonist of the comics, not as a piece of text.
-This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining applied to comic book contents~\cite{phdthesisGuerin14}.
+This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining applied to comic book contents. All the details about the knowledge models, inference engine and the interactions between the elements can be found in his thesis~\cite{phdthesisGuerin14}.}
 
 %--------------------------------------------------
 \section{Proposed models} % (fold)
 \label{sec:proposed_models}
-\subsection{Document image processing domain} % (fold)
-\label{sub:document_image_processing_domain}
 
-\paragraph{Image and regions} % (fold)
-\label{par:image}
-Nous avons développé dans un premier temps un modèle formalisant les notions primitives du traitement d'images.
-Ce modèle se veut volontairement générique en n'intégrant aucun concept relatif à la bande dessinée afin de pouvoir être exploité dans d'autres domaines relatifs à l'analyse de documents.
-Il sert de support à la structuration des données issues d'algorithmes de traitement d'images en vue de leur enrichissement sémantique ultérieur.
-Les données produites par de tels algorithmes se réduisent généralement à des données spatiales, des lignes, des régions, auxquelles nous ferons indifféremment référence sous les notions de \textit{régions d'intérêt} ou \textit{ROI} (pour Region Of Interest) dans la suite de ce document.
-Elle sont définies par leurs coordonnées cartésiennes dans le repère orthonormé de l'image desquelles elles sont extraites. En partant de cette vision à gros grains de ce qu'est le traitement d'image, nous définisson les deux premiers concepts de notre modèle : \concept{Image} et \concept{ROI}.\\
+In this section we introduce the ontologies developed for automatic analysis of comics.
+First, we present a first ontology formalising the concepts related to image processing, data type, the inputs and outputs.
+Secondly, we conceptualise the field of comic books oriented to digital image analysis.
+Finally, we explain how these ontologies communicate with each other, so they can be used together.
 
-Le concept d'\concept{Image} modélise la notion d'image en tant qu'objet numérique, en tant que matière première du système de traitement d'images.
-C'est le concept le plus général à partir duquel seront dérivés les autres concepts de notre modèle.
-Un algorithme de traitement d'images fonctionne en manipulant directement les pixels de l'image, ses composants élémentaires.
-Il peut les analyser indépendamment les uns des autres ou bien les regrouper par ensembles mais au final, la valeur, l'intensité de chaque pixel a son importance dans le processus d'analyse et peut avoir des conséquences sur les résultats de sortie.
-Or, pour deux images d'apparence similaire aux yeux d'un observateur humain, la valeur individuelle de chacun de leurs pixels peut grandement varier d'une image à l'autre.
-Elles peuvent avoir une définition différente, c'est à dire des dimensions (mesurées en pixels) différentes.
-Dans le cas d'images numérisées, si les documents d'origine étaient de même taille, cette différence de définition est la conséquence d'une différence de résolution de numérisation.
-La résolution d'une image indique le nombre de pixels utilisés pour discrétiser un pouce de l'espace.
-Plus la résolution est élevée, plus l'image est nette.
-De plus, l'encodage de l'information visuelle au sein de chaque pixel varie également en fonction du format d'image utilisé et du degré de compression avec ou sans pertes appliqué.
-Il est important d'intégrer au modèle ces informations à propos de chaque image car elles sont le contexte de travail dans lequel se place l'outil d'analyse.
-Elles conditionnent et permettent d'interpréter et de comprendre la qualité des résultats produits.
+\subsection{Image processing domain} % (fold)
+\label{sub:kn:image_processing_domain}
 
-
-Le concept \concept{ROI} est un méronyme du concept \concept{Image}, c'est à dire qu'une région d'intérêt est une portion d'image, qu'elle fait partie d'une image.
-Ce concept formalise la notion de région d'intérêt telle qu'elle est perçue par l'analyste d'images, c'est à dire une surface finie incluse dans le plan de l'image, composée de pixels connexes possédant des caractéristiques visuelles correspondant à une certaine classe d'objets visuels recherchés.
-Le fait qu'une région d'intérêt soit une surface en deux dimensions, finie et fermée, nous permet de la représenter sous la forme d'un polygone.\\
-
-\modif{TODO: English version}
-The image model is mostly composed of the concepts of \textit{Image}, \textit{Region of interest (ROI)} and \textit{Extractor}.
-It is based on the fact that the output of image analysis algorithms usually corresponds to spatial regions within the image context.
-A ROI is necessarily extracted from one and only one image, and by one and only one extractor.
-Therefore, the ROI concept is linked to the \textit{Image} and \textit{Extractor} concepts respectively with functional properties \textit{hasImage} and \textit{hasExtractor}.
-%Their coordinates are stored in the OpenGIS Well-Know Text (WKT) format \cite{OpenGISConsortiumInc.2011}.
-
-Algorithms may have specific characteristics so they don't produce the same set of regions as the result of the analysis of an image.
-Extractors are also usually designed to extract one kind of elements (e.g. panels, balloons and text).
-The purpose of each algorithm is given through the data property \textit{roiType}.
+We initially developed a model formalizing the primitive notions of image processing.
+This model is deliberately not including any generic concept for comics in order to be used in other areas related to document analysis systems.
+It provides support for structuring data from image processing algorithms for subsequent semantic enrichment.
+The data produced by such algorithms are generally limited to spatial data, lines, areas, which we will reference under the unique term of \textit{regions of interest} or \textit{ROI} (Region Of Interest) later in this document.
+They are defined by their Cartesian coordinates in the orthonormal image from which they are extracted.
+From this coarse analysis, we define the first two concepts of our model: \concept{Image} and \concept{ROI}.
+Then, a third concept called \concept{Extractor} is create to represent the low level algorithms that are getting the ROI from the image pixels.
 Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts altogether.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]
    \centering
   \includegraphics[width=0.5\textwidth]{model_image.pdf}
   \caption[A representation of the image model involved in the expert system]{A representation of the image model involved in the expert system. Concepts are represented by the oval-shaped items, the arrows are the object properties linking them to each other. The dashed rectangles contain the data properties of the concepts they are attached to.}
   \label{fig:kn:model_image}
  \end{figure}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\paragraph{Image concept} % (fold)
+\label{par:image_concept}
+
+The concept of \concept{Image} models the notion of image as a digital object, the input material for image processing systems.
+This is the most general concept from which are derived the other concepts of our ontology.
+An image processing algorithm works by directly manipulating the pixels of the image, its elementary components.
+It can analyse pixels independently of grouped in sets but in the end, the value and the intensity of each pixel have their importance in the analysis process, and can affect the output results.
+Note that for two visually similar images, the individual value of each pixels can vary greatly from one image to another (e.g. high definition, quantization, dithering).
+% They may have a different definition (i.e. the size (measured in pixels) different.
+% If scanned, if the source documents were the same size images, the difference of definition is the consequence of a difference in scanning resolution.
+% The resolution of an image indicates the number of pixels used to discretize an inch of space.
+% The higher the resolution, the larger the image is sharp.
+Furthermore, the encoding of the visual information in each pixel also varies depending on the image format and the degree of compression applied.
+It is important to integrate these information into the model as they are their define the context of the processing tools.
+They greatly help the understanding of the result quality.
+
+\paragraph{Region Of Interest concept} % (fold)
+\label{par:region_concept}
+
+% paragraph region_concept (end)
+The concept \concept{ROI} derives from the concept \concept{Image} (a region of interest is part of an image).
+This concept formalises the notion of region of interest as perceived by the image analysis.
+It is composed of connected pixels with visual features corresponding to a certain class of desired visual objects.
+The fact that a region of interest is a two-dimensional surface, allows us to represent ROIs as polygons.
+
+% \modif{
+% The image model is mostly composed of the concepts of \textit{Image}, \textit{Region of interest (ROI)} and \textit{Extractor}.
+% It is based on the fact that the output of image analysis algorithms usually corresponds to spatial regions within the image context.
+% A ROI is necessarily extracted from one and only one image, and by one and only one extractor.
+% Therefore, the ROI concept is linked to the \textit{Image} and \textit{Extractor} concepts respectively with functional properties \textit{hasImage} and \textit{hasExtractor}.
+% %Their coordinates are stored in the OpenGIS Well-Know Text (WKT) format \cite{OpenGISConsortiumInc.2011}.
+
+% Algorithms may have specific characteristics so they don't produce the same set of regions as the result of the analysis of an image.
+% Extractors are also usually designed to extract one kind of elements (e.g. panels, balloons and text).
+% The purpose of each algorithm is given through the data property \textit{roiType}.
+% Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts altogether.
+% }
 
 %Moreover, they can be automatic but they also can be manual, if we consider a manual ground truth as a kind of extractor.
 %The concept of extractor is extended in two subsumed concepts, \textit{Algorithm} and \textit{GroundTruth}.
@@ -114,252 +126,239 @@ Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts 
 
 % paragraph image (end)
 
-\paragraph{Region extractors} % (fold)
-\label{par:region_extractor}
-Le traitement d'images, et particulièrement la reconnaissance de formes, est une discipline complexe.
-L'algorithme générique permettant d'identifier n'importe quel type de forme, n'importe quel objet dans une image, qu'elle représente une scène naturelle, un document ou qu'elle ait été générée numériquement, n'existe pas.
-En fonction de la tâche qu'il cherche à accomplir, du type de contenu qu'il souhaite détecter, voire reconnaitre, dans une image, le chercheur met en place des techniques adaptées aux caractéristiques visuelles de ce contenu.
-Il va par exemple tantôt se concentrer sur la texture, tantôt sur la couleur selon qu'il souhaite identifier des formes aux motifs connus et répétitifs, comme la surface de la mer ou le pantalon blanc et bleu d'Obélix, ou identifiables par une teinte donnée, comme par exemple un ciel bleu ou le pantalon rouge d'Astérix.
-La forme de ces éléments, leur taille, leur position absolue ou relative ou encore leur orientation sont autant d'éléments parmi bien d'autres permettant de façonner un outil adapté à la tâche à accomplir.\\
+\paragraph{Region extractor concept} % (fold)
+\label{par:region_extractor_concept}
 
-Un algorithme de traitement d'images a donc généralement pour fonction la détection d'un seul type d'objet.
-Toutefois, si son domaine de compétence est limité, il est souhaitable que cet algorithme soit assez robuste pour produire des résultats corrects sur un grand nombre d'images différentes.
-Dès lors, le chercheur souhaitant analyser un ensemble de documents complexes mais de même nature, dans le sens où ceux-ci sont composés d'un ensemble d'éléments graphiques différents mais toutefois commun au corpus de documents, va devoir mettre en place autant de traitements spécifiques que de types d'éléments qu'il souhaite extraire, tout en prenant garde à ce qu'ils fonctionnent sur le plus grand nombre de documents possible.\\
+% Une région d'intérêt identifiée par un algorithme de segmentation d'images correspond donc à la proposition par ce dernier d'une zone spatiale de l'image contenant le type d'élément qu'il a été conçu pour détecter.
+% Cette région peut effectivement contenir un élément de ce type ou bien contenir tout autre chose.
+% La précision de segmentation de l'algorithme est dépendante à la fois des caractéristiques de l'image analysée, de la complexité du domaine d'analyse et bien sûr de la qualité de son implémentation.
+% L'ensemble des résultats peut contenir des erreurs.
+% Les régions d'intérêt produites ne sont que des propositions demandant à être vérifiées, elles n'ont pas valeur de vérité.\\
 
-Si nous nous plaçons par exemple dans le cadre d'un traitement automatique de documents administratifs, tels que des fiches de paye ou des factures, il pourrait être intéressant de mettre en place des systèmes permettant de détecter les logos, les caractères alphanumériques ou encore les signatures.
-Si nous nous replaçons dans le contexte de la bande dessinée, la segmentation des cases, des bulles, du texte et des personnages, nécessite autant d'algorithmes d'analyse d'images différents, comme nous avons pu le voir en \ref{sec:sota_image}.
-Chaque algorithme va tirer parti de ce qui fait la spécificité des éléments à extraire.
-Les cases sont des éléments majeurs de l'image en terme d'espace occupé dans la page. 
-Elles sont généralement délimitées par une bordure noire et séparées les unes des autres par une gouttière.
-Leur forme, souvent rectangulaire, la plupart du temps au moins polygonale est également un critère utilisé, notamment via la détection des lignes dans l'image.
-Les bulles contiennent du texte, traditionnellement de couleur foncée sur un fond clair.
-Elles sont également délimitées par un contour noir mais ont généralement des dimensions inférieures à celles de cases.
-Les lignes de texte sont composées de petits éléments visuels, contrastant avec le fond de l'image, ponctuellement alignés de manière régulière.
-Des techniques de reconnaissance de caractères (OCR) peuvent éventuellement venir en renfort afin de filtrer les faux-positifs.
-Les personnages de bande dessinée peuvent avoir n'importe quelle forme, réaliste ou caricaturale, humanoïde ou non.
-Ils présentent en revanche une certaine régularité dans leur représentation visuelle.
-Ils peuvent changer de position, d'orientation ou de dimensions mais ils conservent la plupart du temps les mêmes attributs vestimentaires, les mêmes caractéristiques visuelles, au moins le long d'une même histoire.\\
+% Nous appellerons de tels systèmes de segmentation \textit{extracteurs} dans la suite de ce document.
+% La notion d'extracteur est intégrée dans notre modèle sous le concept \concept{Extractor}.
+% Relié à celui de \concept{ROI}, il permet d'exprimer le lien étroit entre l'algorithme de traitement d'images et les régions d'intérêt qu'il produit à partir d'une image aux caractéristiques données.
+% %de modéliser la connaissance liée aux spécificités d'un extracteur et des régions d'intérêt qu'il produit par rapport à une image aux caractéristiques données.
+% Cet ensemble de notions fournit un premier cadre à l'évaluation de la pertinence de l'intégration d'une ROI dans un système plus complet où elle sera amenée à interagir avec d'autres entités.
+% Une région d'intérêt provenant d'une image est produite par un et un seul extracteur
 
-%\modif{Serait-ce intéressant de rentrer un petit plus en détails dans les techniques d'analyse d'images de bande dessinée ? Intégrer quelques références ?}\\
+A region of interest identified by an algorithm of image segmentation corresponds to the proposal by the latter of a spatial area of the image containing one of the elements that the extractor is designed to detect.
+This region can actually contain an element of this type or contain anything else (false alarm).
+The accuracy of the segmentation algorithm is dependent on the characteristics of the image, the complexity of the region to extract and of course the quality of its implementation.
+% The overall results may contain errors.
+Regions of interest are produced only as proposals requesting to be checked, they do not have truth value.
 
-Une région d'intérêt identifiée par un algorithme de segmentation d'images correspond donc à la proposition par ce dernier d'une zone spatiale de l'image contenant le type d'élément qu'il a été conçu pour détecter.
-Cette région peut effectivement contenir un élément de ce type ou bien contenir tout autre chose.
-La précision de segmentation de l'algorithme est dépendante à la fois des caractéristiques de l'image analysée, de la complexité du domaine d'analyse et bien sûr de la qualité de son implémentation.
-L'ensemble des résultats peut contenir des erreurs.
-Les régions d'intérêt produites ne sont que des propositions demandant à être vérifiées, elles n'ont pas valeur de vérité.\\
+We call such image analysis systems \textit{Extractors} later in this document.
+The notion of extractor is incorporated into our model as \concept{Extractor}.
+Linked to the \concept{ROI} concept, it expresses a close connection between the image processing algorithm and the regions of interest that are produced from an image with given characteristics (Figure~\ref{fig:kn:model_image}).
+This set of concepts provides an initial framework for the integration of a ROI in a more complete system where it will have to interact with other entities.
+A region of interest from an image is produced by a single extractor.
 
-Nous appellerons de tels systèmes de segmentation \textit{extracteurs} dans la suite de ce document.
-La notion d'extracteur est intégrée dans notre modèle sous le concept \concept{Extractor}.
-Relié à celui de \concept{ROI}, il permet d'exprimer le lien étroit entre l'algorithme de traitement d'images et les régions d'intérêt qu'il produit à partir d'une image aux caractéristiques données.
-%de modéliser la connaissance liée aux spécificités d'un extracteur et des régions d'intérêt qu'il produit par rapport à une image aux caractéristiques données.
-Cet ensemble de notions fournit un premier cadre à l'évaluation de la pertinence de l'intégration d'une ROI dans un système plus complet où elle sera amenée à interagir avec d'autres entités.
-Une région d'intérêt provenant d'une image est produite par un et un seul extracteur.
 % paragraph paragraph_name (end)
 
 % subsection document_image_processing (end)
 \subsection{Comics domain} % (fold)
-\label{sub:comics_domain}
-Nous présentons dans cette section une conceptualisation du domaine de la bande dessinée ainsi que sa formalisation ontologique.
-Cette conceptualisation a été pensée en gardant à l'esprit l'objectif d'une utilisation dans le cadre de l'analyse d'images.
-Des amendements y seront apposés plus tard dans ce manuscrit afin de rendre son utilisation possible dans d'autres cadres applicatifs.
+\label{sub:kn:comics_domain}
+
+We present in this section a conceptualization of the comics domain and its ontological formalisation.
+This conceptualisation has been designed keeping in mind the purpose of use in the context of image analysis.
+See Cl{\'e}ment Gu{\'e}rin' thesis for its adaptation to other applications~\cite{phdthesisGuerin14}.
+% Amendments may be affixed later in this manuscript in order to make its possible use in other application frameworks.
 
 \paragraph{Album and pages} % (fold)
 \label{par:album_and_pages}
-Comme nous l'avons vu dans le chapitre~\ref{chap:codes_bd}, une bande dessinée se définie comme une suite d'images transmettant un message.
-Ces images sont spatialement juxtaposées dans un plan que l'on nomme \emph{planche}.
-Dans la bande dessinée que l'on peut qualifier de classique, franco-belge, américaine et japonaise, une histoire se raconte à travers une succession ordonnée de planches.
-Celles-ci sont matérialisées par des pages imprimées regroupées au sein d'un album, ce dernier pouvant lui même n'être qu'une itération d'une collection contant une histoire plus large.
-Les webcomics font également usage de planches, matérialisées par des images numériques.
-Dans le cas de la bande dessinée imprimée, une planche peut s'étendre sur une ou deux pages, rarement plus.
-Une planche de webcomic est toujours représentée par une image unique.
 
+As seen Section~\ref{sec:intro:presentation}, a comic book page is defined as a series of images conveying a message.
+These images are spatially juxtaposed in a plane that is called \emph{page} or \emph{board}.
+In classical comic strips, a story is told through an ordered succession of pages.
+These are represented by the printed pages grouped in an album, which can be from a  collection telling a larger story.
+The webcomics also make use of pages, materialised by digital images.
+In the case of printed comics, a page may extend over one or two pages, rarely more.
+A webcomic page is always represented by a single image.
 
-Les deux premiers concepts introduits sont alors \textit{Comic} et \textit{Plate}\footnote{Le vocabulaire français possède une distinction claire entre les termes planche et page. Les anglophones ont cependant tendance à utiliser le mot \emph{page} pour désigner ces deux notions. Le terme \emph{plate}, moins usité, a été sélectionné afin de désambiguïser ces deux notions.}, représentant respectivement les notions d'album et de planche.
-Ces deux concepts sont liés par la propriété \textit{hasPlate}.
-Celle-ci est inversement fonctionnelle, une planche ne pouvant faire partie que d'un seul album.
+The first two concepts are introduced as \concept{Comic} and \concept{Page}.
+These two concepts are related by the property \objProp{hasPage}.
+A page is only part of one album.
 
-Les informations bibliographiques de chaque album sont représentées par des attributs associés au concept \concept{Comic}.
-Le titre de l'album, l'éventuelle collection de laquelle il est issu, ses auteurs, sa date de publication ou encore son ISBN peuvent être renseignés via les attributs correspondants.
-La direction de lecture (de gauche à droite ou de droite à gauche) peut être indiquée à travers l'attribut booléen \dataProp{right2Left}.
+Bibliographic information of each album are represented by attributes associated to the concept \concept{Comic}.
+The album title, the collection (if it exists), its authors, date of publication and ISBN can be given via the corresponding attributes.
+The reading direction (left to right or right to left) may be indicated through a boolean attribute called \dataProp{right2Left}.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\textwidth]{model_step1.pdf}
+\caption[Initial comics model]{Concepts \concept{Comic} and \concept{Page} with their corresponding relations and attributes.}
+\label{fig:model_d_1}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % paragraph album_and_pages (end)
 
 \paragraph{Page content} % (fold)
 \label{par:page_content}
-Comme présenté dans le chapitre~\ref{chap:codes_bd}, une planche de bande dessinée est le cadre dans lequel sont placées les cases constituant le récit.
-L'ordre de ces cases dans la séquence de lecture est défini par leur position relative les unes par rapport aux autres ainsi que, dans certains cas, l'interprétation personnelle du lecteur.
-L'étude et la génération de la séquence de lecture est l'objet de la section~\ref{sec:ordre}.
-Le contenu des cases est composé de dessins représentant notamment des personnages et des phylactères.
-Nous avons choisi de nous concentrer sur les relations entre ces deux types de contenu dans un premier temps.
-La gestion des autres éléments représentés au sein des cases dépasse le cadre de ces travaux, bien qu'une approche basée sur une extraction de termes appropriés depuis WordNet, similaire à celle proposée par \cite{Zinger2005}, pourrait se révéler intéressante.
-Les phylactères contiennent eux-même des lignes de texte, matérialisant les mots des personnages et la narration de l'histoire.\\
+% Comme présenté dans le chapitre~\ref{chap:codes_bd}, une planche de bande dessinée est le cadre dans lequel sont placées les cases constituant le récit.
+% L'ordre de ces cases dans la séquence de lecture est défini par leur position relative les unes par rapport aux autres ainsi que, dans certains cas, l'interprétation personnelle du lecteur.
+% L'étude et la génération de la séquence de lecture est l'objet de la section~\ref{sec:ordre}.
 
-%le contenu d'une planche est principalement composé de cases, de phylactères et de texte.
-%Les différents plans ponctuant l'histoire sont dessinés à l'intérieur des cases.
-%Ils mettent notamment en scène les personnages prenant part au récit.
+We consider that a page consists of panels, which contain drawings such as comic characters and speech bubbles.
+We initially chose to focus on the relationship between these two types of content.
+The consideration of other elements is beyond the scope of this work, although, extracting relevant terms from WordNet might be interesting as well~\cite{Zinger05extracting}.
+Balloons contain text lines, embodying the words of the comic characters and the narration of the story.
 
-Les cases sont représentées par le concept \concept{Panel}.
-Celui-ci possède pour un attribut \dataProp{hasRank} indiquant la place de chacune de ses instances dans la séquence de lecture de la planche à laquelle elles sont rattachées.
+Panels are represented by the concept \concept{Panel} with the attribute \dataProp{hasRank} which indicates the reading order in the corresponding page.
 
-Les phylactères, qu'il s'agisse de bulles de dialogue, de pensée ou de cadres de narration, sont représentés par le concept \concept{Balloon}.
-D'une manière similaire aux cases dans la planche, les bulles doivent être lues selon un ordre défini par leur position dans leur case de rattachement.
-On parle de case de \emph{rattachement} et non pas de case \emph{englobante} car, selon les styles de bandes dessinées, les bulles se sont pas nécessairement positionnées spatialement à l'intérieur d'une case.
-Il arrive qu'elles soient légèrement à l'extérieur ou à cheval sur plusieurs cases.
-En revanche, chaque case met en images une action se déroulant à un instant fixe.
-Les bulles font partie intégrante de la mise en scène et sont donc rattachées à une case donnée, quelle que soit leur position par rapport à cette case.
-Leur place dans l'ordre de lecture d'une case est défini par l'attribut \dataProp{hasRank} et la propriété \objProp{hasNextBalloon} lie les bulles entre elles.
+Balloons or phylacteries, whether they are spoken, thought or narrated, are represented by the concept \concept{Balloon}.
+In a similar manner to panels, the balloons must be read in a appropriate order defined by their spatial position in their corresponding panel.
+We consider \emph{attached} and not \emph {overlapped} panel because, according to the comic book styles, the balloons are not necessarily spatially positioned within a panel.
+Sometimes they are slightly outside or straddle several panels.
+Instead, each panel illustrates one action taking place at a fixed time.
+Balloons are an integral part of the staging and are attached to a given panel, independently from their relative position to this panel.
+Their position in the reading order of a panel is defined by the attribute \dataProp{hasRank} and the property \objProp{hasNextBalloon} binds balloons together.
 
-Les bulles de dialogue possèdent une ou plusieurs excroissances sur leur contour, appelées flèches ou queues, pointant vers le ou les personnages dont elles matérialisent les paroles.
-Cette flèche est représentée par le concept \concept{Tail}, et sa direction par l'attribut \dataProp{hasDirection}.
-Une bulle est liée à une ou plusieurs flèches par la propriété \objProp{hasTail}.
+The balloon tail is represented as the concept \concept{Tail}, and its direction by the attribute \dataProp{hasDirection}.
+A balloon may be related to several tails through the property \objProp{hasTail}.
 
-
-Les lignes de texte sont représentées par le concept \concept{TextLine}.
-Elles sont regroupées à l'intérieur de phylactères et se lisent naturellement de haut en bas.
-Comme pour les cases et les bulles, l'attribut \dataProp{hasRank} permet de spécifier leur place dans la séquence de lecture au sein d'une bulle, la propriété \objProp{hasNextTextLine}.
-Le texte de la ligne est retranscrit par l'attribut \dataProp{hasText}.
+Text lines a designed by the concept \concept{TextLine}.
+They are grouped inside balloons with a reading order from top to bottom.
+Similarly to panels and balloons concepts, the attribute \dataProp{hasRank} indicates their position in the reading order inside the balloon through the property \objProp{hasNextTextLine}.
+Text transcription is stored via the attribute \dataProp{hasText}.
 
 
-Les concepts \concept{Panel}, \concept{Balloon}, 
-\concept{Tail}, 
-\concept{TextLine} et \concept{Character} sont disjoints, un élément ne pouvant être instance que de l'un d'entre eux.\\
+The concepts \concept{Panel}, \concept{Balloon}, \concept{Tail}, \concept{TextLine} and \concept{Character} are disjoint, each element can only be an instance of one of them.  
+Figure~\ref{fig:model_d_2} illustrates the addition of these concepts to the ontology.
 
-La figure~\ref{fig:model_d_2} illustre l'ajout de ces concepts à notre ontologie.\\
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
 %\includegraphics[width=1\textwidth]{img/contributions_domaine/model_step2.pdf}
 \includegraphics[width=1\textwidth]{model_step2_new.pdf}
-\caption[Ontologie bande dessinée - Deuxième étape]{Modèle présenté en figure~\ref{fig:model_d_1} enrichi des concepts \concept{Panel}, \concept{Balloon}, \concept{TextLine} et \concept{Character}.}
+\caption[Complete comics model]{Integration of concepts \concept{Panel}, \concept{Balloon}, \concept{Tail}, \concept{TextLine} and \concept{Character} to the initial model Figure~\ref{fig:model_d_1}.}
 \label{fig:model_d_2}
 \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Plusieurs propriétés sont introduites dans notre ontologie afin de représenter les liens existants entre les différents éléments composant une planche.
-Une case étant relative à une planche, la propriété \objProp{hasPanel} lie une instance de \concept{Plate} à une instance de \concept{Panel}
-Le domain et le range de la propriété assurent que seule une planche et une case puisse en être respectivement le sujet et l'objet.
-La propriété \objProp{hasPanel} est également définie inversement fonctionnelle, une case ne pouvant faire partie que d'une seule planche.
+Several properties are introduced into our ontology to represent the links between the various components of a panel.
+A panel being relative the page, the property \objProp{hasPanel} binds an instance of \concept{Page} to an instance of \concept{Panel}.
+% The domain and the ranks of the properties ensures that only a page and a panel can be respectively the subject and the object.
+% The property \objProp{hasPanel} is also defined functional conversely, a panel that can be part of only one board.
 
-Les propriétés \objProp{hasBalloon} et \objProp{hasCharacter} sont définies formellement de manière similaire et représentent le lien d'appartenance existant entre, d'une part, une case et, d'autre part, une instance de \concept{Balloon} et de \concept{Character}.
-La propriété \objProp{hasTextLine} représentent l'appartenance d'une ligne de texte à un phylactère.
-Nous avons ici opté pour une conceptualisation très contrainte mettant de côté certains cas de figure non négligeables, notamment celui des lignes de texte hors phylactères.
-Cela se justifie dans le cadre d'une analyse automatique d'images, comme nous le présentons au chapitre~\ref{chap:analyseImage}.\\
+Properties \objProp{hasBalloon} and \objProp{hasCharacter} are formally defined and represents the existing membership between, on one hand, a box and, on the other hand, an instance of \concept{Balloon} and \concept{Character}.
+The property \objProp{hasTextLine} represents the link between a text line in a balloon.
+% Here we opted for a very constrained conceptualization putting aside some cases significant figure, especially the lines of text scrolls off.
+%Cela se justifie dans le cadre d'une analyse automatique d'images, comme nous le présentons au chapitre~\ref{chap:analyseImage}.\\
 
-Une certaine transitivité dans l'inclusion des éléments les uns par rapport aux autres est observable.
-Les lignes font partie des bulles, faisant elles mêmes, tout comme les personnages, parties des cases.
-Les cases sont regroupées au sein de planches qui, mises les unes à la suite des autres, forment un album.
-L'exploitation de ces appartenances successives trouve un intérêt certain dans un contexte de recherche d'informations au sein d'une base de connaissances.
-Une requête portant sur les albums où apparaissent dans une même case plusieurs personnages prononçant certains termes pourrait par exemple s'affranchir des notions de planche et de bulle.
+% Une certaine transitivité dans l'inclusion des éléments les uns par rapport aux autres est observable.
+% Les lignes font partie des bulles, faisant elles mêmes, tout comme les personnages, parties des cases.
+% Les cases sont regroupées au sein de planches qui, mises les unes à la suite des autres, forment un album.
+% L'exploitation de ces appartenances successives trouve un intérêt certain dans un contexte de recherche d'informations au sein d'une base de connaissances.
+% Une requête portant sur les albums où apparaissent dans une même case plusieurs personnages prononçant certains termes pourrait par exemple s'affranchir des notions de planche et de bulle.
 % paragraph page_content (end)
 
-\paragraph{Specialization of the content} % (fold)
-\label{par:specialization_of_the_content}
+\paragraph{Specialisation of the content} % (fold)
+\label{par:specialisation_of_the_content}
 
-La sémantique de certains concepts reste d'un degré de granularité assez grossier avec la conceptualisation présentée jusqu'à présent.
-Les phylactères peuvent notamment se catégoriser en deux sous-ensembles.
-D'un côté les bulles émises par des personnages (à voix haute ou pensées) ou des éléments de la scène (radio, télévision, etc.), d'un autre coté les cadres de narration.
-La forme des phylactères varie d'un auteur ou d'une époque à l'autre.
-Un élément semble faire consensus pour discriminer les bulles des encadrés, c'est la présence, ou non, d'une queue pointant vers la source du son.\\
+The semantic level of the presented concepts remains at a degree of granularity quite rude, here we present how to refine them.
+Balloons might be categorized into two subsets according to their relation to comics character or not.
+On one hand the balloons emitted by characters (spoken or thoughts) or elements of the scene (radio, television, etc.), and on the other hand, narrative balloons.
+The shape of the speech balloon varies from one author to another.
+One feature which seems to be a consensus to discriminate narrative balloons from others, is the presence or not of a tail pointing to the source of the sound.
+Concepts \concept{SpeechBalloon} and \concept{NarrativeBalloon} are introduced to represent balloons equipped with a tail or not respectively.
+% They are defined by the formulas ~ \ ref {eq: narrativeBalloon} and \ ref {eq: speechBalloon}.
 
-Les concepts \concept{NarrativeBalloon} et \concept{SpeechBalloon} sont introduits afin de représenter respectivement les phylactères dont le contenu fait progresser la narration d'une manière ou d'une autre (encadrés, dialogue, etc.), et les bulles matérialisant spécifiquement une section de discours, qu'il soit pensé ou récité à voix haute.
-Ces éléments sont caractérisés par la présence de lignes de texte, les bulles de discours étant en plus équipées d'une flèche pointant vers la source du son.
-Ils sont définis par les formules~\ref{eq:narrativeBalloon} et \ref{eq:speechBalloon}.
+The semantic of text lines in these newly specialised balloons can then be refined accordingly.
+Some text lines are carrying elements of speech, while others are for storytelling.
+The two corresponding concepts are \concept{SpokenTextLine} and \concept{NarrativeTextLine} respectively.
+They are simply defined as text lines belonging to an instance of \concept{SpeechBalloon} or \concept{NarrativeBalloon}.
 
-La sémantique des lignes de texte appartenant à ces nouvelles classes de phylactères peut alors également être affinée en conséquence.
-Certaines lignes sont porteuses d'éléments de discours, tandis que d'autres sont, d'une manière plus générale, au service de la narration.
-Les concepts introduits pour représenter ces deux notions sont \concept{SpokenTextLine} et \concept{NarrativeTextLine}.
-Ils simplement définis comme des lignes de texte appartenant respectivement à une instance de \concept{SpeechBalloon} ou de \concept{NarrativeBalloon}.
-
-
-Les bulles de dialogue sont généralement émises par un personnage présent dans la case.
-Le lien entre un personnage et une bulle de dialogue est exprimé à travers la propriété \objProp{says}, ayant pour domain \concept{Character} et pour range \concept{SpeechBalloon}.
-Le concept \concept{Speaker} représente les personnages émettant des bulles de dialogue.
+Speech balloons are usually issued by a character present in the panel.
+The link between a character and a speech balloon is expressed through the property \objProp{says}, whose domain \concept{Character} and range \concept{SpeechBalloon}.
+The concept \concept{Speaker} represents a character which is emitting a speech balloon.
 
 
-La figure~\ref{fig:model_d_3} illustre les relations de subsomption introduites sur les concepts \concept{Balloon}, \concept{TextLine} et \concept{Character}.\\
+Figure~\ref{fig:model_d_3} illustrates the relations de introduced for the concepts \concept{Balloon}, \concept{TextLine} et \concept{Character}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=1\textwidth]{model_step2ter_new.pdf}
-\caption{Spécialisation des concepts \concept{Character}, \concept{Balloon} et \concept{TextLine}}
+\caption{Specification of concepts \concept{Character}, \concept{Balloon} and \concept{TextLine}}
 \label{fig:model_d_3}
 \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\modif{TODO: English version}
+% \modif{TODO: English version}
 
-Semantic relations were also defined in order to categorise some region types such as balloons into speech balloon $SB$ (versus narrative balloons), characters into speaking characters $SC$ (versus non-speaking characters) and text lines as speech text $ST$ (versus narrative lines):
-\begin{itemize}
-  \item A $SB$ is a balloon $B$ that has a tail and contains text
-  \item A $SC$ is a character $C$ pointed by a tail
-  \item A $ST$ is a text line which is included in one speech balloon
-\end{itemize}
+% Semantic relations were also defined in order to categorise some region types such as balloons into speech balloon $SB$ (versus narrative balloons), characters into speaking characters $SC$ (versus non-speaking characters) and text lines as speech text $ST$ (versus narrative lines):
+% \begin{itemize}
+%   \item A $SB$ is a balloon $B$ that has a tail and contains text
+%   \item A $SC$ is a character $C$ pointed by a tail
+%   \item A $ST$ is a text line which is included in one speech balloon
+% \end{itemize}
 
-The term ``pointed'' refers to the fact that the character is included in the part of the panel indicated by the tail. To have a better understanding of how a panel is divided according to tail direction, please refer to Section~\ref{sec:se:tail_to_character}.
+% The term ``pointed'' refers to the fact that the character is included in the part of the panel indicated by the tail. To have a better understanding of how a panel is divided according to tail direction, please refer to Section~\ref{sec:se:tail_to_character}.
 
-These figures represent the theoretical limit that can be reached with the model in terms of component extraction performance.
+% These figures represent the theoretical limit that can be reached with the model in terms of component extraction performance.
 % section knowledge_representation (end)
 
 % paragraph specialization_of_the_content (end)
 
-\modif{TODO: English version}
-The first level of our comics model taxonomy is composed of the concepts of \textit{Album}, \textit{Pages} and \textit{Content}.
-\textit{Album} is linked to \textit{Page} and \textit{Page} to \textit{Content} respectively by the \textit{hasPage} and \textit{hasContent} properties.
-The concept of \textit{Content} stands for any kind of visual element that can appear on an analysed page of comic book.
-It is specialized into the concepts of \textit{Panel}, \textit{Balloon}, \textit{TextLine} and \textit{Character}.
-As it was stated in Section~\ref{sec:kn:constrains_low_level_extraction}, we consider that panels are only contained by a page, characters and balloons by panels and lines of text by balloons.
-This is modelled with object properties with constrained domain and range.
-The \textit{hasPanel}, \textit{hasBalloon}, \textit{hasTextLine} and \textit{hasCharacter} properties link a page to a panel, a panel to a balloon, a balloon to a line and a panel to a character, respectively.
+% \modif{TODO: English version}
+% The first level of our comics model taxonomy is composed of the concepts of \textit{Album}, \textit{Pages} and \textit{Content}.
+% \textit{Album} is linked to \textit{Page} and \textit{Page} to \textit{Content} respectively by the \textit{hasPage} and \textit{hasContent} properties.
+% The concept of \textit{Content} stands for any kind of visual element that can appear on an analysed page of comic book.
+% It is specialized into the concepts of \textit{Panel}, \textit{Balloon}, \textit{TextLine} and \textit{Character}.
+% As it was stated in Section~\ref{sec:kn:constrains_low_level_extraction}, we consider that panels are only contained by a page, characters and balloons by panels and lines of text by balloons.
+% This is modelled with object properties with constrained domain and range.
+% The \textit{hasPanel}, \textit{hasBalloon}, \textit{hasTextLine} and \textit{hasCharacter} properties link a page to a panel, a panel to a balloon, a balloon to a line and a panel to a character, respectively.
 
-Even if that does not cover every situation (text lines can sometimes be found outside of balloons, e.g onomatopoeia), these constrained properties are necessary to use these models as validation tools.
-%While we know that it does not cover every different kind of comics material, it is necessary if we want it constrained enough to be usable as a segmentation validation tool.
-The concepts of \textit{Speaker}, \textit{SpeechBalloon} and \textit{SpokenTextLine} are subsumed by \textit{Character}, \textit{Balloon} and \textit{TextLine} respectively and are derived with an OWL translation of the rules defined Section~\ref{sec:kn:constrains_low_level_extraction}.
-This hierarchy is visually represented in Figure~\ref{fig:kn:model_image}.
-Balloons and text lines are also enriched by some attributes, like the direction indicated by the tail (\textit{tailDirection}) or the textual transcription of the text lines (\textit{hasText}).
+% Even if that does not cover every situation (text lines can sometimes be found outside of balloons, e.g onomatopoeia), these constrained properties are necessary to use these models as validation tools.
+% %While we know that it does not cover every different kind of comics material, it is necessary if we want it constrained enough to be usable as a segmentation validation tool.
+% The concepts of \textit{Speaker}, \textit{SpeechBalloon} and \textit{SpokenTextLine} are subsumed by \textit{Character}, \textit{Balloon} and \textit{TextLine} respectively and are derived with an OWL translation of the rules defined Section~\ref{sec:kn:constrains_low_level_extraction}.
+% This hierarchy is visually represented in Figure~\ref{fig:kn:model_image}.
+% Balloons and text lines are also enriched by some attributes, like the direction indicated by the tail (\textit{tailDirection}) or the textual transcription of the text lines (\textit{hasText}).
 
- \begin{figure}[!ht]
-   \centering
-  \includegraphics[width=0.7\textwidth]{model_comics.pdf}
-  \caption[A representation of the main aspects of the comics model involved in the expert system]{A representation of the main aspects of the comics model involved in the expert system. Concepts are represented by the oval-shaped items, full arrows represent subsumption relations, simple arrows are the object properties linking them to each others. Attributes are not displayed to make it more comprehensible.}
-  \label{fig:kn:model_image}
- \end{figure}
+ % \begin{figure}[!ht]
+ %   \centering
+ %  \includegraphics[width=0.7\textwidth]{model_comics.pdf}
+ %  \caption[A representation of the main aspects of the comics model involved in the expert system]{A representation of the main aspects of the comics model involved in the expert system. Concepts are represented by the oval-shaped items, full arrows represent subsumption relations, simple arrows are the object properties linking them to each others. Attributes are not displayed to make it more comprehensible.}
+ %  \label{fig:kn:model_image}
+ % \end{figure}
 
 % subsection comics_domain (end)
 
 \subsection{Model interactions} % (fold)
 \label{sub:model_interactions}
 
-\modif{
-  
-Nous allons voir dans cette section comment connecter l'ontologie image, notée ici $\mathcal{O}_{image}$, et l'ontologie de la bande dessinée, $\mathcal{O}_{bd}$, des sections~\ref{sec:modele_image} et \ref{sec:modele_domaine} afin qu'elles puissent communiquer et que leurs capacités de raisonnement respectives puissent être exploitées.
-Ces deux modèles ont été développés en vue d'être utilisés dans un système d'analyse d'images de bandes dessinées.
-Dans ce contexte, nous considérons que l'image numérisée d'une planche est la matière première fournie à un algorithme pour qu'il puisse extraire son contenu.
+In this section we present the interactions between the image and comics ontologies so that they can communicate and combine their reasoning capabilities.
+We call $\mathcal{O}_{image}$ and $\mathcal{O}_{bd}$ the ontologies of image and comics respectively presented Sections~\ref{sub:kn:image_processing_domain} and \ref{sub:kn:comics_domain}.
+% Both models have been developed for comics image analysis.
+% In this context, we consider that the scanned image is the raw material supplied to an algorithm so that it can extract its contents.
 
+% Comme cela a été souligné précédemment, un algorithme d'analyse d'images a pour objectif la détection de caractéristiques visuelles discriminant un type d'objet particulier.
+% Dans notre cas, les extracteurs développés concernent les cases, les bulles, 
+% la queue des bulles, 
+% le texte et les personnages.
 
-Comme cela a été souligné précédemment, un algorithme d'analyse d'images a pour objectif la détection de caractéristiques visuelles discriminant un type d'objet particulier.
-Dans notre cas, les extracteurs développés concernent les cases, les bulles, 
-la queue des bulles, 
-le texte et les personnages.
+Figure~\ref{fig:kn:interactions} illustrates the interactions between the ontologies.
 
-La figure~\ref{fig:interaction} illustre ces interactions entre les ontologies.\\
-
-}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{interaction.pdf}
-\caption{Interaction entre les ontologies image et bande dessinée}
-\label{fig:interaction}
+\includegraphics[width=0.8\textwidth]{interactions.pdf}
+\caption{Interaction between the two ontologies.}
+\label{fig:kn:interactions}
 \end{center}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The image and comics models are linked through two bridges.
-First, the \textit{Image} from the image model and \textit{Page} from the comics model concepts are made equivalent by the axiom \texttt{owl:equivalentClass}.
-This way we ensure that all extracted content related to an image is equally related to a corresponding page in the comics domain $Page \equiv  Image$.
+First, the \concept{Image} concept from $\mathcal{O}_{image}$ and the \concept{Page} concept from $\mathcal{O}_{bd}$ are made equivalent.
+This ensures that all extracted content related to an image are equally related to a corresponding page in the comics domain $Page \equiv  Image$.
 
-Second, the classes $Cl=\{Panel$, $Balloon$, $TextLine$, $Character\}$ are defined as equivalent to the corresponding set of regions of interest $Sr = \{panels$, $balloons$, $text lines$, $characters\}$ Equation~\ref{eq:kn:class_region_equivalence}).% that have an extractor which purpose is to extract the corresponding panels (resp. balloons, text lines and characters).
+Second, the classes $Cl=\{Panel$, $Balloon$, $Tail$, $TextLine$, $Character\}$ are defined as equivalent to the corresponding set of regions of interest $roiType = \{panels$, $balloons$, $tail$, $text lines$, $characters\}$ (Equation~\ref{eq:kn:class_region_equivalence}).% that have an extractor which purpose is to extract the corresponding panels (resp. balloons, text lines and characters).
   
 
 \begin{equation}
@@ -377,18 +376,18 @@ Cl_i  \equiv \text{ROI} \textbf{ and } (hasExtractor \textbf{ some } (roiType \t
 \section{Expert system for contextual analysis} % (fold)
 \label{sec:kn:expert_system}
 
-\modif{Une dynamique de bouclage et de communication est entretenue entre les deux parties du système global d'analyse.
-Il est fait référence à la partie algorithmique de traitement d'images sous le nom de \emph{système bas niveau}, sous entendu proche des données pixellaires.
-Le système formé des ontologies développées, couplées à un moteur d'inférence, est dénommé ci-après \emph{système expert} pour plus de clarté.
-}
-The purpose of the expert system is to interact with the low level (image processing) iteratively to progressively understand the content of an image, moving from simple to more complex elements.
+In this section we refer to the algorithmic part related to image processing as \emph{low level} processing. 
+The proposed system composed by the developed ontologies and an inference engine (\emph{high level} processing) is called \emph{expert system} for clarity.
+A dynamic communication is maintained between low and high level processing of the overall analysis system, this section will detail its operation.
+
+The purpose of the expert system is to interact with the low level iteratively in order to progressively understand the content of an image, moving from simple to more complex elements.
 This approach is similar to~\cite{Sciascio2011Structured} except that in our case the definition of the complex object is not a composition of simple objects but context-driven.
 
 
 \subsection{Interactions between low and high level processing} % (fold)
 \label{sub:interactions_between_low_and_high_level_processing}
 
-
+\modif{
 Nous considérons ici les ontologies $\mathcal{O}_{image}$ et $\mathcal{O}_{bd}$ développées comme parties intégrantes d'un système expert fournissant un cadre d'interprétation au contenu extrait par un système de traitement d'images bas niveau.
 Le but du système expert est d'interagir de manière itérative avec le système bas niveau pour comprendre progressivement le contenu d'une page, de ses éléments les plus simples aux éléments plus complexes.
 L'ensemble du système expert, représenté par le schéma de la figure~\ref{fig:expertSystem}, inclus donc les deux ontologies présentées dans le chapitre~\ref{chap:ontologies}, formant ensemble notre base de connaissances.
@@ -413,6 +412,7 @@ Ces régions sont labellisées selon leur type supposé (cases, bulles, etc.).
 Lors de la deuxième étape, le système expert évalue ces hypothèses, valide celles qu'il juge correctes et supprime celles qu'il considère erronées.
 A la troisième étape, de nouvelles informations sont déduites à partir des hypothèses validées, mises en perspectives de la connaissance du domaine.
 Celles-ci sont renvoyées au système bas niveau qui s'en sert, au cours d'une deuxième itération, pour extraire des éléments plus complexes, tels que les personnages.
+}
 
 ----------------------------------------------------------------
 

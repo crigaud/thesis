@@ -1050,4 +1050,11 @@ Peng Ye and D.~Doermann.
 \newblock In {\em Document Analysis and Recognition (ICDAR), 2013 12th
   International Conference on}, pages 723--727, Aug 2013.
 
+\bibitem{Zinger05extracting}
+S.~Zinger, C.~Millet, B.~Mathieu, G.~Grefenstette, P.~Hède, and
+  P.~a.~Moëllic.
+\newblock Extracting an ontology of portrayable objects from wordnet.
+\newblock In {\em MUSCLE / ImageCLEF workshop on Image and Video retrieval
+  evaluation}, pages 17--23, 2005.
+
 \end{thebibliography}

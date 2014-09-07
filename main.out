@@ -46,7 +46,7 @@
 \BOOKMARK [0][-]{chapter.5}{Method C: knowledge-driven analysis}{}% 46
 \BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.2}{Proposed models}{chapter.5}% 48
-\BOOKMARK [2][-]{subsection.5.2.1}{Document image processing domain}{section.5.2}% 49
+\BOOKMARK [2][-]{subsection.5.2.1}{Image processing domain}{section.5.2}% 49
 \BOOKMARK [2][-]{subsection.5.2.2}{Comics domain}{section.5.2}% 50
 \BOOKMARK [2][-]{subsection.5.2.3}{Model interactions}{section.5.2}% 51
 \BOOKMARK [1][-]{section.5.3}{Expert system for contextual analysis}{chapter.5}% 52
@@ -94,4 +94,4 @@
 \BOOKMARK [0][-]{appendix.C}{Dataset}{}% 94
 \BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 95
 \BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 96
-\BOOKMARK [0][-]{section*.200}{Bibliography}{}% 97
+\BOOKMARK [0][-]{section*.201}{Bibliography}{}% 97

@@ -333,7 +333,7 @@ Figure~\ref{fig:model_d_3} illustrates the relations de introduced for the conce
 \label{sub:model_interactions}
 
 In this section we present the interactions between the image and comics ontologies so that they can communicate and combine their reasoning capabilities.
-We call $\mathcal{O}_{image}$ and $\mathcal{O}_{bd}$ the ontologies of image and comics respectively presented Sections~\ref{sub:kn:image_processing_domain} and \ref{sub:kn:comics_domain}.
+We call $\mathcal{O}_{image}$ and $\mathcal{O}_{comics}$ the ontologies of image and comics respectively presented Sections~\ref{sub:kn:image_processing_domain} and \ref{sub:kn:comics_domain}.
 % Both models have been developed for comics image analysis.
 % In this context, we consider that the scanned image is the raw material supplied to an algorithm so that it can extract its contents.
 
@@ -355,7 +355,7 @@ Figure~\ref{fig:kn:interactions} illustrates the interactions between the ontolo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The image and comics models are linked through two bridges.
-First, the \concept{Image} concept from $\mathcal{O}_{image}$ and the \concept{Page} concept from $\mathcal{O}_{bd}$ are made equivalent.
+First, the \concept{Image} concept from $\mathcal{O}_{image}$ and the \concept{Page} concept from $\mathcal{O}_{comics}$ are made equivalent.
 This ensures that all extracted content related to an image are equally related to a corresponding page in the comics domain $Page \equiv  Image$.
 
 Second, the classes $Cl=\{Panel$, $Balloon$, $Tail$, $TextLine$, $Character\}$ are defined as equivalent to the corresponding set of regions of interest $roiType = \{panels$, $balloons$, $tail$, $text lines$, $characters\}$ (Equation~\ref{eq:kn:class_region_equivalence}).% that have an extractor which purpose is to extract the corresponding panels (resp. balloons, text lines and characters).
@@ -380,47 +380,20 @@ In this section we refer to the algorithmic part related to image processing as 
 The proposed system composed by the developed ontologies and an inference engine (\emph{high level} processing) is called \emph{expert system} for clarity.
 A dynamic communication is maintained between low and high level processing of the overall analysis system, this section will detail its operation.
 
-The purpose of the expert system is to interact with the low level iteratively in order to progressively understand the content of an image, moving from simple to more complex elements.
-This approach is similar to~\cite{Sciascio2011Structured} except that in our case the definition of the complex object is not a composition of simple objects but context-driven.
-
 
 \subsection{Interactions between low and high level processing} % (fold)
 \label{sub:interactions_between_low_and_high_level_processing}
 
-\modif{
-Nous considérons ici les ontologies $\mathcal{O}_{image}$ et $\mathcal{O}_{bd}$ développées comme parties intégrantes d'un système expert fournissant un cadre d'interprétation au contenu extrait par un système de traitement d'images bas niveau.
-Le but du système expert est d'interagir de manière itérative avec le système bas niveau pour comprendre progressivement le contenu d'une page, de ses éléments les plus simples aux éléments plus complexes.
-L'ensemble du système expert, représenté par le schéma de la figure~\ref{fig:expertSystem}, inclus donc les deux ontologies présentées dans le chapitre~\ref{chap:ontologies}, formant ensemble notre base de connaissances.
-Cette base, une fois peuplée par des données en provenance du système bas niveau, est traitée par un moteur d'inférence pour en extraire des conclusions logiques, dépendantes des données et de leur cohérence par rapport à la connaissance formalisée.
 
-Ces conclusions peuvent consister en la validation d'éléments extraits, en leur rejet ou la création d'individus renvoyés au système d'extraction d'images.\\
+We consider the ontologies $\mathcal{O}_{image}$ and $\mathcal{O}_{comics}$ developed as integral parts of an expert system that provides an interpretive framework to extract a system of content low level image processing.
+The purpose of the expert system is to interact with the low level iteratively in order to progressively understand the content of an image, moving from simple to more complex elements.
+This approach is similar to~\cite{Sciascio2011Structured} except that in our case the definition of the complex object is not a composition of simple objects but context-driven.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.85\textwidth]{expert_system_v2.pdf}
-\caption[Représentation du système d'analyse]{Représentation des interactions entre les systèmes bas et haut niveau}
-\label{fig:expertSystem}
-\end{center}
-\end{figure}
+The expert system, represented by the diagram in Figure~\ref{fig:kn:generic_expert_system}, includes both ontologies forming our knowledge base.
+This knowledge base, once populated by data from the low-level system, is queried by an inference engine to extract logical conclusions, depending on the data and their consistency compared to the formalised knowledge.
 
-Les algorithmes bas niveau ont été développés pour extraire des éléments spécifiques depuis l'image entière d'une planche ou une région de celle-ci.
-Les systèmes haut et bas niveau interagissent afin que la totalité des extractions et leurs relations soient en concordance avec la représentation de la connaissance du domaine étudié.
-La figure~\ref{fig:kn:process_loop} illustre la boucle de traitement liant les deux systèmes.
+These logical conclusions may include a validation of extracted elements, rejection or creation of elements referred to the image processing system.
 
-A l'étape 1, le système bas niveau propose au système expert des hypothèses tenant en un premier ensemble de régions segmentées dans l'image.
-Ces régions sont labellisées selon leur type supposé (cases, bulles, etc.).
-Lors de la deuxième étape, le système expert évalue ces hypothèses, valide celles qu'il juge correctes et supprime celles qu'il considère erronées.
-A la troisième étape, de nouvelles informations sont déduites à partir des hypothèses validées, mises en perspectives de la connaissance du domaine.
-Celles-ci sont renvoyées au système bas niveau qui s'en sert, au cours d'une deuxième itération, pour extraire des éléments plus complexes, tels que les personnages.
-}
-
-----------------------------------------------------------------
-
-In our system, the expert system includes two models, one formalizing the raw data from algorithms (\emph{Image model}) and the other modelling the domain knowledge of the comic books (\emph{Comics model}).
-These two models are ontologies that work together to
-%This knowledge is formalized in an ontology that 
-express the relations between the primary elements of a document that can be considered as being stable through all instances of the studied domain (Figure~\ref{fig:kn:generic_expert_system}).
-Thus, the expression of the constraints applied both to the elements and their relations have to be specific enough because these constraints will be considered as the reference knowledge for the detection of potential errors of the low-level extraction algorithm output.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -431,27 +404,40 @@ Thus, the expression of the constraints applied both to the elements and their r
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %This knowledge can be represented by all the relations betweens the elements that constitute a document from this collection.
-The low level algorithms are designed to extract specific information from the whole image or a specific region.
+The low level algorithms have been designed to extract specific information from the whole image or a specific region.
 Low and high level systems interact in a loop to feed the knowledge base until there is a complete and consistent understanding of the document, according to the knowledge domain. 
-% This loop can be summarized as follows:
-
+Figure~\ref{fig:kn:process_loop} illustrate this loop interacting between the two levels.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
-  \includegraphics[trim= 140px 350px 100px 95px, clip, width=0.7\textwidth]{process_loop.pdf}
+  \includegraphics[trim= 140px 315px 100px 95px, clip, width=0.7\textwidth]{process_loop.pdf}
   \caption[Process loop of the knowledge-driven system]{Process loop of the framework.}
   \label{fig:kn:process_loop}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In Figure~\ref{fig:kn:process_loop}, the starting point is step 1 (formulate hypothesis) where low level processing give basic information to the expert system (populating).
-%, preferably with a high recall.
-Then, step 2 (validate hypothesis) assesses the valid elements and removes obvious mistakes, and in step 3 we infer new information based on the previous information and the knowledge base.
-In the next iteration of the process loop, the newly validated information can be used by low level processing (e.g. new parameters, region of interest) to extract more complex elements from the image and so on.
-This loop can be run as many times as new information is discovered (until being idempotent).
+% In Figure~\ref{fig:kn:process_loop}, the starting point is step 1 (formulate hypothesis) where low level processing give basic information to the expert system (populating).
+% %, preferably with a high recall.
+% Then, step 2 (validate hypothesis) assesses the valid elements and removes obvious mistakes, and in step 3 we infer new information based on the previous information and the knowledge base.
+% In the next iteration of the process loop, the newly validated information can be used by low level processing (e.g. new parameters, region of interest) to extract more complex elements from the image and so on.
+% This loop can be run as many times as new information is discovered (until being idempotent).
+
+In step 1, the low level system propose to the expert system assumptions about a first set of segmented regions in the image.
+These regions are labelled according to their supposed type according to the extractor (panel, balloon, text, etc.).
+In the second step, the expert system evaluates these assumptions, valid correct ones and delete others.
+In the third step, new information are inferred from valid assumptions, put in perspective of the domain knowledge.
+These are referred to the corresponding low level extractor that will use them, during the following iteration, to extract more complex elements such as the comic characters.
+This loop can be run as many times as new information is discovered.
+
+
+% In our system, the expert system includes two models, one formalizing the raw data from algorithms (\emph{Image model}) and the other modelling the domain knowledge of the comic books (\emph{Comics model}).
+% These two models are ontologies that work together to
+%This knowledge is formalized in an ontology that 
+% express the relations between the primary elements of a document that can be considered as being stable through all instances of the studied domain (Figure~\ref{fig:kn:generic_expert_system}).
+% Thus, the expression of the constraints applied both to the elements and their relations have to be specific enough because these constraints will be considered as the reference knowledge for the detection of potential errors of the low-level extraction algorithm output.
+
 
 % subsection interactions_between_low_and_high_level_processing (end)
 
@@ -460,8 +446,9 @@ This loop can be run as many times as new information is discovered (until being
 
 \subsection{Constrains for the low level extractions} % (fold)
 \label{sec:kn:constrains_low_level_extraction}
+
 In our model, knowledge is modelled though the categorization of each element composing a page, combined with a set of topological relation with these elements.
-In our context, the elements that compose a given image $I$ are panels $P$, balloons $B$, tails $Q$, text $T$ and characters $C$, as well as the set of topological relations between them.
+In our context, the elements that compose a given image $I$ are panels $P$, balloons $B$, tails $Q$, text $T$ and characters $C$, as well as the set of topological and semantic relations between them.
 Because comics, as an art form, do not follow any strict specifications it is really hard to build a perfect model which is valid for all kinds of comics.
 There are some instances of comic books without balloons or without panels.
 If webcomics are also considered, then a comic is not even necessarily composed of pages.
@@ -483,18 +470,29 @@ The depicted elements and their place in the layout must be clearly identifiable
 Whereas one can find some instances of balloons breaking out of their frame, these are usually kept to a minimum.
 
 Therefore, the term ``related'' refers to the situation where an object is overlapped (a fortiori, contained) by another over a \emph{significant} proportion of its surface.
-% refers to the smallest region (panel, balloon or text line) covering the object on more than a predefined proportion of its size.
 In the case of multiple intersections, only the smallest container is considered.
 When the element is fully contained in several other items, the smallest container is consequently the direct container (e.g. a text line must be considered as being included inside a balloon before being included inside the panel containing that balloon).
 
-\section{Processing sequence (\modif{6.3 Clement})} % (fold)
+\section{Processing sequence} % (fold)
 \label{sec:kn:framework_}
-
-\modif{TODO: complete with Clement's details}
 
 The expert system asserts the extraction of simple elements such as panels, texts, balloons and tails in order to infer speech balloons before searching for more complex elements (e.g. comic book characters) based on the context defined by the simple elements and their relations.
 This can be demonstrated with the first two iterations of the process loop (Figure~\ref{fig:kn:process_loop}).
-The process flow of the two iterations is detailed hereafter.
+
+The first iteration treats simple elements such as panels, balloons and text lines.
+They are called simple because they have a relatively regular structure and have already received the attention of numerous works in the past.
+During the second iteration of the process loop, the detection of the comic characters, more complex in their visual diversity is discussed.
+
+The different stages of the process are illustrated through the couple of panels presented in Figure~\ref{fig:casesExampleReconnaissance}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]  %trim=l b r t  width=0.5\textwidth,
+\centering
+\includegraphics[width=0.5\textwidth]{process_illustration.jpg}
+\caption[Original panels used to illustrate the different stages of the processing sequence]{Original panels used to illustrate the different stages of the processing sequence. Image credits: Jay Scott Pike - Boy Love Girls 41 - Lev Gleason.}
+\label{fig:casesExampleReconnaissance}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Simple element extraction} % (fold)
 \label{sub:simple_element_extraction}
@@ -503,49 +501,105 @@ The process flow of the two iterations is detailed hereafter.
 \label{par:step_1}
 The initial extraction of panels, text and balloons feeds the knowledge base.
 All the elements are extracted independently using the method proposed Chapter~\ref{chap:independent}.
-% given an hypothesis on the labels of each region according to the extractor it is from (e.g. for a region from the balloon extractor, the hypothesis is a balloon label).
-In Figure~\ref{fig:kn:graph0}, dashed elements represent the initial hypotheses and each layer a result from a different extractor.
+All these elements are assumptions to be validated by the expert system.
+In Figure~\ref{fig:kn:graph0}, dashed elements represent the initial hypotheses and each colour a result from a different extractor.
 Note that extraction errors can take place at this stage which the system can recover from at a later stage.
 % have been introduced in the example in order to demonstrate how the proposed system can recover them.
 % The regions that have been validated by the expert system have a solid border, others a dashed border.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_1.png}\\
-  \includegraphics[trim= 30px 168px 100px 110px, clip, width=0.8\textwidth]{graph_init_1_non_orderred.pdf}
-  \caption[Initial hypothesis about the content of a given image]{Initial hypothesis (dashed elements) about the content of a given image $I$ after the initial extractions of panels $P$, text $T$ and balloons $B$ with tails $Q$.
-  }
-  \label{fig:kn:graph0}
- \end{figure}
+\begin{figure}[h!] %trim=l b r t  width=0.5\textwidth,
+\begin{center}
+\subfloat[]{\label{fig:kn:process_illustration_hypo_1}\includegraphics[width=0.4\textwidth]{process_illustration_hypo_1.png}} \hspace{0.5em}
+%\subfloat[]{\label{fig:kn:process_illustration_hypo_1}\includegraphics[trim= 65px 168px 150px 110px, clip, width=0.55\textwidth]{graph_init_1_non_orderred.pdf}}
+\subfloat[]{\label{fig:kn:process_illustration_hypo_1}\includegraphics[trim= 150px 230px 100px 40px, clip, width=0.55\textwidth]{graph_init_1bis.pdf}}
+\caption[Initial hypothesis about the content of a given image]{Initial hypothesis (dashed elements) about the content of a given image $I$ after the initial extractions of panels $P$, text $T$ and balloons $B$ with tails $Q$.
+}
+\label{fig:kn:graph0}
+\end{center}
+\end{figure}
+
+ % \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+ %   \centering
+ %   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_1.png}\\
+ %  \includegraphics[trim= 30px 168px 100px 110px, clip, width=0.8\textwidth]{graph_init_1_non_orderred.pdf}
+ %  \caption[Initial hypothesis about the content of a given image]{Initial hypothesis (dashed elements) about the content of a given image $I$ after the initial extractions of panels $P$, text $T$ and balloons $B$ with tails $Q$.
+ %  }
+ %  \label{fig:kn:graph0}
+ % \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{Iteration 1 - step 2 (validation)} % (fold)
 \label{par:step_2}
-Subsequently, the expert system checks if their spatial relations (context) match the topological properties of the knowledge base defined Section~\ref{sec:kn:constrains_low_level_extraction}, otherwise it solves them using the domain knowledge described in Section~\ref{sub:kn:validation}.
-The result is illustrated in Figure~\ref{fig:kn:graph_valid_initial}.
+At the second step, the hypotheses proposed by the low level system are compared to the constraints formalized in the ontology.
+The extracted regions are first categorized as panels, balloons and text lines thanks to the rules presented in Section~\ref{sub:model_interactions}, interpreted by an inference engine.
+Then each element $e$ is linked to its direct container $E$.
+This is selected from the set of extracted regions as described in Section~\ref{sec:kn:constrains_low_level_extraction}.
+If the system is unable to find a container for an element $e$ from the set of extracted regions, the page is then considered as the container of $e$.
+
+In order to validate the assumption of all the elements in $E$, they are simply considered as instances of the concept $\concept{ROI}_i$.
+We voluntarily do not take account of their class in the ontology $\mathcal{O}_ {bd}$.
+This has for effect to introduce inconsistencies between the type of container and the domain of a property resulting from \objProp{hasContent}, making the model inconsistent.
+These inconsistencies allow highlighting of possible errors made during the low-level processing.
+The inference engine is stated again on the ontology and inconsistencies are treated one after the other.
+
+We focused in this work on optimizing the reliability of results.
+% We have chosen to focus on the accuracy of extractions rather than completeness.
+% Detection of misclassification, such as a box has been segmented by the extractor of bubbles, and the prominence of items that may have been forgotten are both short-term prospects of this work.
+% Currently, our system is able to handle the following reasons for inconsistency:
+
+
+We chosen to focus on increasing the extraction precision  rather than completeness by deleting the elements that did not fit the proposed model.
+The detection of misclassified elements (e.g panel actually being a balloon) and the proposition of missed elements (e.g. a missed balloon around a group of text lines) are both short term perspectives of this work.
+For the time being, our system can handled, without being limited to, the following inconsistencies:
+
+\begin{itemize}
+  \item \textbf{A page (p) contains a balloon (b), a text line (t)}: b or t is deleted.
+  \item \textbf{A panel (p1) contains a panel (p2) or a text line (t)}: p2 or t is deleted.
+  \item \textbf{A balloon (b) contains a panel (p)}: if p contains some balloons and b does not contain any text lines, b is deleted, otherwise, p is deleted.
+  \item \textbf{A balloon (b1) contains a balloon (b2)}: if b1 does not contain any line then b1 is deleted, otherwise b2 is deleted.
+  % \item \textbf{A balloon (b) contains a character (c)}: c is deleted.
+  \item \textbf{A text line (t) contains a panel (p)}: if p does not contain any balloon then p is deleted, otherwise t is deleted.
+  \item \textbf{A text line (t) contains a balloon (b)}: if b does not contain any text line then b is deleted, otherwise t is deleted.
+  \item \textbf{A text line (t1) contains a text line (t2)}: if t1 contains other lines then t1 is deleted, otherwise t2 is deleted.
+  % \item \textbf{A text line (t) contains a character (c)}: c is deleted.
+  % \item \textbf{A character (c) contains a panel (p), a balloon (b) or a text line (t)}: c is deleted.  
+  % \item \textbf{A character (c1) contains a character (c2)}: c2 is deleted.
+\end{itemize}
+
+The term ``related'' refers to the relation of membership of an element to another, as described in Section~\ref{sec:kn:constrains_low_level_extraction}.
+Figure~\ref{fig:kn:graph_valid_initial} illustrates the current organisation of the extracted elements.
+They have been structured according to the model definition Section~\ref{sub:kn:comics_domain}.
+Validated elements are illustrated in solid lines while other still dashed.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_valid_1.png}\\
-  \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_valid_1.pdf}
-  \caption[Validation of the hypothesis using the properties of the knowledge base]{Validation of the hypothesis using the properties of the knowledge base. Valid elements have a solid border.}
+   \center
+   \subfloat[]{\label{fig:kn:process_illustration_valid_1}\includegraphics[width=0.4\textwidth]{process_illustration_valid_1.png}} \hspace{0.5em}
+   \subfloat[]{\label{fig:kn:graph_valid_1}\includegraphics[trim= 65px 168px 20px 110px, clip, width=0.55\textwidth]{graph_valid_1.pdf}}
+   %\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_valid_1.png}\\
+  %\includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_valid_1.pdf}
+  \caption[Validation of the hypothesis using the constraints of the knowledge base]{Validation of the hypothesis using the constraints of the knowledge base. Valid elements have a solid border.}
   \label{fig:kn:graph_valid_initial}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{Iteration 1 - step 3 (inference)} % (fold)
 \label{par:step_3}
-From the validated information, the expert system infers the semantic information between text and balloon and specifies them as speech balloon and speech text respectively when they verify the properties of the knowledge base (Figure~\ref{fig:kn:graph_specific_types}). 
+
+At this step of the first iteration, the inconsistencies have been resolved and the remaining elements are in accordance with our model.
+They are organized in the hierarchy of concepts in $\mathcal{O}_{comics}$.
+The ontology being consistent, the inference engine is able to classify instances of  \concept{Balloon} and \concept{TextLine} into \concept{SpeechBalloon}, \concept{NarrativeBalloon}, \concept{SpokenTextLine} and \concept{NarratedTextLine} according to their properties and constraints.
+The classification of the region instances is shown Figure~\ref{fig:kn:graph_specific_types}.
+%From the validated information, the expert system infers the semantic information between text and balloon and specifies them as speech balloon and speech text respectively when they verify the properties of the knowledge base (Figure~\ref{fig:kn:graph_specific_types}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_infer_1.pdf}
-  \caption[Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base]{Inference of the speech balloon $SB$ and speech text $ST$ regions using the semantic properties of the knowledge base.% Bold edges represent an information spatial and semantic.
+  \caption[Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base]{Inference of the the speech balloons $SB$, narrative balloons $NB$, spoken text lines $ST$ and narrated text lines $NT$ using the semantic properties and constraints of $\mathcal{O}_{comics}$ \modif{TODO: update graph with NB and NT}.
   }
   \label{fig:kn:graph_specific_types}
  \end{figure}
@@ -659,6 +713,7 @@ These two models are bounded by bridges that are used to perform reasoning over 
 
 % section model (end)
 
+\modif{
 
 \section{Interactions between high and low level processing}
 \label{sec:kn:interaction_low_high_level_processing}
@@ -703,6 +758,7 @@ For the time being, our system can handled, without being limited to, the follow
  	\item \textbf{A character (c1) contains a character (c2)}: c2 is deleted.
 \end{itemize}
 % subsection validation (end)
+}
 
 \subsection{Inferences from the low level information} % (fold)
 \label{sub:inference_from_low_level}

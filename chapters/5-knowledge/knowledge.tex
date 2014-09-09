@@ -31,11 +31,13 @@ In this chapter we propose a knowledge-driven system that can interact with bott
 
 The proposed framework is based on interactions between low and high level processing in order to reduce the challenging semantic gap.
 %Here, the different level of information are given by an image processing and an expert system respectively. 
-\modif{We call each image processing algorithm an ``extractor'' of panels, balloons (or bubbles), tails and comic characters (protagonists) according to the type of region they are designed for.
-Extractors provide a set of regions that feeds a knowledge base.
+% We call each image processing algorithm an ``extractor'' of panels, balloons (or bubbles), tails and comic characters (protagonists) according to the type of region they are designed for.
+Low level image content extractors provide a set of regions that feeds a knowledge base.
 %in the different extraction processes such as panel and speech balloon improvements and validation (e.g. panel, text, speech balloon) and their combination to guide other feature extractions (e.g. person object).
-The knowledge base is associated with rules that form an ontology.
-The main difficulty is to extract but also to model the diversity of styles, format, definition and the differences between design and printing techniques (Figure~\ref{fig:kn:comics_diversity}).}
+The knowledge base is associated with properties and constraints that form an ontology.
+An expert system uses the ontology to assert the relations between regions and an inference engine to deduct new information in order to perform further image processing.
+Note that in the rest of this chapter ``character'' is used in the sense of actor or protagonist of the comics, not as a piece of text.
+The main difficulty is to extract but also to model the diversity of styles, format, definition and the differences between design and printing techniques (Figure~\ref{fig:kn:comics_diversity}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
@@ -47,13 +49,12 @@ The main difficulty is to extract but also to model the diversity of styles, for
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\modif{An expert system uses the ontology to assert the relations between regions and the corresponding inference engine to deduct new information in order to perform further image processing (e.g. hypotheses of the regions of interest for the localisation of comic characters or speech balloons).
-Note that in the rest of the chapter ``character'' is used in the sense of actor or protagonist of the comics, not as a piece of text.
-This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining applied to comic book contents. All the details about the knowledge models, inference engine and the interactions between the elements can be found in his thesis~\cite{phdthesisGuerin14}.}
+
+This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining applied to comic book contents. All the details about the knowledge models, inference engine and the interactions between the elements can be found in his thesis~\cite{phdthesisGuerin14}.
 
 %--------------------------------------------------
 \section{Proposed models} % (fold)
-\label{sec:proposed_models}
+\label{sec:kn:proposed_models}
 
 In this section we introduce the ontologies developed for automatic analysis of comics.
 First, we present a first ontology formalising the concepts related to image processing, data type, the inputs and outputs.
@@ -385,12 +386,12 @@ A dynamic communication is maintained between low and high level processing of t
 \label{sub:interactions_between_low_and_high_level_processing}
 
 
-We consider the ontologies $\mathcal{O}_{image}$ and $\mathcal{O}_{comics}$ developed as integral parts of an expert system that provides an interpretive framework to extract a system of content low level image processing.
+We consider the ontologies $\mathcal{O}_{image}$ and $\mathcal{O}_{comics}$ developed as integral parts of an expert system that provides an interpretation framework for low level image content.
 The purpose of the expert system is to interact with the low level iteratively in order to progressively understand the content of an image, moving from simple to more complex elements.
 This approach is similar to~\cite{Sciascio2011Structured} except that in our case the definition of the complex object is not a composition of simple objects but context-driven.
 
 The expert system, represented by the diagram in Figure~\ref{fig:kn:generic_expert_system}, includes both ontologies forming our knowledge base.
-This knowledge base, once populated by data from the low-level system, is queried by an inference engine to extract logical conclusions, depending on the data and their consistency compared to the formalised knowledge.
+This knowledge base, once populated by data from the low-level system, is queried by an inference engine (e.g. Racer~\cite{Haarslev2012}] or Pellet~\cite{Sirin2007a}) to extract logical conclusions, depending on the data and their consistency compared to the formalised knowledge.
 
 These logical conclusions may include a validation of extracted elements, rejection or creation of elements referred to the image processing system.
 
@@ -407,7 +408,7 @@ These logical conclusions may include a validation of extracted elements, reject
 %This knowledge can be represented by all the relations betweens the elements that constitute a document from this collection.
 The low level algorithms have been designed to extract specific information from the whole image or a specific region.
 Low and high level systems interact in a loop to feed the knowledge base until there is a complete and consistent understanding of the document, according to the knowledge domain. 
-Figure~\ref{fig:kn:process_loop} illustrate this loop interacting between the two levels.
+Figure~\ref{fig:kn:process_loop} illustrates this loop interacting between the two level of information.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -474,7 +475,7 @@ In the case of multiple intersections, only the smallest container is considered
 When the element is fully contained in several other items, the smallest container is consequently the direct container (e.g. a text line must be considered as being included inside a balloon before being included inside the panel containing that balloon).
 
 \section{Processing sequence} % (fold)
-\label{sec:kn:framework_}
+\label{sec:kn:processing_sequence}
 
 The expert system asserts the extraction of simple elements such as panels, texts, balloons and tails in order to infer speech balloons before searching for more complex elements (e.g. comic book characters) based on the context defined by the simple elements and their relations.
 This can be demonstrated with the first two iterations of the process loop (Figure~\ref{fig:kn:process_loop}).
@@ -697,14 +698,13 @@ Validated elements are represented with a solid line Figure~\ref{fig:kn:valid_2}
 \label{par:step_6}
 
 The final step of this process is to deduce from all validated characters those that are actually linked to speech balloons.
-
-Among the validated characters, we considered as being potential speakers those who intersect with the initial estimation of region of interest (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}.
-These regions were computed from each speech balloon, an abstract straight line is drawn from that tail tip in the direction indicated by the tail to the panel border.
+Among the validated characters, we consider as being potential speakers those who intersect with the initial estimation of region of interest (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}).
+An abstract straight line is drawn from each speech balloon tail tip in the direction indicated by the tail to its related panel border.
 The first region of a potential speaker that it touched is considered to be the source of the speech balloon (the emitter).
 This relation was asserted into the ontology with the property \textit{isSaidBy}, between the selected character and the corresponding balloon.
-Since the range of this property was set to the concept of \concept{speaker}, it automatically classified the character instance involved into this class.
+Since the range of this property was set to the concept of \concept{speaker}, it automatically classifies the character instance involved into this class (Figure~\ref{fig:kn:final_information}).
 
-The expert system infers which characters are speaking $SC$ (Section~\ref{sub:inference_of_the_speaking_characters}) and makes a semantic link to the corresponding speech balloons (Figure~\ref{fig:kn:final_information}).
+% The expert system infers which characters are speaking $SC$ (Section~\ref{sub:inference_of_the_speaking_characters}) and makes a semantic link to the corresponding speech balloons (Figure~\ref{fig:kn:final_information}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -714,7 +714,7 @@ The expert system infers which characters are speaking $SC$ (Section~\ref{sub:in
   % \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_infer_2.pdf}
   \subfloat[]{\label{fig:kn:process_illustration_infer_2}\includegraphics[width=0.4\textwidth]{process_illustration_infer_2.png}} \hspace{0.5em}
    \subfloat[]{\label{fig:kn:graph_infer_2}\includegraphics[trim= 65px 168px 20px 110px, clip, width=0.55\textwidth]{graph_infer_2.pdf}}
-  \caption[Inference of the speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions]{Inference of the two speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions.
+  \caption[Inference of the speaking characters and their corresponding semantic links to speech balloons]{Inference of the two speaking characters $SC$ and their corresponding semantic links to speech balloons $SB$ regions.
   The two semantic links are represented by a grey stroke in the image over the regions concerned and a non oriented horizontal edge in the graph.
   }
   \label{fig:kn:final_information}
@@ -729,17 +729,17 @@ Further iteration could be processed by extracting other low level elements such
 
 % section framework_ (end)
 
-\section{Presentation of the models} % (fold)
-\label{sec:kn:model}
+% \section{Presentation of the models} % (fold)
+% \label{sec:kn:model}
 
-The knowledge base is composed of two ontologies, designed using OWL's W3C recommendation~\cite{McGuinness2004}, and interacting with each other (Figure~\ref{fig:kn:generic_expert_system}).
-The first one was used to model the raw data provided by image analysis algorithms (called \textit{image model} hereafter), while the second models the comic book domain knowledge (called \textit{comics model}).
-These two models are bounded by bridges that are used to perform reasoning over both models, using their own properties.
+% The knowledge base is composed of two ontologies, designed using OWL's W3C recommendation~\cite{McGuinness2004}, and interacting with each other (Figure~\ref{fig:kn:generic_expert_system}).
+% The first one was used to model the raw data provided by image analysis algorithms (called \textit{image model} hereafter), while the second models the comic book domain knowledge (called \textit{comics model}).
+% These two models are bounded by bridges that are used to perform reasoning over both models, using their own properties.
 
-\subsection{Image model}
+% \subsection{Image model}
 
 
-\subsection{Comics model}
+% \subsection{Comics model}
 
 
 % \subsection{Model interactions}
@@ -759,58 +759,36 @@ These two models are bounded by bridges that are used to perform reasoning over 
 
 % section model (end)
 
-\modif{
+% \modif{
 
-\section{Interactions between high and low level processing}
-\label{sec:kn:interaction_low_high_level_processing}
+% \section{Interactions between high and low level processing}
+% \label{sec:kn:interaction_low_high_level_processing}
 
-\modif{TODO: to dispatch in processing sequence subsection}
+% \modif{TODO: to dispatch in processing sequence subsection}
 
 %This section describes how the extracted data are processed at the semantic level.
-This section presents the low and high level processing interaction to validate the extractions, infer information and generate hypotheses about the image content.% we use it to validate the extracted elements, infer more information about them and express region of interest's hypothesis to send back at low-level algorithms.
-\subsection{Validation of the extractions} % (fold)
-\label{sub:kn:validation}
-In order to validate the extraction of the comic page's components, we made sure that the extracted panels, balloons and text lines were in accordance with the knowledge defined in \ref{sec:kn:constrains_low_level_extraction}.
-%Those which are not consistent with our model are rejected.
+% This section presents the low and high level processing interaction to validate the extractions, infer information and generate hypotheses about the image content.% we use it to validate the extracted elements, infer more information about them and express region of interest's hypothesis to send back at low-level algorithms.
+% \subsection{Validation of the extractions} % (fold)
+% \label{sub:kn:validation}
+% In order to validate the extraction of the comic page's components, we made sure that the extracted panels, balloons and text lines were in accordance with the knowledge defined in \ref{sec:kn:constrains_low_level_extraction}.
+% %Those which are not consistent with our model are rejected.
 
-Firstly, each item was loaded into the model as it was labelled (page, panel, balloon, text line or comics character) by the low level processing step.
-Then, each element was linked to its smallest container in a half-blind way (Section~\ref{sec:kn:constrains_low_level_extraction}).
-That is to say that the type of contained element was known, while the type of  potential container was not.
-Not knowing the type of container might have lead to incorrect assertions that would have produced inconsistencies in the model.
-Those inconsistencies are the result of possible mistakes made during the extraction process that were filtered out in order to improve the overall detection precision.
-Consistency checking was performed over the model and inconsistencies were handled one after the other.
-We chose to focus on increasing the extraction precision by deleting those elements that did not fit the constrained model.
-The detection of misclassified elements (a panel actually being a balloon) and the proposition of missed elements (like a missed balloon around a group of text lines) were both perspectives of this work.
-For the time being, our system can handled, without being limited to, the following inconsistencies:
-%Due to the limited number of object types we deal with, inconsistencies sources can be reduced to this exhaustive list:
-\begin{itemize}
-	\item \textbf{A page (p) contains a balloon (b), a text line (t) or a character (c)}: b, t or c is deleted.
-%	\item \textbf{A page (p) contains a balloon (b)}: if b contains other balloons then b is a panel, otherwise b has to be deleted.
-%  	\item \textbf{A page (p) contains a text line (t)}: if t contains other lines then t is a balloon, otherwise t has to be deleted.
-	\item \textbf{A panel (p1) contains a panel (p2) or a text line (t)}: p2 or t is deleted.
-%  	\item \textbf{A panel (p1) contains a panel (p2)}: if p2 contains any text line then p2 is a balloon, otherwise p2 has to be deleted.
-% 	\item \textbf{A panel (p) contains a text line (t)}: if t contains other lines then t is a balloon, otherwise t has to be deleted.
- 	\item \textbf{A balloon (b) contains a panel (p)}: if p contains some balloons and b does not contain any text lines, b is deleted, otherwise, p is deleted.
- 	%does not contain anything then p is a line, else if p contains any text line then p is a balloon, otherwise b has to be deleted.
-	\item \textbf{A balloon (b1) contains a balloon (b2)}: if b1 does not contain any line then b1 is deleted, otherwise b2 is deleted.
-	\item \textbf{A balloon (b) contains a character (c)}: c is deleted.
-	%\item \textbf{A balloon (b1) contains a balloon (b2)}: if b2 does not contain anything then b2 is a line, else if b1 does not contain any line then b1 is a panel, otherwise b1 has to be deleted.
- 	\item \textbf{A text line (t) contains a panel (p)}: if p does not contain any balloon then p is deleted, otherwise t is deleted.
- 	\item \textbf{A text line (t) contains a balloon (b)}: if b does not contain any text line then b is deleted, otherwise t is deleted.
-	%\item \textbf{A balloon (b1) contains a balloon (b2)}: if b1 does not contain any line then b1 is deleted, otherwise b2 is deleted.
- 	\item \textbf{A text line (t1) contains a text line (t2)}: if t1 contains other lines then t1 is deleted, otherwise t2 is deleted.
- 	\item \textbf{A text line (t) contains a character (c)}: c is deleted.
- 	\item \textbf{A character (c) contains a panel (p), a balloon (b) or a text line (t)}: c is deleted. 	
- 	\item \textbf{A character (c1) contains a character (c2)}: c2 is deleted.
-\end{itemize}
-% subsection validation (end)
-}
+% Firstly, each item was loaded into the model as it was labelled (page, panel, balloon, text line or comics character) by the low level processing step.
+% Then, each element was linked to its smallest container in a half-blind way (Section~\ref{sec:kn:constrains_low_level_extraction}).
+% That is to say that the type of contained element was known, while the type of  potential container was not.
+% Not knowing the type of container might have lead to incorrect assertions that would have produced inconsistencies in the model.
+% Those inconsistencies are the result of possible mistakes made during the extraction process that were filtered out in order to improve the overall detection precision.
+% Consistency checking was performed over the model and inconsistencies were handled one after the other.
+% We chose to focus on increasing the extraction precision by deleting those elements that did not fit the constrained model.
+% The detection of misclassified elements (a panel actually being a balloon) and the proposition of missed elements (like a missed balloon around a group of text lines) were both perspectives of this work.
+% For the time being, our system can handled, without being limited to, the following inconsistencies:
+% %Due to the limited number of object types we deal with, inconsistencies sources can be reduced to this exhaustive list:
 
-\subsection{Inferences from the low level information} % (fold)
-\label{sub:inference_from_low_level}
+% \subsection{Inferences from the low level information} % (fold)
+% \label{sub:inference_from_low_level}
 
-The expert system is able to infer more specific information than that given by the extractors.
-For instance, it can deduce which text is spoken or not and which speaking character pronounces the content of which speech balloon.
+% The expert system is able to infer more specific information than that given by the extractors.
+% For instance, it can deduce which text is spoken or not and which speaking character pronounces the content of which speech balloon.
 
 % % Use of RDFS/OWL (Web ontology language) to model the information domain with the general comics properties listed bellow, base on the type of region given by the low level processing:
 
@@ -826,23 +804,23 @@ For instance, it can deduce which text is spoken or not and which speaking chara
 
 % The regions are passed to the image processing part (character extractor) that will extract all the characters using those regions as seeds.
 
-\paragraph{Speech balloon and speech text} % (fold)
-\label{par:speech_balloon_and_speech_text}
+% \paragraph{Speech balloon and speech text} % (fold)
+% \label{par:speech_balloon_and_speech_text}
 
-The classification of balloons and text respectively into speech balloons and spoken text can be done by running an inference engine on the model (e.g. Racer~\cite{Haarslev2012}] or Pellet~\cite{Sirin2007a}).
-To allow reasoning, the model has to be consistent, which is the case after validation step~\ref{sub:kn:validation} when all inconsistencies have been resolved.
-In Section~\ref{sec:kn:constrains_low_level_extraction}, we defined a speech balloon as a balloon that has a tail.
-In others words, the concept of a \textit{speech balloon} can be seen as a specialization of the \textit{balloon} concept that extends all its properties plus adding a few new ones.
-This is expressed in the expert system by defining a property \textit{hasTail} with the constraint that must have a \textit{speech balloon} instance as a source.
-Assessing this piece of knowledge, the reasoner will automatically deduce that each instance of \textit{balloon} extended with a \textit{hasTail} property can be specialized into a \textit{speech balloon}.
+% The classification of balloons and text respectively into speech balloons and spoken text can be done by running an inference engine on the model (e.g. Racer~\cite{Haarslev2012}] or Pellet~\cite{Sirin2007a}).
+% To allow reasoning, the model has to be consistent, which is the case after validation step~\ref{sub:kn:validation} when all inconsistencies have been resolved.
+% In Section~\ref{sec:kn:constrains_low_level_extraction}, we defined a speech balloon as a balloon that has a tail.
+% In others words, the concept of a \textit{speech balloon} can be seen as a specialization of the \textit{balloon} concept that extends all its properties plus adding a few new ones.
+% This is expressed in the expert system by defining a property \textit{hasTail} with the constraint that must have a \textit{speech balloon} instance as a source.
+% Assessing this piece of knowledge, the reasoner will automatically deduce that each instance of \textit{balloon} extended with a \textit{hasTail} property can be specialized into a \textit{speech balloon}.
 
-In a similar way, the concept of \textit{text line} subsumes the concept of \textit{spoken text line}.
-It is rendered equivalent to the set of individuals from the \textit{text line} concept that is bound with the property \textit{isLineOf}, which is the inverse property of \textit{hasLine}, to a \textit{speech balloon}.
-In other words, the text lines marked as being part of a speech balloon are automatically classified as spoken text lines.
+% In a similar way, the concept of \textit{text line} subsumes the concept of \textit{spoken text line}.
+% It is rendered equivalent to the set of individuals from the \textit{text line} concept that is bound with the property \textit{isLineOf}, which is the inverse property of \textit{hasLine}, to a \textit{speech balloon}.
+% In other words, the text lines marked as being part of a speech balloon are automatically classified as spoken text lines.
 
 
-\paragraph{Speaking characters} % (fold)
-\label{sub:inference_of_the_speaking_characters}
+% \paragraph{Speaking characters} % (fold)
+% \label{sub:inference_of_the_speaking_characters}
 
 % Among the validated characters (Section~\ref{sub:kn:validation}), we considered as being potential speakers those who intersect with the hypothetical region computed in \ref{sec:se:tail_to_character}.
 % These regions were computed from each speech balloon, i.e. the balloons that had an identified tail.
@@ -866,24 +844,19 @@ In other words, the text lines marked as being part of a speech balloon are auto
 
 We presented a new framework for understanding documents that can interact with low and high level information suitable for semi structured and complex background documents such as comics.
 Several key improvements to information extraction and processing methods have been developed. 
-%We suggest improved methods for panel and balloon extraction along with a first method in the literature to locate the tail tip and the indicated direction by analysing the balloon contour.
-We provide a novel generic and unsupervised definition of the comic character region of interest that takes into account the spatial organisation of the rest of the elements in an image.
-It relies on an inference engine that interacts with two knowledge models, one for image processing and the other one for comics.
-In the future we plan to add more iterations of the process in order to retrieve new information such as spotting the non speaking comic characters using those already detected (speaking characters) for training.
-In addition, the expert system will be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from text locations. 
+
+Two ontologies have been presented in this chapter, the first one is formalizing the concepts implemented for image analysis and the second one for formalizing the comics domain.
+The image processing ontology has the advantage of being completely independent of any application.
+The proposed comics ontology is composed of concepts that reflect the classic structure of a comic book.
+This conceptualization has been developed with the target of image analysis interfacing the image ontology through equivalence relations between some of their concepts.
+
+The proposed system provides a novel generic and unsupervised approach for comic book document understanding mixing visual and semantic information.
+It relies on an inference engine that interacts with the two proposed models.
+We detailed a use case for comic character localisation associated with their corresponding speech balloons, taking into account the spatial organisation of the rest of the elements in an image.
+
+In the future we plan to add more iterations of the process in order to retrieve new information such as other objects in the panels and sound effects.
+In addition, the expert system will be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from text locations.
+A semantic tag can also be given to the speech text regions according to a deeper analysis of the type of balloon presented Section~\ref{sub:in:balloon_classification}.
 
 In the next chapter, we are going to experiment the different contributions presented in this thesis and compare them to other methods from the literature.
 The dataset is first introduced along with the metrics we used to evaluate information retrieval. 
-
-\modif{
-  
-Deux ontologies ont été présentées dans ce chapitre, la première formalisant les notions mises en œuvre lors de l'étape d'analyse d'images, l'autre formalisant le domaine de la bande dessinée.
-
-L'ontologie image possède l'avantage d'être totalement indépendante d'un quelconque contexte d'application.
-Elle permet de manipuler les données d'entrée à analyser, d'organiser les extractions issues de différents algorithmes et d'en évaluer les performances par rapport à des données de référence.
-Le format des concepts représentant les régions d'intérêt et des relations spatiales est compatible avec les standards existants.
-
-L'ontologie BD est composée de concepts permettant de rendre compte de la structure classique d'une bande dessinée.
-Cette conceptualisation a été développée dans un objectif d'analyse d'images et s'interface avec l'ontologie image à travers des relations d'équivalence entre certains de leurs concepts.
-Nous verrons dans la suite de ce document que certains points peuvent être amendés afin d'adapter tel ou tel aspect du modèle à différents cadres d'application.  
-}

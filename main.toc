@@ -131,19 +131,19 @@
 \contentsline {section}{\numberline {6.7}Tail detection evaluation}{112}{section.6.7}
 \contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{113}{section.6.8}
 \contentsline {section}{\numberline {6.9}Knowledge-driven analysis overall evaluation}{118}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Model evaluation}{118}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.1}Comics model evaluation}{118}{subsection.6.9.1}
 \contentsline {subsection}{\numberline {6.9.2}Framework evaluation}{120}{subsection.6.9.2}
-\contentsline {paragraph}{Process details}{120}{section*.179}
-\contentsline {paragraph}{Low level processing}{121}{section*.180}
-\contentsline {paragraph}{Semantic links}{122}{section*.181}
-\contentsline {paragraph}{General evaluation}{122}{section*.182}
-\contentsline {section}{\numberline {6.10}Conclusions}{122}{section.6.10}
-\contentsline {chapter}{\numberline {7}Conclusions}{123}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary and contributions}{123}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future perspectives}{124}{section.7.2}
-\contentsline {chapter}{\numberline {A}Pre-processing}{127}{appendix.A}
-\contentsline {chapter}{\numberline {B}Feature extraction}{131}{appendix.B}
-\contentsline {chapter}{\numberline {C}Dataset}{133}{appendix.C}
-\contentsline {chapter}{\numberline {D}Ground truth}{135}{appendix.D}
-\contentsline {chapter}{\numberline {E}List of Publications}{137}{appendix.E}
-\contentsline {chapter}{Bibliography}{141}{section*.197}
+\contentsline {paragraph}{Process details}{120}{section*.180}
+\contentsline {paragraph}{Low level processing}{121}{section*.181}
+\contentsline {paragraph}{Semantic links}{121}{section*.182}
+\contentsline {paragraph}{General evaluation}{122}{section*.183}
+\contentsline {section}{\numberline {6.10}Conclusions}{123}{section.6.10}
+\contentsline {chapter}{\numberline {7}Conclusions}{125}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary and contributions}{125}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future perspectives}{126}{section.7.2}
+\contentsline {chapter}{\numberline {A}Pre-processing}{129}{appendix.A}
+\contentsline {chapter}{\numberline {B}Feature extraction}{133}{appendix.B}
+\contentsline {chapter}{\numberline {C}Dataset}{135}{appendix.C}
+\contentsline {chapter}{\numberline {D}Ground truth}{137}{appendix.D}
+\contentsline {chapter}{\numberline {E}List of Publications}{139}{appendix.E}
+\contentsline {chapter}{Bibliography}{143}{section*.198}

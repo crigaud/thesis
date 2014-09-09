@@ -599,7 +599,7 @@ The classification of the region instances is shown Figure~\ref{fig:kn:graph_spe
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_infer_1.pdf}
-  \caption[Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base]{Inference of the the speech balloons $SB$, narrative balloons $NB$, spoken text lines $ST$ and narrated text lines $NT$ using the semantic properties and constraints of $\mathcal{O}_{comics}$ \modif{TODO: update graph with NB and NT}.
+  \caption[Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base]{Inference of the the speech balloons $SB$, narrative balloons $NB$, spoken text lines $ST$ and narrated text lines $NT$ using the semantic properties and constraints of $\mathcal{O}_{comics}$.
   }
   \label{fig:kn:graph_specific_types}
  \end{figure}
@@ -610,49 +610,84 @@ The classification of the region instances is shown Figure~\ref{fig:kn:graph_spe
 \subsection{Complex element extraction} % (fold)
 \label{sub:complex_element_extraction}
 
+This is the beginning of the second iteration of the process (Figure~\ref{fig:kn:process_loop}) where we focus on more complex elements such as the comic characters.
+At this point, the expert system has some information about the content of the page from the analysis carried out during the first iteration.
+
 \paragraph{Iteration 2 - step 1 (hypothesis)} % (fold)
 \label{par:step_4}
-This step is the beginning of the second iteration of the process (Figure~\ref{fig:kn:process_loop}).
-At this point the expert system already has some information about the content of the image from which a further hypothesis can be made concerning complex elements such as the region of interest (ROI) of the characters from the speech balloon positions (Figure~\ref{fig:kn:hypothesis_roi}).
-The ROIs defined by the expert system are given as seeds to the image processing algorithm (extractor of characters) which in turn feeds the expert system with more precise character locations (Figure~\ref{fig:kn:graph_character_region}).
+
+The information discovered during the first iteration of the process is used to formulate hypotheses about the probable location of the characters in the panels in order to guide their detection by the low level processing.
+We first focus on characters that are emitting at least a speech balloon (considered as main characters).
+It is reasonable to consider that the speech balloon and the character emitting the balloon belong to a same panel.
+It is therefore possible to restrict the search space of the character inside the panel.
+In addition, the position of the character in the panel can be estimated according to the direction pointed by the tail which is a characteristic of speech balloons (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}).
+The estimation of the position of the comic character from the tail position and direction have been presented Section~\ref{sec:se:tail_to_character}.
+The estimated region of interest are given as seeds to the image processing algorithm (extractor of characters) which refines the regions according to the image content (Figure~\ref{fig:kn:process_illustration_hypo_2_2}).
+The last step from the low level processing consist in spotting all the comic characters from the estimated examples (Figure~\ref{fig:kn:process_illustration_hypo_2_3}).
+
+\modif{
+The method used for ROI refinement is currently under investigation and a first approach could be to fit the estimated ROI the to the set of regions that are mainly overlapped by the ROI and exclude the others.
+The spotting approach is relevant for retrieving non speaking characters, we presented a first method Section~\ref{sec:in:character_spotting} but it is currently only appropriate for colourful comics.
+}
 
 % Knowing the position of the valid from the valid triplets of panel, text and balloon.
 % This is the starting point of the second iteration.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_2_1.png}\\
-  \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_init_2_1.pdf}
-  \caption[Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$]{Hypothesis of ROIs of characters $C$ from the speech balloon $SB$ regions and the corresponding image $I$. The regions that are not related to $ST$ have been shaded in the graph and removed from the image to make it more comprehensible.
+   \center
+  %  \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_2_1.png}\\
+  % \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_init_2_1.pdf}
+  %\subfloat[Hypothesis regions]{\label{fig:kn:process_illustration_hypo_2_1}\includegraphics[width=0.45\textwidth]{process_illustration_hypo_2_1.png}} \hspace{0.5em}
+   \subfloat[Hypothesis regions]{\label{fig:kn:process_illustration_hypo_2_1bis}\includegraphics[trim= 0 0 0 0, clip, width=0.45\textwidth]{process_illustration_hypo_2_1bis.png}} \hspace{1em}
+   \subfloat[Refined regions]{\label{fig:kn:process_illustration_hypo_2_2}\includegraphics[trim= 0 0 0 0, clip, width=0.45\textwidth]{process_illustration_hypo_2_2.png}}\\
+   \subfloat[Spotted regions]{\label{fig:kn:process_illustration_hypo_2_3}\includegraphics[trim= 0 0 0 0, clip, width=0.4\textwidth]{process_illustration_hypo_2_3.png}} \hspace{0.5em}
+   \subfloat[Knowledge representation]{\label{fig:kn:graph_init_2_2}\includegraphics[trim= 65px 168px 20px 110px, clip, width=0.55\textwidth]{graph_init_2_2.pdf}}
+  \caption[Hypothesis, refinement and spotting of comic character regions from the speech balloon regions]{Hypothesis, refinement and spotting of comic characters regions $C$ from the speech balloon $SB$ regions. The regions that are not related to $ST$ have been shaded in the graph and removed from the image to make it more comprehensible.
   }
-  \label{fig:kn:hypothesis_roi}
- \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_2_2.png}\\
-  % \includegraphics[trim= 0px 168px 20px 85px, clip, width=0.8\textwidth]{fig/graph_init_2_2.pdf}
-  \caption[Character locations $C$ returned by the low level processing]{Character locations $C$ returned by the low level processing from the ROIs defined in Figure~\ref{fig:kn:hypothesis_roi}.
-  }% added into the graph and the corresponding region in the image $I$.}
   \label{fig:kn:graph_character_region}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+ %   \centering
+ %   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_hypo_2_2.png}\\
+ %  % \includegraphics[trim= 0px 168px 20px 85px, clip, width=0.8\textwidth]{fig/graph_init_2_2.pdf}
+ %  \caption[Character locations $C$ returned by the low level processing]{Character locations $C$ returned by the low level processing from the ROIs defined in Figure~\ref{fig:kn:hypothesis_roi}.
+ %  }% added into the graph and the corresponding region in the image $I$.}
+ %  \label{fig:kn:graph_character_region}
+ % \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \paragraph{Iteration 2 - step 2 (validation)} % (fold)
 \label{par:step_5}
-The expert system checks if the spatial relations of the characters $C$ match the properties of the knowledge base defined in Section~\ref{sec:kn:constrains_low_level_extraction} (Figure~\ref{fig:kn:valid_2}).
+
+The validation of the new regions is performed in the same way as for the first iteration.
+This new batch of extraction is submitted to the constraints of ontology as following:
+
+\begin{itemize}
+  \item \textbf{A page (p) contains a character (c)}: p is deleted.
+  \item \textbf{A balloon (b) contains a character (c)}: c is deleted.
+  \item \textbf{A text line (t) contains a character (c)}: c is deleted.
+  \item \textbf{A character (c) contains a panel (p), a balloon (b) or a text line (t)}: c is deleted.  
+  \item \textbf{A character (c1) contains a character (c2)}: c2 is deleted.
+\end{itemize}
+  
+% The expert system checks if the spatial relations of the characters $C$ match the properties of the knowledge base defined in Section~\ref{sec:kn:constrains_low_level_extraction} 
+
+Validated elements are represented with a solid line Figure~\ref{fig:kn:valid_2}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
-   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_valid_2.png}\\
-  \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_valid_2.pdf}
-  \caption[Validation of the character regions $C$ by the expert system]{Validation of the character regions $C$ by the expert system and the corresponding image $I$.
+  %  \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_valid_2.png}\\
+  % \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_valid_2.pdf}
+  \subfloat[]{\label{fig:kn:process_illustration_valid_2}\includegraphics[width=0.4\textwidth]{process_illustration_valid_2_2.png}} \hspace{0.5em}
+   \subfloat[]{\label{fig:kn:graph_valid_2}\includegraphics[trim= 65px 168px 20px 110px, clip, width=0.55\textwidth]{graph_valid_2.pdf}}
+  \caption[Validation of the character regions by the expert system]{Validation of the character regions $C$ by the expert system and the corresponding image $I$.
   }
   \label{fig:kn:valid_2}
  \end{figure}
@@ -660,14 +695,25 @@ The expert system checks if the spatial relations of the characters $C$ match th
 
 \paragraph{Iteration 2 - step 3 (inference)} % (fold)
 \label{par:step_6}
-The expert system infers which characters are speaking $SC$ (Section~\ref{sub:inference_of_the_speaking_characters}) and makes a semantic link to the corresponding speech balloons which have already been linked to speech text regions in {\it Iteration 1 - inference} step. (Figure~\ref{fig:kn:final_information}).
+
+The final step of this process is to deduce from all validated characters those that are actually linked to speech balloons.
+
+Among the validated characters, we considered as being potential speakers those who intersect with the initial estimation of region of interest (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}.
+These regions were computed from each speech balloon, an abstract straight line is drawn from that tail tip in the direction indicated by the tail to the panel border.
+The first region of a potential speaker that it touched is considered to be the source of the speech balloon (the emitter).
+This relation was asserted into the ontology with the property \textit{isSaidBy}, between the selected character and the corresponding balloon.
+Since the range of this property was set to the concept of \concept{speaker}, it automatically classified the character instance involved into this class.
+
+The expert system infers which characters are speaking $SC$ (Section~\ref{sub:inference_of_the_speaking_characters}) and makes a semantic link to the corresponding speech balloons (Figure~\ref{fig:kn:final_information}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
-   \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_infer_2.png}\\
-  \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_infer_2.pdf}
+  %  \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{process_illustration_infer_2.png}\\
+  % \includegraphics[trim= 0px 128px 20px 85px, clip, width=0.8\textwidth]{graph_infer_2.pdf}
+  \subfloat[]{\label{fig:kn:process_illustration_infer_2}\includegraphics[width=0.4\textwidth]{process_illustration_infer_2.png}} \hspace{0.5em}
+   \subfloat[]{\label{fig:kn:graph_infer_2}\includegraphics[trim= 65px 168px 20px 110px, clip, width=0.55\textwidth]{graph_infer_2.pdf}}
   \caption[Inference of the speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions]{Inference of the two speaking characters $SC$ and the corresponding semantic links between speaking characters $SC$ and speech balloons $SB$ regions.
   The two semantic links are represented by a grey stroke in the image over the regions concerned and a non oriented horizontal edge in the graph.
   }
@@ -797,12 +843,13 @@ In other words, the text lines marked as being part of a speech balloon are auto
 
 \paragraph{Speaking characters} % (fold)
 \label{sub:inference_of_the_speaking_characters}
-Among the validated characters (Section~\ref{sub:kn:validation}), we considered as being potential speakers those who intersect with the hypothetical region computed in \ref{sec:se:tail_to_character}.
-These regions were computed from each speech balloon, i.e. the balloons that had an identified tail.
-An abstract straight line was drawn from that tail tip in the direction indicated by the tail.
-The first region of a potential speaker that it touched was considered to be the source of the speech balloon.
-This relation was asserted into the ontology with the property \textit{isSaidBy}, between the selected character and the corresponding balloon.
-Since the range of this property was set to the concept of \textit{speaking character}, it automatically classified the character instance involved into this class.
+
+% Among the validated characters (Section~\ref{sub:kn:validation}), we considered as being potential speakers those who intersect with the hypothetical region computed in \ref{sec:se:tail_to_character}.
+% These regions were computed from each speech balloon, i.e. the balloons that had an identified tail.
+% An abstract straight line was drawn from that tail tip in the direction indicated by the tail.
+% The first region of a potential speaker that it touched was considered to be the source of the speech balloon.
+% This relation was asserted into the ontology with the property \textit{isSaidBy}, between the selected character and the corresponding balloon.
+% Since the range of this property was set to the concept of \textit{speaking character}, it automatically classified the character instance involved into this class.
 
 % section interaction_low_high_level_processing (end)
 

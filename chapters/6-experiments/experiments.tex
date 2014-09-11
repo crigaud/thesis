@@ -2072,8 +2072,9 @@ The importance of a precise pixel-level segmentation in the region of the tail t
 \label{sec:comic_character_extraction_evaluation}
 We evaluated the detection of comic characters on the 1597 characters of the eBDtheque dataset.
 In the eBDtheque ground truth, only 829 (52\%) of the character instances are speaking (and 48\% are not).
-Therefore, we do not expect to reach 100\% recall and precision with the Method A and B because they are only able to extract speaking characters.
-The independent Method B is potentially able to retrieve all the character instance given one example of each of them.
+Therefore, we do not expect to reach 100\% recall and precision with the Method A and C because they are only able to extract speaking characters.
+The independent Method B is potentially able to retrieve all the character instances of colourful comics, given one example for each of them.
+This limitation requires a lot a manual work thus we selected only 22 different characters which represent 352 instances in total.
 
 % \subsubsection{Sequential approach} % (fold)
 % \label{sub:sequential_approach}
@@ -2081,7 +2082,7 @@ The independent Method B is potentially able to retrieve all the character insta
 % subsection sequential_approach (end)
 Similarly to the other object extraction methods, the overlapping ratio between a predicted character region and a region from the ground truth should be above 50\% ($a_0>0.5$) for the predicted region to be considered as valid (Section~\ref{sub:ex:object_localisation_metric}).
 This ratio can be relaxed according to the application e.g. face only, full body, cropped body, an example of the impact of this ratio on validation and rejection of predicted regions is shown on Figure~\ref{fig:ex:characters_overlap_ratio}.
-For instance, the predictions that are presented on the left part of Figure~\ref{fig:ex:characters_overlap_ratio} could be accepted if the target was to roughly detect comic character locations.
+For instance, the predictions that are presented in the panels of Figure~\ref{fig:ex:characters_overlap_ratio} could be accepted if the target was to roughly detect comic character locations.
 In this case, all the predicted region would have been accepted as correct with a validation criterion set to $a_0>0.1$.
 
 
@@ -2817,8 +2818,17 @@ Also, once we retrieved all colour similar objects, we could learn a shape model
 \section{Knowledge-driven analysis overall evaluation} % (fold) %IJDAR
 \label{sub:ex:knowledge_driven_analysis_evaluation}
 
-\modif{TODO: introduction}
+In this section we evaluate the proposed knowledge-driven analysis system as a whole.
+Conversely, in the previous four sub-sections we evaluated and compared each low level content extraction separately.
+Here we take advantage of the independent content extraction method (Method B) and the knowledge base proposed \ch{chap:knowledge}, to evaluate the performance of the expert as the whole, which includes visual and semantic elements.
+First we evaluated the two models and then the proposed sequence presented Section~\ref{sec:kn:processing_sequence}.
 
+\subsection{Image model evaluation} % (fold)
+\label{sub:image_model_evaluation}
+
+\modif{TODO: ask to Clement if possible and how?}
+
+% subsection image_model_evaluation (end)
 
 \subsection{Comics model evaluation} % (fold)
 \label{sub:model_evaluation}
@@ -2993,12 +3003,33 @@ Our model is theoretically able to model 88.83\% of this information (dashed lin
 
 
 
-% subsection knowledge_driven_analysis_evaluation (end)
 
-% \section{Global evaluation} % (fold)
-% \label{sub:ex:global_evaluation}
 
-% TODO ???
+% subsection global_evaluation (end)
+% section evaluation (end)
+
+
+% Conclusion --------------------------------------------------------------------------------------------------------------------------------------
+\section{Conclusions}
+\label{sub:ex:conclusion}
+
+In this chapter we evaluated our different contributions for content and semantic element retrieval.
+First, each of the three proposed content extraction approaches have been evaluated and compared separately to methods from the literature.
+Then, proposed models combined with independent content extraction methods have been evaluated.
+
+Method A is an intuitive and sequential approach like most of the previously proposed methods in the literature.
+It efficiency is maximal when all the image content is present and structured classical comic books.
+It gave the best average and precision score for \modif{panel, text, balloon and character extraction} which demonstrate that linking different content extractions at low level processing is relevant for comic book image analysis.
+
+Method B is an independent approach which is more efficient for unusual comic image (no panel, no text or no balloon) than Method A.
+However, it is slightly less powerful than Method A in average on the eBDtheque dataset because this dataset is mainly composed by classical comics.
+This approach can easily be adapted for particular issues as it does not require previous element extraction.
+
+Method C is able to improve the overall precision but not the recall in the presented configuration because it uses only rejection constraints.
+The strength of this approach is that it uses a standard and exchangeable description of the image content, from visual to semantic level, that can be easily be enriched or adapted to specific or large collections.
+The addition of conversion and creation constraint types (not only rejection) can give the ability to this intelligent system to recover missing information.
+
+\modif{TODO: give details about time processing?}
 
 %big table to compare the 3 level of contribution of this thesis
 
@@ -3010,13 +3041,3 @@ Our model is theoretically able to model 88.83\% of this information (dashed lin
       %Comic character
       %Semantic link STSB                 X             
       %Semantic link SBSC                 X
-
-% subsection global_evaluation (end)
-% section evaluation (end)
-
-
-% Conclusion --------------------------------------------------------------------------------------------------------------------------------------
-\section{Conclusions}
-\label{sub:ex:conclusion}
-
-\modif{TODO: conclude the experimental section}

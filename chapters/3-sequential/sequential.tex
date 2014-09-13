@@ -54,7 +54,7 @@ We use this approach to extract panels and text which can be easily differentiat
 % with meaningful names ``noise'', ``text'' and ``panel'' using a classifier with three cluster using discriminant features for instance.
 % The originalities of this paper are frame segmentation, with or without box, and out-of-balloon text segmentation that can be extracted by CC algorithm.
 % The aim of the pre-processing step is to separate background and content of the page in order to focus on the content later. Several processing are implemented in order to apply CC algorithm, and then, to extract the bounding boxes. It can be resumed as follows:
-The process can be summarize as bellow:
+The process can be summarize as below:
   \begin{enumerate}
 	\item Image segmentation
 	\item Connected-component extraction
@@ -201,7 +201,7 @@ First, we require that the candidate text lines to group have similar heights (o
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.5\textwidth]{line_to_paragraphs.pdf}
-		\caption[Text line to text paragraph conversion illustration]{Illustration of the text line to text paragraph conversion from left to right for vertical and horizontal text.}
+		\caption[Text line to text paragraph conversion illustration]{Illustration of the text line to text paragraph conversion from left to right for vertical and horizontal text. Image credits:~\cite{Inoue08,Bubble09}}
 		\label{fig:se:line_to_paragraphs}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -235,7 +235,7 @@ We propose to use this characteristic to compute a confidence value to each conn
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{text_in_balloon.png}
-		\caption[Text positions in speech balloons]{Example of text positions in speech balloons.}
+		\caption[Text positions in speech balloons]{Example of text positions in speech balloons. Image credits~\cite{McCall46,Inoue08,Bubble09}.}
 		\label{fig:se:text_in_balloon}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,7 +254,7 @@ Here, we do not use a local segmentation approach because it has more chances to
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{closed_balloon_process.png}
-		\caption[Sequential balloon extraction process illustration]{Balloon extraction process. Original image, binary segmentation, contour detection (connected components) and result mask from left to right.}
+		\caption[Sequential balloon extraction process illustration]{Balloon extraction process. Original image, binary segmentation, contour detection (connected components) and result mask from left to right. Image credits:~\cite{Midam01}. }
 		\label{fig:se:closed_balloon}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -379,7 +379,7 @@ Since it is not desirable for edges corresponding to text to attract the snake, 
 	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\fbox{\includegraphics[trim = 0mm 0mm 7mm 0mm, clip, width=230px]{edge_dist_trans.png}}
-		\caption[Active contour energies for open balloon extraction]{Example of original image (top left) and its corresponding non-text edge detection (top right), $E_{ext}$ energy (bottom-left) and $E_{text}$ energy (bottom-right). In the bottom part, white corresponds to high energy.}
+		\caption[Active contour energies for open balloon extraction]{Example of original image (top left) and its corresponding non-text edge detection (top right), $E_{ext}$ energy (bottom-left) and $E_{text}$ energy (bottom-right). In the bottom part, white corresponds to high energy. Image credits:~\cite{Bubble09}. }
 		\label{fig:se:distance_transform}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -501,7 +501,7 @@ In the subsequent high resolution fitting stage, we add more intermediate points
 	  \includegraphics[trim= 48mm 0mm 0mm 0mm, clip, width=0.20\textwidth]{snake_init.png} \\ 
 	  \footnotesize a) Group of text lines	& \footnotesize b) Text area convex hull 	& \footnotesize c) Snake initialization 
 	  \end{tabular}
-	\caption[Active contour initialization based on text region convex hull]{Active contour initialization based on text region convex hull.}
+	\caption[Active contour initialization based on text region convex hull]{Active contour initialization based on text region convex hull. Image credits:~\cite{Bubble09}.}
 		\label{fig:se:paragraphs}
 	\end{center}
 	\end{figure}	
@@ -526,7 +526,7 @@ At the end of this step, we obtain a preliminary localization of the speech ball
 		% \fbox{
 		\includegraphics[trim = 0mm 3mm 0mm 1mm, clip, width=220px]{mono_res_det.png}
 		% }
-		\caption[Examples of low resolution contour detection for balloon extraction]{Example of low resolution balloon contour detection (red line) for irregular closed (top) and smooth open (bottom) speech balloons.}
+		\caption[Examples of low resolution contour detection for balloon extraction]{Example of low resolution balloon contour detection (red line) for irregular closed (top) and smooth open (bottom) speech balloons. Image credits:~\cite{EtPisTaf12,Montaine11}.}
 		\label{fig:se:mono_res_det}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

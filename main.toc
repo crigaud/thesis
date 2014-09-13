@@ -41,8 +41,8 @@
 \contentsline {paragraph}{Active contour initialisation}{30}{section*.36}
 \contentsline {paragraph}{Low resolution contour localization}{31}{section*.38}
 \contentsline {paragraph}{High resolution contour shape fitting}{32}{section*.40}
-\contentsline {section}{\numberline {3.4}From balloon to tail}{32}{section.3.4}
-\contentsline {section}{\numberline {3.5}From tail to comic character}{35}{section.3.5}
+\contentsline {section}{\numberline {3.4}From balloon to tail}{33}{section.3.4}
+\contentsline {section}{\numberline {3.5}From tail to comic character}{36}{section.3.5}
 \contentsline {section}{\numberline {3.6}Conclusions}{37}{section.3.6}
 \contentsline {chapter}{\numberline {4}Method B: independent information extraction}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}
@@ -107,7 +107,7 @@
 \contentsline {paragraph}{Text lines}{86}{section*.107}
 \contentsline {paragraph}{Comic characters}{86}{section*.109}
 \contentsline {subsubsection}{Semantic annotation}{87}{section*.111}
-\contentsline {paragraph}{Images}{87}{section*.112}
+\contentsline {paragraph}{Images}{88}{section*.112}
 \contentsline {paragraph}{Panels}{88}{section*.113}
 \contentsline {paragraph}{Balloons}{88}{section*.114}
 \contentsline {paragraph}{Text lines}{89}{section*.116}

@@ -28,7 +28,7 @@
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{33}{figure.caption.42}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{34}{figure.caption.43}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{35}{figure.caption.44}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{36}{figure.caption.45}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{35}{figure.caption.45}
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{37}{figure.caption.47}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Independent panel extraction process}}{41}{figure.caption.48}
@@ -54,7 +54,7 @@
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{59}{figure.caption.65}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Multi-scale comic character spotting}}{60}{figure.caption.66}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The left panel $P_0$ represents a comics character labelled as $C_0$ saying the content of balloon $B_0$ to another character labelled as $C_1$. In the right panel $P_1$, the character $C_1$ is saying $B_1$ to $C_0$.\relax }}{64}{figure.caption.67}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The left panel $P_0$ represents a comics character labelled as $C_0$ saying the content of balloon $B_0$ to another character labelled as $C_1$. In the right panel $P_1$, the character $C_1$ is saying $B_1$ to $C_0$. Image credits:~\cite {Magicien11}. \relax }}{64}{figure.caption.67}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Examples of comic panels that reflect the diversity of comics.\relax }}{64}{figure.caption.68}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces A representation of the image model involved in the expert system}}{65}{figure.caption.69}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Initial comics model}}{67}{figure.caption.74}

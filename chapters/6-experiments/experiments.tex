@@ -291,7 +291,7 @@ Therefore, some parts of the character such as arms or legs, are clipped sometim
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{segCharacter.png}
-\caption[Comic character position annotation]{Example of comic character annotation: sniper's arms are not included in the bounding box in order to maximize the region occupied by the sniper in its bounding box. The two snipers and the two characters in the car are annotated because they emit a speech balloon in a different panel.}
+\caption[Comic character position annotation]{Example of comic character annotation: sniper's arms are not included in the bounding box in order to maximize the region occupied by the sniper in its bounding box. The two snipers and the two characters in the car are annotated because they emit a speech balloon in a different panel. Image credits:~\cite{Boston10}.}
 \label{fig:gt:segCharacter}
 \end{center}
 \end{figure}
@@ -1402,7 +1402,7 @@ First, the performance using active contour model with only the internal energy,
 We introduced Method B in Section~\ref{sub:in:balloon_segmentation}, it is a independent approach that does not require any previous other element extraction.
 This method requires one parameter which is the minimum number of children $minNbChildren$ of a balloon (number of included connected-components).
 We set $minNbChildren=8$ according to the parameter validation, just before the first peak in the distribution of the number of letters per speech balloon (Figure~\ref{fig:ex:min_number_children_validation}).
-Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons bellow the selected threshold that contain one or two letters, usually punctuation marks.
+Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons below the selected threshold that contain one or two letters, usually punctuation marks.
 %such as ``?'' or ``!''. 
 We voluntary omitted them here to avoid detecting a lot of non balloon regions.
 
@@ -2099,7 +2099,7 @@ In this case, all the predicted region would have been accepted as correct with 
       \includegraphics[trim= 0mm 0mm 190mm 0mm, clip, width=0.41\textwidth]{characters_overlap_ratio.png}
       % \hspace{1em}
       \includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.49\textwidth]{overlap_ratio_evolution.pdf}
-      \caption[Example of comic character region prediction]{Example of predicted region considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$ (dashed lines in the right hand side figure). Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$.}
+      \caption[Example of comic character region prediction]{Example of predicted region considered as true (green) or false (red) positives according to the validation criteria $a_0>0.5$ (dashed lines in the right hand side figure). Thin grey rectangles are the ground truth regions and the red numbers in the top left corner of each ground truth region is the value of the overlapping ratio $a_0$. Image credits:~\cite{Magicien11}.}
       \label{fig:ex:characters_overlap_ratio}
     \end{figure}  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2550,7 +2550,7 @@ Also, once we retrieved all colour similar objects, we could learn a shape model
 %     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons bellow the selected threshold that contain one or two letters, usually punctuation marks.
+% Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons below the selected threshold that contain one or two letters, usually punctuation marks.
 % %such as ``?'' or ``!''. 
 % We voluntary omitted them here to avoid detecting a lot of non balloon regions.
 

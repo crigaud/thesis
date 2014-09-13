@@ -163,9 +163,9 @@ Wei-Ta Chu and Chia-Hsiang Yu.
 \bibitem{Clavelli09}
 Antonio Clavelli and Dimosthenis Karatzas.
 \newblock Text segmentation in colour posters from the spanish civil war era.
-\newblock In {\em Proceedings of the 2009 10th International Conference on
-  Document Analysis and Recognition}, ICDAR '09, pages 181--185, Washington,
-  DC, USA, 2009. IEEE Computer Society.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition}, ICDAR '09, pages 181--185, Washington, DC, USA, 2009. IEEE
+  Computer Society.
 
 \bibitem{Cohen1991}
 Laurent~D Cohen.
@@ -207,10 +207,20 @@ Daniel Cremers, Florian Tischh\"auser, Joachim Weickert, and Christoph
   mumford-shah functional.
 \newblock {\em International Journal of Computer Vision}, 50:295--313, 2002.
 
+\bibitem{Bubble08}
+Cyb.
+\newblock {\em Cosmozone}.
+\newblock Studio Cyborga, Goven, France, 2008.
+
 \bibitem{Bubble09}
 Cyb.
 \newblock {\em Bubbleg\^{o}m G\^{o}m}.
 \newblock Studio Cyborga, Goven, France, 2009.
+
+\bibitem{Magicien11}
+Cyb.
+\newblock {\em Le Magicien Lose}.
+\newblock Studio Cyborga, Goven, France, 2011.
 
 \bibitem{Dalal05}
 Navneet Dalal and Bill Triggs.
@@ -402,6 +412,11 @@ Yusuke In, Takashi Oie, Masakazu Higuchi, Shuji Kawasaki, Atushi Koike, and
 \newblock {\em Internatinal journal of systems applications, engineering and
   development}, 5(2):216--223, 2011.
 
+\bibitem{Inoue08}
+Eri Inoue.
+\newblock {\em Kyoumen gensoukyoku}.
+\newblock Kyoumen gensoukyoku, Osaka, Japan, 2008.
+
 \bibitem{Iwata2014StudyManga}
 Motoi Iwata, Atsushi Ito, and Koichi Kise.
 \newblock A study to achieve manga character retrieval method for manga images.
@@ -414,6 +429,17 @@ Raulet J{\'e}r{\'e}my and Boyer Vincent.
 \newblock In {\em Proceedings of the 21st International Conference in Central
   Europe on Computer Graphics, Visualization and Computer Vision (WSCG)}, pages
   88--96, 2013.
+
+\bibitem{Boston10}
+Olivier Jolivet.
+\newblock {\em BostonPolice}.
+\newblock Clair de Lune, Allauch, France, 2010.
+
+\bibitem{LladosIDIPSRecognition}
+Llados Josep.
+\newblock Recognition of textual and graphical patterns.
+\newblock Second International Document Image Processing Summer School (IDIPS
+  2014), 2014.
 
 \bibitem{Jung04}
 Keechul Jung, Kwang~In Kim, and Anil~K. Jain.
@@ -430,8 +456,8 @@ D.~Karatzas, F.~Shafait, S.~Uchida, M.~Iwamura, L.~Gomez~i Bigorda,
   S.~Robles~Mestre, J.~Mas, D.~Fernandez~Mota, J.~Almazan~Almazan, and L.-P.
   de~las Heras.
 \newblock Icdar 2013 robust reading competition.
-\newblock In {\em Document Analysis and Recognition (ICDAR), 2013 12th
-  International Conference on}, pages 1484--1493, Aug 2013.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 1484--1493, Aug 2013.
 
 \bibitem{Kass1988}
 Michael Kass, Andrew Witkin, and Demetri Terzopoulos.
@@ -495,6 +521,16 @@ Bart Lamiroy and Jean-Marc Ogier.
 \newblock In David Doermann and Karl Tombre, editors, {\em {Handbook of
   Document Image Processing and Recognition}}. Springer, 2014.
 
+\bibitem{Noeils11}
+Lamisseb.
+\newblock {\em Les noeils Tome 1}.
+\newblock Bac@BD, Valence, France, 2011.
+
+\bibitem{EtPisTaf12}
+Lamisseb.
+\newblock {\em Et Pis Taf !}
+\newblock Bac@BD, Valence, France, 2012.
+
 \bibitem{Leroy1996}
 Bertrand Leroy, IsabelleL. Herlin, and LaurentD. Cohen.
 \newblock Multi-resolution algorithms for active contour models.
@@ -528,8 +564,8 @@ Luyuan Li, Yongtao Wang, Zhi Tang, and Dong Liu.
 \bibitem{Li2013Unsupervised}
 Luyuan Li, Yongtao Wang, Zhi Tang, Xiaoqing Lu, and Liangcai Gao.
 \newblock Unsupervised speech text localization in comic images.
-\newblock In {\em 12th International Conference on Document Analysis and
-  Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 1190--1194, Aug 2013.
 
 \bibitem{publishersweekly2014Surveying}
 Bruce Lidl.
@@ -604,6 +640,11 @@ Yusuke Matsui, Toshihiko Yamasaki, and Kiyoharu Aizawa.
 \newblock In {\em ACM SIGGRAPH 2011 Posters on - SIGGRAPH '11}, page~1, New
   York, New York, USA, 2011. ACM Press.
 
+\bibitem{McCall46}
+Ted McCall and Charles Snelgrove.
+\newblock {\em Robin Hood And Company}.
+\newblock Anglo-American, Canada, 1946.
+
 \bibitem{mccloud1994understanding}
 Scott McCloud.
 \newblock {\em Understanding comics: The Invisible Art}.
@@ -614,11 +655,6 @@ Scott McCloud.
 \newblock {\em Making Comics: Storytelling Secrets of Comics, Manga and Graphic
   Novels}.
 \newblock HarperCollins, 2006.
-
-\bibitem{McGuinness2004}
-Deborah~L. McGuinness and Frank {Van Harmelen}.
-\newblock {OWL Web Ontology Language Overview}.
-\newblock Technical report, W3C, 2004.
 
 \bibitem{McIntosh2011}
 Jason McIntosh.
@@ -652,6 +688,11 @@ Vasileios Mezaris, Ioannis Kompatsiaris, and Michael~G. Strintzis.
 \newblock In {\em In Proc. IEEE Int. Conf. on Image Processing (ICIP03}, pages
   511--514, 2003.
 
+\bibitem{Midam01}
+Midam.
+\newblock {\em Kid Paddle}.
+\newblock Dupuis, Marcinelle, Belgium, 2011.
+
 \bibitem{Miller2014}
 John~Jackson Miller.
 \newblock Yearly rankings for comic book sales, 2014.
@@ -665,6 +706,11 @@ G.S. Millidge.
 Thomas~M. Mitchell.
 \newblock {\em Machine Learning}.
 \newblock McGraw-Hill, Inc., New York, NY, USA, 1 edition, 1997.
+
+\bibitem{Montaine11}
+Marion Montaigne.
+\newblock {\em Tu mourras moins bête - La science, c'est pas du cinéma !}
+\newblock Ankama, Roubaix, France, 2012.
 
 \bibitem{mukundan1998moment}
 Ramakrishnan Mukundan and KR~Ramakrishnan.
@@ -683,6 +729,11 @@ Nhu~Van Nguyen, Jean-Marc Ogier, and Franck Charneau.
 \newblock Bag of subjects: Lecture videos multimodal indexing.
 \newblock In {\em Proceedings of the 2013 ACM Symposium on Document
   Engineering}, DocEng '13, pages 225--226, New York, NY, USA, 2013. ACM.
+
+\bibitem{Zig52}
+Alain~Saint Ogan.
+\newblock {\em Zig, Puce et Alfred}.
+\newblock Hachette, Paris, France, 1952.
 
 \bibitem{Ogier2000Semantic}
 J.M. Ogier, R.~Mullot, J.~Labiche, and Y.~Lecourtier.
@@ -710,6 +761,11 @@ Nikhil~R Pal and Sankar~K Pal.
 \newblock A review on image segmentation techniques.
 \newblock {\em Pattern recognition}, 26(9):1277--1294, 1993.
 
+\bibitem{Jay53}
+Jay~Scott Pike.
+\newblock {\em Boy Love Girls}.
+\newblock Lev Gleason, New York City, US, 1953.
+
 \bibitem{ComicLife3}
 Plasq.
 \newblock Comic life 3, 2014.
@@ -729,6 +785,11 @@ Christophe Ponsard, Ravi Ramdoyal, and Daniel Dziamski.
 \newblock An ocr-enabled digital comic books viewer.
 \newblock In {\em Computers Helping People with Special Needs}, pages 471--478.
   Springer, 2012.
+
+\bibitem{Prunelle10}
+Vicky Portail-Kernel and C\'{e}dric Kernel.
+\newblock {\em Prunelle, la fille du cyclope}.
+\newblock Ankama, Roubaix, France, 2010.
 
 \bibitem{Pratt91}
 Pratt and William K.
@@ -794,8 +855,8 @@ Mehmet Sezgin et~al.
 A~Shahab, F.~Shafait, and A~Dengel.
 \newblock Icdar 2011 robust reading competition challenge 2: Reading text in
   scene images.
-\newblock In {\em Document Analysis and Recognition (ICDAR), 2011 International
-  Conference on}, pages 1491--1496, Sept 2011.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 1491--1496, Sept 2011.
 
 \bibitem{Shamir2006Generating}
 Ariel Shamir, Michael Rubinstein, and Tomer Levinboim.
@@ -805,8 +866,8 @@ Ariel Shamir, Michael Rubinstein, and Tomer Levinboim.
 \bibitem{Shivakumara09}
 P.~Shivakumara, T.Q. Phan, and Chew~Lim Tan.
 \newblock A robust wavelet transform based technique for video text detection.
-\newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
-  International Conference on}, pages 1285 --1289, july 2009.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 1285 --1289, july 2009.
 
 \bibitem{Vomic}
 Shueisha.
@@ -843,9 +904,9 @@ Martin Stommel, Lena~I Merhej, and Marion~G M{\"u}ller.
 Chung-Yuan Su, Ray-I Chang, and Jen-Chang Liu.
 \newblock Recognizing text elements for svg comic compression and its novel
   applications.
-\newblock In {\em Proceedings of the 11th International Conference on Document
-  Analysis and Recognition (ICDAR)}, ICDAR '11, pages 1329--1333, Washington,
-  DC, USA, 2011. IEEE Computer Society.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 1329--1333, Washington, DC, USA, 2011. IEEE
+  Computer Society.
 
 \bibitem{SumiSNM2002Comic}
 Yasuyuki Sumi, Ryuuki Sakamoto, Keiko Nakao, and Kenji Mase.
@@ -862,8 +923,8 @@ Kang~B Sun and Boaz~J Super.
 Weihan Sun and K.~Kise.
 \newblock Detecting printed and handwritten partial copies of line drawings
   embedded in complex backgrounds.
-\newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
-  International Conference on}, pages 341--345, July 2009.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 341--345, July 2009.
 
 \bibitem{Sun2010}
 Weihan Sun and Koichi Kise.
@@ -891,7 +952,7 @@ Weihan Sun and Koichi Kise.
 Weihan Sun, Koichi Kise, Jean-Christophe Burie, and Jean-Marc Ogier.
 \newblock Specific comic character detection using local feature matching.
 \newblock In {\em Proceedings of International Conference on Document Analysis
-  and Recognition (ICDAR 2013)}, Washington, USA, 2013.
+  and Recognition (ICDAR)}, Washington, USA, 2013.
 
 \bibitem{Sundaresan2012Text}
 M.~Sundaresan and S.~Ranjini.
@@ -1047,8 +1108,8 @@ B.~Yao, X.~Yang, and S.C. Zhu.
 \bibitem{Peng2013Document}
 Peng Ye and D.~Doermann.
 \newblock Document image quality assessment: A brief survey.
-\newblock In {\em Document Analysis and Recognition (ICDAR), 2013 12th
-  International Conference on}, pages 723--727, Aug 2013.
+\newblock In {\em Proceedings of International Conference on Document Analysis
+  and Recognition (ICDAR)}, pages 723--727, Aug 2013.
 
 \bibitem{Zinger05extracting}
 S.~Zinger, C.~Millet, B.~Mathieu, G.~Grefenstette, P.~Hède, and

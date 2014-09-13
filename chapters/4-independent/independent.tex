@@ -195,7 +195,7 @@ In case of such local degradation (e.g. holes, crossed text, partial erasure, hi
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\includegraphics[trim= 0px 0px 0px 0px, clip, width=0.95\textwidth]{threshold_selection.jpg}
-		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation of the grey-scale image with a fixed threshold at 250 (as Arai~\cite{Arai11}) and the fourth row shows the corresponding results using the automatic Otsu's threshold selection method.}
+		\caption[Different threshold selection applied on a grey-scale image]{Different threshold selection methods applied on the luminance channel of several comics types. First row shows the original image of a selection of comic book parts. Second row shows the corresponding luminance channel of HSL colour space in a 8 bits grey-scale image. The third row represents the bi-level segmentation of the grey-scale image with a fixed threshold at 250 (as Arai~\cite{Arai11}) and the fourth row shows the corresponding results using the automatic Otsu's threshold selection method. Image credits:~\cite{Inoue08,McCall46,Bubble09,Zig52}. }
 		\label{fig:in:threshold_selection_methods}
 	\end{figure}
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -439,7 +439,7 @@ We extract connected components from the binary image and analyse their parent-c
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[width=0.9\textwidth]{closed_balloon_process.png}
-  \caption[Balloon extraction process]{Balloon extraction process. Original image, binary segmentation, contour detection (connected components) and result mask from left to right.}
+  \caption[Balloon extraction process]{Balloon extraction process. Original image, binary segmentation, contour detection (connected components) and result mask from left to right. Image credits:~\cite{Midam01}.}
   \label{fig:in:balloon_binarisation}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -683,7 +683,7 @@ This limited amount of colours allows to describe and retrieve the object with o
   \begin{figure}[h!]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{smoothing_quatization.png}
-    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction. From left to right columns: original image, smoothing~\cite{l0smoothing2011} and k-means clustering ($N=32$).}
+    \caption[Colour image smoothing and quantization for comic character extraction]{Colour image smoothing and quantization effects for comic character extraction. From left to right columns: original image, smoothing~\cite{l0smoothing2011} and k-means clustering ($N=32$). Image credits:~\cite{Noeils11,Bubble08,Boston10,Lubbin12}.}
     \label{fig:in:smoothing_quantization}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -704,7 +704,7 @@ This selection can be assisted using a scribble-based tool~\cite{Xu2012LazySelec
  \begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
  	 \centering
  	\includegraphics[width=0.5\textwidth]{user_selection.png}
- 	\caption[User defined comics character selection]{Examples of comics character colour selection using a pointing device (click, drag and release). Selected pixels are highlighted in red, they constitute the query given by the user.}
+ 	\caption[User defined comics character selection]{Examples of comics character colour selection using a pointing device (click, drag and release). Selected pixels are highlighted in red, they constitute the query given by the user. Image credits:~\cite{Noeils11,Bubble08,Midam01,Prunelle10}. }
  	\label{fig:in:user_selection}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -818,7 +818,7 @@ Each value of $L_{1c}$ and $L_{2c}$ are normalized as a percentage between 0 and
  \begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
  	 \centering
  	\includegraphics[width=0.9\textwidth]{description_sequence.png}
- 	\caption[Comic character query description]{The left part represents a query example after the colour reduction process and its original image. Top-right part shows the colour histogram of the 6 first colours with the highest number of pixel in the query as a percentage from the total number of pixel in the query ($L_1$). Middle-right figure represents the corresponding discriminability level for each colour according the other pixel in the page. Bottom-right figure represents the corresponding query descriptor of $N=3$ colours.}
+ 	\caption[Comic character query description]{The left part represents a query example after the colour reduction process and its original image. Top-right part shows the colour histogram of the 6 first colours with the highest number of pixel in the query as a percentage from the total number of pixel in the query ($L_1$). Middle-right figure represents the corresponding discriminability level for each colour according the other pixel in the page. Bottom-right figure represents the corresponding query descriptor of $N=3$ colours. Image credits:~\cite{Noeils11}. }
  	\label{fig:in:dominant_colour_hist_desc}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -838,7 +838,7 @@ Each window position is computed with 50\% percent overlapping with its four nei
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[width=0.8\textwidth]{masks.png}
-  \caption[Colour mask corresponding to five colour of the query descriptor]{Example of colour mask corresponding to the 5 first colours in the top histogram of Figure~\ref{fig:in:dominant_colour_hist_desc}.}
+  \caption[Colour mask corresponding to five colour of the query descriptor]{Example of colour mask corresponding to the 5 first colours in the top histogram of Figure~\ref{fig:in:dominant_colour_hist_desc}. Image credits:~\cite{Noeils11}.}
   \label{fig:in:masks}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -891,7 +891,7 @@ A post processing step removes multiple object detections by keeping only the re
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[trim= 0px 1px 0mm 0mm, clip,width=0.7\textwidth]{filtering.png}
-  \caption[Multi-scale comic character spotting]{Multi-scale spotting example. The left image shows the detections at different scales, the colouration depends on to the $p$ value, blue to red for low to high. The right side image shows the remaining best detection after the filtering step. }
+  \caption[Multi-scale comic character spotting]{Multi-scale spotting example. The left image shows the detections at different scales, the colouration depends on to the $p$ value, blue to red for low to high. The right side image shows the remaining best detection after the filtering step. Image credits:~\cite{Bubble08}. }
   \label{fig:in:filtering}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

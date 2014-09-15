@@ -17,7 +17,7 @@
 \BOOKMARK [1][-]{section.2.3}{Holistic understanding}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.4}{Existing applications}{chapter.2}% 18
 \BOOKMARK [1][-]{section.2.5}{Conclusion}{chapter.2}% 19
-\BOOKMARK [0][-]{chapter.3}{Method A: sequential information extraction}{}% 20
+\BOOKMARK [0][-]{chapter.3}{Sequential information extraction}{}% 20
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 21
 \BOOKMARK [1][-]{section.3.2}{Panel and text}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.3}{From text to balloon}{chapter.3}% 23
@@ -26,7 +26,7 @@
 \BOOKMARK [1][-]{section.3.4}{From balloon to tail}{chapter.3}% 26
 \BOOKMARK [1][-]{section.3.5}{From tail to comic character}{chapter.3}% 27
 \BOOKMARK [1][-]{section.3.6}{Conclusions}{chapter.3}% 28
-\BOOKMARK [0][-]{chapter.4}{Method B: independent information extraction}{}% 29
+\BOOKMARK [0][-]{chapter.4}{Independent information extraction}{}% 29
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 30
 \BOOKMARK [1][-]{section.4.2}{Panel extraction}{chapter.4}% 31
 \BOOKMARK [1][-]{section.4.3}{Text localisation and recognition}{chapter.4}% 32
@@ -44,7 +44,7 @@
 \BOOKMARK [2][-]{subsection.4.5.3}{Query descriptor}{section.4.5}% 44
 \BOOKMARK [2][-]{subsection.4.5.4}{Object retrieval}{section.4.5}% 45
 \BOOKMARK [1][-]{section.4.6}{Conclusions}{chapter.4}% 46
-\BOOKMARK [0][-]{chapter.5}{Method C: knowledge-driven analysis}{}% 47
+\BOOKMARK [0][-]{chapter.5}{Knowledge-driven analysis}{}% 47
 \BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 48
 \BOOKMARK [1][-]{section.5.2}{Proposed models}{chapter.5}% 49
 \BOOKMARK [2][-]{subsection.5.2.1}{Image processing domain}{section.5.2}% 50
@@ -88,4 +88,4 @@
 \BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 88
 \BOOKMARK [0][-]{appendix.C}{Dataset}{}% 89
 \BOOKMARK [0][-]{appendix.D}{List of Publications}{}% 90
-\BOOKMARK [0][-]{section*.202}{Bibliography}{}% 91
+\BOOKMARK [0][-]{section*.201}{Bibliography}{}% 91

@@ -1,4 +1,4 @@
-\chapter{Method A: sequential information extraction}%Panel extraction}
+\chapter{Sequential information extraction}%Panel extraction}
 \chaptermark{Sequential information extraction}
 \label{chap:sequential}
 \graphicspath{{./chapters/3-sequential/figs/}}
@@ -70,7 +70,7 @@ The process can be summarize as below:
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
 Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
 Here we use the lightness channel because the panel border strokes and text are usually darker than other element in the image, including the background. 
-Then, a global binary segmentation~\ref{sub:ap:bi_threshold} (figure~\ref{fig:se:binary_img}) is applied with a threshold determined dynamically.
+Then, a global binary segmentation (Appendix~\ref{sub:ap:bi_threshold}) is applied with a threshold determined dynamically (Figure~\ref{fig:se:binary_img}).
 The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
 We assume that the border pixels of the page are representative of the page background (depending on the digitization process).
 If the median value is closer to ``black'' than ``white'' grey level, then, image inversion is applied and we redo the complete process in order to always get a white background at the end of this step.
@@ -81,7 +81,7 @@ The binary conversion step is very important for the rest of the method because 
 \subsubsection{Connected-component extraction} % (fold)
  \label{par:connected_component_extraction}
  
-The connected-component algorithm~\ref{sec:ap:connected_component_labelling} is applied on the binary image and the bounding box of each black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
+The connected-component algorithm (Appendix~\ref{sec:ap:connected_component_labelling}) is applied on the binary image and the bounding box of each black component is computed to facilitate subsequent processing (Figure \ref{fig:se:cc_bounding_box}).
 We do not consider white connected-component here because we assume that panel border and text elements are darker than other elements in the page (segmented as black region).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,10 +114,10 @@ Knowing the number of cluster facilitate the clustering, here
 %We define the set of component bounding boxes $R = \{R_1, R_2, ... , R_n\}$.
 we set the number of clusters $k=3$ according to the domain knowledge of comics.
 They aim to reflect the ``panel'' (the highest), the ``text'' (medium height) and the ``noise'' (few pixels height) as shown on figure~\ref{fig:se:histo_roi}.
-One of the most popular clustering algorithm is k-means clustering method~\ref{sub:ap:muli_threshold}.
+One of the most popular clustering algorithm is k-means clustering method (Appendix~\ref{sub:ap:muli_threshold}).
 
 
-This clustering is performed dynamically on each image which makes this method parameter-free (given a number of clusters) and invariant to page format and resolution.
+This clustering is performed dynamically on each image which makes this method parameter-free (for a given number of clusters) and invariant to page format and resolution.
 % Indeed, the height-based classification is not page size dependent unlike~\cite{Khoi11,Arai11}, and the number of pixels for each ROI is proportional to the page resolution (do not bias the classification).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -267,7 +267,7 @@ Here, we do not use a local segmentation approach because it has more chances to
 \label{par:balloon_extraction}
 
 For each extracted blob that includes a text paragraph (Section~\ref{par:text_line_grouping}), we compute the difference of alignment on the horizontal $d_x$ and the vertical $d_y$ axis between the balloon barycentre $c_1$ and the text paragraph barycentre $c_2$ (Figure~\ref{fig:se:align_diff}).
-We use the difference of alignment as a confidence value $C_{balloon}$ that will be used for balloon and non balloon classification (\ch{chap:experimentations}).
+We use the difference of alignment as a confidence value $C_{balloon}$ for balloon and non balloon classification (\ch{chap:experimentations}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
@@ -324,7 +324,7 @@ Observing the heterogeneity of balloons, and considering the difficulty to manag
 Active contours appear to be suitable to the problem.
 The active contour framework was developed for delineating an object outline in an image.
 The algorithm attempts to minimize the energy associated to the current contour, defined as the sum of an internal and an external energy term (Section~\ref{sub:ap:contour_based}). 
-In this paper we propose two adaptations of the active contour theory to the domain of comic balloon detection.
+In this section we propose two adaptations of the active contour theory to the domain of comic balloon detection.
 Specifically, we handle the case of balloons with missing parts or implicit contours, while we adopt a two-step approach to fit irregular outline types such as peak and cloud type balloons. 
 To achieve this, we propose new energy terms making use of domain knowledge.
 
@@ -540,12 +540,12 @@ At the end of this step, we obtain a preliminary localization of the speech ball
 
 
 \paragraph{High resolution contour shape fitting}
-Figure~\ref{fig:se:mono_res_det} shows that the global shape of the top balloon has been detected although it is still far from a perfect fit because, as we can see on bottom part of the balloon, the snake was not able to fit precisely balloon outline, for instance peaky and tail regions are not well segmented.
+Figure~\ref{fig:se:mono_res_det} shows that the global shape of the top balloon has been detected although it is still far from a perfect fit because, as we can see on the bottom part of the balloon, the snake was not able to fit precisely balloon outline, for instance peaky and tail regions are not well segmented.
 To achieve a better fitting, we increase the resolution of the snake by adding new points between the current ones and by changing the weighting parameters of the energy function, and go through a second fitting process.
 At this stage, we relax the $E_{curv}$ energy to make the snake to thinner parts of the boundary and we set $E_{cont}$ strong enough to keep a regular inter-point distance all over the contour.
 Also, we reduce the $E_{text}$ energy weight because at this step, the snake is already far from text and this term is not informative any more.
 %to give more importance to the image energy than the prior knowledge. %is reduced because  external  avoid point  is closer to the final contour and do not need the $E_{know}$ energy start to minimize we reduced the inter-points distance, we also increase the external energy parameter $\gamma$ to make the snake more attractable by image edge, decrease the internal curvature energy parameter $\beta$ to allow more flexible contour fitting and decrease the knowledge energy parameter $\eta$ because the contour is now far from the text. 
-This new configuration allows the snake to fit more precisely to the balloon contour as shown in figure~\ref{fig:se:hd_contour} (to compare with figure~\ref{fig:se:mono_res_det}).
+This new configuration allows the snake to fit more precisely to the balloon contour as shown in Figure~\ref{fig:se:hd_contour} (to compare with Figure~\ref{fig:se:mono_res_det}).
 
 %{\bf TO ADD IF RESULTS CONFIRMS: we consider external energy map based from edge detection only (no distance transform any more)?}
 
@@ -606,7 +606,7 @@ We define the top two farthest points $f_a$ and $f_b$ corresponding to the two f
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We assume that the tail tip corresponds to one of the vertices $V=\{v_0,v_1,...v_n\}$ of the convex hull (Figure~\ref{fig:se:convexity_defects}), which is the case for most of the speech balloons except when the tail is partially surrounded by the balloon (in a recess).
-In such cases, another approach has to be considered.
+Such cases are not considered in this thesis and require a different approach.
 The optimal vertex is computed by comparing five features that corresponds to the Euclidean distances:
 
 \begin{itemize}
@@ -631,7 +631,7 @@ In Figure~\ref{fig:se:convexity_defects}, the optimal vertex is $v_7$.
 % $T = \begin{cases} t_1, & \mbox{if } dist(f_1,t_1) > dist(f_2,t_2) \\ t_2, & \mbox{else} \end{cases}$
 %Each segment of the convect hull has a convexity defect that we $cd_i$
 
-From our knowledge, all the balloon extractor, closed or implicit, proposed so far consider the inside balloon region, ignoring the balloon contour (black stroke) region.
+From our knowledge, all closed or implicit balloon extractors proposed so far, consider the inside balloon region and ignore the balloon contour (black stroke) region.
 This is acceptable for localising the tail on the balloon contour (angular position) but it is not accurate enough to detect the tail tip in the sense of human understanding.
 In fact, the tail tip is often located at the extremity of black stroke surrounding the inside balloon region (Figure~\ref{fig:se:tail_examples}).
 
@@ -646,7 +646,7 @@ In fact, the tail tip is often located at the extremity of black stroke surround
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We propose to detect the external border line the balloon contour in the region of the optimal convex hull vertex $v*$ presented above and define its extremity as the tail tip position.
+We propose to detect the external border line of the balloon contour in the region of the optimal convex hull vertex $v*$ presented above and define its extremity as the tail tip position.
 Image pre-processing and contour detection are performed in the same way as presented Section~\ref{sub:se:regular_balloon_extraction}.
 From all the detected contours, we select the contour $O$ that has the closest point $o_i$ from $v*$ (Euclidean distance).
 Then we run through all the points of the sequence of points that defines the contour $O=\{o_0, o_1,...,o_m\}$ and define as tail tip position $o*$ the one at the first maximum Euclidean distance to the tail origin.
@@ -669,7 +669,8 @@ Note that starting from $v*$ is more accurate than the tail origin point because
 
 We also propose to compute the confidence value of the tail position prediction $C_{tail}$, related to the mean of the depths $d_a$ and $d_b$ over the mean balloon size $meanBalloonSize$ (Formula~\ref{eq:se:confidence_tail}).
 The confidence value is minimal when the mean of the two convexity defects (used for tail position detection) is very small compare to the balloon sizes in the current image.
-It is maximal when equal or higher than the mean balloon size which means that the tail is at least as big as the balloons (clearly visible).
+It is maximal when equal or higher than the mean balloon size.
+% which means that the tail is at least as big as the balloons (clearly visible).
 
 \begin{equation}
 \label{eq:se:confidence_tail}
@@ -741,7 +742,7 @@ The tail orientation is quantized in eight cones of $\pi/4$ radius so we can con
 We define the ROI for the character as a squared region beside the speech balloon.
 The maximum width $w_{max}$ and height $h_{max}$ of the ROI are equal to the mean widths and heights of all the balloons in the image (Equation \ref{eq:se:mean_balloon_size}).
 
-The position of the ROI around the speech balloon is defined by two opposite points of a square $A_{x,y}$ and $B_{x,y}$ according to formula~\ref{eq:se:roi_position_around_balloon} which is sometimes constrained by a panel border that is why the term $min()$ appears (Figure \ref{fig:se:roi_area}).
+The position of the ROI around the speech balloon is defined by two opposite points of a square $A_{x,y}$ and $B_{x,y}$ according to formula~\ref{eq:se:roi_position_around_balloon} which is sometimes constrained by a panel border that is why the term $min$ appears (Figure \ref{fig:se:roi_area}).
 % The different positions of the ROI are illustrated on figure \ref{fig:se:roi_area}.
 
 \begin{equation}

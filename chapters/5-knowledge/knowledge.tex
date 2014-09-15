@@ -1,4 +1,4 @@
-\chapter{Method C: knowledge-driven analysis}
+\chapter{Knowledge-driven analysis}
 \chaptermark{Knowledge-driven analysis}
 \label{chap:knowledge}
 \graphicspath{{./chapters/5-knowledge/figs/}}
@@ -17,7 +17,7 @@ Low level and high level information is used in a complementary and unsupervised
 
 Document image analysis is an active field of research which can attain a complete understanding of the semantics of a given document.
 One example of the document understanding process is enabling a computer to understand a comic strip story.
-In this chapter we propose a knowledge-driven system that can interact with bottom-up and top-down information to progressively understand the content of a document at the level of semantic (Figure~\ref{fig:kn:intro_illustration}).
+In this chapter we propose a knowledge-driven system that can interact with bottom-up and top-down information to progressively understand the content of a document at a semantic level (Figure~\ref{fig:kn:intro_illustration}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
@@ -65,7 +65,7 @@ Finally, we explain how these ontologies communicate with each other, so they ca
 \label{sub:kn:image_processing_domain}
 
 We initially developed a model formalizing the primitive notions of image processing.
-This model is deliberately not including any generic concept for comics in order to be used in other areas related to document analysis systems.
+This model does not deliberately includes any generic concept for comics in order to be used in other areas related to document analysis systems.
 It provides support for structuring data from image processing algorithms for subsequent semantic enrichment.
 The data produced by such algorithms are generally limited to spatial data, lines, areas, which we will reference under the unique term of \textit{regions of interest} or \textit{ROI} (Region Of Interest) later in this document.
 They are defined by their Cartesian coordinates in the orthonormal image from which they are extracted.
@@ -89,14 +89,14 @@ Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts 
 The concept of \concept{Image} models the notion of image as a digital object, the input material for image processing systems.
 This is the most general concept from which are derived the other concepts of our ontology.
 An image processing algorithm works by directly manipulating the pixels of the image, its elementary components.
-It can analyse pixels independently of grouped in sets but in the end, the value and the intensity of each pixel have their importance in the analysis process, and can affect the output results.
+It can analyse the pixels independently, or grouped in sets of pixels but, in the end, the value and the intensity of each pixel have their importance in the analysis process, and can affect the output results.
 Note that for two visually similar images, the individual value of each pixels can vary greatly from one image to another (e.g. high definition, quantization, dithering).
 % They may have a different definition (i.e. the size (measured in pixels) different.
 % If scanned, if the source documents were the same size images, the difference of definition is the consequence of a difference in scanning resolution.
 % The resolution of an image indicates the number of pixels used to discretize an inch of space.
 % The higher the resolution, the larger the image is sharp.
 Furthermore, the encoding of the visual information in each pixel also varies depending on the image format and the degree of compression applied.
-It is important to integrate these information into the model as they are their define the context of the processing tools.
+It is important to integrate these information into the model as they define the context of the processing tools.
 They greatly help the understanding of the result quality.
 
 \paragraph{Region Of Interest concept} % (fold)
@@ -147,7 +147,7 @@ A region of interest identified by an algorithm of image segmentation correspond
 This region can actually contain an element of this type or contain anything else (false alarm).
 The accuracy of the segmentation algorithm is dependent on the characteristics of the image, the complexity of the region to extract and of course the quality of its implementation.
 % The overall results may contain errors.
-Regions of interest are produced only as proposals requesting to be checked, they do not have truth value.
+Regions of interest are produced only as proposals requesting to be checked.
 
 We call such image analysis systems \textit{Extractors} later in this document.
 The notion of extractor is incorporated into our model as \concept{Extractor}.
@@ -202,7 +202,7 @@ The reading direction (left to right or right to left) may be indicated through 
 % L'ordre de ces cases dans la séquence de lecture est défini par leur position relative les unes par rapport aux autres ainsi que, dans certains cas, l'interprétation personnelle du lecteur.
 % L'étude et la génération de la séquence de lecture est l'objet de la section~\ref{sec:ordre}.
 
-We consider that a page consists of panels, which contain drawings such as comic characters and speech bubbles.
+We consider that a page consists of panels, which contain drawings such as comic characters and speech balloons.
 We initially chose to focus on the relationship between these two types of content.
 The consideration of other elements is beyond the scope of this work, although, extracting relevant terms from WordNet might be interesting as well~\cite{Zinger05extracting}.
 Balloons contain text lines, embodying the words of the comic characters and the narration of the story.

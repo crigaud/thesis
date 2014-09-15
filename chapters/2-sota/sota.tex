@@ -13,20 +13,20 @@
 % cela pourrait peut-être se faire  en expliquant la chaine de traitement et détailler rapidement les principales méthodes. 
 % }
 
-In this chapter we introduce the document image analysis principles and give an overview of the comics image analysis, holistic understanding of documents and the state-of-the-art applications related to comics in the society.
+In this chapter we introduce the document image analysis principles and give an overview of the comics image analysis, holistic understanding of documents and the state-of-the-art of the applications related to comics in the society.
 
 
 \section{Document image analysis} % (fold)
 \label{sec:document_image_analysis}
 Document image analysis is a sub-domain of computer vision systems that includes methods for acquiring, processing, analysing and understanding images in order to produce numerical or symbolic information.
-The organization of a document analysis system is highly application dependent. Many functions are specific to the application.
+The organization of a document analysis system is highly application-dependent. Many functions are specific to the application.
 However, there are typical functions which are found in many computer vision systems.
 
 \begin{itemize}
 	\item \textbf{Document creation} The first time a document containing a information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
 	This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
 	\item \textbf{Image acquisition} A digital image produced by the sensors of various devices (e.g. scanner, camera, web-cam) from the physical document.
-	The digital image is an ordered set of pixel with an associated colour value from a certain colour space.
+	The digital image is an ordered set of pixels with a set of associated colour values from a given colour space.
 	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the method and its application domain (e.g. noise removal, contrast enhancement, segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
 	\item \textbf{Feature extraction} Feature extraction involves reducing the amount of data accurately.
   Image features are from different levels depending on their distance to pixel information (low level) and human understanding (high level).
@@ -71,7 +71,7 @@ Knowing the structure of the document being processed is always an helpful infor
 Layout analysis consists in segmenting the image into several geometrical blocks that contain the same type of information: text, graphics, table, image, drawing etc.
 Then logical information can be retrieved using domain knowledge and the spatial position of the elements (e.g. header and title on the top, page number on the bottom-right corner, reading order).
 Layout analysis is not trivial for mixed content documents such as advertisements, posters and comic books.
-Those documents use non standard text fonts, size and orientation mixed with graphics, images and logo.% (Figure~\ref{fig:sota:layout_analysis_issues}).
+Those documents use non standard text fonts, sizes and orientations mixed with graphics, images and logos.% (Figure~\ref{fig:sota:layout_analysis_issues}).
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % \begin{figure}[t]%trim=l b r t  width=0.5\textwidth,  
@@ -83,14 +83,14 @@ Those documents use non standard text fonts, size and orientation mixed with gra
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Comic book images are composed of text and graphics that can be decomposed as drawings and line drawings.
-The diversity of text can be found in comic book images is large.
-From speech text which are mostly handwritten to sound effects that are close to drawing sometimes.
+The diversity of text that can be found in comic book images is large.
+From speech text which are mostly handwritten to sound effects that are sometimes close to drawing.
 Some of the graphics can be assimilated to symbols if we talk about the panels or balloons which have a sort of conventional representation among most of the comic albums.
 However, drawings contained in the panel regions do not follow any convention (free art) but contain repeated elements (e.g. comic characters) throughout the album or collection.
 This is related to comics art that implies the drawing to be different from others in order to be easily distinguished and recognised by the public.
 
 Comic images are mixed content documents with complex background, especially in the region of panels, that concerns the above mentioned field of research.
-Document image analysis being application dependent, we briefly detail the design process of a comic image:
+Document image analysis being application-dependent, we briefly detail the design process of a comic image:
 
 \begin{itemize}
   \item \textbf{Synopsis and scenario} Imagine a story and its decomposition in a sequence of image (storyboard), view angles and format. 
@@ -104,7 +104,7 @@ The first challenge of comics book image analysis is to retrieve the layers that
 Processing each layer separately would greatly simplifies layout and content retrieval.
 Unfortunately, this decomposition is not obvious because in the final image, the elements are mixed with overlapping and transparency.
 Another important issue of document analysis is the noise information added from the creation of the physical document to its digital version.
-The main sources of noise are the manual operations variabilities, the degradation over time and the acquisition and storage techniques (Figure~\ref{fig:sota:document_degradation}).
+The main sources of noise are the manual operations variabilities, the degradation over time, the acquisition and storage techniques (Figure~\ref{fig:sota:document_degradation}).
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,10 +234,10 @@ The shape of the balloon does not provide a lot of information about how the tex
 Therefore, we focus on contour classification methods.
 In the literature, contour classification is strongly related to shape classification purposes~\cite{sun2005classification,liu1990partial}.
 It has been applied for video~\cite{kuhne2001motion,richter2001contour,bader2009}, trademark retrieval~\cite{leung2002trademark}, speech recognition~\cite{grigoriu1994automatic}.
-Also, wavelet decomposition~\cite{tieng1997recognition} and invariant moment~\cite{mukundan1998moment}. 
+Also, wavelet decomposition~\cite{tieng1997recognition} and invariant moments~\cite{mukundan1998moment}. 
 % We propose a first approach in~\ch{chap:be}.
 
-From our knowledge, tail detection have not been studied before, we propose to analyse the contour patterns in order to locate the tail and then perform a local analysis to find its direction (Section~\ref{sec:se:from_balloon_to_tail}).
+From our knowledge, tail detection has not been studied before, we propose to analyse the contour patterns in order to locate the tail and then perform a local analysis to find its direction (Section~\ref{sec:se:from_balloon_to_tail}).
 
 Balloon classification and tail detection are also important in a context of dialogues and emotions understanding~\cite{millidge2009comic}.
 
@@ -268,10 +268,11 @@ If we consider typewritten text, the most similar application to comics is car p
 The documents that have attracted of lot a attention are newspaper, administrative documents, cheques, maps, floor plans and engineering drawings.
 Nevertheless, text localization in comic images opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
-Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout method applicable.
+Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
+%present for the prediction of text locations and no layout method applicable.%
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
 
-Text localization in complex images has been previously studied in scene images~\cite{Weinman09,Epshtein10,Neumann12} and~\cite{Wang10,Meng12}, video sequences~\cite{Wonjun09,Shivakumara09} and digital-born images (Web and email)~\cite{Karatzas07}. 
+Text localization in complex images has been previously studied in scene images~\cite{Weinman09,Epshtein10,Neumann12,Wang10,Meng12}, video sequences~\cite{Wonjun09,Shivakumara09} and digital-born images (Web and email)~\cite{Karatzas07}. 
 Text localization in unstructured documents has been studied for teaching boards and slide show presentation~\cite{Oliveira10,Vajda2012Method,Nguyen2013BagOfSubjects}.
 However, text localization in documents which are both unstructured and have complex background has received relatively little attention~\cite{Clavelli09}.
 
@@ -437,7 +438,7 @@ This is one of the reasons that retains comics analysis to progress as fast as o
 
 
 In the next chapter, we are going to present a sequential content extraction approach that profits from the relations between elements to guide the retrieval process.
-We first process panel and text region extraction followed by speech balloon and tail segmentation.
+We first apply panel and text region extraction followed by speech balloon and tail segmentation.
 Then, speech balloon tail indications are used to compute a comic character region of interest according to the spatial organisation of previously extracted elements in each panel.
 
 

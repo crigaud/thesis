@@ -466,7 +466,7 @@ We define the general properties of comics as follows:
   \item A text line $T$ is related to one and only one balloon $B$
 \end{itemize}
 
-Despite the fact that authors are entirely free in their layout choices, some researchers insist a few conventions, widely adopted by comic book' authors, be respected to avoid the reader being confused\cite{Laine2010,Duc1982}.
+Despite the fact that authors are entirely free in their layout choices, they follow few conventions widely adopted by comic book' authors in order to avoid the reader to be confused~\cite{Laine2010,Duc1982}.
 The depicted elements and their place in the layout must be clearly identifiable at first sight, meaning, for instance, that balloons and characters should be included inside panels.
 Whereas one can find some instances of balloons breaking out of their frame, these are usually kept to a minimum.
 
@@ -481,7 +481,8 @@ The expert system asserts the extraction of simple elements such as panels, text
 This can be demonstrated with the first two iterations of the process loop (Figure~\ref{fig:kn:process_loop}).
 
 The first iteration treats simple elements such as panels, balloons and text lines.
-They are called simple because they have a relatively regular structure and have already received the attention of numerous works in the past.
+They are called simple because they have a relatively regular structure.
+% and have already received the attention of numerous works in the past.
 During the second iteration of the process loop, the detection of the comic characters, more complex in their visual diversity is discussed.
 
 The different stages of the process are illustrated through the couple of panels presented in Figure~\ref{fig:casesExampleReconnaissance}.
@@ -534,24 +535,22 @@ Note that extraction errors can take place at this stage which the system can re
 \paragraph{Iteration 1 - step 2 (validation)} % (fold)
 \label{par:step_2}
 At the second step, the hypotheses proposed by the low level system are compared to the constraints formalized in the ontology.
-The extracted regions are first categorized as panels, balloons and text lines thanks to the rules presented in Section~\ref{sub:model_interactions}, interpreted by an inference engine.
+The extracted regions are first categorized as panels, balloons and text lines thanks to the rules presented in Section~\ref{sub:model_interactions}, interpreted by the inference engine.
 Then each element $e$ is linked to its direct container $E$.
 This is selected from the set of extracted regions as described in Section~\ref{sec:kn:constrains_low_level_extraction}.
 If the system is unable to find a container for an element $e$ from the set of extracted regions, the page is then considered as the container of $e$.
 
 In order to validate the assumption of all the elements in $E$, they are simply considered as instances of the concept $\concept{ROI}_i$.
-We voluntarily do not take account of their class in the ontology $\mathcal{O}_ {bd}$.
+We voluntarily do not take into account of their class in the ontology $\mathcal{O}_ {bd}$.
 This has for effect to introduce inconsistencies between the type of container and the domain of a property resulting from \objProp{hasContent}, making the model inconsistent.
-These inconsistencies allow highlighting of possible errors made during the low-level processing.
+These inconsistencies allow to highlighting possible errors made during the low-level processing.
 The inference engine is stated again on the ontology and inconsistencies are treated one after the other.
 
-We focused in this work on optimizing the reliability of results.
+In this work, we focused on optimizing the reliability of the results.
 % We have chosen to focus on the accuracy of extractions rather than completeness.
 % Detection of misclassification, such as a box has been segmented by the extractor of bubbles, and the prominence of items that may have been forgotten are both short-term prospects of this work.
 % Currently, our system is able to handle the following reasons for inconsistency:
-
-
-We chosen to focus on increasing the extraction precision  rather than completeness by deleting the elements that did not fit the proposed model.
+We have chosen to focus on increasing the extraction precision rather than completeness by deleting the elements that did not fit the proposed model.
 The detection of misclassified elements (e.g panel actually being a balloon) and the proposition of missed elements (e.g. a missed balloon around a group of text lines) are both short term perspectives of this work.
 For the time being, our system can handled, without being limited to, the following inconsistencies:
 
@@ -622,13 +621,17 @@ We first focus on characters that are emitting at least a speech balloon (consid
 It is reasonable to consider that the speech balloon and the character emitting the balloon belong to a same panel.
 It is therefore possible to restrict the search space of the character inside the panel.
 In addition, the position of the character in the panel can be estimated according to the direction pointed by the tail which is a characteristic of speech balloons (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}).
-The estimation of the position of the comic character from the tail position and direction have been presented Section~\ref{sec:se:tail_to_character}.
+The estimation of the position of the comic character from the tail position and direction have been presented in Section~\ref{sec:se:tail_to_character}.
 The estimated region of interest are given as seeds to the image processing algorithm (extractor of characters) which refines the regions according to the image content (Figure~\ref{fig:kn:process_illustration_hypo_2_2}).
-The last step from the low level processing consist in spotting all the comic characters from the estimated examples (Figure~\ref{fig:kn:process_illustration_hypo_2_3}).
+The last step from the low level processing consists in spotting all the comic characters from the estimated examples (Figure~\ref{fig:kn:process_illustration_hypo_2_3}).
 
 \modif{
-The method used for ROI refinement is currently under investigation and a first approach could be to fit the estimated ROI the to the set of regions that are mainly overlapped by the ROI and exclude the others.
-The spotting approach is relevant for retrieving non speaking characters, we presented a first method Section~\ref{sec:in:character_spotting} but it is currently only appropriate for colourful comics.
+The method used for ROI refinement is currently under investigation and a first approach could be to fit the estimated ROI to the set of regions that are mainly overlapped by the ROI and exclude the others.
+The spotting approach is relevant for retrieving non speaking characters.
+We have presented a first method in Section~\ref{sec:in:character_spotting} but it is currently only appropriate for colourful comics.
+
+%*** JCB 2014-09-16 ***
+%Tu peux dire que c'est en cours...  Mais suggérer une idéesans l'avoir testé est peut être maladroit .Soit tu dis que pour le moment tu as développé une méthode simple pour tester la partie dirigée par les modèles  comme par exemple la méthode pour les bd couleurs...  (et la prochaine étape sera pour les images N&B) Soit tu dis rien... mais ce n'est peut être pas le meilleur choix
 }
 
 % Knowing the position of the valid from the valid triplets of panel, text and balloon.
@@ -721,7 +724,7 @@ Since the range of this property was set to the concept of \concept{speaker}, it
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-At the end of the two iterations we obtained both a topological and a semantic description of the image content, illustrated here in a single graph here.
+At the end of the two iterations we obtained both a topological and a semantic description of the image content, illustrated in a single graph here.
 Further iteration could be processed by extracting other low level elements such as faces or vehicles and by adding extra domain knowledge.
 
 

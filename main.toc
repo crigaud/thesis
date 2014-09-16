@@ -85,11 +85,11 @@
 \contentsline {paragraph}{Iteration 1 - step 1 (hypothesis)}{71}{section*.82}
 \contentsline {paragraph}{Iteration 1 - step 2 (validation)}{72}{section*.84}
 \contentsline {paragraph}{Iteration 1 - step 3 (inference)}{73}{section*.86}
-\contentsline {subsection}{\numberline {5.4.2}Complex element extraction}{74}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.2}Complex element extraction}{73}{subsection.5.4.2}
 \contentsline {paragraph}{Iteration 2 - step 1 (hypothesis)}{74}{section*.88}
-\contentsline {paragraph}{Iteration 2 - step 2 (validation)}{75}{section*.90}
-\contentsline {paragraph}{Iteration 2 - step 3 (inference)}{76}{section*.92}
-\contentsline {section}{\numberline {5.5}Conclusions}{77}{section.5.5}
+\contentsline {paragraph}{Iteration 2 - step 2 (validation)}{74}{section*.90}
+\contentsline {paragraph}{Iteration 2 - step 3 (inference)}{75}{section*.92}
+\contentsline {section}{\numberline {5.5}Conclusions}{76}{section.5.5}
 \contentsline {chapter}{\numberline {6}Experimentations}{79}{chapter.6}
 \contentsline {section}{\numberline {6.1}Dataset and ground truth construction}{79}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Dataset description}{80}{subsection.6.1.1}
@@ -106,14 +106,14 @@
 \contentsline {paragraph}{Balloons}{83}{section*.104}
 \contentsline {paragraph}{Text lines}{84}{section*.106}
 \contentsline {paragraph}{Comic characters}{84}{section*.108}
-\contentsline {subsubsection}{Semantic annotation}{85}{section*.110}
+\contentsline {subsubsection}{Semantic annotation}{86}{section*.110}
 \contentsline {paragraph}{Images}{86}{section*.111}
 \contentsline {paragraph}{Panels}{86}{section*.112}
 \contentsline {paragraph}{Balloons}{86}{section*.113}
-\contentsline {paragraph}{Text lines}{87}{section*.115}
+\contentsline {paragraph}{Text lines}{86}{section*.115}
 \contentsline {paragraph}{Comic characters}{87}{section*.116}
 \contentsline {subsubsection}{File structure}{87}{section*.117}
-\contentsline {subsection}{\numberline {6.1.4}Ground truth quality assessment}{88}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.4}Ground truth quality assessment}{89}{subsection.6.1.4}
 \contentsline {subsection}{\numberline {6.1.5}Discussions}{91}{subsection.6.1.5}
 \contentsline {section}{\numberline {6.2}Metrics}{91}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Object localisation metric}{91}{subsection.6.2.1}
@@ -125,21 +125,21 @@
 \contentsline {section}{\numberline {6.4}Text extraction evaluation}{97}{section.6.4}
 \contentsline {section}{\numberline {6.5}Text recognition evaluation}{100}{section.6.5}
 \contentsline {section}{\numberline {6.6}Balloon extraction evaluation}{101}{section.6.6}
-\contentsline {paragraph}{Regular balloons}{102}{section*.144}
-\contentsline {paragraph}{Implicit balloons}{102}{section*.146}
+\contentsline {paragraph}{Regular balloons}{103}{section*.144}
+\contentsline {paragraph}{Implicit balloons}{103}{section*.146}
 \contentsline {paragraph}{Balloon localisation}{107}{section*.159}
 \contentsline {paragraph}{Balloon classification analysis}{109}{section*.163}
-\contentsline {section}{\numberline {6.7}Tail detection evaluation}{110}{section.6.7}
-\contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{111}{section.6.8}
-\contentsline {section}{\numberline {6.9}Knowledge-driven analysis overall evaluation}{116}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Image model evaluation}{117}{subsection.6.9.1}
+\contentsline {section}{\numberline {6.7}Tail detection evaluation}{109}{section.6.7}
+\contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{112}{section.6.8}
+\contentsline {section}{\numberline {6.9}Knowledge-driven analysis overall evaluation}{118}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Image model evaluation}{118}{subsection.6.9.1}
 \contentsline {subsection}{\numberline {6.9.2}Comics model evaluation}{118}{subsection.6.9.2}
 \contentsline {subsection}{\numberline {6.9.3}Framework evaluation}{118}{subsection.6.9.3}
 \contentsline {paragraph}{Process details}{119}{section*.180}
-\contentsline {paragraph}{Low level processing}{119}{section*.181}
-\contentsline {paragraph}{Semantic links}{120}{section*.182}
+\contentsline {paragraph}{Low level processing}{121}{section*.181}
+\contentsline {paragraph}{Semantic links}{121}{section*.182}
 \contentsline {paragraph}{General evaluation}{121}{section*.183}
-\contentsline {section}{\numberline {6.10}Conclusions}{121}{section.6.10}
+\contentsline {section}{\numberline {6.10}Conclusions}{122}{section.6.10}
 \contentsline {chapter}{\numberline {7}Conclusions}{123}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{123}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{124}{section.7.2}

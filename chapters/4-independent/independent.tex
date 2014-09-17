@@ -542,7 +542,9 @@ As introduced in Section~\ref{sec:sota:balloon_segmentation}, the discriminant i
 
 First, we propose to represent the speech balloon as a time series (one dimensional signal over $360^\circ$) which corresponds to the distance in number of pixels between the balloon barycentre and the contour points. 
 
-Second, we perform a shape/contour separation to be able to analyse only the contour variation (including the balloon tail). We approximate the global shape $s$ by smoothing the original signal $o$ using a sliding window of size $M$ and subtracting the result from the original signal to preserve only the contour information $c$ independently from the shape: $c = o - s$. The smoothed contour $s$ is a centred local average of $o$ (Formula~\ref{eq:be:smooth}).
+Second, we perform a shape/contour separation to be able to analyse only the contour variation.
+Note that the consideration or not of tail region has an impact on the final classification (Section~\ref{sub:ex:balloon_classification}).
+We approximate the global shape $s$ by smoothing the original signal $o$ using a sliding window of size $M$ and subtracting the result from the original signal to preserve only the contour information $c$ independently from the shape: $c = o - s$. The smoothed contour $s$ is a centred local average of $o$ (Formula~\ref{eq:be:smooth}).
 Examples are given Figure~\ref{fig:be:time_series}.
 
 % and normalized by the letter height $\bar{H}$ (see eq.~\ref{eq:avg_height}).

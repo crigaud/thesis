@@ -129,15 +129,15 @@
 \contentsline {paragraph}{Implicit balloons}{103}{section*.146}
 \contentsline {paragraph}{Balloon localisation}{107}{section*.159}
 \contentsline {paragraph}{Balloon classification analysis}{109}{section*.163}
-\contentsline {section}{\numberline {6.7}Tail detection evaluation}{109}{section.6.7}
-\contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{112}{section.6.8}
-\contentsline {section}{\numberline {6.9}Knowledge-driven analysis overall evaluation}{118}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Image model evaluation}{118}{subsection.6.9.1}
+\contentsline {section}{\numberline {6.7}Tail detection evaluation}{110}{section.6.7}
+\contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{111}{section.6.8}
+\contentsline {section}{\numberline {6.9}Knowledge-driven analysis overall evaluation}{117}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Image model evaluation}{117}{subsection.6.9.1}
 \contentsline {subsection}{\numberline {6.9.2}Comics model evaluation}{118}{subsection.6.9.2}
-\contentsline {subsection}{\numberline {6.9.3}Framework evaluation}{118}{subsection.6.9.3}
+\contentsline {subsection}{\numberline {6.9.3}Framework evaluation}{119}{subsection.6.9.3}
 \contentsline {paragraph}{Process details}{119}{section*.180}
-\contentsline {paragraph}{Low level processing}{121}{section*.181}
-\contentsline {paragraph}{Semantic links}{121}{section*.182}
+\contentsline {paragraph}{Low level processing}{120}{section*.181}
+\contentsline {paragraph}{Semantic links}{120}{section*.182}
 \contentsline {paragraph}{General evaluation}{121}{section*.183}
 \contentsline {section}{\numberline {6.10}Conclusions}{122}{section.6.10}
 \contentsline {chapter}{\numberline {7}Conclusions}{123}{chapter.7}

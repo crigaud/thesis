@@ -3,12 +3,23 @@
 \label{app:dataset}
 \graphicspath{{./chapters/Appendix/figs/}}
 
-\section*{Images}
+This appendix shows an overview of the eBDtheque dataset images and they categories.
+The corresponding ground truth annotations are described in the next Appendix~\ref{app:groundtruth}.
 
-Table~\ref{app:ebdtheque_image_classification} represents the composition of the eBDtheque dataset grouped by categories. 
-Corresponding images to the identifiers are available on the dataset website~\footnote{\url{http://ebdtheque.univ-lr.fr/database/?overview=1}}
+\section{Image overview} % (fold)
+\label{sec:image_overview}
+
+\modif{TODO: display 100 thumbnails with files names on several pages.}
 
 % \modif{TODO: show all dataset thumbnails and file names to understand the evaluation detail bar graphs + give classify into categories (heritage, manga, webcomic, French/English/Japanese)}
+
+% section image_overview (end)
+
+\section{Images category}
+
+Table~\ref{app:ebdtheque_image_classification} represents the composition of the eBDtheque dataset grouped by categories. 
+Corresponding images to the identifiers are available in the previous section and on the dataset website~\footnote{\url{http://ebdtheque.univ-lr.fr/database/?overview=1}}
+
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -51,88 +62,8 @@ Corresponding images to the identifiers are available on the dataset website~\fo
 \end{center}
 \end{figure}	
 
-\clearpage
-\newpage
-\section*{Ground truth}
-\label{app:groundtruth}
+% \clearpage
+% \newpage
+% \section*{Ground truth}
+% \label{app:groundtruth}
 
-
-An example of ground truth file content is given Listing~\ref{list:svg_gt_sample}.
-
-
-\begin{lstlisting}[language=XML, frame=single, caption=Example of ground truth information stored in a SVG file, captionpos=b, label=list:svg_gt_sample]
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg>
-  <title>CYB_BUBBLEGOM_T01_005</title>
-  <svg class="Page">
-    <image 
-      x="0" 
-      y="0" 
-      width="750" 
-      height="1060" 
-      href="CYB_BUBBLEGOM_T01_005.jpg"
-    />
-    <metadata 
-      collectionTitle="Bubblegom_Gom"
-      editorName="Studio_Cyborga" 
-      doublePage="false"
-      website="http://bubblegom.over-blog.com"
-      albumTitle="La_Legende_des_Yaouanks"
-      drawerName="Cyborg_07"
-      language="french"
-      resolution="300"
-      ISBN="979-10-90655-01-0"
-      readingDirection="leftToRight" 
-      writerName="Cyborg_07"
-      releaseDate="2009"
-      pageNumber="5"
-    />
-  </svg>
-  <svg class="Panel">
-    <polygon points="53,95 268,95 268,292 53,292 53,95">
-      <metadata 
-        idPanel="P01"
-        rank="1"
-      />
-    </polygon>
-    ...
-  </svg>
-  <svg class="Balloon">
-    <polygon points="61,103 143,103 143,172 61,172 61,103">
-      <metadata
-        idBalloon="B01" 
-        shape="smooth"
-        tailTaip="153,167"
-        tailDirection="SE" 
-        rank="1"
-      />
-    </polygon>
-    ...
-  </svg>
-  <svg class="Line">
-    <polygon points="373,121 432,121 432,132 373,132 373,121">
-      <metadata 
-        idLine="L01"
-        idBalloon="B01"
-      >
-        LIKE YOU.
-      </metadata>
-    </polygon>
-    ...
-  </svg>
-  <svg class="Character">
-    <polygon points="84,153 261,153 261,298 84,298 84,153"/>
-      <metadata idCharacter="C01"/>
-    ...
-  </svg>
-  <svg class="LinkSBSC">
-    <polygon points="34,234 56,235 79,340 79,339 34,234"/>
-      <metadata 
-        idLinkSBSC="LSBSC01"
-        idBalloon="B01"
-        idCharacter="C01"
-      />
-    ...
-  </svg>
-</svg>
-\end{lstlisting}

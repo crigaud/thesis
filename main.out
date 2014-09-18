@@ -58,34 +58,62 @@
 \BOOKMARK [2][-]{subsection.5.4.2}{Complex element extraction}{section.5.4}% 58
 \BOOKMARK [1][-]{section.5.5}{Conclusions}{chapter.5}% 59
 \BOOKMARK [0][-]{chapter.6}{Experimentations}{}% 60
-\BOOKMARK [1][-]{section.6.1}{Dataset and ground truth construction}{chapter.6}% 61
+\BOOKMARK [1][-]{section.6.1}{Dataset and ground truth}{chapter.6}% 61
 \BOOKMARK [2][-]{subsection.6.1.1}{Dataset description}{section.6.1}% 62
-\BOOKMARK [2][-]{subsection.6.1.2}{Terms of use}{section.6.1}% 63
-\BOOKMARK [2][-]{subsection.6.1.3}{Ground truth construction}{section.6.1}% 64
-\BOOKMARK [2][-]{subsection.6.1.4}{Ground truth quality assessment}{section.6.1}% 65
-\BOOKMARK [2][-]{subsection.6.1.5}{Discussions}{section.6.1}% 66
-\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation metric}{section.6.2}% 68
-\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation metric}{section.6.2}% 69
-\BOOKMARK [2][-]{subsection.6.2.3}{Text recognition metric}{section.6.2}% 70
-\BOOKMARK [2][-]{subsection.6.2.4}{Tail detection metric}{section.6.2}% 71
-\BOOKMARK [2][-]{subsection.6.2.5}{Semantic links metric}{section.6.2}% 72
-\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 73
-\BOOKMARK [1][-]{section.6.4}{Text extraction evaluation}{chapter.6}% 74
-\BOOKMARK [1][-]{section.6.5}{Text recognition evaluation}{chapter.6}% 75
-\BOOKMARK [1][-]{section.6.6}{Balloon extraction evaluation}{chapter.6}% 76
-\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 77
-\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 78
-\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis overall evaluation}{chapter.6}% 79
-\BOOKMARK [2][-]{subsection.6.9.1}{Image model evaluation}{section.6.9}% 80
-\BOOKMARK [2][-]{subsection.6.9.2}{Comics model evaluation}{section.6.9}% 81
-\BOOKMARK [2][-]{subsection.6.9.3}{Framework evaluation}{section.6.9}% 82
-\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 83
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 84
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 85
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 86
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 87
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 88
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 89
-\BOOKMARK [0][-]{appendix.D}{List of Publications}{}% 90
-\BOOKMARK [0][-]{section*.201}{Bibliography}{}% 91
+\BOOKMARK [2][-]{subsection.6.1.2}{Ground truth}{section.6.1}% 63
+\BOOKMARK [1][-]{section.6.2}{Metrics}{chapter.6}% 64
+\BOOKMARK [2][-]{subsection.6.2.1}{Object localisation metric}{section.6.2}% 65
+\BOOKMARK [2][-]{subsection.6.2.2}{Object segmentation metric}{section.6.2}% 66
+\BOOKMARK [2][-]{subsection.6.2.3}{Text recognition metric}{section.6.2}% 67
+\BOOKMARK [2][-]{subsection.6.2.4}{Tail detection metric}{section.6.2}% 68
+\BOOKMARK [2][-]{subsection.6.2.5}{Semantic links metric}{section.6.2}% 69
+\BOOKMARK [1][-]{section.6.3}{Panel extraction evaluation}{chapter.6}% 70
+\BOOKMARK [2][-]{subsection.6.3.1}{Arai's method}{section.6.3}% 71
+\BOOKMARK [2][-]{subsection.6.3.2}{Ho's method}{section.6.3}% 72
+\BOOKMARK [2][-]{subsection.6.3.3}{Method S}{section.6.3}% 73
+\BOOKMARK [2][-]{subsection.6.3.4}{Method I}{section.6.3}% 74
+\BOOKMARK [2][-]{subsection.6.3.5}{Method K}{section.6.3}% 75
+\BOOKMARK [2][-]{subsection.6.3.6}{Comparison and analysis}{section.6.3}% 76
+\BOOKMARK [1][-]{section.6.4}{Text extraction evaluation}{chapter.6}% 77
+\BOOKMARK [2][-]{subsection.6.4.1}{Arai's method}{section.6.4}% 78
+\BOOKMARK [2][-]{subsection.6.4.2}{Method S}{section.6.4}% 79
+\BOOKMARK [2][-]{subsection.6.4.3}{Method I}{section.6.4}% 80
+\BOOKMARK [2][-]{subsection.6.4.4}{Method K}{section.6.4}% 81
+\BOOKMARK [2][-]{subsection.6.4.5}{Comparison and analysis}{section.6.4}% 82
+\BOOKMARK [1][-]{section.6.5}{Text recognition evaluation}{chapter.6}% 83
+\BOOKMARK [1][-]{section.6.6}{Balloon extraction evaluation}{chapter.6}% 84
+\BOOKMARK [2][-]{subsection.6.6.1}{Arai's method}{section.6.6}% 85
+\BOOKMARK [2][-]{subsection.6.6.2}{Ho's method Ho2012}{section.6.6}% 86
+\BOOKMARK [2][-]{subsection.6.6.3}{Method S}{section.6.6}% 87
+\BOOKMARK [2][-]{subsection.6.6.4}{Method I}{section.6.6}% 88
+\BOOKMARK [2][-]{subsection.6.6.5}{Method C}{section.6.6}% 89
+\BOOKMARK [2][-]{subsection.6.6.6}{Balloon classification}{section.6.6}% 90
+\BOOKMARK [2][-]{subsection.6.6.7}{Comparison and analysis}{section.6.6}% 91
+\BOOKMARK [1][-]{section.6.7}{Tail detection evaluation}{chapter.6}% 92
+\BOOKMARK [1][-]{section.6.8}{Comic character extraction evaluation}{chapter.6}% 93
+\BOOKMARK [2][-]{subsection.6.8.1}{Method S}{section.6.8}% 94
+\BOOKMARK [2][-]{subsection.6.8.2}{Method I}{section.6.8}% 95
+\BOOKMARK [2][-]{subsection.6.8.3}{Method K}{section.6.8}% 96
+\BOOKMARK [2][-]{subsection.6.8.4}{Comparison and analysis}{section.6.8}% 97
+\BOOKMARK [1][-]{section.6.9}{Knowledge-driven analysis overall evaluation}{chapter.6}% 98
+\BOOKMARK [2][-]{subsection.6.9.1}{Image model evaluation}{section.6.9}% 99
+\BOOKMARK [2][-]{subsection.6.9.2}{Comics model evaluation}{section.6.9}% 100
+\BOOKMARK [2][-]{subsection.6.9.3}{Framework evaluation}{section.6.9}% 101
+\BOOKMARK [1][-]{section.6.10}{Conclusions}{chapter.6}% 102
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 103
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 104
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 105
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 106
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 107
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 108
+\BOOKMARK [1][-]{section.C.1}{Image overview}{appendix.C}% 109
+\BOOKMARK [1][-]{section.C.2}{Images category}{appendix.C}% 110
+\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 111
+\BOOKMARK [1][-]{section.D.1}{Ground truth construction}{appendix.D}% 112
+\BOOKMARK [2][-]{subsection.D.1.1}{Visual annotation}{section.D.1}% 113
+\BOOKMARK [2][-]{subsection.D.1.2}{Semantic annotation}{section.D.1}% 114
+\BOOKMARK [2][-]{subsection.D.1.3}{File structure}{section.D.1}% 115
+\BOOKMARK [1][-]{section.D.2}{Ground truth quality assessment}{appendix.D}% 116
+\BOOKMARK [1][-]{section.D.3}{Terms of use}{appendix.D}% 117
+\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 118
+\BOOKMARK [0][-]{section*.174}{Bibliography}{}% 119

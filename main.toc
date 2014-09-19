@@ -99,7 +99,7 @@
 \contentsline {paragraph}{Balloons}{81}{section*.97}
 \contentsline {paragraph}{Text}{81}{section*.98}
 \contentsline {paragraph}{Comic characters}{81}{section*.100}
-\contentsline {subsection}{\numberline {6.1.2}Ground truth}{81}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.2}Ground truth information}{81}{subsection.6.1.2}
 \contentsline {section}{\numberline {6.2}Metrics}{82}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Object localisation metric}{82}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Object segmentation metric}{83}{subsection.6.2.2}
@@ -109,44 +109,44 @@
 \contentsline {section}{\numberline {6.3}Panel extraction evaluation}{84}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Arai's method}{84}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Ho's method}{85}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Method S}{86}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Method I}{86}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Method K}{86}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.3}Sequential approach}{86}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Independent approach}{86}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Knowledge-driven approach}{86}{subsection.6.3.5}
 \contentsline {subsection}{\numberline {6.3.6}Comparison and analysis}{87}{subsection.6.3.6}
 \contentsline {section}{\numberline {6.4}Text extraction evaluation}{88}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Arai's method}{89}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Method S}{89}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Method I}{90}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Method K}{90}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {6.4.2}Sequential approach}{89}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Independent approach}{90}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Knowledge-driven approach}{90}{subsection.6.4.4}
 \contentsline {subsection}{\numberline {6.4.5}Comparison and analysis}{90}{subsection.6.4.5}
 \contentsline {section}{\numberline {6.5}Text recognition evaluation}{91}{section.6.5}
 \contentsline {section}{\numberline {6.6}Balloon extraction evaluation}{92}{section.6.6}
 \contentsline {subsection}{\numberline {6.6.1}Arai's method}{93}{subsection.6.6.1}
 \contentsline {subsection}{\numberline {6.6.2}Ho's method~\cite {Ho2012}}{93}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Method S}{94}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.3}Sequential approach}{94}{subsection.6.6.3}
 \contentsline {paragraph}{Regular balloons}{94}{section*.110}
 \contentsline {paragraph}{Implicit balloons}{94}{section*.112}
-\contentsline {subsection}{\numberline {6.6.4}Method I}{95}{subsection.6.6.4}
-\contentsline {subsection}{\numberline {6.6.5}Method C}{95}{subsection.6.6.5}
-\contentsline {subsection}{\numberline {6.6.6}Balloon classification}{96}{subsection.6.6.6}
-\contentsline {subsection}{\numberline {6.6.7}Comparison and analysis}{98}{subsection.6.6.7}
-\contentsline {paragraph}{Balloon localisation}{98}{section*.121}
-\contentsline {paragraph}{Balloon classification analysis}{100}{section*.125}
-\contentsline {section}{\numberline {6.7}Tail detection evaluation}{101}{section.6.7}
-\contentsline {section}{\numberline {6.8}Comic character extraction evaluation}{102}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}Method S}{103}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}Method I}{104}{subsection.6.8.2}
-\contentsline {subsection}{\numberline {6.8.3}Method K}{106}{subsection.6.8.3}
-\contentsline {subsection}{\numberline {6.8.4}Comparison and analysis}{107}{subsection.6.8.4}
-\contentsline {section}{\numberline {6.9}Knowledge-driven analysis overall evaluation}{108}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Image model evaluation}{108}{subsection.6.9.1}
-\contentsline {subsection}{\numberline {6.9.2}Comics model evaluation}{109}{subsection.6.9.2}
-\contentsline {subsection}{\numberline {6.9.3}Framework evaluation}{110}{subsection.6.9.3}
-\contentsline {paragraph}{Process details}{110}{section*.138}
-\contentsline {paragraph}{Low level processing}{111}{section*.139}
-\contentsline {paragraph}{Semantic links}{111}{section*.140}
-\contentsline {paragraph}{General evaluation}{112}{section*.141}
-\contentsline {section}{\numberline {6.10}Conclusions}{113}{section.6.10}
+\contentsline {subsection}{\numberline {6.6.4}Independent approach}{95}{subsection.6.6.4}
+\contentsline {subsection}{\numberline {6.6.5}Knowledge-driven approach}{95}{subsection.6.6.5}
+\contentsline {subsection}{\numberline {6.6.6}Comparison and analysis}{96}{subsection.6.6.6}
+\contentsline {section}{\numberline {6.7}Balloon classification}{98}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Results analysis}{100}{subsection.6.7.1}
+\contentsline {section}{\numberline {6.8}Tail detection evaluation}{101}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Result analysis}{102}{subsection.6.8.1}
+\contentsline {section}{\numberline {6.9}Comic character extraction evaluation}{102}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Sequential approach}{103}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Independent approach}{104}{subsection.6.9.2}
+\contentsline {subsection}{\numberline {6.9.3}Knowledge-driven approach}{106}{subsection.6.9.3}
+\contentsline {subsection}{\numberline {6.9.4}Comparison and analysis}{107}{subsection.6.9.4}
+\contentsline {section}{\numberline {6.10}Knowledge-driven analysis overall evaluation}{108}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Image model evaluation}{108}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Comics model evaluation}{109}{subsection.6.10.2}
+\contentsline {subsection}{\numberline {6.10.3}Framework evaluation}{110}{subsection.6.10.3}
+\contentsline {paragraph}{Process details}{110}{section*.136}
+\contentsline {paragraph}{Low level processing}{111}{section*.137}
+\contentsline {paragraph}{Semantic links}{111}{section*.138}
+\contentsline {paragraph}{General evaluation}{112}{section*.139}
+\contentsline {section}{\numberline {6.11}Conclusions}{113}{section.6.11}
 \contentsline {chapter}{\numberline {7}Conclusions}{115}{chapter.7}
 \contentsline {section}{\numberline {7.1}Summary and contributions}{115}{section.7.1}
 \contentsline {section}{\numberline {7.2}Future perspectives}{116}{section.7.2}
@@ -158,18 +158,18 @@
 \contentsline {chapter}{\numberline {D}Ground truth}{127}{appendix.D}
 \contentsline {section}{\numberline {D.1}Ground truth construction}{127}{section.D.1}
 \contentsline {subsection}{\numberline {D.1.1}Visual annotation}{128}{subsection.D.1.1}
-\contentsline {paragraph}{Panels}{128}{section*.153}
-\contentsline {paragraph}{Balloons}{128}{section*.155}
-\contentsline {paragraph}{Text lines}{129}{section*.157}
-\contentsline {paragraph}{Comic characters}{129}{section*.159}
+\contentsline {paragraph}{Panels}{128}{section*.151}
+\contentsline {paragraph}{Balloons}{128}{section*.153}
+\contentsline {paragraph}{Text lines}{129}{section*.155}
+\contentsline {paragraph}{Comic characters}{129}{section*.157}
 \contentsline {subsection}{\numberline {D.1.2}Semantic annotation}{131}{subsection.D.1.2}
-\contentsline {paragraph}{Images}{131}{section*.161}
-\contentsline {paragraph}{Panels}{131}{section*.162}
-\contentsline {paragraph}{Balloons}{131}{section*.163}
-\contentsline {paragraph}{Text lines}{131}{section*.165}
-\contentsline {paragraph}{Comic characters}{132}{section*.166}
+\contentsline {paragraph}{Images}{131}{section*.159}
+\contentsline {paragraph}{Panels}{131}{section*.160}
+\contentsline {paragraph}{Balloons}{131}{section*.161}
+\contentsline {paragraph}{Text lines}{131}{section*.163}
+\contentsline {paragraph}{Comic characters}{132}{section*.164}
 \contentsline {subsection}{\numberline {D.1.3}File structure}{132}{subsection.D.1.3}
 \contentsline {section}{\numberline {D.2}Ground truth quality assessment}{135}{section.D.2}
 \contentsline {section}{\numberline {D.3}Terms of use}{137}{section.D.3}
 \contentsline {chapter}{\numberline {E}List of Publications}{139}{appendix.E}
-\contentsline {chapter}{Bibliography}{143}{section*.174}
+\contentsline {chapter}{Bibliography}{143}{section*.172}

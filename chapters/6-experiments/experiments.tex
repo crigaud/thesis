@@ -152,7 +152,7 @@ They all have eye, harm and leg but at least 50\% are not humanoid, depending on
 
 % DATASET FULL DESCRIPTION MOVED TO APPENDIX 2014-09-18
 
-\subsection{Ground truth} % (fold)
+\subsection{Ground truth information} % (fold)
 \label{sub:ground_truth}
 
 We give all the details about the ground truth construction process in Appendix~\ref{app:groundtruth}.
@@ -379,7 +379,7 @@ The score of this method was in average for recall and precision of 49.76\% and 
 % \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Method S} % (fold)
+\subsection{Sequential approach} % (fold)
 \label{sub:ex:panel_extraction_rigaud_method_A}
 
 The method presented in Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
@@ -395,7 +395,7 @@ The score of this method  was in average for recall and precision of 64.24\% and
 % \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Method I} % (fold)
+\subsection{Independent approach} % (fold)
 % \label{sub:method_b}
 The method presented in Section~\ref{sec:in:panel_extraction} requires only a minimal area factor.
 Assuming that a panel is a big region, we ignored the panel detection with a area lower than 4\% ($minAreaFactor$) of the page area according to a validation on the eBDtheque dataset.
@@ -413,7 +413,7 @@ The score of this method was in average for recall and precision of 62.94\% and 
 
 % subsection method_b (end)
 
-\subsection{Method K} % (fold)
+\subsection{Knowledge-driven approach} % (fold)
 % \label{sub:method_c}
 The knowledge-driven method can be used as a post processing of the panel extraction.
 It validates or rejects panel candidates using the proposed model (Section~\ref{sec:kn:processing_sequence}).
@@ -567,7 +567,7 @@ Also, the kernel used for mathematical morphology is rotated of 90$^{\circ}$.
 
 The score of this method was in average for recall and precision of 2.81\% and 1.63\% (Figure~\ref{fig:ex:text_arai_extraction_detail}).
 
-\subsection{Method S} % (fold)
+\subsection{Sequential approach} % (fold)
 % \label{sub:method_1}
 The method proposed in Section~\ref{sec:se:panel_and_text} does not require any particular parameter, only the number of clusters has to be fixed $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
 Note that the method is designed to simultaneously extract panel regions which does not interfere with text.
@@ -584,7 +584,7 @@ The score of this method  was in average for recall and precision of 54.68\% and
 
 
 % subsection method_1 (end)
-\subsection{Method I} % (fold)
+\subsection{Independent approach} % (fold)
 \label{sub:ex:text_extraction_evaluation_method_b}
 
 The method presented in Section~\ref{sec:in:text_localisation_and_recognition} consists in a bi-level segmentation, text/graphic separation, text line generation and finally text line recognition.
@@ -646,7 +646,7 @@ The score of this method was in average for recall and precision of 64.14\% and 
 
 % subsection method_b (end)
 
-\subsection{Method K} % (fold)
+\subsection{Knowledge-driven approach} % (fold)
 % \label{sub:method_c}
 
 The knowledge-driven method can be used as a post processing of the text extraction.
@@ -892,7 +892,7 @@ The score of this method  was in average for recall and precision of 13.96\% and
 
 % subsection ho_s_method_cite (end)
 
-\subsection{Method S} % (fold)
+\subsection{Sequential approach} % (fold)
 % \label{sub:method_a}
 
 In Sections~\ref{sub:se:regular_balloon_extraction} and~\ref{sub:se:implicit_balloon_extraction} we have presented two sequential approaches for regular and implicit balloon extraction from text line positions.
@@ -976,7 +976,7 @@ The best score for object level detection ($R=57.76\%$ and $P=41.62\%$) are deta
 %, the recall $R=??\%$, precision $P=?\%$ and f-measure $F=?\%$.
 
 % subsection method_a (end)
-\subsection{Method I} % (fold)
+\subsection{Independent approach} % (fold)
 % \label{sub:method_b}
 
 We introduced Method I in Section~\ref{sub:in:balloon_segmentation}, it is a independent approach that does not require any previous other element extraction.
@@ -1025,10 +1025,10 @@ Figure~\ref{fig:ex:balloon_methodB_extraction_detail} confirms that our method w
 
 
 % subsection method_b (end)
-\subsection{Method C} % (fold)
+\subsection{Knowledge-driven approach} % (fold)
 % \label{sub:method_c}
 
-The knowledge-driven method can be used as a post processing of the balloon extraction.
+The knowledge-driven approach can be used as a post processing of the balloon extraction.
 It validates or rejects balloon candidates according to contextual information from the proposed model (Section~\ref{sec:kn:processing_sequence}).
 In the model, the rules concerning balloon are that they should be contained in a panel and not contain other balloon, panel or comic character.
 Considering the best method for balloon extraction (Method S implicit in Table~\ref{tab:ex:balloon_localisation_comparison_results}), the score of this method was in average for recall and precision of 39.56\% and 48.65\% (Figure~\ref{fig:ex:balloon_methodC_extraction_detail}).
@@ -1045,229 +1045,6 @@ Considering the best method for balloon extraction (Method S implicit in Table~\
 % subsection method_c (end)
 % subsection experimental_settings (end)
 
-\subsection{Balloon classification} % (fold)
-\label{sub:ex:balloon_classification}
-We evaluated balloon classification using the pixel-level balloon segmentation from the eBDtheque ground truth and from the best automatic segmentation of regular balloon from Method I.
-The ground truth was composed of only know balloon types, ignoring the class ``other'' which produce a subset of 940 balloons from the 1091 balloons present in the dataset.
-The repartition of the balloon types is 87.96\%, 8.75\% and 3.29\% of type ``smooth'', ``wavy'' and ``spiky'' respectively.
-This unbalanced repartition reflects the usual speech balloon types repartition in comics.
-
-For the shape/contour separation part (Section~\ref{sec:contour_detection}) we first cast the original signal $o$ into 360 values and then smooth it to approximate the shape signal $s$.
-The shape signal is also composed by 360 values where each of them corresponds to the local mean in a window of size $M$ from the original signal (Equation~\ref{eq:ex:shape_approximation}).
-Note that in order to avoid side effects we copy $M/2$ values from the opposite side when needed (wrapping).
-A validation of parameter $M$ have been performed and its best value was $M=7$.
-
-\begin{equation}
-  \label{eq:ex:shape_approximation}
-  s(i) = 1/M \sum_{j=i-M/2}^{i+M/2} o(i)
-\end{equation}
-
- %smoothing process divides the 360 values into $M$ segments and compute the mean of size $360/M$ according to 
- % A validation of parameter $M$ have been performed and its best value was $M=7$.
- % (Table~\ref{tab:validation_parameter_m}).
-%In other words, we split the balloon contour into 20 sectors of 18 degrees each.
-%which correspond to 5.5\% of 360 values 
-% This parameter can be adjusted according the contour descriptor type.
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   \begin{table}[ht]
-%     \normalsize
-% \renewcommand{\arraystretch}{1.2}
-
-%     \centering
-%     \caption{Validation of parameter $M$ for $D=(f_1,f_2)$ scenario \modif{TODO: update with new training set?}.}
-%     \begin{tabular}{c|c|c|c|c|c|}
-%   \cline{2-6}
-%     & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
-%   \cline{2-6}
-%     & Smooth & Wavy & spiky & Avg & Global \\
-%   \hline
-%   \multicolumn{1}{ |c| }{$M=10$}& 80.63   & \textbf{70.58} & 58.80 & 70.00 & 75.8 \\
-%   \hline
-%   \multicolumn{1}{ |c| }{$M=20$}& \textbf{89.30}  & 69.1  & 86.20 & \textbf{81.53} & \textbf{85.2} \\
-%   \hline
-%   \multicolumn{1}{ |c| }{$M=30$}& 88.53 & 67.64 & \textbf{86.25}  & 80.81 & 84.4 \\
-%   %\hline
-%   \hline
-%   \multicolumn{1}{ |c| }{$M=40$}& 87.35 & 61.76 & 82.35 & 77.15 & 81.99 \\
-%   %\hline
-%   \hline
-%   \multicolumn{1}{ |c| }{$M=50$}& 79.05 & 63.23 & 80.39 & 74.22 & 76.34 \\
-%   %\hline
-%   \hline
-% %       Proposed multi scale & ???  &???  & ???   & ???       \\
-% %   \hline
-%         \end{tabular}
-%     \label{tab:validation_parameter_m}
-%   \end{table}%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-We evaluated our method based on a one-versus-all scenario.
-Classification results are presented in Table~\ref{tab:ex:desc_test_balloon_classification} for different descriptors.
-First we show the effect of the two features $f_1$ and $f_2$ separately without \emph{a priori} information $P(l_1)=P(l_2)=P(l_3)$ and then using the prior probabilities about the classes repartition from the eBDtheque dataset $P(l_1)=0.88, P(l_2)= 0.09$ and $P(l_3)=0.03$.
-We detailed our best results for balloon contour extraction (for $D=(f_1, f_2)$) in the confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification}.
-
-As mentioned Section~\ref{sub:in:balloon_classification}, the region of the tail may influence balloon classification.
- % Note that we also show the results when we automatically remove the tail region from its automatic detection (Section~\ref{sec:se:from_balloon_to_tail}).
-In order to measure this influence, we remove the tail by ignoring the points of the contour that are between the two points defined as tail origin (Section~\ref{sec:se:from_balloon_to_tail}), see Figure~\ref{fig:ex:tail_removal}.
-Note that this process relies on the tail detection performance (Section~\ref{sec:tail_detection_evaluation}).
-
-%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-     \centering
-    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{tail_removal.png}
-    \caption[Tail removal for balloon classification]{Two examples of tail removal for balloon classification. From left to right, original contour detection in red, corresponding mask and partial contour removal between the two green points that represent the tail origin. The final contour is represented in purple in the right figures.}
-    \label{fig:ex:tail_removal}
-   \end{figure}
-%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[ht]
-    \normalsize
-    \renewcommand{\arraystretch}{1.2}
-
-    \centering
-    \caption[Classification result accuracy for different descriptor configuration]{Classification result accuracy for different descriptor configuration. The global accuracy represents the number of good classification divided by the number of elements to classify independently from the class.
-}
-    \begin{tabular}{c|c|c|c|c|c|}
-  \cline{2-6}
-    & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
-  \cline{2-6}
-    & Smooth & Wavy & Spiky & Average & Global \\
-  \hline
-  \multicolumn{1}{ |c| }{ $D=(f_1)$ } & 22.51 & 68.75 & 33.33  & 41.53 & 26.91  \\
-  \hline
-  \multicolumn{1}{ |c| }{ $D=(f_2)$ } & 79.73 & 36.25 & 70.00 & 61.99 & 75.60 \\
-  \hline
-  \multicolumn{1}{ |c| }{$D=(f_1, f_2)$ } & 76.62 & \textbf{60.00} & \textbf{73.34} & \textbf{64.33} & 75.05\\
-  %\hline
-  \hline
-  \multicolumn{1}{ |c| }{$D=(f_1, f_2)$ + $priors$}   & \textbf{98.26} & 11.25 & 63.34 & 57.62 & \textbf{89.50}  \\
-  %\hline
-  \hline
-%       Proposed multi scale & ???  &???  & ???   & ???       \\
-%   \hline
-        \end{tabular}
-    \label{tab:ex:desc_test_balloon_classification}
-  \end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[ht]
-    \normalsize
-    \renewcommand{\arraystretch}{1.2}
-
-    \centering
-    \caption{Confusion matrix for smooth (S), wavy (W) and spiky (Z) balloon contour classification results with $D=(f_1, f_2)$.}
-    \begin{tabular}{cc|c|c|c|c|c|c|}
-  \cline{3-8}
-   & & \multicolumn{3}{|c|}{Ground truth}  & \multicolumn{3}{|c|}{Ground truth no tail}  \\
-  \cline{3-8}
-   & & S & W  & Z & S & W  & Z  \\
-  \hline
-  \multicolumn{1}{ |c|  }{\multirow{3}{*}{Prediction} } & S & \textbf{616} & 180 & 8 & 114 & 349 & 341   \\
-  \cline{2-8}
-  \multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{ W } & 30  & 48 & 2 & 7 & \textbf{53} & 20  \\
-  \cline{2-8}
-  \multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{ Z } & 4 & 4 & \textbf{22} & 4 & 13 & 13  \\
-  % \hline
-  % \multicolumn{2}{ |c|  }{TOTAL}  & 804 & 80 & 30  & 804 & 80 & 30  \\
-  %\hline
-  \hline
-%       Proposed multi scale & ???  &???  & ???   & ???       \\
-%   \hline
-        \end{tabular}
-    \label{tab:ex:confusion_matrix_balloon_classification}
-  \end{table}%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% An example of the Gaussian distribution parameters of the training set presented Figure~\ref{fig:ex:balloon_training_set} is given Table~\ref{tab:ex:coefficient_balloon_classification}.
-% Those parameters can be used for other dataset containing similar images without needing to train the classifier again.
-
-
-%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-%      \centering
-%     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.7\textwidth]{figure_here.png}
-%     \caption[Training set for balloon contour classification]{Training set for balloon contour classification.}
-%     \label{fig:ex:balloon_training_set}
-%    \end{figure}
-%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   \begin{table}[ht]
-%     % \normalsize
-% % \renewcommand{\arraystretch}{1.2}
-
-%     \centering
-%     \caption{Example of Gaussian distribution parameters.}
-%     \begin{tabular}{|c|c|c|c|c|c|c|}
-%   \hline
-%     & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{spiky}  \\
-%   \hline
-%     & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$    \\
-%   \hline
-%     Feature $f_1$ & 0.019   & 0.012 & 0.042 & 0.020 & 0.148 & 0.118   \\
-%   \hline
-%     Feature $f_2$ & -0.004  & 0.006 & 0.007 & 0.010 & -0.017 & 0.023   \\
-%   \hline
-%    %\multicolumn{1}{ |c| }{ Feature 2 } &  8  & 5 & 15 & 6 & 8 & 4 \\
-%   %\cline{2-5}
-%   %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ spiky }}   & ? & ? & 12 \\
-%   %\hline
-%   %\hline
-% %       Proposed multi scale & ???  &???  & ???   & ???       \\
-% %   \hline
-%         \end{tabular}
-%     \label{tab:ex:coefficient_balloon_classification}
-%   \end{table}%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% \modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
-% ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
-% Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
-
-
-The different accuracy results Table~\ref{tab:ex:desc_test_balloon_classification} show that the first feature $f_1$ is more appropriate for separating ``wavy'' from the rest while the second feature $f_2$ is more efficient for ``smooth'' and ``spiky'' separation.
- % more discriminant than the first one $f_1$ and their combination does not exceed the second itself ($f_2)$.
-Their combination ($f_1, f_2$) is therefore the best solution for dividing the balloons into these three classes.
-Adding the prior knowledge about the testing classes repartition improves the score of the ``smooth'' class and decrease the two others.
-This is due to the consideration of the probability of 88\% to be in the ``smooth'' class by the Bayesian classifier.
-The confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification} shows good classification results for the ``spiky'' class even for cases that are quite different in terms of drawing styles (Figure~\ref{fig:good_detection_balloon_classification}).
-Concerning the ``smooth'' and ``wavy'' classes, some speech balloons are very hard to classify out of context causing confusion (Figure~\ref{fig:bad_detection_balloon_classification}).
-Also, the tail of the balloon creates some noise and the radius average ($\bar{o}$) we use to normalize the descriptor features may not be appropriate for elongated balloons.
-
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
-    \centering
-    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{good_detection.png}
-    \caption{Correct classification examples for ``spiky'' (top) and ``smooth'' classes (bottom).}
-    \label{fig:good_detection_balloon_classification}
-  \end{figure}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
-    \centering
-    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{bad_detection.png}
-    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{wavy_instead_smooth.png}
-    \caption{Wrong classification examples which have been classified as ``smooth'' instead of  ``wavy'' in the first row and ``wavy'' instead of  ``smooth'' in the second row.}
-    \label{fig:bad_detection_balloon_classification}
-  \end{figure}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% subsection balloon_classification (end)
-
 
 
 
@@ -1275,7 +1052,7 @@ Also, the tail of the balloon creates some noise and the radius average ($\bar{o
 % \label{sub:result_analysis}
 
 
-In this section, we discuss balloon localisation at bounding box and pixel levels, and also balloon classification.
+% In this section, we discuss balloon localisation at bounding box and pixel levels, and also balloon classification.
 
 
 % subsection result_analysis (end)
@@ -1319,8 +1096,8 @@ In this section, we discuss balloon localisation at bounding box and pixel level
 % Results are presented in table~\ref{tab:ex:balloon_localisation_comparison_results}.
 % For each method, we present two variants, one making use of ground truth localization for the text areas as seeds for balloon localization, and another making use the results of the automatic text localization method presented Section~\ref{sec:se:panel_and_text}.
 
-\paragraph{Balloon localisation} % (fold)
-\label{par:balloon_localisation}
+% \paragraph{Balloon localisation} % (fold)
+% \label{par:balloon_localisation}
 Balloon localisation aims to evaluate how the presented methods are good at predicting where the balloons are in the image.
 Object localisation are performed at the level of object bounding box (Section~\ref{sub:ex:object_localisation_metric}).
 Table~\ref{tab:ex:balloon_localisation_comparison_results} compares the average results we obtained for the best performance of the three proposed methods and two methods from the literature.
@@ -1553,7 +1330,231 @@ The drop in recall was due to the balloons that were correctly extracted but whi
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Balloon classification analysis} % (fold)
+% subsection result_comparison (end)
+
+
+\section{Balloon classification} % (fold)
+\label{sub:ex:balloon_classification}
+We evaluated balloon classification using the pixel-level balloon segmentation from the eBDtheque ground truth and from the best automatic segmentation of regular balloon from the independent approach (Method I).
+The ground truth was composed of only know balloon types, ignoring the class ``other'' which produce a subset of 940 balloons from the 1091 balloons present in the dataset.
+The repartition of the balloon types is 87.96\%, 8.75\% and 3.29\% of type ``smooth'', ``wavy'' and ``spiky'' respectively.
+This unbalanced repartition reflects the usual speech balloon types repartition in comics.
+
+For the shape/contour separation part (Section~\ref{sec:contour_detection}) we first cast the original signal $o$ into 360 values and then smooth it to approximate the shape signal $s$.
+The shape signal is also composed by 360 values where each of them corresponds to the local mean in a window of size $M$ from the original signal (Equation~\ref{eq:ex:shape_approximation}).
+Note that in order to avoid side effects we copy $M/2$ values from the opposite side when needed (wrapping).
+A validation of parameter $M$ have been performed and its best value was $M=7$.
+
+\begin{equation}
+  \label{eq:ex:shape_approximation}
+  s(i) = 1/M \sum_{j=i-M/2}^{i+M/2} o(i)
+\end{equation}
+
+ %smoothing process divides the 360 values into $M$ segments and compute the mean of size $360/M$ according to 
+ % A validation of parameter $M$ have been performed and its best value was $M=7$.
+ % (Table~\ref{tab:validation_parameter_m}).
+%In other words, we split the balloon contour into 20 sectors of 18 degrees each.
+%which correspond to 5.5\% of 360 values 
+% This parameter can be adjusted according the contour descriptor type.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \begin{table}[ht]
+%     \normalsize
+% \renewcommand{\arraystretch}{1.2}
+
+%     \centering
+%     \caption{Validation of parameter $M$ for $D=(f_1,f_2)$ scenario \modif{TODO: update with new training set?}.}
+%     \begin{tabular}{c|c|c|c|c|c|}
+%   \cline{2-6}
+%     & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
+%   \cline{2-6}
+%     & Smooth & Wavy & spiky & Avg & Global \\
+%   \hline
+%   \multicolumn{1}{ |c| }{$M=10$}& 80.63   & \textbf{70.58} & 58.80 & 70.00 & 75.8 \\
+%   \hline
+%   \multicolumn{1}{ |c| }{$M=20$}& \textbf{89.30}  & 69.1  & 86.20 & \textbf{81.53} & \textbf{85.2} \\
+%   \hline
+%   \multicolumn{1}{ |c| }{$M=30$}& 88.53 & 67.64 & \textbf{86.25}  & 80.81 & 84.4 \\
+%   %\hline
+%   \hline
+%   \multicolumn{1}{ |c| }{$M=40$}& 87.35 & 61.76 & 82.35 & 77.15 & 81.99 \\
+%   %\hline
+%   \hline
+%   \multicolumn{1}{ |c| }{$M=50$}& 79.05 & 63.23 & 80.39 & 74.22 & 76.34 \\
+%   %\hline
+%   \hline
+% %       Proposed multi scale & ???  &???  & ???   & ???       \\
+% %   \hline
+%         \end{tabular}
+%     \label{tab:validation_parameter_m}
+%   \end{table}%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+We evaluated our method based on a one-versus-all scenario.
+Classification results are presented in Table~\ref{tab:ex:desc_test_balloon_classification} for different descriptors.
+First we show the effect of the two features $f_1$ and $f_2$ separately without \emph{a priori} information $P(l_1)=P(l_2)=P(l_3)$ and then using the prior probabilities about the classes repartition from the eBDtheque dataset $P(l_1)=0.88, P(l_2)= 0.09$ and $P(l_3)=0.03$.
+We detailed our best results for balloon contour extraction (for $D=(f_1, f_2)$) in the confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification}.
+
+As mentioned Section~\ref{sub:in:balloon_classification}, the region of the tail may influence balloon classification.
+ % Note that we also show the results when we automatically remove the tail region from its automatic detection (Section~\ref{sec:se:from_balloon_to_tail}).
+In order to measure this influence, we remove the tail by ignoring the points of the contour that are between the two points defined as tail origin (Section~\ref{sec:se:from_balloon_to_tail}), see Figure~\ref{fig:ex:tail_removal}.
+Note that this process relies on the tail detection performance (Section~\ref{sec:tail_detection_evaluation}).
+
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+     \centering
+    \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{tail_removal.png}
+    \caption[Tail removal for balloon classification]{Two examples of tail removal for balloon classification. From left to right, original contour detection in red, corresponding mask and partial contour removal between the two green points that represent the tail origin. The final contour is represented in purple in the right figures.}
+    \label{fig:ex:tail_removal}
+   \end{figure}
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+    \renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption[Classification result accuracy for different descriptor configuration]{Classification result accuracy for different descriptor configuration. The global accuracy represents the number of good classification divided by the number of elements to classify independently from the class.
+}
+    \begin{tabular}{c|c|c|c|c|c|}
+  \cline{2-6}
+    & \multicolumn{5}{|c|}{Accuracy per class (\%)} \\
+  \cline{2-6}
+    & Smooth & Wavy & Spiky & Average & Global \\
+  \hline
+  \multicolumn{1}{ |c| }{ $D=(f_1)$ } & 22.51 & 68.75 & 33.33  & 41.53 & 26.91  \\
+  \hline
+  \multicolumn{1}{ |c| }{ $D=(f_2)$ } & 79.73 & 36.25 & 70.00 & 61.99 & 75.60 \\
+  \hline
+  \multicolumn{1}{ |c| }{$D=(f_1, f_2)$ } & 76.62 & \textbf{60.00} & \textbf{73.34} & \textbf{64.33} & 75.05\\
+  %\hline
+  \hline
+  \multicolumn{1}{ |c| }{$D=(f_1, f_2)$ + $priors$}   & \textbf{98.26} & 11.25 & 63.34 & 57.62 & \textbf{89.50}  \\
+  %\hline
+  \hline
+%       Proposed multi scale & ???  &???  & ???   & ???       \\
+%   \hline
+        \end{tabular}
+    \label{tab:ex:desc_test_balloon_classification}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[ht]
+    \normalsize
+    \renewcommand{\arraystretch}{1.2}
+
+    \centering
+    \caption{Confusion matrix for smooth (S), wavy (W) and spiky (Z) balloon contour classification results with $D=(f_1, f_2)$.}
+    \begin{tabular}{cc|c|c|c|c|c|c|}
+  \cline{3-8}
+   & & \multicolumn{3}{|c|}{Ground truth}  & \multicolumn{3}{|c|}{Ground truth no tail}  \\
+  \cline{3-8}
+   & & S & W  & Z & S & W  & Z  \\
+  \hline
+  \multicolumn{1}{ |c|  }{\multirow{3}{*}{Prediction} } & S & \textbf{616} & 180 & 8 & 114 & 349 & 341   \\
+  \cline{2-8}
+  \multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{ W } & 30  & 48 & 2 & 7 & \textbf{53} & 20  \\
+  \cline{2-8}
+  \multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{ Z } & 4 & 4 & \textbf{22} & 4 & 13 & 13  \\
+  % \hline
+  % \multicolumn{2}{ |c|  }{TOTAL}  & 804 & 80 & 30  & 804 & 80 & 30  \\
+  %\hline
+  \hline
+%       Proposed multi scale & ???  &???  & ???   & ???       \\
+%   \hline
+        \end{tabular}
+    \label{tab:ex:confusion_matrix_balloon_classification}
+  \end{table}%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% An example of the Gaussian distribution parameters of the training set presented Figure~\ref{fig:ex:balloon_training_set} is given Table~\ref{tab:ex:coefficient_balloon_classification}.
+% Those parameters can be used for other dataset containing similar images without needing to train the classifier again.
+
+
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+%      \centering
+%     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.7\textwidth]{figure_here.png}
+%     \caption[Training set for balloon contour classification]{Training set for balloon contour classification.}
+%     \label{fig:ex:balloon_training_set}
+%    \end{figure}
+%   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \begin{table}[ht]
+%     % \normalsize
+% % \renewcommand{\arraystretch}{1.2}
+
+%     \centering
+%     \caption{Example of Gaussian distribution parameters.}
+%     \begin{tabular}{|c|c|c|c|c|c|c|}
+%   \hline
+%     & \multicolumn{2}{|c|}{Smooth}& \multicolumn{2}{|c|}{Wavy}& \multicolumn{2}{|c|}{spiky}  \\
+%   \hline
+%     & $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & $\mu$ & $\sigma$    \\
+%   \hline
+%     Feature $f_1$ & 0.019   & 0.012 & 0.042 & 0.020 & 0.148 & 0.118   \\
+%   \hline
+%     Feature $f_2$ & -0.004  & 0.006 & 0.007 & 0.010 & -0.017 & 0.023   \\
+%   \hline
+%    %\multicolumn{1}{ |c| }{ Feature 2 } &  8  & 5 & 15 & 6 & 8 & 4 \\
+%   %\cline{2-5}
+%   %\multicolumn{1}{ |c  }{} & \multicolumn{1}{ |c| }{\textbf{ spiky }}   & ? & ? & 12 \\
+%   %\hline
+%   %\hline
+% %       Proposed multi scale & ???  &???  & ???   & ???       \\
+% %   \hline
+%         \end{tabular}
+%     \label{tab:ex:coefficient_balloon_classification}
+%   \end{table}%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \modif{TODO: Ces valeurs sont pour quels types de dessins (cf. Figure4.11). 
+% ESt ce que cette méthode peut prendre en compte cette diversité de représentation.... Cette remarque est un peu provocatrice, mais on pourrait te poser la question.. 
+% Puisque tu commences la section en montrant les différents styles et la complexité et tu enchaines sur une méthode... on peut donc s'attendre à une conclusion sur ce que ta méthode est capable d'apporter par rapport à toutes ces représentations.}
+
+
+The different accuracy results Table~\ref{tab:ex:desc_test_balloon_classification} show that the first feature $f_1$ is more appropriate for separating ``wavy'' from the rest while the second feature $f_2$ is more efficient for ``smooth'' and ``spiky'' separation.
+ % more discriminant than the first one $f_1$ and their combination does not exceed the second itself ($f_2)$.
+Their combination ($f_1, f_2$) is therefore the best solution for dividing the balloons into these three classes.
+Adding the prior knowledge about the testing classes repartition improves the score of the ``smooth'' class and decrease the two others.
+This is due to the consideration of the probability of 88\% to be in the ``smooth'' class by the Bayesian classifier.
+The confusion matrix Table~\ref{tab:ex:confusion_matrix_balloon_classification} shows good classification results for the ``spiky'' class even for cases that are quite different in terms of drawing styles (Figure~\ref{fig:good_detection_balloon_classification}).
+Concerning the ``smooth'' and ``wavy'' classes, some speech balloons are very hard to classify out of context causing confusion (Figure~\ref{fig:bad_detection_balloon_classification}).
+Also, the tail of the balloon creates some noise and the radius average ($\bar{o}$) we use to normalize the descriptor features may not be appropriate for elongated balloons.
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{good_detection.png}
+    \caption{Correct classification examples for ``spiky'' (top) and ``smooth'' classes (bottom).}
+    \label{fig:good_detection_balloon_classification}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
+    \centering
+    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{bad_detection.png}
+    \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{wavy_instead_smooth.png}
+    \caption{Wrong classification examples which have been classified as ``smooth'' instead of  ``wavy'' in the first row and ``wavy'' instead of  ``smooth'' in the second row.}
+    \label{fig:bad_detection_balloon_classification}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Results analysis} % (fold)
 \label{par:balloon_classification_analysis}
 
 As mentioned in Section~\ref{sub:in:balloon_classification}, the balloon contour contains part of information that is also important to retrieve in the context of understanding comic book documents (e.g. tail, tone information).
@@ -1570,7 +1571,7 @@ This is probably due to the reduction of the number of points of the balloon con
 
 % paragraph balloon_classification_analysis (end)
 
-% subsection result_comparison (end)
+% subsection balloon_classification (end)
 
 
 
@@ -1630,10 +1631,20 @@ As introduced in Section~\ref{sub:ex:tail_detection_metric}, we use two accuracy
 % \end{itemize}
 % subsection result_analysis (end)
 
+\subsection{Result analysis} % (fold)
+\label{sub:ex:result_analysis_tail_evaluation}
+
+% subsection result_analysis (end)
+
 The proposed method is very good at locating the tail tip when it existed and also at giving a confidence value equal to zero when the balloon has no tail.
 The few mistakes concerning the tail tip position detection is due to very small tails or when there are variations along the contour but no tail to detect which confuse the vertex selection process.
 The tail direction is sensitive to the quality of the pixel-level balloon contour extraction in the area of the tail tip.
-Sometimes, the inside balloon region extraction is not sufficient to retrieve the tail direction, the balloon border has also to be considered (Figure~\ref{fig:ex:tail_extraction_mistake_errors}).
+Sometimes, the inside balloon region extraction is not sufficient to retrieve the tail direction, the balloon border has also to be considered.
+For instance, in Figure~\ref{fig:ex:tail_extraction_mistake_errors}, the tail positions are represented by a green line on the balloon contour and tail directions are written in blue (from the eight cardinal coordinates).
+Left hand side balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted.
+For the right hand side balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment.
+The direction have been predicted according the white balloon background region and not from the balloon boundary that indicates a different direction (NE and SE instead of S and E).
+
 The tail tip position and tail direction highly rely on the performance of the balloon contour extraction.
 They are satisfactory when balloon contours are perfectly extracted (manual in Table~\ref{tab:ex:tail_evaluation}) but decreases quickly according to the automatic balloon extractor method performance.
 The importance of a precise pixel-level segmentation in the region of the tail tip is illustrated by the difference of 7.38\% for $A_{tailDir}$ between the regular and implicit automatic methods due to the lack of precision of the active contour extraction method.
@@ -1643,7 +1654,7 @@ The importance of a precise pixel-level segmentation in the region of the tail t
   \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim= 0px 0px 0px 0px, clip, width=0.75\textwidth]{tail_extraction_errors.png}
-    \caption[Examples of difficult balloons for tail tip position and tail direction extractions]{Examples of difficult balloons for tail tip position (left column) and tail direction (right column) extractions. Tail positions are represented by a green line on the balloon contour and tail directions are written in blue (from the eight cardinal coordinates). Left hand side balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted. For the right hand side balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment. The direction have been predicted according the white balloon background region and not from the balloon boundary that indicates a different direction (NE and SE instead of S and E).}
+    \caption[Examples of difficult balloons for tail tip position and tail direction extractions]{Examples of difficult balloons for tail tip position (left column) and tail direction (right column) extractions.}
     \label{fig:ex:tail_extraction_mistake_errors}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1695,7 +1706,7 @@ In this case, all the predicted regions would have been accepted as correct with
 % \subsection{Experimental settings} % (fold)
 % \label{sub:experimental_settings}
 
-\subsection{Method S} % (fold)
+\subsection{Sequential approach} % (fold)
 % \label{sub:method_a}
 
 Method S is a sequential approach that computes a region of interest for comic characters from the tail tip position and tail direction inside a panel region (Section~\ref{sec:se:tail_to_character}).
@@ -1763,7 +1774,7 @@ Also, two set of images have been tested, one including all the comic character 
 
 % subsection method_a (end)
 
-\subsection{Method I} % (fold)
+\subsection{Independent approach} % (fold)
 \label{sub:ex:character_extraction_method_b}
 
 Method I consists in an independent comic character instance spotting given an example.
@@ -1840,7 +1851,7 @@ Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} wher
 
 % subsection method_b (end)
 
-\subsection{Method K} % (fold)
+\subsection{Knowledge-driven approach} % (fold)
 % \label{sub:method_c}
 
 The knowledge-driven method can be used as a post processing of the comic character extraction using only the properties of the comics model or an extra processing if we consider ROI refinement and non-speaking character spotting as illustrated Section~\ref{sec:kn:processing_sequence}.

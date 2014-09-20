@@ -486,9 +486,9 @@ We automatically remove this by cropping the image where a panel with an area gr
           \hline
           Ho~\cite{Ho2012}   & 49.76       & 68.74    & 57.48    \\
           \hline
-          Method S          & \textbf{64.24}       & 83.81   & \bf{72.72}     \\
+          Method S          & \textbf{64.24}       & 83.81   & 72.72     \\
           \hline
-          Method I          & 62.94       & 87.30   & 73.14      \\
+          Method I          & 62.94       & 87.30   & \bf{73.14}      \\
           \hline
           Method K          & 61.88       & \textbf{87.42}     & 72.46      \\
           \hline
@@ -1335,12 +1335,15 @@ The drop in recall was due to the balloons that were correctly extracted but whi
 
 \section{Balloon classification} % (fold)
 \label{sub:ex:balloon_classification}
-We evaluated balloon classification using the pixel-level balloon segmentation from the eBDtheque ground truth and from the best automatic segmentation of regular balloon from the independent approach (Method I).
-The ground truth was composed of only know balloon types, ignoring the class ``other'' which produce a subset of 940 balloons from the 1091 balloons present in the dataset.
+From our knowledge, this is the first work that tackles speech balloon classification.
+We analyse the effects of the two features and the prior knowledge we presented in Section~\ref{sub:in:balloon_classification}.
+ % using  using the pixel-level balloon segmentation from the eBDtheque ground truth.
+% and from the best automatic segmentation of regular balloon from the independent approach (Method I).
+We evaluate the proposed method using a subset of 914 balloons from the 1091 balloons present in the original eBDtheque ground truth (only ``smooth'', ``wavy'' and ``spiky'' balloons).
 The repartition of the balloon types is 87.96\%, 8.75\% and 3.29\% of type ``smooth'', ``wavy'' and ``spiky'' respectively.
 This unbalanced repartition reflects the usual speech balloon types repartition in comics.
 
-For the shape/contour separation part (Section~\ref{sec:contour_detection}) we first cast the original signal $o$ into 360 values and then smooth it to approximate the shape signal $s$.
+In the shape/contour separation process (Section~\ref{sec:contour_detection}), we first cast the original signal $o$ into 360 values and then smooth it in order to approximate the shape signal $s$.
 The shape signal is also composed by 360 values where each of them corresponds to the local mean in a window of size $M$ from the original signal (Equation~\ref{eq:ex:shape_approximation}).
 Note that in order to avoid side effects we copy $M/2$ values from the opposite side when needed (wrapping).
 A validation of parameter $M$ have been performed and its best value was $M=7$.
@@ -1857,18 +1860,19 @@ Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} wher
 The knowledge-driven method can be used as a post processing of the comic character extraction using only the properties of the comics model or an extra processing if we consider ROI refinement and non-speaking character spotting as illustrated Section~\ref{sec:kn:processing_sequence}.
 Here we use only the validation part of the expert system without ROI refinement and extra character spotting because these last approaches are still under development.
 The expert system validates or rejects character candidates according to contextual information from the proposed model (Section~\ref{sub:kn:comics_domain}).
-In the model, the rules concerning comic book characters are that they should not contain any other extracted region because we assume that a character can not contain a panel, a balloon, text and another character (Section~\ref{sec:kn:processing_sequence}). If they do, they are automatically deleted.
-We post processed the output of Method S and we obtain an average score for recall and precision of 3.53\%, 12.50\% and \modif{???}, \modif{???} from automatic and ground truth previous elements extraction respectively (Figure~\ref{fig:ex:character_methodC_extraction_detail}).
+In the model, the rules concerning comic book characters are that they should not contain any other extracted region because we assume that a character can not contain panel, balloons, text or another character (Section~\ref{sec:kn:processing_sequence}). If they do, they are automatically deleted.
+We post processed the output of the automatic extractions from the sequential approach (Method S) and we obtain an average score for recall and precision of 3.59\%, 12.68\% (Figure~\ref{fig:ex:character_methodC_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
  % \includegraphics[width=\textwidth,height=4cm]{Panel_object_proposed.pdf}
  \centering
-  \subfloat[Method C (ground truth) \modif{TODO: update}]{\label{fig:ex:character_method_A_GT_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_GT_panel_balloon_Object.pdf}}
-  \\
-  \subfloat[Method C (automatic) \modif{TODO: update}]{\label{fig:ex:character_method_A_auto_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_method_B_panel_and_balloon_Object.pdf}}
-  \\
- \caption{Character extraction score details using Method K for each image of the eBDtheque dataset.
+  % \subfloat[Method K (ground truth) \modif{TODO: update}]{\label{fig:ex:character_method_C_GT_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_GT_panel_balloon_Object.pdf}}
+  % \\
+  \label{fig:ex:character_method_C_auto_extraction_detail}
+  \includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-09-04_cleaned_validated_from_method_B_for_panel_text_balloon_and_method_A_for_character_all_Character.pdf}
+  
+ \caption{Character extraction score details using Method K for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).
  }
  \label{fig:ex:character_methodC_extraction_detail}
 \end{figure}
@@ -1906,20 +1910,20 @@ Note that the scores in Table~\ref{tab:ex:character_localisation_result_summary}
 % \renewcommand{\arraystretch}{1.3}
 % \extrarowheight as needed to properly center the text within the cells
   \centering
-  \caption{Comic character localisation result for method S from manual and automatic panel and balloon element extractions.}
+  \caption{Comic character localisation result for method S from ground truth (GT) and automatic (auto) panel and balloon element extractions.}
   \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
-    & \multicolumn{3}{|c|}{Speaking only}  & \multicolumn{3}{|c|}{All}   \\
+    & \multicolumn{3}{|c|}{Speaking only}  & \multicolumn{3}{|c|}{All characters}   \\
   \hline
   Methods  &  $ R$ (\%)  & $P$ (\%)& $F$ (\%)   &  $R$ (\%)  & $P$ (\%)   & $F$ (\%)\\
   \hline
-  Method S (ground truth)  & \textbf{30.04} & \textbf{28.03} & \textbf{29.00} &  15.59    &  23.18   &  18.64   \\
+  Method S (GT)  & \textbf{30.04} & \textbf{28.03} & \textbf{29.00} &  \textbf{15.59}    &  \textbf{23.18}   &  \textbf{18.64}   \\
   \hline
-  Method S (automatic)     & 11.77  & 11.82 & 11.79 & 6.84    &   12.13     &   8.75  \\
+  Method S (auto)     & 11.77  & 11.82 & 11.79 & 6.84    &   12.13     &   8.75  \\
   \hline
-  Method K (ground truth)  &  \modif{???}  & \modif{???} & \modif{???} &  \modif{???}   &  \modif{???}   & \modif{???}   \\
-  \hline
-  Method K (automatic)     & \modif{0.0}  & \modif{0.0} & \modif{0.0} &  3.53  & 12.50 & 5.50 \\
+  % Method K (ground truth)  &  \modif{???}  & \modif{???} & \modif{???} &  \modif{???}   &  \modif{???}   & \modif{???}   \\
+  % \hline
+  Method K (auto)     & 6.15  & 12.30 & 8.20 &  3.59  & 12.68 & 5.60 \\
   \hline
   \end{tabular}
       \label{tab:ex:character_localisation_result_summary}
@@ -1974,10 +1978,10 @@ Note that the scores in Table~\ref{tab:ex:character_localisation_result_summary}
 
 % As shown on Figure~\ref{fig:ex:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
 This low level of performance comes from various reasons.
-First, the limitation of the extractor to process speaking characters
-When we focused on the subset of 829 speaking characters, the recall and precision increased by 14.45\% and 4.85\% respectively.
+First, the limitation of the extractor to process speaking characters.
+When we focused on the subset of 829 speaking characters, the recall and precision increased by 14.45\% and 4.85\% respectively with panel and balloon regions from the ground truth (GT).
 %First, the limitation of the extractor to process speaking characters; 
-Second, the variability of character styles in the eBDtheque dataset; third, the error propagation of previous processes (panel, text, balloon, and tail extractions) that are required to guess comic character locations.
+Second, the variability of character styles in the eBDtheque dataset; third, the error propagation of previous processes (panel, text, balloon, and tail extractions) that are required to guess comic character locations (differences between ``GT'' and ``auto'' results in Table~\ref{tab:ex:character_localisation_result_summary}).
 
 
 % subsection result_analysis (end)
@@ -2457,15 +2461,16 @@ Considering ideal proportion covered for each type of element, we obtained the f
 %-------------------------------------------------------------------------
 \subsection{Framework evaluation}
 We evaluated our framework during the two iterations of the process loop introduced in Section~\ref{sec:kn:processing_sequence} and particularly at the beginning (Step 1: hypothesis) and at the end (Step 3: inference) of each iteration.
-Low level content extraction such as panels $P$, balloons $B$, text $T$ and comic characters $C$ have been evaluated separately in the four previous subsections, here we combine them throughout the two iterations of the process loop, in a sequential way which propagate errors.
+Low level content extraction such as panels $P$, balloons $B$, text $T$ and comic characters $C$ have been evaluated separately in the four previous subsections, here we combine them throughout the two iterations of the process loop.
+% , in a sequential way which propagate errors.
 Two high level element retrievals are also evaluated here, the semantic link between the spoken text and speech balloons $STSB$, and also between the speech balloons and speakers $SBSC$.
 % Note that using this framework some processes ($C$, $STSB$, $SBCS$) were related to previous processes which propagated errors and reduced their performance compared to their separated evaluation.
 % in Section~\ref{sub:ex:independent_information_extraction_evaluation}.
 
-We evaluate our framework using the f-measure of panel $P$, balloon $B$, text $T$ and character $C$ extractions.
+We evaluate our framework using the F-measure of panel $P$, balloon $B$, text $T$ and character $C$ extractions.
 Also, the accuracy of the two semantic links $STSB$ and $SBSC$ is measured (Section~\ref{sub:ex:semantic_links_metric}).
 %  are all automatic here with their respective error rates. panel $P$, balloon $B$ and text $T$ extraction are similar to the 
-Results are presented Table~\ref{tab:ex:framework_evaluation_details} and the change in the amount of information discovered throughout the process is presented in Figure~\ref{fig:ex:score_evolution}.
+Results are presented in Table~\ref{tab:ex:framework_evaluation_details} and the change in the amount of information discovered throughout the process is illustrated in Figure~\ref{fig:ex:score_evolution}.
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2474,23 +2479,23 @@ Results are presented Table~\ref{tab:ex:framework_evaluation_details} and the ch
 %\renewcommand{\arraystretch}{1.2}
 
     \centering
-    \caption{Values of the shift $O$ on horizontal and vertical axis and panel's corner selection according to the eight directions of the tail.}
+    \caption{F-measure score evolution for panel (P), balloon (B), text (T) and characters (C) throughout the two iterations. Scores for the semantic links $STSB$ and $SBSC$ are given as accuracy.}
     % \def\arraystretch{1.5}%  1 is the default, change whatever you need
     \setlength{\tabcolsep}{.45em}
     % \extracolsep{\fill}
     \begin{tabular}{|c|c|c|c|c|c|c|}
 
           \hline
-        Step & $P$ & $B$ & $T$ & $C$ & $A_{STSB}$ & $A_{SBSC}$    \\
+        Step & $P$ & $B$ & $T$ & $C$ & $STSB$ & $SBSC$    \\
         \hline
         
-        Iteration 1 - hypothesis & \modif{??}   & \modif{??}  & \modif{??} & \modif{??}  & \modif{??} & \modif{??}  \\
+        1 - Hypothesis              & 73.14   & 48.38  & 67.07 & 0  & 0 & 0  \\
         \hline
-        Iteration 1 - validation + inference & \modif{??}   & \modif{??}  & \modif{??} & \modif{??}  & \modif{??} & \modif{??}  \\
+        1 - Validation \& inference  & 72.46   & 43.63  & 49.48 & 0  & 47.61 & 0  \\
         \hline
-        Iteration 2 - hypothesis & \modif{??}   & \modif{??}  & \modif{??} & \modif{??}  & \modif{??} & \modif{??}  \\
+        2 - Hypothesis              & 72.46   & 43.63  & 49.48 & 11.79  & 47.61 & 0  \\
         \hline
-        Iteration 2 - validation + inference & \modif{??}   & \modif{??}  & \modif{??} & \modif{??}  & \modif{??} & \modif{??}  \\
+        2 - Validation \& inference  & 72.46   & 43.63  & 49.48 & 8.20  & 47.61 & 18.23  \\
         \hline
         \end{tabular}
     \label{tab:ex:framework_evaluation_details}
@@ -2529,35 +2534,61 @@ Results are presented Table~\ref{tab:ex:framework_evaluation_details} and the ch
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+% \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+%   \centering
+%  \includegraphics[width=230px]{radar_chart.png}
+%  \caption[Knowledge-driven extraction performance evolution]{Change in performance for panels $P$, balloons $B$, text lines $T$, comic characters $C$ and the semantic links $STSB$ and $SBSC$ at the hypothesis and evaluation steps during the two loops of the process.
+%  The dashed blue line represents the best score using our model on the data extracted from the ground truth data (optimal condition).
+%  The solid red line is the performance of the framework using all the automatic extractions and semantic link inferences.}
+%  \label{fig:ex:score_evolution}
+% \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth, 
   \centering
- \includegraphics[width=230px]{radar_chart.png}
- \caption[Knowledge-driven extraction performance evolution]{Change in performance for panels $P$, balloons $B$, text lines $T$, comic characters $C$ and the semantic links $STSB$ and $SBSC$ at the hypothesis and evaluation steps during the two loops of the process.
+  \subfloat[Hypothesis]{\label{fig:ex:radar_chart_a}\includegraphics[trim= 20mm 5mm 20mm 10mm, clip, width=0.4\textwidth]{radar_chart_a.png}}
+  \hspace{2em}
+  \subfloat[Validation \& inference]{\label{fig:ex:radar_chart_b}\includegraphics[trim= 20mm 5mm 20mm 10mm, clip, width=0.4\textwidth]{radar_chart_b.png}}
+  \\
+  \subfloat[Hypothesis]{\label{fig:ex:radar_chart_c}\includegraphics[trim= 20mm 5mm 20mm 10mm, clip, width=0.4\textwidth]{radar_chart_c.png}}
+  \hspace{2em}
+  \subfloat[Validation \& inference]{\label{fig:ex:radar_chart_d}\includegraphics[trim= 20mm 5mm 20mm 10mm, clip, width=0.4\textwidth]{radar_chart_d.png}}
+
+  \caption[Knowledge-driven extraction performance evolution]{Change in performance for panels $P$, balloons $B$, text lines $T$, comic characters $C$ and the semantic links $STSB$ and $SBSC$ at the hypothesis and evaluation steps during the two loops of the process.
  The dashed blue line represents the best score using our model on the data extracted from the ground truth data (optimal condition).
  The solid red line is the performance of the framework using all the automatic extractions and semantic link inferences.}
  \label{fig:ex:score_evolution}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %TODO: add tail results figure + legend + analysis
 \paragraph{Process details} % (fold)
 \label{par:process_details}
 
 % paragraph process_details (end)
-Figure~\ref{fig:ex:score_evolution} shows the change of the performance of our framework after the first and second iteration of analysis over the eBDtheque dataset~\cite{Guerin2013}.
-The performance of the first iteration was measured after the initial extraction of simple elements which were considered as hypotheses by the expert system (Figure~\ref{fig:ex:score_evolution}a.) and after validation by the expert system (Figure~\ref{fig:ex:score_evolution}b.).
-Between the first initialization and validation (first row of Figure~\ref{fig:ex:score_evolution}), the f-measure remained stable for $P$ and increased by 3\% for the balloon $B$ and text $T$.
+Figure~\ref{fig:ex:score_evolution} shows the evolution of the performance of the knowledge-driven system after the first and second iteration of analysis (Section~\ref{sec:kn:processing_sequence}) over the eBDtheque dataset~\cite{Guerin2013}.
+We also represented the maximum reachable limit using the proposed model (Section~\ref{sub:model_evaluation}) using a  dashed line in the same figure.
+
+
+The performance of the first iteration is measured after the initial extraction of simple elements which are considered as hypotheses by the expert system (Figure~\ref{fig:ex:radar_chart_a}) and after validation by the expert system (Figure~\ref{fig:ex:radar_chart_b}).
+Between the first initialization (1 - Hypothesis) and validation (1 - Validation), the F-measure remains stable for $P$ (less than 1\% difference) and decreases by 4.75\% for the balloon $B$ and 17.59\% for the text $T$ while more than 47\% of the semantic links between speech text and speech balloon ($STSB$) are retrieved.
+The global decrease is related to the actual behaviour of the expert system which is only able to filter out elements.
+Nevertheless, remaining elements are consistent and allow semantic relation inference.
+The expert system applies the inference rules to automatically specify the balloons that have a tail and their included text as speech balloon $SB$ and speech text $ST$ respectively to create the semantic links $STSB$ between each pairs.
+
 % which reflects the first contribution of the expert system over the low level processing.
 %In fact, the text extraction has a 49\% precision (see table~\ref{tab:text_results}) which is raised up to 72\% by using the rule-based contextual filtering but this has also a cost for the recall which is dropped by 23\%. 
 % into more specific elements such as speech balloon $SB$ and speech text $ST$ in order to provide additional information to the second iteration.
-At this point, no comic book characters were discovered because their rules in the ontology are related to elements that were not yet discovered.
-Nevertheless, the semantic links between speech text and balloon $STSB$ were inferred (47.6\%).
-The expert system applied the inference rules to automatically label the balloon with a tail that included text such as speech balloon $SB$ and speech text $ST$ respectively and created a semantic link $STSB$ between each of them.
+At this point, no comic book characters are discovered because their rules in the ontology are related to elements that are not yet discovered.
+% Nevertheless, the semantic links between speech text and balloon $STSB$ were inferred (47.6\%).
 
-The newly inferred links were processed by the expert system along with previously validated regions during a second iteration in order to get more information by trying to apply more rules from the knowledge base.
-This time, the expert system could make use of rules related to characters because the speech balloons were now part of the knowledge base.
-Panels and speech balloons were used to create hypotheses for the location of characters and then the low level processing located them more precisely within these regions (Figure~\ref{fig:ex:score_evolution}c.).
-Finally, the expert system validated the newly discovered regions and inferred the semantic links between speech balloons and speaking characters $SBSC$ (Figure~\ref{fig:ex:score_evolution}d.).
+The newly inferred links are processed by the expert system along with previously validated regions during a second iteration in order to get more information by trying to apply more rules from the knowledge base.
+This time, the expert system can make use of rules related to characters because the speech balloons are now part of the knowledge base.
+Panels and speech balloons are used to create hypotheses for the location of characters and then the low level processing locates them more precisely within these regions (Figure~\ref{fig:ex:radar_chart_c}).
+Finally, the expert system validates the newly discovered regions and infers the semantic links between speech balloons and speaking characters $SBSC$ (Figure~\ref{fig:ex:radar_chart_d}).
 
 % \modifc{ADD Clement: results analysis to explain (and illustrate with examples?) why the results on data from the ground truth are not perfect.}
 
@@ -2567,7 +2598,7 @@ Finally, the expert system validated the newly discovered regions and inferred t
 \label{par:low_level_processing}
 
 % paragraph low_level_processing (end)
-The low level processing scores ($P$, $B$, $T$) always increased between the hypothesis and the validation steps, which confirms the benefits of combining different levels of analysis.
+% The low level processing scores ($P$, $B$, $T$) always increased between the hypothesis and the validation steps, which confirms the benefits of combining different levels of analysis.
 The best extraction performance is obtained for the panels that are usually the easiest elements to extract from a page.
 % because they overlap most of the content.
 The lowest extraction performance is for the comic characters $C$.
@@ -2586,21 +2617,21 @@ It should be stressed that these numbers represent the efficiency of the last pr
 Individual errors at each recognition and validation step of the pipeline are propagated to the final semantic association between elements ($SBSC$).
 Therefore a single improvement in the detection or the validation of any kind of element would have an impact at the semantic association level.
 
-Note that given the panel, balloon and character position from the ground truth, the accuracy of the expert system in predicting the semantic relations was about $A_{STSB}=96.9\%$ and $A_{SBSC}=70.66\%$.
-The 3.1\% of missed \emph{isLineOf} relations came from balloons that were not compliant with our model.
-In the same way, among the 829 \emph{isSaidBy} relations, that link speech balloons to speaking characters, 9.5\% were undetectable because they were generated from balloons outside the panel.
+Note that given the panel, balloon and character position from the ground truth, the accuracy of the expert system in predicting the semantic relations is about $A_{STSB}=96.9\%$ and $A_{SBSC}=70.66\%$.
+The 3.1\% of missed \emph{isLineOf} relations came from balloons that are not compliant with our model.
+In the same way, among the 829 \emph{isSaidBy} relations, that link speech balloons to speaking characters, 9.5\% are undetectable because they are generated from balloons outside the panel.
 This comparison clearly demonstrate that the expert system is very good at predicting semantic link as soon as the low level extractions are efficient.
 
 
 % section semantic_links_evaluation (end)
 
 
-\paragraph{General evaluation} % (fold)
-\label{par:global_evaluation}
-It is difficult to combine individual metrics of a different nature into a single global metric.
-As an indicative metric, we considered the hexagon area as being the amount of information that could be retrieved from the eBDtheque dataset~\cite{Guerin2013}.
-Our model is theoretically able to model 88.83\% of this information (dashed line).
-Despite the diversity of the images in this dataset, 54.89\% of this information can be retrieved automatically (solid line) using our framework.
+% \paragraph{General evaluation} % (fold)
+% \label{par:global_evaluation}
+% It is difficult to combine individual metrics of a different nature into a single global metric.
+% As an indicative metric, we considered the hexagon area as being the amount of information that could be retrieved from the eBDtheque dataset~\cite{Guerin2013}.
+% Our model is theoretically able to model 88.83\% of this information (dashed line).
+% Despite the diversity of the images in this dataset, 54.89\% of this information can be retrieved automatically (solid line) using our framework.
 
 
 
@@ -2624,19 +2655,22 @@ We presented the eBDtheque dataset, the first comic image dataset and associated
 The corpus can easily be extended to enlarge the diversity of the dataset and provide consecutive page or full album in order to allow a wider level of comic books analysis.
 New semantic annotations can be added, such as the view angle and the shot type for panels, text at the level of letters, comic character's role, profile and relationships. 
 
-The sequential approach (Approach S) is an intuitive and sequential approach like most of the previously proposed methods in the literature.
+The sequential approach (Approach S) is an intuitive approach like most of the previously proposed methods in the literature.
 It efficiency is maximal when all the image content is present and structured in classical comic books.
-It gives the best average and precision score for \modif{panel, text, balloon and character extraction} which demonstrate that linking different content extractions at low level processing is relevant for comic book image analysis.
+It gives the best average and precision score for text, balloon and character extraction which demonstrate that linking different content extractions at low level processing is relevant for comic book image analysis.
 
-The independent approach (Approach I) is an independent approach which is more efficient for unusual comic image (no panel, no text or no balloon) than Approach S.
-However, it is slightly less powerful than Approach S in average on the eBDtheque dataset because this dataset is mainly composed by classical comics.
-This approach can easily be adapted for particular issues as it does not require previous element extraction.
+The independent approach (Approach I) is similar to the previous approach only for panel extraction and more appropriate for unusual comic image (e.g. no panel, no text or no balloon).
+However, it is slightly less powerful than sequential approach in average on the eBDtheque dataset because this dataset is mainly composed by classical comics.
+Nevertheless, this approach can easily handle particular issues as it does not require previous element extraction.
 
 The knowledge-driven approach (Approach K) is able to improve the overall precision but not the recall in the presented configuration because it uses only rejection constraints.
 The strength of this approach is that it uses a standard and exchangeable description of the image content, from visual to semantic level, that can be easily be enriched or adapted to specific or large collections.
 The addition of conversion and creation constraint types (not only rejection) can give the ability to this intelligent system to recover missing information.
 
-\modif{TODO: give details about time processing? JCB: yes for the three methods}
+Processing time are quite short for the sequential and independent approach but the knowledge-driven approach requires reasoning operations that are very time consuming.
+Panel and balloon extraction can run in real time on a regular laptop or smartphone.
+Text extraction process highly depends on the OCR speed.
+Comic character region of interest are almost computed instantaneously (calculus of maximal rectangle coordinates) but character spotting is very slow due to colour quantization and multi-scale sliding window processes.
 
 %big table to compare the 3 level of contribution of this thesis
 

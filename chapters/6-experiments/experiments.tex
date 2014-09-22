@@ -800,7 +800,7 @@ Table~\ref{tab:ex:text_recogniton_results} shows text recognition results given 
   \begin{table}[ht]
     % \normalsize
     \centering
-    \caption{Text recognition accuracy $A_{textReco}$ results from automatic text line localisation at an edit distance ($ED$) of 0, 1 and 2.}
+    \caption[Text recognition accuracy results from automatic text line localisation using edit distance]{Text recognition accuracy $A_{textReco}$ results from automatic text line localisation at an edit distance ($ED$) of 0, 1 and 2.}
     \begin{tabular}{|c|c|c|c|}
           \hline
           Text extraction method &  $ED=0$  & $ED=1$  & $ED=2$  \\
@@ -904,18 +904,18 @@ For both regular and implicit balloon extraction, the input text is given from t
 
 Regular balloon extraction method is based on a white blob selection according to the central position of text lines in the balloon.
 This central position is converted as confidence value $C_{balloon}$ for each balloon candidate.
-The evolution of the performance of recall and precision according to this confidence rejection criterion is plotted Figure~\ref{fig:ex:validation_confidence_balloon_methodA_regular}.
-The best score of $R=37.25\%$ and $P=45.19\%$ was obtained for \modif{$C_{balloon} > 10\%$} (Figure~\ref{fig:ex:closed_balloon_methodA_extraction_detail}).
+% The evolution of the performance of recall and precision according to this confidence rejection criterion is plotted Figure~\ref{fig:ex:validation_confidence_balloon_methodA_regular}.
+The best score of $R=37.25\%$ and $P=45.19\%$ was obtained by considering only balloons with $C_{balloon} > 50\%$ (Figure~\ref{fig:ex:closed_balloon_methodA_extraction_detail}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-  \centering
- \includegraphics[width=0.7\textwidth]{figure_here.png}
- \caption{Validation of the regular balloon confidence value for Method A.
- }
- \label{fig:ex:validation_confidence_balloon_methodA_regular}
-\end{figure}
+% \begin{figure}[h]
+%   \centering
+%  \includegraphics[width=0.7\textwidth]{figure_here.png}
+%  \caption{Validation of the regular balloon confidence value for Method A.
+%  }
+%  \label{fig:ex:validation_confidence_balloon_methodA_regular}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -951,7 +951,7 @@ The best score for object level detection ($R=57.76\%$ and $P=41.62\%$) are deta
 % \renewcommand{\arraystretch}{1.3}
 % \extrarowheight as needed to properly center the text within the cells
   \centering
-  \caption{Implicit balloon performance evaluation at object and pixel levels using the original form and the proposed (with $E_{text}$) energy functions.}
+  \caption[Implicit balloon performance evaluation at object and pixel levels using the original form and the proposed energy functions]{Implicit balloon performance evaluation at object and pixel levels using the original form and the proposed (with $E_{text}$) energy functions.}
   \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
     & \multicolumn{3}{|c|}{Object level}  & \multicolumn{3}{|c|}{Pixel level}   \\
@@ -999,18 +999,20 @@ We voluntary omitted them here to avoid detecting a lot of non balloon regions.
 % Balloons with a confidence value $C_{balloon}$ lower than 10\% were rejected according to the validation experiments on the eBDtheque dataset~\cite{Guerin2013}.
 
 This regular balloon extraction method attributes a confidence value $C_{balloon}$ to each balloon candidate according to the alignment of the connected-components it contains (children), similarly to regular balloon extraction of Method S.
-The evolution of the performance of recall and precision according to this confidence rejection criterion is plotted Figure~\ref{fig:ex:validation_confidence_balloon_methodB_regular}.
-The best score of $R=52.68\%$ and $P=44.17\%$ was obtained for \modif{$C_{balloon} > 50\%$}, details are given Figure~\ref{fig:ex:balloon_methodB_extraction_detail}.
-Figure~\ref{fig:ex:balloon_methodB_extraction_detail} confirms that our method works best when the balloons are closed, well segmented and with non cursive text inside.
+% The evolution of the performance of recall and precision according to this confidence rejection criterion is plotted Figure~\ref{fig:ex:validation_confidence_balloon_methodB_regular}.
+The best score of $R=52.68\%$ and $P=44.17\%$ was obtained for $C_{balloon} > 50\%$.
+Note that we observed a drop in the performance when considering only balloons with a confidence value $C_{balloon}$ higher than $60\%$.
+% Details are given Figure~\ref{fig:ex:balloon_methodB_extraction_detail}.
+Figure~\ref{fig:ex:balloon_methodB_extraction_detail} confirms that our method works best for images where the balloons are closed, well segmented and with non cursive text inside (in order to create a sufficient number of connected-components).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-  \centering
- \includegraphics[width=0.7\textwidth]{figure_here.png}
- \caption{Validation of the regular balloon confidence value for Method I.
- }
- \label{fig:ex:validation_confidence_balloon_methodB_regular}
-\end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[h]
+%   \centering
+%  \includegraphics[width=0.7\textwidth]{figure_here.png}
+%  \caption{Validation of the regular balloon confidence value for Method I.
+%  }
+%  \label{fig:ex:validation_confidence_balloon_methodB_regular}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1452,7 +1454,7 @@ Note that this process relies on the tail detection performance (Section~\ref{se
     \renewcommand{\arraystretch}{1.2}
 
     \centering
-    \caption{Confusion matrix for smooth (S), wavy (W) and spiky (Z) balloon contour classification results with $D=(f_1, f_2)$.}
+    \caption[Confusion matrix for smooth, wavy and spiky balloon contour classification results]{Confusion matrix for smooth (S), wavy (W) and spiky (Z) balloon contour classification results with $D=(f_1, f_2)$.}
     \begin{tabular}{cc|c|c|c|c|c|c|}
   \cline{3-8}
    & & \multicolumn{3}{|c|}{Ground truth}  & \multicolumn{3}{|c|}{Ground truth no tail}  \\
@@ -1603,7 +1605,7 @@ As introduced in Section~\ref{sub:ex:tail_detection_metric}, we use two accuracy
 %\renewcommand{\arraystretch}{1.2}
 
     \centering
-    \caption{Tail tip position ($A_{tailTip}$) and tail direction ($A_{tailDir}$) extraction results from automatic and manual balloon contour extractions.}
+    \caption[Tail tip position and tail direction extraction results from automatic and manual balloon contour extractions]{Tail tip position ($A_{tailTip}$) and tail direction ($A_{tailDir}$) extraction results from automatic and manual balloon contour extractions.}
     \begin{tabular}{|c|c|c|}
           % \hline
           %   & \multicolumn{2}{|c|}{Character 1}   & \multicolumn{2}{|c|}{Character 2}   \\
@@ -1910,7 +1912,7 @@ Note that the scores in Table~\ref{tab:ex:character_localisation_result_summary}
 % \renewcommand{\arraystretch}{1.3}
 % \extrarowheight as needed to properly center the text within the cells
   \centering
-  \caption{Comic character localisation result for method S from ground truth (GT) and automatic (auto) panel and balloon element extractions.}
+  \caption[Comic character localisation result for the sequential approach from ground truth and automatic panel and balloon element extractions]{Comic character localisation result for method S from ground truth (GT) and automatic (auto) panel and balloon element extractions.}
   \begin{tabular}{|c|c|c|c|c|c|c|}
   \hline
     & \multicolumn{3}{|c|}{Speaking only}  & \multicolumn{3}{|c|}{All characters}   \\
@@ -2479,7 +2481,7 @@ Results are presented in Table~\ref{tab:ex:framework_evaluation_details} and the
 %\renewcommand{\arraystretch}{1.2}
 
     \centering
-    \caption{F-measure score evolution for panel (P), balloon (B), text (T) and characters (C) throughout the two iterations. Scores for the semantic links $STSB$ and $SBSC$ are given as accuracy.}
+    \caption[F-measure score evolution for panel, balloon, text and characters throughout the two iterations]{F-measure score evolution for panel (P), balloon (B), text (T) and characters (C) throughout the two iterations. Scores for the semantic links $STSB$ and $SBSC$ are given as accuracy.}
     % \def\arraystretch{1.5}%  1 is the default, change whatever you need
     \setlength{\tabcolsep}{.45em}
     % \extracolsep{\fill}

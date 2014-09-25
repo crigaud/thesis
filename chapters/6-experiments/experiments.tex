@@ -13,7 +13,10 @@ Ideally, such a ground truth is made publicly available so anyone can challenge 
 This can be applied to any kind of results from image segmentation to classification or information retrieval.
 In this chapter we present the dataset and ground truth we provided to evaluate comic book related works.
 We describe the metrics we used to evaluate each of the contributions proposed in \ch{chap:sequential}, \ch{chap:independent} and \ch{chap:knowledge} and evaluate our work compared to previous works from the literature.
-\modif{Note that we call these three approaches Method I (independent), Method S (sequential) and Method K (knowledge-driven) respectively in the rest of this chapter.}
+% \modif{
+%TODO: find an appropriate denomination
+Note that we call these three approaches Method I (independent), Method S (sequential) and Method K (knowledge-driven) respectively in the rest of this chapter.
+% }
 
 %The evaluation of Method C is decomposed in two parts: the validation and the inference processes.
 % Validations are combined with Method A and B in each extraction evaluation to show its benefits.
@@ -299,7 +302,7 @@ A_{STSB} = \frac{nbRetrievedSTSBLinks}{nbSTSBLinks} && A_{SBSC} = \frac{nbRetrie
 \label{sub:ex:panel_extraction_evaluation}
 % We evaluated the proposed method on the 850 panels of the eBDtheque dataset~\cite{Guerin2013} ``version 2014'' at bounding box level.
 
-In this section we evaluate our three approaches \modif{(Method S, I and K)} and compare them to two methods from the literature.
+In this section we evaluate our three approaches (Method S, I and K) and compare them to two methods from the literature.
 We compare our results to Arai~\cite{Arai10} and Ho~\cite{Ho2012} that are two state of the art methods (Section~\ref{sec:sota:layout_panel}).
 The first one use connected-component analysis similarly to our proposition and the second is based on growing region.
 
@@ -541,7 +544,7 @@ Text recognition evaluations have been performed on the same dataset but using t
 % TODO
 
 \subsection{Arai's method} % (fold)
-We implemented Arai's method~\cite{Arai11} which is a sequential approach that requires panel and balloon extraction as input, as presented in Section~\ref{sub:ex:panel_extraction_arai} and~\ref{sub:ex:balloon_extraction_arai} respectively.
+We implemented Arai's method~\cite{Arai11} which is a sequential approach that requires panel and balloon extraction as input, as presented in Sections~\ref{sub:ex:panel_extraction_arai} and~\ref{sub:ex:balloon_extraction_arai} respectively.
 This method was developed for grey-scale Japanese mangas and is divided in five steps: pre-processing, blob extraction, feature extraction, text blob selection and text blob extraction.
 Pre-processing consists in an adaptive bi-level segmentation at 30\% (chosen empirically) above the average pixel value and mathematical morphology to group potential text letters into block (similar to the Run Length Smoothing Algorithm).
 Note that the threshold selection method can exceed the maximal pixel value and then produce an empty segmentation.
@@ -771,11 +774,11 @@ All the methods still encounter difficulties with certain types of text that can
   \\
   % \subfloat[Ho's method]{\label{fig:ex:panel_ho_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-20_svg_Ho2012Panel_object.pdf}}
   % \\
-  \subfloat[Method A]{\label{fig:ex:text_methodA_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-24_svg_Rigaud2012LNCS_letter2lineRigaud2014IJDARLine_object.pdf}}
+  \subfloat[Method S]{\label{fig:ex:text_methodA_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-07-24_svg_Rigaud2012LNCS_letter2lineRigaud2014IJDARLine_object.pdf}}
   \\
-  \subfloat[Method B using the best bi-level combination method (rgb2grey + Otsu) and OCR]{\label{fig:ex:text_methodB_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_RigaudVISAPPThesis2014_rgb2gray_otsu_ocr_Line.pdf}}
+  \subfloat[Method I using the best bi-level combination method (rgb2grey + Otsu) and OCR]{\label{fig:ex:text_methodB_extraction_detail}\includegraphics[trim= 0mm 108mm 0mm 0mm, clip, width=\textwidth]{2014-08-19_svg_RigaudVISAPPThesis2014_rgb2gray_otsu_ocr_Line.pdf}}
   \\
-  \subfloat[Method C]{\label{fig:ex:text_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-09-04_cleaned_validated_from_method_B_for_panel_text_balloon_and_method_A_for_character_Line.pdf}}
+  \subfloat[Method K]{\label{fig:ex:text_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-09-04_cleaned_validated_from_method_B_for_panel_text_balloon_and_method_A_for_character_Line.pdf}}
 
   \caption[Text line extraction score details for each image of the eBDtheque dataset]{Text line extraction score details for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).}
     \label{fig:ex:text_detection_result_details}
@@ -807,7 +810,7 @@ Table~\ref{tab:ex:text_recogniton_results} shows text recognition results given 
           \hline
           % Ground truth  & \modif{??}   & \modif{??} & \modif{??}       \\
           % \hline
-          Method B  &  11.11  & 16.53     & 20.67       \\
+          Method I  &  11.11  & 16.53     & 20.67       \\
           \hline
         \end{tabular}
     \label{tab:ex:text_recogniton_results}
@@ -1542,7 +1545,7 @@ Also, the tail of the balloon creates some noise and the radius average ($\bar{o
   \begin{figure}[h]  %trim=l b r t  width=0.5\textwidth,
     \centering
     \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{good_detection.png}
-    \caption{Correct classification examples for ``spiky'' (top) and ``smooth'' classes (bottom).}
+    \caption[Correct classification examples for ``spiky'' and ``smooth'' classes]{Correct classification examples for ``spiky'' (top) and ``smooth'' classes (bottom).}
     \label{fig:good_detection_balloon_classification}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1812,7 +1815,11 @@ We consider as candidate regions, regions that have $C=100\%$ confidence (contai
 We evaluated our method on a subset of 34 comic book images from 10 different albums which represent 22 comic characters that appear 352 times in total.
 This subset have been chosen from relevant images from the eBDtheque dataset that are coloured and with a sufficient amount of character instances. 
 We obtained 90.3\% recall and 46.7\% precision in average.
-Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to image identifier in the eBDtheque dataset: MIDAM\_GAMEOVER\_T05, TARZAN\_COCHON, CYB\_COSMOZONE, CYB\_MAGICIENLOOSE, CYB\_MOUETTEMAN, LAMISSEB\_LESNOEILS1, LUBBIN\_LESBULLESDULABO, MIDAM\_KIDPADDLE7, PIKE\_BOYLOVEGIRLS\_T41 and TRONDHEIM\_LES\_TROIS\_CHEMINS\_005 (~\ref{app:dataset}) \modif{TODO: TARZAN\_COCHON is not from eBDtheque dataset.}.
+Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to image identifier in the eBDtheque dataset: MIDAM\_GAMEOVER\_T05, TARZAN\_COCHON, CYB\_COSMOZONE, CYB\_MAGICIENLOOSE, CYB\_MOUETTEMAN, LAMISSEB\_LESNOEILS1, LUBBIN\_LESBULLESDULABO, MIDAM\_KIDPADDLE7, PIKE\_BOYLOVEGIRLS\_T41 and TRONDHEIM\_LES\_TROIS\_CHEMINS\_005 (~\ref{app:dataset}).
+% \modif{
+%TODO: TARZAN\_COCHON is not from eBDtheque dataset.
+%}.
+
 %Another album of two pages has also been evaluated, we had 83\% recall and 66\% precision score.
 
 
@@ -1874,7 +1881,7 @@ We post processed the output of the automatic extractions from the sequential ap
   \label{fig:ex:character_method_C_auto_extraction_detail}
   \includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-09-04_cleaned_validated_from_method_B_for_panel_text_balloon_and_method_A_for_character_all_Character.pdf}
   
- \caption{Character extraction score details using Method K for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).
+ \caption[Character extraction score details using Method K for each image of the eBDtheque dataset]{Character extraction score details using Method K for each image of the eBDtheque dataset (Appendix~\ref{app:dataset}).
  }
  \label{fig:ex:character_methodC_extraction_detail}
 \end{figure}
@@ -2052,14 +2059,15 @@ Correct detections show the variety of comics character position and deformation
 
 
 % \paragraph{Discussion}
-\modif{
-The proposed framework gives promising results for contemporary comics, we also tried on historical one such as FRED\_PHILEMON12 and MCCALL\_ROBINHOOD from the eBDtheque dataset but the printing process generates a lot of noise (thickness of ink). 
+% \modif{
+%TODO: this paragraph is subject to questions...
+The proposed framework gives promising results for contemporary comics, we also tried on historical one such as FRED\_PHILEMON12 and MCCALL\_ROBINHOOD from the eBDtheque dataset (Appendix~\ref{app:dataset}) but the printing process generates a lot of noise (thickness of ink). 
 A pre-processing smoothing is required in this case~\cite{l0smoothing2011,Kopf2012DigitalReconstruction}.
 The colour palette we used has 256 colours, we believe that we can improve the presented method by computing the palette from the user's query in order to ignore unwanted colours and speed up the process.
 The sliding windows approach does not allow to segment comics character at a pixel level, a distance measure between the colour mask regions could solve this.
 Also, once we retrieved all colour similar objects, we could learn a deformable shape model and try to find more objects occurrences based on shape information in a second stage.
 These proposal will be the subject of future works.
-}
+% }
 
 % paragraph character_spotting (end)
 
@@ -2430,10 +2438,10 @@ Conversely, in the previous four sub-sections we evaluated and compared each low
 Here we take advantage of the independent content extraction method (Method I) and the knowledge base proposed in \ch{chap:knowledge}, to evaluate the performance of the expert as the whole, which includes visual and semantic elements.
 First we evaluated the two models and then the proposed sequence presented Section~\ref{sec:kn:processing_sequence}.
 
-\subsection{Image model evaluation} % (fold)
-\label{sub:image_model_evaluation}
+% \subsection{Image model evaluation} % (fold)
+% \label{sub:image_model_evaluation}
 
-\modif{TODO: ask to Clement if possible and how?}
+% \modif{TODO: ask to Clement if possible and how?}
 
 % subsection image_model_evaluation (end)
 
@@ -2648,7 +2656,8 @@ This comparison clearly demonstrate that the expert system is very good at predi
 \section{Conclusions}
 \label{sub:ex:conclusion}
 
-In this chapter we have first introduced the dataset and the metrics we use. Then, we evaluated each of the contributions for content and semantic element retrieval and compared them to methods from the literature.
+In this chapter we have first introduced the dataset and the metrics we use.
+Then, we evaluated each of the contributions for content and semantic element retrieval and compared them to methods from the literature.
 % First, each of the three proposed content extraction approaches have been evaluated and compared separately to methods from the literature.
 Finally, proposed models combined with independent content extraction methods have been evaluated.
 

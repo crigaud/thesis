@@ -5,7 +5,7 @@
 
 In this chapter we address the problem of understanding comics by automatically improving the consistency of the extracted elements according to the domain knowledge and by inferring new information and launching further processing iteratively.
 Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
-Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and their semantic relations
+Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and theirs semantic relations.
 
 %We also model the comic book's and the image processing domains knowledge and use an inference engine for information consistency analysis.
 
@@ -23,7 +23,7 @@ In this chapter we propose a knowledge-driven system that can interact with bott
  \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[trim= 0px 10px 3px 10px, clip, width=0.5\textwidth]{intro_illustration.pdf}
-  \caption{The left panel $P_0$ represents a comics character labelled as $C_0$ saying the content of balloon $B_0$ to another character labelled as $C_1$. In the right panel $P_1$, the character $C_1$ is saying $B_1$ to $C_0$. Image credits:~\cite{Magicien11}. }
+  \caption[Example of semantic information understanding]{Example of semantic information understanding. The left panel $P_0$ represents a comics character labelled as $C_0$ saying the content of balloon $B_0$ to another character labelled as $C_1$. In the right panel $P_1$, the character $C_1$ is saying $B_1$ to $C_0$. Image credits:~\cite{Magicien11}. }
   \label{fig:kn:intro_illustration}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,7 +90,7 @@ The concept of \concept{Image} models the notion of image as a digital object, t
 This is the most general concept from which are derived the other concepts of our ontology.
 An image processing algorithm works by directly manipulating the pixels of the image, its elementary components.
 It can analyse the pixels independently, or grouped in sets of pixels but, in the end, the value and the intensity of each pixel have their importance in the analysis process, and can affect the output results.
-Note that for two visually similar images, the individual value of each pixels can vary greatly from one image to another (e.g. high definition, quantization, dithering).
+Note that for two visually similar images, the individual value of each pixel can vary greatly from one image to another (e.g. high definition, quantization, dithering).
 % They may have a different definition (i.e. the size (measured in pixels) different.
 % If scanned, if the source documents were the same size images, the difference of definition is the consequence of a difference in scanning resolution.
 % The resolution of an image indicates the number of pixels used to discretize an inch of space.
@@ -241,12 +241,12 @@ Figure~\ref{fig:model_d_2} illustrates the addition of these concepts to the ont
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Several properties are introduced into our ontology to represent the links between the various components of a panel.
-A panel being relative the page, the property \objProp{hasPanel} binds an instance of \concept{Page} to an instance of \concept{Panel}.
+A panel being relative to the page, the property \objProp{hasPanel} binds an instance of \concept{Page} to an instance of \concept{Panel}.
 % The domain and the ranks of the properties ensures that only a page and a panel can be respectively the subject and the object.
 % The property \objProp{hasPanel} is also defined functional conversely, a panel that can be part of only one board.
 
 Properties \objProp{hasBalloon} and \objProp{hasCharacter} are formally defined and represents the existing membership between, on one hand, a box and, on the other hand, an instance of \concept{Balloon} and \concept{Character}.
-The property \objProp{hasTextLine} represents the link between a text line in a balloon.
+The property \objProp{hasTextLine} represents the link between a text line and a balloon.
 % Here we opted for a very constrained conceptualization putting aside some cases significant figure, especially the lines of text scrolls off.
 %Cela se justifie dans le cadre d'une analyse automatique d'images, comme nous le présentons au chapitre~\ref{chap:analyseImage}.\\
 
@@ -477,7 +477,7 @@ When the element is fully contained in several other items, the smallest contain
 \section{Processing sequence} % (fold)
 \label{sec:kn:processing_sequence}
 
-The expert system asserts the extraction of simple elements such as panels, texts, balloons and tails in order to infer speech balloons before searching for more complex elements (e.g. comic book characters) based on the context defined by the simple elements and their relations.
+The expert system asserts the extraction of simple elements such as panels, text, balloons and tails in order to infer speech balloons before searching for more complex elements (e.g. comic book characters) based on the context defined by the simple elements and their relations.
 This can be demonstrated with the first two iterations of the process loop (Figure~\ref{fig:kn:process_loop}).
 
 The first iteration treats simple elements such as panels, balloons and text lines.
@@ -625,14 +625,14 @@ The estimation of the position of the comic character from the tail position and
 The estimated region of interest are given as seeds to the image processing algorithm (extractor of characters) which refines the regions according to the image content (Figure~\ref{fig:kn:process_illustration_hypo_2_2}).
 The last step from the low level processing consists in spotting all the comic characters from the estimated examples (Figure~\ref{fig:kn:process_illustration_hypo_2_3}).
 
-\modif{
+% \modif{
 The method used for ROI refinement is currently under investigation and a first approach could be to fit the estimated ROI to the set of regions that are mainly overlapped by the ROI and exclude the others.
-The spotting approach is relevant for retrieving non speaking characters.
-We have presented a first method in Section~\ref{sec:in:character_spotting} but it is currently only appropriate for colourful comics.
+The spotting approach is relevant for retrieving non speaking characters as demonstrated Section~\ref{sec:in:character_spotting} but it is currently only appropriate for colourful comics.
 
 %*** JCB 2014-09-16 ***
+%TODO
 %Tu peux dire que c'est en cours...  Mais suggérer une idéesans l'avoir testé est peut être maladroit .Soit tu dis que pour le moment tu as développé une méthode simple pour tester la partie dirigée par les modèles  comme par exemple la méthode pour les bd couleurs...  (et la prochaine étape sera pour les images N&B) Soit tu dis rien... mais ce n'est peut être pas le meilleur choix
-}
+% }
 
 % Knowing the position of the valid from the valid triplets of panel, text and balloon.
 % This is the starting point of the second iteration.
@@ -669,7 +669,7 @@ We have presented a first method in Section~\ref{sec:in:character_spotting} but 
 \label{par:step_5}
 
 The validation of the new regions is performed in the same way as for the first iteration.
-This new batch of extraction is submitted to the constraints of ontology as following:
+This new batch of extraction is submitted to the constraints of the ontology as following:
 
 \begin{itemize}
   \item \textbf{A page (p) contains a character (c)}: p is deleted.

@@ -33,8 +33,8 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="1.804526"
-     inkscape:cx="322.54531"
-     inkscape:cy="115.85203"
+     inkscape:cx="253.79459"
+     inkscape:cy="127.90226"
      inkscape:window-x="0"
      inkscape:window-y="26"
      inkscape:window-maximized="0"
@@ -59,6 +59,7 @@
      sodipodi:role="line"
      id="tspan18">Ontology</tspan></text>
 
+
 <text
    transform="matrix(1,0,0,-1,317.86,220.95)"
    id="text20"><tspan
@@ -67,14 +68,16 @@
      y="0"
      id="tspan22">O</tspan></text>
 
+
 <text
    transform="matrix(1,0,0,-1,327.83,219.38)"
    id="text24"><tspan
-     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;font-style:italic;font-variant:normal;font-weight:normal;font-size:7.148808;writing-mode:lr;-inkscape-font-specification:'Times New Roman, Italic'"
-     x="0 3.574368"
-     y="0"
+     style="font-size:7.148808px;font-style:italic;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:'Times New Roman, Italic'"
      sodipodi:role="line"
-     id="tspan26">bd</tspan></text>
+     id="tspan26"
+     x="0"
+     y="0">comics</tspan></text>
+
 
 <path
    d="m 0.72,1.6717 121.89,0 0,233.86 -121.89,0 0,-233.86 z"
@@ -93,6 +96,7 @@
      sodipodi:role="line"
      id="tspan34">Ontology</tspan></text>
 
+
 <text
    transform="matrix(1,0,0,-1,75.299,220.95)"
    id="text36"><tspan
@@ -100,6 +104,7 @@
      x="0"
      y="0"
      id="tspan38">O</tspan></text>
+
 
 <text
    transform="matrix(1,0,0,-1,85.265,219.38)"
@@ -109,6 +114,7 @@
      y="0"
      sodipodi:role="line"
      id="tspan42">image</tspan></text>
+
 
 <path
    d="m 16.311,58.365 89.291,0 0,92.126 -89.291,0 0,-92.126 z"
@@ -137,6 +143,7 @@
      sodipodi:role="line"
      id="tspan58">Image</tspan></text>
 
+
 <path
    d="m 98.515,126.33 c 0,8.61 -16.498,15.59 -36.85,15.59 -20.352,0 -36.851,-6.98 -36.851,-15.59 0,-8.61 16.499,-15.59 36.851,-15.59 20.352,0 36.85,6.98 36.85,15.59 z"
    style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
@@ -151,6 +158,7 @@
      y="0"
      sodipodi:role="line"
      id="tspan66">ROI</tspan></text>
+
 
 <path
    d="M 61.652,171.27 61.627,141.92"
@@ -173,6 +181,7 @@
      sodipodi:role="line"
      id="tspan78">Extractor</tspan></text>
 
+
 <path
    d="m 61.665,110.74 0,-11.995"
    style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none"
@@ -194,6 +203,7 @@
      sodipodi:role="line"
      id="tspan90">Comic</tspan></text>
 
+
 <path
    d="m 289.73,187.82 c 0,8.61 -16.5,15.59 -36.85,15.59 -20.35,0 -36.85,-6.98 -36.85,-15.59 0,-8.61 16.5,-15.59 36.85,-15.59 20.35,0 36.85,6.98 36.85,15.59 z"
    style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
@@ -208,6 +218,7 @@
      y="0"
      sodipodi:role="line"
      id="tspan98">Page</tspan></text>
+
 
 <path
    d="m 289.73,187.82 18.55,0"
@@ -230,6 +241,7 @@
      sodipodi:role="line"
      id="tspan110">Panel</tspan></text>
 
+
 <path
    d="m 381.98,127.81 c 0,8.61 -16.5,15.59 -36.85,15.59 -20.35,0 -36.85,-6.98 -36.85,-15.59 0,-8.61 16.5,-15.59 36.85,-15.59 20.35,0 36.85,6.98 36.85,15.59 z"
    style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
@@ -245,6 +257,7 @@
      sodipodi:role="line"
      id="tspan118">Character</tspan></text>
 
+
 <path
    d="m 289.85,84.727 c 0,8.61 -16.49,15.593 -36.85,15.593 -20.35,0 -36.85,-6.983 -36.85,-15.593 0,-8.611 16.5,-15.591 36.85,-15.591 20.36,0 36.85,6.98 36.85,15.591 z"
    style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
@@ -259,6 +272,7 @@
      y="0"
      sodipodi:role="line"
      id="tspan126">Balloon</tspan></text>
+
 
 <path
    d="m 252.95,143.6 -0.04,28.63"
@@ -293,6 +307,7 @@
      sodipodi:role="line"
      id="tspan146">TextLine</tspan></text>
 
+
 <path
    d="m 253,57.034 0,12.102"
    style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none"
@@ -313,6 +328,7 @@
      y="0"
      sodipodi:role="line"
      id="tspan158">Tail</tspan></text>
+
 
 <path
    d="m 308.28,84.727 -18.43,0"

@@ -98,24 +98,29 @@
 \BOOKMARK [2][-]{subsection.6.9.3}{Knowledge-driven approach}{section.6.9}% 98
 \BOOKMARK [2][-]{subsection.6.9.4}{Comparison and analysis}{section.6.9}% 99
 \BOOKMARK [1][-]{section.6.10}{Knowledge-driven analysis overall evaluation}{chapter.6}% 100
-\BOOKMARK [2][-]{subsection.6.10.1}{Image model evaluation}{section.6.10}% 101
-\BOOKMARK [2][-]{subsection.6.10.2}{Comics model evaluation}{section.6.10}% 102
-\BOOKMARK [2][-]{subsection.6.10.3}{Framework evaluation}{section.6.10}% 103
-\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 104
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 105
-\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 106
-\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 107
-\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 108
-\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 109
-\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 110
-\BOOKMARK [1][-]{section.C.1}{Image overview}{appendix.C}% 111
-\BOOKMARK [1][-]{section.C.2}{Images category}{appendix.C}% 112
-\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 113
-\BOOKMARK [1][-]{section.D.1}{Ground truth construction}{appendix.D}% 114
-\BOOKMARK [2][-]{subsection.D.1.1}{Visual annotation}{section.D.1}% 115
-\BOOKMARK [2][-]{subsection.D.1.2}{Semantic annotation}{section.D.1}% 116
-\BOOKMARK [2][-]{subsection.D.1.3}{File structure}{section.D.1}% 117
-\BOOKMARK [1][-]{section.D.2}{Ground truth quality assessment}{appendix.D}% 118
-\BOOKMARK [1][-]{section.D.3}{Terms of use}{appendix.D}% 119
-\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 120
-\BOOKMARK [0][-]{section*.169}{Bibliography}{}% 121
+\BOOKMARK [2][-]{subsection.6.10.1}{Comics model evaluation}{section.6.10}% 101
+\BOOKMARK [2][-]{subsection.6.10.2}{Framework evaluation}{section.6.10}% 102
+\BOOKMARK [1][-]{section.6.11}{Conclusions}{chapter.6}% 103
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 104
+\BOOKMARK [1][-]{section.7.1}{Summary and contributions}{chapter.7}% 105
+\BOOKMARK [1][-]{section.7.2}{Future perspectives}{chapter.7}% 106
+\BOOKMARK [0][-]{appendix.A}{Pre-processing}{}% 107
+\BOOKMARK [1][-]{section.A.1}{Segmentation}{appendix.A}% 108
+\BOOKMARK [2][-]{subsection.A.1.1}{Region-growing}{section.A.1}% 109
+\BOOKMARK [2][-]{subsection.A.1.2}{Split and merge}{section.A.1}% 110
+\BOOKMARK [2][-]{subsection.A.1.3}{Contour-based}{section.A.1}% 111
+\BOOKMARK [2][-]{subsection.A.1.4}{Bi-level grey-scale thresholding}{section.A.1}% 112
+\BOOKMARK [2][-]{subsection.A.1.5}{Multi-level colour thresholding}{section.A.1}% 113
+\BOOKMARK [0][-]{appendix.B}{Feature extraction}{}% 114
+\BOOKMARK [1][-]{section.B.1}{Connected-component labelling}{appendix.B}% 115
+\BOOKMARK [0][-]{appendix.C}{Dataset}{}% 116
+\BOOKMARK [1][-]{section.C.1}{Image categories}{appendix.C}% 117
+\BOOKMARK [0][-]{appendix.D}{Ground truth}{}% 118
+\BOOKMARK [1][-]{section.D.1}{Ground truth construction}{appendix.D}% 119
+\BOOKMARK [2][-]{subsection.D.1.1}{Visual annotation}{section.D.1}% 120
+\BOOKMARK [2][-]{subsection.D.1.2}{Semantic annotation}{section.D.1}% 121
+\BOOKMARK [2][-]{subsection.D.1.3}{File structure}{section.D.1}% 122
+\BOOKMARK [1][-]{section.D.2}{Ground truth quality assessment}{appendix.D}% 123
+\BOOKMARK [1][-]{section.D.3}{Terms of use}{appendix.D}% 124
+\BOOKMARK [0][-]{appendix.E}{List of Publications}{}% 125
+\BOOKMARK [0][-]{section*.159}{Bibliography}{}% 126

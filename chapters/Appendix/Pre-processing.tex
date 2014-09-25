@@ -7,7 +7,7 @@
 
 Through out this thesis work we have used several pre-processing methods to extract image content.
 The typical pre-processing task are noise removal, segmentation, enhancement, perspective correction, page curl removal, skew correction (text) and skeletonization.
-In this appendix we detail some of the noise removal and segmentation methods which are related to comic book image analysis.
+In this appendix we detail some of the segmentation methods which are related to comic book image analysis.
 
 
 % Here we briefly detail the most used pre-processing and feature extraction methods related to document image analysis and comics design process.
@@ -17,37 +17,37 @@ In this appendix we detail some of the noise removal and segmentation methods wh
 % Stroke-based images such as comics can be pre-processes is order to extract all the strokes for further analysis.
 % Several method from the literature exist, 
 
-\section*{Noise removal} % (fold)
-\label{sub:ap:noise_removal}
-The image noise (unwanted signal) is the presence of parasite information in addition to the random details of the scene being shot digitally.
-It is particularly visible in the low light areas where the signal/noise ratio is low, but also in the flat parts such as a blue sky.
-It results in the loss of sharpness in the detailed regions.
+% \section*{Noise removal} % (fold)
+% \label{sub:ap:noise_removal}
+% The image noise (unwanted signal) is the presence of parasite information in addition to the random details of the scene being shot digitally.
+% It is particularly visible in the low light areas where the signal/noise ratio is low, but also in the flat parts such as a blue sky.
+% It results in the loss of sharpness in the detailed regions.
 
-\subsection*{Salt and pepper} % (fold)
-\label{sub:salt_and_paper}
-\modif{TODO?}
-% subsection salt_and_paper (end)
+% \subsection*{Salt and pepper} % (fold)
+% \label{sub:salt_and_paper}
+% \modif{TODO?}
+% % subsection salt_and_paper (end)
 
-\subsection*{Quantization} % (fold)
-\label{sub:quantization}
-\modif{TODO?}
+% \subsection*{Quantization} % (fold)
+% \label{sub:quantization}
+% \modif{TODO?}
 % subsection dithering (end)
 
 % subsection noise_removal (end)
 
 
 
-\section*{Segmentation} % (fold)
+\section{Segmentation} % (fold)
 \label{sub:ap:segmentation}
 Image segmentation is a division or separation of the image into regions of similar attribute.
 The most basic attribute is image luminance amplitude for monochrome image or colour components for a colour image.
 Image edge and texture are also useful attributes for segmentation~\cite{Pratt2007Digital}.
 
-\subsection*{Region-growing} % (fold)
+\subsection{Region-growing} % (fold)
 \label{sub:ap:region_growing}
 Region-growing methods are region-based segmentation algorithm that mainly rely on the assumption that the neighbouring pixels within one region have similar values.
 The common procedure is to compare one pixel with its neighbours.
-If a similarity criterion is satisfied, the pixel can be set belong to the cluster as one or more of its neighbours.
+If a similarity criterion is satisfied, the pixel can be set as belonging to the cluster as one or more of its neighbours.
 The selection of the similarity criterion is significant and the results are influenced by noise in all instances\footnote{\url{http://en.wikipedia.org/wiki/Image_segmentation\#Region-growing_methods}}.
 
 One of the most famous region-growing segmentation is the seeded region-growing method~\cite{adams1994seeded,mehnert1997improved}.
@@ -60,7 +60,7 @@ The segmentation by watershed, developed with mathematical morphology, belong to
 
 % subsection region_based (end)
 
-\subsection*{Split and merge} % (fold)
+\subsection{Split and merge} % (fold)
 \label{sub:split_and_merge}
 Split-and-merge segmentation is a region-based segmentation based on a quadtree split of the image.
 This method starts from the whole image (root of the tree) and if it is non-uniform (not homogeneous pixel repartition), then it is split into four son-squares (the splitting process), and so on so forth.
@@ -70,7 +70,7 @@ This process continues recursively until no further splits or merges are possibl
 
 % subsection split_and_merge (end)
 
-\subsection*{Contour-based} % (fold)
+\subsection{Contour-based} % (fold)
 \label{sub:ap:contour_based}
 This approach wants to take advantage of the fact that there is a detectable transition between two related areas.
 The oldest methods use edge detector such as the well know Canny filter, to highlight the pixels that appear to belong to a contour~\cite{canny1986computational}.
@@ -95,32 +95,32 @@ One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq
 
 % subsection contour_based (end)
 
-\subsection*{Bi-level grey-scale thresholding} % (fold)
+\subsection{Bi-level grey-scale thresholding} % (fold)
 \label{sub:ap:bi_threshold}
 A survey counts forty thresholding methods from histogram shape-based to spatial and local methods~\cite{sezgin2004survey}.
  
-The most famous method is Otsu's method~\cite{otsu79} that assumes that a single channel image is dividable in two main cluster: the background and the foreground.
-It calculates the optimum threshold separating the two cluster so that their intra-cluster variance is minimal in the image histogram.
+The most famous method is Otsu's method~\cite{otsu79} that assumes that a single channel image is dividable in two main clusters: the background and the foreground.
+It calculates the optimum threshold separating the two clusters so that their intra-cluster variances are minimal in the image histogram.
 Applying the Otsu's threshold selection to a grey-level image returns a binary image where foreground pixel are separated from background pixels.
 
 The major problem with thresholding is that it considers only the intensity, not any relationships between the pixels (no spatial information).
-Another problem with global thresholding is that changes in illumination across the scene may cause some parts to be brighter and some parts darker in ways that have nothing to do with the foreground and background objects (e.g. light and shadow variation).
-Those issues have been partially handled by local approaches determining thresholds locally instead of the whole image \modif{[REF???]}.
+Another problem with global thresholding approaches is that changes in illumination across the scene may cause some parts to be brighter and some parts darker in ways that have nothing to do with the foreground and background objects (e.g. light and shadow variation).
+Those issues have been partially handled by local approaches determining thresholds locally instead of the whole image.%TODO: \modif{[REF???]}.
 
 
 % subsection threshold_based (end)
 
-\subsection*{Multi-level colour thresholding} % (fold)
+\subsection{Multi-level colour thresholding} % (fold)
 \label{sub:ap:muli_threshold}
 
 A first approach for multi-level thresholding is to apply bi-level thresholding to each of the colour layer in one or several colour space and merge them to give a single output.
-Two more natural approach are divisive clustering and agglomerative clustering.
+Two more natural approaches are divisive clustering and agglomerative clustering.
 In divisive clustering, the entire image is regarded as a cluster, and then clusters are recursively split to yield a good clustering.
-In agglomerative clustering, each pixel or region is regarded as a cluster and clusters are recursively merged to yield a good clustering.
+In agglomerative clustering, each pixel or region is regarded as a cluster and then clusters are recursively merged to yield a good clustering.
 There are two major issues in thinking about clustering:
 \begin{itemize}
 	\item What is a good inter-cluster distance?
-	\item How many cluster are there?
+	\item How many clusters are there?
 \end{itemize}
 Addressing both issue automatically still an open issue if we don't have strong knowledge about the image content.
 Common clustering algorithm like $k$-means partitions the data (pixels values) into $k$ sets by minimizing the within-cluster sum of squares~\cite{PonceForsyth2012}.

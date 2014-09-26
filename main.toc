@@ -158,22 +158,23 @@
 \contentsline {chapter}{\numberline {B}Feature extraction}{123}{appendix.B}
 \contentsline {section}{\numberline {B.1}Connected-component labelling}{123}{section.B.1}
 \contentsline {chapter}{\numberline {C}Dataset}{125}{appendix.C}
-\contentsline {section}{\numberline {C.1}Image categories}{125}{section.C.1}
-\contentsline {chapter}{\numberline {D}Ground truth}{127}{appendix.D}
-\contentsline {section}{\numberline {D.1}Ground truth construction}{127}{section.D.1}
-\contentsline {subsection}{\numberline {D.1.1}Visual annotation}{128}{subsection.D.1.1}
-\contentsline {paragraph}{Panels}{128}{section*.138}
-\contentsline {paragraph}{Balloons}{128}{section*.140}
-\contentsline {paragraph}{Text lines}{129}{section*.142}
-\contentsline {paragraph}{Comic characters}{129}{section*.144}
-\contentsline {subsection}{\numberline {D.1.2}Semantic annotation}{131}{subsection.D.1.2}
-\contentsline {paragraph}{Images}{131}{section*.146}
-\contentsline {paragraph}{Panels}{131}{section*.147}
-\contentsline {paragraph}{Balloons}{131}{section*.148}
-\contentsline {paragraph}{Text lines}{131}{section*.150}
-\contentsline {paragraph}{Comic characters}{132}{section*.151}
-\contentsline {subsection}{\numberline {D.1.3}File structure}{132}{subsection.D.1.3}
-\contentsline {section}{\numberline {D.2}Ground truth quality assessment}{135}{section.D.2}
-\contentsline {section}{\numberline {D.3}Terms of use}{137}{section.D.3}
-\contentsline {chapter}{\numberline {E}List of Publications}{139}{appendix.E}
-\contentsline {chapter}{Bibliography}{143}{section*.159}
+\contentsline {section}{\numberline {C.1}Image overview}{125}{section.C.1}
+\contentsline {section}{\numberline {C.2}Image categories}{125}{section.C.2}
+\contentsline {chapter}{\numberline {D}Ground truth}{133}{appendix.D}
+\contentsline {section}{\numberline {D.1}Ground truth construction}{133}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Visual annotation}{134}{subsection.D.1.1}
+\contentsline {paragraph}{Panels}{134}{section*.143}
+\contentsline {paragraph}{Balloons}{134}{section*.145}
+\contentsline {paragraph}{Text lines}{135}{section*.147}
+\contentsline {paragraph}{Comic characters}{135}{section*.149}
+\contentsline {subsection}{\numberline {D.1.2}Semantic annotation}{137}{subsection.D.1.2}
+\contentsline {paragraph}{Images}{137}{section*.151}
+\contentsline {paragraph}{Panels}{137}{section*.152}
+\contentsline {paragraph}{Balloons}{137}{section*.153}
+\contentsline {paragraph}{Text lines}{137}{section*.155}
+\contentsline {paragraph}{Comic characters}{138}{section*.156}
+\contentsline {subsection}{\numberline {D.1.3}File structure}{138}{subsection.D.1.3}
+\contentsline {section}{\numberline {D.2}Ground truth quality assessment}{141}{section.D.2}
+\contentsline {section}{\numberline {D.3}Terms of use}{143}{section.D.3}
+\contentsline {chapter}{\numberline {E}List of Publications}{145}{appendix.E}
+\contentsline {chapter}{Bibliography}{149}{section*.164}

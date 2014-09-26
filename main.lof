@@ -131,17 +131,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Categories of the images in the eBDtheque dataset}}{126}{figure.caption.137}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Image group one.\relax }}{126}{figure.caption.137}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Image group two\relax }}{127}{figure.caption.138}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Image group three.\relax }}{128}{figure.caption.139}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Image group four.\relax }}{129}{figure.caption.140}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Image group five.\relax }}{130}{figure.caption.141}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Categories of the images in the eBDtheque dataset}}{131}{figure.caption.142}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Panel annotation}}{128}{figure.caption.139}
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Speech balloon contour annotation}}{129}{figure.caption.141}
-\contentsline {figure}{\numberline {D.3}{\ignorespaces Position annotation of text lines}}{130}{figure.caption.143}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Speech text into speech balloon}}}{130}{subfigure.3.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Unique symbol (punctuation)}}}{130}{subfigure.3.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Illustrative text (non horizontal)}}}{130}{subfigure.3.3}
-\contentsline {figure}{\numberline {D.4}{\ignorespaces Comic character position annotation}}{130}{figure.caption.145}
-\contentsline {figure}{\numberline {D.5}{\ignorespaces Balloon contour styles}}{132}{figure.caption.149}
-\contentsline {figure}{\numberline {D.6}{\ignorespaces Annotation rendering in a browser}}{133}{figure.caption.152}
-\contentsline {figure}{\numberline {D.7}{\ignorespaces Distance to the mean position}}{136}{figure.caption.153}
-\contentsline {figure}{\numberline {D.8}{\ignorespaces Image used for ground truth quality assessment}}{137}{figure.caption.154}
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Panel annotation}}{134}{figure.caption.144}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Speech balloon contour annotation}}{135}{figure.caption.146}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Position annotation of text lines}}{136}{figure.caption.148}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Speech text into speech balloon}}}{136}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Unique symbol (punctuation)}}}{136}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Illustrative text (non horizontal)}}}{136}{subfigure.3.3}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Comic character position annotation}}{136}{figure.caption.150}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Balloon contour styles}}{138}{figure.caption.154}
+\contentsline {figure}{\numberline {D.6}{\ignorespaces Annotation rendering in a browser}}{139}{figure.caption.157}
+\contentsline {figure}{\numberline {D.7}{\ignorespaces Distance to the mean position}}{142}{figure.caption.158}
+\contentsline {figure}{\numberline {D.8}{\ignorespaces Image used for ground truth quality assessment}}{143}{figure.caption.159}
 \addvspace {10\p@ }

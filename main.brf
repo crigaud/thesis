@@ -25,6 +25,7 @@
 \backcite {Delaye2014Multi}{{5}{1.2}{section.1.2}}
 \backcite {Clavelli09}{{5}{1.2}{section.1.2}}
 \backcite {Weinman09,Epshtein10,Neumann12}{{5}{1.2}{section.1.2}}
+\backcite {Arai11,Ho2012}{{5}{1.3}{section.1.3}}
 \backcite {pal1993review,luccheseyz2001color,bhattacharyya2011brief}{{9}{2.1}{section.2.1}}
 \backcite {LladosIDIPSRecognition}{{10}{2.1}{figure.caption.10}}
 \backcite {due1996feature}{{10}{2.1}{section.2.1}}
@@ -33,10 +34,10 @@
 \backcite {Peng2013Document}{{12}{2.2}{figure.caption.11}}
 \backcite {In11}{{12}{2.2.1}{subsection.2.2.1}}
 \backcite {Duda72,Luyuan2014Automatic,Chan2007Automatic}{{12}{2.2.1}{subsection.2.2.1}}
-\backcite {Han07}{{12}{2.2.1}{subsection.2.2.1}}
-\backcite {Tan07}{{12}{2.2.1}{subsection.2.2.1}}
-\backcite {In11}{{12}{2.2.1}{subsection.2.2.1}}
-\backcite {Arai10}{{12}{2.2.1}{subsection.2.2.1}}
+\backcite {Han07}{{13}{2.2.1}{subsection.2.2.1}}
+\backcite {Tan07}{{13}{2.2.1}{subsection.2.2.1}}
+\backcite {In11}{{13}{2.2.1}{subsection.2.2.1}}
+\backcite {Arai10}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {Ho2012}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {Arai11,Ho2012}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {ponsard2012ocr}{{13}{2.2.1}{subsection.2.2.1}}
@@ -53,8 +54,8 @@
 \backcite {Guerin2012Ontologies}{{13}{2.2.2}{subsection.2.2.2}}
 \backcite {Arai11}{{13}{2.2.2}{subsection.2.2.2}}
 \backcite {Ho2012}{{13}{2.2.2}{subsection.2.2.2}}
-\backcite {Kass1988}{{13}{2.2.2}{figure.caption.12}}
 \backcite {Arai11}{{14}{2.3}{figure.caption.12}}
+\backcite {Kass1988}{{14}{2.2.2}{figure.caption.12}}
 \backcite {Kass1988}{{14}{2.2.2}{figure.caption.12}}
 \backcite {Xu1998}{{14}{2.2.2}{figure.caption.12}}
 \backcite {Cohen1991}{{14}{2.2.2}{figure.caption.12}}
@@ -66,7 +67,7 @@
 \backcite {tieng1997recognition}{{14}{2.2.2}{figure.caption.12}}
 \backcite {mukundan1998moment}{{14}{2.2.2}{figure.caption.12}}
 \backcite {millidge2009comic}{{14}{2.2.2}{figure.caption.12}}
-\backcite {Jung04,ShahabICDAR2011Robust,KaratzasICDAR2013Robust}{{14}{2.2.3}{subsection.2.2.3}}
+\backcite {Jung04,ShahabICDAR2011Robust,KaratzasICDAR2013Robust}{{15}{2.2.3}{subsection.2.2.3}}
 \backcite {anagnostopoulos2008license}{{15}{2.2.3}{subsection.2.2.3}}
 \backcite {Su11}{{15}{2.2.3}{subsection.2.2.3}}
 \backcite {Matsui2011}{{15}{2.2.3}{subsection.2.2.3}}
@@ -95,7 +96,7 @@
 \backcite {cheung2008face}{{16}{2.2.4}{figure.caption.13}}
 \backcite {HoGREC2013}{{16}{2.2.4}{figure.caption.13}}
 \backcite {TAPhD2010}{{16}{2.2.4}{figure.caption.13}}
-\backcite {TAPhD2010}{{16}{2.2.4}{figure.caption.13}}
+\backcite {TAPhD2010}{{17}{2.2.4}{figure.caption.13}}
 \backcite {SunICDAR2013}{{17}{2.2.4}{figure.caption.13}}
 \backcite {Tobita2010Comic,WangHYYC12}{{17}{2.2.4}{figure.caption.13}}
 \backcite {Lamiroy2014Handbook}{{17}{2.3}{section.2.3}}

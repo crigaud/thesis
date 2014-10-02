@@ -18,21 +18,25 @@ In this chapter we introduce the document image analysis principles and give an 
 
 \section{Document image analysis} % (fold)
 \label{sec:document_image_analysis}
-Document image analysis is a sub-domain of computer vision systems that includes methods for acquiring, processing, analysing and understanding images in order to produce numerical or symbolic information.
-The organization of a document analysis system is highly application-dependent. Many functions are specific to the application.
-However, there are typical functions which are found in many computer vision systems.
+A physical document is created when an information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
+This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
+Document image analysis is a sub-domain of computer vision systems that includes methods for acquiring, processing, analysing and understanding such physical documents in order to produce numerical or symbolic information.
+The organization of a document analysis system is highly application-dependent in many case, but many researchers worked and are still working on flexible and adaptable systems.
+Many functions are specific to the application, however, there are typical functions which are found in many computer vision systems.
 
 \begin{itemize}
-	\item \textbf{Document creation} The first time a document containing a information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
-	This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
+	% \item \textbf{Document creation} The first time a document containing a information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
+	% This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
 	\item \textbf{Image acquisition} A digital image produced by the sensors of various devices (e.g. scanner, camera, web-cam) from the physical document.
 	The digital image is an ordered set of pixels with a set of associated colour values from a given colour space.
-	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the method and its application domain (e.g. noise removal, contrast enhancement, segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
-	\item \textbf{Feature extraction} Feature extraction involves reducing the amount of data accurately.
+	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the set of processing methods used with the understanding process and its application domain (e.g. noise removal, contrast enhancement, segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
+	\item \textbf{Feature extraction} Feature extraction is a process that consists in extracting relevant cues contributing to structure the information, especially for further processing.
+  %involves reducing the amount of data accurately.
   Image features are from different levels depending on their distance to pixel information (low level) and human understanding (high level).
 	Low level feature such as line, corner, edges and blobs are computed directly from the spatial organisation of pixels~\cite{due1996feature}.
 	However, high level information are usually computed from a global view of the image to extract texture and shape for example.
-	\item \textbf{Detection/classification} At some point in the processing, decisions are made about which images, point of interests or regions are relevant for further processing.
+	\item \textbf{Detection/classification} At some point in the processing, decisions are made about which point of interests, symbols, textures, regions etc. are relevant for further processing.
+  It aims to provide a first level of data organization and contributes to the recognition of elements of intermediate levels.
 	\item \textbf{High-level processing} Integration of domain knowledge and making the final decision required for the application.
 	This operation may require a user interaction that is sometimes taken into account for future automatic decisions.
 \end{itemize}
@@ -83,7 +87,7 @@ Those documents use non standard text fonts, sizes and orientations mixed with g
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Comic book images are composed of text and graphics that can be decomposed as drawings and line drawings.
-The diversity of text that can be found in comic book images is large.
+The diversity of texts that can be found in comic books images is large.
 From speech text which are mostly handwritten to sound effects that are sometimes close to drawing.
 Some of the graphics can be assimilated to symbols if we talk about the panels or balloons which have a sort of conventional representation among most of the comic albums.
 However, drawings contained in the panel regions do not follow any convention (free art) but contain repeated elements (e.g. comic characters) throughout the album or collection.
@@ -91,6 +95,8 @@ This is related to comics art that implies the drawing to be different from othe
 
 Comic images are mixed content documents with complex background, especially in the region of panels, that concerns the above mentioned field of research.
 Document image analysis being application-dependent, we briefly detail the design process of a comic image:
+
+\modif{TODO: JMO: ici je mettrais la figure du handbook: from poducer to the consumer}
 
 \begin{itemize}
   \item \textbf{Synopsis and scenario} Imagine a story and its decomposition in a sequence of image (storyboard), view angles and format. 

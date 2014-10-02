@@ -200,12 +200,29 @@ The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, neve
 Balloons are a graphic convention used most commonly in comic books, comic strips and cartoons to allow words (and much less often, pictures) to be understood as representing the speech or thoughts of a given character in the comic\footnote{\url{http://en.wikipedia.org/wiki/Speech_balloon}}.
 Balloons are developed into a more-or-less oval shape, with a pointer or tail to indicate to which character they belong~\cite{Goggin2010Rise,Varnum2007Language}.
 There are many specialized forms of balloons, either traditional or invented~\cite{Marx2006Writing}.
+See Figure~\ref{fig:sota:balloon_examples}.
 %Balloons or bubbles are key elements in comics, they link graphical and textual elements and are part of the comics style. 
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[!ht]%trim=l b r t  width=0.5\textwidth,
+  \centering
+    \subfloat[Oval]{\label{fig:sota:round_balloon}\includegraphics[trim= 0px 2px 0mm 1px, clip, height=0.15\textwidth]{round_balloon.png}}  \hspace{0.5em}
+    \subfloat[Rectangle]{\label{fig:sota:rectangle_balloon}\includegraphics[trim= 0px 0px 0px 0px, clip, height=0.15\textwidth]{rectangle_balloon.png}}  \hspace{0.5em}
+    \subfloat[Wavy]{\label{fig:sota:cloud_balloon}\includegraphics[trim= 0px 0px 0px 0px, clip, height=0.15\textwidth]{cloud_balloon.png}}  \hspace{0.5em}
+    \subfloat[Spiky]{\label{fig:sota:peaked_balloon}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, height=0.15\textwidth]{peaked_balloon.png}}  \hspace{0.5em}
+    \subfloat[Suggested]{\label{fig:sota:open_balloon}\includegraphics[trim= 15px 7mm 5px 5px, clip, height=0.15\textwidth]{open_balloon.png}}
+
+  \caption{Example of speech balloon contour types. Image credits~\cite{Bubble09}.}
+  \label{fig:sota:balloon_examples}
+  % \end{center}
+  \end{figure}  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In comics content understanding, speech balloons present a lot of interest since they offer the links between the textual content and the comic characters providing information about the localization of the characters and the tone of speech.
 Apart from being crucial for document understanding, balloon detection is also beneficial in applications such as comic character detection~\cite{Sun2011}, content re-targeting~\cite{Matsui2011}, translation assistance and reading order inference~\cite{Guerin2012Ontologies}.
 
-Few works about balloon extraction have been done until now and mainly closed speech balloon have been studied.
+Few works about balloon extraction have been done until now and mainly closed speech balloons have been studied.
 Arai~\cite{Arai11} proposed a blob detection method based on connected component detection with four filtering rules applied to manga analysis.
 The rules are based on blob minimum size, white pixel occurrence, inclusion of vertical straight lines and width to length ratio (Figure~\ref{fig:Arai_balloon_extraction_process}).
 Another connected component approach proposed by Ho~\cite{Ho2012} uses HSV colour space to make a first selection of bright blobs and then consider as balloons the blobs with a ratio between the text area and the blob bounding box higher than sixty percent.
@@ -220,14 +237,15 @@ Another connected component approach proposed by Ho~\cite{Ho2012} uses HSV colou
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The analysis of open balloons with an ``open'' or ``implicit'' contour is quite different than the closed ones which are mainly based on blob analysis and have not been studied before.
+The analysis of partially closed balloons (also called open, implicit or suggested) is quite different than the closed ones which are mainly based on blob analysis (Figure~\ref{fig:sota:open_balloon}).
+From our knowledge, such type of balloons has not been studied before.
 In most of the cases, including when contours are implicit, the location of text is generally a good clue to guess where the balloon is.
-The problem of speech balloon outline detection can therefore be posed as the fitting of a closed contour around text areas.
-The active contour~\cite{Kass1988} model is a deformable model, also known as snake, which tries to minimize an energy associated to the current contour as a sum of an internal and external energy.
+The problem of speech balloon outline detection can therefore be posed as the fitting of a partially drawn contour around text areas (initial contour).
+Deformable models such as the active contour~\cite{Kass1988} model, also known as snake, tries to minimize an energy associated with the initial contour and its neighbouring elements in order to shift it to the position of the suggested contour.
 Kass~\cite{Kass1988} proposed the original energy functions able to shrink around an object contour, Xu~\cite{Xu1998} proposed the Gradient Vector Flow external force to attract snake from further and handle broken object edges and subjective contours.
 % GVF is adapted to our application of non-closed (broken object).
 Another extension was proposed by Cohen~\cite{Cohen1991} to make the curve behave like a balloon which is inflated by an additional force.
- %The initial curve needs no longer to be close to the solution to converge''. %We use this last method extension for speech balloon segmentation and customize it in order to detect open balloons.
+%The initial curve needs no longer to be close to the solution to converge''. %We use this last method extension for speech balloon segmentation and customize it in order to detect open balloons.
 %Dimos_v1: I don't understand this sentence. multi-resolution contours have been studied to speekd up the multi-resolution model???
 Finally, active contour in a multi-resolution context have been studied to speed up the process on multi-resolution image and the multi-resolution model itself~\cite{Leroy1996}.
 % We adapt the active contour framework to the domain of comics in~\ch{chap:be}.

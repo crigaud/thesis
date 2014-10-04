@@ -15,13 +15,16 @@ From the tail position and location, comic character regions are computed accord
 \label{sec:introduction}
 
 In comics art, the page structure depends on the author style, this is why so many different structures and drawing types exist.
-It is unavoidable because it gives an unique graphical identity to the comics and contributes to attract the curiosity of the readers.
-Despite the differences of style, the comics drawings follow ``general use'' characteristic intrinsically to the design process~\cite{mccloud2006Making}.
+This author style (a kind of signature) gives a unique graphical identity to the comics and contributes to attract the curiosity of the readers.
+Despite the differences of style, the comics drawings generally follow classical rules which are intrinsically linked to the design process~\cite{mccloud2006Making}.
 % Relations between elements and inking process are particularities that we we rely on when processing such images. surrounded by a black stroke.
 For instance, the inking process requires to magnify the main strokes that defines regions which are then filled with flat colours (Section~\ref{sec:document_image_analysis}).
 We propose to rely on these main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling approach.
 Then, the analysis of speech balloon contour allows to detect the tail precisely and its direction is used to compute the regions of interest where comic characters are supposed to be.
 In this section, all the processes are related to each other, for instance, the text extraction output is the input of the balloon extraction process and so on.
+
+This is a simplistic and intuitive approach to identify the benefits, difficulties and limits that results from this type of approach.
+It will be associated with an intelligent system in the knowledge-driven approach presented in~\ch{chap:knowledge}.
 
 
 % section introduction (end)
@@ -37,9 +40,9 @@ Here we consider all the text regions of the image using connected-component lab
 % \p{Methodology} % (fold)
 % \label{sec:se:methodology}
 
-To be clustered, the connected components have to be extracted from the image first.
+To be clustered, the connected-components have to be extracted from the image first.
 A commonly used method is to segment the original image pixels into two categories called foreground and background.
-The foreground category corresponds to the set of pixels of interest, here the pixels of the panel border strokes.
+The foreground category corresponds to the set of pixels of interest, here the pixels of the panel border strokes and text letters.
 The background includes other pixels.
 This is usually performed using binary segmentation techniques which assign each pixel to one of the two categories.
 From the foreground pixels, a structural analysis (connected-component labelling) allows us to group ``connected'' pixels into components according to their connectivity.
@@ -48,8 +51,8 @@ From the foreground pixels, a structural analysis (connected-component labelling
 
 % Connected components labelling scans an image and groups its pixels into components based on pixel connectivity.
 % All pixels in a connected component share similar pixel intensity values and are in some way connected with each other.
-Connected component approaches are commonly used for stroke-based document analysis, there are also simple and computationally efficient.
-Once extracted, their can be clustered according to different features (e.g. size, shape ,colour, location).
+Connected component approaches are commonly used for stroke and text-based document analysis, there are also simple and computationally efficient.
+Once extracted, the connected-components can be clustered according to different features (e.g. size, shape ,colour, location).
 We use this approach to extract panels and text which can be easily differentiated using size and topological information.
 % with meaningful names ``noise'', ``text'' and ``panel'' using a classifier with three cluster using discriminant features for instance.
 % The originalities of this paper are frame segmentation, with or without box, and out-of-balloon text segmentation that can be extracted by CC algorithm.
@@ -68,8 +71,8 @@ The process can be summarize as below:
 \label{par:se:image_segmentation}
 
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
-Several methods exits for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
-Here we use the lightness channel because the panel border strokes and text are usually darker than other element in the image, including the background. 
+Several methods exit for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
+Here we use the lightness channel because the panel border strokes and text are usually darker than other elements in the image, including the background. 
 Then, a global binary segmentation (Appendix~\ref{sub:ap:bi_threshold}) is applied with a threshold determined dynamically (Figure~\ref{fig:se:binary_img}).
 The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
 We assume that the border pixels of the page are representative of the page background (depending on the digitization process).
@@ -85,7 +88,7 @@ The connected-component algorithm (Appendix~\ref{sec:ap:connected_component_labe
 We do not consider white connected-component here because we assume that panel border and text elements are darker than other elements in the page (segmented as black region).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}	%trim=l b r t  width=0.5\textwidth, 
+	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth, 
 	  \centering
 		%\includegraphics[height=60mm]{figure/BUBBLEGOM_T01_P007_crop.jpg}
 		%\includegraphics[trim= 0mm 0mm 0mm 0mm]{figure/BUBBLEGOM_T01_P007.jpg}
@@ -109,7 +112,7 @@ We do not consider white connected-component here because we assume that panel b
 By looking at the figure~\ref{fig:se:cc_bounding_box}, we can clearly see that the bounding boxes of the panel are bigger than the others.
 Also, they include more regions than others.
 Classifying those regions according to their size allows us to classify panel and text region at the same time while ignoring noise information.
-Knowing the number of cluster facilitate the clustering, here 
+Knowing the number of clusters facilitate the clustering, here 
 % The classification of connected-component heights using k-means algorithm. 
 %We define the set of component bounding boxes $R = \{R_1, R_2, ... , R_n\}$.
 we set the number of clusters $k=3$ according to the domain knowledge of comics.
@@ -133,8 +136,11 @@ This method assumes that the image is highly contrasted and contains a high disp
 
 \subsubsection{Panel pruning} % (fold)
 \label{par:se:pruning}
+
 The results from the clustering operation can be pruned using domain knowledge.
-First, a panel is rarely included in another so we take out components which are included in other regions of the panel cluster.  
+The domain knowledge is given by the most followed conventions of comics design such as the panels that are usually juxtaposed and rarely included into each other~\ref{sub:intro:motivations}.
+Note that the integration of the knowledge directly into the low level pruning process is restrictive for future processing that will have no chance to recover missing information.
+Based on this assumption, we take out components which are included in other regions of the panel cluster.
 % After the classification step, the second characteristic of panel is used in order to keep only the components that are not overlapped by others.
 Given the set of component bounding boxes from the panel cluster $R = \{R_1, R_2, ... , R_n\}$, we filter out panel candidates that do not verify this relation $R_i\notin{R_j} \forall j, i \neq j$ (Figure \ref{fig:se:frame_candidates} and~\ref{fig:se:frame_cleaned}).
 
@@ -148,16 +154,17 @@ Given the set of component bounding boxes from the panel cluster $R = \{R_1, R_2
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Concerning the text cluster, we clearly see in figure~\ref{fig:se:cc_bounding_box} that the spatial organisation is a characteristic of text regions (regardless of the language).
-We group text candidates into text lines according to alignment and ignore text candidate that can not be part of any text line.
 
 \subsubsection{Letter to text line} % (fold)
 \label{par:se:letter_to_line}
 The gap between text component (e.g. letter or attached letters, word) and text lines can vary significantly.
 In fact, handwriting generates a lot of artefacts such as alignment variations, mergers between letters and text lines.
-We propose a simple method that handles the two first aforementioned artefacts considering only the height of the connected component.
+We propose a simple method that handles the two first aforementioned artefacts considering the height and the neighbourhood of the connected-components.
 
-We first search for the first letter (connected component) of each text line.
+Among all the connected-components (Figure~\ref{fig:se:cc_bounding_box}), we clearly see that the spatial organisation and the regular size are characteristics of text regions (regardless of the language).
+We group text candidates into text lines according to alignment and ignore text candidate that can not be part of any text line.
+
+Similarly to~\cite{Clavelli09,Li2013Comic}, we first search for the first letter (connected-component) of each text line and then attach the close and similar connected-components to the same text line.
 A letter is considered first if it is positioned on the left, on the same horizontal line and if there is no intersection found with any other letters at a distance equal to the letter height.
 Then the other letters on the right are added by checking their relative horizontal and vertical positions.
 For this purpose, we defined two conditions that are auto-adaptive to each letter (Figure~\ref{fig:se:letter_position}):
@@ -177,9 +184,11 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- The principle is similar to the one presented in~\cite{Clavelli09} but adapted to take into account the horizontal alignment of text lines.
- Our method does not consider the letter width as we never know how many letters correspond to the CC.
- This method can easily be used for vertical text (e.g. Japanese, Chinese, Korean) by switching horizontal and vertical measurements.
+The principle is similar to the one presented in~\cite{Clavelli09} but adapted to take into account the horizontal alignment of text lines.
+Our method does not consider the letter width as we never know how many letters correspond to the CC.
+This method can easily be used for vertical text (e.g. Japanese, Chinese, Korean) by switching horizontal and vertical measurements.
+More text orientation can be handled using automatic multi-oriented touching character segmentation such as~\cite{Roy2009Multi}.
+
 
 
 
@@ -216,17 +225,17 @@ First, we require that the candidate text lines to group have similar heights (o
 \label{sec:se:from_text_to_balloon}
 % In this section we detail a novel approach for closed and non-closed speech balloon localization in scanned comic book pages, an essential step towards a fully automatic comic book understanding. 
 For comics content understanding, speech balloons are of significant interest since they offer the links between the textual content and the comic characters providing, in this way, information about the localization of the characters and the tone of speech. 
-As mentioned Section~\ref{sec:sota:balloon_segmentation}, speech balloons are the more frequent type of balloon in comics and are highly related to speech text regions.
+As mentioned in Section~\ref{sec:sota:balloon_segmentation}, speech balloons are the more frequent type of balloon in comics and are highly related to speech text regions.
 In this section, we propose two approaches for balloon extraction based on text region location detection using the methods presented Section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text_localisation_and_recognition}.
-The first method defined as ``balloon'' the smallest connected-component that contains several text-like regions.
+The first method defines as ``balloon'' the smallest connected-components that contain several text-like regions.
 The second method groups text lines into paragraphs and initializes an active contour model (snake) on its outline.
 From the initial position, the snake is pushed away from the text and attracted by surrounding edges at the same time in order to stick to any potential balloon stroke close by.
 The main difference with the first approach is its ability to detect implicit or partially drawn balloons as well as the closed ones.
 
 \subsection{Regular balloon extraction} % (fold)
 \label{sub:se:regular_balloon_extraction}
-Regular balloon are defined as closed balloon with a completely drawn contour unlike implicit contour discussed in the next Section~\ref{sub:se:implicit_balloon_extraction}.
-Closed balloon are easily extractable using blob detection method similarly to the panel and text extraction presented above.
+Regular balloons are defined as closed balloons with a completely drawn contour unlike implicit contour discussed in the next Section~\ref{sub:se:implicit_balloon_extraction}.
+Closed balloons are easily extractable using blobs detection method similarly to the panel and text extraction presented above.
 The main difference lies in their dominant colour which is generally white and implies to extract white connected-components instead of black ones as for panels and text.
 One particularity of text inside balloons is its vertical and/or horizontal alignment in the balloon (Figure~\ref{fig:se:text_in_balloon}).
 We propose to use this characteristic to compute a confidence value to each connected-component that includes one or more text regions.

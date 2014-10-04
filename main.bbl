@@ -253,17 +253,17 @@ Michael~B Dillencourt, Hanan Samet, and Markku Tamminen.
   image representations.
 \newblock {\em Journal of the ACM (JACM)}, 39(2):253--280, 1992.
 
+\bibitem{Dosch2000complete}
+Philippe Dosch, Karl Tombre, Christian Ah-Soon, and Gérald Masini.
+\newblock A complete system for the analysis of architectural drawings.
+\newblock {\em International Journal on Document Analysis and Recognition},
+  3(2):102--116, 2000.
+
 \bibitem{duc1997art}
 B.~Duc.
 \newblock {\em L'art de la B.D.: Du sc{\'e}nario {\`a} la r{\'e}alisation
   graphique, tout sur la cr{\'e}ation des bandes dessin{\'e}es}.
 \newblock Editions Gl{\'e}nat, 1997.
-
-\bibitem{Duc1982}
-Bernard Duc.
-\newblock {\em {L'art de la BD - Tome 1 - Du sc\'{e}nario \`{a} la
-  r\'{e}alisation}}.
-\newblock Gl\'{e}nat, 1982.
 
 \bibitem{Duda72}
 Richard~O. Duda and Peter~E. Hart.
@@ -760,6 +760,19 @@ N.~Otsu.
 Nikhil~R Pal and Sankar~K Pal.
 \newblock A review on image segmentation techniques.
 \newblock {\em Pattern recognition}, 26(9):1277--1294, 1993.
+
+\bibitem{pasternak1994processing}
+B~Pasternak.
+\newblock Processing imprecise and structural distorted line drawings by an
+  adaptable drawing interpretation kernel.
+\newblock In {\em Proc. of IAPR Workshop on Document Analysis Systems}, pages
+  349--366, Kaiserslautern, Germany, 1994.
+
+\bibitem{pasternak1995Taxonomy}
+B.~Pasternak.
+\newblock The role of taxonomy in drawing interpretation.
+\newblock In {\em Proc. of the Third International Conference on Document
+  Analysis and Recognition (ICDAR)}, volume~2, pages 799--802 vol.2, Aug 1995.
 
 \bibitem{Jay53}
 Jay~Scott Pike.

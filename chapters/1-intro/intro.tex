@@ -13,6 +13,12 @@ Then the objectives and contributions of this thesis work are highlighted follow
 
 \section{Presentation} % (fold)
 \label{sec:intro:presentation}
+
+Comic books are a graphic art form combining text and images to tell a story.
+Comics are now used in a wide variety of styles, not only on paper (e.g. magazines, newspapers, TV show) but also as electronic content (mobile apps, e-books, websites).
+Comics are one of the most popular and familiar forms of graphic content.
+People read comics easily and learn many things, so even children can learn about cultures and trends, among other things, through comic books even unconsciously.
+
 Comic art is difficult to define due to its intersection of several artistic mediums: graphic art, art film and the literature.
 More precisely it is drawing, film, writing, all combined together to form a new art (the ninth art) with an extremely varied set of expressions~\cite{duc1997art}.
 Wikipedia\footnote{\url{http://en.wikipedia.org/wiki/Comics}} defines comics as a visual medium used to express ideas via images, often combined with text or visual information.
@@ -115,8 +121,7 @@ Other initiatives, such as Sequencity\footnote{\url{https://www.sequencity.com/}
 The connectivity to the Internet makes also possible to enrich comic books with additional information from the web,
 allowing the reader to get extra content about the events, the places or characters related to the story being read.
 
-These new uses generate technical needs related to several
-scientific issues when applied to large-scale processing. 
+These new uses generate technical needs related to several scientific issues when applied to large-scale processing. 
 The International Digital Publishing Forum (IDPF) is currently working on a free and open e-book standard called EPUB 3 in order to make sequential art also benefit from the last advances of publishing technologies.
 EPUB 3 is a next-generation portable document format based on HTML5 and other Web Standards.
 
@@ -206,17 +211,25 @@ EPUB 3 is a next-generation portable document format based on HTML5 and other We
 	
 % \end{itemize}
 
-As mentioned above, several services propose printed to digital format conversion for comic books, mainly to facilitate reading on mobile devices.
-However, the conversion process remains tedious because done by hand, and simplistic as it is too often reduced to the successive display of panels interspersed with user selected transitions.
+
+% 
+% 
+
+As mentioned above, several services propose printed to digital format conversion for comic books, mainly to facilitate reading on mobile devices for people that want to continue reading their favourite comics or manga on the way, without caring kilos of books.
+The need is increasing since the first generation of mobile devices with small screens in colour or B\&W and now with smartphones and tablets.
+However, the conversion process remains tedious because done by hand (scanned and split into screen size parts small enough to avoid zooming and scrolling), and simplistic as it is too often reduced to the successive display of panels interspersed with user selected transitions.
+% Printed comics require tedious work to be manually scanned and split into screen size parts small enough to avoid zooming and scrolling.
 The ideal approach would be to understand the process used by authors to draw the paper-based comics and automatically transform it into a new form adapted to the medium in which the work is read (e.g. smartphone, web page, 3D book). 
-This challenge is addressed by analysis of the digitalized comic books in order to extract the different components (e.g. panel, balloon, text, comic characters) and their relations (e.g. read before, said by, thought by, addressed to).
+This challenge is addressed by analysing the digitalized comic books in order to extract the different components (e.g. panel, balloon, text, comic characters) and their relations (e.g. read before, said by, thought by, addressed to).
 Once this initial work is done, it is necessary to reconstruct the story by retrieving the initial order of the extracted elements and also the links between elements in order to keep the story coherent.
 This is the role of knowledge representation research field that addresses semantic understanding.% (\ch{chap:knowledge}).
 
 
 % Why is this scientifically relevant?
-
-The computer analysis of comic book images is particularly challenging because they are semi-structured documents with mixed contents.
+The computer analysis of comic book images is particularly challenging because they contain mixed contents of a graphical and textual natures.
+Furthermore, they are semi-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of text and graphics.
+Despite the fact that authors are entirely free in their layout choices, they follow few conventions widely adopted by comic book's authors in order to avoid the reader to be confused~\cite{Laine2010,duc1997art}.
+The depicted elements and their place in the layout must be clearly identifiable at first sight, meaning, for instance, that balloons with speech text and characters should be included inside panels (location of the main actions).
 Comic documents are at the intersection between unstructured (e.g. teaching board~\cite{Oliveira10}, free-form document~\cite{Delaye2014Multi}) and complex background (e.g. advertising poster~\cite{Clavelli09}, real scene~\cite{Weinman09,Epshtein10,Neumann12}) images which are nowadays active fields of research for the community.
 Being at the intersection of several fields of research increases the complexity of the problem.
 This is one of the reasons for which the analysis of comics is a recent (in the document analysis history) and not solved field of research.

@@ -172,11 +172,12 @@ Treating each of the content separately has a limit that can be exceeded in a ho
 \subsection{Panel extraction and layout analysis}
 \label{sec:sota:layout_panel}
 
-Panel extraction and ordering have been mainly studied for panel to panel reading.
-The need is increasing since the first generation of mobile devices with small screens in colour or B\&W.
-In fact, people want to continue reading their favourite comics or manga on the way, without caring kilos of books.
-Printed comics require tedious work to be manually scanned and split into screen size parts small enough to avoid zooming and scrolling.
+% 
+% The need is increasing since the first generation of mobile devices with small screens in colour or B\&W.
+% In fact, people want to continue reading their favourite comics or manga on the way, without caring kilos of books.
+% Printed comics require tedious work to be manually scanned and split into screen size parts small enough to avoid zooming and scrolling.
 
+Panel extraction and ordering have been mainly studied for panel to panel reading.
 Several techniques have been proposed to automatically extract panels as~\cite{In11}, assuming that panels are small enough elements to be comfortably read on mobile devices.
 They are based on white line cutting algorithm~\cite{Duda72,Luyuan2014Automatic,Chan2007Automatic}, recursive X-Y cut~\cite{Han07} or gradient~\cite{Tan07}.
 Those methods do not consider empty area~\cite{In11} and border free panels.
@@ -292,10 +293,9 @@ If we consider typewritten text, the most similar application to comics is car p
 The documents that have attracted of lot a attention are newspaper, administrative documents, cheques, maps, floor plans and engineering drawings.
 Nevertheless, text localization in comic images opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
-Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
+% Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
 %present for the prediction of text locations and no layout method applicable.%
-Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
-
+Comics being semi-structured documents mixing textual and graphical information, they combine the difficulties of both domains, making the task of text localization especially challenging.
 Text localization in complex images has been previously studied in scene images~\cite{Weinman09,Epshtein10,Neumann12,Wang10,Meng12}, video sequences~\cite{Wonjun09,Shivakumara09} and digital-born images (Web and email)~\cite{Karatzas07}. 
 Text localization in unstructured documents has been studied for teaching boards and slide show presentation~\cite{Oliveira10,Vajda2012Method,Nguyen2013BagOfSubjects}.
 However, text localization in documents which are both unstructured and have complex background has received relatively little attention~\cite{Clavelli09}.
@@ -355,14 +355,14 @@ This is a big difference compared to natural images and human detection, since c
 
 Recent studies have been published for partial manga copy detection~\cite{Sun2010}, mainly based on shape information because of the absence of colour information.
 This work has been extended to Manga copyright infringement protection~\cite{Sun2009Detecting,Sun2013IJDAR} using Maximally Stable Extremal Regions (MSER)~\cite{matas2004robust} or faces~\cite{Viola2004robust} for region detection and Histogram of Oriented Gradients (HOG)~\cite{Dalal05} as region descriptor.
-A recent study discuss the local feature extraction and the approximate nearest neighbour (ANN) search~\cite{Iwata2014StudyManga} .
+A recent study discusses the local feature extraction and the approximate nearest neighbour (ANN) search~\cite{Iwata2014StudyManga} .
 This work shows good results for manga part retrieval which is a subset of the whole comics world.
 % In our work we focus on a complementary subset, corresponding to coloured comics analysis.
 
 Coloured comics may be compared to cartoon images sequence, for which a first work based on HOG, SVM and colour attributes has been published in 2012~\cite{Khan12}.
 Preliminary work about cartoon and comics faces recognition have been carried out by Kohei~\cite{Kohei2012} and Cheung~\cite{cheung2008face}.
 More recently, graph theory has been used to find redundant colour structure in order to automatically localize the most frequent colour group apparition and label them as main characters~\cite{HoGREC2013}.
-The thesis of Ta~\cite{TAPhD2010} (section 1.1 and 1.2) gives a good overview about stroke-based image analysis similar to comics, it defines the issues of poor information, occlusion, deformation, inter-class and intra-class variations, scale, spatial and/or temporal relations and structured data.
+The thesis of Ta~\cite{TAPhD2010} (sections 1.1 and 1.2) gives a good overview about stroke-based image analysis similar to comics, it defines the issues of poor information, occlusion, deformation, inter-class and intra-class variations, scale, spatial and/or temporal relations and structured data.
 Ta~\cite{TAPhD2010} also mentions that ``story board scene understanding still remains an open problem, few results are available in the literature about stroke images''.
 
 Another work uses HOG descriptor with redundant information classification to also find the most frequent elements~\cite{SunICDAR2013}.
@@ -391,11 +391,12 @@ However, these sub-tasks can help each other.
 For instance, in a comics page, if we know the panel positions, then we can make a better guess at the location of the comics characters (they are usually inside the panels).
 However, it is not easy to combine different related sub-tasks together.
 Previous works concern real scene image analysis~\cite{Blaschke2014Geographic}, retrieval~\cite{Sciascio2011Structured} and understanding~\cite{Li2012Toward,Fidler2012Describing}, medical image annotation using description logic and inference engine~\cite{Hu2003Ontology}, object-based image retrieval~\cite{Mezaris03anontology,Sarwar2013Ontology} (between keyword-based and query-by-example) and image interpretation~\cite{Hudelot2008Fuzzy,Ogier2000Semantic} that mentions the importance of using topological information, distances, directional relative position and much complex relations such as ``between'' and ``surround'' and ``among''.
+Stroke-based images such as engineering drawings, electronic circuit diagrams, architectural drawings and floor-plans have also been investigated~\cite{pasternak1994processing,pasternak1995Taxonomy,Dosch2000complete}.
 Also, Geographic Object-Based Image Analysis (GEOBIA)~\cite{Blaschke2014Geographic} makes extensive use of ontologies to interpret maps.
 
 %{\bf ADD} background about document understanding and drawing retrieval (OK: cadastral map).
 
-Recently, comics book images have been also considered.
+Recently, comic book images have been also considered.
 An ontology of comics has been proposed from a philosophical approach~\cite{Aaron2011}, a semantic annotation tool~\cite{Hermann2012Guided} makes use of previous knowledge and consistency information to suggest new knowledge to the user in a interactive way.
 Spatial inferences have been used to infer the comic books reading order, for panel in the page and balloon in the panel~\cite{Guerin2012Ontologies}. 
 In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual information of simple object to build more complex ones.
@@ -421,12 +422,12 @@ In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual
 % \end{itemize}
 
 
-Comic books are a graphic art form combining text and images to tell a story.
-Comics are now used in a wide variety of styles, not only on paper (e.g., magazines, newspapers, TV show) but also as electronic content (smartphone apps, e-books, websites).
-Comics are one of the most popular and familiar forms of graphic content.
-People read comics easily and learn many things, so even children can learn about cultures and trends, among other things, through comics even unconsciously.
+% Comic books are a graphic art form combining text and images to tell a story.
+% Comics are now used in a wide variety of styles, not only on paper (e.g., magazines, newspapers, TV show) but also as electronic content (smartphone apps, e-books, websites).
+% Comics are one of the most popular and familiar forms of graphic content.
+% People read comics easily and learn many things, so even children can learn about cultures and trends, among other things, through comics even unconsciously.
 
-From this background, we can divide comic-based computer systems into two categories.
+We can divide comic-related computer systems into two categories.
 One type would be using comics to represent complex information such as online communication in a form of comics~\cite{Kurlander1996} and generating video or story log summaries~\cite{Uchihashi1999Video,Alves2008So,Shamir2006Generating} (computer graphics domain).
 Also, it is possible to listen to manga~\cite{Vomic} which have been recorded by people reading the story or to use mobile app for automatic translation~\cite{OCRMangaReader,Capture2Text} (requires user text selection).
 These systems are useful to add value to the content while making it more funny and interesting.
@@ -449,7 +450,7 @@ The other category concerns the comic design by enabling novices to create comic
 % \end{itemize}
 
 Some of the challenges of comics image analysis can be highlighted from the above state-of-the-art reviews.
-First, comics image suffer from noise as any other document image processing.
+First, comics images suffer from noise as any other document image processing.
 It comes from hardware processes (e.g. drawing techniques, printing and digitization) and software (e.g. image compression).
 So efficiently handling noise is crucial for image analysis and understanding.
 Knowing the design process of the comics creation helps for image denoising.
@@ -460,6 +461,8 @@ Moreover, the authors usually do not share their code.
 This is a key issue for researchers which can not share, reproduce and compare results on identical data in a collaborative way.
 This is one of the reasons that retains comics analysis to progress as fast as other field of research of document analysis.
 
+\modif{TODO: JMO: bien mais mériterait d'être étoffé pour montrer ta maitrise du sujet : positionnement du problème dans le contexte de l'analyse de document => ce qui peut en être exploité, ce qui ne peut pas du fait des caractéristiques de BDs. Il faudrait aussi étayer les ? de la littérature pour justifier ton approche et tes contributions => pourquoi utiliser al connaissance au final ?
+Il me semble qu'il serait bien d'évoquer la taxonomie de l'analyse de document et de montrer que l'analyse de BD se trouve au milieu de tout cela (à discuter ensemble)}
 
 In the next chapter, we are going to present a sequential content extraction approach that profits from the relations between elements to guide the retrieval process.
 We first apply panel and text region extraction followed by speech balloon and tail segmentation.

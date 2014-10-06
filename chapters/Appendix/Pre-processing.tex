@@ -75,11 +75,11 @@ This process continues recursively until no further splits or merges are possibl
 This approach wants to take advantage of the fact that there is a detectable transition between two related areas.
 The oldest methods use edge detector such as the well know Canny filter, to highlight the pixels that appear to belong to a contour~\cite{canny1986computational}.
 The reconstruction of closed contours is often difficult.
-See Section~\ref{sec:ap:connected_component_labelling} for closed contour extraction.
+See Appendix~\ref{sec:ap:connected_component_labelling} for closed contour extraction.
 
 Irregular and partial contour segmentation have been studied as well, using deformable models that are more permissive.
 The most famous model have been proposed by Kass, it is called the active contour model or snake~\cite{Kass1988}.
-A curve $\mathbf{v}(s)=[x(s),y(s)], s \in [0,1]$ is initialized in the region of the contour to detect and it moves through the spatial domain of an image to minimize the energy function (Equation~\ref{eq:se:energy1}) until perfectly fitting the image region.
+A curve $\mathbf{v}(s)=[x(s),y(s)], s \in [0,1]$ is initialized in the region of the contour to detect and it moves through the spatial domain of an image to minimize the energy function until perfectly fitting the image region (Equation~\ref{eq:se:energy1}).
 
 \begin{equation}\label{eq:se:energy1}
   E = \int_0^1 \! \frac{1}{2} \left( \alpha \left|\mathbf{v}'(s) \right|^2 + \beta \left| \mathbf{v}''(s) \right|^2 \right) + E_{ext}(\mathbf{v}(s))ds\\
@@ -88,7 +88,8 @@ where $\alpha$ and $\beta$ are weighting parameters that respectively control th
 The external energy function $E_{ext}$ is computed from the image so that it takes on its smaller values at the features of interest, such as boundaries~\cite{Xu1998}.
 %It was initially designed to localize nearby edges accurately by using both internal and external energies (see eq.~\ref{eq:se:energy1}). 
 %The external energy function $E_{ext}$ aim to attract the snake to the feature of interest (e.g. line, edge, corner), it is the image force. 
-One of the proposed energy functions by Kass~\cite{Kass1988} is equation~\ref{eq:se:edge} which attracts the contour to edges with large image gradients. 
+One of the proposed energy functions by Kass~\cite{Kass1988} is Equation~\ref{eq:se:edge} which attracts the contour to edges with large image gradients. 
+
 \begin{equation}\label{eq:se:edge}
   E_{ext} = -|\nabla \mathbf{I}(x,y)^2|
 \end{equation}

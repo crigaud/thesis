@@ -7,16 +7,16 @@
 %In this chapter we propose a symbol spotting technique in graphical documents. Graphs are used to represent the documents and an error tolerant (sub)graph matching technique is used to detect the symbols in them. We propose a graph serialization to reduce the usual computational complexity of graph matching. Serialization of graphs is performed by computing acyclic graph paths between each pair of connected nodes. Graph paths are one dimensional structures of graphs, handling which is less expensive in terms of computation. At the same time they enable robust localization even in the presence of noise and distortion. Indexing in large graph databases involves a computational burden as well. We utilize a graph factorization approach to tackle this problem. Factorization is intended to create a unified indexed structure over the database of graphical documents. Once graph paths are extracted, the entire database of graphical documents is indexed in hash tables by locality sensitive hashing (LSH) of shape descriptors of the paths. The hashing data structure aims to execute an approximate $k$-NN search in a sub-linear time. We have performed detailed experiments with various datasets of line drawings and the results demonstrate the effectiveness and efficiency of our technique.
 %----------------------------------------------------------------------------------------------------------------------
 
-In this chapter we propose an independent extraction of each element contained by comic book images.
-This content retrieval approach tries to fill the weaknesses of the sequential approach presented in the previous chapter.
-New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order or in parallel as they are completely independent from each other.
-More domain knowledge are embedded in the low level processing in order to process each image in an autonomous way with a similar performance.
+In this chapter we propose an independent extraction of each element contained by comic book images in order to make the image interpretation more flexible.
+This approach tries to fill the weaknesses of the sequential approach presented in the previous chapter by making each specific content extraction algorithm independent from each other thus avoiding error propagation.
+New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order or in simultaneously as they are totally independent from each other.
+Reaching such level of independence requires to embed more domain knowledge in each processing algorithm in order to give then the ability to autonomously process an image (without needing previous information extraction) with a similar performance to the sequential approach.
 
 
 \section{Introduction}
 \label{sec:in:intro}
 
-Image content retrieval methods are useful for the community and the society when they can easily be applied on various type of images sharing similar properties independently from other pre or post processing.
+Image content retrieval methods are useful for the community and the society when they can easily be applied on various type of images sharing similar properties, independently from other pre or post processing.
 Another important aspect is to propose methods with a minimum number of parameters or at least that do not make the method too specific but generic in order to be usable for a maximum of applications.
 The first approach presented in \ch{chap:sequential} is very specific to images from comic books because each extraction of element requires one or several pre-processing (other element extractions).
 In this chapter we present several contributions to extract elements independently from each other.
@@ -28,10 +28,15 @@ The problem of comic character retrieval is simplified here as a character spott
 \section{Panel extraction}
 \label{sec:in:panel_extraction}
 
-The previous clustering-based method presented in Section~\ref{sec:se:panel_and_text} is particularly useful for simultaneous extractions, as illustrated panel and text while removing noise region at the same time.
-Nevertheless, the panel extraction can be improved if we focus on panel elements only.
-We propose to use a second characteristic of panels which is their topological relations with other elements in the image.
-Figure~\ref{fig:se:cc_bounding_box} shows that outermost or external contours actually corresponds to panels.
+The panel extraction method presented in the previous chapter is based on connected-component clustering (sequential approach Section~\ref{sec:se:panel_and_text}).
+This is particularly useful for simultaneous extractions of panel and text while removing noise region at the same time.
+The main issue comes from the clustering algorithm that uses a fixed number of clusters which assumes that the image contents a connected-components from panel, text and noise (their are dependent from each other).
+% Nevertheless, the panel extraction can be improved if we focus on panel elements only, especially in the case
+This is not always the case or sometimes the amount of text or noise is not significant and confuse the clustering.
+We propose to overcome this limitation by extracting panels independently from other elements.
+In the first approach, the connected-components that are labelled as panel by the clustering algorithm are then pruned based on a topological filter (Section~\ref{par:se:pruning}).
+Here we base our independent approach on this topological filter by considering as panels only the connected-components that are not included in any other connected-component (no parents).
+In Figure~\ref{fig:se:cc_bounding_box}, we shows that outermost or external contours actually corresponds to panels.
 We base this method on this criterion, considering the panels to be the outermost contours.
 This is especially true for general comics using gutter (white space) between panels.
 Making the outermost contour as panel can be seen as a binary classification method deriving from a more generic concept.
@@ -49,7 +54,7 @@ Non included contour (outermost) would have the maximum confidence and fully inc
 Panel contours (border line) are usually dark and similar for all the panels of a comics page.
 Sometimes panel contours are implicit as shown Figure~\ref{fig:in:se:panel_img} (considered as a difficult case).
 In this case, the reader distinguishes them by comparing the difference of colour between the panel content and the page background.
-We use a global binary segmentation method (Appendix~\ref{sub:ap:bi_threshold}) to separate the page background (expected to be clear) from its content (dark elements such as panel border lines), considered as foreground here (Figure~\ref{fig:se:panel_binary}).
+We use a global binary segmentation method (Appendix~\ref{sub:ap:bi_threshold}) to separate the page background (expected to be clear) from its content (dark elements such as black strokes), considered as foreground here (Figure~\ref{fig:se:panel_binary}).
 An binary inversion should be performed when the image background is darker that the content of the panels.
 We do not use a local segmentation approach here because it has higher chances to split the panel border and over-segment its content.
 
@@ -111,7 +116,7 @@ In this section we present a method for automatic text localization in scanned c
 Our first intention is to localize multi-oriented text regions, independently from script and language, and separate them from the graphical content (text/graphic separation).
 In document analysis systems, text recognition quality often relies on text localization.
 This is particularly the case for comics which have a complex background.
-We present how to take advantage of Optical Character Recognition systems (OCR) in order to improve text localisation.
+We present how to take advantage of Optical Character Recognition systems (OCR) in order to improve text localisation (conventional paradigm of recognition after segmentation~\cite{Yoon2001Paradigm}).
 
 \subsection{Introduction} % (fold)
 \label{sub:in:text_introduction}

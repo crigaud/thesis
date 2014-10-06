@@ -23,7 +23,7 @@
 \contentsline {chapter}{\numberline {3}Sequential information extraction}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introduction}{19}{section.3.1}
 \contentsline {section}{\numberline {3.2}Panel and text}{20}{section.3.2}
-\contentsline {subsubsection}{Image segmentation}{20}{section*.15}
+\contentsline {subsubsection}{Binary segmentation}{20}{section*.15}
 \contentsline {subsubsection}{Connected-component extraction}{21}{section*.16}
 \contentsline {subsubsection}{Clustering}{22}{section*.18}
 \contentsline {subsubsection}{Panel pruning}{22}{section*.20}
@@ -35,35 +35,35 @@
 \contentsline {subsubsection}{Balloon extraction}{26}{section*.29}
 \contentsline {subsection}{\numberline {3.3.2}Implicit balloon extraction}{27}{subsection.3.3.2}
 \contentsline {subsubsection}{External energy}{28}{section*.32}
-\contentsline {subsubsection}{Internal energy}{28}{section*.34}
-\contentsline {subsubsection}{Text energy}{29}{section*.35}
+\contentsline {subsubsection}{Internal energy}{29}{section*.34}
+\contentsline {subsubsection}{Text energy}{30}{section*.35}
 \contentsline {subsubsection}{Proposed method}{30}{section*.36}
-\contentsline {paragraph}{Active contour initialisation}{30}{section*.37}
-\contentsline {paragraph}{Low resolution contour localization}{30}{section*.39}
-\contentsline {paragraph}{High resolution contour shape fitting}{31}{section*.41}
-\contentsline {section}{\numberline {3.4}From balloon to tail}{32}{section.3.4}
-\contentsline {section}{\numberline {3.5}From tail to comic character}{36}{section.3.5}
-\contentsline {section}{\numberline {3.6}Conclusions}{36}{section.3.6}
+\contentsline {paragraph}{Active contour initialisation}{31}{section*.37}
+\contentsline {paragraph}{Low resolution contour fitting}{31}{section*.39}
+\contentsline {paragraph}{High resolution contour fitting}{32}{section*.41}
+\contentsline {section}{\numberline {3.4}From balloon to tail}{33}{section.3.4}
+\contentsline {section}{\numberline {3.5}From tail to comic character}{37}{section.3.5}
+\contentsline {section}{\numberline {3.6}Conclusions}{38}{section.3.6}
 \contentsline {chapter}{\numberline {4}Independent information extraction}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}
 \contentsline {section}{\numberline {4.2}Panel extraction}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}Text localisation and recognition}{40}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Introduction}{41}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Bi-level segmentation}{42}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{44}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Text line generation}{45}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Text recognition}{45}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Balloon extraction and classification}{46}{section.4.4}
+\contentsline {section}{\numberline {4.3}Text localisation and recognition}{41}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Introduction}{42}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Bi-level segmentation}{43}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Text/graphics separation}{45}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Text line generation}{46}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Text recognition}{46}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Balloon extraction and classification}{47}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Balloon segmentation}{47}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Balloon classification}{49}{subsection.4.4.2}
 \contentsline {subsubsection}{Shape/contour separation}{49}{section*.57}
-\contentsline {subsubsection}{Contour description}{50}{section*.59}
+\contentsline {subsubsection}{Contour description}{51}{section*.59}
 \contentsline {subsubsection}{Contour classification}{52}{section*.61}
 \contentsline {section}{\numberline {4.5}Comic character spotting}{53}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Colour quantization}{54}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}Input query}{54}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{54}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{56}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{55}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Object retrieval}{57}{subsection.4.5.4}
 \contentsline {section}{\numberline {4.6}Conclusions}{59}{section.4.6}
 \contentsline {chapter}{\numberline {5}Knowledge-driven analysis}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{61}{section.5.1}

@@ -28,14 +28,14 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}}{26}{figure.caption.30}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Speech balloon contour types}}{27}{figure.caption.31}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Active contour energies for open balloon extraction}}{29}{figure.caption.33}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{31}{figure.caption.38}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{32}{figure.caption.38}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{32}{figure.caption.40}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{32}{figure.caption.42}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{33}{figure.caption.42}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{33}{figure.caption.43}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{33}{figure.caption.44}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{34}{figure.caption.45}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{35}{figure.caption.46}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{37}{figure.caption.48}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{34}{figure.caption.44}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{35}{figure.caption.45}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{36}{figure.caption.46}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{38}{figure.caption.48}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Independent panel extraction process}}{41}{figure.caption.49}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Original image}}}{41}{subfigure.1.1}
@@ -48,16 +48,16 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Inter-connected letters}}{45}{figure.caption.51}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{45}{figure.caption.52}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Examples of text lines from comics images}}{46}{figure.caption.53}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Balloon extraction process}}{47}{figure.caption.54}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Balloon content alignment measures}}{48}{figure.caption.55}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Balloon extraction process}}{48}{figure.caption.54}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Balloon content alignment measures}}{49}{figure.caption.55}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Relation between speech balloon shape and contour informations}}{50}{figure.caption.56}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon contour time series}}{51}{figure.caption.58}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Contour signal decomposition}}{52}{figure.caption.60}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Contour signal decomposition}}{53}{figure.caption.60}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Colour image smoothing and quantization for comic character extraction}}{55}{figure.caption.62}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces User defined comic character selection}}{56}{figure.caption.63}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Comic character query description}}{57}{figure.caption.64}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{58}{figure.caption.65}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Multi-scale comic character spotting}}{59}{figure.caption.66}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Multi-scale comic character spotting}}{60}{figure.caption.66}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Example of semantic information understanding}}{61}{figure.caption.67}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Examples of comic panels that reflect the diversity of comics.\relax }}{62}{figure.caption.68}

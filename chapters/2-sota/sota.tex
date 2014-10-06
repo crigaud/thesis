@@ -208,13 +208,13 @@ See Figure~\ref{fig:sota:balloon_examples}.
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{figure}[!ht]%trim=l b r t  width=0.5\textwidth,
   \centering
-    \subfloat[Oval]{\label{fig:sota:round_balloon}\includegraphics[trim= 0px 2px 0mm 1px, clip, height=0.15\textwidth]{round_balloon.png}}  \hspace{0.5em}
-    \subfloat[Rectangle]{\label{fig:sota:rectangle_balloon}\includegraphics[trim= 0px 0px 0px 0px, clip, height=0.15\textwidth]{rectangle_balloon.png}}  \hspace{0.5em}
-    \subfloat[Wavy]{\label{fig:sota:cloud_balloon}\includegraphics[trim= 0px 0px 0px 0px, clip, height=0.15\textwidth]{cloud_balloon.png}}  \hspace{0.5em}
-    \subfloat[Spiky]{\label{fig:sota:peaked_balloon}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, height=0.15\textwidth]{peaked_balloon.png}}  \hspace{0.5em}
+    \subfloat[Oval/smooth]{\label{fig:sota:round_balloon}\includegraphics[trim= 0px 2px 0mm 1px, clip, height=0.15\textwidth]{round_balloon.png}}  \hspace{0.5em}
+    \subfloat[Rectangle/smooth]{\label{fig:sota:rectangle_balloon}\includegraphics[trim= 0px 0px 0px 0px, clip, height=0.15\textwidth]{rectangle_balloon.png}}  \hspace{0.5em}
+    \subfloat[Ovel/wavy]{\label{fig:sota:cloud_balloon}\includegraphics[trim= 0px 0px 0px 0px, clip, height=0.15\textwidth]{cloud_balloon.png}}  \hspace{0.5em}
+    \subfloat[Oval/spiky]{\label{fig:sota:peaked_balloon}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, height=0.15\textwidth]{peaked_balloon.png}}  \hspace{0.5em}
     \subfloat[Suggested]{\label{fig:sota:open_balloon}\includegraphics[trim= 15px 7mm 5px 5px, clip, height=0.15\textwidth]{open_balloon.png}}
 
-  \caption{Example of speech balloon contour types. Image credits~\cite{Bubble09}.}
+  \caption{Example of speech balloon types described as \emph{shape/contour} types. Image credits~\cite{Bubble09,Inoue08,McCall46}.}
   \label{fig:sota:balloon_examples}
   % \end{center}
   \end{figure}  
@@ -264,7 +264,19 @@ Also, wavelet decomposition~\cite{tieng1997recognition} and invariant moments~\c
 
 From our knowledge, tail detection has not been studied before, we propose to analyse the contour patterns in order to locate the tail and then perform a local analysis to find its direction (Section~\ref{sec:se:from_balloon_to_tail}).
 
-Balloon classification and tail detection are also important in a context of dialogues and emotions understanding~\cite{millidge2009comic}.
+As far as we know, balloon classification has not been studied before.
+It is related to shape and contour classification field of researches in planar images.
+Shape classification is a well developed field, especially in a template matching context.
+Three well know methods are Curvature Scale Space (CSS)~\cite{Abbasi1999}, Fourier Descriptor~\cite{Zahn1972} and Invariant Moments~\cite{Hu1962}.
+A recent work~\cite{Lopatka2013} explains that CSS is more appropriate for shapes containing a high number of inflections as marine animals~\cite{Abbasi1999}.
+Apart for document analysis, shape classification was also studied for image retrieval such as marine creature~\cite{Mokhtarian2002}, leaves~\cite{Wang2003}, illicit tablet~\cite{Lopatka2013}, anthropology~\cite{Keogh2006} and visual shape descriptor~\cite{Bober01}. A good shape representation overviews are given by~\cite{veltkamp2000} and~\cite{Zhang2004}. 
+%Image moment have also been used extensively for Optical Character Recognition~\cite{Flusser2009}, plant leaf recognition~\cite{Wang2008}, vehicle detection in satellite images~\cite{Eikvil2009}, and detecting and localizing duplicated areas in digital images~\cite{Mahdian2007}. 
+Nevertheless, shape descriptor and classification are not discriminant enough for our purpose because speech balloon are most of the time compact, symmetric and hand drawn which corresponds to limitations of the reviewed methods.
+In the literature, contour classification is strongly related to shape classification purposes~\cite{sun2005classification,liu1990partial}.
+It has been applied for video~\cite{kuhne2001motion,richter2001contour,bader2009}, trademark retrieval~\cite{leung2002trademark} and speech recognition~\cite{grigoriu1994automatic}. 
+Also, wavelet decomposition~\cite{Cenkery1996} and invariant moment~\cite{mukundan1998moment} methods have been proposed.
+
+Note that balloon classification and tail detection are also important in a context of dialogues and emotions understanding~\cite{millidge2009comic}.
 
 
 
@@ -288,10 +300,15 @@ Balloon classification and tail detection are also important in a context of dia
 % \end{itemize}
 
 Text localization in real scenes and video frames is an active research topic~\cite{Jung04,ShahabICDAR2011Robust,KaratzasICDAR2013Robust}.
+One of the challenges related to the comic books are the multi-script and multi-oriented aspects.
+Recent methods have been propose for scene text detection~\cite{kasar2012multi,gomez2013multi}.
 However, applying existing real scene text detection methods to comics would not be optimal to cope with all the different types of text that are combined in comic book documents (e.g. typewritten, handwritten, graphic sound).
 If we consider typewritten text, the most similar application to comics is car plate recognition because the text is in a salient and contrasted area with a complex background around the plate such as speech balloon for comics~\cite{anagnostopoulos2008license}.
-The documents that have attracted of lot a attention are newspaper, administrative documents, cheques, maps, floor plans and engineering drawings.
-Nevertheless, text localization in comic images opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
+The documents that have attracted of lot a attention are newspapers, administrative documents, cheques, maps, music scores, floor plans and engineering drawings~\cite{nagy2000twenty}.
+Also, an important effort have been done to separate text from graphical content from such types of document with the focus of improving the post processing of both types of content by treating them separately.
+Fletcher and Katsuri~\cite{fletcher1988robust} are the reference in this domain which continue to be explored more than twenty years after for more and more complex documents~\cite{tombre2002text,Roy2007Text}.
+From our knowledge, text/graphic separation have not been studied for any kind of text that we can found in comic book images (e.g speech texts, onomatopoeias, captions).
+Nevertheless, text localization in comic images have been recently investigated and opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
 % Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
 %present for the prediction of text locations and no layout method applicable.%

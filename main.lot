@@ -2,22 +2,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Values of the horizontal and vertical shifts and panel's corner selection according to the eight directions of the tail.\relax }}{38}{table.caption.47}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Values of the horizontal and vertical shifts and panel's corner selection according to the eight directions of the tail.\relax }}{40}{table.caption.47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{88}{table.caption.105}
-\contentsline {table}{\numberline {6.2}{\ignorespaces F-measure results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods}}{90}{table.caption.107}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Text localisation results.\relax }}{91}{table.caption.108}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Text recognition accuracy results from automatic text line localisation using edit distance}}{93}{table.caption.110}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Implicit balloon performance evaluation at object and pixel levels using the original form and the proposed energy functions}}{94}{table.caption.113}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Balloon localisation result summary.\relax }}{96}{table.caption.115}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Classification result accuracy for different descriptor configuration}}{99}{table.caption.119}
-\contentsline {table}{\numberline {6.8}{\ignorespaces Confusion matrix for smooth, wavy and spiky balloon contour classification results}}{100}{table.caption.120}
-\contentsline {table}{\numberline {6.9}{\ignorespaces Tail tip position and tail direction extraction results from automatic and manual balloon contour extractions}}{101}{table.caption.123}
-\contentsline {table}{\numberline {6.10}{\ignorespaces Character detection performance\relax }}{106}{table.caption.128}
-\contentsline {table}{\numberline {6.11}{\ignorespaces Comic character localisation result for the sequential approach from ground truth and automatic panel and balloon element extractions}}{107}{table.caption.130}
-\contentsline {table}{\numberline {6.12}{\ignorespaces F-measure score evolution for panel, balloon, text and characters throughout the two iterations}}{110}{table.caption.133}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Panel extraction evaluation results}}{92}{table.caption.105}
+\contentsline {table}{\numberline {6.2}{\ignorespaces F-measure results for fixed and adaptive threshold selection method corresponding to combined and separated colour to grey conversion methods}}{94}{table.caption.107}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Text localisation results.\relax }}{95}{table.caption.108}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Text recognition accuracy results from automatic text line localisation using edit distance}}{97}{table.caption.110}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Implicit balloon performance evaluation at object and pixel levels using the original form and the proposed energy functions}}{98}{table.caption.113}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Balloon localisation result summary.\relax }}{100}{table.caption.115}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Classification result accuracy for different descriptor configuration}}{103}{table.caption.119}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Confusion matrix for smooth, wavy and spiky balloon contour classification results}}{104}{table.caption.120}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Tail tip position and tail direction extraction results from automatic and manual balloon contour extractions}}{105}{table.caption.123}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Character detection performance\relax }}{110}{table.caption.128}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Comic character localisation result for the sequential approach from ground truth and automatic panel and balloon element extractions}}{111}{table.caption.130}
+\contentsline {table}{\numberline {6.12}{\ignorespaces F-measure score evolution for panel, balloon, text and characters throughout the two iterations}}{114}{table.caption.133}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

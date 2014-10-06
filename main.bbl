@@ -1,5 +1,10 @@
 \begin{thebibliography}{100}
 
+\bibitem{Abbasi1999}
+Sadegh Abbasi, Farzin Mokhtarian, and Josef Kittler.
+\newblock Curvature scale space image in shape similarity retrieval.
+\newblock {\em Multimedia Syst.}, 7(6):467--476, November 1999.
+
 \bibitem{adams1994seeded}
 Rolf Adams and Leanne Bischof.
 \newblock Seeded region growing.
@@ -83,6 +88,11 @@ Thomas Blaschke, Geoffrey~J. Hay, Maggi Kelly, Stefan Lang, Peter Hofmann,
 \newblock {\em \{ISPRS\} Journal of Photogrammetry and Remote Sensing},
   87(0):180 -- 191, 2014.
 
+\bibitem{Bober01}
+Miroslaw Bober.
+\newblock Mpeg-7 visual shape descriptors.
+\newblock {\em IEEE Trans. Circuits Systems}, 2001.
+
 \bibitem{borodo2014multimodality}
 Micha{\l} Borodo.
 \newblock Multimodality, translation and comics.
@@ -118,6 +128,13 @@ John Canny.
 \newblock A computational approach to edge detection.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, PAMI-8(6):679--698, Nov 1986.
+
+\bibitem{Cenkery1996}
+Christian Cenker.
+\newblock Wavelet contour classification.
+\newblock In {\em Proceedings of the 20th Workshop of the Austrian Association
+  for Pattern Recognition (OAGM/AAPR) on Pattern Recognition 1996}, pages
+  263--271, Munich, Germany, Germany, 1996. R. Oldenbourg Verlag GmbH.
 
 \bibitem{Chan2007Automatic}
 ChungHo Chan, Howard Leung, and Taku Komura.
@@ -306,11 +323,24 @@ S.~Fidler, Jian Yao, and R.~Urtasun.
 \newblock {\em 2013 IEEE Conference on Computer Vision and Pattern
   Recognition}, 0:702--709, 2012.
 
+\bibitem{fletcher1988robust}
+Lloyd~A. Fletcher and Rangachar Kasturi.
+\newblock A robust algorithm for text string separation from mixed
+  text/graphics images.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  10(6):910--918, 1988.
+
 \bibitem{Goggin2010Rise}
 Joyce Goggin.
 \newblock {\em The Rise and Reason of Comics and Graphic Literature: Critical
   Essays on the Form}, volume~1, chapter~4, pages 56--74.
 \newblock McFarland, Book News, Inc., Portland, OR, 1 edition, 2010.
+
+\bibitem{gomez2013multi}
+Lluis Gomez and Dimosthenis Karatzas.
+\newblock Multi-script text extraction from natural scenes.
+\newblock In {\em Document Analysis and Recognition (ICDAR), 2013 12th
+  International Conference on}, pages 467--471. IEEE, 2013.
 
 \bibitem{Gonzalez1992Digital}
 Rafael~C. Gonzalez and Richard~E. Woods.
@@ -397,6 +427,11 @@ B.~Hu, S.~Dasmahapatra, P.~Lewis, and N.~Shadbolt.
 \newblock In {\em Tools with Artificial Intelligence, 2003. Proceedings of the
   15th Int. Conf. on Tools with Artificial Intelligence (ICTAI'03)}, 2003.
 
+\bibitem{Hu1962}
+Ming-Kuei Hu.
+\newblock Visual pattern recognition by moment invariants.
+\newblock {\em Information Theory, IRE Transactions on}, 8(2):179--187, 1962.
+
 \bibitem{Hudelot2008Fuzzy}
 Céline Hudelot, Jamal Atif, and Isabelle Bloch.
 \newblock Fuzzy spatial relation ontology for image interpretation.
@@ -459,6 +494,12 @@ D.~Karatzas, F.~Shafait, S.~Uchida, M.~Iwamura, L.~Gomez~i Bigorda,
 \newblock In {\em Proceedings of International Conference on Document Analysis
   and Recognition (ICDAR)}, pages 1484--1493, Aug 2013.
 
+\bibitem{kasar2012multi}
+Thotreingam Kasar and Angarai~G Ramakrishnan.
+\newblock Multi-script and multi-oriented text localization from scene images.
+\newblock In {\em Camera-Based Document Analysis and Recognition}, pages 1--14.
+  Springer, 2012.
+
 \bibitem{Kass1988}
 Michael Kass, Andrew Witkin, and Demetri Terzopoulos.
 \newblock {Snakes: Active contour models}.
@@ -469,6 +510,12 @@ D.~Kelkar and S.~Gupta.
 \newblock Improved quadtree method for split merge image segmentation.
 \newblock In {\em Emerging Trends in Engineering and Technology, 2008. ICETET
   '08. First International Conference on}, pages 44--47, July 2008.
+
+\bibitem{Keogh2006}
+Eamonn Keogh, Li~Wei, Xiaopeng Xi, Sang hee Lee, and Michail Vlachos.
+\newblock Lb keogh supports exact indexing of shapes under rotation invariance
+  with arbitrary representations and distance measures.
+\newblock In {\em IN VLDB, 2006}, pages 882--893, 2006.
 
 \bibitem{Khan12}
 Fahad~Shahbaz Khan, Muhammad~Anwer Rao, Joost van~de Weijer, Andrew~D.
@@ -583,6 +630,12 @@ H-C Liu and Mandyam~D. Srinath.
   transformation.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 12(11):1072--1079, 1990.
+
+\bibitem{Lopatka2013}
+Martin Lopatka and Wiger~Van Houten.
+\newblock {Science and Justice Automated shape annotation for illicit tablet
+  preparations: a contour angle based classification from digital images}.
+\newblock {\em Science \& Justice}, 53(1):60--66, 2013.
 
 \bibitem{Ricardo2009Calligraphic}
 Ricardo Lopes, Tiago Cardoso, Nelson Silva, and ManuelJ. Fonseca.
@@ -707,6 +760,11 @@ Thomas~M. Mitchell.
 \newblock {\em Machine Learning}.
 \newblock McGraw-Hill, Inc., New York, NY, USA, 1 edition, 1997.
 
+\bibitem{Mokhtarian2002}
+Farzin Mokhtarian and Sadegh Abbasi.
+\newblock Shape similarity retrieval under affine transforms.
+\newblock {\em Pattern Recognition}, 35(1):31 -- 41, 2002.
+
 \bibitem{Montaine11}
 Marion Montaigne.
 \newblock {\em Tu mourras moins bête - La science, c'est pas du cinéma !}
@@ -717,6 +775,12 @@ Ramakrishnan Mukundan and KR~Ramakrishnan.
 \newblock {\em Moment functions in image analysis: theory and applications},
   volume 100.
 \newblock World Scientific, 1998.
+
+\bibitem{nagy2000twenty}
+George Nagy.
+\newblock Twenty years of document image analysis in pami.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  22(1):38--62, 2000.
 
 \bibitem{Neumann12}
 L.~Neumann and J.~Matas.
@@ -837,6 +901,19 @@ Paul Rissen.
 Gibbons Robin~Varnum, Christina~T.
 \newblock {\em The Language of Comics: Word and Image}.
 \newblock Studies in Popular Culture. University Press of Mississippi, 2007.
+
+\bibitem{Roy2007Text}
+P.P. Roy, J.~Llados, and U.~Pal.
+\newblock Text/graphics separation in color maps.
+\newblock In {\em Computing: Theory and Applications, 2007. ICCTA '07.
+  International Conference on}, pages 545--551, March 2007.
+
+\bibitem{Roy2009Multi}
+P.P. Roy, U.~Pal, J.~Llados, and M.~Delalandre.
+\newblock Multi-oriented and multi-sized touching character segmentation using
+  dynamic programming.
+\newblock In {\em 10th International Conference on Document Analysis and
+  Recognition (ICDAR)}, pages 11--15, July 2009.
 
 \bibitem{Salovaara2007Appropriation}
 Antti Salovaara.
@@ -1034,6 +1111,12 @@ Hiroaki Tobita.
 \newblock In {\em Proceedings of the International Conference on Advanced
   Visual Interfaces}, AVI '10, pages 281--288, New York, NY, USA, 2010. ACM.
 
+\bibitem{tombre2002text}
+Karl Tombre, Salvatore Tabbone, Lo{\"\i}c P{\'e}lissier, Bart Lamiroy, and
+  Philippe Dosch.
+\newblock Text/graphics separation revisited.
+\newblock In {\em Document Analysis Systems V}, pages 200--211. Springer, 2002.
+
 \bibitem{Tsai2013Adaptive}
 Chia-Jung Tsai, Chih-Yuan Yao, Pei-ying Chiang, Yu-Chi Lai, Ming-Te Chi,
   Hung-Kuo Chu, Yu-Shiang Wong, and Yu-Shuen Wang.
@@ -1054,6 +1137,12 @@ Szilárd Vajda, Leonard Rothacker, and GernotA. Fink.
 \newblock In Masakazu Iwamura and Faisal Shafait, editors, {\em Camera-Based
   Document Analysis and Recognition}, volume 7139 of {\em Lecture Notes in
   Computer Science}, pages 112--125. Springer Berlin Heidelberg, 2012.
+
+\bibitem{veltkamp2000}
+Remco~C. Veltkamp and Mirela Tanase.
+\newblock Content-based image retrieval systems: A survey.
+\newblock Technical report, Department of Information and Computing Sciences,
+  Utrecht University, 2000.
 
 \bibitem{Viola2004robust}
 Paul Viola and Michael~J Jones.
@@ -1076,6 +1165,12 @@ Kai Wang and Serge Belongie.
 Meng Wang, Richang Hong, Xiao-Tong Yuan, Shuicheng Yan, and Tat-Seng Chua.
 \newblock Movie2comics: Towards a lively video content presentation.
 \newblock {\em IEEE Transactions on Multimedia}, 14(3-2):858--870, 2012.
+
+\bibitem{Wang2003}
+Z.~Wang, Z.~Chi, and D.~Feng.
+\newblock Shape based leaf image retrieval.
+\newblock {\em Vision, Image and Signal Processing, IEEE Proceedings},
+  150(1):34--43, 2003.
 
 \bibitem{Coulton1947Comics}
 Coulton Waugh.
@@ -1123,6 +1218,23 @@ Peng Ye and D.~Doermann.
 \newblock Document image quality assessment: A brief survey.
 \newblock In {\em Proceedings of International Conference on Document Analysis
   and Recognition (ICDAR)}, pages 723--727, Aug 2013.
+
+\bibitem{Yoon2001Paradigm}
+Sungsoo Yoon, Gyeonghwan Kim, Yeongwoo Choi, and Yillbyung Lee.
+\newblock New paradigm for segmentation and recognition of handwritten numeral
+  string.
+\newblock In {\em Document Analysis and Recognition, 2001. Proceedings. Sixth
+  International Conference on}, pages 205--209, 2001.
+
+\bibitem{Zahn1972}
+C.~T. Zahn and R.~Z. Roskies.
+\newblock {Fourier Descriptors for Plane Closed Curves}.
+\newblock {\em Transactions on Computers, IEEE}, c-21(3):269--281, March 1972.
+
+\bibitem{Zhang2004}
+D.~Zhang and G.~Lu.
+\newblock {Review of shape representation and description techniques}.
+\newblock {\em PR}, 37(1), 2004.
 
 \bibitem{Zinger05extracting}
 S.~Zinger, C.~Millet, B.~Mathieu, G.~Grefenstette, P.~Hède, and

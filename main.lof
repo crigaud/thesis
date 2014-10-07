@@ -3,90 +3,90 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Application domains of graphics recognition}}{10}{figure.caption.10}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Document degradation sources}}{12}{figure.caption.11}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of speech balloon types described as \emph {shape/contour} types. Image credits~\cite {Bubble09,Inoue08,McCall46}.\relax }}{13}{figure.caption.12}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Oval/smooth}}}{13}{subfigure.3.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rectangle/smooth}}}{13}{subfigure.3.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ovel/wavy}}}{13}{subfigure.3.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Oval/spiky}}}{13}{subfigure.3.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Suggested}}}{13}{subfigure.3.5}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Flow diagram of comic balloon detection}}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Illustration of the diversity of comics character postures}}{17}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Examples of panels that reflect the content diversity of comic books.\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of speech balloon types described as \emph {shape/contour} types. Image credits~\cite {Bubble09,Inoue08,McCall46}.\relax }}{14}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Oval/smooth}}}{14}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rectangle/smooth}}}{14}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ovel/wavy}}}{14}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Oval/spiky}}}{14}{subfigure.4.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Suggested}}}{14}{subfigure.4.5}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Flow diagram of comic balloon detection}}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Examples of text lines from comics images}}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Illustration of the diversity of comics character postures}}{18}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Panel extraction process}}{23}{figure.caption.17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Panel extraction process}}{23}{figure.caption.19}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Binary segmented image}}}{23}{subfigure.1.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Connected-component bounding boxes}}}{23}{subfigure.1.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Panel cluster}}}{23}{subfigure.1.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Text cluster}}}{23}{subfigure.1.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Descendant histogram of the connected component bounding box heights}}{24}{figure.caption.19}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Topological pruning of panel bounding box extraction}}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Descendant histogram of the connected component bounding box heights}}{24}{figure.caption.21}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Topological pruning of panel bounding box extraction}}{25}{figure.caption.23}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Candidate panels}}}{25}{subfigure.3.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Pruned panels}}}{25}{subfigure.3.2}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Text component horizontal and vertical alignments}}{26}{figure.caption.23}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Text line to text paragraph conversion illustration}}{26}{figure.caption.25}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Text positions in speech balloons}}{27}{figure.caption.26}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Sequential balloon extraction process illustration}}{28}{figure.caption.28}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}}{28}{figure.caption.30}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Speech balloon contour types}}{29}{figure.caption.31}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Active contour energies for open balloon extraction}}{31}{figure.caption.33}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{34}{figure.caption.38}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{34}{figure.caption.40}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{35}{figure.caption.42}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{35}{figure.caption.43}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{36}{figure.caption.44}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{37}{figure.caption.45}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{38}{figure.caption.46}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{40}{figure.caption.48}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Text component horizontal and vertical alignments}}{26}{figure.caption.25}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Text line to text paragraph conversion illustration}}{26}{figure.caption.27}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Text positions in speech balloons}}{27}{figure.caption.28}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Sequential balloon extraction process illustration}}{28}{figure.caption.30}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}}{28}{figure.caption.32}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Speech balloon contour types}}{29}{figure.caption.33}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Active contour energies for open balloon extraction}}{31}{figure.caption.35}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{34}{figure.caption.40}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{34}{figure.caption.42}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{35}{figure.caption.44}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{35}{figure.caption.45}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Convex hull and convexity defects of a speech balloon}}{36}{figure.caption.46}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Tail tip position precise position}}{37}{figure.caption.47}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Tail tip position and direction detection}}{38}{figure.caption.48}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration of the character region of interested computation for each of the eight directions of the tail}}{40}{figure.caption.50}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Independent panel extraction process}}{43}{figure.caption.49}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Independent panel extraction process}}{43}{figure.caption.51}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Original image}}}{43}{subfigure.1.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Binary segmentation}}}{43}{subfigure.1.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Outermost contours}}}{43}{subfigure.1.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Panel contours}}}{43}{subfigure.1.4}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Panel contour hulls}}}{43}{subfigure.1.5}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Panel contour bounding boxes}}}{43}{subfigure.1.6}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Different threshold selection applied on a grey-scale image}}{46}{figure.caption.50}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Inter-connected letters}}{47}{figure.caption.51}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{48}{figure.caption.52}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Examples of text lines from comics images}}{49}{figure.caption.53}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Balloon extraction process}}{50}{figure.caption.54}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Balloon content alignment measures}}{51}{figure.caption.55}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Relation between speech balloon shape and contour informations}}{52}{figure.caption.56}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Balloon contour time series}}{54}{figure.caption.58}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Contour signal decomposition}}{55}{figure.caption.60}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Colour image smoothing and quantization for comic character extraction}}{58}{figure.caption.62}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces User defined comic character selection}}{59}{figure.caption.63}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Comic character query description}}{60}{figure.caption.64}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{61}{figure.caption.65}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Multi-scale comic character spotting}}{62}{figure.caption.66}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Different threshold selection applied on a grey-scale image}}{46}{figure.caption.52}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Inter-connected letters}}{47}{figure.caption.53}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{48}{figure.caption.54}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Balloon extraction process}}{50}{figure.caption.55}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Balloon content alignment measures}}{51}{figure.caption.56}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Relation between speech balloon shape and contour informations}}{52}{figure.caption.57}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Balloon contour time series}}{53}{figure.caption.59}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Contour signal decomposition}}{55}{figure.caption.61}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Colour image smoothing and quantization for comic character extraction}}{57}{figure.caption.63}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces User defined comic character selection}}{58}{figure.caption.64}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Comic character query description}}{60}{figure.caption.65}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Colour mask corresponding to five colour of the query descriptor}}{61}{figure.caption.66}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Multi-scale comic character spotting}}{62}{figure.caption.67}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of semantic information understanding}}{65}{figure.caption.67}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Examples of comic panels that reflect the diversity of comics.\relax }}{66}{figure.caption.68}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces A representation of the image model involved in the expert system}}{67}{figure.caption.69}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Initial comics model}}{69}{figure.caption.74}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Complete comics model}}{70}{figure.caption.76}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Specification of concepts {\it Character}, {\it Balloon} and {\it TextLine}\relax }}{71}{figure.caption.78}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Interaction between the two ontologies.\relax }}{72}{figure.caption.79}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{73}{figure.caption.80}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Process loop of the knowledge-driven system}}{74}{figure.caption.81}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Original panels used to illustrate the different stages of the processing sequence}}{75}{figure.caption.82}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Initial hypothesis about the content of a given image}}{76}{figure.caption.84}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{76}{subfigure.11.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{76}{subfigure.11.2}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Validation of the hypothesis using the constraints of the knowledge base}}{77}{figure.caption.86}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{77}{subfigure.12.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{77}{subfigure.12.2}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base}}{78}{figure.caption.88}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Hypothesis, refinement and spotting of comic character regions from the speech balloon regions}}{79}{figure.caption.90}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Hypothesis regions}}}{79}{subfigure.14.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined regions}}}{79}{subfigure.14.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Spotted regions}}}{79}{subfigure.14.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Knowledge representation}}}{79}{subfigure.14.4}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Validation of the character regions by the expert system}}{80}{figure.caption.92}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of semantic information understanding}}{65}{figure.caption.68}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces A representation of the image model involved in the expert system}}{67}{figure.caption.69}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Initial comics model}}{68}{figure.caption.74}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Complete comics model}}{70}{figure.caption.76}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Specification of concepts {\it Character}, {\it Balloon} and {\it TextLine}\relax }}{71}{figure.caption.78}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Interaction between the two ontologies.\relax }}{71}{figure.caption.79}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Generic representation of the expert system and the relationship between knowledge base, the inference engine and the low-level algorithms}}{73}{figure.caption.80}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Process loop of the knowledge-driven system}}{73}{figure.caption.81}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Original panels used to illustrate the different stages of the processing sequence}}{75}{figure.caption.82}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Initial hypothesis about the content of a given image}}{75}{figure.caption.84}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{75}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{75}{subfigure.10.2}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Validation of the hypothesis using the constraints of the knowledge base}}{77}{figure.caption.86}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{77}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{77}{subfigure.11.2}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base}}{77}{figure.caption.88}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Hypothesis, refinement and spotting of comic character regions from the speech balloon regions}}{79}{figure.caption.90}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Hypothesis regions}}}{79}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined regions}}}{79}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Spotted regions}}}{79}{subfigure.13.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Knowledge representation}}}{79}{subfigure.13.4}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Validation of the character regions by the expert system}}{79}{figure.caption.92}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{79}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{79}{subfigure.14.2}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Inference of the speaking characters and their corresponding semantic links to speech balloons}}{80}{figure.caption.94}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{80}{subfigure.15.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{80}{subfigure.15.2}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Inference of the speaking characters and their corresponding semantic links to speech balloons}}{80}{figure.caption.94}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{80}{subfigure.16.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{80}{subfigure.16.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Distribution of the number of elements per text lines}}{86}{figure.caption.100}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Division line detection for panel extraction}}{89}{figure.caption.102}

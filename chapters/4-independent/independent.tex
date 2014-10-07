@@ -399,12 +399,13 @@ The difficulties are due to typewritten, handwritten or free-form text in unifor
 Note that the text is mainly written in upper case for Latin scripts in comics which reduce the complexity of recognition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
-   \centering
-  \fbox{\includegraphics[trim= 1px 1px 3px 2px, clip, width=0.75\textwidth]{text_line_examples.png}}
-  \caption[Examples of text lines from comics images]{Examples of text lines from comics images.}
-  \label{fig:in:texlines_example}
- \end{figure}
+ % \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+ %   \centering
+ %  \fbox{\includegraphics[trim= 1px 1px 3px 2px, clip, width=0.75\textwidth]{text_line_examples.png}}
+ %  \caption[Examples of text lines from comics images]{Examples of text lines from comics images.}
+ %  \label{fig:in:texlines_example}
+ % \end{figure}
+% MOVED TO SOTA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Text recognition in comics would allow full-text search, tagging, image description, comic character labelling etc.
@@ -663,7 +664,11 @@ This section presents a colour-based approach for comic character spotting using
 
 In this section we detail how to localize comic characters in all pages of a given album.
 We aim at detecting the apparitions of a comic characters (non-rigid object) with a minimum of user interaction. This is a content based image retrieval problem where the result highly depends on the quality of the given example, that should be noise free (no background, target only). 
-A close up view of comics drawings shows that the most invariant information between texture, shape and colour is the colour information. We believe that this feature is the only information which is invariant to scale, object deformation, translation and rotation transformations which are very frequent in comics. The typical drawback of using colour features is that they are sensitive to illumination and contrast variations. This is an important issue for natural images but not for hand drawings if they are drawn and digitized under the same conditions. 
+A close up view of comics drawings shows that the most invariant information between texture, shape and colour is the colour information (Figure~\ref{fig:kn:comics_diversity}).
+In fact, they are no texture in many comics because they are designed with colour flats (see comics design process Section~\ref{sec:document_image_analysis}), nevertheless, the digitization process sometimes creates textures (e.g dithering, compression).
+The shape information suffers from the different postures that can take the comic characters in each panel of the story (Figure~\ref{fig:sota:tarzan}).
+Hence, we believe that the colour information is the most robust information invariant to scale, object deformation, translation and rotation transformations which are very frequent in comics. The typical drawback of using colour features is that they are sensitive to illumination and contrast variations.
+This is an important issue for natural images but not for hand drawings if they are drawn and digitized under the same conditions. 
 
 For all those reasons we based our method on colour information only.
 Given a comic page, we first ask the user about the position of one object example and then we perform an exhaustive search in all the pages of the same album or collection.
@@ -689,7 +694,7 @@ The retrieval (search) step can be extended to other albums from the same collec
 \subsection{Colour quantization}
 Once the user has highlighted the query region, we reduce the number of colours of all the images of the album (including the query region) according to a colour palette $P_c$.
 Colour reduction or quantization generally involves two steps.
-The first step is to choose a proper colour palette and the second step is to reconstruct an image by replacing original colours with the most similar colour from the palette.
+The first step consist in choosing a proper colour palette and the second step is to reconstruct an image by replacing original colours with the most similar colour from the palette.
 
 % \modif{TODO: Il faut donner les détails de la méthode que tu utilises sauf si tu l'as mise dans l'état de l'art au chapitre 2 (faire lien).
 %Describe method and propose L0-smoothing ++ as promising alternative but the chosen method is simple, faster and good enough for our purpose. RGB colour space?}
@@ -740,7 +745,9 @@ This selection can be assisted using a scribble-based tool~\cite{Xu2012LazySelec
 %------------------------------------------------------------------------
 \subsection{Query descriptor}
 
-The query descriptor we use is a non ordered colour vector that contains the information of presence of certain colours in the query ($D \subset P_c$). It is not composed by spatial or quantitative information (e.g. region positions, number of pixels) because these parameters are not scale and deformation invariant.% The integration of these spatial information is the object of current research in our research group.
+The query descriptor we use is a non ordered colour vector that contains the information of presence of certain colours in the query ($D \subset P_c$).
+The fact do not include any spatial or quantitative information (e.g. region positions, number of pixels) allows the method to be scale and deformation invariant.
+% The integration of these spatial information is the object of current research in our research group.
 
 % -------------------------------------
 

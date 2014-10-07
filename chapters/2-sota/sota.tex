@@ -162,12 +162,21 @@ The main sources of noise are the manual operations variabilities, the degradati
 
 % section comic_book_image (end)
 
-Comics images are mixed content documents combining textual and graphical information to create stories.
+Comics images are mixed content documents combining textual and graphical information to create stories (Figure~\ref{fig:kn:comics_diversity}).
 Depending on the purpose, the document analysis techniques involved for comics image processing varies a lot between panel, balloon, text and comic character extractions.
-The contents of different nature are related to each other to produce a story.
+The contents of different natures are related to each other to produce a story (e.g. speech text are related to speech balloon and speaking characters).
 Treating each of the content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher level of semantic.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \includegraphics[trim= 4px 0px 0px 0px, clip, width=0.75\textwidth]{comics_diversity.png}
+  \caption{Examples of panels that reflect the content diversity of comic books.}
+  \label{fig:kn:comics_diversity}
+ \end{figure}
+% ORIGINALY IN KNOWLEDGE-DRIVEN APPROACH SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Panel extraction and layout analysis}
 \label{sec:sota:layout_panel}
@@ -299,15 +308,32 @@ Note that balloon classification and tail detection are also important in a cont
 % 	\item \url{/Text_graphic_separation/2002_Bernhaupt_Using ArtificialNeuralNetwork as image segmentation : application on comics} 
 % \end{itemize}
 
+The challenges of text extraction and recognition in comic books are the multi-script, multi-oriented and complex background aspects.
+Figure~\ref{fig:in:texlines_example} illustrates the diversity of text in comic books.
+First of all, the text lines are quite short compare to other type of documents (see experiment Section~\ref{sec:dataset_description}) and, according to the style of the comics, there are variations of fonts (mainly handwritten), case, orientation, scale, spelling (from dictionary or with voluntary spelling mistakes) and hyphenation.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
+   \centering
+  \fbox{\includegraphics[trim= 1px 1px 3px 2px, clip, width=0.75\textwidth]{text_line_examples.png}}
+  \caption[Examples of text lines from comics images]{Examples of text lines from comics images.}
+  \label{fig:in:texlines_example}
+ \end{figure}
+% ORIGINALY IN INDEPENDENT APPROACH > TEXT RECOGNITION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Document analysis techniques are not designed to handle such diversity of texts within the same document, we first review another related field of research which is scene text detection and recognition.
 Text localization in real scenes and video frames is an active research topic~\cite{Jung04,ShahabICDAR2011Robust,KaratzasICDAR2013Robust}.
-One of the challenges related to the comic books are the multi-script and multi-oriented aspects.
 Recent methods have been propose for scene text detection~\cite{kasar2012multi,gomez2013multi}.
 However, applying existing real scene text detection methods to comics would not be optimal to cope with all the different types of text that are combined in comic book documents (e.g. typewritten, handwritten, graphic sound).
 If we consider typewritten text, the most similar application to comics is car plate recognition because the text is in a salient and contrasted area with a complex background around the plate such as speech balloon for comics~\cite{anagnostopoulos2008license}.
 The documents that have attracted of lot a attention are newspapers, administrative documents, cheques, maps, music scores, floor plans and engineering drawings~\cite{nagy2000twenty}.
 Also, an important effort have been done to separate text from graphical content from such types of document with the focus of improving the post processing of both types of content by treating them separately.
 Fletcher and Katsuri~\cite{fletcher1988robust} are the reference in this domain which continue to be explored more than twenty years after for more and more complex documents~\cite{tombre2002text,Roy2007Text}.
-From our knowledge, text/graphic separation have not been studied for any kind of text that we can found in comic book images (e.g speech texts, onomatopoeias, captions).
+From our knowledge, only one preliminary study have been proposed for text/graphic separation in comics~\cite{BernhauptWSES2001}.
+This approach relies on artificial neural network, edge and corner detection.
+The authors report results on very few panels and only for speech text, thus it can not be generalised to that we can found in comic book images (e.g speech texts, onomatopoeias, captions).
 Nevertheless, text localization in comic images have been recently investigated and opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
 % Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
@@ -377,7 +403,7 @@ This work shows good results for manga part retrieval which is a subset of the w
 % In our work we focus on a complementary subset, corresponding to coloured comics analysis.
 
 Coloured comics may be compared to cartoon images sequence, for which a first work based on HOG, SVM and colour attributes has been published in 2012~\cite{Khan12}.
-Preliminary work about cartoon and comics faces recognition have been carried out by Kohei~\cite{Kohei2012} and Cheung~\cite{cheung2008face}.
+Preliminary work about cartoon and comics faces recognition have been carried out by Kohei~\cite{Kohei2012}, Cheung~\cite{cheung2008face} and Bernhaupt~\cite{BernhauptWSES2001}.
 More recently, graph theory has been used to find redundant colour structure in order to automatically localize the most frequent colour group apparition and label them as main characters~\cite{HoGREC2013}.
 The thesis of Ta~\cite{TAPhD2010} (sections 1.1 and 1.2) gives a good overview about stroke-based image analysis similar to comics, it defines the issues of poor information, occlusion, deformation, inter-class and intra-class variations, scale, spatial and/or temporal relations and structured data.
 Ta~\cite{TAPhD2010} also mentions that ``story board scene understanding still remains an open problem, few results are available in the literature about stroke images''.

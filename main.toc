@@ -15,32 +15,32 @@
 \contentsline {section}{\numberline {2.2}Comic book image analysis}{12}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Panel extraction and layout analysis}{12}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Balloon segmentation and tail detection}{13}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Text extraction and recognition}{15}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Comic character detection}{16}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Holistic understanding}{17}{section.2.3}
-\contentsline {section}{\numberline {2.4}Existing applications}{18}{section.2.4}
-\contentsline {section}{\numberline {2.5}Conclusion}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.2.3}Text extraction and recognition}{16}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Comic character detection}{18}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Holistic understanding}{19}{section.2.3}
+\contentsline {section}{\numberline {2.4}Existing applications}{19}{section.2.4}
+\contentsline {section}{\numberline {2.5}Conclusion}{20}{section.2.5}
 \contentsline {chapter}{\numberline {3}Sequential information extraction}{21}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}
 \contentsline {section}{\numberline {3.2}Panel and text}{22}{section.3.2}
-\contentsline {subsubsection}{Binary segmentation}{22}{section*.15}
-\contentsline {subsubsection}{Connected-component extraction}{23}{section*.16}
-\contentsline {subsubsection}{Clustering}{24}{section*.18}
-\contentsline {subsubsection}{Panel pruning}{24}{section*.20}
-\contentsline {subsubsection}{Letter to text line}{25}{section*.22}
-\contentsline {subsubsection}{Text line to paragraph}{26}{section*.24}
+\contentsline {subsubsection}{Binary segmentation}{22}{section*.17}
+\contentsline {subsubsection}{Connected-component extraction}{23}{section*.18}
+\contentsline {subsubsection}{Clustering}{24}{section*.20}
+\contentsline {subsubsection}{Panel pruning}{24}{section*.22}
+\contentsline {subsubsection}{Letter to text line}{25}{section*.24}
+\contentsline {subsubsection}{Text line to paragraph}{26}{section*.26}
 \contentsline {section}{\numberline {3.3}From text to balloon}{27}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Regular balloon extraction}{27}{subsection.3.3.1}
-\contentsline {subsubsection}{Blob extraction}{27}{section*.27}
-\contentsline {subsubsection}{Balloon extraction}{28}{section*.29}
+\contentsline {subsubsection}{Blob extraction}{27}{section*.29}
+\contentsline {subsubsection}{Balloon extraction}{28}{section*.31}
 \contentsline {subsection}{\numberline {3.3.2}Implicit balloon extraction}{29}{subsection.3.3.2}
-\contentsline {subsubsection}{External energy}{30}{section*.32}
-\contentsline {subsubsection}{Internal energy}{31}{section*.34}
-\contentsline {subsubsection}{Text energy}{32}{section*.35}
-\contentsline {subsubsection}{Proposed method}{32}{section*.36}
-\contentsline {paragraph}{Active contour initialisation}{33}{section*.37}
-\contentsline {paragraph}{Low resolution contour fitting}{33}{section*.39}
-\contentsline {paragraph}{High resolution contour fitting}{34}{section*.41}
+\contentsline {subsubsection}{External energy}{30}{section*.34}
+\contentsline {subsubsection}{Internal energy}{31}{section*.36}
+\contentsline {subsubsection}{Text energy}{32}{section*.37}
+\contentsline {subsubsection}{Proposed method}{32}{section*.38}
+\contentsline {paragraph}{Active contour initialisation}{33}{section*.39}
+\contentsline {paragraph}{Low resolution contour fitting}{33}{section*.41}
+\contentsline {paragraph}{High resolution contour fitting}{34}{section*.43}
 \contentsline {section}{\numberline {3.4}From balloon to tail}{35}{section.3.4}
 \contentsline {section}{\numberline {3.5}From tail to comic character}{39}{section.3.5}
 \contentsline {section}{\numberline {3.6}Conclusions}{40}{section.3.6}
@@ -56,39 +56,39 @@
 \contentsline {section}{\numberline {4.4}Balloon extraction and classification}{48}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Balloon segmentation}{49}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Balloon classification}{51}{subsection.4.4.2}
-\contentsline {subsubsection}{Shape/contour separation}{53}{section*.57}
-\contentsline {subsubsection}{Contour description}{53}{section*.59}
-\contentsline {subsubsection}{Contour classification}{55}{section*.61}
-\contentsline {section}{\numberline {4.5}Comic character spotting}{56}{section.4.5}
+\contentsline {subsubsection}{Shape/contour separation}{52}{section*.58}
+\contentsline {subsubsection}{Contour description}{54}{section*.60}
+\contentsline {subsubsection}{Contour classification}{55}{section*.62}
+\contentsline {section}{\numberline {4.5}Comic character spotting}{55}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Colour quantization}{56}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Input query}{57}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{57}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.2}Input query}{58}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Query descriptor}{58}{subsection.4.5.3}
 \contentsline {subsection}{\numberline {4.5.4}Object retrieval}{59}{subsection.4.5.4}
 \contentsline {section}{\numberline {4.6}Conclusions}{61}{section.4.6}
 \contentsline {chapter}{\numberline {5}Knowledge-driven analysis}{65}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{65}{section.5.1}
 \contentsline {section}{\numberline {5.2}Proposed models}{66}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Image processing domain}{67}{subsection.5.2.1}
-\contentsline {paragraph}{Image concept}{67}{section*.70}
-\contentsline {paragraph}{Region Of Interest concept}{68}{section*.71}
-\contentsline {paragraph}{Region extractor concept}{68}{section*.72}
+\contentsline {subsection}{\numberline {5.2.1}Image processing domain}{66}{subsection.5.2.1}
+\contentsline {paragraph}{Image concept}{66}{section*.70}
+\contentsline {paragraph}{Region Of Interest concept}{67}{section*.71}
+\contentsline {paragraph}{Region extractor concept}{67}{section*.72}
 \contentsline {subsection}{\numberline {5.2.2}Comics domain}{68}{subsection.5.2.2}
 \contentsline {paragraph}{Album and pages}{68}{section*.73}
 \contentsline {paragraph}{Page content}{69}{section*.75}
-\contentsline {paragraph}{Specialisation of the content}{71}{section*.77}
+\contentsline {paragraph}{Specialisation of the content}{69}{section*.77}
 \contentsline {subsection}{\numberline {5.2.3}Model interactions}{71}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}Expert system for contextual analysis}{72}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Interactions between low and high level processing}{72}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Constrains for the low level extractions}{74}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Processing sequence}{75}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Simple element extraction}{75}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.3.2}Constrains for the low level extractions}{73}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Processing sequence}{74}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Simple element extraction}{74}{subsection.5.4.1}
 \contentsline {paragraph}{Iteration 1 - step 1 (hypothesis)}{75}{section*.83}
-\contentsline {paragraph}{Iteration 1 - step 2 (validation)}{76}{section*.85}
-\contentsline {paragraph}{Iteration 1 - step 3 (inference)}{77}{section*.87}
+\contentsline {paragraph}{Iteration 1 - step 2 (validation)}{75}{section*.85}
+\contentsline {paragraph}{Iteration 1 - step 3 (inference)}{76}{section*.87}
 \contentsline {subsection}{\numberline {5.4.2}Complex element extraction}{77}{subsection.5.4.2}
-\contentsline {paragraph}{Iteration 2 - step 1 (hypothesis)}{78}{section*.89}
+\contentsline {paragraph}{Iteration 2 - step 1 (hypothesis)}{77}{section*.89}
 \contentsline {paragraph}{Iteration 2 - step 2 (validation)}{78}{section*.91}
-\contentsline {paragraph}{Iteration 2 - step 3 (inference)}{79}{section*.93}
+\contentsline {paragraph}{Iteration 2 - step 3 (inference)}{78}{section*.93}
 \contentsline {section}{\numberline {5.5}Conclusions}{80}{section.5.5}
 \contentsline {chapter}{\numberline {6}Experimentations}{83}{chapter.6}
 \contentsline {section}{\numberline {6.1}Dataset and ground truth}{83}{section.6.1}

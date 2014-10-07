@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  7 OCT 2014 11:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  7 OCT 2014 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1777,7 +1777,12 @@ File: ./chapters/2-sota/figs/prunelle.png Graphic file (type png)
 Package pdftex.def Info: ./chapters/2-sota/figs/prunelle.png used on input line
  392.
 (pdftex.def)             Requested size: 220.8258pt x 68.97708pt.
- [18 <./chapters/2-sota/figs/prunelle.png>] [19]
+
+
+LaTeX Warning: Citation `BernhauptWSES2001' on page 18 undefined on input line 
+406.
+
+[18 <./chapters/2-sota/figs/prunelle.png>] [19]
 Overfull \hbox (4.96925pt too wide) in paragraph at lines 508--509
 []\OT1/cmr/bx/n/10 TODO: JMO: bien mais m^^Seriterait d'^etre ^^Setoff^^Se pour
  mon-trer ta maitrise
@@ -2222,21 +2227,21 @@ Package pdftex.def Info: ./chapters/4-independent/figs/user_selection.png used
 on input line 739.
 (pdftex.def)             Requested size: 184.9429pt x 182.36696pt.
  [58 <./chapters/4-independent/figs/user_selection.png>]
-<./chapters/4-independent/figs/description_sequence.png, id=2816, 874.26625pt x
+<./chapters/4-independent/figs/description_sequence.png, id=2815, 874.26625pt x
  583.17876pt>
 File: ./chapters/4-independent/figs/description_sequence.png Graphic file (type
  png)
  <use ./chapters/4-independent/figs/description_sequence.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/description_sequence.png
- used on input line 854.
+ used on input line 858.
 (pdftex.def)             Requested size: 332.89497pt x 222.05516pt.
 
-<./chapters/4-independent/figs/masks.png, id=2820, 878.28125pt x 1093.08376pt>
+<./chapters/4-independent/figs/masks.png, id=2819, 878.28125pt x 1093.08376pt>
 File: ./chapters/4-independent/figs/masks.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/masks.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/masks.png used on input 
-line 874.
+line 878.
 (pdftex.def)             Requested size: 295.90977pt x 368.29106pt.
  [59]
 <./chapters/4-independent/figs/filtering.png, id=2838, 511.9125pt x 264.99pt>
@@ -2244,11 +2249,8 @@ File: ./chapters/4-independent/figs/filtering.png Graphic file (type png)
 
 <use ./chapters/4-independent/figs/filtering.png>
 Package pdftex.def Info: ./chapters/4-independent/figs/filtering.png used on in
-put line 932.
+put line 936.
 (pdftex.def)             Requested size: 258.91893pt x 133.51945pt.
-
-Underfull \vbox (badness 6708) has occurred while \output is active []
-
  [60 <./chapters/4-independent/figs/description_sequence.png>] [61 <./chapters/
 4-independent/figs/masks.png>]
 Underfull \vbox (badness 1490) has occurred while \output is active []
@@ -3439,8 +3441,8 @@ Package rerunfilecheck Warning: File `main.brf' has changed.
 (rerunfilecheck)                Rerun to get bibliographical references right.
 
 Package rerunfilecheck Info: Checksums for `main.brf':
-(rerunfilecheck)             Before: 7EDCA43501EDE34FCB17BA41FDAB8870;15310
-(rerunfilecheck)             After:  7DB507A3ECBA9595C39CB2A56CED8706;15310.
+(rerunfilecheck)             Before: 7DB507A3ECBA9595C39CB2A56CED8706;15310
+(rerunfilecheck)             After:  0AA05AB5235DFF0566BB93F6EE49E783;15372.
 
 LaTeX Warning: There were undefined references.
 
@@ -3483,7 +3485,7 @@ ublic/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw
 tmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loc
 al/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (195 pages, 21213365 bytes).
+Output written on main.pdf (195 pages, 21213910 bytes).
 PDF statistics:
  6187 PDF objects out of 7423 (max. 8388607)
  4213 compressed objects within 43 object streams

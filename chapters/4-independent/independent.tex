@@ -8,7 +8,7 @@
 %----------------------------------------------------------------------------------------------------------------------
 
 In this chapter we propose an independent extraction of each element contained by comic book images in order to make the image interpretation more flexible.
-This approach tries to fill the weaknesses of the sequential approach presented in the previous chapter by making each specific content extraction algorithm independent from each other thus avoiding error propagation.
+This approach tries to fill the weaknesses of the sequential approach presented in the previous chapter by making each specific content extraction algorithm independent from each other in order to avoiding error propagation.
 New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order or in simultaneously as they are totally independent from each other.
 Reaching such level of independence requires to embed more domain knowledge in each processing algorithm in order to give then the ability to autonomously process an image (without needing previous information extraction) with a similar performance to the sequential approach.
 
@@ -799,10 +799,12 @@ The fact do not include any spatial or quantitative information (e.g. region pos
 
 
 The colour subset $D$ is composed by the $N$ colours the most represented in the query region and that are the most discriminating in the image or collection.
-We define two metrics for each colour of the query region in order to determinate which ones will be used for the query description.
+We define two metrics for each colour of the query region in order to determinate which colour will be used for the query description.
 The first metric $L_{1c}$ corresponds to the number of pixels of a colour $c$ in the query region (colour histogram Figure~\ref{fig:in:dominant_colour_hist_desc}) and the second one $L_{2c}$, the discriminability level of the colour $c$ in the whole image.
 
-The discriminability level can be formalized as a TF-IDF~\cite{salton1986introduction} (Term Frequency - Inverse Document Frequency) numerical statistics that allows us to identify the importance weights of the different colour values in the query image.
+The discriminability level aims at informing about how a given colour is relevant for describing the comic character.
+The optimal situation is when a colour appears a lot in the region of the character and only in this region, this would facilitates the character spotting process.
+It can be formalized as a TF-IDF~\cite{salton1986introduction} (Term Frequency - Inverse Document Frequency) numerical statistics that allows us to identify the importance weights of the different colour values in the query image.
 In our application, the {\it term frequency} $(tf)$ corresponds to the ratio of pixels of a particular hue value $h_i$ in the set of hue values that compose the query region $qH=\{h_0, h_1,...,h_n\}$.
 % over the number of pixel in the query region $q$.
 The {\it inverse document frequency} $(idf)$ corresponds, for a given hue value $h_i$, to the logarithm of the total number of pixels in the image $|p|$ (corpus) over the number of pixels of hue value $h_i$ in the image $|p| \cup |h_i|$.
@@ -890,7 +892,7 @@ The confidence $C_{w_i}$ is defined as follow:
 where $C_{w_i}$ is the confidence value for the region $w_i$, $|D|$ the cardinality of the colour set $D$ and $|D \cap w_i|$ the cardinality (number of elements) of the intersection between $D$ and $w_i$ .
 
 The confidence value is compared to a threshold value $T$ to decide whether the detection is correct or not.
-See detection part of Algorithm~\ref{al:in:retrieval}.
+See the detection part of Algorithm~\ref{al:in:retrieval}.
 The threshold $T$ is discussed Section~\ref{sec:comic_character_extraction_evaluation}.
 By using a multi-scale approach, a same region may be detected at different scales.
 In order to keep only the smallest region that includes a minimal amount of background information, we compute a score $p$ for each detected regions, which is the percentage of pixel that are of a colour from the descriptor. 
@@ -944,20 +946,21 @@ See filtering part of Algorithm~\ref{al:in:retrieval} and the illustration Figur
 \label{sec:in:conclusion}
 
 In this chapter we have proposed independent extraction methods for panel, text, balloon and comic characters.
+The advantage of such independent processing compared to the sequential approach presented in the previous chapter is the non propagation of errors throughout the process and the flexibility for adapting each contribution to different configurations or other domains.
 
 %PANEL
 The panel extraction method is simple, fast and efficient for comics layout that have disconnected panels as the method relies on outermost contour analysis.
 This method is experimented Section~\ref{sub:ex:panel_extraction_evaluation}.
 %TEXT
 The proposed approach for text extraction consists in an adapted bi-level segmentation followed by a filtering process of three steps based on contrast, topology and local similarities to classify the connected-components as graphics or text region.
-A final text line level verification valid the textual content of the candidate regions using an OCR system.
-The method does not requires previous knowledge about the image content unlike the sequential approach proposed Section~\ref{sec:se:panel_and_text} that is implicitly linked to the panel regions.
-This method is experimented Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
+A final text line level verification validates the textual content of the candidate regions using an OCR system.
+The method does not require previous knowledge about the image content unlike the sequential approach proposed Section~\ref{sec:se:panel_and_text} that is implicitly linked to the panel regions.
+This method is experimented and discussed Section~\ref{sub:ex:text_extraction_recognition_evaluation}.
 
 %BALLOON EXTRACTION, CLASSIFICATION AND TAIl
 Independent balloon extraction and classification methods have been presented.
 The balloon extractor relies on topological and spatial relations similarly to the text extraction method.
-In fact, balloon and text extractions are often correlated in the literature as well because those regions are often associated to convey most of the textual information of comics.
+In fact, balloon and text extractions are often correlated in the literature because those regions are often associated to convey most of the textual information of comics.
 As mentioned earlier, tail detection without previous balloon segmentation makes no sense because it is a specific region of the balloon contour.
 This method is experimented Section~\ref{sub:ex:balloon_extraction_evaluation}.
 %CHARACTERS
@@ -965,9 +968,10 @@ Unsupervised comic characters extraction is a real challenge, here we proposed a
 %GENERAL
 In each extraction process, we strive to produce indicators of confidence, conscious that it could be useful for a higher level processing system such as that presented in the next chapter.
 
-In the next chapter, a high level approach for understanding the image content and its semantic is presented.
-We propose a model to embed the domain knowledge of both comic books and image processing.
-This model allows consistency analysis of extracted information and inference of the relations between all the extracted elements such as the reading order, the type of text (e.g. spoken, onomatopoeic, illustrative) and the positions of the speaking characters.
+In the next chapter, we propose to go one step forward by using a system able to measure and improve the coherence of the information being extracted.
+This high level approach is also used for understanding the image content and retrieve the semantic relations between elements (context).
+We propose two models to embed the domain knowledge of both comic books and image processing.
+These models allows consistency analysis of extracted information and inference of the relations between all the extracted elements such as the reading order, the type of text (e.g. spoken, onomatopoeic, illustrative) and the relations between the speech balloons and the speaking characters.
 
 % This approach is based on a expert system coupled with an inference engine.
 

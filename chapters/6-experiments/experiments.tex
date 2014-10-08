@@ -101,7 +101,7 @@ The pages themselves have very diverse characteristics.
 Among all, 72 are printed in colours and according to the authors and periods, there are a majority of the tint areas, watercolours and hand-coloured areas.
 Among the remaining 28, 16 have are greyscale and 12 are simply black and white.
 One album has two versions of each page, one in colour and the other one in black and white.
-We have integrated an examples of each of them in order to allow performance comparison of algorithms on the same graphic style by using colour information or not.
+We have integrated examples of each of them in order to allow performance comparison of algorithms on the same graphic style by using colour information or not.
 Five of the 100 images are double page, others are single page and 20\% are not A4 format.
 % We therefore, strictly speaking, 105 and 100 pages not in our database, each with a distinct structure
 % paragraph pages (end)
@@ -109,7 +109,7 @@ Five of the 100 images are double page, others are single page and 20\% are not 
 \paragraph{Panels} % (fold)
 \label{par:panels}
 The panels contained in the pages are of various shapes.
-Although most of them are bounded by a black line, a significant proportion has at least one part of the panel which is indistinguishable from the background of the page (framele panel).
+Although most of them are bounded by a black line, a significant proportion has at least one part of the panel which is indistinguishable from the background of the page (frameless panel).
 Two pages consist only of frameless panels, the visual delimitation uses background contrast difference between the panel and image.
 Nine images contain overlapping panels, twelve contain only panels without border and several have panels connected by a straddle object.
 
@@ -119,7 +119,7 @@ Nine images contain overlapping panels, twelve contain only panels without borde
 \label{par:balloons}
 The balloons also contain a great diversity.
 Some of them are completely surrounded by a black stroke, some partially and others not at all.
-They have a bright background with a rectangular, oval or non geometric shape with ``smooth'', ``wavy'' or ``spiky'' contour in general.
+They have a bright background with a rectangular, oval or non-geometric shape with ``smooth'', ``wavy'' or ``spiky'' contour in general.
 Most of them have a tail pointing towards the speaker, but some have not.
 There is text without any surrounding balloons on 33 images of the corpus.
 % and 8 of them simply contain no bubble.
@@ -197,7 +197,7 @@ The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or fal
 \end{equation}
 
 Detections returned by a method are assigned to ground truth objects satisfying the overlap criterion ranked by the confidence output (decreasing).
-Multiple detections of the same object in an image are considered as false detections (e.g. 5 detections of a single object counted as 1 correct detection and 4 false detections).
+Multiple detections of the same object in an image are considered as false detections (e.g. 5 detections of a single object counted as 1 correct and 4 wrong detections).
 
 The number of $TP$, $FP$ and false negative (missed elements) $FN$ are used to compute the recall $R$, precision $P$ and F-measure $F$ of each method using Formulas~\ref{eq:ex:recall_precision}.
 % We also compute the F-measure $F$ for each result.
@@ -351,7 +351,7 @@ The score of this method was in average for recall and precision of 20.00\% and 
 \subsection{Ho's method} % (fold)
 We have implemented the Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the region growing method to 20 (not mentioned in the original paper).
 The image border is filled with the average five-pixel page border colour and four seeds are initialized on the four corners of the image.
-When the region growing algorithm stops, the background is removed which separated panel blocks.
+When the region growing algorithm stops, the background is removed which separates panel blocks.
 Mathematical morphology (dilatation) is then applied until blocks become smaller than $1/6$ of the page size and then the same number of erosion is applied in order to give back to the objects their initial size.
 This manipulation separates the connected panels but has the disadvantage of creating unwanted holes as well (Figure~\ref{fig:ex:panel_ho_extraction_process}).
 
@@ -366,7 +366,7 @@ This manipulation separates the connected panels but has the disadvantage of cre
   \hspace{1em}
   \subfloat[After dilatation step]{\label{fig:ex:panel_ho_dilate}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho03.png}}
   \subfloat[After erosion step]{\label{fig:ex:panel_ho_erode}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho04.png}}  
-    \caption[Panel extraction process of Ho]{Panel extraction and separation process of Ho~\cite{Ho2012}.}
+    \caption[Panel extraction process of Ho's method]{Panel extraction and separation process of Ho~\cite{Ho2012}.}
     \label{fig:ex:panel_ho_extraction_process}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -387,7 +387,7 @@ The score of this method was in average for recall and precision of 49.76\% and 
 
 The method presented in Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
 Note that the method also extract text region at the same time which does not interfere with panel (Section~\ref{sub:ex:text_extraction_recognition_evaluation}).
-The score of this method  was in average for recall and precision of 64.24\% and 83.81\% (Figure~\ref{fig:ex:panel_methodA_extraction_detail}).
+The score of this method was in average for recall and precision of 64.24\% and 83.81\% (Figure~\ref{fig:ex:panel_methodA_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -402,7 +402,7 @@ The score of this method  was in average for recall and precision of 64.24\% and
 % \label{sub:method_b}
 The method presented in Section~\ref{sec:in:panel_extraction} requires only a minimal area factor.
 Assuming that a panel is a big region, we ignored the panel detection with a area lower than 4\% ($minAreaFactor$) of the page area according to a validation on the eBDtheque dataset.
-This parameter avoids to consider small and isolated elements (e.g text, logo, page number) as panel.
+This parameter avoids considering small and isolated elements (e.g. text, logo and page number) as panel.
 The score of this method was in average for recall and precision of 62.94\% and 87.30\% (Figure~\ref{fig:ex:panel_methodB_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -506,18 +506,18 @@ The main drawback of the Arai's method is the binary segmentation with a fixed v
 This method is only appropriate for webcomics with a perfectly white background clear separation between panels (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
 
 Ho's method is adaptive to background variation but considers as panel all the elements that are directly included (first topological level) in the page background.
-This produce an over-segmentation by including some text which are inside the frame-less panels or inside implicit balloons.
+This produces an over-segmentation by including some text which are inside the frame-less panels or inside implicit balloons.
 When those out of panel elements are small, they prevent the connected panel separation process to work properly because the stopping criterion is based on element size.
 
 The first method we proposed (Method S) extracts panel and text simultaneously and then other elements in a sequential manner.
-It assumes that there are the distinguishable cluster of connected-component height in the image which is not always the case in this dataset.
+It assumes that there are distinguishable clusters of connected-component in the image which is not always the case.
 Anyway, it still more powerful that the two method from the literature, mainly because of the more generic pre-processing steps.
 
 The second proposed panel extraction method (Method I), based on connected-component clustering, is simple to implement, fast and efficient for comics with disconnected panels (separated by a white gutter).
 % Figure~\ref{ap:panel_extraction} shows the details for each image tested, which were mainly comics with gutters.
 % The proposed method is not appropriate for gutterless comics such as ``INOUE'' or strip without panel border such as ``MONTAIGNE'' or a extra frame around several panels (``SAINTOGAN\_PROSPER'').
 This method is not appropriate for gutterless comics (e.b. some mangas) or strip without panel borders such as those with an extra frame around several panels.
-Another weakness is when panels are connected by other elements, they may not be split as desired but will remain clustered as panel anyway.
+Another weakness is when panels are connected by other elements; they may not be split as desired but will remain clustered as panel anyway.
 
 Method K benefits form the domain knowledge to filter out irrelevant panel candidates from the independent extraction approach (Method I).
 Nevertheless, the validation by the expert system was not significant here because the low level processing had already reached the limits of the model (Section~\ref{sub:kn:comics_domain}).
@@ -533,8 +533,8 @@ Nevertheless, the validation by the expert system was not significant here becau
 \section{Text extraction evaluation} % (fold)
 \label{sub:ex:text_extraction_recognition_evaluation}
 
-In this section we evaluated our three propositions for text extraction and compare them to a methods from the literature.
-We selected Arai's method as it is the most advanced method that have been applied to comic book images.
+In this section we evaluated our three propositions for text extraction and compare them to methods from the literature.
+We selected Arai's method as it is the most advanced method that has been applied to comic book images.
 All the evaluations of text localisation were performed on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} at object bounding box level (Section~\ref{sub:ex:object_localisation_metric}).
 Text recognition evaluations have been performed on the same dataset but using the accuracy metric presented in Section~\ref{sub:ex:text_recognition_metric}.
 
@@ -572,9 +572,9 @@ The score of this method was in average for recall and precision of 2.81\% and 1
 
 \subsection{Sequential approach} % (fold)
 % \label{sub:method_1}
-The method proposed in Section~\ref{sec:se:panel_and_text} does not require any particular parameter, only the number of clusters has to be fixed $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
+The method proposed in Section~\ref{sec:se:panel_and_text} do not require any particular parameter, only the number of clusters has to be fixed $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
 Note that the method is designed to simultaneously extract panel regions which does not interfere with text.
-The score of this method  was in average for recall and precision of 54.68\% and 56.92\% (Figure~\ref{fig:ex:text_methodA_extraction_detail}).
+The score of this method was in average for recall and precision of 54.68\% and 56.92\% (Figure~\ref{fig:ex:text_methodA_extraction_detail}).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -753,7 +753,7 @@ Table~\ref{tab:text_results} summarise the recall, precision and f-measure of th
 
 Arai's method is a sequential approach that requires panel and balloon regions as input.
 As shown in Table~\ref{tab:ex:balloon_localisation_comparison_results}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn (Table~\ref{tab:text_results}).
-Moreover, this text extraction method uses several thresholds which reduces its fields of application.
+Moreover, this text extraction method uses several thresholds which reduce its fields of application.
 
 
 % In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
@@ -854,7 +854,7 @@ Not all the white blobs correspond to balloons in the comic book images, especia
 The method selects blob candidates according to four rules based on blob size, white pixel occurrence, vertical straight line detection and width to length ratio.
 We re-implemented all the rules and heuristics of the original paper except for the straight line detection that we rotated of 90 degrees for images using horizontal text.
 
-The score of this method  was in average for recall and precision of 13.40\% and 11.76\% (Figure~\ref{fig:ex:balloon_arai_extraction_detail}).
+The score of this method was in average for recall and precision of 13.40\% and 11.76\% (Figure~\ref{fig:ex:balloon_arai_extraction_detail}).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -871,7 +871,7 @@ The score of this method  was in average for recall and precision of 13.40\% and
 % \label{sub:arai_s_method_cite}
 
 Ho's method is a sequential approach, similarly to Arai's approach, that extracts balloon inside panel regions in order to extract text inside~\cite{Ho2012}.
-First it converts the image from RBG to HSV colour representation and select candidate regions with a high value (V) and low saturation (S) level.
+First it converts the image from RBG to HSV colour representation and selects candidate regions with a high value (V) and low saturation (S) level.
 To reduce the number of candidate regions, a second selection is applied according to size and shape.
 Small regions are removed and only regions with a ratio between the number of pixel in the region over the number of pixel in its bounding higher than 60\% are kept.
 In the original paper, only the ratio between the region area and its bounding box was given (60\%).
@@ -879,7 +879,7 @@ Low value (V) and high saturation (S) values were not mentioned in the original 
 We fixed $B=200$, only region with a higher brightness level are kept.
 We considered as small regions the region with a width or height inferior to three pixels.
 
-The score of this method  was in average for recall and precision of 13.96\% and 24.73\% (Figure~\ref{fig:ex:balloon_ho_extraction_detail}).
+The score of this method was in average for recall and precision of 13.96\% and 24.73\% (Figure~\ref{fig:ex:balloon_ho_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -982,12 +982,12 @@ The best score for object level detection ($R=57.76\%$ and $P=41.62\%$) are deta
 \subsection{Independent approach} % (fold)
 % \label{sub:method_b}
 
-We introduced Method I in Section~\ref{sub:in:balloon_segmentation}, it is a independent approach that does not require any previous other element extraction.
+We introduced Method I in Section~\ref{sub:in:balloon_segmentation}, it is an independent approach that does not require any previous other element extraction.
 This method requires one parameter which is the minimum number of children $minNbChildren$ of a balloon (number of included connected-components).
 We set $minNbChildren=8$ according to the parameter validation, just before the first peak in the distribution of the number of letters per speech balloon (Figure~\ref{fig:ex:min_number_children_validation}).
 Note that in Figure~\ref{fig:ex:min_number_children_validation}, there are about 3.5\% of the balloons below the selected threshold that contain one or two letters, usually punctuation marks.
 %such as ``?'' or ``!''. 
-We voluntary omitted them here to avoid detecting a lot of non balloon regions.
+We voluntary omitted them here to avoid detecting a lot of non-balloon regions.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[h]%trim=l b r t  width=0.5\textwidth,  
@@ -1006,7 +1006,7 @@ This regular balloon extraction method attributes a confidence value $C_{balloon
 The best score of $R=52.68\%$ and $P=44.17\%$ was obtained for $C_{balloon} > 50\%$.
 Note that we observed a drop in the performance when considering only balloons with a confidence value $C_{balloon}$ higher than $60\%$.
 % Details are given Figure~\ref{fig:ex:balloon_methodB_extraction_detail}.
-Figure~\ref{fig:ex:balloon_methodB_extraction_detail} confirms that our method works best for images where the balloons are closed, well segmented and with non cursive text inside (in order to create a sufficient number of connected-components).
+Figure~\ref{fig:ex:balloon_methodB_extraction_detail} confirms that our method works best for images where the balloons are closed, well segmented and with non-cursive text inside (in order to create a sufficient number of connected-components).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -1237,7 +1237,7 @@ Second, it is faster to compute.
 
 The presented implicit balloon extraction version of Method S highly depends on the active contour initialization success.
 In this study, we relied on text detection as we assume it is the most common feature that balloons include, while past experiments have shown that its accurate detection is feasible and stable.
-A side-effect of this choice is that balloons sometimes can not be detected because they contain non text information (e.g. drawings, punctuation).
+A side-effect of this choice is that balloons sometimes can not be detected because they contain non-text information (e.g. drawings, punctuation).
 % the text line detector is not always used was not able to detect balloons that contain other contents (e.g. drawings, punctuation).
 %and its bounding box level may also include non-textual information (e.g. portion of the balloon contour) that alter our method. % see fig.~\ref{fig:case_of_failure}. Moreover, : text line bounding boxes removal may also remove some part of the drawing before the external energy edge detection
 We believe there is room for improvement of the different energy terms we used.
@@ -1556,7 +1556,7 @@ Also, the tail of the balloon creates some noise and the radius average ($\bar{o
     \centering
     \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{bad_detection.png}
     \includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=300px]{wavy_instead_smooth.png}
-    \caption{Wrong classification examples which have been classified as ``smooth'' instead of  ``wavy'' in the first row and ``wavy'' instead of  ``smooth'' in the second row.}
+    \caption[Wrong balloon classification examples]{Wrong classification examples which have been classified as ``smooth'' instead of  ``wavy'' in the first row and ``wavy'' instead of  ``smooth'' in the second row.}
     \label{fig:bad_detection_balloon_classification}
   \end{figure}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1596,7 +1596,7 @@ The comparison of the three balloon extraction method will highlight the part of
 As introduced in Section~\ref{sub:ex:tail_detection_metric}, we use two accuracy metrics, one for the predicted position of the tail tip $A_{tailTip}$ and the other one for the tail direction $A_{tailDir}$
  (Table~\ref{tab:ex:tail_evaluation}).
 
-%and from the regular and implicit balloon extraction methods presented Section~\ref{sec:se:from_text_to_balloon} as their are the previous steps in the sequential approach (Table~\ref{tab:ex:tail_evaluation}).
+%and from the regular and implicit balloon extraction methods presented Section~\ref{sec:se:from_text_to_balloon} as they are the previous steps in the sequential approach (Table~\ref{tab:ex:tail_evaluation}).
 
 
 % \subsection{Result analysis} % (fold)
@@ -1651,7 +1651,7 @@ Sometimes, the inside balloon region extraction is not sufficient to retrieve th
 For instance, in Figure~\ref{fig:ex:tail_extraction_mistake_errors}, the tail positions are represented by a green line on the balloon contour and tail directions are written in blue (from the eight cardinal coordinates).
 Left hand side balloons have not been detected without tail because of the contour variations, a tail have been mistakenly predicted.
 For the right hand side balloons, the tail tip position have been correctly predicted but not the tail direction because of the change of direction of the last segment.
-The direction have been predicted according the white balloon background region and not from the balloon boundary that indicates a different direction (NE and SE instead of S and E).
+The positions have been predicted according the white balloon background region and not from the balloon boundary that indicates a different direction (NE and SE instead of S and E).
 
 The tail tip position and tail direction highly rely on the performance of the balloon contour extraction.
 They are satisfactory when balloon contours are perfectly extracted (manual in Table~\ref{tab:ex:tail_evaluation}) but decreases quickly according to the automatic balloon extractor method performance.
@@ -1720,7 +1720,7 @@ In this case, all the predicted regions would have been accepted as correct with
 Method S is a sequential approach that computes a region of interest for comic characters from the tail tip position and tail direction inside a panel region (Section~\ref{sec:se:tail_to_character}).
 Its position is shifted in the region of the tail tip according to the tail direction which is quantized in eight cones of $\pi/4$ radius.
 We evaluated the performance of this method given the input information of panel, balloon and tail from the eBDtheque ground truth and from the best automatic extraction methods from Table~\ref{tab:panel_extraction_comparision_results},~\ref{tab:ex:balloon_localisation_comparison_results} and~\ref{tab:ex:tail_evaluation} respectively (Figure~\ref{fig:ex:character_method_A_GT_extraction_detail} and~\ref{fig:ex:character_method_A_auto_extraction_detail}).
-Also, two set of images have been tested, one including all the comic character instances of the eBDtheque dataset and an other one with only the speaking characters as this method is only able to predict speaking character location from the tail direction (Table~\ref{tab:ex:character_localisation_result_summary}).
+Also, two set of images have been tested, one including all the comic character instances of the eBDtheque dataset and another one with only the speaking characters as this method is only able to predict speaking character location from the tail direction (Table~\ref{tab:ex:character_localisation_result_summary}).
 % The score of this method was in average for recall and precision of 15.59\% and 83.81% (Figure 6.12c).
 
  
@@ -1766,7 +1766,7 @@ Also, two set of images have been tested, one including all the comic character 
   % \\
   % \subfloat[Method C \modif{TODO: update}]{\label{fig:ex:balloon_methodC_extraction_detail}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=\textwidth]{2014-08-28_svg_method_A_from_method_B_panel_and_balloon_Object.pdf}}
 
-  \caption[Character extraction score details at object level for each image of the eBDtheque dataset]{Character extraction score details at object level for each image of the eBDtheque dataset for speaking and non speaking characters (Appendix~\ref{app:dataset}).}
+  \caption[Character extraction score details at object level for each image of the eBDtheque dataset]{Character extraction score details at object level for each image of the eBDtheque dataset for speaking and non-speaking characters (Appendix~\ref{app:dataset}).}
     \label{fig:ex:character_methodA_extraction_detail}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1813,9 +1813,10 @@ Precision ($P$) is the number of correctly detected objects divided by the numbe
 We consider as candidate regions, regions that have $C=100\%$ confidence (contains at least all the descriptor colours).% Lower confidence detection need additional processing to be considerate as correct results.
 
 We evaluated our method on a subset of 34 comic book images from 10 different albums which represent 22 comic characters that appear 352 times in total.
-This subset have been chosen from relevant images from the eBDtheque dataset that are coloured and with a sufficient amount of character instances. 
+This subset has been chosen from relevant images from the eBDtheque dataset that are coloured and with a sufficient amount of character instances. 
 We obtained 90.3\% recall and 46.7\% precision in average.
-Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to image identifier in the eBDtheque dataset: MIDAM\_GAMEOVER\_T05, TARZAN\_COCHON, CYB\_COSMOZONE, CYB\_MAGICIENLOOSE, CYB\_MOUETTEMAN, LAMISSEB\_LESNOEILS1, LUBBIN\_LESBULLESDULABO, MIDAM\_KIDPADDLE7, PIKE\_BOYLOVEGIRLS\_T41 and TRONDHEIM\_LES\_TROIS\_CHEMINS\_005 (~\ref{app:dataset}).
+Results are detailed in Table~\ref{tab:ex:character_spotting_detail_result} where album 1 to 10 correspond to the following image identifiers in the eBDtheque dataset: MIDAM GAMEOVER T05, TARZAN COCHON, CYB COSMOZONE, CYB MAGICIENLOOSE, 
+CYB MOUETTEMAN, LAMISSEB LESNOEILS1, LUBBIN LESBULLESDULABO, MIDAM KIDPADDLE7, PIKE BOYLOVEGIRLS T41 and TRONDHEIM LES TROIS CHEMINS 005 (Appendix~\ref{app:dataset}).
 % \modif{
 %TODO: TARZAN\_COCHON is not from eBDtheque dataset.
 %}.
@@ -1987,8 +1988,8 @@ Note that the scores in Table~\ref{tab:ex:character_localisation_result_summary}
 
 % As shown on Figure~\ref{fig:ex:characters_overlap_ratio}, the decision criterion $a_0>0.5$ may seem restrictive and have to be adjusted according to the application.
 This low level of performance comes from various reasons.
-First, the limitation of the extractor to process speaking characters.
-When we focused on the subset of 829 speaking characters, the recall and precision increased by 14.45\% and 4.85\% respectively with panel and balloon regions from the ground truth (GT).
+First, the limited capacity of the extractor to process speaking characters.
+When we focused on the subset of 829 speaking characters, the recall and precision increased by 14.45\% and 4.85\% respectively, for panel and balloon regions from the ground truth (GT).
 %First, the limitation of the extractor to process speaking characters; 
 Second, the variability of character styles in the eBDtheque dataset; third, the error propagation of previous processes (panel, text, balloon, and tail extractions) that are required to guess comic character locations (differences between ``GT'' and ``auto'' results in Table~\ref{tab:ex:character_localisation_result_summary}).
 
@@ -2016,13 +2017,13 @@ A post-processing is needed to compute the character bounding box from the detec
    \centering
   \includegraphics[width=0.5\textwidth]{result_exemples.png}
   \caption[Character spotting result sample]{
-  Each line shows a character query region bounding box in white (left column), a correct detection (middle column) and a wrong detection (right column). Green rectangles represents the ground truth region and the red rectangle corresponds to the region detections. The corresponding character IDs in Table~\ref{tab:ex:character_spotting_detail_result} are 12, 8, 0, 10, 16 and 2 from top to bottom. %and second columns show correct and wrong detection result for album 1. Third and fourth columns are correct and wrong detection results examples from album 2. Top first and top third columns are the user defined queries. %{\bf Update true and false positive examples and draw detection window (according to $S$ definition)
+  Each line shows a character query region bounding box in white (left column), a correct detection (middle column) and a wrong detection (right column). Green rectangles represent the ground truth region and the red rectangle corresponds to the region detections. The corresponding character IDs in Table~\ref{tab:ex:character_spotting_detail_result} are 12, 8, 0, 10, 16 and 2 from top to bottom. %and second columns show correct and wrong detection result for album 1. Third and fourth columns are correct and wrong detection results examples from album 2. Top first and top third columns are the user defined queries. %{\bf Update true and false positive examples and draw detection window (according to $S$ definition)
   }
   \label{fig:ex:character_spotting_results}
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Correct detections show the variety of comics character position and deformation that we are able to detect with the presented framework. There are few missing detections and over detections are essentially due to other comics character detection and image pre processing (colour reduction).
+Correct detections show the variety of comics character position and deformation that we are able to detect with the presented framework. There are few missing detections and over detections are essentially due to other comics character detection and image pre-processing (colour reduction).
 %character part missing, small size objects or low resolution images.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2066,7 +2067,7 @@ A pre-processing smoothing is required in this case~\cite{l0smoothing2011,Kopf20
 The colour palette we used has 256 colours, we believe that we can improve the presented method by computing the palette from the user's query in order to ignore unwanted colours and speed up the process.
 The sliding windows approach does not allow to segment comics character at a pixel level, a distance measure between the colour mask regions could solve this.
 Also, once we retrieved all colour similar objects, we could learn a deformable shape model and try to find more objects occurrences based on shape information in a second stage.
-These proposal will be the subject of future works.
+These proposals will be the subject of future works.
 % }
 
 % paragraph character_spotting (end)
@@ -2630,7 +2631,7 @@ Therefore a single improvement in the detection or the validation of any kind of
 Note that given the panel, balloon and character position from the ground truth, the accuracy of the expert system in predicting the semantic relations is about $A_{STSB}=96.9\%$ and $A_{SBSC}=70.66\%$.
 The 3.1\% of missed \emph{isLineOf} relations came from balloons that are not compliant with our model.
 In the same way, among the 829 \emph{isSaidBy} relations, that link speech balloons to speaking characters, 9.5\% are undetectable because they are generated from balloons outside the panel.
-This comparison clearly demonstrate that the expert system is very good at predicting semantic link as soon as the low level extractions are efficient.
+This comparison clearly demonstrates that the expert system is very good at predicting semantic link as soon as the low level extractions are efficient.
 
 
 % section semantic_links_evaluation (end)
@@ -2678,7 +2679,7 @@ The knowledge-driven approach (Approach K) is able to improve the overall precis
 The strength of this approach is that it uses a standard and exchangeable description of the image content, from visual to semantic level, that can be easily be enriched or adapted to specific or large collections.
 The addition of conversion and creation constraint types (not only rejection) can give the ability to this intelligent system to recover missing information.
 
-Processing time are quite short for the sequential and independent approach but the knowledge-driven approach requires reasoning operations that are very time consuming.
+Processing times are quite short for the sequential and independent approach but the knowledge-driven approach requires reasoning operations that are very time consuming.
 Panel and balloon extraction can run in real time on a regular laptop or smartphone.
 Text extraction process highly depends on the OCR speed.
 Comic character region of interest are almost computed instantaneously (calculus of maximal rectangle coordinates) but character spotting is very slow due to colour quantization and multi-scale sliding window processes.

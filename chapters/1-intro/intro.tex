@@ -15,7 +15,7 @@ Then the objectives and contributions of this thesis work are highlighted follow
 \label{sec:intro:presentation}
 
 Comic books are a graphic art form combining text and images to tell a story.
-Comics are now used in a wide variety of styles, not only on paper (e.g. magazines, newspapers, TV show) but also as electronic content (mobile apps, e-books, websites).
+Comics are now used in a wide variety of styles, not only on paper (e.g. magazines, newspapers, TV show) but also as electronic content (mobile apps, e-books and websites).
 Comics are one of the most popular and familiar forms of graphic content.
 People read comics easily and learn many things, so even children can learn about cultures and trends, among other things, through comic books even unconsciously.
 
@@ -96,7 +96,7 @@ Using information technologies with classic comics would facilitate the explorat
 Nevertheless, the process of conversion and adaptation is not as simple as for films and novels.
 The comic differs from the latter in that the media itself is intimately linked to the medium.
 Indeed, a film can be decomposed into a series images plus a soundtrack.
-Just watching these images in the right order and at the right frame rate allows to reconstruct the initial content, regardless of the medium. 
+Just watching these images in the right order and at the right frame rate allows reconstruct the initial content, regardless of the medium. 
 In the same way a novel is ultimately a sequence of words.
 Reading these words in the correct order, on paper or on a screen does not change neither the content nor the artistic dimension of the work.
 
@@ -110,7 +110,7 @@ The challenge of digital comics is how to take advantage of the added value prov
 Gilles Ratier, secretary of the French association of comics, critics and journalists ``Association des Critiques et journalistes de Bande Dessin\'{e}e'' (ACBD) stressed in the 2013 budget of the association that the meaning of digital cartoon remains unclear~\cite{Ratier2013}.
 It is commonly used to describe a wide range of heterogeneous content, from scanned comics to turbo-media works (e.g. interactive animated stories) through webcomics\footnote{\url{http://xkcd.com} or \url{http://phdcomics.com}} (mainly self-published) and augmented reality to extend the art work through the use of the new technologies.
 
-Web platforms propose free reading services of heritage art such as The Digital Comic Museum\footnote{\url{http://digitalcomicmuseum.com/}}, the Cit\'{e} internationale de la bande dessin\'{e}e et de l'image\footnote{\url{http://collections.citebd.org/}} in France and the Grand Comics Database\footnote{\url{http://www.comics.org/}}, an ongoing international project that aims to build a detailed comic book database that will be easy to use and understand, and also easy for contributors to add meta-data to it in order to facilitate its browsing.
+Web platforms propose free reading services of heritage art such as The Digital Comic Museum\footnote{\url{http://digitalcomicmuseum.com/}}, the Cit\'{e} internationale de la bande dessin\'{e}e et de l'image\footnote{\url{http://collections.citebd.org/}} in France and the Grand Comics Database\footnote{\url{http://www.comics.org/}}, an on-going international project that aims to build a detailed comic book database that will be easy to use and understand, and also easy for contributors to add meta-data to it in order to facilitate its browsing.
 In parallel, contemporary and independent artists self-publish their work on different platforms such as Webcomics.fr\footnote{\url{http://www.webcomics.fr/}}, EspritBD\footnote{\url{https://www.comixology.com/}} and TRILLBENT\footnote{\url{http://thrillbent.com/}} that recently proposed a promising per month subscription model.
 Well known publishers are also starting to provide digital comic book on pay-what-you-want hubs for original comic book platforms such as Koomic\footnote{\url{http://www.koomic.com/}} and Panel Syndicate\footnote{\url{http://panelsyndicate.com/}} from Spain, Izneo\footnote{\url{http://www.izneo.com/}} and digiBiDi\footnote{\url{http://www.digibidi.com/}} from France, DC Comics\footnote{\url{http://www.dccomics.com/}} from Warner Bros, and comiXology\footnote{\url{http://www.comixology.com/}} recently acquired by Amazon.com.
 In fact, we are seeing a bifurcation in the digital comics market, between companies tied to large global media conglomerates, that maintain a fervent faith in the need for some kind of digital rights management (DRM) control for their multi-billion dollar intellectual properties, and the smaller publishers more concerned with creator autonomy and exposure~\cite{publishersweekly2014Surveying}.
@@ -270,8 +270,7 @@ To meet the above objectives, we have made the following contributions in this t
 	\item [1)] Panel extraction: Comic books are mixed content documents that require different techniques to extract different element.
 	The first particularity of comics is the sequence of panels that we extract using connected component classification and topology analysis in Sections~\ref{sec:se:panel_and_text} and~\ref{sec:in:panel_extraction} respectively.
 	
-	\item [2)] Balloon detection: Balloons or bubbles are key elements in comics,
-	they link graphical and textual elements and are part of the comics style. They can have various shapes (e.g. oval, rectangular) and contours (e.g. smooth, wavy, spiky, absent).
+	\item [2)] Balloon detection: Balloons or bubbles are key elements in comics; they link graphical and textual elements and are part of the comics style. They can have various shapes (e.g. oval, rectangular) and contours (e.g. smooth, wavy, spiky and absent).
 	In this work we propose a method for closed balloon extraction and classification based on the analysis of the blob content (Section~\ref{sub:in:balloon_segmentation}) and contour analysis (Section~\ref{sub:in:balloon_classification}) respectively.
 	A different approach for open balloons has been developed, it is based on active contour model to extract open balloons from text line positions (Section~\ref{sub:se:implicit_balloon_extraction}).
 	%Both methods are described in Chapter~\ref{chap:be} along with balloon contour classification (smooth, wavy, zigzag) and a tail detector.
@@ -302,13 +301,13 @@ To meet the above objectives, we have made the following contributions in this t
 	The dataset consist in a mixture comic images coming from different albums with the goal of being as representative as possible of the comics diversity.
 	% The database consists of a hundred pages of various comic book albums including Franco-Belgian ``bande dessinée'', American comics and Japanese mangas. 
 	The ground truth contains the spatial position of panels, balloons, text lines, comic characters and their associated semantic annotations.
-	Also, bibliographic information are given for each image.
+	Also, bibliographic information is given for each image.
 	This work is presented Section~\ref{sec:dataset_and_ground_truth_construction}.
 
 
 \end{itemize}
 
-\modif{TODO: JMO: un exemple de BD ou il y aurait un peu de tout ce qui est decrit avec les sections dans lesquelles on peu les retrouver (voir page 6 correction JMO).}
+% \modif{TODO: JMO: un exemple de BD ou il y aurait un peu de tout ce qui est decrit avec les sections dans lesquelles on peu les retrouver (voir page 6 correction JMO).}
 
 % Outline --------------------------------------------------------------------------------------------------------------------------------------
 \section{Outlines}
@@ -322,7 +321,7 @@ The last section reviews the more advanced services related to comics that are a
 
 \item \ch{chap:sequential} introduces a sequential comic book image analysis approach.
 The sequence starts by extracting panel and text using connected-component labelling and clustering.
-Then balloons are segmented from text locations followed by a tail position and direction detection on the balloon contour.
+Then balloons are segmented from text locations followed by tail position and direction detection on the balloon contour.
 The tail is used to define the region of interest for comic characters inside the panel regions.
 
 \item \ch{chap:independent} addresses independent information extraction assuming no interaction between the extractions unlike~\ch{chap:sequential}.

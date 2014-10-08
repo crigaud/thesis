@@ -85,7 +85,7 @@ Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts 
  \begin{figure}[!ht]
    \centering
   \includegraphics[width=0.5\textwidth]{model_image.pdf}
-  \caption[A representation of the image model involved in the expert system]{A representation of the image model involved in the expert system. Concepts are represented by the oval-shaped items, the arrows are the object properties linking them to each other. The dashed rectangles contain the data properties of the concepts they are attached to.}
+  \caption[A representation of the image model involved in the expert system]{A representation of the image model involved in the expert system. Concepts are represented by the oval-shaped items; the arrows are the object properties linking them to each other. The dashed rectangles contain the data properties of the concepts they are attached to.}
   \label{fig:kn:model_image}
  \end{figure}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,7 +104,7 @@ Note that for two visually similar images, the individual value of each pixel ca
 % The resolution of an image indicates the number of pixels used to discretize an inch of space.
 % The higher the resolution, the larger the image is sharp.
 Furthermore, the encoding of the visual information in each pixel also varies depending on the image format and the degree of compression applied.
-It is important to integrate these information into the model as they define the context of the processing tools.
+It is important to integrate this information into the model as they define the context of the processing tools.
 They greatly help the understanding of the result quality.
 
 \paragraph{Region Of Interest concept} % (fold)
@@ -176,7 +176,7 @@ See Cl{\'e}ment Gu{\'e}rin's thesis for its adaptation to other applications~\ci
 
 Comics domain contains two different information levels.
 First, the bibliographic information, which are common with any books, about the collection, artist names, International Book Number (ISBN), language, number of page and so on.
-Second, information about all the elements that compose a comic book page (e.g panel, balloon, text, character), their relations and the corresponding semantic.
+Second, the information about all the elements that composes a comic book page (e.g. panel, balloon, text and character), their relations and the corresponding semantic.
 
 \paragraph{Album and pages} % (fold)
 \label{par:album_and_pages}
@@ -184,7 +184,7 @@ Second, information about all the elements that compose a comic book page (e.g p
 As seen Section~\ref{sec:intro:presentation}, a comic book page is defined as a series of images conveying a message.
 These images are spatially juxtaposed in a plane that is called \emph{page} or \emph{board}.
 In classical comic strips, a story is told through an ordered succession of pages.
-These are represented by the printed pages grouped in an album, which can be from a  collection telling a larger story.
+These are represented by the printed pages grouped in an album, which can be from a collection telling a larger story.
 The webcomics also make use of pages, materialised by digital images.
 In the case of printed comics, a page may extend over one or two pages, rarely more.
 A webcomic page is always represented by a single image.
@@ -195,7 +195,7 @@ A page is only part of one album.
 
 Bibliographic information of each album are represented by attributes associated to the concept \concept{Comic}.
 The album title, the collection (if it exists), its authors, date of publication and ISBN can be given via the corresponding attributes.
-The reading direction (left to right or right to left) may be indicated through a boolean attribute called \dataProp{right2Left}.
+The reading direction (left to right or right to left) may be indicated through a Boolean attribute called \dataProp{right2Left}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
@@ -417,7 +417,7 @@ These logical conclusions may include a validation of extracted elements, reject
  \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%This knowledge can be represented by all the relations betweens the elements that constitute a document from this collection.
+%This knowledge can be represented by all the relations between the elements that constitute a document from this collection.
 The low level algorithms have been designed to extract specific information from the whole image or a specific region.
 Low and high level systems interact in a loop to feed the knowledge base until there is a complete and consistent understanding of the document, according to the knowledge domain. 
 Figure~\ref{fig:kn:process_loop} illustrates this loop interacting between the two level of information.
@@ -439,9 +439,9 @@ Figure~\ref{fig:kn:process_loop} illustrates this loop interacting between the t
 
 In step 1, the low level system propose to the expert system assumptions about a first set of segmented regions in the image.
 These regions are labelled according to their supposed type according to the extractor (panel, balloon, text, etc.).
-In the second step, the expert system evaluates these assumptions, valid correct ones and delete others.
-Note the the deletion is the simplest action we can perform from invalid information but we are currently investigating other scenarios such as switching or changing element labels.
-In the third step, new information are inferred from valid assumptions, put in perspective of the domain knowledge.
+In the second step, the expert system evaluates these assumptions, validates correct ones and deletes others.
+Note the deletion is the simplest action we can perform from invalid information but we are currently investigating other scenarios such as switching or changing element labels.
+In the third step, new information is inferred from valid assumptions, put in perspective of the domain knowledge.
 These are referred to the corresponding low level extractor that will use them, during the following iteration, to extract more complex elements such as the comic characters.
 This loop can be run as many times as new information is discovered.
 
@@ -565,7 +565,7 @@ In this work, we focused on optimizing the reliability of the results.
 % Currently, our system is able to handle the following reasons for inconsistency:
 We have chosen to focus on increasing the extraction precision rather than completeness by deleting the elements that did not fit the proposed model.
 The detection of misclassified elements (e.g panel actually being a balloon) and the proposition of missed elements (e.g. a missed balloon around a group of text lines) are both short term perspectives of this work.
-For the time being, our system can handled, without being limited to, the following inconsistencies:
+For the time being, our system can handle, without being limited to, the following inconsistencies:
 
 \begin{itemize}
   \item \textbf{A page (p) contains a balloon (b), a text line (t)}: b or t is deleted.
@@ -612,7 +612,7 @@ The classification of the region instances is shown Figure~\ref{fig:kn:graph_spe
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
    \centering
   \includegraphics[trim= 30px 168px 20px 110px, clip, width=0.8\textwidth]{graph_infer_1.pdf}
-  \caption[Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base]{Inference of the the speech balloons $SB$, narrative balloons $NB$, spoken text lines $ST$ and narrated text lines $NT$ using the semantic properties and constraints of $\mathcal{O}_{comics}$.
+  \caption[Inference of the speech balloons, narrative balloons, spoken text lines and narrated text lines using the semantic properties of the knowledge base]{Inference of the speech balloons $SB$, narrative balloons $NB$, spoken text lines $ST$ and narrated text lines $NT$ using the semantic properties and constraints of $\mathcal{O}_{comics}$.
   }
   \label{fig:kn:graph_specific_types}
  \end{figure}
@@ -731,7 +731,7 @@ Since the range of this property was set to the concept of \concept{speaker}, it
   \subfloat[]{\label{fig:kn:process_illustration_infer_2}\includegraphics[width=0.4\textwidth]{process_illustration_infer_2.png}} \hspace{0.5em}
    \subfloat[]{\label{fig:kn:graph_infer_2}\includegraphics[trim= 65px 168px 20px 110px, clip, width=0.55\textwidth]{graph_infer_2.pdf}}
   \caption[Inference of the speaking characters and their corresponding semantic links to speech balloons]{Inference of the two speaking characters $SC$ and their corresponding semantic links to speech balloons $SB$ regions.
-  The two semantic links are represented by a grey stroke in the image over the regions concerned and a non oriented horizontal edge in the graph.
+  The two semantic links are represented by a grey stroke in the image over the regions concerned and a non-oriented horizontal edge in the graph.
   }
   \label{fig:kn:final_information}
  \end{figure}
@@ -869,10 +869,13 @@ This conceptualization has been developed with the target of image analysis inte
 The proposed system provides a novel generic and unsupervised approach for comic book document understanding mixing visual and semantic information.
 It relies on an inference engine that interacts with the two proposed models.
 We detailed a use case for comic character localisation associated with their corresponding speech balloons, taking into account the spatial organisation of the rest of the elements in an image.
+One limitation of the proposed system is the validation process which only suppresses elements until having a consistent representation of the knowledge.
+We are currently working on different scenarios able to compute a cost, in terms of number of inconsistencies that are created or solved, of changing the class from one type to another one (e.g. changing a region given by the panel extractor as balloon and \emph{vice versa}).
+This solution will permit to apply the changes that have the minimal cost, including deletion as the last option, in order to make the knowledge representation consistent while minimizing the loss of extracted information.
 
 In the future we plan to add more iterations of the process in order to retrieve new information such as other objects in the panels and sound effects.
-In addition, the expert system will be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from text locations.
-A semantic tag can also be given to the speech text regions according to a deeper analysis of the type of balloon presented Section~\ref{sub:in:balloon_classification}.
+In addition, the expert system will be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from validated text locations.
+A semantic tag (e.g. speech, thought, exclamation) can also be given to the speech text regions according to a deeper analysis of the type of balloon presented Section~\ref{sub:in:balloon_classification}.
 
 In the next chapter, we are going to experiment the different contributions presented in this thesis and compare them to other methods from the literature.
 The dataset is first introduced along with the metrics we used to evaluate information retrieval. 

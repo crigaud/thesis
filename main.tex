@@ -203,12 +203,20 @@
   }}
 
 \newcommand{\makefirstpages}{
+  
+
+  %ULR cover page first
+  % \thispagestyle{empty}
+  \includepdf{template_ULR/frontpage.pdf}
+  \blankpage % insert a blank page
+
+  %UAB cover page first
   \thispagestyle{empty}
   \vspace*{0.5cm}
   \begin{center}\includegraphics[width=6cm]{images/LogoUAB}\end{center}
   \vspace*{3cm}
   \parbox{\textwidth}{\addtolength{\lineskip}{5pt} \centering \textbf{\LARGE \@title}  }
-  \vfill0
+  \vfill
   \begin{flushright}
   \parbox{7.5cm}{A dissertation submitted by \textbf{\@author} at \UAB{} to fulfil the degree of \textbf{Doctor of Philosophy}.\par
 %  \vspace{2mm}
@@ -218,10 +226,12 @@
   }
   \end{flushright}
 
-\blankpage
+
 
   %%%%%%%%%%%%%%%%%%%%%%%%%% NEW PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \includepdf{template_ULR/frontpage.pdf}
+  % UAB cover page first
+  % \blankpage % insert a blank page
+  % \includepdf{template_ULR/frontpage.pdf}
   % \newpage
 
   %%%%%%%%%%%%%%%%%%%%%%%%%% NEW PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,7 +295,7 @@ evaluators   & Dipartimento di Ingegneria dell'Informazione\\
   \vfill
 
   %%%%%%%%%%%%%%%%%%%%%%%%%% NEW PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+  % \thispagestyle{empty}
   \noindent
   \begin{minipage}{\textwidth}
   \setlength{\parskip}{10pt}
@@ -307,7 +317,8 @@ evaluators   & Dipartimento di Ingegneria dell'Informazione\\
   \begin{flushright} \sentence \end{flushright}
   \clearpage\thispagestyle{empty}
   \setcounter{page}{0}
-}
+} % AND makefirstpages command
+
 \makeatother
 
 \makeatletter

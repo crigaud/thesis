@@ -19,11 +19,11 @@ This author style (a kind of signature) gives a unique graphical identity to the
 Despite the differences of style, the comics drawings generally follow classical rules which are intrinsically linked to the design process~\cite{mccloud2006Making}.
 % Relations between elements and inking process are particularities that we we rely on when processing such images. surrounded by a black stroke.
 For instance, the inking process requires to magnify the main strokes that defines regions which are then filled with flat colours (Section~\ref{sec:document_image_analysis}).
-We propose to rely on these main strokes to automatically extract non coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling approach.
-Then, the analysis of speech balloon contour allows to detect the tail precisely and its direction is used to compute the regions of interest where comic characters are supposed to be.
+We propose to rely on these main strokes to automatically extract non-coloured image content (e.g. panel boundary, text, speech balloon background) using a connected-component labelling approach.
+Then, the analysis of speech balloon contour allows detecting the tail precisely and its direction is used to compute the regions of interest where comic characters are supposed to be.
 In this section, all the processes are related to each other, for instance, the text extraction output is the input of the balloon extraction process and so on.
 
-This is a simplistic and intuitive approach to identify the benefits, difficulties and limits that results from this type of approach.
+This is a simplistic and intuitive approach to identify the benefits, difficulties and limits that result from this type of approach.
 It will be associated with an intelligent system in the knowledge-driven approach presented in~\ch{chap:knowledge}.
 
 
@@ -52,12 +52,12 @@ From the foreground pixels, a structural analysis (connected-component labelling
 % Connected components labelling scans an image and groups its pixels into components based on pixel connectivity.
 % All pixels in a connected component share similar pixel intensity values and are in some way connected with each other.
 Connected component approaches are commonly used for stroke and text-based document analysis, there are also simple and computationally efficient.
-Once extracted, the connected-components can be clustered according to different features (e.g. size, shape ,colour, location).
+Once extracted, the connected-components can be clustered according to different features (e.g. size, shape, colour and location).
 We use this approach to extract panels and text which can be easily differentiated using size and topological information.
 % with meaningful names ``noise'', ``text'' and ``panel'' using a classifier with three cluster using discriminant features for instance.
 % The originalities of this paper are frame segmentation, with or without box, and out-of-balloon text segmentation that can be extracted by CC algorithm.
 % The aim of the pre-processing step is to separate background and content of the page in order to focus on the content later. Several processing are implemented in order to apply CC algorithm, and then, to extract the bounding boxes. It can be resumed as follows:
-The process can be summarize as below:
+The process can be summarized as below:
   \begin{enumerate}
 	\item Binary segmentation
 	\item Connected-component extraction
@@ -71,7 +71,7 @@ The process can be summarize as below:
 \label{par:se:image_segmentation}
 
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
-Several methods exit for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different preponderation as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
+Several methods exit for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different pre-ponderations as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
 Here we use the lightness channel because the panel border strokes and text are usually darker than other elements in the image, including the background. 
 Then, a global binary segmentation (Appendix~\ref{sub:ap:bi_threshold}) is applied with a threshold determined dynamically (Figure~\ref{fig:se:binary_img}).
 The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
@@ -186,7 +186,7 @@ For this purpose, we defined two conditions that are auto-adaptive to each lette
 
 The principle is similar to the one presented in~\cite{Clavelli09} but adapted to take into account the horizontal alignment of text lines.
 Our method does not consider the letter width as we never know how many letters correspond to the CC.
-This method can easily be used for vertical text (e.g. Japanese, Chinese, Korean) by switching horizontal and vertical measurements.
+This method can easily be used for vertical text (e.g. Japanese, Chinese and Korean) by switching horizontal and vertical measurements.
 More text orientation can be handled using automatic multi-oriented touching character segmentation such as~\cite{Roy2009Multi}.
 
 
@@ -278,7 +278,7 @@ We use Otsu's threshold selection method to find the optimal threshold (Appendix
 \label{par:balloon_extraction}
 
 For each extracted blob that includes a text paragraph (Section~\ref{par:text_line_grouping}), we compute the difference of alignment on the horizontal $d_x$ and the vertical $d_y$ axis between the balloon barycentre $c_1$ and the text paragraph barycentre $c_2$ (Figure~\ref{fig:se:align_diff}).
-We use the difference of alignment as a confidence value $C_{balloon}$ for balloon and non balloon classification (\ch{chap:experimentations}).
+We use the difference of alignment as a confidence value $C_{balloon}$ for balloon and non-balloon classification (\ch{chap:experimentations}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{figure}[h!]	%trim=l b r t  width=0.5\textwidth,
@@ -376,7 +376,7 @@ For this purpose, we introduce a new energy term denoted $E_{text}$ that conveys
 %The external energy $E_{ext}$ encourage curve onto image structures (e.g. edges, line, corner).
 
 We consider edges as features of interest because we expect the speech balloon to be delimited by strong edges, at least partially.
-Here we perform edge detection using the well known Sobel operator (Figure~\ref{fig:se:distance_transform}).
+Here we perform edge detection using the well-known Sobel operator (Figure~\ref{fig:se:distance_transform}).
 According to the review of state of the art methods appropriate for implicit balloon detection (Section~\ref{sec:sota:balloon_segmentation}), active contour models are good choices.
 Appendix~\ref{sub:ap:contour_based} gives the basic concepts of the original approach proposed by Kass~\cite{Kass1988}.
 In this approach, the definition of the external energy is appropriate for natural scene images with smooth gradients but not for stroke-based images such as comics that comprise uniform coloured regions (flats) with strong edges (strokes).
@@ -438,7 +438,7 @@ The $E_{text}$ energy aims at pushing the snake outwards toward the most likely 
 This energy term has two effects.
 First, it acts collaboratively to the external energy, by moving the snake towards non-text edges (hopefully corresponding to the balloon outline).
 Second, in the case of implied contours where no explicit edge exists (the external energy term is not informative), $E_{text}$ assists the algorithm to converge to an approximate contour position based on prior knowledge on the expected localization given the corresponding text area.
-We define the text energy term at a localization $i$ of the image as follows:
+We define the text energy term at localization $i$ of the image as follows:
 
 \begin{equation}\label{eq:se:know}
 E_{text} = \begin{cases} \kappa \frac{N}{min_{j \in T} A(i,j)} & \mbox{if } A(i,j) > 0 \\ \kappa N & \mbox{else} \end{cases}
@@ -455,9 +455,9 @@ The internal energy $E_{int}$ is calculated for each point of the snake before e
 We iteratively examine each point of the snake in a clockwise fashion and move it within a neighbourhood region of size $M$ in order to minimize Equation~\ref{eq:se:energy2}.
 This operation is repeated until no point moves in one turn (Algorithm~\ref{al:be:method}).
 Detecting the implicit parts of the balloons is quite challenging as we aim at detecting something which is not in the image, by interpolating contextual information (other printed part of the balloon).
-We propose an two step approach to test if the information is present or not before trying to extract it precisely.
-It is similar to our visual system or other computer-based object detection approaches which are able to decide if a object is present or not before finding its exact shape (coarse to fine).
-Fist, we perform a coarse balloon contour position approximation (low resolution) using a quite rigid snake model.
+We propose a two step approach to test if the information is present or not before trying to extract it precisely.
+It is similar to our visual system or other computer-based object detection approaches which are able to decide if an object is present or not before finding its exact shape (coarse to fine).
+First, we perform a coarse balloon contour position approximation (low resolution) using a quite rigid snake model.
 Then we fit the contour better to have a fine extraction of the balloon contour (high resolution) using the same algorithm and tuning the energy weighting parameters in a way to relax the snake (increase flexibility).
 The idea is to start a high resolution contour detection only when the active contour is positioned close to the contour.
 Otherwise, if we start the balloon detection using a too flexible snake, it might be attracted by forces that do not come from a balloon edge before reaching the contour position (printed or suggested).
@@ -592,23 +592,42 @@ This new configuration allows the snake to fit more precisely to the balloon con
 \section{From balloon to tail} % (fold)
 \label{sec:se:from_balloon_to_tail}
 
-\modif{TODO: JMO: introduire ici toutes les difficultés liés aux queues pour ne pas les découvrir tout au long de la présentation de la méthode. Commencer par présenter le problème, ses difficultés (e.g. diversité des queues, niveau de représentativité, la difficulté à les analyser et éventuellement rappeler la litterature existante et le spectre couvert ou non de la litterature), ses enjeux, son existance dans la littérature. Ensuite dérouler les méthodes comme cela est fait. Valable pour toute les autres méthodes aussi :)}
+% \modif{TODO: JMO: introduire ici toutes les difficultés liés aux queues pour ne pas les découvrir tout au long de la présentation de la méthode. Commencer par présenter le problème, ses difficultés (e.g. diversité des queues, niveau de représentativité, la difficulté à les analyser et éventuellement rappeler la litterature existante et le spectre couvert ou non de la litterature), ses enjeux, son existance dans la littérature. Ensuite dérouler les méthodes comme cela est fait. Valable pour toute les autres méthodes aussi :)}
 
-Speech balloons indicate dialogue using tails pointing at their respective speakers~\cite{Varnum2007Language}.
 %Balloon tails tell the reader the relationships between a set of textual or graphic elements contained in the speech balloons and the comics characters [REF???].
-They are usually represented by a discontinuity on balloon contour (Figure~\ref{fig:se:tail_types}). 
-We propose to detect the tail position and direction based on the balloon contour analysis.
-We limit this study to the tail types that can be considered has an extension of the inside region (background) of the speech balloon namely types ``comma'', ``zigzag'' and ``absent'' in Figure~\ref{fig:se:tail_types}, because they can all be extracted from the segmentation of the balloon background.
-This limitation covers most of the speech balloons, nevertheless, other types such as ``stroke'' and ``circle'' in Figure~\ref{fig:se:tail_types}, require different approaches for speech balloon extraction (e.g. blob detection, contour boundary analysis).
+Tails are part of the balloon contour, they make the visual relation between the two most important elements in comics: balloons and comic characters (Section~\ref{sec:sota:balloon_segmentation}).
+Speech balloons indicate dialogue using tails pointing at their respective speakers~\cite{Varnum2007Language}.
+From our knowledge, detection has not been studied before even-through it is key information for comics understanding.
+They are represented by a discontinuity on balloon contour (Figure~\ref{fig:se:tail_types}).
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+    \begin{figure}[h]%trim=l b r t  width=0.5\textwidth,  
       \centering
       \includegraphics[trim= 0px 0px 0mm 0mm, clip, width=0.75\textwidth]{tail_types.png}
     \caption[Examples of type of speech balloon tails]{Examples of type of speech balloon tails. From left to right: stroke, comma, circle, zigzag, absent.}
     \label{fig:se:tail_types}
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The first interesting information to extract is: where the tail is \emph{connected} to the balloon and the position of its tip (extremity).
+From these two information we can compute a first direction and try to find the character to which it is related to in a post processing.
+Here comes the main difficulties, the tail may change direction several times from its origin to the tip, only the last part of the tail indicates the direction of the speaking character.
+Moreover, depending on the method used for extracting balloons, the tail tip position can be predicted in the background region or on the balloon boundary (more accurate) which may give a different direction at the end (Figure~\ref{fig:se:tail_examples}).
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
+      \centering
+      \includegraphics[width=0.9\textwidth]{tail_examples.png}
+    \caption[Differences between tail tip positions]{Tail tip position differences considering the balloon background region or the balloon boundary. In each vignette, the green and red points represent the tail tip position from the balloon background or boundary point of view respectively.}
+    \label{fig:se:tail_examples}
+    \end{figure}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We propose to detect the tail position and direction based on the balloon contour analysis as tails are part of the balloon contour.
+We limit this study to the tail types that can be considered has an extension of the inside region (background) of the speech balloon namely types ``comma'', ``zigzag'' and ``absent'' in Figure~\ref{fig:se:tail_types}, because they can all be extracted from the segmentation of the balloon background.
+This limitation covers most of the speech balloons, nevertheless, other types such as ``stroke'' and ``circle'' in Figure~\ref{fig:se:tail_types}, require different approaches for speech balloon extraction (e.g. blob detection, contour boundary analysis).
+
 
 % \paragraph{Tail tip position} % (fold)
 % \label{par:se:tail_tip_position}
@@ -621,7 +640,7 @@ This limitation covers most of the speech balloons, nevertheless, other types su
 
 The tail can be decomposed into four elements: origin, path, tip and pointed direction.
 We call ``the origin'' the virtual point where the tail is plugged to the balloon.
-The path is the symbolic line that represent the trajectory of the tail from the origin to its tip, we did not study this information in this work.
+The path is the symbolic line that represents the trajectory of the tail from the origin to its tip, we did not study this information in this work.
 In contrast, the tail tip position is an important information because it is the anchor of the tail direction which indicate, when combined, the location of the speaking characters.
 We propose a method based on convexity defects to detect the tail tip position and direction of ``comma'', ``zigzag'' and ``absent'' (no tail) tail types.
 For each tail tip position detection, we compute a confidence value in order to be able to detect ``absent'' tails when the confidence is too low.
@@ -674,15 +693,6 @@ This is acceptable for localising the tail on the balloon contour (angular posit
 In fact, the tail tip is often located at the extremity of black stroke surrounding the inside balloon region (Figure~\ref{fig:se:tail_examples}).
 
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{figure}[ht]%trim=l b r t  width=0.5\textwidth,  
-      \centering
-      \includegraphics[width=0.9\textwidth]{tail_examples.png}
-    \caption[Tail tip position precise position]{Tail tip detection differences considering the balloon border line or not. In each vignette, the green point represent the tail tip position detection by considering the balloon inside region only.
-    The red point is the tail tip position considering also the border line.}
-    \label{fig:se:tail_examples}
-    \end{figure}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We propose to detect the external border line of the balloon contour in the region of the optimal convex hull vertex $v*$ presented above and define its extremity as the tail tip position.
 Image pre-processing and contour detection are performed in the same way as presented Section~\ref{sub:se:regular_balloon_extraction}.
@@ -783,7 +793,7 @@ The second challenge is due to the variations of position, size, pose, scale, oc
 
 Here we propose an approach that bypasses both issues by using already extracted information in order to predict the locations of the comic characters.
 As we know which balloons are in which panel (total inclusion), we can estimate from the position and direction of the tail, which part of the panel may contain the speaking character.
-This approach is limited to speaking characters but can be post processed in order to find non speaking characters given the speaking ones as examples (Section~\ref{sub:complex_element_extraction}).
+This approach is limited to speaking characters but can be post processed in order to find non-speaking characters given the speaking ones as examples (Section~\ref{sub:complex_element_extraction}).
 
 As mentioned in the previous section, the tail direction is quantized in eight cones of $\pi/4$ radius for simplification purposes so we can consider that, in a rectangular-shaped panel (or its bounding box), the tail is either pointing towards a corner or towards a border of the panel.
 We define the ROI for the character as a squared region beside the speech balloon.
@@ -873,7 +883,7 @@ The experiments, presented in \ch{chap:experimentations}, evaluate and compare t
 
 % Then, the variance of each class is computed to check the homogeneity of the ROI. If the variance of the ``frame'' class is high, a specific algorithm~\cite{Khoi11} is applied in order to improve the previous steps (binarisation and/or classification). 
 
-In the next chapter a non sequential approach will be presented in order to extract comics image content using independent processing and so, avoid error propagation which is the main drawback of applying several consecutive processing.
+In the next chapter a non-sequential approach will be presented in order to extract comics image content using independent processing and so, avoid error propagation which is the main drawback of applying several consecutive processing.
 
 % Also, an open balloon detection method based on speech text position will be presented.
 

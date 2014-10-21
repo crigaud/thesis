@@ -68,6 +68,13 @@ Thomas Bader, René Räpple, and Jürgen Beyerer.
   of Images and Patterns}, volume 5702 of {\em Lecture Notes in Computer
   Science}, pages 689--696. Springer Berlin Heidelberg, 2009.
 
+\bibitem{BernhauptWSES2001}
+Regina Bernhaupt and Sandra SchonetSun.
+\newblock Using artificial neural networks as an image segmentation module of
+  an ocr-system: A preliminary study.
+\newblock In {\em Proceedings of 5th WSES/IEEE World Multiconference}, pages
+  6751--6756, Island of Crete, Greece, 2001.
+
 \bibitem{bhattacharyya2011brief}
 Siddhartha Bhattacharyya.
 \newblock A brief survey of color image preprocessing and segmentation
@@ -850,7 +857,7 @@ Plasq.
 \bibitem{PonceForsyth2012}
 J~Ponce and D~Forsyth.
 \newblock {\em Computer vision: a modern approach}.
-\newblock Prentice Hall (2 edition), 2012.
+\newblock Prentice Hall (2nd edition), 2012.
 
 \bibitem{Ponsard09}
 Christophe Ponsard.

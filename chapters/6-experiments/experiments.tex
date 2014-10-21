@@ -2657,21 +2657,23 @@ This comparison clearly demonstrates that the expert system is very good at pred
 \section{Conclusions}
 \label{sub:ex:conclusion}
 
-In this chapter we have first introduced the dataset and the metrics we use.
-Then, we evaluated each of the contributions for content and semantic element retrieval and compared them to methods from the literature.
+In this chapter we have first introduced the dataset and the metrics we used.
+Then, we evaluated each of the contributions for content and semantic element retrieval and compared them to other methods from the literature.
 % First, each of the three proposed content extraction approaches have been evaluated and compared separately to methods from the literature.
 Finally, proposed models combined with independent content extraction methods have been evaluated.
 
-We presented the eBDtheque dataset, the first comic image dataset and associated ground truth on comic books containing spatial and semantic annotations, publicly available for the scientific community.
+We presented the construction of the eBDtheque dataset, the first comic image dataset and associated ground truth of comic book images, containing both spatial and semantic annotations.
+It is now publicly available for the scientific community.
 % The corpus has been introduced as well as the construction protocol.
-The corpus can easily be extended to enlarge the diversity of the dataset and provide consecutive page or full album in order to allow a wider level of comic books analysis.
-New semantic annotations can be added, such as the view angle and the shot type for panels, text at the level of letters, comic character's role, profile and relationships. 
+The corpus can easily be extended to enlarge the diversity of the dataset and provide consecutive pages or full album in order to allow a wider level of comic books analysis.
+New semantic annotations can be added, such as the view angle and the shot type for panels, more text characteristics, comic character's role, profile and relationships. 
 
 The sequential approach (Approach S) is an intuitive approach like most of the previously proposed methods in the literature.
-It efficiency is maximal when all the image content is present and structured in classical comic books.
+It efficiency is maximal when all the image content is present and structured such as ``classical'' comic books.
 It gives the best average and precision score for text, balloon and character extraction which demonstrate that linking different content extractions at low level processing is relevant for comic book image analysis.
 
-The independent approach (Approach I) is similar to the previous approach only for panel extraction and more appropriate for unusual comic image (e.g. no panel, no text or no balloon).
+The independent approach (Approach I) has similar performance results as the previous approach only for panel extraction.
+It becomes more efficient than the previous approach when processing unusual comic image (e.g. no panel, no text or no balloon).
 However, it is slightly less powerful than sequential approach in average on the eBDtheque dataset because this dataset is mainly composed by classical comics.
 Nevertheless, this approach can easily handle particular issues as it does not require previous element extraction.
 
@@ -2679,8 +2681,8 @@ The knowledge-driven approach (Approach K) is able to improve the overall precis
 The strength of this approach is that it uses a standard and exchangeable description of the image content, from visual to semantic level, that can be easily be enriched or adapted to specific or large collections.
 The addition of conversion and creation constraint types (not only rejection) can give the ability to this intelligent system to recover missing information.
 
-Processing times are quite short for the sequential and independent approach but the knowledge-driven approach requires reasoning operations that are very time consuming.
-Panel and balloon extraction can run in real time on a regular laptop or smartphone.
+Processing times are quite short for the sequential and independent approaches but the knowledge-driven approach requires reasoning operations that are time consuming.
+Panel and balloon extractions can run in real time on a regular laptop or smartphone.
 Text extraction process highly depends on the OCR speed.
 Comic character region of interest are almost computed instantaneously (calculus of maximal rectangle coordinates) but character spotting is very slow due to colour quantization and multi-scale sliding window processes.
 

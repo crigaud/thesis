@@ -2,9 +2,9 @@
 \chaptermark{Conclusions}
 \label{chap:conclusions}
 
-Throughout the dissertation several methods for images analysis and understanding applied to comic book images have been presented.
+Throughout the dissertation, several methods for comic book image analysis and understanding have been presented.
 This chapter summarizes each main chapter by revisiting their contributions, strengths and weaknesses.
-Finally, an overview of the future research possibilities in the area of comic analysis and understanding is discussed.
+Finally, an overview of the future research possibilities in the area of comics analysis and understanding is discussed.
 
 % -----------------------------------------------------------
 \section{Summary and contributions}
@@ -14,12 +14,12 @@ Finally, an overview of the future research possibilities in the area of comic a
 
 In this thesis we have presented three different approaches for comic book image analysis. \ch{chap:intro} has summarized the evolution of sequential art from its creation to the 21st century with the impact of the Internet, its market place and the growing interest of the investigation of this research field.
 
-In \ch{chap:sota}, an overview of the state-of-the-art methods has been presented. Here we have handed the method in their context of document analysis and then highlighted the challenges of comic book document analysis due to their specific design process.
-All the past studies related to comic book image analysis have been reviewed into four different categories for panel, balloon, text, comic character respectively.
+In \ch{chap:sota}, an overview of the state-of-the-art methods has been presented. Here we have handed the methods in their context of document analysis and then highlighted the challenges of comic book document analysis due to their specific design process.
+All the past studies related to comic book image analysis have been reviewed into four different categories for panel, balloon, text and comic character respectively.
 Literature reviews in each of these categories have been presented along with the advantages, disadvantages in different scenarios.
-Also, state-of-the-art methods for holistic understanding of document images have been reviewed and a list of the more advanced existing applications is given.
+Also, state-of-the-art methods for holistic understanding of document images have been reviewed and a list of the most advanced existing applications has been given.
 
-Then, we have introduced, in \ch{chap:sequential}, the first approach of sequential analysis of comic book image content by extracting elements using their relations one after others in order to guide the retrieval process.
+Then, in \ch{chap:sequential}, we have introduced the first approach of sequential analysis of comic book image content by extracting elements using their relations one after others in order to guide the retrieval process.
 The major contribution in this work is to take advantage of previous extracted elements for predicting the region of interest of speaking characters.
 The main motivation of this work came from the idea of an intuitive approach for retrieving simple elements in order to facilitate the retrieval process of more complex ones.
 % Some are improvement from method from the literature, other first method \modif{TODO}...
@@ -27,24 +27,24 @@ The main motivation of this work came from the idea of an intuitive approach for
 
 \ch{chap:independent} has presented a independent analysis technique based on the separation of each extraction process.
 %subgraph matching technique based on product graph and it has been used for spotting symbols on graphical documents.
-The main contribution was the introduction of a text extraction method independent from balloon locations and able to detect out-of-balloon text regions such as illustration, page number, caption, author names and some graphic sounds.
-The benefit of standard OCR systems is also stressed.
+The main contribution was the introduction of a text extraction method which is independent from balloon locations and able to detect out-of-balloon text regions such as illustration, page number, caption, author names and some graphic sounds.
+The benefit of standard OCR systems was also stressed.
 The next contributions of this work were balloon contour type classification and comic character spotting based on partial user-defined example.
 % formulate subgraph graph matching as a node, edge selection problem of the product graph. For that we constructed a constrained optimization problem whose objective function was created from the higher order contextual similarities.
 
 In the \ch{chap:knowledge}, we have introduced a knowledge-driven analysis system for comic book images.
-The main contribution was the introduction of two models, one for comics and another one for related image processing.
+The main contribution was the introduction of two models, one for comics in general and another one for comics-related image processing.
 The two models are queried by an inference engine to guide independent image processing, retrieve the contents and its interactions in order to provide a higher level of description.
-There are certain limitations of the independent extraction approach presented in \ch{chap:independent} that can be recovered using this models.
+There are certain limitations of the independent extraction approach presented in \ch{chap:independent} that can be recovered using these models.
 This contribution solves the limitation of error propagation which is implicit to the sequential approach presented in \ch{chap:sequential}, while using relations between elements defined by the domain knowledge.
 
-Finally in \ch{chap:experimentations}, we have provided an experimental evaluation of all the proposed methods compared to some state-of-the-art methods.
+Finally in \ch{chap:experimentations}, we have provided an experimental evaluation of all the proposed approaches compared to some state-of-the-art methods.
 Moreover, advantages and disadvantages of each method have been pointed out.
 
 In general, in this thesis we have proposed different contributions to improve previous works from the literature as for panel, text and regular balloon extraction.
 Other contributions are first studies such as implicit balloon extraction, balloon type classification, tail detection and semantic analysis.
-Detailed experimentations were performed to evaluate each of the methods and for comparison with some state-of-the-art algorithms.
-In order to compare objectively the methods, a first dataset and ground truth have been provided.
+Detailed experimentations were performed to evaluate each contribution compared to some state-of-the-art algorithms.
+In order to compare objectively the methods, a first dataset and ground truth have been built and provided to the community.
 
 % -----------------------------------------------------------------------------------------------------------------
 \section{Future perspectives}
@@ -53,8 +53,8 @@ In order to compare objectively the methods, a first dataset and ground truth ha
 There are ideas that have come out during this thesis work but could not be explored in the three year time.
 Some of the future perspectives of this thesis are listed below.
 
-Panel extraction is the more studied part of comics analysis so far and still require some efforts for implicit panel detection (e.g. when the panel border is partially or not drawn) and connected panels.
-Gutter-free panel extraction methods also require more experiments to assert their robustness against a huge variety of comics but datasets are lacking.
+Panel extraction is the more studied part of comics analysis so far and still require some efforts for implicit panel detection (e.g. when the panel border is partially or not drawn) and connected panels (e.g. several panels connected by an overlapping element).
+Gutter-free panel extraction methods also require more experiments to assert their robustness against a huge variety of comics but public datasets are lacking.
 
 Text extraction is an essential challenge that has been tackle only partially.
 Current methods focus on speech text and further efforts has to be made to detect other types of text such as illustrative text (e.g. brand name, storefront), caption, page number, author signature, and sound effects (onomatopoeia).
@@ -64,15 +64,16 @@ Semi-automatic font learning methods are probably one of the solutions to overco
 Balloon extraction shown good performances when combined with text extraction but requires more efforts when processed independently in order to extract balloons that do not contain text as well (e.g. symbol, drawing, punctuation).
 Implicit balloons are important to consider as well but it is at best questionable as the exact localization of the balloon is quite subjective.
 Balloon classification is at his early stage, more balloon types have to be investigated and multi-segment classification would be more accurate for balloons with non-homogeneous contour variations (e.g. implicit, adjacent to other elements). 
-Speech balloon classification can also be improved by analysing the nature of the contained text using natural language analysis.
-The balloon classification should be completed by a semantic analysis to give a meaning to each class given a particular album (e.g. smooth for dialogues, wavy for thoughts) and finally characterize the contained text.
+Speech balloon classification can also be improved by analysing the nature of the contained text using natural language processing (NLP).
+Balloon classification should be completed by a semantic analysis to give a meaning to each class given a particular album (e.g. smooth for dialogues, wavy for thoughts) and finally characterize the contained text.
 
-The first work about tail detection presented here gave promising results that allow one-to-one connections between speech balloons and speaking characters but multi connections have to be considered as well (e.g a speech balloon with two tails pointing to two different characters saying the same thing).
+The first work about tail detection presented in this dissertation gave promising results that allow one-to-one connections between speech balloons and speaking characters but multi connections have to be considered as well (e.g a speech balloon with two tails pointing to two different characters saying the same thing).
 
 Comic character localization and identification is still an open issue for both supervised and unsupervised methods due to the variability of character styles and postures.
-Nevertheless, combining colour and multi-part shape description seems to be a good way to follow in order to describe the characters for spotting purposes but unsupervised localisation and identification require a higher level of description taking into account heterogeneous elements in the image (e.g. ontologies, graphs).
+Nevertheless, combining colour and multi-part shape description seems to be a good way to follow in order to describe the characters for spotting purposes.
+Unsupervised localisation and identification require a higher level of description taking into account heterogeneous elements in the image (e.g. ontologies, graphs).
 
-Finally, we published the first public dataset to initiate collaborative research but more data are needed to be fully representative of the comics diversity, train algorithms and evaluate research works of comics understanding.
+Finally, we published the first public dataset to initiate collaborative research but more data are needed to be fully representative of the comics diversity, to train algorithms and to evaluate research works about comics understanding.
 
 % \begin{itemize}
 % \item Since indexation of the serialized substructures was successful as shown in this thesis (\ch{chap:hssg}), a very good continuation of this work can be done by factorizing the graphs into two dimensional structures and making hash/indexation structure of them. Here also we can use some kind of graph embedding to transfer those factorized subgraphs into a vector space and do the same procedure as the \ch{chap:hssg}.

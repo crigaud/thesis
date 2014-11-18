@@ -31,7 +31,7 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration of the vertical and horizontal alignment differences between balloon and text region barycentre}}{28}{figure.caption.33}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Speech balloon contour types}}{29}{figure.caption.34}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Active contour energies for open balloon extraction}}{31}{figure.caption.36}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{34}{figure.caption.41}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Active contour initialization based on text region convex hull}}{33}{figure.caption.41}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Examples of low resolution contour detection for balloon extraction}}{34}{figure.caption.43}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of high resolution contour detection for balloon extraction}}{35}{figure.caption.45}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Examples of type of speech balloon tails}}{35}{figure.caption.46}
@@ -47,7 +47,7 @@
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Panel contours}}}{45}{subfigure.1.4}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Panel contour hulls}}}{45}{subfigure.1.5}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Panel contour bounding boxes}}}{45}{subfigure.1.6}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Different threshold selection applied on a grey-scale image}}{48}{figure.caption.53}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Different threshold selection applied on a grey-scale image}}{49}{figure.caption.53}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Inter-connected letters}}{49}{figure.caption.54}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Mean and standard variation values of connected-component bounding boxes}}{50}{figure.caption.55}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Balloon extraction process}}{52}{figure.caption.56}

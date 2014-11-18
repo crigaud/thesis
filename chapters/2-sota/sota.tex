@@ -18,7 +18,7 @@ In this chapter we introduce the document image analysis principles and give an 
 
 \section{Document image analysis} % (fold)
 \label{sec:document_image_analysis}
-A physical document is created when an information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
+A physical document is created when information for humans is transferred to a physical support (e.g. paper sheet, tracing paper, carbon paper, transparent sheet).
 This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
 Document image analysis is a sub-domain of computer vision systems that includes methods for acquiring, processing, analysing and understanding such physical documents in order to produce numerical or symbolic information (Figure~\ref{fig:sota:document_interpretation}).
 
@@ -77,7 +77,7 @@ Graphics consist of spatial arrangements of symbols; examples include engineerin
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Beside its content, a document is usually structured according to its intend of use.
+Beside its content, a document is usually structured according to its intent of use.
 Tang mentioned in 1996 ``A document has two structures: geometric (layout) structure and logical structure.
 Extraction of the geometric structure from a document refers to document analysis; mapping the geometric structure into logical structure deals with document understanding''~\cite{tang1996automatic}.
 Knowing the structure of the document being processed is always an helpful information that is related to domain knowledge information~\cite{cooperman1998system,breuel2003high}.
@@ -116,8 +116,8 @@ Document image analysis being application-dependent, we briefly detail the desig
   \item \textbf{Lettering and sound effects} Addition of text in reserved areas and sound effects over the graphics at the end.
 \end{itemize}
 
-The first challenge of comics book image analysis is to retrieve the layers that corresponds to each step of the comic image design process (e.g. stroke, text, colour).
-Processing each layer separately would greatly simplifies layout and content retrieval.
+The first challenge of comics book image analysis is to retrieve the layers that correspond to each step of the comic image design process (e.g. stroke, text, colour).
+Processing each layer separately would greatly simplify layout and content retrieval.
 Unfortunately, this decomposition is not obvious because in the final image, the elements are mixed with overlapping and transparency.
 Another important issue of document analysis is the noise information added from the creation of the physical document to its digital version.
 The main sources of noise are the manual operation variability, the degradation over time, the acquisition and storage techniques (Figure~\ref{fig:sota:document_degradation}).
@@ -174,7 +174,7 @@ The main sources of noise are the manual operation variability, the degradation 
 
 Comics images are mixed content documents combining textual and graphical information to create stories (Figure~\ref{fig:kn:comics_diversity}).
 Depending on the purpose, the document analysis techniques involved for comics image processing varies a lot between panel, balloon, text and comic character extractions.
-The contents of different natures are related to each other to produce a story (e.g. speech text are related to speech balloon and speaking characters).
+The contents of different natures are related to each other to produce a story (e.g. speech text is related to speech balloon and speaking characters).
 Treating each of the content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher level of semantic.
 
 
@@ -200,17 +200,17 @@ Panel extraction and ordering have been mainly studied for panel to panel readin
 Several techniques have been proposed to automatically extract panels as~\cite{In11}, assuming that panels are small enough elements to be comfortably read on mobile devices.
 They are based on white line cutting algorithm~\cite{Duda72,Luyuan2014Automatic,Chan2007Automatic}, recursive X-Y cut~\cite{Han07} or gradient~\cite{Tan07}.
 Those methods do not consider empty area~\cite{In11} and border free panels.
-These issues have been corrected by connected component approaches~\cite{Arai10} 
+These issues have been corrected by connected-component approaches~\cite{Arai10} 
 %,Rigaud2012LNCS} 
-but they are sensible to region that sometimes connect several panels and increase the detection error rate.
-Another approach based on growing region and morphological mathematics can remove such connecting elements but also remove information on the panel border~\cite{Ho2012}.
-After the region segmentation step, heuristic filtering is often applied to classify panel region according to the size ratio according to the page size, which depends on the page format~\cite{Arai11,Ho2012}.
+but they are sensible to regions that sometimes connect several panels and increase the detection error rate.
+Another approach based on growing regions and morphological analysis can remove such connecting elements but also remove information on the panel border~\cite{Ho2012}.
+After the region segmentation step, heuristic filtering is often applied to classify the panel region according to the size ratio with the page size, which depends on the page format~\cite{Arai11,Ho2012}.
 More recently, new methods have shown interesting results for manga and European comics with different background colours.
 They are based on watershed~\cite{ponsard2012ocr}, line segmentation using Canny operator and polygon detection~\cite{Luyuan2014Automatic}, region of interest detection such as corners and line segments~\cite{stommel2012segmentation,Tsai2013Adaptive}.
 Panel retargeting have been addressed for manga by Matsui~\cite{Matsui2011}.
 
 Page layout analysis has been studied to calculate the reading order of the panels.
-The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, nevertheless few studies~\cite{Guerin2012Ontologies,Ponsard09,Arai2010Automatic} demonstrated the possibility of calculating such Z-path (left-to-right and down) or right-to-left and down (e.g. Arabic, Japanese) according to the arrangement of the panels~\cite{Li2013Comic,Tsai2013Adaptive,Liu2014Automatic}. 
+The page layout influences the reader at choosing pathway~\cite{Cohn_2013}, nevertheless few studies~\cite{Guerin2012Ontologies,Ponsard09,Arai2010Automatic} demonstrated the possibility of calculating such as Z-path (left-to-right and down) or right-to-left and down (e.g. Arabic, Japanese) according to the arrangement of the panels~\cite{Li2013Comic,Tsai2013Adaptive,Liu2014Automatic}. 
 
 %--------------------------------------------------------------------------------
 \subsection{Balloon segmentation and tail detection}
@@ -243,9 +243,9 @@ In comics' content understanding, speech balloons present a lot of interest sinc
 Apart from being crucial for document understanding, balloon detection is also beneficial in applications such as comic character detection~\cite{Sun2011}, content re-targeting~\cite{Matsui2011}, translation assistance and reading order inference~\cite{Guerin2012Ontologies}.
 
 Few works about balloon extraction have been done until now and mainly closed speech balloons have been studied.
-Arai~\cite{Arai11} proposed a blob detection method based on connected component detection with four filtering rules applied to manga analysis.
+Arai~\cite{Arai11} proposed a blob detection method based on connected-component detection with four filtering rules applied to manga analysis.
 The rules are based on blob minimum size, white pixel occurrence, inclusion of vertical straight lines and width to length ratio (Figure~\ref{fig:Arai_balloon_extraction_process}).
-Another connected component approach proposed by Ho~\cite{Ho2012} uses HSV colour space to make a first selection of bright blobs and then consider as balloons the blobs with a ratio between the text area and the blob bounding box higher than sixty per cent.
+Another connected-component approach proposed by Ho~\cite{Ho2012} uses HSV colour space to make a first selection of bright blobs and then consider as balloons the blobs with a ratio between the text area and the blob bounding box higher than sixty per cent.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -260,8 +260,8 @@ Another connected component approach proposed by Ho~\cite{Ho2012} uses HSV colou
 The analysis of partially closed balloons (also called open, implicit or suggested) is quite different than the closed ones which are mainly based on blob analysis (Figure~\ref{fig:sota:open_balloon}).
 From our knowledge, such type of balloons has not been studied before.
 In most of the cases, including when contours are implicit, the location of text is generally a good clue to guess where the balloon is.
-The problem of speech balloon outline detection can therefore be posed as the fitting of a partially drawn contour around text areas (initial contour).
-Deformable models such as the active contour~\cite{Kass1988} model, also known as snake, tries to minimize an energy associated with the initial contour and its neighbouring elements in order to shift it to the position of the suggested contour.
+The problem of speech balloon outline detection can therefore be posed as the fitting of a partially drawn contour around text areas (Section~\ref{sub:se:implicit_balloon_extraction}).
+Deformable models such as the active contour~\cite{Kass1988} model, also known as snake, try to minimize an energy term associated with the initial contour and its neighbouring elements in order to shift it to the position of the suggested contour.
 Kass~\cite{Kass1988} proposed the original energy functions able to shrink around an object contour, Xu~\cite{Xu1998} proposed the Gradient Vector Flow external force to attract snake from further and handle broken object edges and subjective contours.
 % GVF is adapted to our application of non-closed (broken object).
 Another extension was proposed by Cohen~\cite{Cohen1991} to make the curve behave like a balloon which is inflated by an additional force.
@@ -291,9 +291,9 @@ A recent work~\cite{Lopatka2013} explains that CSS is more appropriate for shape
 Apart for document analysis, shape classification was also studied for image retrieval such as marine creature~\cite{Mokhtarian2002}, leaves~\cite{Wang2003}, illicit tablet~\cite{Lopatka2013}, anthropology~\cite{Keogh2006} and visual shape descriptor~\cite{Bober01}. A good shape representation overviews are given by~\cite{veltkamp2000} and~\cite{Zhang2004}. 
 %Image moment have also been used extensively for Optical Character Recognition~\cite{Flusser2009}, plant leaf recognition~\cite{Wang2008}, vehicle detection in satellite images~\cite{Eikvil2009}, and detecting and localizing duplicated areas in digital images~\cite{Mahdian2007}. 
 Nevertheless, shape descriptor and classification are not discriminant enough for our purpose because speech balloon are most of the time compact, symmetric and hand drawn which corresponds to limitations of the reviewed methods.
-In the literature, contour classification is strongly related to shape classification purposes~\cite{sun2005classification,liu1990partial}.
-It has been applied for video~\cite{kuhne2001motion,richter2001contour,bader2009}, trademark retrieval~\cite{leung2002trademark} and speech recognition~\cite{grigoriu1994automatic}. 
-Also, wavelet decomposition~\cite{Cenkery1996} and invariant moment~\cite{mukundan1998moment} methods have been proposed.
+% In the literature, contour classification is strongly related to shape classification purposes~\cite{sun2005classification,liu1990partial}.
+% It has been applied for video~\cite{kuhne2001motion,richter2001contour,bader2009}, trademark retrieval~\cite{leung2002trademark} and speech recognition~\cite{grigoriu1994automatic}. 
+% Also, wavelet decomposition~\cite{Cenkery1996} and invariant moment~\cite{mukundan1998moment} methods have been proposed.
 
 Note that balloon classification and tail detection are also important in a context of dialogues and emotions understanding~\cite{millidge2009comic}.
 
@@ -320,7 +320,7 @@ Note that balloon classification and tail detection are also important in a cont
 
 The challenges of text extraction and recognition in comic books are the multi-script, multi-oriented and complex background aspects.
 Figure~\ref{fig:in:texlines_example} illustrates the diversity of text in comic books.
-First of all, the text lines are quite short compare to other type of documents (see experiment Section~\ref{sec:dataset_description}) and, according to the style of the comics, there are variations of fonts (mainly handwritten), case, orientation, scale, spelling (from dictionary or with voluntary spelling mistakes) and hyphenation.
+First of all, the text lines are quite short compared to other types of documents (see experiment Section~\ref{sec:dataset_description}) and, according to the style of the comics, there are variations of fonts (mainly handwritten), case, orientation, scale, spelling (from dictionary or with voluntary spelling mistakes) and hyphenation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -338,12 +338,13 @@ Text localization in real scenes and video frames is an active research topic~\c
 Recent methods have been propose for scene text detection~\cite{kasar2012multi,gomez2013multi}.
 However, applying existing real scene text detection methods to comics would not be optimal to cope with all the different types of text that are combined in comic book documents (e.g. typewritten, handwritten, graphic sound).
 If we consider typewritten text, the most similar application to comics is car plate recognition because the text is in a salient and contrasted area with a complex background around the plate such as speech balloon for comics~\cite{anagnostopoulos2008license}.
+
 The documents that have attracted of lot a attention are newspapers, administrative documents, cheques, maps, music scores, floor plans and engineering drawings~\cite{nagy2000twenty}.
-Also, an important effort have been done to separate text from graphical content from such types of document with the focus of improving the post processing of both types of content by treating them separately.
-Fletcher and Katsuri~\cite{fletcher1988robust} are the reference in this domain which continues to be explored more than twenty years after for more and more complex documents~\cite{tombre2002text,Roy2007Text}.
-From our knowledge, only one preliminary study have been proposed for text/graphic separation in comics~\cite{BernhauptWSES2001}.
-This approach relies on artificial neural network, edge and corner detection.
-The authors report results on very few panels and only for speech text, thus it can not be generalised to that we can found in comic book images (e.g. speech texts, onomatopoeias, captions).
+Also, an important effort has been done to separate text from graphical content from such types of document with the focus on improving the post processing of both types of content by treating them separately.
+Fletcher and Katsuri~\cite{fletcher1988robust} still the reference in this domain more than twenty years after for more and more complex documents~\cite{tombre2002text,Roy2007Text}.
+From our knowledge, only one preliminary study has been proposed for text/graphic separation in comics~\cite{BernhauptWSES2001}.
+This approach relies on artificial neural networks, edge and corner detection.
+The authors report results on very few panels and only for speech text, thus it can not be generalised to that we can find in comic book images (e.g. speech texts, onomatopoeias, captions).
 Nevertheless, text localization in comic images have been recently investigated and opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
 % Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
@@ -356,12 +357,12 @@ However, text localization in documents which are both unstructured and have com
 % Nevertheless, plates are typewritten with a fixed length.
 %From our knowledge, only text localization has been studied, no text segmentation or text recognition yet. This is probably due to the lack of dataset and ground truth to evaluate the algorithms.
 Few works concern text extraction in comics, they all rely on speech balloon regions.
-Bottom-up approaches use connected component which often relies on the segmentation step~\cite{ponsard2012ocr}.
+Bottom-up approaches use connected-components which often relies on the segmentation step~\cite{ponsard2012ocr}.
 Su~\cite{Su11} uses Sliding Concentric Windows as text/graphic separation and then apply mathematical morphology and a Support Vector Machine (SVM) classifier to classify text from non-text components. 
 %Morphological operations are performed with a fixed mask size, the method is orientation and resolution dependent.
 % In~\cite{Rigaud2013VISAPP}, we proposed a adaptive binarisation process based on the Minimum Connected Component Thresholding followed by a text/graphic separation based on contrast ratio and text line grouping, see~\ch{chap:te}.
 % Previously, we proposed a k-mean classification of the 
-Li~\cite{Li2013Unsupervised} proposed unsupervised speech text localization for comics that trains a Bayesian classifier on aligned connected component and then detect the rest of the text using the classifier for text/non text separation.
+Li~\cite{Li2013Unsupervised} proposed unsupervised speech text localization for comics that trains a Bayesian classifier on aligned connected-component and then detect the rest of the text using the classifier for text/non text separation.
  
 % Rigaud~\cite{Rigaud12} %~\cite{Rigaud12}
 % make use of ``the median value of the border page pixels'' to binarize the image, extract CC and then classify them into ``noise'', ``text'' or ``frame'' (based on CC heights). This method assumes that the page always contains text and that the text background colour is similar to the paper background. 
@@ -369,7 +370,7 @@ Li~\cite{Li2013Unsupervised} proposed unsupervised speech text localization for 
 Top-down approaches starting from balloons (white blobs) detection followed by mathematical morphology operations have been proposed by Arai~\cite{Arai11}, Yamada~\cite{Yam04} and Sundaresan~\cite{Sundaresan2012Text}.
 From our knowledge, there are no published work concerning graphic sounds (onomatopoeia) and illustrative text extraction.
 
-Text recognition applied to comics is really challenging because it includes most of the difficulties from text recognition in document analysis domain if we consider all the type of text that composed the comics.
+Text recognition applied to comics is really challenging because it includes most of the difficulties from text recognition in document analysis domain if we consider all the types of text that compose the comics.
 From typewritten to handwritten, free-form text in uniform to complex background including image noise, text deformation and overlapping.
 Nevertheless, Ponsard~\cite{ponsard2012ocr} solved a sub part of the problem by focusing on speech text of a single typewritten font and language for which an OCR system is trained for.
 
@@ -414,8 +415,8 @@ This work shows good results for manga part retrieval which is a subset of the w
 % In our work we focus on a complementary subset, corresponding to coloured comics analysis.
 
 Coloured comics may be compared to cartoon images sequence, for which a first work based on HOG, SVM and colour attributes has been published in 2012~\cite{Khan12}.
-Preliminary work about cartoon and comics faces recognition have been carried out by Kohei~\cite{Kohei2012}, Cheung~\cite{cheung2008face} and Bernhaupt~\cite{BernhauptWSES2001}.
-More recently, graph theory has been used to find redundant colour structure in order to automatically localize the most frequent colour group apparition and label them as main characters~\cite{HoGREC2013}.
+Preliminary work about cartoon and comics faces recognition has been carried out by Kohei~\cite{Kohei2012}, Cheung~\cite{cheung2008face} and Bernhaupt~\cite{BernhauptWSES2001}.
+More recently, graph theory has been used to find redundant colour structure in order to automatically localize the most frequent colour group apparitions and label them as main characters~\cite{HoGREC2013}.
 The thesis of Ta~\cite{TAPhD2010} (sections 1.1 and 1.2) gives a good overview about stroke-based image analysis similar to comics, it defines the issues of poor information, occlusion, deformation, inter-class and intra-class variations, scale, spatial and/or temporal relations and structured data.
 Ta~\cite{TAPhD2010} also mentions that ``story board scene understanding still remains an open problem, few results are available in the literature about stroke images''.
 
@@ -453,7 +454,7 @@ Also, Geographic Object-Based Image Analysis (GEOBIA)~\cite{Blaschke2014Geograph
 Recently, comic book images have been also considered.
 An ontology of comics has been proposed from a philosophical approach~\cite{Aaron2011}, a semantic annotation tool~\cite{Hermann2012Guided} makes use of previous knowledge and consistency information to suggest new knowledge to the user in a interactive way.
 Spatial inferences have been used to infer the comic books reading order, for panel in the page and balloon in the panel~\cite{Guerin2012Ontologies}. 
-In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual information of simple object to build more complex ones.
+In~\cite{Sciascio2011Structured}, they highlight the benefit of using contextual information of simple objects to build more complex ones.
 % From our knowledge, there is no framework for document understanding in the literature that infers new knowledge iteratively and without user interaction (unsupervised).
 
 % section holistic_understanding (end)
@@ -485,7 +486,7 @@ We can divide comic-related computer systems into two categories.
 One type would be using comics to represent complex information such as online communication in a form of comics~\cite{Kurlander1996} and generating video or story log summaries~\cite{Uchihashi1999Video,Alves2008So,Shamir2006Generating} (computer graphics domain).
 Also, it is possible to listen to manga~\cite{Vomic} which have been recorded by people reading the story or to use mobile app for automatic translation~\cite{OCRMangaReader,Capture2Text} (requires user text selection).
 These systems are useful to add value to the content while making it more funny and interesting.
-The other category concerns the comic design by enabling novices to create comics  interactively using a computer for augmenting an individual user's memory~\cite{SumiSNM2002Comic}, turning photo albums into a comic~\cite{ComicLife3,Chu2013Optimized}, making comic-like video~\cite{Raulet2011Sketch}, making collaborative comics~\cite{Ricardo2009Calligraphic} and exchanging rich message~\cite{Salovaara2007Appropriation}.
+The other category concerns the comic design by enabling novices to create comics  interactively using a computer for augmenting an individual user's memory~\cite{SumiSNM2002Comic}, turning photo albums into a comic~\cite{ComicLife3,Chu2013Optimized}, making comic-like video~\cite{Raulet2011Sketch}, making collaborative comics~\cite{Ricardo2009Calligraphic} and exchanging rich messages~\cite{Salovaara2007Appropriation}.
 
 
 
@@ -519,7 +520,7 @@ This is one of the reasons that retains comics analysis to progress as fast as o
 % Il me semble qu'il serait bien d'évoquer la taxonomie de l'analyse de document et de montrer que l'analyse de BD se trouve au milieu de tout cela (à discuter ensemble)
 % }
 
-In the next chapter, we are going to present a sequential content extraction approach that profit from the relations between elements to guide the retrieval process.
+In the next chapter, we are going to present a sequential content extraction approach that profits from the relations between elements to guide the retrieval process.
 We first apply panel and text region extraction followed by speech balloon and tail segmentation.
 Then, speech balloon tail indications are used to compute a comic character region of interest according to the spatial organisation of previously extracted elements in each panel.
 

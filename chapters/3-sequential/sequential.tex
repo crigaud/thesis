@@ -51,13 +51,13 @@ From the foreground pixels, a structural analysis (connected-component labelling
 
 % Connected components labelling scans an image and groups its pixels into components based on pixel connectivity.
 % All pixels in a connected component share similar pixel intensity values and are in some way connected with each other.
-Connected component approaches are commonly used for stroke and text-based document analysis, there are also simple and computationally efficient.
+Connected component approaches are commonly used for stroke and text-based document analysis, they are also simple and computationally efficient.
 Once extracted, the connected-components can be clustered according to different features (e.g. size, shape, colour and location).
 We use this approach to extract panels and text which can be easily differentiated using size and topological information.
 % with meaningful names ``noise'', ``text'' and ``panel'' using a classifier with three cluster using discriminant features for instance.
 % The originalities of this paper are frame segmentation, with or without box, and out-of-balloon text segmentation that can be extracted by CC algorithm.
 % The aim of the pre-processing step is to separate background and content of the page in order to focus on the content later. Several processing are implemented in order to apply CC algorithm, and then, to extract the bounding boxes. It can be resumed as follows:
-The process can be summarized as below:
+The process can be summarized as follows:
   \begin{enumerate}
 	\item Binary segmentation
 	\item Connected-component extraction
@@ -71,7 +71,7 @@ The process can be summarized as below:
 \label{par:se:image_segmentation}
 
 The first step consists in a colour to grey level (3 to 1 channel) conversion.
-Several methods exit for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different pre-ponderations as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
+Several methods exit for such conversion, combining the three channels of the red, green, blue (RGB) colour space with different pre-weighting as given in~\cite{Pratt91} or using one channel from the Hue Saturation Lightness (HSL) or Value (HSV) representation of the RGB colour space.
 Here we use the lightness channel because the panel border strokes and text are usually darker than other elements in the image, including the background. 
 Then, a global binary segmentation (Appendix~\ref{sub:ap:bi_threshold}) is applied with a threshold determined dynamically (Figure~\ref{fig:se:binary_img}).
 The threshold is computed from the median value of the border page pixels where pixels with a value lower than the median value are considered as part of the foreground (we are interested in black strokes).
@@ -112,15 +112,11 @@ We do not consider white connected-component here because we assume that panel b
 By looking at the figure~\ref{fig:se:cc_bounding_box}, we can clearly see that the bounding boxes of the panel are bigger than the others.
 Also, they include more regions than others.
 Classifying those regions according to their size allows us to classify panel and text region at the same time while ignoring noise information.
-Knowing the number of clusters facilitate the clustering, here 
-% The classification of connected-component heights using k-means algorithm. 
-%We define the set of component bounding boxes $R = \{R_1, R_2, ... , R_n\}$.
-we set the number of clusters $k=3$ according to the domain knowledge of comics.
-They aim to reflect the ``panel'' (the highest), the ``text'' (medium height) and the ``noise'' (few pixels height) as shown on figure~\ref{fig:se:histo_roi}.
-One of the most popular clustering algorithm is k-means clustering method (Appendix~\ref{sub:ap:muli_threshold}).
+Knowing the number of clusters facilitates the clustering, here we set the number of clusters $k=3$ according to the domain knowledge of comics.
+They aim to reflect the ``panel'' (the highest), the ``text'' (medium height) and the ``noise'' (few pixels height) as shown on Figure~\ref{fig:se:histo_roi}.
 
-
-This clustering is performed dynamically on each image which makes this method parameter-free (for a given number of clusters) and invariant to page format and resolution.
+To perform the clustering, we use one of the most popular clustering algorithm which is k-means clustering method (Appendix~\ref{sub:ap:muli_threshold}).
+The clustering is performed dynamically on each image which makes this method parameter-free (for a given number of clusters) and invariant to page format and resolution.
 % Indeed, the height-based classification is not page size dependent unlike~\cite{Khoi11,Arai11}, and the number of pixels for each ROI is proportional to the page resolution (do not bias the classification).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,7 +158,7 @@ In fact, handwriting generates a lot of artefacts such as alignment variations, 
 We propose a simple method that handles the two first aforementioned artefacts considering the height and the neighbourhood of the connected-components.
 
 Among all the connected-components (Figure~\ref{fig:se:cc_bounding_box}), we clearly see that the spatial organisation and the regular size are characteristics of text regions (regardless of the language).
-We group text candidates into text lines according to alignment and ignore text candidate that can not be part of any text line.
+We group text candidates into text lines according to alignment and ignore text candidates that can not be part of any text line.
 
 Similarly to~\cite{Clavelli09,Li2013Comic}, we first search for the first letter (connected-component) of each text line and then attach the close and similar connected-components to the same text line.
 A letter is considered first if it is positioned on the left, on the same horizontal line and if there is no intersection found with any other letters at a distance equal to the letter height.
@@ -226,7 +222,7 @@ First, we require that the candidate text lines to group have similar heights (o
 % In this section we detail a novel approach for closed and non-closed speech balloon localization in scanned comic book pages, an essential step towards a fully automatic comic book understanding. 
 For comics content understanding, speech balloons are of significant interest since they offer the links between the textual content and the comic characters providing, in this way, information about the localization of the characters and the tone of speech. 
 As mentioned in Section~\ref{sec:sota:balloon_segmentation}, speech balloons are the more frequent type of balloon in comics and are highly related to speech text regions.
-In this section, we propose two approaches for balloon extraction based on text region location detection using the methods presented Section~\ref{sec:se:panel_and_text} or~\ref{sec:in:text_localisation_and_recognition}.
+In this section, we propose two approaches for balloon extraction based on text region location detection using the methods presented in Section~\ref{sec:se:panel_and_text} and~\ref{sec:in:text_localisation_and_recognition}.
 The first method defines as ``balloon'' the smallest connected-components that contain several text-like regions.
 The second method groups text lines into paragraphs and initializes an active contour model (snake) on its outline.
 From the initial position, the snake is pushed away from the text and attracted by surrounding edges at the same time in order to stick to any potential balloon stroke close by.
@@ -359,13 +355,15 @@ To achieve this, we propose new energy terms making use of domain knowledge.
 %   E_{ext} = -|\nabla \mathbf{I}(x,y)^2|
 % \end{equation}
 
-We adapt the active contour framework to the domain of comics to detect speech balloons given a prior detection of text regions, introducing new energy terms based on domain knowledge about the relationship between text and balloons.
-For the discussion below, we assume that text has been already detected in the image (Section~\ref{sec:se:panel_and_text} and~\ref{sec:in:text_localisation_and_recognition}).% and we use the method of \cite{Rigaud2013VISAPP} for text detection.
+% We adapt the active contour framework to the domain of comics to detect speech balloons given a prior detection of text regions, introducing new energy terms based on domain knowledge about the relationship between text and balloons.
 
 The introduction of statistical shape knowledge has already been studied in the literature but can not be applied here because of the lack of knowledge about the contour shape to detect and complex background~\cite{Cremers2002}.
-The original active contour model proposed by Kass~\cite{Kass1988} defines a energy function composed by internal $E_{int}$ and external $E_{ext}$ forces that make the initial contour shrinks to the object boundaries (Appendix~\ref{sub:ap:contour_based}).
-As we assume that text is included inside balloons, we need to inflate instead of shrink the initial contour in order to retrieve or approximate the balloon boundary.
+The original active contour model proposed by Kass~\cite{Kass1988} defines an energy function composed by internal $E_{int}$ and external $E_{ext}$ forces that make the initial contour shrink to the object boundaries (Appendix~\ref{sub:ap:contour_based}).
+As we assume that text is included inside balloons, we initialize the contour model on the text block boundary position.
+In our case, we need to inflate instead of shrink the initial contour in order to retrieve or approximate the balloon boundary.
 For this purpose, we introduce a new energy term denoted $E_{text}$ that conveys information about the relative placement of the balloon outline and the enclosed text (Equation~\ref{eq:se:energy2}).
+Note that for the discussion below, we assume that text has been already detected in the image (Section~\ref{sec:se:panel_and_text} and~\ref{sec:in:text_localisation_and_recognition}).% and we use the method of \cite{Rigaud2013VISAPP} for text detection.
+
 
 \begin{equation}\label{eq:se:energy2}
   E = E_{int} + E_{ext} + E_{text}\\
@@ -456,10 +454,10 @@ We iteratively examine each point of the snake in a clockwise fashion and move i
 This operation is repeated until no point moves in one turn (Algorithm~\ref{al:be:method}).
 Detecting the implicit parts of the balloons is quite challenging as we aim at detecting something which is not in the image, by interpolating contextual information (other printed part of the balloon).
 We propose a two step approach to test if the information is present or not before trying to extract it precisely.
-It is similar to our visual system or other computer-based object detection approaches which are able to decide if an object is present or not before finding its exact shape (coarse to fine).
+% It is similar to our visual system or other computer-based object detection approaches which are able to decide if an object is present or not before finding its exact shape (coarse to fine).
 First, we perform a coarse balloon contour position approximation (low resolution) using a quite rigid snake model.
 Then we fit the contour better to have a fine extraction of the balloon contour (high resolution) using the same algorithm and tuning the energy weighting parameters in a way to relax the snake (increase flexibility).
-The idea is to start a high resolution contour detection only when the active contour is positioned close to the contour.
+The idea is to start a high resolution contour detection only when the active contour is positioned close to the real contour.
 Otherwise, if we start the balloon detection using a too flexible snake, it might be attracted by forces that do not come from a balloon edge before reaching the contour position (printed or suggested).
 
 % TODO: remove high resolution step???
@@ -566,7 +564,7 @@ Figure~\ref{fig:se:mono_res_det} shows that the global shape of the top balloon 
 % , although it is can not be considered as a perfect balloon extraction as a lot of contour variation details are missing.
 % As we can see on the bottom part of the balloon, the snake was not able to fit precisely balloon outline, for instance peaky and tail regions are not well segmented.
 The aim of the high resolution fitting process is to attract the snake to the balloon contour details where they are drawn and keep the implicit contour position found by the low resolution process elsewhere.
-To achieve a fine detection, we increase the resolution of the snake by adding new points between to the snake, changing the weighting parameters of the energy function and go through a second fitting process using the same Algorithm~\ref{al:be:method}.
+To achieve a fine detection, we increase the resolution of the snake by adding new points between the original ones, changing the weighting parameters of the energy function and going through a second fitting process using the same Algorithm~\ref{al:be:method}.
 At this stage, we relax the $E_{curv}$ energy to make the snake fit thinner parts of the image and we set $E_{cont}$ strong enough to keep a regular inter-point distance all over the contour.
 Also, we reduce the $E_{text}$ energy weight because at this step, the snake is already far from text and this term is not informative any more.
 %to give more importance to the image energy than the prior knowledge. %is reduced because  external  avoid point  is closer to the final contour and do not need the $E_{know}$ energy start to minimize we reduced the inter-points distance, we also increase the external energy parameter $\gamma$ to make the snake more attractable by image edge, decrease the internal curvature energy parameter $\beta$ to allow more flexible contour fitting and decrease the knowledge energy parameter $\eta$ because the contour is now far from the text. 
@@ -610,7 +608,7 @@ They are represented by a discontinuity on balloon contour (Figure~\ref{fig:se:t
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The first interesting information to extract is: where the tail is \emph{connected} to the balloon and the position of its tip (extremity).
-From these two information we can compute a first direction and try to find the character to which it is related to in a post processing.
+From these two pieces of information we can compute a first direction and try to find the character to which it is related to in a post processing.
 Here comes the main difficulties, the tail may change direction several times from its origin to the tip, only the last part of the tail indicates the direction of the speaking character.
 Moreover, depending on the method used for extracting balloons, the tail tip position can be predicted in the background region or on the balloon boundary (more accurate) which may give a different direction at the end (Figure~\ref{fig:se:tail_examples}).
 
@@ -625,7 +623,7 @@ Moreover, depending on the method used for extracting balloons, the tail tip pos
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We propose to detect the tail position and direction based on the balloon contour analysis as tails are part of the balloon contour.
-We limit this study to the tail types that can be considered has an extension of the inside region (background) of the speech balloon namely types ``comma'', ``zigzag'' and ``absent'' in Figure~\ref{fig:se:tail_types}, because they can all be extracted from the segmentation of the balloon background.
+We limit this study to the tail types that can be considered as an extension of the inside region (background) of the speech balloon namely types ``comma'', ``zigzag'' and ``absent'' in Figure~\ref{fig:se:tail_types}, because they can all be extracted from the segmentation of the balloon background.
 This limitation covers most of the speech balloons, nevertheless, other types such as ``stroke'' and ``circle'' in Figure~\ref{fig:se:tail_types}, require different approaches for speech balloon extraction (e.g. blob detection, contour boundary analysis).
 
 
@@ -697,7 +695,7 @@ In fact, the tail tip is often located at the extremity of black stroke surround
 We propose to detect the external border line of the balloon contour in the region of the optimal convex hull vertex $v*$ presented above and define its extremity as the tail tip position.
 Image pre-processing and contour detection are performed in the same way as presented Section~\ref{sub:se:regular_balloon_extraction}.
 From all the detected contours, we select the contour $O$ that has the closest point $o_i$ from $v*$ (Euclidean distance).
-Then we run through all the points of the sequence of points that defines the contour $O=\{o_0, o_1,...,o_m\}$ and define as tail tip position $o*$ the one at the first maximum Euclidean distance to the tail origin.
+Then we run through all the points of the sequence of points that define the contour $O=\{o_0, o_1,...,o_m\}$ and define as tail tip position $o*$ the one at the maximum Euclidean distance to the tail origin.
 The tail origin is a virtual point midway between $f_a$ and $f_b$ (Figure~\ref{fig:se:tail_tip_refinement}).
 
 % \modif{TODO: update tail direction (improve) by computing a white region that includes the balloon border line}
@@ -785,8 +783,8 @@ where $W_{b_i}$ and $H_{b_i}$ correspond to the width and the height of a speech
 % We focus on the characters that are emitting a speech balloon (speaking characters) and try to localize them from the speech balloon informations.
 % That is to say that speech balloons will be associated one or several times to each of the character in different panels.
 
-As presented Section~\ref{sec:sota:comic_character}, unsupervised comic character detection still an unsolved issue.
-In fact, it faces tow difficulties.
+As presented Section~\ref{sec:sota:comic_character}, unsupervised comic character detection is still an unsolved issue.
+In fact, it faces two difficulties.
 The first one is the variety of comic styles that directly impacts the diversity of comic characters as they are the main elements of the stories (Figure~\ref{fig:kn:comics_diversity} and Appendix~\ref{sec:image_overview}).
 The first challenge is to propose a generic approach able to cover such variety.
 The second challenge is due to the variations of position, size, pose, scale, occluded parts between each instance of a given comic character (Figure~\ref{fig:sota:tarzan}).
@@ -868,7 +866,7 @@ The panel's corner $P_i$ is chosen between two opposite corners in order to alwa
 % Conclusion --------------------------------------------------------------------------------------------------------------------------------------
 \section{Conclusions}
 \label{sec:se:conclusion}
-In this section we have presented how to benefit from simple element to retrieve more complex ones in a comics image by following the relations between elements.
+In this section we have presented how to benefit from simple elements to retrieve more complex ones in a comics image by following the relations between elements.
 This approach is similar to the reader's reading behaviour opening a new comic book for the first time: first looking for traditional elements such as the panels, text and speech balloons and then, reading their content and retrieving the links with the comic characters and other graphics in the panel.
 This first approach is driven by the image content which means that each newly extracted element allows other related elements to be retrieved.
 % The domain knowledge is embedded into each specific extraction algorithms.

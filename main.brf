@@ -39,7 +39,7 @@
 \backcite {Han07}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {Tan07}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {In11}{{13}{2.2.1}{subsection.2.2.1}}
-\backcite {Arai10}{{13}{2.2.1}{subsection.2.2.1}}
+\backcite {Arai10,Pang2014Robust}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {Ho2012}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {Arai11,Ho2012}{{13}{2.2.1}{subsection.2.2.1}}
 \backcite {ponsard2012ocr}{{13}{2.2.1}{subsection.2.2.1}}
@@ -193,7 +193,7 @@
 \backcite {phdthesisGuerin14}{{70}{5.2.2}{subsection.5.2.2}}
 \backcite {Zinger05extracting}{{71}{5.2.2}{section*.76}}
 \backcite {Sciascio2011Structured}{{74}{5.3.1}{subsection.5.3.1}}
-\backcite {Haarslev2012}{{75}{5.3.1}{subsection.5.3.1}}
+\backcite {Haarslev2012}{{74}{5.3.1}{subsection.5.3.1}}
 \backcite {Sirin2007a}{{75}{5.3.1}{subsection.5.3.1}}
 \backcite {Laine2010,duc1997art}{{76}{5.3.2}{subsection.5.3.2}}
 \backcite {Jay53}{{77}{5.9}{figure.caption.83}}
@@ -206,7 +206,7 @@
 \backcite {Guerin2013}{{90}{6.2.5}{subsection.6.2.5}}
 \backcite {Arai10}{{90}{6.3}{section.6.3}}
 \backcite {Ho2012}{{90}{6.3}{section.6.3}}
-\backcite {Arai10}{{90}{6.3.1}{subsection.6.3.1}}
+\backcite {Arai10}{{91}{6.3.1}{subsection.6.3.1}}
 \backcite {Arai10}{{91}{6.2}{figure.caption.103}}
 \backcite {Ho2012}{{91}{6.3.2}{subsection.6.3.2}}
 \backcite {Ho2012}{{92}{6.3}{figure.caption.104}}
@@ -216,7 +216,7 @@
 \backcite {Arai11}{{95}{6.4.1}{subsection.6.4.1}}
 \backcite {Arai11}{{95}{6.5}{figure.caption.107}}
 \backcite {Arai11}{{97}{6.3}{table.caption.109}}
-\backcite {Guerin2013}{{98}{6.5}{table.caption.111}}
+\backcite {Guerin2013}{{97}{6.5}{table.caption.111}}
 \backcite {Arai10}{{98}{6.6}{section.6.6}}
 \backcite {Ho2012}{{98}{6.6}{section.6.6}}
 \backcite {Guerin2013}{{98}{6.6}{section.6.6}}

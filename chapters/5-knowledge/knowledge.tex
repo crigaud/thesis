@@ -6,7 +6,7 @@
 In this chapter we address the problem of understanding comics by automatically improving the consistency of the extracted elements according to the domain knowledge and by inferring new information and launching further processing iteratively.
 Detecting these elements and establishing their relationship is crucial towards complete comics understanding.
 Using this approach we propose a contribution towards the adaptability of an interpretation system, which corresponds to a hard belt of the literature.
-Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and theirs semantic relations.
+Low level and high level information is used in a complementary and unsupervised way, to progressively identify the different elements of a digitized comic book image and their semantic relations.
 
 %We also model the comic book's and the image processing domains knowledge and use an inference engine for information consistency analysis.
 
@@ -38,7 +38,6 @@ The knowledge about low and high level processing is stored in ontologies that a
 %in the different extraction processes such as panel and speech balloon improvements and validation (e.g. panel, text, speech balloon) and their combination to guide other feature extractions (e.g. person object).
 The knowledge base is associated with properties and constraints that form an ontology.
 An expert system uses the ontology to assert the relations between regions and an inference engine to deduct new information in order to perform further image processing.
-Note that in the rest of this chapter ``character'' is used in the sense of actor or protagonist of the comics, not as a piece of text.
 The main difficulty is to extract but also to model the diversity of styles, format, definition and the differences between design and printing techniques (Figure~\ref{fig:kn:comics_diversity}).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,16 +53,17 @@ The main difficulty is to extract but also to model the diversity of styles, for
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on data mining applied to comic book contents.
-All the details about the knowledge models, inference engine and the interactions between the elements can be found in his thesis~\cite{phdthesisGuerin14}.
+This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on knowledge representation applied to comic book contents.
+We jointly designed the knowledge model and the interactions between the low and high level processing.
+Further details about the knowledge models, inference engine and the interactions between the elements can be found in his thesis~\cite{phdthesisGuerin14}.
 
 %--------------------------------------------------
 \section{Proposed models} % (fold)
 \label{sec:kn:proposed_models}
 
 In this section, we introduce the ontologies developed for automatic analysis and understanding of comic book images.
-According to the state of the art review presented Section~\ref{sec:sota:holistic_understanding}, only one previous work proposed an ontology of comics from a philosophical approach~\cite{Aaron2011}.
-Cl{\'e}ment Gu{\'e}rin already published some work concerning the inference of the reading order, for panel in the page and balloon in the panel~\cite{Guerin2012Ontologies,phdthesisGuerin14}.
+According to the state of the art review presented in Section~\ref{sec:sota:holistic_understanding}, only one previous work proposed an ontology of comics from a philosophical approach~\cite{Aaron2011}.
+Gu{\'e}rin \emph{et al.} already published some work concerning the inference of the reading order, for panel in the page and balloon in the panel~\cite{Guerin2012Ontologies,phdthesisGuerin14}.
 Here we focus on semantic relations within the panel region which is a more recent work in the team.
 First, we present a first ontology formalising the concepts related to image processing, data type, the inputs and outputs.
 Secondly, we conceptualise the field of comic books oriented to digital image analysis.
@@ -78,7 +78,7 @@ It provides support for structuring data from image processing algorithms for su
 The data produced by such algorithms are generally limited to spatial data, lines, areas, which we will reference under the unique term of \textit{regions of interest} or \textit{ROI} (Region Of Interest) later in this document.
 They are defined by their Cartesian coordinates in the orthonormal image from which they are extracted.
 From this coarse analysis, we define the first two concepts of our model: \concept{Image} and \concept{ROI}.
-Then, a third concept called \concept{Extractor} is create to represent the low level algorithms that are getting the ROI from the image pixels.
+Then, a third concept called \concept{Extractor} is created to represent the low level algorithms that are getting the ROI from the image pixels.
 Figure~\ref{fig:kn:model_image} shows a visual representation of these concepts altogether.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,12 +171,12 @@ A region of interest from an image is produced by a single extractor.
 
 We present in this section a conceptualization of the comics domain and its ontological formalisation.
 This conceptualisation has been designed by keeping in mind the purpose of use in the context of image analysis.
-See Cl{\'e}ment Gu{\'e}rin's thesis for its adaptation to other applications~\cite{phdthesisGuerin14}.
+See~\cite{phdthesisGuerin14} for its adaptation to other applications.
 % Amendments may be affixed later in this manuscript in order to make its possible use in other application frameworks.
 
-Comics domain contains two different information levels.
-First, the bibliographic information, which are common with any books, about the collection, artist names, International Book Number (ISBN), language, number of page and so on.
-Second, the information about all the elements that composes a comic book page (e.g. panel, balloon, text and character), their relations and the corresponding semantic.
+The comics domain contains two different information levels.
+First, the bibliographic information, which is common with any book, about the collection, artist name, International Book Number (ISBN), language, number of page and so on.
+Second, the information about all the elements that compose a comic book page (e.g. panel, balloon, text and character), their relations and the corresponding semantic.
 
 \paragraph{Album and pages} % (fold)
 \label{par:album_and_pages}
@@ -186,7 +186,7 @@ These images are spatially juxtaposed in a plane that is called \emph{page} or \
 In classical comic strips, a story is told through an ordered succession of pages.
 These are represented by the printed pages grouped in an album, which can be from a collection telling a larger story.
 The webcomics also make use of pages, materialised by digital images.
-In the case of printed comics, a page may extend over one or two pages, rarely more.
+In the case of printed comics, a scanned image may extend over one or two pages, rarely more.
 A webcomic page is always represented by a single image.
 
 The first two concepts are introduced as \concept{Comic} and \concept{Page}.
@@ -223,7 +223,7 @@ Panels are represented by the concept \concept{Panel} with the attribute \dataPr
 
 Balloons or phylacteries, whether they are spoken, thought or narrated, are represented by the concept \concept{Balloon}.
 In a similar manner to panels, the balloons must be read in a appropriate order defined by their spatial position in their corresponding panel.
-We consider \emph{attached} and not \emph {overlapped} panel because, according to the comic book styles, the balloons are not necessarily spatially positioned within a panel.
+We consider \emph{attached} and not \emph {overlapped} panels because, according to the comic book styles, the balloons are not necessarily spatially positioned within a panel.
 Sometimes they are slightly outside or straddle several panels.
 Instead, each panel illustrates one action taking place at a fixed time.
 Balloons are an integral part of the staging and are attached to a given panel, independently from their relative position to this panel.
@@ -272,12 +272,12 @@ The property \objProp{hasTextLine} represents the link between a text line and a
 \paragraph{Specialisation of the content} % (fold)
 \label{par:specialisation_of_the_content}
 
-The semantic level of the presented concepts remains at a degree of granularity quite rude, here we present how to refine them.
-Balloons might be categorized into two subsets according to their relation to comics character or not.
+The semantic level of the presented concepts remains at a degree of granularity quite crude, here we present how to refine it.
+Balloons might be categorized into two subsets according to their relation to comic characters or not.
 On one hand the balloons emitted by characters (spoken or thoughts) or elements of the scene (radio, television, etc.), and on the other hand, narrative balloons.
 The shape of the speech balloon varies from one author to another.
 One feature which seems to be a consensus to discriminate narrative balloons from others, is the presence or not of a tail pointing to the source of the sound.
-Concepts \concept{SpeechBalloon} and \concept{NarrativeBalloon} are introduced to represent balloons equipped with a tail or not respectively.
+The concepts \concept{SpeechBalloon} and \concept{NarrativeBalloon} are introduced to represent balloons equipped with a tail or not respectively.
 % They are defined by the formulas ~ \ ref {eq: narrativeBalloon} and \ ref {eq: speechBalloon}.
 
 The semantic of text lines in these newly specialised balloons can then be refined accordingly.
@@ -286,11 +286,11 @@ The two corresponding concepts are \concept{SpokenTextLine} and \concept{Narrati
 They are simply defined as text lines belonging to an instance of \concept{SpeechBalloon} or \concept{NarrativeBalloon}.
 
 Speech balloons are usually issued by a character present in the panel.
-The link between a character and a speech balloon is expressed through the property \objProp{says}, whose domain \concept{Character} and range \concept{SpeechBalloon}.
+The link between a character and a speech balloon is expressed through the property \objProp{says}, whose domains \concept{Character} and range \concept{SpeechBalloon}.
 The concept \concept{Speaker} represents a character which is emitting a speech balloon.
 
 
-Figure~\ref{fig:model_d_3} illustrates the relations de introduced for the concepts \concept{Balloon}, \concept{TextLine} et \concept{Character}.
+Figure~\ref{fig:model_d_3} illustrates the relations introduced for the concepts \concept{Balloon}, \concept{TextLine} and \concept{Character}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
@@ -346,15 +346,7 @@ Figure~\ref{fig:model_d_3} illustrates the relations de introduced for the conce
 \label{sub:model_interactions}
 
 In this section we present the interactions between the image and comics ontologies so that they can communicate and combine their reasoning capabilities.
-We call $\mathcal{O}_{image}$ and $\mathcal{O}_{comics}$ the ontologies of image and comics respectively presented Sections~\ref{sub:kn:image_processing_domain} and \ref{sub:kn:comics_domain}.
-% Both models have been developed for comics image analysis.
-% In this context, we consider that the scanned image is the raw material supplied to an algorithm so that it can extract its contents.
-
-% Comme cela a été souligné précédemment, un algorithme d'analyse d'images a pour objectif la détection de caractéristiques visuelles discriminant un type d'objet particulier.
-% Dans notre cas, les extracteurs développés concernent les cases, les bulles, 
-% la queue des bulles, 
-% le texte et les personnages.
-
+We call $\mathcal{O}_{image}$ and $\mathcal{O}_{comics}$ the ontologies of image and comics respectively presented in Sections~\ref{sub:kn:image_processing_domain} and \ref{sub:kn:comics_domain}.
 Figure~\ref{fig:kn:interactions} illustrates the interactions between the ontologies.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,7 +361,7 @@ Figure~\ref{fig:kn:interactions} illustrates the interactions between the ontolo
 
 The image and comics models are linked through two bridges.
 First, the \concept{Image} concept from $\mathcal{O}_{image}$ and the \concept{Page} concept from $\mathcal{O}_{comics}$ are made equivalent.
-This ensures that all extracted content related to an image are equally related to a corresponding page in the comics domain $Page \equiv  Image$.
+This ensures that all extracted content related to an image is equally related to a corresponding page in the comics domain $Page \equiv  Image$.
 
 Second, the classes $Cl=\{Panel$, $Balloon$, $Tail$, $TextLine$, $Character\}$ are defined as equivalent to the corresponding set of regions of interest $roiType = \{panels$, $balloons$, $tail$, $text lines$, $characters\}$ (Equation~\ref{eq:kn:class_region_equivalence}).% that have an extractor which purpose is to extract the corresponding panels (resp. balloons, text lines and characters).
   
@@ -420,7 +412,7 @@ These logical conclusions may include a validation of extracted elements, reject
 %This knowledge can be represented by all the relations between the elements that constitute a document from this collection.
 The low level algorithms have been designed to extract specific information from the whole image or a specific region.
 Low and high level systems interact in a loop to feed the knowledge base until there is a complete and consistent understanding of the document, according to the knowledge domain. 
-Figure~\ref{fig:kn:process_loop} illustrates this loop interacting between the two level of information.
+Figure~\ref{fig:kn:process_loop} illustrates this loop interacting between the two levels of information.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -440,7 +432,7 @@ Figure~\ref{fig:kn:process_loop} illustrates this loop interacting between the t
 In step 1, the low level system propose to the expert system assumptions about a first set of segmented regions in the image.
 These regions are labelled according to their supposed type according to the extractor (panel, balloon, text, etc.).
 In the second step, the expert system evaluates these assumptions, validates correct ones and deletes others.
-Note the deletion is the simplest action we can perform from invalid information but we are currently investigating other scenarios such as switching or changing element labels.
+Note the deletion is the simplest action we can perform on invalid information, other scenarios such as switching or changing element labels have to be considered as well.
 In the third step, new information is inferred from valid assumptions, put in perspective of the domain knowledge.
 These are referred to the corresponding low level extractor that will use them, during the following iteration, to extract more complex elements such as the comic characters.
 This loop can be run as many times as new information is discovered.
@@ -461,7 +453,7 @@ This loop can be run as many times as new information is discovered.
 \subsection{Constraints for the low level extractions} % (fold)
 \label{sec:kn:constrains_low_level_extraction}
 
-In our model, knowledge is modelled though the categorization of each element composing a page, combined with a set of topological relation with these elements.
+In our model, knowledge is modelled though the categorization of each element composing a page, combined with a set of topological relations with these elements.
 In our context, the elements that compose a given image $I$ are panels $P$, balloons $B$, tails $Q$, text $T$ and characters $C$, as well as the set of topological and semantic relations between them.
 Because comics, as an art form, do not follow any strict specifications it is really hard to build a perfect model which is valid for all kinds of comics.
 There are some instances of comic books without balloons or without panels.
@@ -480,7 +472,7 @@ We define the general properties of comics as follows:
 \end{itemize}
 
 Despite the fact that authors are free in their layout choices, they follow general use conventions widely adopted by comic book's authors in order to avoid confusing the reader~\cite{Laine2010,duc1997art}.
-The depicted elements and their place in the page must be clearly identifiable at first sight, meaning, for instance, that text is contained by the balloons which are included inside panels just like the characters.
+The depicted elements and their placement in the page must be clearly identifiable at first sight, meaning, for instance, that text is contained by the balloons which are included inside panels just like the characters.
 Whereas one can find some instances of balloons breaking out of their panel, these are usually kept to a minimum.
 
 Therefore, the term ``related'' refers to the situation where an object is overlapped (a fortiori, contained) by another over a \emph{significant} proportion of its surface.
@@ -496,7 +488,7 @@ This can be demonstrated with the first two iterations of the process loop (Figu
 The first iteration treats simple elements such as panels, balloons and text lines.
 They are called simple because they have a relatively regular structure.
 % and have already received the attention of numerous works in the past.
-During the second iteration of the process loop, the detection of the comic characters, more complex in their visual diversity is discussed.
+During the second iteration of the process loop, the detection of the comic characters, more complex in their visual diversity, is treated.
 
 The different stages of the process are illustrated through the couple of panels presented in Figure~\ref{fig:casesExampleReconnaissance}.
 
@@ -515,7 +507,7 @@ The different stages of the process are illustrated through the couple of panels
 \paragraph{Iteration 1 - step 1 (hypothesis)} % (fold)
 \label{par:step_1}
 The initial extraction of panels, text and balloons feeds the knowledge base.
-All the elements are extracted independently using the method proposed Chapter~\ref{chap:independent}.
+All the elements are extracted independently using the method proposed in Chapter~\ref{chap:independent}.
 All these elements are assumptions to be validated by the expert system.
 In Figure~\ref{fig:kn:graph0}, dashed elements represent the initial hypotheses and each colour a result from a different extractor.
 Note that extraction errors can take place at this stage and that these errors can be recovered by the system at a later stage.
@@ -556,19 +548,19 @@ If the system is unable to find a container for an element $e$ from the set of e
 In order to validate the assumption of all the elements in $E$, they are simply considered as instances of the concept $\concept{ROI}_i$.
 We voluntarily do not take into account of their class in the ontology $\mathcal{O}_ {bd}$.
 This has for effect to introduce inconsistencies between the type of container and the domain of a property resulting from \objProp{hasContent}, making the model inconsistent.
-These inconsistencies allow to highlighting possible errors made during the low-level processing.
-The inference engine is stated again on the ontology and inconsistencies are treated one after the other.
+These inconsistencies allow highlighting possible errors made during the low-level processing.
+The inference engine is started again on the ontology and inconsistencies are treated one after the other.
 
 In this work, we focused on optimizing the reliability of the results.
 % We have chosen to focus on the accuracy of extractions rather than completeness.
 % Detection of misclassification, such as a box has been segmented by the extractor of bubbles, and the prominence of items that may have been forgotten are both short-term prospects of this work.
 % Currently, our system is able to handle the following reasons for inconsistency:
 We have chosen to focus on increasing the extraction precision rather than completeness by deleting the elements that did not fit the proposed model.
-The detection of misclassified elements (e.g panel actually being a balloon) and the proposition of missed elements (e.g. a missed balloon around a group of text lines) are both short term perspectives of this work.
+The detection of misclassified elements (e.g. panel actually being a balloon) and the proposition of missed elements (e.g. a missed balloon around a group of text lines) are both short term perspectives of this work.
 For the time being, our system can handle, without being limited to, the following inconsistencies:
 
 \begin{itemize}
-  \item \textbf{A page (p) contains a balloon (b), a text line (t)}: b or t is deleted.
+  \item \textbf{A page (p) contains a balloon (b) or a text line (t)}: b or t is deleted.
   \item \textbf{A panel (p1) contains a panel (p2) or a text line (t)}: p2 or t is deleted.
   \item \textbf{A balloon (b) contains a panel (p)}: if p contains some balloons and b does not contain any text lines, b is deleted, otherwise, p is deleted.
   \item \textbf{A balloon (b1) contains a balloon (b2)}: if b1 does not contain any line then b1 is deleted, otherwise b2 is deleted.
@@ -584,7 +576,7 @@ For the time being, our system can handle, without being limited to, the followi
 The term ``related'' refers to the relation of membership of an element to another, as described in Section~\ref{sec:kn:constrains_low_level_extraction}.
 Figure~\ref{fig:kn:graph_valid_initial} illustrates the current organisation of the extracted elements.
 They have been structured according to the model definition Section~\ref{sub:kn:comics_domain}.
-Validated elements are illustrated in solid lines while other still dashed.
+Validated elements are illustrated in solid lines while others still dashed.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -605,7 +597,7 @@ Validated elements are illustrated in solid lines while other still dashed.
 At this step of the first iteration, the inconsistencies have been resolved and the remaining elements are in accordance with our model.
 They are organized in the hierarchy of concepts in $\mathcal{O}_{comics}$.
 The ontology being consistent, the inference engine is able to classify instances of  \concept{Balloon} and \concept{TextLine} into \concept{SpeechBalloon}, \concept{NarrativeBalloon}, \concept{SpokenTextLine} and \concept{NarratedTextLine} according to their properties and constraints.
-The classification of the region instances is shown Figure~\ref{fig:kn:graph_specific_types}.
+The classification of the region instances is shown in Figure~\ref{fig:kn:graph_specific_types}.
 %From the validated information, the expert system infers the semantic information between text and balloon and specifies them as speech balloon and speech text respectively when they verify the properties of the knowledge base (Figure~\ref{fig:kn:graph_specific_types}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -630,17 +622,17 @@ At this point, the expert system has some information about the content of the p
 \label{par:step_4}
 
 The information discovered during the first iteration of the process is used to formulate hypotheses about the probable location of the characters in the panels in order to guide their detection by the low level processing.
-We first focus on characters that are emitting at least a speech balloon (considered as main characters).
+We first focus on characters that are emitting at least one speech balloon (considered as main characters).
 It is reasonable to consider that the speech balloon and the character emitting the balloon belong to a same panel.
 It is therefore possible to restrict the search space of the character inside the panel.
 In addition, the position of the character in the panel can be estimated according to the direction pointed by the tail which is a characteristic of speech balloons (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}).
 The estimation of the position of the comic character from the tail position and direction have been presented in Section~\ref{sec:se:tail_to_character}.
-The estimated region of interest are given as seeds to the image processing algorithm (extractor of characters) which refines the regions according to the image content (Figure~\ref{fig:kn:process_illustration_hypo_2_2}).
+The estimated regions of interest are given as seeds to the image processing algorithm (extractor of characters) which refines the regions according to the image content (Figure~\ref{fig:kn:process_illustration_hypo_2_2}).
 The last step from the low level processing consists in spotting all the comic characters from the estimated examples (Figure~\ref{fig:kn:process_illustration_hypo_2_3}).
 
 % \modif{
-The method used for ROI refinement is currently under investigation and a first approach could be to fit the estimated ROI to the set of regions that are mainly overlapped by the ROI and exclude the others.
-The spotting approach is relevant for retrieving non speaking characters as demonstrated Section~\ref{sec:in:character_spotting} but it is currently only appropriate for colourful comics.
+The method used for ROI refinement has not been completed during this thesis, a good research line could be to fit the estimated ROI to the set of regions that are mainly overlapped by the ROI and exclude the others.
+The spotting approach is relevant for retrieving non speaking characters as demonstrated Section~\ref{sec:in:character_spotting}.
 
 %*** JCB 2014-09-16 ***
 %TODO
@@ -715,7 +707,7 @@ Validated elements are represented with a solid line Figure~\ref{fig:kn:valid_2}
 
 The final step of this process is to deduce from all validated characters those that are actually linked to speech balloons.
 Among the validated characters, we consider as being potential speakers those who intersect with the initial estimation of region of interest (Figure~\ref{fig:kn:process_illustration_hypo_2_1bis}).
-An abstract straight line is drawn from each speech balloon tail tip in the direction indicated by the tail to its related panel border.
+An virtual straight line is drawn from each speech balloon tail tip in the direction indicated by the tail to its related panel border.
 The first region of a potential speaker that it touches is considered to be the source of the speech balloon (the emitter).
 This relation was asserted into the ontology with the property \textit{isSaidBy}, between the selected character and the corresponding balloon.
 Since the range of this property was set to the concept of \concept{speaker}, it automatically classifies the character instance involved into this class (Figure~\ref{fig:kn:final_information}).
@@ -870,12 +862,12 @@ The proposed system provides a novel generic and unsupervised approach for comic
 It relies on an inference engine that interacts with the two proposed models.
 We detailed a use case for comic character localisation associated with their corresponding speech balloons, taking into account the spatial organisation of the rest of the elements in an image.
 One limitation of the proposed system is the validation process which only suppresses elements until having a consistent representation of the knowledge.
-We are currently working on different scenarios able to compute a cost, in terms of number of inconsistencies that are created or solved, of changing the class from one type to another one (e.g. changing a region given by the panel extractor as balloon and \emph{vice versa}).
-This solution will permit to apply the changes that have the minimal cost, including deletion as the last option, in order to make the knowledge representation consistent while minimizing the loss of extracted information.
+An interesting line of research could be to compute a cost, in terms of number of inconsistencies that are created or solved, of changing the class from one type to another one (e.g. changing a region given by the panel extractor as balloon and \emph{vice versa}).
+This solution would permit to apply the changes that have the minimal cost, including deletion as the last option, in order to make the knowledge representation consistent while minimizing the loss of extracted information.
 
-In the future we plan to add more iterations of the process in order to retrieve new information such as other objects in the panels and sound effects.
-In addition, the expert system will be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from validated text locations.
+Another research axis would be to continue iterating the process loop with other low level extractors in order to retrieve other information such as other objects in the panels and sound effects.
+In addition, the expert system could also be used to improve text extraction and recognition using system feedback in order to automatically extract open speech balloons from validated text locations.
 A semantic tag (e.g. speech, thought, exclamation) can also be given to the speech text regions according to a deeper analysis of the type of balloon presented Section~\ref{sub:in:balloon_classification}.
 
-In the next chapter, we are going to experiment the different contributions presented in this thesis and compare them to other methods from the literature.
+In the next chapter, we are going to put to practice the different contributions presented in this thesis and compare them to other methods from the literature.
 The dataset is first introduced along with the metrics we used to evaluate information retrieval. 

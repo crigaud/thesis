@@ -94,7 +94,7 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Panel extraction process of Ho's method}}{92}{figure.caption.104}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Original image}}}{92}{subfigure.3.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Binary segmentation}}}{92}{subfigure.3.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {After dilatation step}}}{92}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {After dilation step}}}{92}{subfigure.3.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {After erosion step}}}{92}{subfigure.3.4}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Panel extraction score details for each image of the eBDtheque dataset}}{93}{figure.caption.105}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Arai's method}}}{93}{subfigure.4.1}

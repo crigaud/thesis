@@ -200,9 +200,7 @@ Panel extraction and ordering have been mainly studied for panel to panel readin
 Several techniques have been proposed to automatically extract panels as~\cite{In11}, assuming that panels are small enough elements to be comfortably read on mobile devices.
 They are based on white line cutting algorithm~\cite{Duda72,Luyuan2014Automatic,Chan2007Automatic}, recursive X-Y cut~\cite{Han07} or gradient~\cite{Tan07}.
 Those methods do not consider empty area~\cite{In11} and border free panels.
-These issues have been corrected by connected-component approaches~\cite{Arai10} 
-%,Rigaud2012LNCS} 
-but they are sensible to regions that sometimes connect several panels and increase the detection error rate.
+These issues have been corrected by connected-component approaches~\cite{Arai10,Pang2014Robust} but they are sensible to regions that sometimes connect several panels and increase the detection error rate.
 Another approach based on growing regions and morphological analysis can remove such connecting elements but also remove information on the panel border~\cite{Ho2012}.
 After the region segmentation step, heuristic filtering is often applied to classify the panel region according to the size ratio with the page size, which depends on the page format~\cite{Arai11,Ho2012}.
 More recently, new methods have shown interesting results for manga and European comics with different background colours.

@@ -1,5 +1,5 @@
-\chapter{Experiments}
-\chaptermark{Experiments}
+\chapter{Experiments and performance evaluation}
+\chaptermark{Experiments and performance evaluation}
 \label{chap:experimentations}
 \graphicspath{{./chapters/6-experiments/figs/}}
 
@@ -8,8 +8,8 @@
 
 % Abstract-----------------------------------------------------
 With the analysis and processing of data comes the need of the output results evaluation.
-Traditionally, this evaluation is made by validating the results of an algorithm with a ground truth that represents what an ideal output should be\cite{pascal-voc-2012, smeaton2006evaluation, griffinHolubPerona}.
-Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm to the community \cite{lamiroy:inria-00537035}.
+Traditionally, this evaluation is done by validating the results of an algorithm against a ground truth that represents what an ideal output should be\cite{pascal-voc-2012, smeaton2006evaluation, griffinHolubPerona}.
+Ideally, such a ground truth is made publicly available so anyone can challenge his own algorithm~\cite{lamiroy:inria-00537035}.
 This can be applied to any kind of results from image segmentation to classification or information retrieval.
 In this chapter we present the dataset and ground truth we provided to evaluate comic book related works.
 We describe the metrics we used to evaluate each of the contributions proposed in \ch{chap:sequential}, \ch{chap:independent} and \ch{chap:knowledge} and evaluate our work compared to previous works from the literature.
@@ -38,10 +38,10 @@ Note that we call these three approaches Method I (independent), Method S (seque
 \section{Dataset and ground truth} % (fold)
 \label{sec:dataset_and_ground_truth_construction}
 
-Being in need of comic books material and an associated ground truth to evaluate our work, we noticed that there is not such dataset publicly available for scientific purpose. 
+Being in need of comic books material and an associated ground truth to evaluate our work, we noticed that there is not such a dataset publicly available for scientific purposes.
 Therefore, we decided to gather the first publicly available comic books dataset in association with several comic books authors and publishers and to build up the corresponding ground truth according to document analysis and understanding concerns.
 % which are image segmentation and semantic analysis.
-The comic book images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that have the objective to foster innovation in this domain trough academic research.
+The comic book images were selected to cover the huge diversity of comic styles with the agreement of the consenting authors and publishers that have the objective to foster innovation in this domain through academic research.
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[ht]  %trim=l b r t  width=0.5\textwidth,
@@ -55,9 +55,9 @@ The comic book images were selected to cover the huge diversity of comic styles 
 
 It took almost one year to define which type of comics are the most interesting for researchers, meet and convince comic book authors and publishers, get copyright authorizations for the scientific community, develop a specific annotation tool and finally to hire people to manually create the ground truth.
 
-A selection of hundred comic pages were annotated in one day by twenty volunteers affiliated to the L3i lab.
-In order to provide a common basis for evaluating research work, the ground truth have been published in 2013~\cite{Guerin2013} and made available to the scientific community through a dedicated website\footnote{\url{http://ebdtheque.univ-lr.fr}}.
-It has been enriched in 2014 by adding the location of the principal comic characters and semantic information to the already annotated elements.
+A selection of one hundred comic pages were annotated in one day by twenty volunteers affiliated to the L3i lab.
+In order to provide a common basis for evaluating research work, the ground truth was published in 2013~\cite{Guerin2013} and made available to the scientific community through a dedicated website\footnote{\url{http://ebdtheque.univ-lr.fr}}.
+It was enriched in 2014 by adding the location of the principal comic characters and semantic information to the already annotated elements.
 
 The content of the dataset and the ground truth construction are briefly detailed in the two next sub sections, more details are provided in Appendix~\ref{app:dataset} and~\ref{app:groundtruth} respectively.
 
@@ -73,8 +73,8 @@ The content of the dataset and the ground truth construction are briefly detaile
 Scott McCloud defined comics as ``juxtaposed pictorial and other images in deliberate sequence, intended to convey information and/or to produce an aesthetic response in the viewer''~\cite{mccloud1994understanding}.
 This definition is intentionally broad enough to encompass the spectrum of the majority of works produced so far.
 The dataset composition should reflects this heterogeneity to give everyone the opportunity
-to compare its algorithms to a globally representative dataset of the comics world.
-We contacted authors with different comic styles and have selected a corpus of one hundred images, representing single or double comics page.
+to compare their algorithms on a representative dataset of the comics world.
+We contacted authors with different comic styles and have selected a corpus of one hundred images, representing single or double comics pages.
 
 The images were partly processed by the French company A3DNum\footnote{\url{http://www.a3dnum.fr}} which was commissioned to digitize 14 albums.
 Among all the files, scanned at a resolution of 300 dots per inch and encoded in uncompressed Portable Network Graphic (PNG) format, we used 46 pages to integrate the eBDtheque corpus.
@@ -82,8 +82,7 @@ The remaining 54 images were selected from webcomics, public domain comics\footn
 We encoded all the images of the eBDtheque dataset in Joint Photographic Experts Group (JPEG) format with a lossy compression to facilitate file exchange.
 %, the non compressed images are available on request.
 
-Hereafter we describe the characteristics of the selected pages and their content.
-
+Hereafter we describe the characteristics of the selected pages and their content, an overview of the images is given Appendix~\ref{app:dataset}.
 
 \paragraph{Albums} % (fold)
  \label{par:albums}
@@ -91,7 +90,7 @@ Hereafter we describe the characteristics of the selected pages and their conten
  29 pages were published before 1953 and 71 after 2000.
  Quality paper, colour saturation and textures related to printing technique changes can vary a lot from one image to another.
  The artworks are mainly from France (81\%), United States (13\%) and Japan (6\%).
- Their styles varies from classical Franco-Belgium ``bandes dessinées'' to Japanese manga through webcomic and American comics.
+ Their styles vary from classical Franco-Belgium ``bandes dessinées'' to Japanese manga through webcomic and American comics.
 
  % paragraph albums (end)
 
@@ -129,7 +128,7 @@ There is text without any surrounding balloons on 33 images of the corpus.
 \paragraph{Text} % (fold)
 \label{par:text}
 The text is either typewritten or handwritten, mainly upper-case. % (61\% of the images are typewritten?)
-The text lines contains 12 elements in average (Figure~\ref{fig:ex:textline_lenth_distribution}) and there are more than hundred text lines that are composed by only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
+The text lines contain 12 elements in average (Figure~\ref{fig:ex:textline_lenth_distribution}) and there are more than one hundred text lines that are composed by only one letter corresponding to punctuation or single letter words such as ``I'' or ``A''; this is a particularity of comics.
 
 Most pages are from French artworks, where the text is written in French.
 Only 13 pages contain English text and 6 images are in Japanese.
@@ -150,7 +149,7 @@ Onomatopoeia appears in 18 pages.
 \paragraph{Comic characters} % (fold)
 \label{par:comic_characters}
 The comic characters or protagonists are specific to each album.
-They all have eye, harm and leg but at least 50\% are not humanoid, depending on the interpretation.
+They all have eyes, arms and legs but at least 50\% are not humanoid, depending on the interpretation.
 % paragraph comic_characters (end)
 
 % DATASET FULL DESCRIPTION MOVED TO APPENDIX 2014-09-18
@@ -178,7 +177,7 @@ Finally, the file structure, the annotation quality assessment and the terms of 
 
 \section{Metrics} % (fold)
 \label{sec:ex:metrics}
-The contributions of this thesis are from different nature and need to be evaluated separately using appropriate metrics.
+The contributions of this thesis are of different nature and need to be evaluated separately using appropriate metrics.
 Object localisation developments are evaluated using the commonly used recall and precision metrics and other contributions are evaluated using accuracy.
 
 \subsection{Object localisation metric} % (fold)
@@ -186,7 +185,7 @@ Object localisation developments are evaluated using the commonly used recall an
 
 
 % paragraph metrics (end)
-We evaluate the different extractions (panel, balloon and text regions) in terms of object bounding boxes such as the PASCAL VOC challenge~\cite{everingham2010pascal}.
+We evaluate the different extractions (panel, balloon and text regions) in terms of object bounding boxes similarly to the PASCAL VOC challenge~\cite{everingham2010pascal}.
 The detections are assigned to ground truth objects and judged to be true or false positives by measuring bounding box overlap.
 To be considered as a correct detection, the overlap ratio $a_0$ between the predicted bounding box $B_p$ and the ground truth bounding box $B_{gt}$ (Formula~\ref{eq:ex:overlap_ratio}) must exceed 0.5.
 The predicted objects are considered as true positive $TP$ if $a_0 > 0.5$ or false positive $FP$ (prediction errors) otherwise.
@@ -224,14 +223,14 @@ R = \frac{TP}{TP + FN} && P = \frac{TP}{TP + FP} && F = 2 * \frac{P * R}{P + R}
 \label{sub:ex:object_segmentation_metric}
 
 Object bounding box based evaluation is appropriate for surface comparison but not for detailed region extraction evaluation.
-In Section~\ref{sub:in:balloon_classification} we extract balloon contour at the level of pixel for analysis and classification purposes.
-In order to make the difference between the errors sources we need to use a more precise evaluation framework.
-Here we keep using recall and precision metrics as introduced in the previous section but instead of counting the number of objects that valid a certain criterion, we simply count the number of pixels that have been detected correctly ($TP$), incorrectly ($FP$) or missed ($FN$).
+In Section~\ref{sub:in:balloon_classification} we extract balloon contours at the level of pixel for analysis and classification purposes.
+In order to differentiate between error sources, we need to use a more precise evaluation framework.
+Here we keep using recall and precision metrics as introduced in the previous section but instead of counting the number of objects that comply with a certain criterion, we simply count the number of pixels that have been detected correctly ($TP$), incorrectly ($FP$) or missed ($FN$).
 
 
 \subsection{Text recognition metric} % (fold)
 \label{sub:ex:text_recognition_metric}
-Even if text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{par:ex:text_recognition_evaluation} using commercial OCR systems on the eBDtheque dataset.
+Even though text recognition would require more investigation to be fully treated, we give a first baseline evaluation in Section~\ref{par:ex:text_recognition_evaluation} using commercial OCR systems on the eBDtheque dataset.
 We evaluated the text detection accuracy $A_{textReco}$ at a given string edit distance between the predicted recognition and its corresponding transcription in the ground truth~\cite{Guerin2013}.
 
 % subsection text_recognition (end)
@@ -259,7 +258,7 @@ The direction accuracy $A_{tailDir}$ was measured according to the distance $d_1
 
 \begin{equation}
 \label{eq:ex:accuracy_taildir}
-  A_{tailDir} = 1- \frac{d_1}{8}
+  A_{tailDir} = 1 - \frac{d_1}{8}
 \end{equation}
 
 For instance if the detected direction was $S$ (south) and the ground truth was $SE$ (south-east) then $d_1=1$.
@@ -308,20 +307,21 @@ The first one use connected-component analysis similarly to our proposition and 
 
 All the evaluations are performed on the 850 panels of the eBDtheque dataset (Section~\ref{sec:dataset_and_ground_truth_construction}) at object bounding box level, using the recall and precision metrics introduced in Section~\ref{sub:ex:object_localisation_metric}.
 
+Note that some of the images in the dataset were digitized with a dark background surrounding the cover of the book.
+We automatically remove this by cropping the image where a panel with an area greater than 90\% of the page area is detected.
+
 % \subsection{Experimental settings} % (fold)
 % \label{sub:experimental_settings}
 
-% TODO
-
 \subsection{Arai's method} % (fold)
 \label{sub:ex:panel_extraction_arai}
-We have implemented the comic panel extraction method presented in~\cite{Arai10} except the division line detection by lack of detail in the original paper.
+We have implemented as a baseline the comic panel extraction method presented in~\cite{Arai10} except for the division line detection due to lack of detail in the original paper.
 
-This method consists in a bi-level segmentation with an empiric threshold value of 250 followed by a connected-component extraction, binary image inversion and blob selection.
+This method consists in a bi-level segmentation with an empirical threshold value of 250 followed by a connected-component extraction, binary image inversion and blob selection.
 The final blob selection is based on a minimal size of $Image.Width / 6$ and $Image.Height / 8$.
 From the selected blobs, a line detection approach is applied as final decision.
-This line detection approach is able to cut overlapped panels on a page size basis which is appropriate for pages with a single panel per strip as illustrated Figure~\ref{fig:ex:division_line_detection}.
-The author did not share the code and we were not able to re implement this part by lack of detail in the original paper.
+This line detection approach is able to cut overlapped panels on a page size basis which is appropriate for pages with a single panel per strip as illustrated in Figure~\ref{fig:ex:division_line_detection}.
+The author did not share the code and we were not able to re implement this part due to lack of detail in the original paper.
 Anyway, the line division method works only for panels that are as large as the page which is not so common and would not have affected the result significantly (Figure~\ref{fig:ex:division_line_detection}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -334,7 +334,7 @@ Anyway, the line division method works only for panels that are as large as the 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The score of this method was in average for recall and precision of 20.00\% and 18.75\% (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
+This method yields an average recall of 20\% and precision of 18.75\% (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}
@@ -349,11 +349,11 @@ The score of this method was in average for recall and precision of 20.00\% and 
 % subsection arai_cite_arai (end)
 
 \subsection{Ho's method} % (fold)
-We have implemented the Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the region growing method to 20 (not mentioned in the original paper).
+We have also implemented as baseline Ho's method~\cite{Ho2012} with the original parameters and set the minimal and maximal lower brightness difference of the region growing method to 20 (not mentioned in the original paper).
 The image border is filled with the average five-pixel page border colour and four seeds are initialized on the four corners of the image.
 When the region growing algorithm stops, the background is removed which separates panel blocks.
-Mathematical morphology (dilatation) is then applied until blocks become smaller than $1/6$ of the page size and then the same number of erosion is applied in order to give back to the objects their initial size.
-This manipulation separates the connected panels but has the disadvantage of creating unwanted holes as well (Figure~\ref{fig:ex:panel_ho_extraction_process}).
+Mathematical morphology (dilation) is then applied until blocks become smaller than $1/6$ of the page size and then the same number of erosion steps is applied in order to give back to the objects their initial size (closing operation).
+This manipulation separates the connected panels but has the disadvantage of creating unwanted panels as well (Figure~\ref{fig:ex:panel_ho_extraction_process}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!ht] %trim=l b r t  width=0.5\textwidth, 
@@ -364,14 +364,14 @@ This manipulation separates the connected panels but has the disadvantage of cre
   \hspace{1em}
   \subfloat[Binary segmentation]{\label{fig:se:panel_ho_binary}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho02.png}}
   \hspace{1em}
-  \subfloat[After dilatation step]{\label{fig:ex:panel_ho_dilate}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho03.png}}
+  \subfloat[After dilation step]{\label{fig:ex:panel_ho_dilate}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho03.png}}
   \subfloat[After erosion step]{\label{fig:ex:panel_ho_erode}\includegraphics[trim= 0mm 0mm 0mm 0mm, clip, width=0.2\textwidth]{ho04.png}}  
     \caption[Panel extraction process of Ho's method]{Panel extraction and separation process of Ho~\cite{Ho2012}.}
     \label{fig:ex:panel_ho_extraction_process}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The score of this method was in average for recall and precision of 49.76\% and 68.74\% (Figure~\ref{fig:ex:panel_ho_extraction_detail}).
+This method yields an average recall of 49.76\% and precision of 68.74\% (Figure~\ref{fig:ex:panel_ho_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}
@@ -385,9 +385,9 @@ The score of this method was in average for recall and precision of 49.76\% and 
 \subsection{Sequential approach} % (fold)
 \label{sub:ex:panel_extraction_rigaud_method_A}
 
-The method presented in Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for k-means clustering algorithm that we fixed to $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
-Note that the method also extract text region at the same time which does not interfere with panel (Section~\ref{sub:ex:text_extraction_recognition_evaluation}).
-The score of this method was in average for recall and precision of 64.24\% and 83.81\% (Figure~\ref{fig:ex:panel_methodA_extraction_detail}).
+The method presented in Section~\ref{sec:se:panel_and_text} is parameter free except for the number of cluster for the k-means clustering algorithm that we fixed to $k=3$ according to the domain knowledge of comics (Section~\ref{sec:se:panel_and_text}).
+Note that the method also extracts text regions at the same time which do not interfere with panel (Section~\ref{sub:ex:text_extraction_recognition_evaluation}).
+This method yields an average recall of 64.24\% and precision of 83.81\% (Figure~\ref{fig:ex:panel_methodA_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -421,7 +421,7 @@ The score of this method was in average for recall and precision of 62.94\% and 
 The knowledge-driven method can be used as a post processing of the panel extraction.
 It validates or rejects panel candidates using the proposed model (Section~\ref{sec:kn:processing_sequence}).
 In the model, the only rule about the panel is that they should be contained in a image.
-The score of this method for the independent panel extraction (Method I) was in average for recall and precision of 61.88\% and 87.42\% (Figure~\ref{fig:ex:panel_methodC_extraction_detail}).
+The score of this method was in average for recall and precision of 61.88\% and 87.42\% (Figure~\ref{fig:ex:panel_methodC_extraction_detail}) using the independent panel extraction approach (Method I).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -468,8 +468,7 @@ The score of this method for the independent panel extraction (Method I) was in 
 \label{sub:result_analysis}
 
 Table~\ref{tab:panel_extraction_comparision_results} compares the average results we obtained for the three proposed methods and two methods from the literature.
-Note that some of the dataset images were digitized with a dark background surrounding the cover of the book.
-We automatically remove this by cropping the image where a panel with an area greater than 90\% of the page area is detected.
+
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -502,21 +501,21 @@ We automatically remove this by cropping the image where a panel with an area gr
 
 %TODO: re evaluate Arai's result from his method (still waiting for is email 2014-07-01)
 
-The main drawback of the Arai's method is the binary segmentation with a fixed value that works best for comic book with a white background but it is not appropriate for digitization defaults and paper yellowing.
-This method is only appropriate for webcomics with a perfectly white background clear separation between panels (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
+The main drawback of Arai's method is the binary segmentation with a fixed value that works best for comic books with a white background but it is not appropriate for digitization defaults and paper yellowing.
+This method is only appropriate for webcomics with a perfectly white background allowing a clear separation between panels (Figure~\ref{fig:ex:panel_arai_extraction_detail}).
 
 Ho's method is adaptive to background variation but considers as panel all the elements that are directly included (first topological level) in the page background.
-This produces an over-segmentation by including some text which are inside the frame-less panels or inside implicit balloons.
+This produces an over-segmentation by including some text which is inside the frame-less panels or inside implicit balloons.
 When those out of panel elements are small, they prevent the connected panel separation process to work properly because the stopping criterion is based on element size.
 
 The first method we proposed (Method S) extracts panel and text simultaneously and then other elements in a sequential manner.
 It assumes that there are distinguishable clusters of connected-component in the image which is not always the case.
-Anyway, it still more powerful that the two method from the literature, mainly because of the more generic pre-processing steps.
+Despite the limitations, it is still more powerful than the two baseline methods from the literature, mainly because of the more generic pre-processing steps.
 
 The second proposed panel extraction method (Method I), based on connected-component clustering, is simple to implement, fast and efficient for comics with disconnected panels (separated by a white gutter).
 % Figure~\ref{ap:panel_extraction} shows the details for each image tested, which were mainly comics with gutters.
 % The proposed method is not appropriate for gutterless comics such as ``INOUE'' or strip without panel border such as ``MONTAIGNE'' or a extra frame around several panels (``SAINTOGAN\_PROSPER'').
-This method is not appropriate for gutterless comics (e.b. some mangas) or strip without panel borders such as those with an extra frame around several panels.
+This method is not appropriate for gutterless comics (e.g. some mangas) or strips without panel borders such as those with an extra frame around several panels.
 Another weakness is when panels are connected by other elements; they may not be split as desired but will remain clustered as panel anyway.
 
 Method K benefits form the domain knowledge to filter out irrelevant panel candidates from the independent extraction approach (Method I).
@@ -534,7 +533,7 @@ Nevertheless, the validation by the expert system was not significant here becau
 \label{sub:ex:text_extraction_recognition_evaluation}
 
 In this section we evaluated our three propositions for text extraction and compare them to methods from the literature.
-We selected Arai's method as it is the most advanced method that has been applied to comic book images.
+We selected Arai's method as a baseline, as it is the most advanced method that has been applied to comic book images.
 All the evaluations of text localisation were performed on the 4691 text lines of the eBDtheque dataset~\cite{Guerin2013} at object bounding box level (Section~\ref{sub:ex:object_localisation_metric}).
 Text recognition evaluations have been performed on the same dataset but using the accuracy metric presented in Section~\ref{sub:ex:text_recognition_metric}.
 
@@ -546,13 +545,13 @@ Text recognition evaluations have been performed on the same dataset but using t
 \subsection{Arai's method} % (fold)
 We implemented Arai's method~\cite{Arai11} which is a sequential approach that requires panel and balloon extraction as input, as presented in Sections~\ref{sub:ex:panel_extraction_arai} and~\ref{sub:ex:balloon_extraction_arai} respectively.
 This method was developed for grey-scale Japanese mangas and is divided in five steps: pre-processing, blob extraction, feature extraction, text blob selection and text blob extraction.
-Pre-processing consists in an adaptive bi-level segmentation at 30\% (chosen empirically) above the average pixel value and mathematical morphology to group potential text letters into block (similar to the Run Length Smoothing Algorithm).
+Pre-processing consists in an adaptive bi-level segmentation at 30\% (chosen empirically) above the average pixel value and mathematical morphology to group potential text letters into blocks (similar to the Run Length Smoothing Algorithm).
 Note that the threshold selection method can exceed the maximal pixel value and then produce an empty segmentation.
 The size of the kernel was not specified in the original paper, we used $3*5$ pixels.
 Blob extraction is performed by imposing a minimal size of the blob relatively to the size of the balloon in which they are included ($Balloon.width / 20$ and $Balloon.hight / 40$).
 The extracted features are the \emph{average text blob width} and the horizontal coordinate of its centroid.
 These features are used to classify text / non-text blobs according to two rules based on blob inter-distances and alignments.
-Text blob are then extracted from the original image and directly sent to an OCR system (Figure~\ref{fig:ex:balloon_extraction_arai}).
+Text blobs are then extracted from the original image and directly sent to an OCR system (Figure~\ref{fig:ex:balloon_extraction_arai}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
@@ -566,15 +565,15 @@ Text blob are then extracted from the original image and directly sent to an OCR
 
 This approach was only developed for vertical text block extraction but we adapt it to also handle horizontal text.
 Its adaptation to horizontal text consists in switching width and height related parameters in the pre-processing and feature extraction steps.
-Also, the kernel used for mathematical morphology is rotated of 90$^{\circ}$.
+Also, the kernel used for mathematical morphology is rotated by 90$^{\circ}$.
 
-The score of this method was in average for recall and precision of 2.81\% and 1.63\% (Figure~\ref{fig:ex:text_arai_extraction_detail}).
+This method yields an average recall of 2.81\% and precision of 1.63\% (Figure~\ref{fig:ex:text_arai_extraction_detail}).
 
 \subsection{Sequential approach} % (fold)
 % \label{sub:method_1}
-The method proposed in Section~\ref{sec:se:panel_and_text} do not require any particular parameter, only the number of clusters has to be fixed $k=3$ for the reason explained in the presentation of the method (Section~\ref{sec:se:panel_and_text}).
-Note that the method is designed to simultaneously extract panel regions which does not interfere with text.
-The score of this method was in average for recall and precision of 54.68\% and 56.92\% (Figure~\ref{fig:ex:text_methodA_extraction_detail}).
+The method proposed in Section~\ref{sec:se:panel_and_text} does not require any particular parameter, only the number of clusters has to be fixed to $k=3$ according to the domain knowledge of comics (Section~\ref{sec:se:panel_and_text}).
+Note that the method is designed to simultaneously extract panel regions which do not interfere with text.
+This method yields an average recall of 54.68\% and a precision of 56.92\% (Figure~\ref{fig:ex:text_methodA_extraction_detail}).
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -591,7 +590,7 @@ The score of this method was in average for recall and precision of 54.68\% and 
 \label{sub:ex:text_extraction_evaluation_method_b}
 
 The method presented in Section~\ref{sec:in:text_localisation_and_recognition} consists in a bi-level segmentation, text/graphic separation, text line generation and finally text line recognition.
-A comparison between two threshold selection methods and two colour-to-grey image conversion are shown in Table~\ref{fig:ex:text_extraction_methodB_segmentation}.
+A comparison between two threshold selection methods and two colour-to-grey image conversions are shown in Table~\ref{fig:ex:text_extraction_methodB_segmentation}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -628,11 +627,11 @@ A comparison between two threshold selection methods and two colour-to-grey imag
   % \end{figure}  
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Text and graphics separation is performed using the Mahalanobis' distance which is related to the number of standard deviations.
-A validation on the eBDtheque dataset shown that the best Mahalanobis' distance is $d_m=2$.
+Text and graphics separation is performed using the Mahalanobis' distance between the grey-level distribution of the whole image and each connected-component region (Section~\ref{sec:in:textgraphicseparation}).
+A validation on the eBDtheque dataset showed that the best Mahalanobis' distance is $d_m=2$.
 % The similarity offset $a$ and the overlapping percentage $b$ have been also validated over the eBDtheque dataset and their best values are $a=$\modif{???} and $b=$\modif{???} respectively.
 Text line recognition is used as last filtering operation to validate the presence of text inside the candidate regions, its average benefit is shown in Table~\ref{tab:text_results}.
-The score of this method was in average for recall and precision of 64.14\% and 70.28\% (Figure~\ref{fig:ex:text_methodB_extraction_detail}).
+This method yields an average recall of 64.14\% and precision of 70.28\% (Figure~\ref{fig:ex:text_methodB_extraction_detail}).
 
 %The detailed results using the OCR system are given Figure~\ref{fig:ex:text_methodB_extraction_detail}.
 
@@ -654,8 +653,8 @@ The score of this method was in average for recall and precision of 64.14\% and 
 
 The knowledge-driven method can be used as a post processing of the text extraction.
 It validates or rejects text candidates using the proposed model (Section~\ref{sec:kn:processing_sequence}).
-In the model, the only rule concerning text location is that they should be contained in a panel.
-Considering the best method for panel and text extraction method from Tables~\ref{tab:panel_extraction_comparision_results} and~\ref{tab:text_results} respectively, the score of this method was in average for recall and precision of 39.99\% and 64.88\% (Figure~\ref{fig:ex:text_methodC_extraction_detail}).
+In the model, the only rule concerning text location is that it should be contained in a panel.
+Considering the best method for panel and text extraction method from Tables~\ref{tab:panel_extraction_comparision_results} and~\ref{tab:text_results} respectively, this method yields an average recall of 39.99\% and a precision of 64.88\% (Figure~\ref{fig:ex:text_methodC_extraction_detail}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
@@ -676,7 +675,7 @@ Considering the best method for panel and text extraction method from Tables~\re
 \subsection{Comparison and analysis} % (fold)
 \label{sub:results_analysis}
 
-Table~\ref{tab:text_results} summarise the recall, precision and f-measure of the experimented methods.
+Table~\ref{tab:text_results} summarises the recall, precision and f-measure of the evaluated methods.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{table}[ht]
@@ -752,13 +751,13 @@ Table~\ref{tab:text_results} summarise the recall, precision and f-measure of th
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Arai's method is a sequential approach that requires panel and balloon regions as input.
-As shown in Table~\ref{tab:ex:balloon_localisation_comparison_results}, balloon extraction is very low using this approach thus, it narrows down the text extraction in turn (Table~\ref{tab:text_results}).
+As shown in Table~\ref{tab:ex:balloon_localisation_comparison_results}, balloon extraction is very low using this approach since the propagation of errors narrows down the text extraction (Table~\ref{tab:text_results}).
 Moreover, this text extraction method uses several thresholds which reduce its fields of application.
 
 
 % In our previous work~\cite{Rigaud2013VISAPP} text extraction was evaluated on a subset of 20 pages of the eBDtheque dataset~\cite{Guerin2013}.
 % Here we applied it to the whole dataset.
-Method S improves by far the recall thanks to its genericity, moreover, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
+Method S improves substantially the recall thanks to its genericity, moreover, even if the panel extraction is performed at the same time, it does not bias the text extraction because text areas are extracted from the whole page and not from panel regions.
 Method I is slightly better using RGB to grey image conversion than the luminance layer only (Table~\ref{fig:ex:text_extraction_methodB_segmentation}).
 It outperforms Method S in recall only when not using the last OCR filtering step and both recall and precision when using the OCR.
 The difference for Method I when using or not the OCR system is about an increase of 26.74\% of precision and a loss 3.07\% of recall.
@@ -790,7 +789,7 @@ All the methods still encounter difficulties with certain types of text that can
 % \paragraph{Text recognition evaluation} % (fold)
 % \label{par:ex:text_recognition_evaluation}
 
-We evaluated text transcription using string edit distance between a predicted text transcription given by the OCR and its corresponding transcription in the ground truth (Section~\ref{sub:ex:text_recognition_metric}).
+We evaluated text recognition using string edit distance between a predicted text recognition given by the OCR and its corresponding transcription in the ground truth (Section~\ref{sub:ex:text_recognition_metric}).
 The eBDtheque dataset is composed of English, Japanese and French texts.
 We evaluated the transcription given by the OCR engine Tesseract version 3.02.02 with the provided training data for each language\footnote{\url{https://code.google.com/p/tesseract-ocr/downloads/list}}.
 % corresponding to the language defined in the ground truth of each image of the dataset.
@@ -817,8 +816,8 @@ Table~\ref{tab:ex:text_recogniton_results} shows text recognition results given 
   \end{table}%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We obtained a score of $A_{textReco}=11.11\%$ for perfect transcription from the automatic text extraction and OCR method which constitute a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
-Table~\ref{tab:ex:text_recogniton_results} shows the results for a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one and two, the accuracy rise up to 20.67\%.
+We obtained a score of $A_{textReco}=11.11\%$ for perfect transcription from the automatic text extraction and OCR method which constitutes a baseline for future work on text recognition on the eBDtheque dataset~\cite{Guerin2013}.
+Table~\ref{tab:ex:text_recogniton_results} shows the results for a more relaxed evaluation where we also considered as correct the text lines at a text edit distance equal to one and two, the accuracy rises up to 20.67\%.
 %The distribution of the text line lengths is given in Figure~\ref{fig:textline_lenth_distribution}.
 Note that the average text line length is quite short in comic books compared to other documents, the distribution is given Figure~\ref{fig:ex:textline_lenth_distribution}.
 
@@ -836,9 +835,10 @@ The evaluations are performed on the 1091 balloons of the eBDtheque dataset~\cit
 % We evaluate the three approaches on the 1092 balloons of the eBDtheque dataset~\cite{Guerin2013} at object bounding box and pixel levels, and compare to previous work from the literature.
 % We also evaluate the tail detection for each balloon extraction approaches
 
-In the eBDtheque ground truth, 84.5\% of the balloons are closed and 15.5\% are not (implicit).
+In the eBDtheque ground truth, 84.5\% of the balloons are closed and 15.5\% are not.
+We call the latter ``implicit'' balloons, as they are implicitly defined by other cues in the image, and not by an explicit border (Section~\ref{sec:se:from_text_to_balloon}).
 Thus we do not expect to reach 100\% recall and precision for the regular balloon extraction methods because they are not designed for implicit balloons.
-One the other hand, implicit balloon extraction method is able to extract closed balloon as well.
+On the other hand, the implicit balloon extraction method is able to extract closed balloon as well.
 
 % \subsection{Experimental settings} % (fold)
 % % \label{sub:experimental_settings}

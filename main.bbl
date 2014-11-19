@@ -136,13 +136,6 @@ John Canny.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, PAMI-8(6):679--698, Nov 1986.
 
-\bibitem{Cenkery1996}
-Christian Cenker.
-\newblock Wavelet contour classification.
-\newblock In {\em Proceedings of the 20th Workshop of the Austrian Association
-  for Pattern Recognition (OAGM/AAPR) on Pattern Recognition 1996}, pages
-  263--271, Munich, Germany, Germany, 1996. R. Oldenbourg Verlag GmbH.
-
 \bibitem{Chan2007Automatic}
 ChungHo Chan, Howard Leung, and Taku Komura.
 \newblock Automatic panel extraction of color comic images.
@@ -831,6 +824,12 @@ N.~Otsu.
 Nikhil~R Pal and Sankar~K Pal.
 \newblock A review on image segmentation techniques.
 \newblock {\em Pattern recognition}, 26(9):1277--1294, 1993.
+
+\bibitem{Pang2014Robust}
+Xufang Pang, Ying Cao, Rynson~W.H. Lau, and Antoni~B. Chan.
+\newblock A robust panel extraction method for manga.
+\newblock In {\em Proceedings of the ACM International Conference on
+  Multimedia}, MM '14, pages 1125--1128, New York, NY, USA, 2014. ACM.
 
 \bibitem{pasternak1994processing}
 B~Pasternak.

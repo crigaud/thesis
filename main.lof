@@ -109,7 +109,7 @@
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Method I using the best bi-level combination method (rgb2grey + Otsu) and OCR}}}{98}{subfigure.6.3}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Method K}}}{98}{subfigure.6.4}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Distribution of the number of letter per speech balloon}}{101}{figure.caption.115}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Implicit balloon recovering by closing open panels}}{102}{figure.caption.117}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Implicit balloon recovery by closing open panels}}{102}{figure.caption.117}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Balloon extraction score details at object level for each image of the eBDtheque dataset}}{104}{figure.caption.118}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Arai's method}}}{104}{subfigure.9.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Ho's method}}}{104}{subfigure.9.2}
@@ -125,7 +125,7 @@
 \contentsline {figure}{\numberline {6.15}{\ignorespaces Character extraction score details at object level for each image of the eBDtheque dataset}}{110}{figure.caption.127}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Method S (ground truth)}}}{110}{subfigure.15.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Method S (automatic)}}}{110}{subfigure.15.2}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting descriptor size validation}}{110}{figure.caption.128}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Character spotting descriptor size validation}}{111}{figure.caption.128}
 \contentsline {figure}{\numberline {6.17}{\ignorespaces Character extraction score details using Method K for each image of the eBDtheque dataset}}{113}{figure.caption.130}
 \contentsline {figure}{\numberline {6.18}{\ignorespaces Character spotting result sample}}{114}{figure.caption.132}
 \contentsline {figure}{\numberline {6.19}{\ignorespaces Percentage of panels, balloons, text lines and characters from the eBDtheque dataset that fit the proposed model}}{115}{figure.caption.133}

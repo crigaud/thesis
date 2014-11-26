@@ -3,7 +3,4 @@ Koichi
 	Introduce comics intities and relationship, panel/balloon/text/characters category and usage/relationship (what is/do we call panel (separated only), text (speech only), comic characters () ) -> always use COMIC characters (avoid text confusion)
 	Define the studied domain limits (our focus) within the whole comics world
 	
-	SOTA from Masa ACM Multimedia 2014
-	Tokyo team interested in reflowing, colorization, face detection, sketch search
-	
 	

@@ -1,4 +1,2 @@
 - concevoir une présentation efficace -> https://www.youtube.com/watch?v=sOAdH6mKV0U
-- highlight important keywords in the slides (remember Rouaa's pre defence)
-- use beamer to make a clear presantation but personalized (green, orange, purple from website)
 - http://www.illycom.fr/blog/2014/10/07/les-techniques-pour-structurer-son-message-lors-dune-prise-de-parole-en-public/

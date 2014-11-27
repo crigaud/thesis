@@ -1,0 +1,26 @@
+
+GENERAL
+	- top right titles : increase gray level
+
+INTRO
+- intro too general, do not spend to much time on it
+- short the introduction to save time for more results
+- add new slide after 18 : Why are we doing this research? What is the needs? Explain it is not obvious because previous work on document analysis are different in terms of ... semi-structured, (Dimos sais that it is listed in the manuscript...)
+
+CONTRIBUTION
+- a lot of different process, keep flowchart in the corner
+- flowcharts: make lines thiker
+23 - mention scene text to not let open question, explain why it is not appropriate here, complete REF
+37 - merge panel/text in flowcharts because simultaneous
+49 - insist Etext because it is THE contribution
+65 - no black cross -> remove the chart, in the following slides
+- explain advantage and disadvantages
+- intro each contribution, explain why we made this choice, compared to/position to the literature
+51 - change panel OR explain how to filter
+- add more results maybe at the end of each contribution (2 slides)
+
+CONCLUSION
+- missing my personnal feeling about the progress we did, are we closer to solve the problem? Give between 1-5 stars to each process before and after this 3-year work -> highlight all my contributions without forgeting any, even those from method 2 ;)
+
+MISC
+- is this really segmentation? A question from Su

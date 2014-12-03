@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  25 NOV 2014 18:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.6.14)  2 DEC 2014 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3312,7 +3312,10 @@ Underfull \vbox (badness 2302) has occurred while \output is active []
  [149 <./chapters/Appendix/figs/segDifference.png (PNG copy)>])
 (./chapters/MyPublications/publications.tex [150]
 Appendix E.
-[151
+
+Underfull \vbox (badness 3460) has occurred while \output is active []
+
+ [151
 
 ]
 Overfull \hbox (6.10098pt too wide) in paragraph at lines 53--55
@@ -3445,7 +3448,7 @@ ublic/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw
 tmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loc
 al/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (197 pages, 21310079 bytes).
+Output written on main.pdf (197 pages, 21310164 bytes).
 PDF statistics:
  6207 PDF objects out of 7423 (max. 8388607)
  4228 compressed objects within 43 object streams

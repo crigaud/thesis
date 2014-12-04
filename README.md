@@ -4,14 +4,15 @@ Ph.D. thesis of Christophe Rigaud
 Soures of manuscript and presentation material.
 
 Summary:
+--------------
 
 In this thesis, we review, highlight and illustrate the challenges related to comic book image analysis in order to give to the reader a good overview about the last research progress in this field and the current issues.
 
 We propose three different approaches for comic book image analysis that are composed by several processing.
-The first approach is called ``sequential'' because the image content is described in an intuitive way, from simple to complex elements using previously extracted elements to guide further processing.
+The first approach is called "sequential" because the image content is described in an intuitive way, from simple to complex elements using previously extracted elements to guide further processing.
 Simple elements such as panel text and balloon are extracted first, followed by the balloon tail and then the comic character position in the panel.
 The second approach addresses independent information extraction to recover the main drawback of the first approach, the error propagation.
-This second method is called ``independent'' because it is composed by several specific extractors for each elements of the image without any dependence between them.
+This second method is called "independent" because it is composed by several specific extractors for each elements of the image without any dependence between them.
 Extra processing such as balloon type classification and text recognition are also covered.
 The third approach introduces a knowledge-driven and scalable system of comics image understanding.
 This system called ``expert system'' is composed by an inference engine and two models, one for comics domain and another one for image processing, stored in an ontology.
@@ -22,6 +23,7 @@ Keywords: image processing, graphics recognition, document analysis, comics unde
 -------------------------------------------------
 
 Résumé :
+------------
 
 Dans ce manuscrit de thèse, nous détaillons et illustrons les différents défis scientifiques liés à l'analyse automatique d'images de bandes dessinées, de manière à donner au lecteur tous les éléments concernant les dernières avancées scientifiques en la matière ainsi que les verrous scientifiques actuels.
 

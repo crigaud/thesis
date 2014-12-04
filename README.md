@@ -1,7 +1,8 @@
 Ph.D. thesis of Christophe Rigaud
 ================
 
-Soures of manuscript and presentation material.
+Soures of manuscript and presentation.
+Defense date: Thursday 11 December 2014
 
 Summary:
 --------------

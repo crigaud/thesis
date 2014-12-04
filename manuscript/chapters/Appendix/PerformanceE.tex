@@ -1,0 +1,65 @@
+\chapter{Performance Evaluation for Symbol Spotting Systems}
+\chaptermark{Performance Evaluation for Symbol Spotting Systems}
+\label{app:perf-eval}
+\graphicspath{{./chapters/Appendix/figs/}}
+There is a certain performance evaluation protocol that has been followed in this thesis work. As most of the experimental evaluations have been done in a symbol spotting framework, the performance evaluation protocol have also been designed for symbol spotting systems. In this chapter we give a brief description on different measurements used for evaluating the performance of a symbol spotting system. For more details on the performance evaluation of symbol spotting systems one can study the paper by Rusi{\~n}ol \etal~\cite{Rusinol2009}.
+
+Symbol spotting systems are intended to produce a ranked list of regions of interest from the document images in the database where the queried symbol is supposed to be found. Symbol spotting can thus be seen as a particular application within the Information Retrieval (IR) domain. Usually, retrieval systems are evaluated by \emph{precision} and \emph{recall} values which give an idea about the relevance and the completeness of the results. To do that we follow a binary retrieval notion \ie first classify whether a retrieval is true or not.
+
+\section{Binary classification of a retrieval}
+\label{sec:perf-eval:class-ret}
+Let $B$ be a bounding box (not necessarily rectangular, may be polygonal) of a retrieval returned by a system and $T$ be the bounding box of the corresponding ground truth. Let $A(B)$ denote the area of the bounding box $B$. We classify $B$ as a true retrieval if the value $s=\frac{A(B\cap T)}{A(B\cup T)}$ is greater than a threshold $thr$.
+
+\section{Precision and Recall}
+\label{sec:perf-eval:prec-rec}
+In IR and pattern recognition with binary classification, \emph{precision} is roughly defined as the fraction of retrieved instances that are relevant, while \emph{recall} is roughly defined as the fraction relevant instances that are retrieved. Let $ret$ be the set of retrieved objects and $rel$ be the set relevant objects, then \emph{precision} (\textbf{P}) can be defined as
+\[
+\textbf{P} = \frac{|ret\cap rel|} {|ret|}
+\]
+and \emph{recall} (\textbf{R}) can be defined as 
+\[
+\textbf{R} = \frac{|ret\cap rel|} {|rel|}
+\]
+
+\section{F-measure}
+\label{sec:perf-eval:fmeasure}
+\emph{F-measure} combines both precision and recall and is defined as the weighted harmonic mean of them. The traditional F-measure (\textbf{F}) is defined as 
+\begin{equation}
+\mathbf{F} = 2.\frac{\mathbf{P}\times \mathbf{R}}{\mathbf{P}+\mathbf{R}}
+\label{eqn:perf-eval:fm1}
+\end{equation}
+The above traditional version is a special case of the general form $\mathbf{F_\beta}$
+\begin{equation}
+\mathbf{F_\beta}=(1+\beta^2).\frac{\mathbf{P}\times \mathbf{R}}{\beta^2\times \mathbf{P}+\mathbf{R}}
+\label{eqn:perf-eval:fmb}
+\end{equation}
+
+The traditional F-measure (\eq{eqn:perf-eval:fm1}) is also called \emph{F1-score} as it can be obtained by replacing $\beta=1$ in \eq{eqn:perf-eval:fmb}. In the F1-score both the precision and recall values are equally weighted. There are other two commonly used F-measures, such as $F_{2}$ and $F_{0.5}$. Among them $F_{2}$ weights recall higher than precision, on the other hand $F_{0.5}$ puts more emphasise on precision than recall.
+
+\section{P@n and P(r)}
+\label{sec:perf-eval:prec-nr}
+The precision measure explained in \sect{sec:perf-eval:prec-rec} take all the retrieved objects into account. But precision can also be computed at a give cut off rank, such as considering the $n$ top most results returned by the system. This measure is called \emph{precision at n} and is denoted by $\mathbf{P@n}$. This is because IR systems usually return results ranked by a confidence value. This confidence value either can be a distance measurement or a similarity measurement. The first retrieved items in the ranked list are the ones the system believes that are more likely to be true. As the system provides more and more results, the probability of finding the relevant or true items decreases. In a similar way the precision can also be computed at a recall cut off, this is the precision at the point where recall has first reached the value $r$, this is denoted as $\mathbf{P(r)}$.
+
+\section{Average Precision}
+\label{sec:perf-eval:avep}
+\emph{Average Precision} is a measurement that also reflects the order of ranked instances returned by the system. By computing precision and recall at every point in the ranked list of objects, one can obtain precision as a function of recall \ie $\mathbf{P(r)}$. Average precision is defined as the average value of $\mathbf{P(r)}$ over the interval from $r=0$ to $r=1$:
+
+\begin{equation}
+\mathbf{AveP}=\int\limits_0^1 \mathbf{P(r)}dr
+\label{eqn:perf-eval:avep1}
+\end{equation}
+
+This is basically the area under the \emph{precision-recall curve} that can be drawn by plotting $\mathbf{P(r)}$ as a function of $r$. This integral (\eq{eqn:perf-eval:avep1}) is in practice replaced with a finite sum over every position in the ranked sequence of instances returned by the system which is equivalent to 
+
+\begin{equation}
+\textbf{AveP}=\frac{\sum_{n=1}^{|ret|}\mathbf{P@n}\times t(n)}{|rel|}
+\label{eqn:perf-eval:avep2}
+\end{equation}
+
+where $t(n)$ is binary indicator function denoting $1$ if the $n$th ranked instance is true and $0$ for otherwise.
+
+\section{Discussions}
+\label{sec:perf-eval:disc}
+In this dissertation binary classification of a retrieval has been done by considering $thr=0.5$ (see \sect{sec:perf-eval:class-ret}). In this thesis work we have dealt with several symbol spotting methods. Some of them are designed to produce a ranked list of retrieved objects such as methods presented in \ch{chap:hssg}, \ch{chap:pg}, \ch{chap:ncrag} and \cite{LeBodic2012}. And there are methods that do not produce a ranked list (at their present status), such as the method in \ch{chap:hgr}. For the methods that produce a ranked list, we calculate the recall (\textbf{R}) as the \emph{maximum recall} obtained by the system, lets denote this maximum recall as $R_{max}$. And the precision (\textbf{P}) is computed as the maximum precision obtained at the system at $R_{max}$ \ie $\max(P(R_{max}))$. This would take into account all the true instances returned by the system. After having the precision ($\mathbf{P}$) and recall ($\mathbf{R}$), the F-measure ($\mathbf{F}$) has been computed by the \eq{eqn:perf-eval:fm1}. The average precision is computed with the \eq{eqn:perf-eval:avep2}.
+
+It is often needed to plot an average precision recall curve for a following scenario. Suppose a symbol spotting system $\mathfrak{S}$ produces ranked list $\mathfrak{L}(s_1)$ of retrieved instances from a database $\mathfrak{D}$ for a particular symbol $s_1$. But if we are interested in measuring the performance of the system on the whole database $\mathfrak{D}$, we have to consider the other available symbols $\lbrace s_2,\ldots,s_n\rbrace$. This is not straight forward since the system is not guaranteed to produce the ranked lists with the same number of elements for every symbol. This difficulty can be removed and for that one can obtain the average of the maximum precision values for a given recall for different symbols. Then a overall precision recall curve can be plotted by plotting the average of the maximum precision values for a given recall.

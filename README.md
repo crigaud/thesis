@@ -1,9 +1,9 @@
 Ph.D. thesis of Christophe Rigaud
 ================
 
-Soures of manuscript and presentation.
-Defense date: Thursday 11 December 2014
-
+Sources of manuscript and presentation.
+Defence date: Thursday 11 December 2014
+	
 Title
 ---------------
 Segmentation and indexation of complex objects in comic book images
@@ -30,7 +30,7 @@ Keywords: image processing, graphics recognition, document analysis, comics unde
 
 Titre
 ---------------
-Segmentation et indexation d’objets complexes dans les images de bandes déssinées
+Segmentation et indexation d'objets complexes dans les images de bandes dessinées
 
 Résumé
 ------------
@@ -38,7 +38,7 @@ Résumé
 Dans ce manuscrit de thèse, nous détaillons et illustrons les différents défis scientifiques liés à l'analyse automatique d'images de bandes dessinées, de manière à donner au lecteur tous les éléments concernant les dernières avancées scientifiques en la matière ainsi que les verrous scientifiques actuels.
 
 Nous proposons trois approches pour l'analyse d'image de bandes dessinées.
-La première approche est dite ``séquentielle'' car le contenu de l'image est décrit progressivement et de manière intuitive.
+La première approche est dite "séquentielle" car le contenu de l'image est décrit progressivement et de manière intuitive.
 Dans cette approche, les extractions se succèdent, en commençant par les plus simples comme que les cases, le texte et les bulles qui servent ensuite à guider l'extraction d'éléments plus complexes tels que la queue des bulles et les personnages au sein des cases.
 La seconde approche propose des extractions indépendantes les unes des autres de manière à éviter la propagation d'erreur due aux traitements successifs.
 D'autres éléments tels que la classification du type de bulle et la reconnaissance de texte y sont aussi abordés.

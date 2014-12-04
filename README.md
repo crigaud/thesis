@@ -4,7 +4,12 @@ Ph.D. thesis of Christophe Rigaud
 Soures of manuscript and presentation.
 Defense date: Thursday 11 December 2014
 
-Summary:
+Title
+---------------
+Segmentation and indexation of complex objects in comic book images
+
+
+Summary
 --------------
 
 In this thesis, we review, highlight and illustrate the challenges related to comic book image analysis in order to give to the reader a good overview about the last research progress in this field and the current issues.
@@ -23,7 +28,11 @@ Keywords: image processing, graphics recognition, document analysis, comics unde
 
 -------------------------------------------------
 
-Résumé :
+Titre
+---------------
+Segmentation et indexation d’objets complexes dans les images de bandes déssinées
+
+Résumé
 ------------
 
 Dans ce manuscrit de thèse, nous détaillons et illustrons les différents défis scientifiques liés à l'analyse automatique d'images de bandes dessinées, de manière à donner au lecteur tous les éléments concernant les dernières avancées scientifiques en la matière ainsi que les verrous scientifiques actuels.

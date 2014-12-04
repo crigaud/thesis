@@ -1,0 +1,302 @@
+%\newcommand{\RR}{\rm I\hspace{-0.55ex}R}
+%\newcommand{\NN}{\rm I\hspace{-0.55ex}N}
+%\renewcommand{\baselinestretch}{1.0}
+
+% New theorems
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{plain}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+% Own commands
+\newcommand{\ie}{{\em i.e.~}}
+\newcommand{\mI}{\mathbf{I}}
+\newcommand{\mone}{\mathbf{1}}
+\newcommand{\eg}{{\em e.g.~}}
+\newcommand{\etal}{{\em et al.}}
+\newcommand{\vs}{{\em vs}}
+\newcommand{\fig}[1]{Figure \ref{#1}}
+\newcommand{\eq}[1]{Eqn. \ref{#1}}
+\newcommand{\sect}[1]{Section \ref{#1}}
+\newcommand{\ch}[1]{Chapter \ref{#1}}
+\newcommand{\app}[1]{Appendix \ref{#1}}
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+\newcommand{\mycaption}[1]{\caption{ \protect{{\small\sf #1}} }}
+\newcommand{\mcomma}{, \allowbreak}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+% Own Operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+% PAMI
+\newcommand{\D}{\delta}
+\newcommand{\fspc}{\Omega}
+\newcommand{\lspc}{\mathcal{Y}}
+\newcommand{\sspc}{\mathcal{S}}
+
+\newcommand{\desc}{\mathbf{D}}
+\newcommand{\oracle}{{\mathcal{O}}}
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\sample}{\mathbf{s}}
+\newcommand{\lab}{y}
+
+\newcommand{\ActPos}{Act$+$}
+\newcommand{\ActNeg}{Act$-$}
+\newcommand{\ActPosNeg}{Act$\pm$}
+\newcommand{\ActGT}{Act$\sim$}
+
+\newcommand{\pD}{p(\sample,\lab)}
+\newcommand{\pDvx}{p(\vx,\lab)}
+
+\newcommand{\training}{tr}
+\newcommand{\testing}{tt}
+
+\newcommand{\vxTr}{\vx^{\training}}
+\newcommand{\sampleTr}{\sample^{\training}}
+\newcommand{\labTr}{\lab^{\training}}
+
+\newcommand{\vxTt}{\vx^{\testing}}
+\newcommand{\sampleTt}{\sample^{\testing}}
+\newcommand{\labTt}{\lab^{\testing}}
+
+\newcommand{\TS}{\mathcal{T}}
+\newcommand{\TrS}{\TS^{\training}}
+\newcommand{\TrSPos}{\TS^{\training +}}
+\newcommand{\TrSNeg}{\TS^{\training -}}
+\newcommand{\TtS}{\TS^{\testing}}
+
+\newcommand{\clsf}{\mathrm{C}}
+\newcommand{\detect}{\mathrm{D}}
+
+\newcommand{\Ds}{\D_s}
+\newcommand{\Dt}{\D_t}
+\newcommand{\pDs}{p_{s}(\sample,\lab)}
+\newcommand{\pDt}{p_{t}(\sample,\lab)}
+\newcommand{\pDvxs}{p_{s}(\vx,\lab)}
+\newcommand{\pDvxt}{p_{t}(\vx,\lab)}
+\newcommand{\TrSs}{\TS^{\training, s}}
+\newcommand{\TrSt}{\TS^{\training, t}}
+\newcommand{\TrSPoss}{\TS^{\training +, s}}
+\newcommand{\TrSPost}{\TS^{\training +, t}}
+\newcommand{\TtSt}{\TS^{\testing, t}}
+
+\newcommand{\Daimler}{{\mathcal{D}}}
+\newcommand{\INRIA}{{\mathcal{I}}}
+\newcommand{\Virtual}{{\mathcal{V}}}
+
+\newcommand{\SX}{\mathcal{X}}
+\newcommand{\SR}{\mathcal{R}}
+\newcommand{\TrSX}{\TrS_{\SX}}
+\newcommand{\TrSR}{\TrS_{\SR}}
+\newcommand{\TtSR}{\TtS_{\SR}}
+
+\newcommand{\TrSVirtual}{\TrS_{\Virtual}}
+\newcommand{\TrSINRIA}{\TrS_{\INRIA}}
+\newcommand{\TrSDaimler}{\TrS_{\Daimler}}
+\newcommand{\TtSINRIA}{\TtS_{\mathcal{I}}}
+\newcommand{\TtSDaimler}{\TtS_{\Daimler}}
+
+\newcommand{\TrSVirtualPos}{\TrSPos_{\Virtual}}
+\newcommand{\TrSINRIAPos}{\TrSPos_{\INRIA}}
+\newcommand{\TrSDaimlerPos}{\TrSPos_{\Daimler}}
+\newcommand{\TrSXPos}{\TrSPos_{\SX}}
+\newcommand{\TrSRPos}{\TrSPos_{\SR}}
+
+\newcommand{\TrSVirtualNeg}{\TrSNeg_{\Virtual}}
+\newcommand{\TrSINRIANeg}{\TrSNeg_{\INRIA}}
+\newcommand{\TrSDaimlerNeg}{\TrSNeg_{\Daimler}}
+\newcommand{\TrSXNeg}{\TrSNeg_{\SX}}
+\newcommand{\TrSRNeg}{\TrSNeg_{\SR}}
+
+\newcommand{\TrTt}[2]{\{#1,#2\}}
+
+\newcommand{\Source}{\Virtual}
+\newcommand{\Target}{\SR}
+
+\newcommand{\TrSTarget}{\TrS_{\Target}}
+\newcommand{\TtSTarget}{\TtS_{\Target}}
+
+\newcommand{\ImSet}{\Im}
+\newcommand{\TrIS}{\ImSet^{\training}}
+\newcommand{\TrISPos}{\ImSet^{\training +}}
+\newcommand{\TrISNeg}{\ImSet^{\training -}}
+\newcommand{\TtIS}{\ImSet^{\testing}}
+
+\newcommand{\TrISSourcePos}{\TrISPos_{\Virtual}}
+\newcommand{\TrISSourceNeg}{\TrISNeg_{\Virtual}}
+\newcommand{\TrISSource}{\TrIS_{\Virtual}}
+
+\newcommand{\TrISTargetPos}{\TrISPos_{\Target}}
+\newcommand{\TrISTargetNeg}{\TrISNeg_{\Target}}
+\newcommand{\TrISTarget}{\TrIS_{\Target}}
+
+%\newcommand{\TtISTarget}{\TtIS_{\Target}}
+
+\newcommand{\TrSSourcePos}{\TrSVirtualPos}
+\newcommand{\TrSSourceNeg}{\TrSVirtualNeg}
+
+\newcommand{\TrSTargetPos}{\TrSPos_{\Target}}
+\newcommand{\TrSTargetNeg}{\TrSNeg_{\Target}}
+
+\newcommand{\TrISVirtualPos}{\TrISSourcePos}
+\newcommand{\TrISVirtualNeg}{\TrISSourceNeg}
+
+\newcommand{\TrISINRIAPos}{\TrISPos_{\INRIA}}
+\newcommand{\TrISINRIANeg}{\TrISNeg_{\INRIA}}
+
+\newcommand{\TrISDaimlerPos}{\TrISPos_{\Daimler}}
+\newcommand{\TrISDaimlerNeg}{\TrISNeg_{\Daimler}}
+
+\newcommand{\TrISXPos}{\TrISPos_{\SX}}
+\newcommand{\TrISXNeg}{\TrISNeg_{\SX}}
+\newcommand{\TrISRPos}{\TrISPos_{\SR}}
+\newcommand{\TrISRNeg}{\TrISNeg_{\SR}}
+
+
+\newcommand{\AMR}{AMR}
+
+\usepackage{color}
+\definecolor{red}{rgb}{1.00,0.20,0.20}
+\definecolor{blue}{rgb}{0.20,0.20,1.00}
+\definecolor{green}{rgb}{0.00,1.00,0.00}
+\newcommand{\cred}[1] {\textcolor{red}{#1}} % To revise (shorten in some cases).
+\newcommand{\cblue}[1] {\textcolor{blue}{#1}}
+\newcommand{\cgreen}[1] {\textcolor{green}{#1}}  % Comments
+
+%% Consolider
+\newcommand{\VTrain}{\mathcal{V}^{\mbox{{\tiny train}}}}
+\newcommand{\VTrainP}{\mathcal{V}_+^{\mbox{{\tiny train}}}}
+\newcommand{\VTrainN}{\mathcal{V}_-^{\mbox{{\tiny train}}}}
+
+\newcommand{\ITest}{\mathcal{I}^{\mbox{{\tiny test}}}}
+\newcommand{\ITestPi}{\mathcal{I}_+^{\mbox{{\tiny i,test}}}}
+\newcommand{\ITestNi}{\mathcal{I}_-^{\mbox{{\tiny i,test}}}}
+
+\newcommand{\ITrain}{\mathcal{I}^{\mbox{{\tiny train}}}}
+\newcommand{\ITrainP}{\mathcal{I}_+^{\mbox{{\tiny train}}}}
+\newcommand{\ITrainN}{\mathcal{I}_-^{\mbox{{\tiny train}}}}
+\newcommand{\ITrainNi}{\mathcal{I}_-^{\mbox{{\tiny i,train}}}}
+
+\newcommand{\VCP}{\mathcal{C}_\mathcal{V}^{\mbox{{\tiny pas}}}}
+\newcommand{\VCA}{\mathcal{C}_\mathcal{V}^{\mbox{{\tiny act}}}}
+\newcommand{\ICP}{\mathcal{C}_\mathcal{I}^{\mbox{{\tiny pas}}}}
+
+\newcommand{\classifier}{\mathcal{C}}
+\newcommand{\st}{x_t}
+\newcommand{\class}{w_t}
+
+%% ICPR
+\newcommand{\Real}{\mathcal{R}}
+\newcommand{\posLabel}{+}
+\newcommand{\negLabel}{-}
+\newcommand{\unlabel}{?}
+\newcommand{\TrISCVC}{\ImSet^{\training}_{cvc}}
+\newcommand{\TrSDet}{\TS^{\training \unlabel}}
+\newcommand{\TrSTargetDet}{\TrSDet_{\Target}}
+
+%% CVPR workshop
+\newcommand{\learner}{\mathcal{L}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newlength \fullwidth
+  \setlength \fullwidth {\columnwidth}
+\makeatother
+
+\makeatletter
+\newlength \figwidth
+  \setlength \figwidth {1.00\columnwidth}
+\makeatother
+
+\makeatletter
+\newlength \plotwidth
+  \setlength \plotwidth {0.75\columnwidth}
+\makeatother
+
+\makeatletter
+\newlength \plotwidthTwo
+  \setlength \plotwidthTwo {0.50\columnwidth}
+\makeatother
+
+\makeatletter
+\newlength \plotwidthThree
+  \setlength \plotwidthThree {0.33\columnwidth}
+\makeatother
+
+
+% Conferences and Journal Abbreviations
+\newcommand{\TPAMI}{IEEE Trans. on Pattern Analysis and Machine Intelligence}
+\newcommand{\TVT}{IEEE Trans. on Vehicular Technology}
+\newcommand{\TNN}{IEEE Trans. on Neural Networks}
+\newcommand{\TITS}{IEEE Trans. on Intelligent Transportation Systems}
+\newcommand{\TIP}{IEEE Trans. on Image Processing}
+\newcommand{\IS}{IEEE Intelligent Systems}
+\newcommand{\Spectrum}{IEEE Spectrum}
+\newcommand{\ProcIEEE}{Proceedings of the IEEE}
+\newcommand{\PRL}{Pattern Recognition Letters}
+\newcommand{\PR}{Pattern Recognition}
+\newcommand{\IJCV}{Int. Journal on Computer Vision}
+\newcommand{\IVC}{Image and Vision Computing}
+\newcommand{\CVIU}{Computer Vision and Image Understanding}
+\newcommand{\ML}{Machine Learning}
+\newcommand{\JAIR}{Journal of Artificial Intelligence Research}
+\newcommand{\JMLR}{Journal of Machine Learning Research}
+\newcommand{\JCSS}{Journal of Computer and System Sciences}
+\newcommand{\CYBER}{IEEE Trans. on Systems, Man, and Cybernetics (Part B)}
+\newcommand{\SPI}{Journal of statistical planning and inference}
+\newcommand{\KDE}{IEEE Trans. on Knowledge and Data Engineering}
+
+
+\newcommand{\CVPR}{IEEE Conf. on Computer Vision and Pattern Recognition}
+\newcommand{\IV}{IEEE Intelligent Vehicles Symposium}
+\newcommand{\ITSC}{IEEE Int. Conf. on Intelligent Transportation Systems}
+\newcommand{\ICIG}{IEEE Int. Conf. on Image and Graphics}
+\newcommand{\SISPA}{IEEE Int. Symp. on Image and Signal Processing and Analysis}
+\newcommand{\IRTA}{SPIE Conf. Infrared Technology and Applications}
+\newcommand{\ICRA}{IEEE Int. Conf. on Robotics and Automation}
+\newcommand{\VTC}{IEEE Vehicular Technology Conference}
+\newcommand{\ICPR}{Int. Conf. in Pattern Recognition}
+\newcommand{\ICCV}{Int. Conf. on Computer Vision}
+\newcommand{\ECCV}{European Conf. on Computer Vision}
+\newcommand{\ICIP}{IEEE Int. Conf. on Image Processing}
+\newcommand{\ACIVS}{Advanced Concepts for Intelligent Vision Systems}
+\newcommand{\ICDE}{IEEE Int. Conf. on Data Engineering Workshop}
+\newcommand{\BMVC}{British Machine Vision Conference}
+\newcommand{\DAGM}{German Association for Pattern Recognition (DAGM) Conference}
+\newcommand{\NIPS}{Advances in Neural Information Processing Systems}
+\newcommand{\ACMCHI}{ACM SIGCHI Conf. on Human Factors in Computing Systems}
+\newcommand{\EUROGRAPHICS}{European Computer Graphics Conference and Exhibition}
+\newcommand{\ACVHL}{Advancing Computer Vision with Humans in the Loop}
+\newcommand{\CHI}{ACM Int. Conf. on Human Factors in Computing Systems}
+\newcommand{\APGV}{Symposium on Applied Perception in Graphics and Visualization}
+\newcommand{\VIIP}{IASTED Int. Conference on Visualization, Imaging and Image Processing}
+\newcommand{\ICCVS}{Int. Conf. on Computer Vision Systems}
+\newcommand{\ACL}{Meeting of the Association for Computational Linguistics}
+\newcommand{\COLT}{Conference on Learning Theory}
+\newcommand{\ACCV}{Asian Conf. on Computer Vision}
+\newcommand{\VSPETS}{Joint IEEE Int. Works. on Visual Surveillance and Performance Evalutation of Tracking and Surveillance}
+\newcommand{\SIGGRAPHASIA}{ACM SIGGRAPH Conf. and Exhib. on Computer Graphics and Interactive Techniques in Asia}
+\newcommand{\ICMI}{ACM International Conference on Multimodal Interaction}
+\newcommand{\ICVS}{International Conference on Computer Vision Systems}
+\newcommand{\NIPSWDA}{Advances in Neural Information Processing Systems. Domain Adaptation Workshop: Theory and Application}
+\newcommand{\CAIP}{Int. Conf. on Computer Analysis of Images and Patterns}
+\newcommand{\ICML}{Int. Conf. on Machine Learning}
+\newcommand{\IBPRIA}{Iberian Conf. on Pattern Recognition and Image Analysis}
+\newcommand{\CVPRGT}{IEEE Conf. on Computer Vision and Pattern Recognition. Ground Truth Workshop: What is a good dataset?} 
+\newcommand{\EMNLP}{Int. Conf. on Empirical Methods in Natural Language Processing} 
+\newcommand{\PPKDD}{European Conf. on Principles and Practice of Knowledge Discovery in Databases} 
+\newcommand{\AMACL}{Annual Meeting of the Association for Computational Linguistics} 
+\newcommand{\IDA}{Intelligent Data Analysis} 
+
+%Very special characters
+%\DeclareInputText{39}{'}

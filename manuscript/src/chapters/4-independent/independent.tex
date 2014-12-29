@@ -7,23 +7,24 @@
 %In this chapter we propose a symbol spotting technique in graphical documents. Graphs are used to represent the documents and an error tolerant (sub)graph matching technique is used to detect the symbols in them. We propose a graph serialization to reduce the usual computational complexity of graph matching. Serialization of graphs is performed by computing acyclic graph paths between each pair of connected nodes. Graph paths are one dimensional structures of graphs, handling which is less expensive in terms of computation. At the same time they enable robust localization even in the presence of noise and distortion. Indexing in large graph databases involves a computational burden as well. We utilize a graph factorization approach to tackle this problem. Factorization is intended to create a unified indexed structure over the database of graphical documents. Once graph paths are extracted, the entire database of graphical documents is indexed in hash tables by locality sensitive hashing (LSH) of shape descriptors of the paths. The hashing data structure aims to execute an approximate $k$-NN search in a sub-linear time. We have performed detailed experiments with various datasets of line drawings and the results demonstrate the effectiveness and efficiency of our technique.
 %----------------------------------------------------------------------------------------------------------------------
 
-In this chapter we propose an independent extraction of each element contained by comic book images in order to make the image interpretation more flexible.
-This approach tries to fill the weaknesses of the sequential approach presented in the previous chapter by making each specific content extraction algorithm independent from each other in order to avoiding error propagation.
-New approaches for extracting panels, text, balloons and comic characters are presented successively but they can be used in any order or in simultaneously as they are totally independent from each other.
-Reaching such level of independence requires embedding more domain knowledge in each processing algorithm in order to give then the ability to autonomously process an image without relying on previous processing.% needing previous information extraction) with a similar performance to the sequential approach.
+In this chapter we propose an independent extraction of each element contained in comic book images in order to make the image interpretation more flexible.
+This approach tries to overcome the weaknesses of the sequential approach presented in the previous chapter by making each specific content extraction algorithm independent from each other in order to avoiding error propagation.
+New approaches for extracting panels, text, balloons and comic characters are presented successively in this chapter but they can be used in any order or simultaneously as they are totally independent from each other.
+Reaching such level of independence requires embedding more domain knowledge in each algorithm in order to give them the ability to autonomously process an image without relying on previous processing.% needing previous information extraction) with a similar performance to the sequential approach.
 
 
 \section{Introduction}
 \label{sec:in:intro}
 
 Image content retrieval methods are useful for the community and the society when they can easily be applied on various types of images sharing similar properties, independently from other pre or post processing.
-Another important aspect is to propose methods with a minimum number of parameters or at least that do not make the method too specific but generic in order to be usable for a maximum of applications.
-The first approach presented in \ch{chap:sequential} is very specific to images from comic books because each extraction of element requires one or several pre-processing (other element extractions).
+Another important aspect is to propose methods with a minimum number of parameters or at least that do not make the method too specific but generic in order to be useful for many applications.
+The first approach presented in \ch{chap:sequential} is very specific to images from comic books because each element extraction requires one or several pre-processing.
 In this chapter we present several contributions to extract elements independently from each other.
 Each contribution is then easily reusable for specific needs with a lower processing time (e.g. balloon locator independent from panel positions, comic character spotting without needing panel and text positions).
-The independence between the processing is also useful in a content of fully automated system to allow local optimisation without influencing the whole sequence and output.
-Independent panel, text and balloon extraction methods are proposed, additionally, text recognition and balloon classification complete the amount of information that is retrieved from the image content, towards a semantic description.
-The problem of comic character retrieval is simplified here as a character spotting giving an example as query for the reason presented Section~\ref{sec:intro:objectives_contributions}.
+The independence between the processing is also useful in a context of fully automated system to allow local optimisation without influencing the whole sequence and output.
+Independent panel, text and balloon extraction methods are proposed in this chapter, in addition to balloon classification and a discussion concerning text recognition.
+The aim of this second approach is to increase the amount of information that is retrieved from the image content, towards a semantic description (\ch{chap:knowledge}).
+The problem of comic character retrieval is simplified here as a character spotting giving an example as query for the reason presented in Section~\ref{sec:intro:objectives_contributions}.
 
 \section{Panel extraction}
 \label{sec:in:panel_extraction}
@@ -40,7 +41,7 @@ In Figure~\ref{fig:se:cc_bounding_box}, we show that outermost or external conto
 We base this method on this criterion, considering the panels to be the outermost contours.
 This is especially true for general comics using gutter (white space) between panels.
 Making the outermost contour as panel can be seen as a binary classification method deriving from a more generic concept.
-The general concept would attribute a confidence value to each contour in the image, inversely promotional to their percentage of inclusion in other contours.
+The general concept would attribute a confidence value to each contour in the image, inversely proportional to their percentage of inclusion in other contours.
 Non-included contour (outermost) would have the maximum confidence and fully included ones the lowest confidence in being a panel.
 
 % We propose to combine the advantages of the already published panel extraction methods~\cite{Arai11,Rigaud2012LNCS} and partially solve their weaknesses using the expert system model.
@@ -59,7 +60,7 @@ A binary inversion should be performed when the image background is darker that 
 We do not use a local segmentation approach here because it has higher chances to split the panel border and over-segment its content.
 
 Then, a connected-component labelling algorithm (Appendix~\ref{sec:ap:connected_component_labelling}) is used to extract outermost contours from the binary image, (Figure~\ref{fig:in:panel_outermost_contours}).
-Note, we filter out contours below a minimum area relative to the image size $minAreaFactor$ in order to avoid considering isolated elements (e.g text, logo, page number) as panel in a later stage (Figure~\ref{fig:in:panel_big_contours})
+Note that we filter out contours below a minimum area relative to the image size $minAreaFactor$ in order to avoid considering isolated elements (e.g text, logo, page number) as panel in a later stage (Figure~\ref{fig:in:panel_big_contours})
 
 Finally, the convex hull or the bounding box of the panel contours can be computed in order to recover from discontinuous contour detection (Figure~\ref{fig:in:panel_big_contour_hull} and~\ref{fig:in:panels_detection_boxes}).
 In this example, some of the panel borders have low contrast compared to the page background which makes difficult their extraction.
@@ -128,20 +129,20 @@ Text localization aims to provide text-only (or graphics-free) images to a text 
 Knowing the positions of other elements in the image is a good clue for predicting text position because they are related to speech balloons (e.g. dialogue, thought), characters (e.g. graphic sound, illustration), panels (e.g. captions) or the page itself (e.g. page number, title, author name).
 This approach is discussed \ch{chap:knowledge}.
 
-Few works concern text extraction in comics analysis literature (Section~\ref{sec:sota:text}) and most of them rely on speech balloon regions which make them dependent on other processing quality.
+Few works concern text extraction in comics (Section~\ref{sec:sota:text}) and most of them rely on speech balloon regions which make them dependent on other processing quality.
 Here we want to avoid such dependency between processes.
 From our knowledge, only Li~\cite{Li2013Unsupervised} proposed an independent and unsupervised speech text localization.
-It is a two-step analysis that first generates text lines using ``a set of very rigorous rules'' to test each pair of connected-components and decide if they are candidate text regions or not.
+It is a two-step analysis that generates text lines using ``a set of very rigorous rules'' to test each pair of connected-components and then decide if they are candidate text regions or not.
 From the first-round generated text lines, the method automatically learns a font set which is propagated to all text lines in the second-round and filters out non font-matched candidate regions.
 The font set is generated from the distribution of heights and widths of the connected components that compose the candidate text line (composed by multi-segment characters).
 The method is promising but there are nine rules in total that must be met to achieve text line extraction with several heuristics that are not discussed.
 The experiments have been performed on 1000 images from 10 countries (balanced) but they are unfortunately not publicly available to assess their diversity and the genericity of this approach. 
 
-The genericity is always a challenge is document image analysis systems, especially because it requires an additional effort for researchers to validate their methods on several other application domains (Section~\ref{sec:document_image_analysis}).
+The genericity is always a challenge in document image analysis systems, especially because it requires an additional effort for researchers to validate their methods on several other application domains (Section~\ref{sec:document_image_analysis}).
 Moreover, comic book images differ from classical documents in that they comprise complex backgrounds of a graphical nature.
 They belong to the class of non-structured documents meaning there is no regular structure present for the prediction of text locations and no layout analysis method applicable if we consider all the diversity of comics.
 Comics being unstructured graphical documents, combine the difficulties of both domains, making the task of text localization especially challenging.
-To solve the particular problems which are provoked by the combination of complex background and unstructured documents, we propose a new text localization method.
+To solve the particular problems which are caused by the combination of complex background and unstructured documents, we propose a new text localization method.
 % We improve the initial segmentation step to cope with complex backgrounds.
 % Furthermore, we adapt the text line extraction method to cope with unstructured documents.
 
@@ -160,7 +161,7 @@ Comic speech text is made of strokes, generally black on white, which we would l
 A perfect text segmentation would result to individual text letters represented by single connected components (Appendix~\ref{sec:ap:connected_component_labelling}).
 The complex background of comic documents complicates this step.
 Separating text from other elements in once is quite hard since we have no information about its position (independent approach) and it is similar to many other strokes in the image.
-Therefore, we propose first to separate bright from dark regions and then classify text and non-text regions using size and alignment properties only.
+Therefore, we propose to separate bright from dark regions and then classify text and non-text regions using size and alignment properties only.
 This approach is unsupervised and does not require any training step.
 Bright/dark region separation can be done using a bi-level segmentation algorithm.
 Several approaches exist and their performances rely on the input data distribution.
@@ -170,7 +171,7 @@ The best input would be a highly contrasted image where the features of interest
 We convert the 3 channel colour image (RGB) into a single channel image (grey-level or grey-scale image).
 There are several manners to create a grey-scale image from a colour image.
 The first approach is to combine each pixel value from each colour channel with different weighting coefficients corresponding to the measured intensity perception of typical trichromat humans\footnote{\url{http://en.wikipedia.org/wiki/Grayscale}}, in order to produce a single value per pixel.
-Another approach is to use only one channel but as the text we are interested in is not in red, green or blue (RGB colour space) it is irrelevant in our case.
+Another approach is to use only one colour channel but because the text we are interested in is not in red, green or blue (RGB colour space), it is irrelevant in our case.
 Nevertheless, RGB colour space can easily be converted to a different colour space such as HSV or HSL that encodes colours as Hue, Saturation, Value or Luminance.
 The luminance channel is particularly appropriate for bright and dark region separation~\cite{Ho2012}.
 
@@ -432,9 +433,9 @@ Balloon contour and shape information differences are presented and a contour-ba
 \subsection{Balloon segmentation} % (fold)
 \label{sub:in:balloon_segmentation}
 
-From the reviewed methods Section~\ref{sec:sota:balloon_segmentation}, we can see that the text position often helps in the localization and then segmentation of speech balloons.
+From the reviewed methods in Section~\ref{sec:sota:balloon_segmentation}, we can see that the text position often helps in the localization and then segmentation of speech balloons.
 The issue in relying on text extraction is that we become dependent on its performance.
-Text extraction in comics images is still a challenging problem (Section~\ref{sec:in:text_localisation_and_recognition}), it is a very hard assumption to assume that text extraction will work perfectly. 
+Text extraction in comics images is still a challenging problem (Section~\ref{sec:in:text_localisation_and_recognition}), it is a very hard assumption to consider that text extraction will work perfectly. 
 % two of them~\cite{Ho2012,rigaud2013active} are based on text position which relies on the text extractor performance.
 Instead of relying on text detection we propose to keep both processes independent in order to avoid propagation of errors.
 % independent the low level processing.
@@ -446,7 +447,7 @@ It only works using an empirical approach for choosing the threshold value and i
 We propose to relax the constraint by using a binary segmentation method that automatically selects the optimal threshold value.
 % Also, in this approach we are interested in extracting all the balloons in once for each image.
 Assuming that all the parts of the scanned image have been digitized under the same condition allows us to apply the same threshold for the entire image.
-The well-known Otsu's threshold selection method~\cite{otsu79} have been proposed to find the best threshold that separate clear from dark regions.
+The well-known Otsu's threshold selection method~\cite{otsu79} has been proposed to find the best threshold that separate clear from dark regions.
 Balloon components are composed by a clear inside region surrounded by a black stoke which corresponds to what Otsu's method have been designed to.
 We use Otsu's method to define the optimal threshold and apply it on the whole image in order to make a global binary segmentation of the grey-scale image (Appendix~\ref{sub:ap:bi_threshold}).
 Other optimal threshold selection methods from the literature can also be used as this is not a crucial point of the method.
@@ -519,7 +520,7 @@ Speech balloon classification is a real challenge if we consider a lot of differ
 First, each author has his own representation of the speech sounds.
 Second, the reader interpretation is subjective (each balloon style is interpreted in comparison to the already read balloon styles).
 For those reasons, it is really hard to directly define the purpose (e.g. dialogue, thought and exclamation) of a speech balloon without knowing its context in the story.
-In fact, the context is defined by both graphic (e.g. other strokes, protagonists personality) and textual (e.g. vocabulary, punctuation) elements.
+In fact, the context is defined by both graphic (e.g. other strokes, comic character personality) and textual (e.g. vocabulary, punctuation) elements.
 For instance, Figure~\ref{fig:in:contour_style} shows six different speech balloon comics styles where we can note the difficulty to assign one class for each balloon without knowing other balloon shapes in the image and reading the contained text.
 
 % Note, speech balloon classification is complementary to speech balloon extraction that has already been studied using white connected component extraction and filtering~\cite{Arai11,Ho2012} or active contour model~\cite{Rigaud2013ICDAR}.
@@ -546,7 +547,7 @@ For instance, Figure~\ref{fig:in:contour_style} shows six different speech ballo
 % \label{sec:in:contour_classification}
 As introduced in Section~\ref{sec:sota:balloon_segmentation}, the discriminant information for speech balloon classification is not provided by the global shape but by the contour variations.
 There are no previous approaches in the literature, we briefly reviewed state of the art approaches concerning shape and contour classification (which are the closest fields of research) but none of them matches our specific issue (Section~\ref{sec:sota:balloon_segmentation}).
-Therefore, we propose a new approach that separates contour from shape information, analyse the contour variations and then, describes and classifies the balloon contours into three classes (see ``smooth'', ``wavy'' and ``spiky'' contour types in Figure~\ref{fig:sota:balloon_examples}). 
+Therefore, we propose a new approach that separates contour from shape information, analyses the contour variations and then, describes and classifies the balloon contours into three classes (see ``smooth'', ``wavy'' and ``spiky'' contour types in Figure~\ref{fig:sota:balloon_examples}). 
 Note that this approach requires balloons to be extracted at pixel-level such as proposed in Sections~\ref{sub:se:regular_balloon_extraction} and~\ref{sub:in:balloon_segmentation}.
 
 
@@ -563,7 +564,7 @@ Balloon shapes and contours contain different types of information.
 The overall shape (e.g. rectangle, square, circle and oval) does not provide a lot of information about how the text is spoken, it is more related to the style of the comics and the structure of the panel.
 However, the contour variation describes the speech tone information according to the different patterns which compose the contour (e.g. straight lines, curves, peaks, half circles).
 
-First, we propose to represent the speech balloon as a time series (one dimensional signal over $360^\circ$) which corresponds to the distance in number of pixels between the balloon barycentre and the contour points. 
+First, we propose to represent the speech balloon as time series (one dimensional signal over $360^\circ$) which corresponds to the distance in number of pixels between the balloon barycentre and the contour points. 
 
 Second, we perform a shape/contour separation to be able to analyse only the contour variation.
 Note that the consideration or not of tail region has an impact on the final classification (Section~\ref{sub:ex:balloon_classification}).
@@ -573,7 +574,7 @@ Examples are given Figure~\ref{fig:be:time_series}.
 % and normalized by the letter height $\bar{H}$ (see eq.~\ref{eq:avg_height}).
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[!ht]	%trim=l b r t  width=0.5\textwidth,
+	\begin{figure}[!t]	%trim=l b r t  width=0.5\textwidth,
 	  \centering
 		\fbox{\includegraphics[ width=0.9\textwidth]{time_series.png}}
 		\caption[Balloon contour time series]{Balloon detection, time series representation and shape/contour separation. Left column represents balloon detection with the barycentre (white star) and the starting point (top left half square). Middle column represents the distance between the barycentre and the balloon boundary over $360^\circ$ (clockwise) where the original signal $o$ is in blue and the smoothed signal $s$ in red. Right column is the difference between $s$ and $o$.}
@@ -597,13 +598,9 @@ Contour description aims to encode discriminant contour variations in order to f
 The features used for the description must be as discriminant as possible but also independent to the page format and definition as introduced in Section~\ref{sub:in:balloon_segmentation}.
 
 The contour variations can be computed from different features, the main difficulty is to be invariant to the comics drawing diversity. 
-In this study, we describe the contour signal $c$ by using a variance-based two dimensional descriptor, more precisely the standard deviation $\sigma$.
+In this study, we describe the contour signal $c$ by using a variance-based descriptor, more precisely based on the standard deviation $\sigma$.
 The variance or the standard deviation has the advantage to be simple and generic at describing any data distribution by measuring the data dispersion which is what we need if we aim at measuring the difference of dispersion between the original and the smoothed contours.
 %The first dimension is the global contour signal variance and the second is the difference between the top and bottom part variances. 
-
-The first dimension aims to differentiate contours which have high variations from the others (e.g. ``spiky'' from ``wavy'' and ``smooth'' contour types in Figure~\ref{fig:sota:balloon_examples}).
-The second dimension aims to discriminate ``wavy'' and ``smooth'' types according to the standard deviation of the superior and inferior signal parts from the average $\bar{c}$.
-For instance, if a contour has a higher standard deviation in the below signal part than the above signal part (according to the average $\bar{c}$) then the contour has more peaks in the direction of its barycentre than the opposite, which is not a characteristic of the ``smooth'' but ``wavy'' type (half circles).
 
 The first feature $f_1$ consists in measuring the standard deviation $\sigma_c$ of signal $c$ normalized by the local average of the original signal $\bar{o}$ in order to be independent to image format and definition variations (Formula~\ref{eq:be:distortion}).
 
@@ -611,7 +608,7 @@ The first feature $f_1$ consists in measuring the standard deviation $\sigma_c$ 
 \begin{equation}\label{eq:be:distortion}
  f_1 = \frac{\sigma_c}{\bar{o}}% * \sum_{i=-M/2}^{+M/2} o
 \end{equation}
-where $f_1$ is the feature one, $\sigma_c$ the contour standard deviation normalized by $\bar{o}$ the average of the signal $o$. 
+where $\sigma_c$ the contour standard deviation normalized by $\bar{o}$ the average of the signal $o$. 
 
 
 In order to measure the second feature $f_2$, we split the contour signal $c$ in two signals $c_{pos}$ and $c_{neg}$ which correspond to the signal parts that are strictly above and below the average $\bar{c}$ (Figure~\ref{fig:be:signal_decomposition}) and then we measure the standard deviation differences (Formula~\ref{eq:be:var_diff}).% compares the superior and inferior variances of the contour signal average $\bar{c}$
@@ -620,7 +617,7 @@ In order to measure the second feature $f_2$, we split the contour signal $c$ in
 \begin{equation}\label{eq:be:var_diff}
  f_2 = \frac{\sigma_{neg} - \sigma_{pos}}{\bar{o} }% * \sum_{i=-M/2}^{+M/2} o
 \end{equation}
-where $f_2$ is the feature two, $\sigma_{pos}$ and $\sigma_{neg}$ are the standard deviations of the signals $c_{pos}$ and $c_{neg}$ respectively.
+where $\sigma_{pos}$ and $\sigma_{neg}$ are the standard deviations of the signals $c_{pos}$ and $c_{neg}$ respectively.
 The difference is normalized by $\bar{o}$.% a contour descriptor, $v$ the contour variance and $\bar{o}$ the average of the signal $o$. 
 
 
@@ -634,6 +631,10 @@ The difference is normalized by $\bar{o}$.% a contour descriptor, $v$ the contou
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  In order to be invariant to the image definition and scale, we normalize each feature of the descriptor by the original signal average $\bar{o}$ (average radius).
+
+The first dimension aims to differentiate contours which have high variations from the others (e.g. ``spiky'' from ``wavy'' and ``smooth'' contour types in Figure~\ref{fig:sota:balloon_examples}).
+The second dimension aims to discriminate ``wavy'' and ``smooth'' types according to the standard deviation of the superior and inferior signal parts from the average $\bar{c}$.
+For instance, if a contour has a higher standard deviation in the negative signal part than the positive signal part (according to the average $\bar{c}$) then the contour has more peaks in the direction of its barycentre than the opposite, which is not a characteristic of the ``smooth'' but ``wavy'' type (half circles).
 
 \subsubsection{Contour classification}
 Contour classification is performed according to the selected contour descriptor (Section~\ref{sec:be:description}) by using a naive Bayesian Classifier~\cite{Mitchell1997}.
@@ -666,13 +667,13 @@ The results concerning balloon classification are detailed Section~\ref{sub:ex:b
 Human detection in computer vision field is an active field of research. Extending this to human-like drawings such as the main characters in comic book stories is not trivial.
 % Comics analysis is a very recent field of research at the intersection of graphics, texts, objects and people recognition.
 The detection of the main comic characters is an essential step towards a fully automatic comic book understanding.
-This section presents a colour-based approach for comic character spotting using content-based drawing retrieval and colour palette descriptor.
+This section presents a comic character spotting approach using content-based drawing retrieval and colour palette descriptor.
 
 In this section we detail how to localize comic characters in all pages of a given album.
 We aim at detecting the apparitions of comic characters (non-rigid object) with a minimum of user interaction.
 This is a content based image retrieval problem where the result highly depends on the quality of the given example, which should be noise free (no background, target only). 
 A close up view of comics drawings shows that the most invariant information between texture, shape and colour is the colour information (Figure~\ref{fig:kn:comics_diversity}).
-In fact, they are no textures in many newer comics because they are designed and reproduced with colour flats (see comics design process Section~\ref{sec:document_image_analysis}), nevertheless, the digitization process sometimes creates textures (e.g dithering, compression).
+In fact, there is no textures in many newer comics because they are designed and reproduced with colour flats (see comics design process Section~\ref{sec:document_image_analysis}), nevertheless, the digitization process sometimes creates textures (e.g dithering, compression).
 The shape information suffers from the different postures that can take the comic characters in each panel of the story (Figure~\ref{fig:sota:tarzan}).
 Hence, we believe that the colour information is the most robust information invariant to scale, object deformation, translation and rotation transformations which are very frequent in comics. The typical drawback of using colour features is that they are sensitive to illumination and contrast variations.
 This is an important issue for natural images but not for hand drawings if they are drawn and digitized under the same conditions. 
@@ -699,7 +700,7 @@ The retrieval (search) step can be extended to other albums from the same collec
 
 %------------------------------------------------------------------------
 \subsection{Colour quantization}
-Once the user has highlighted the query region, we reduce the number of colours of all the images of the album (including the query region) according to a colour palette $P_c$.
+Once the user has defined the query region, we reduce the number of colours of all the images of the album (including the query region) according to a colour palette $P_c$.
 Colour reduction or quantization generally involves two steps.
 The first step consists in choosing a proper colour palette and the second step is to reconstruct an image by replacing original colours with the most similar colour from the palette.
 
@@ -805,7 +806,7 @@ The fact of not including any spatial or quantitative information (e.g. region p
 % -----------------------------------------------
 
 
-The colour subset $D$ is composed by the $N$ colours most represented in the query region and that are the most discriminative in the image or collection.
+The colour subset $D$ is composed by the $N$ most represented colours in the query region and that are the most discriminative in the image or collection.
 We define two metrics for each colour of the query region in order to determinate which colour will be used for the query description.
 The first metric $L_{1c}$ corresponds to the number of pixels of a colour $c$ in the query region (colour histogram Figure~\ref{fig:in:dominant_colour_hist_desc}) and the second one $L_{2c}$, the discriminability level of the colour $c$ in the whole image.
 
@@ -827,12 +828,12 @@ See Equations~\ref{eq:query_colors_tf} and~\ref{eq:in:query_colors_idf}.% and fi
 
 \begin{equation}
    %tf = \frac{nbPixelMatchInQuery}{nbPixInQuery}
-   tf = \frac{nbPixelMatchInQuery}{nbPixInQuery}
+   tf = \frac{nbPixelMatchInQuery}{nbPixelInQuery}
    \label{eq:query_colors_tf}  
   \end{equation}
 
 \begin{equation}
- idf = \log \frac{nbPixInImage}{nbPixelMatchInImage}
+ idf = \log \frac{nbPixelInImage}{nbPixelMatchInImage}
    \label{eq:in:query_colors_idf}  
   \end{equation}
 
@@ -877,7 +878,7 @@ Comics have a particular structure that allows different approaches for object r
 First, for a given page, we consider each colour value in the descriptor and compute the corresponding colour mask (Figure~\ref{fig:in:masks}). %Note, mathematical morphology may be used to remove isolated pixel noise (e.g. paper texture) in some cases.
 Second we find the object position in each page by using a sliding window approach at different window sizes and for each mask.
 The window sizes are defined according to the user query size (maximum between the query width or height) which gives an information about the definition of the document $S=\{s_0,s_1,...,s_n\}$ in order to retrieve the object at different scales.
-Each window position is computed with 50\% per cent overlapping with its four neighbouring windows.
+Each window position is computed with 50\% per cent overlapping with its four neighbouring windows (on the top, right, bottom and left sides).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
@@ -889,7 +890,7 @@ Each window position is computed with 50\% per cent overlapping with its four ne
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We define the detection confidence $C_{w_i}$ according to the number of identical colours between the query descriptor $D$ and each sliding window position $W=\{w_0,w_1,...,w_n\}$ (Equation.~\ref{eq:in:confidence_character_spotting}).
+For each sliding window position $w$, we compute a confidence value $C_{w_i}$ according to the number of identical colours between the query descriptor $D$ and each sliding window position $W=\{w_0,w_1,...,w_n\}$ (Equation.~\ref{eq:in:confidence_character_spotting}).
 This is equal to the cardinality of the intersection between the two colour sets $D \cap w_i$. The confidence is maximal when all the colours in the query descriptor are contained by the window (high probability of the object to be at this location).
 The confidence $C_{w_i}$ is defined as follow:
 

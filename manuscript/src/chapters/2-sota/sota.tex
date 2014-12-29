@@ -39,12 +39,12 @@ Many functions are specific to the application, however, there are typical funct
 	% This operation can be performed using various techniques and tools such as plume, pencil, pen, brush, stamp or machine-printed.
 	\item \textbf{Image acquisition} A digital image produced by the sensors of various devices (e.g. scanner, camera, web-cam) from the physical document.
 	The digital image is an ordered set of pixels with a set of associated colour values from a given colour space.
-	\item \textbf{Pre-processing} Before a document analysis method can be applied to digitalised image in order to extract some specific piece of information, it is usually necessary to process the image in order to assure that it satisfies certain assumptions implied by the set of processing methods used with the understanding process and its application domain (e.g. noise removal, contrast enhancement, segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
+	\item \textbf{Pre-processing} Before a document analysis method can be applied, it is usually necessary to process the digitized image in order to assure that it satisfies certain assumptions implied by the set of processing methods and its application domain (e.g. noise removal, contrast enhancement, segmentation)~\cite{pal1993review,luccheseyz2001color,bhattacharyya2011brief}.
 	\item \textbf{Feature extraction} Feature extraction is a process that consists in extracting relevant cues contributing to structure the information, especially for further processing.
   %involves reducing the amount of data accurately.
-  Image features are from different levels depending on their distance to pixel information (low level) and human understanding (high level).
+  Image features are from different levels depending on their ``distance'' to pixel information (low level) and human understanding (high level).
 	Low level feature such as line, corner, edges and blobs are computed directly from the spatial organisation of pixels~\cite{due1996feature}.
-	However, high level information is usually computed from a global view of the image to extract texture and shape for example.
+	However, high level information is usually computed from a global view of the image to extract texture and shape, for example.
 	\item \textbf{Detection/classification} At some point in the processing, decisions are made about which point of interests, symbols, textures, regions etc. are relevant for further processing.
   It aims to provide a first level of data organization and contributes to the recognition of elements of intermediate levels.
 	\item \textbf{High-level processing} Integration of domain knowledge and final decision required for the application.
@@ -77,7 +77,7 @@ Graphics consist of spatial arrangements of symbols; examples include engineerin
     \end{figure}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Beside its content, a document is usually structured according to its intent of use.
+Beside its content, a document is usually structured according to the intended use.
 Tang mentioned in 1996 ``A document has two structures: geometric (layout) structure and logical structure.
 Extraction of the geometric structure from a document refers to document analysis; mapping the geometric structure into logical structure deals with document understanding''~\cite{tang1996automatic}.
 Knowing the structure of the document being processed is always an helpful information that is related to domain knowledge information~\cite{cooperman1998system,breuel2003high}.
@@ -175,7 +175,7 @@ The main sources of noise are the manual operation variability, the degradation 
 Comics images are mixed content documents combining textual and graphical information to create stories (Figure~\ref{fig:kn:comics_diversity}).
 Depending on the purpose, the document analysis techniques involved for comics image processing varies a lot between panel, balloon, text and comic character extractions.
 The contents of different natures are related to each other to produce a story (e.g. speech text is related to speech balloon and speaking characters).
-Treating each of the content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher level of semantic.
+Treating each type of content separately has a limit that can be exceeded in a holistic understanding approach by reaching a higher level of semantic.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,7 +282,7 @@ Also, wavelet decomposition~\cite{tieng1997recognition} and invariant moments~\c
 From our knowledge, tail detection has not been studied before, we propose to analyse the contour patterns in order to locate the tail and then perform a local analysis to find its direction (Section~\ref{sec:se:from_balloon_to_tail}).
 
 As far as we know, balloon classification has not been studied before.
-It is related to shape and contour classification field of researches in planar images.
+It is related to shape and contour classification in planar images.
 Shape classification is a well developed field, especially in a template matching context.
 Three well know methods are Curvature Scale Space (CSS)~\cite{Abbasi1999}, Fourier Descriptor~\cite{Zahn1972} and Invariant Moments~\cite{Hu1962}.
 A recent work~\cite{Lopatka2013} explains that CSS is more appropriate for shapes containing a high number of inflections as marine animals~\cite{Abbasi1999}.
@@ -333,17 +333,17 @@ First of all, the text lines are quite short compared to other types of document
 
 Document analysis techniques are not designed to handle such diversity of texts within the same document; we first review another related field of research which is scene text detection and recognition.
 Text localization in real scenes and video frames is an active research topic~\cite{Jung04,ShahabICDAR2011Robust,KaratzasICDAR2013Robust}.
-Recent methods have been propose for scene text detection~\cite{kasar2012multi,gomez2013multi}.
+Recent methods have been proposed for scene text detection~\cite{kasar2012multi,gomez2013multi}.
 However, applying existing real scene text detection methods to comics would not be optimal to cope with all the different types of text that are combined in comic book documents (e.g. typewritten, handwritten, graphic sound).
 If we consider typewritten text, the most similar application to comics is car plate recognition because the text is in a salient and contrasted area with a complex background around the plate such as speech balloon for comics~\cite{anagnostopoulos2008license}.
 
 The documents that have attracted of lot a attention are newspapers, administrative documents, cheques, maps, music scores, floor plans and engineering drawings~\cite{nagy2000twenty}.
 Also, an important effort has been done to separate text from graphical content from such types of document with the focus on improving the post processing of both types of content by treating them separately.
-Fletcher and Katsuri~\cite{fletcher1988robust} still the reference in this domain more than twenty years after for more and more complex documents~\cite{tombre2002text,Roy2007Text}.
+The paper by Fletcher and Katsuri~\cite{fletcher1988robust} still the reference in this domain more than twenty years after for more and more complex documents~\cite{tombre2002text,Roy2007Text}.
 From our knowledge, only one preliminary study has been proposed for text/graphic separation in comics~\cite{BernhauptWSES2001}.
 This approach relies on artificial neural networks, edge and corner detection.
-The authors report results on very few panels and only for speech text, thus it can not be generalised to that we can find in comic book images (e.g. speech texts, onomatopoeias, captions).
-Nevertheless, text localization in comic images have been recently investigated and opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
+The authors report results on very few panels and only for speech text, thus it can not be generalised to all the text we can find in comic book images (e.g. speech texts, onomatopoeias, captions).
+Nevertheless, text localization in comic images has been recently investigated and opens up several interesting applications such as image compression~\cite{Su11}, OCR training and also translation, speech synthesis and re-targeting to different mobile reading devices~\cite{Matsui2011}.
 
 % Comics differ from classical documents in that they comprise complex backgrounds of a graphical nature. Furthermore, they belong to the class of non-structured documents meaning there is no regular structure allowing to extract easily the layout and to predict the location of the text.
 %present for the prediction of text locations and no layout method applicable.%

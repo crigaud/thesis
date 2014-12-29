@@ -57,8 +57,8 @@ Nowadays, the history of comics must be described considering the three main cen
 Europe where it is born, the United States to whom we owe its popularity and Asia that now represents the largest production of comics with Japan and Korea.
 Rodolphe Töpffer, a Francophone Swiss artist, is considered as the inventor of comics in the early part of the 19th century (1799-1846).
 He sequentially illustrated stories, with text compartmentalized below images and his art were reprinted throughout Europe and the United States.
-Magazine-style comic books emerged as a mass medium in the US in the thirties.
-From the fifties, Japan started a massive production of Japanese comic books called ``manga'' under the influence of Osamu Tezuka (comic artist)~\cite{Chrysoline2014}.
+Magazine-style comic books emerged as a mass medium in the US in the 1930s.
+From the 1950s, Japan started a massive production of Japanese comic books called ``manga'' under the influence of Osamu Tezuka (comic artist)~\cite{Chrysoline2014}.
 
 % Comics use particular vocabulary:
 % \begin{itemize}
@@ -78,7 +78,7 @@ The annual sales reached 320 million Euro.
 In 2013, we saw a first drop of 7.3\% that reflects the stabilization of the market and probably the emergence of the digital comics~\cite{Ratier2013Deceleration}.
 
 Japan is leading the sequential art market in terms of sales, about \$5.5 billion in 2009~\cite{Syed2012}, and exportation volumes.
-In Europe and the Middle East the market is worth \$250 million~\cite{Davidson2012}.
+In Europe and the Middle East the market of manga is wordith \$250 million~\cite{Davidson2012}.
 In 2008, in the U.S. and Canada, the manga market was valued at \$175 million.
 Japanese culture is spread out all over the world through manga and anime.
 In 2014, the Japan Book Publishers Association published a handbook to take advantage of every opportunity to broaden and deepen overseas knowledge about the Japanese publishing world~\cite{JBPA2014}.
@@ -123,8 +123,8 @@ allowing the reader to get extra content about the events, the places or comics 
 Note that in the rest of this manuscript ``character'' or ``comic character'' is used in the sense of actor or protagonist of the comics, not as a piece of text.
 
 These new uses generate technical needs related to several scientific issues when applied to large-scale processing. 
-The International Digital Publishing Forum (IDPF) is currently working on a free and open e-book standard called EPUB 3 in order to make sequential art also benefit from the last advances of publishing technologies.
-EPUB 3 is a next-generation portable document format based on HTML5 and other Web Standards.
+The International Digital Publishing Forum (IDPF) is currently defining the futures specifications of the next versions of the free and open e-book standard EPUB 3 in order to make sequential art also benefit from the last advances of publishing technologies.
+EPUB 3 is a portable document format based on HTML5 and other Web Standards.
 
 % First of all, t is necessary to be able to recognize the visual components of a comic strip, ie be able to say that a box is located in such a place, a character is so another, etc..
 % Commonly used techniques of document analysis never occur, regardless of their complexity, perfect results in all circumstances. We will see in Section 2.4.1
@@ -253,16 +253,16 @@ The final aim is to provide a high level description including spatial positions
 
 In this thesis we propose three approaches in order to cover the widest possible scope of study, from a sequential and supervised approach to an knowledge-driven and unsupervised method. 
 The first approach profits from the relations between elements to guide the retrieval process.
-For instance, the panels are first extracted then balloons containing text that are inside panels and finally comic character regions of interest are defined from the speech balloon tail indications.
-This approach is quite intuitive but also very sensitive to error propagation issue between the different extraction steps~\cite{Arai11,Ho2012}.
-The second approach consists in making the extraction independent from each other, in order to avoid error propagation issues.
+For instance, panels are first extracted, then inside balloons containing text and finally comic character regions of interest are defined from the balloon tail indications.
+This approach is quite intuitive but also very sensitive to error propagation issues between the different extraction steps~\cite{Arai11,Ho2012}.
+The second approach consists in making the extractions independent from each other, in order to avoid error propagation issues.
 The third proposition adds contextual information to the independent extractions.
 The context is retrieved by matching extracted element relations with a generic model of the domain knowledge.
 This last approach allows a semantic description of the images.
 For instance, text regions that are detected inside balloons are inferred as being speech text regions and comic characters that are pointed by a tail as speaking characters.
 
 We have constructed the first publicly available dataset and ground truth of comic book images to evaluate our contributions together with giving to the community the opportunity to work on reference data in order to make comparable and reproducible research.
-The last approach detailed above and the dataset are the results of a collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working on knowledge representation and spatial reasoning applied to comic book contents.
+The last approach detailed above and the dataset are the results of a collaboration with Cl{\'e}ment Gu{\'e}rin, a Ph.D. student working at L3i lab on knowledge representation and spatial reasoning applied to comic book contents.
 
 To meet the above objectives, we have made the following contributions in this thesis:
 
@@ -275,7 +275,7 @@ To meet the above objectives, we have made the following contributions in this t
 	In this work we propose a method for closed balloon extraction and classification based on the analysis of the blob content (Section~\ref{sub:in:balloon_segmentation}) and contour analysis (Section~\ref{sub:in:balloon_classification}) respectively.
 	A different approach for open balloons has been developed, it is based on active contour model to extract open balloons from text line positions (Section~\ref{sub:se:implicit_balloon_extraction}).
 	%Both methods are described in Chapter~\ref{chap:be} along with balloon contour classification (smooth, wavy, zigzag) and a tail detector.
-	Also, a tail detection and description are proposed (Section~\ref{sec:se:from_balloon_to_tail}).
+	Also, tail (pointer directed towards the speaker) detection and description are proposed (Section~\ref{sec:se:from_balloon_to_tail}).
 
 	\item [3)] Text localization: Text can be of different nature in comics, there are sound effects (onomatopoeias), graphic texts (illustration), speech texts (dialogues) and narrative text (captions).
 	% according to [REF?]. 
@@ -316,7 +316,7 @@ To meet the above objectives, we have made the following contributions in this t
 The rest of the thesis is organized as follows:
 \begin{itemize}
 % \item \ch{chap:gm} presents some definitions, concepts of graph theory, particularly the ones that are necessary for our work to be described later. After that we present a review of the state-of-the-art methods for graph and subgraph matching.
-\item \ch{chap:sota} presents a detailed review of the state-of-the-art methods for the analysis of comic images. This chapter details several image processing methods in the four first subsections and then we review the holistic understanding systems that have been applied to document analysis so far.
+\item \ch{chap:sota} presents a detailed review of the state-of-the-art methods for the analysis of comic images. This chapter details several image processing methods in the first four subsections and then we review the holistic understanding systems that have been applied to document analysis so far.
 The last section reviews the more advanced services related to comics that are available on the market.
 % and gives an overview, pros and cons and examples of different categories of methods.
 

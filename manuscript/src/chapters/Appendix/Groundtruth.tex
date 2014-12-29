@@ -4,7 +4,7 @@
 \graphicspath{{./chapters/Appendix/figs/}}
 
 This appendix details the ground truth construction process, the visual (regions) and semantic information annotation, the file structure, the annotation quality assessment and finally the terms of use.
-This work is the result of an extensive collaboration with Cl{\'e}ment Gu{\'e}rin~\cite{phdthesisGuerin14} and many meetings with the eBDtheque project team of the L3i lab.
+This work is the result of an close collaboration with Cl{\'e}ment Gu{\'e}rin~\cite{phdthesisGuerin14} and many meetings with the eBDtheque project team of the L3i lab.
 
 % section term_of_use (end)
 
@@ -22,7 +22,7 @@ This precision level is used in several, widely used datasets~\cite{pascal-voc-2
 %{\color{blue}This groundtruthing level is also used for well known dataset widely used~\cite{pascal-voc-2012, yao2007introduction}.}
 
 In order to cover a wide range of possible research matters, it has been decided to extract three different types of objects from the corpus: text lines, balloons and panels.
-We decided to do this first ground truth by drawing horizontal bounding boxes as close as possible from the feature and including all its pixels.
+We decided to do this first ground truth by drawing horizontal bounding boxes as close as possible from the image content and including all its pixels.
 % in order to proceed a maximum of pages in the allowed time. 
 We chose this level of granularity in order to limit the subjectiveness of the person making the annotation.
 
@@ -237,8 +237,8 @@ Besides being an open-standard developed by the World Wide Web Consortium (W3C) 
 
 First, using a recent Internet browser or your favourite image viewer, it provides a simple, fast and elegant way to display the visual annotation of any desired object over a comic book page using layers.
 No need to install software such as Matlab, Adobe Illustrator or equivalent open source to visualize the ground truth information.
-
 It is an XML-based vector image format that allows to display and interact with the annotated region, stored as polygon object in the SVG file, as desired using the Cascading Style Sheets (CSS) properties (Figure~\ref{fig:gt:svgImage}). 
+Each layer can be displayed or not in order to enhance the clearness of the annotations when browsing the database.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -257,12 +257,12 @@ c) \includegraphics[width=100px]{svgTextlines.png}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Each layer can be displayed or not in order to enhance the clearness of the annotations when browsing the database.
-Secondly, SVG being a XLM-based language, it makes the integration of semantic annotation very easy via the use of the predefined \texttt{metadata} element.
+
+Second, SVG being a XLM-based language, it makes the integration of semantic annotation very easy via the use of the predefined \texttt{metadata} element.
 
 One ground truth file contains the complete description of one comics image. 
 There is no hierarchical link between pages from a same comic book. 
-Following the basic XML encoding information, a SVG file starts with a root \texttt{<svg>} element containing the title of the document, \texttt{<title>}, and five \texttt{<svg>} children with different class attributes.
+Following the basic XML encoding information, an SVG file starts with a root \texttt{<svg>} element containing the title of the document, \texttt{<title>}, and five \texttt{<svg>} children with different class attributes.
 These contain annotations collected on five types of elements which are the page, panels, balloons, text lines and comic characters.
 The type of element in a tag is specified by its \texttt{class} attribute.
 The first tag, \texttt{class = ``Page''} contains description on the image and has two daughters.
@@ -365,7 +365,7 @@ An example of ground truth file content is given Listing~\ref{list:svg_gt_sample
 \section{Ground truth quality assessment}
 \label{sec:gt:ground_truth_quality_assessment}
 
-When several persons are involved in the creation of a graphical ground truth, it is very difficult to obtain a perfectly homogeneous segmentation.
+When several people are involved in the creation of a graphical ground truth, it is very difficult to obtain an homogeneous segmentation.
 Indeed, it could vary from one person to another because each person has a different sensitivity at reading comics and at integrating instructions.
 Therefore, in addition to the package of pages he was in charge of, each participant has been asked to annotate the panels of an extra page. 
 This extra page was the same for everybody and was chosen for its graphical components heterogeneity. 

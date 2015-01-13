@@ -455,7 +455,7 @@ Note that bi-level segmentation (binarisation) creates a lot of small connected-
 We prune small connected-components using the clustering algorithm presented in Section~\ref{sec:se:panel_and_text} (ignores the connected-components that are part of the cluster with the lowest average height).
 %~\cite{Rigaud2012LNCS} (class with the minimum average height).
 % and then we add one time the standard deviation value to avoid opening black contour by choosing a low threshold such as~\cite{.
-We extract connected components from the binary image and analyse their parent-child relationship to make a first selection of candidate components and then analyse the spatial organisation of the set of children $CH=\{ch_1, ch_2,...,ch_n\}$ to compute a confidence value for each parent $P=\{p_1, p_2,...,p_m\}$ that serves as final filtering criterion (Figure~\ref{fig:in:balloon_binarisation}).
+We extract connected-components from the binary image and analyse their parent-child relationship to make a first selection of candidate components and then analyse the spatial organisation of the set of children $CH=\{ch_1, ch_2,...,ch_n\}$ to compute a confidence value for each parent $P=\{p_1, p_2,...,p_m\}$ that serves as final filtering criterion (Figure~\ref{fig:in:balloon_binarisation}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \begin{figure}[!ht]  %trim=l b r t  width=0.5\textwidth,
